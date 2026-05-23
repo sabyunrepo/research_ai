@@ -1,0 +1,7 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>20-1. 실습 6</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">실습 6</div><h2>완료 조건을 검증 게이트로 바꿉니다</h2><p class="subtitle">“테스트해줘”가 아니라 언제, 무엇을, 어떤 기준으로 통과시킬지 정합니다.</p><pre><code>Trigger: Edit 또는 Write 이후
+Command: pnpm test && pnpm lint
+Pass: exit code 0, 실패 테스트 없음
+Fail: 원인 분석 후 수정, skip 금지
+Report: 명령과 결과를 최종 보고에 포함</code></pre><div class="note"><strong>목표</strong>검증을 권장사항이 아니라 워크플로우의 문으로 만듭니다.</div></section><section class="slide-media"><div class="css-visual practice-gate-visual" aria-label="실습 6 검증 게이트 설계"><div class="gate-row trigger">Trigger</div><div class="gate-row command">Command</div><div class="gate-row pass">Pass Rule</div><div class="gate-row fail">Fail Action</div><div class="gate-lock">Gate</div></div></section></main>
+<nav class="nav"><a href="20-loop-schedule.html">Prev</a><a href="index.html">Index</a><a href="21-final-workflow.html">Next</a></nav></body></html>

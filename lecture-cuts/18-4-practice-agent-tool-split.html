@@ -1,0 +1,8 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>18-1. 실습 5</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">실습 5</div><h2>역할과 도구를 한 장으로 분리합니다</h2><p class="subtitle">하나의 자동화 업무를 Main, Subagent, MCP Tool, Human Review로 나눕니다.</p><pre><code>업무: PR 리뷰 자동화
+Main: 범위 결정, 최종 판단
+Researcher: 관련 문서/이슈 수집
+Reviewer: diff 위험 검토
+Tools: GitHub read, Browser check
+Human: merge 승인</code></pre><div class="note"><strong>목표</strong>모든 일을 한 AI에게 맡기는 습관을 끊고, 역할과 권한을 분리합니다.</div></section><section class="slide-media"><div class="css-visual practice-split-visual" aria-label="실습 5 역할과 도구 분리 워크시트"><div class="practice-column main"><strong>Main</strong><span>판단</span><span>범위</span></div><div class="practice-column agents"><strong>Subagents</strong><span>Research</span><span>Review</span></div><div class="practice-column tools"><strong>MCP Tools</strong><span>GitHub</span><span>Browser</span></div><div class="practice-column human"><strong>Human</strong><span>승인</span><span>예외</span></div><div class="practice-arrow">workflow split</div></div></section></main>
+<nav class="nav"><a href="18-mcp.html">Prev</a><a href="index.html">Index</a><a href="16-hooks.html">Next</a></nav></body></html>
