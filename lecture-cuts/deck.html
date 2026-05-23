@@ -6,15 +6,15 @@
   <title>AI 에이전트 하네스 엔지니어링 Deck</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/style.css">
-  <script defer src="assets/slides.js?v=20260523-slide-expansion"></script>
-  <script defer src="assets/deck.js?v=20260523-slide-expansion"></script>
+  <script defer src="assets/slides.js?v=20260523-html-deck-harness"></script>
+  <script defer src="assets/deck.js?v=20260523-html-deck-harness"></script>
 </head>
 <body class="deck-page">
   <header class="deck-toolbar">
     <div>
       <p class="deck-kicker">HTML / CSS Presentation Deck</p>
       <h1>AI 에이전트 하네스 엔지니어링</h1>
-      <p class="deck-subtitle">확장 슬라이드 · 16:9 frames · browser print/export ready</p>
+      <p class="deck-subtitle" id="deckStatus">확장 슬라이드 · 16:9 frames · browser presentation ready</p>
     </div>
     <nav class="deck-actions" aria-label="Deck actions">
       <a href="index.html">Index</a>
@@ -23,8 +23,12 @@
     </nav>
   </header>
 
-  <main id="deck" class="deck-strip" aria-live="polite">
-    <p class="deck-loading">슬라이드를 불러오는 중입니다.</p>
-  </main>
+  <div class="deck-stage">
+    <button class="deck-nav-button deck-nav-previous" type="button" id="previousSlide" aria-label="이전 슬라이드">‹</button>
+    <main id="deck" class="deck-strip" aria-live="polite">
+      <p class="deck-loading">슬라이드를 불러오는 중입니다.</p>
+    </main>
+    <button class="deck-nav-button deck-nav-next" type="button" id="nextSlide" aria-label="다음 슬라이드">›</button>
+  </div>
 </body>
 </html>

@@ -679,36 +679,50 @@ window.LECTURE_SLIDES = [
     "file": "21-final-workflow.html",
     "parent": "21",
     "kind": "workflow",
-    "reviewTitle": "최종 산출물은 작은 작업장입니다"
+    "reviewTitle": "HTML/CSS Deck Automation Harness v1",
+    "speaker": {
+      "heading": "HTML/CSS Deck Automation Harness v1",
+      "html": "<strong>상세 발표 스크립트</strong><p>최종 실습은 발표자료 하나를 만드는 일이 아니라, 다음 발표자료도 같은 품질로 만드는 작업장을 만드는 일입니다.</p><p>source brief, slide spec, few-shot, HTML/CSS deck, presenter review, verification, handoff가 한 줄로 이어져야 반복 가능한 워크플로우가 됩니다.</p>"
+    }
   },
   {
     "file": "21-1-final-artifact-structure.html",
     "parent": "21",
     "kind": "main",
-    "reviewTitle": "최종 산출물은 작은 파일 구조로 남깁니다",
+    "reviewTitle": "최종 산출물은 lecture-deck/입니다",
     "speaker": {
-      "heading": "최종 산출물은 작은 파일 구조로 남깁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>수강생이 가져갈 것은 개념이 아니라 재사용 가능한 작업장입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "최종 산출물은 lecture-deck/입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>폴더 구조가 곧 운영 방식입니다.</p><p>source, spec, few-shot, skill, agents, hook, verification, handoff를 한 폴더 안에 두면 Claude가 매번 같은 절차로 발표자료를 만들 수 있습니다.</p>"
+    }
+  },
+  {
+    "file": "21-10-practice-few-shot-placement.html",
+    "parent": "21",
+    "kind": "checkpoint",
+    "reviewTitle": "Few-shot은 slide spec 바로 다음에 둡니다",
+    "speaker": {
+      "heading": "Few-shot은 slide spec 바로 다음에 둡니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>Few-shot은 실습 3에 둡니다. spec 바로 다음에 있어야 Claude가 무엇을 만들지뿐 아니라 어떤 모양으로 답해야 하는지도 같이 고정됩니다.</p><p>좋은 slide spec, 나쁜 slide spec, 좋은 발표자 script, 좋은 최종 보고를 넣으면 결과물의 깊이와 형식이 안정됩니다.</p>"
     }
   },
   {
     "file": "21-2-bug-request-flow.html",
     "parent": "21",
     "kind": "workflow",
-    "reviewTitle": "버그 요청은 하네스를 통과하며 안정됩니다",
+    "reviewTitle": "자료는 하네스를 통과하며 발표자료가 됩니다",
     "speaker": {
-      "heading": "버그 요청은 하네스를 통과하며 안정됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>요청이 들어오면 규칙, 절차, 도구, 검증, 보고를 차례로 거칩니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "자료는 하네스를 통과하며 발표자료가 됩니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>Claude가 바로 HTML을 쓰기 전에 brief, spec, few-shot을 거치게 해야 결과가 흔들리지 않습니다.</p><p>이 단계에서 핵심은 HTML을 빨리 쓰는 것이 아니라 HTML을 쓰기 전의 결정들을 파일로 남기는 것입니다.</p>"
     }
   },
   {
     "file": "21-3-final-report-template.html",
     "parent": "21",
     "kind": "main",
-    "reviewTitle": "최종 보고는 완료의 증거를 보여 줍니다",
+    "reviewTitle": "최종 보고는 덱 품질의 증거입니다",
     "speaker": {
-      "heading": "최종 보고는 완료의 증거를 보여 줍니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>무엇을 바꿨는지보다 어떻게 검증했는지가 중요합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "최종 보고는 덱 품질의 증거입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>최종 보고는 “완료했습니다”가 아니라 다음 Claude와 발표자가 믿을 수 있는 증거 목록이어야 합니다.</p><p>변경 파일, 실행 명령, broken link, note exposure, overflow, 확인 URL이 있어야 다음 세션이 같은 기준으로 이어집니다.</p>"
     }
   },
   {
@@ -906,6 +920,7 @@ const sectionAssignments = [
     "files": [
       "21-final-workflow.html",
       "21-1-final-artifact-structure.html",
+      "21-10-practice-few-shot-placement.html",
       "21-2-bug-request-flow.html",
       "21-3-final-report-template.html",
       "21-5-handoff-why.html",

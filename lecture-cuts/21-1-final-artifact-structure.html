@@ -1,8 +1,15 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>최종 산출물은 작은 파일 구조로 남깁니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">21</div><h2>최종 산출물은 작은 파일 구조로 남깁니다</h2><p class="subtitle">수강생이 가져갈 것은 개념이 아니라 재사용 가능한 작업장입니다.</p><ul class="bullets"><li>CLAUDE.md: 규칙</li><li>skills/: 절차</li><li>agents/: 역할</li><li>hooks/evaluation: 검증</li></ul><div class="note"><strong>발표 포인트</strong>수강생이 가져갈 것은 개념이 아니라 재사용 가능한 작업장입니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="파일과 산출물 시각자료"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>project-harness/
+<main class="slide"><section class="copy"><div class="eyebrow">21</div><h2>최종 산출물은 lecture-deck/입니다</h2><p class="subtitle">수강생이 가져갈 것은 개념이 아니라 바로 복사해 쓸 수 있는 HTML/CSS deck 작업장입니다.</p><ul class="bullets"><li>source/spec/few-shot: 입력과 출력 형식</li><li>skills/agents: Claude가 따라갈 절차와 역할</li><li>deck/review: 발표용과 검토용 분리</li><li>scripts/hooks/handoff: 검증과 이어받기</li></ul><div class="note"><strong>발표 포인트</strong>폴더 구조가 곧 운영 방식입니다. 다음 발표자료는 이 구조 안에서 source만 바꾸고 다시 통과시키면 됩니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="HTML CSS deck automation harness file structure"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>lecture-deck/
+  source.md
+  slide-spec.json
+  few-shots.md
   CLAUDE.md
-  skills/bug-triage/SKILL.md
-  agents/reviewer.md
-  hooks/post-edit-test.json
-  evaluation/report-rubric.md</code></pre></div></div></section></main>
+  skills/deck-builder/SKILL.md
+  agents/researcher.md
+  agents/slide-reviewer.md
+  agents/visual-reviewer.md
+  scripts/verify-deck.js
+  deck.html
+  presenter-review.html
+  HANDOFF.md</code></pre></div></div></section></main>
 <nav class="nav"><a href="index.html">Index</a></nav></body></html>

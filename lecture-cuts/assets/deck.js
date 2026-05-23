@@ -2,6 +2,11 @@ const slides = window.LECTURE_SLIDES || [];
 
 const deck = document.querySelector("#deck");
 const printButton = document.querySelector("#printDeck");
+const previousButton = document.querySelector("#previousSlide");
+const nextButton = document.querySelector("#nextSlide");
+const deckStatus = document.querySelector("#deckStatus");
+let frames = [];
+let currentSlideIndex = 0;
 
 function makeSlideNumber(index) {
   const number = String(index + 1).padStart(2, "0");
@@ -10,6 +15,16 @@ function makeSlideNumber(index) {
 
 function getSlideFile(slide) {
   return typeof slide === "string" ? slide : slide.file;
+}
+
+function getHashSlideIndex() {
+  const match = window.location.hash.match(/^#slide-(\d+)$/);
+  if (!match) {
+    return 0;
+  }
+
+  const index = Number(match[1]) - 1;
+  return Number.isInteger(index) && index >= 0 && index < slides.length ? index : 0;
 }
 
 function makeSectionLabel(slideInfo) {
@@ -50,6 +65,7 @@ async function loadSlide(slideInfo, index) {
   frame.className = `deck-frame ${slideInfo.sectionStart ? "is-section-start" : "is-section-detail"}`;
   frame.setAttribute("aria-label", parsed.title || file);
   frame.dataset.source = file;
+  frame.dataset.slideIndex = String(index);
   if (slideInfo.sectionId) {
     frame.dataset.section = slideInfo.sectionId;
   }
@@ -68,12 +84,54 @@ async function loadSlide(slideInfo, index) {
   return frame;
 }
 
+function setActiveSlide(index, options = {}) {
+  if (!frames.length) {
+    return;
+  }
+
+  const boundedIndex = Math.min(Math.max(index, 0), frames.length - 1);
+  currentSlideIndex = boundedIndex;
+
+  frames.forEach((frame, frameIndex) => {
+    const isActive = frameIndex === currentSlideIndex;
+    frame.classList.toggle("is-active", isActive);
+    frame.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  if (previousButton) {
+    previousButton.disabled = currentSlideIndex === 0;
+  }
+  if (nextButton) {
+    nextButton.disabled = currentSlideIndex === frames.length - 1;
+  }
+
+  if (deckStatus) {
+    const slideInfo = slides[currentSlideIndex];
+    const title = slideInfo.reviewTitle || getSlideFile(slideInfo);
+    deckStatus.textContent = `${makeSlideNumber(currentSlideIndex)} · ${title}`;
+  }
+
+  if (options.updateHash !== false) {
+    const hash = `#slide-${currentSlideIndex + 1}`;
+    history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
+  }
+}
+
+function moveSlide(delta) {
+  setActiveSlide(currentSlideIndex + delta);
+}
+
+function isTypingTarget(target) {
+  return target?.closest?.("input, textarea, select, [contenteditable='true']");
+}
+
 async function renderDeck() {
   deck.replaceChildren();
 
   try {
-    const frames = await Promise.all(slides.map(loadSlide));
+    frames = await Promise.all(slides.map(loadSlide));
     deck.append(...frames);
+    setActiveSlide(getHashSlideIndex(), { updateHash: !window.location.hash });
   } catch (error) {
     const message = document.createElement("p");
     message.className = "deck-error";
@@ -83,5 +141,27 @@ async function renderDeck() {
 }
 
 printButton?.addEventListener("click", () => window.print());
+previousButton?.addEventListener("click", () => moveSlide(-1));
+nextButton?.addEventListener("click", () => moveSlide(1));
+window.addEventListener("hashchange", () => setActiveSlide(getHashSlideIndex(), { updateHash: false }));
+window.addEventListener("keydown", (event) => {
+  if (isTypingTarget(event.target)) {
+    return;
+  }
+
+  if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+    event.preventDefault();
+    moveSlide(1);
+  } else if (["ArrowLeft", "PageUp", "Backspace"].includes(event.key)) {
+    event.preventDefault();
+    moveSlide(-1);
+  } else if (event.key === "Home") {
+    event.preventDefault();
+    setActiveSlide(0);
+  } else if (event.key === "End") {
+    event.preventDefault();
+    setActiveSlide(frames.length - 1);
+  }
+});
 
 renderDeck();
