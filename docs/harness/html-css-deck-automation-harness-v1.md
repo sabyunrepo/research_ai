@@ -31,6 +31,7 @@ lecture-deck/
     verify-deck.json
 
   scripts/
+    run-hook.js
     verify-deck.js
 
   slides/
@@ -57,9 +58,18 @@ lecture-deck/
 5. deck-builder Skill: source 읽기, spec 만들기, 슬라이드 생성, 발표자용 분리, 검증, 보고를 절차화한다.
 6. Subagent 분리: researcher, slide-reviewer, visual-reviewer가 각각 자료, 흐름, 시각 품질을 검토한다.
 7. Tool / MCP 기준: Web search는 최신 자료 확인, Browser는 렌더링 확인, Filesystem은 HTML/CSS/JS 수정, verification script는 누락/링크/overflow 검사를 맡는다.
-8. Hook / Verification Gate: `scripts/verify-deck.js`와 `hooks/verify-deck.json`으로 통과 기준을 고정한다.
+8. Hook / Verification Gate: `scripts/run-hook.js`, `scripts/verify-deck.js`, `hooks/verify-deck.json`으로 통과 기준을 고정한다.
 9. Evaluation Report: 변경 파일, 실행 명령, 결과, 남은 위험, 확인 URL을 남긴다.
 10. Handoff: 목표, 현재 상태, 결정 사항, 검증 결과, 남은 작업, 다음 프롬프트를 기록한다.
+
+## Local hook setup
+
+- Claude Code local hook: `.claude/settings.local.json`
+- Claude Code shareable template: `.claude/settings.local.example.json`
+- Codex project hook: `.codex/hooks.json`
+- Shared runner: `lecture-deck/scripts/run-hook.js pre-handoff`
+
+두 도구 모두 같은 runner를 호출한다. 따라서 Claude Code와 Codex 중 어느 쪽에서 작업하더라도 handoff 직전 검증 기준은 `hooks/verify-deck.json` 하나로 유지된다.
 
 ## 강의에서 강조할 한 문장
 

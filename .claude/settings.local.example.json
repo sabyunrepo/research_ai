@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'cd \"$CLAUDE_PROJECT_DIR\" && node lecture-deck/scripts/run-hook.js pre-handoff'",
+            "timeout": 90
+          }
+        ]
+      }
+    ]
+  }
+}

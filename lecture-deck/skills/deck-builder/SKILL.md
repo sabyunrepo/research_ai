@@ -22,7 +22,7 @@ Use this skill when the task is to create or update an HTML/CSS lecture deck.
 4. Create or update slide files in `slides/`.
 5. Keep shared styling and navigation in `assets/style.css`, `assets/slides.js`, and `assets/deck.js`.
 6. Keep presenter-only content in `.note` and `speakerNote`; do not expose it in `deck.html`.
-7. Run `node scripts/verify-deck.js`.
+7. Run `node scripts/run-hook.js pre-handoff`.
 8. Fill the final report using `evaluation-template.md`.
 9. Update `HANDOFF.md` with current state, decisions, verification result, remaining risks, and next prompt.
 
