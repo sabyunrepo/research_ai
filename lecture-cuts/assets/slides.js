@@ -114,7 +114,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "더 똑똑하라고 하지 말고 절차를 만듭니다",
     "speaker": {
       "heading": "더 똑똑하라고 하지 말고 절차를 만듭니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>Read → Plan → Edit → Verify → Report는 AI가 지나가야 하는 최소 작업선입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>읽기 → 계획 → 수정 → 검증 → 보고는 AI가 지나가야 하는 최소 작업선입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
     }
   },
   {
@@ -141,9 +141,9 @@ window.LECTURE_SLIDES = [
     "file": "13-spec-driven.html",
     "parent": "13",
     "kind": "main",
-    "reviewTitle": "Spec-driven은 vibe coding의 반대편입니다",
+    "reviewTitle": "명세 기반 작업은 즉흥 구현의 반대편입니다",
     "speaker": {
-      "heading": "Spec-driven은 vibe coding의 반대편입니다",
+      "heading": "명세 기반 작업은 즉흥 구현의 반대편입니다",
       "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 즉흥적인 대화 구현에서 파일로 남는 합의로 넘어가는 전환점입니다.</p><p>목표, 비목표, 제약, 완료 기준을 먼저 고정하면 이후 prompt, few-shot, review, evaluation이 모두 같은 기준을 바라보게 됩니다.</p>"
     }
   },
@@ -151,9 +151,9 @@ window.LECTURE_SLIDES = [
     "file": "13-1-vibe-vs-spec.html",
     "parent": "13",
     "kind": "example",
-    "reviewTitle": "Spec-driven은 즉흥 구현을 줄입니다",
+    "reviewTitle": "명세 기반 작업은 즉흥 구현을 줄입니다",
     "speaker": {
-      "heading": "Spec-driven은 즉흥 구현을 줄입니다",
+      "heading": "명세 기반 작업은 즉흥 구현을 줄입니다",
       "html": "<strong>상세 발표 스크립트</strong><p>대화 속 감각이 아니라 파일로 남는 합의를 먼저 만듭니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
     }
   },
@@ -161,10 +161,10 @@ window.LECTURE_SLIDES = [
     "file": "13-2-spec-contract.html",
     "parent": "13",
     "kind": "main",
-    "reviewTitle": "좋은 spec은 네 가지를 고정합니다",
+    "reviewTitle": "좋은 명세는 네 가지를 고정합니다",
     "speaker": {
-      "heading": "좋은 spec은 네 가지를 고정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>goal, non-goal, constraints, acceptance criteria가 구현의 난간이 됩니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "좋은 명세는 네 가지를 고정합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>목표, 제외 범위, 제약, 통과 기준이 구현의 난간이 됩니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
     }
   },
   {
@@ -269,26 +269,30 @@ window.LECTURE_SLIDES = [
     "file": "07-reasoning-prompts.html",
     "parent": "07",
     "kind": "main",
-    "reviewTitle": "“천천히 생각해”를 남발하지 않습니다"
+    "reviewTitle": "“단계별로 생각해”를 남발하지 않습니다",
+    "speaker": {
+      "heading": "“단계별로 생각해”를 남발하지 않습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이 슬라이드의 핵심은 “생각을 길게 해”라는 말보다 작업 조건을 분명하게 주는 편이 더 실무적이라는 점입니다.</p><p>먼저 목표와 조건을 포함해 명확하게 요청합니다. 결과가 원하는 모양으로 나오지 않을 때만 예시를 추가합니다. 그리고 체크리스트, 할 일 목록, 검증 목록처럼 모델이 따라갈 기준을 제시합니다.</p><p>원문으로는 “Let's think step by step”이라는 표현이 널리 쓰였지만, 최신 추론형 모델에서는 이 문구를 습관처럼 붙이기보다 무엇을 하고, 무엇으로 확인하고, 어떻게 보고할지를 정해 주는 것이 더 안정적입니다.</p>"
+    }
   },
   {
     "file": "07-1-reasoning-output-pattern.html",
     "parent": "07",
     "kind": "main",
-    "reviewTitle": "생각을 길게 요구하기보다 산출물을 선명하게 요구합니다",
+    "reviewTitle": "결과 기준을 선명하게 요구합니다",
     "speaker": {
-      "heading": "생각을 길게 요구하기보다 산출물을 선명하게 요구합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>목표, 입력, 제한, 검증, 출력 형식이 reasoning보다 중요할 때가 많습니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "결과 기준을 선명하게 요구합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>앞 슬라이드가 좋은 요청의 기본 구조였다면, 이 슬라이드는 결과 기준을 더 구체화합니다.</p><p>오른쪽 예시는 결과물, 확인 지점, 통과 기준, 보고 형식, 남은 위험을 한 요청 안에 넣는 방식입니다. 이렇게 해야 답변이 그럴듯한 설명에서 끝나지 않고 검증 가능한 작업 결과가 됩니다.</p>"
     }
   },
   {
     "file": "07-2-reasoning-avoid-overask.html",
     "parent": "07",
     "kind": "main",
-    "reviewTitle": "reasoning model에도 과한 설명 요구는 비용입니다",
+    "reviewTitle": "작업 성격에 따라 요청 강도를 조절합니다",
     "speaker": {
-      "heading": "reasoning model에도 과한 설명 요구는 비용입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>필요한 것은 긴 생각이 아니라 올바른 작업 조건과 검증 기준입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "작업 성격에 따라 요청 강도를 조절합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>앞의 두 슬라이드가 좋은 요청의 구성 요소를 설명했다면, 이 슬라이드는 언제 얼마나 붙일지를 정리합니다.</p><p>간단한 일에는 목표만 선명하게 줘도 충분합니다. 출력 형식이 중요한 일에는 예시를 붙이고, 장애나 데이터 변경처럼 위험한 일에는 검증 목록과 보고 기준을 붙입니다. 모르는 것이 많은 일은 바로 시키기보다 질문이나 조사를 먼저 요청합니다.</p>"
     }
   },
   {
@@ -533,9 +537,9 @@ window.LECTURE_SLIDES = [
     "file": "18-mcp.html",
     "parent": "18",
     "kind": "main",
-    "reviewTitle": "MCP는 실제 세계와 연결하는 Tool Layer입니다",
+    "reviewTitle": "MCP는 실제 세계와 연결하는 도구 레이어입니다",
     "speaker": {
-      "heading": "MCP는 실제 세계와 연결하는 Tool Layer입니다",
+      "heading": "MCP는 실제 세계와 연결하는 도구 레이어입니다",
       "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 모델이 외부 시스템을 직접 아는 것이 아니라, Host와 MCP client, MCP server, tool/resource/prompt를 통해 연결된다는 점을 잡아 줍니다.</p><p>핵심은 도구를 많이 붙이는 것이 아니라 읽기, 쓰기, 승인 권한을 나누고 필요한 순간에만 연결하는 것입니다.</p>"
     }
   },
@@ -820,7 +824,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "HANDOFF.md는 상태와 결정을 같이 남깁니다",
     "speaker": {
       "heading": "HANDOFF.md는 상태와 결정을 같이 남깁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>파일 목록보다 중요한 것은 현재 상태, 결정, 검증, 남은 일, 다음 프롬프트입니다.</p><p>좋은 handoff에는 Current State, Decisions, Verification, Remaining Work, Next Prompt가 들어갑니다. 이렇게 남기면 다음 Claude는 처음부터 다시 판단하지 않고, 이미 합의된 기준 위에서 이어서 작업합니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>파일 목록보다 중요한 것은 현재 상태, 결정, 검증, 남은 일, 다음 프롬프트입니다.</p><p>좋은 이어받기 문서에는 현재 상태, 결정, 검증, 남은 일, 다음 요청이 들어갑니다. 이렇게 남기면 다음 Claude는 처음부터 다시 판단하지 않고, 이미 합의된 기준 위에서 이어서 작업합니다.</p>"
     }
   },
   {
@@ -840,7 +844,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "발표자료 handoff를 작성합니다",
     "speaker": {
       "heading": "발표자료 handoff를 작성합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>다음 세션이 슬라이드 작업을 이어받을 수 있도록 상태 파일을 남깁니다.</p><p>실습에서는 Current State, Decisions, Verification, Remaining Work, Next Prompt 다섯 칸을 채웁니다. 이 결과물이 있어야 자동화 워크플로우가 한 번의 대화가 아니라 반복 가능한 운영 방식이 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>다음 세션이 슬라이드 작업을 이어받을 수 있도록 상태 파일을 남깁니다.</p><p>실습에서는 현재 상태, 결정, 검증, 남은 일, 다음 요청 다섯 칸을 채웁니다. 이 결과물이 있어야 자동화 워크플로우가 한 번의 대화가 아니라 반복 가능한 운영 방식이 됩니다.</p>"
     }
   },
   {

@@ -209,6 +209,47 @@ pre {
 
 code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
+.glossary-term {
+  position: relative;
+  display: inline;
+  border-bottom: 2px dotted var(--accent);
+  color: inherit;
+  cursor: help;
+  text-decoration: none;
+  outline: none;
+}
+
+.glossary-term:focus-visible {
+  border-bottom-style: solid;
+  box-shadow: 0 2px 0 var(--accent);
+}
+
+.glossary-popover {
+  position: fixed;
+  z-index: 200;
+  width: min(320px, 72vw);
+  padding: 10px 12px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: left;
+  white-space: normal;
+  box-shadow: 8px 8px 0 rgba(17, 17, 17, .14);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity .12s ease, transform .12s ease;
+}
+
+.glossary-popover.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .sources {
   margin-top: 18px;
   color: var(--muted);
@@ -1052,6 +1093,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   left: 42px;
   display: grid;
   place-items: center;
+  align-content: center;
+  gap: 4px;
   width: 138px;
   height: 84px;
   border: 3px dashed var(--line);
@@ -1059,6 +1102,13 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   color: var(--muted);
   font-weight: 900;
   animation: cloud-drift 3.6s ease-in-out infinite;
+}
+
+.thought-cloud span {
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.12;
+  text-align: center;
 }
 
 .reasoning-line {
@@ -1908,6 +1958,20 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   overflow-wrap: anywhere;
 }
 
+.result-criteria-example {
+  place-items: center;
+}
+
+.result-criteria-example .artifact-window {
+  width: min(100%, 560px);
+}
+
+.result-criteria-example .artifact-window pre {
+  padding: 18px 20px;
+  font-size: clamp(12px, 1.16vw, 15px);
+  line-height: 1.5;
+}
+
 .evidence-window {
   width: min(100%, 620px);
   border: 2px solid var(--line);
@@ -2495,6 +2559,16 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .deck-frame .artifact-window pre {
   font-size: 12px;
   padding: 16px;
+}
+
+.deck-frame .result-criteria-example .artifact-window {
+  width: min(100%, 540px);
+}
+
+.deck-frame .result-criteria-example .artifact-window pre {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .deck-frame .evidence-window {
