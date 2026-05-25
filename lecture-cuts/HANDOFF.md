@@ -7,13 +7,12 @@
 - `scripts/validate-lecture-cuts-contract.js` now fails if current HTML drifts from `slide-spec.json`.
 - `scripts/audit-lecture-cuts.js` now includes reproduction contract validation.
 - `scripts/run-lecture-cuts-hook.js` and `scripts/verify-lecture-cuts-harness.js` define the pre-handoff gate.
-- `lecture-cuts/assets/glossary.js` is the single glossary registry shared by deck and presenter review.
+- Visible deck output files are treated as generated/current-result artifacts and must remain stable unless the task explicitly asks for output changes.
 
 ## Inputs
 
 - `lecture-cuts/source.md`
 - `lecture-cuts/assets/slides.js`
-- `lecture-cuts/assets/glossary.js`
 - `lecture-cuts/*.html`
 - `lecture-cuts/presenter-preview.html`
 - `lecture-cuts/sources.html`
@@ -40,6 +39,7 @@
 - `deck-harness/` is the reusable workflow for future topics.
 - `slide-spec.json` is a generated reproduction contract, not a hand-edited planning document.
 - Intentional slide content edits must regenerate `slide-spec.json`.
+- Workflow-only improvements must not change `lecture-cuts/deck.html`, `lecture-cuts/presenter-review.html`, or presentation runtime JS unless the user explicitly requests output changes.
 - Handoff must include command evidence, artifact paths, agent findings, blocked risks, non-blocking risks, and a next prompt.
 
 ## Changed Files
@@ -51,7 +51,6 @@
 - `scripts/run-lecture-cuts-hook.js`
 - `scripts/verify-lecture-cuts-harness.js`
 - `lecture-cuts/slide-spec.json`
-- `lecture-cuts/assets/glossary.js`
 - `lecture-cuts/source.md`
 - `lecture-cuts/HANDOFF.md`
 - `lecture-cuts/hooks/*.json`
@@ -112,15 +111,7 @@
 
 - Exit Code: 0
 - PASS: syntax checks, reproduction contract, lecture-cuts audit, pre-handoff hooks.
-- PASS: `lecture-cuts/assets/glossary.js` syntax check is included in the unified gate.
 - Artifact Path: `scripts/verify-lecture-cuts-harness.js`
-
-### Browser Spot Check: http://127.0.0.1:8766/deck.html?glossary=central2#slide-23
-
-- PASS: `assets/glossary.js` loads before `assets/deck.js`.
-- PASS: glossary term hover uses the custom popover.
-- PASS: glossary terms do not use a native `title` tooltip.
-- PASS: partial `PR` matching inside `pressure` was not reproduced.
 
 ## Agent Findings
 
@@ -135,7 +126,7 @@
 
 - Existing overflow warnings are preserved as audit WARN until an allowlist or visual remediation task handles them.
 - Current source map is strong enough for reproduction but not yet 100% per-slide claim grounding.
-- Full unified verification is pending until all worker-generated agent and skill files land.
+- Glossary centralization and partial-term matching fixes are workflow requirements for future decks, but the visible lecture-cuts runtime was not changed in this workflow-only pass.
 
 ## Next Prompt
 

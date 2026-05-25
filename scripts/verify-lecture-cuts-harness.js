@@ -98,7 +98,6 @@ function main() {
   }
 
   run("slides syntax", process.execPath, ["--check", "lecture-cuts/assets/slides.js"]);
-  run("glossary syntax", process.execPath, ["--check", "lecture-cuts/assets/glossary.js"]);
   run("deck syntax", process.execPath, ["--check", "lecture-cuts/assets/deck.js"]);
   run("presenter review syntax", process.execPath, ["--check", "lecture-cuts/assets/presenter-review.js"]);
   console.log("PASS syntax checks");

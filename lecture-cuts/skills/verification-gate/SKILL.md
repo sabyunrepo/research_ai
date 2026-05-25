@@ -55,7 +55,6 @@ Mandatory gate:
 
 ```sh
 node --check lecture-cuts/assets/slides.js
-node --check lecture-cuts/assets/glossary.js
 node --check lecture-cuts/assets/deck.js
 node --check lecture-cuts/assets/presenter-review.js
 node scripts/validate-lecture-cuts-contract.js

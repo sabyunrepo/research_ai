@@ -27,7 +27,6 @@ Before final completion, run:
 
 ```sh
 node scripts/export-lecture-cuts-contract.js --check-confidence
-node --check lecture-cuts/assets/glossary.js
 node scripts/validate-lecture-cuts-contract.js
 node scripts/audit-lecture-cuts.js
 node scripts/verify-lecture-cuts-harness.js
