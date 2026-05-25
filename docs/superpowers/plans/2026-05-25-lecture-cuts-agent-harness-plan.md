@@ -160,6 +160,9 @@ lecture-cuts/
     lecture-cuts-handoff.json
 
 docs/harness/
+  codex-session-inventory.md
+  codex-session-source-map.json
+  codex-session-decision-log.md
   topic-to-deck-workflow.md
   deck-quality-rubric.md
   topic-to-deck-evaluation-template.md
@@ -169,6 +172,7 @@ docs/harness/
   lecture-cuts-reproduction-contract.md
 
 scripts/
+  collect-codex-session-corpus.js
   export-lecture-cuts-contract.js
   validate-lecture-cuts-contract.js
   run-lecture-cuts-hook.js
@@ -195,15 +199,15 @@ Use these as the subagent axes during execution. Each subagent writes findings i
 
 ```text
 research-agent
-  Reads: user topic, provided files, official docs, current sources when needed
+  Reads: user topic, provided files, official docs, current sources when needed, Codex session decision log when building this project's reusable harness
   Produces: research dossier, source list, date-sensitive claim list
 
 source-grounding-agent
-  Reads: research dossier, official docs, claim map
+  Reads: research dossier, official docs, claim map, Codex session source map when conversation-derived decisions are used
   Produces: claim/source map, weak-source list, slide-visible vs speaker-note-only recommendation
 
 curriculum-architect-agent
-  Reads: topic intake, audience, workshop length, research dossier
+  Reads: topic intake, audience, workshop length, research dossier, Codex session decision log for workshop-quality requirements
   Produces: section plan, learning objectives, pacing map
 
 slide-spec-agent
@@ -247,7 +251,7 @@ harness-verification-agent
   Produces: verification gate matrix and missing gates
 
 harness-architect-agent
-  Reads: all agent outputs and target file structure
+  Reads: all agent outputs, target file structure, Codex session inventory, and Codex session decision log
   Produces: final integration recommendations for skills, hooks, scripts
 ```
 
@@ -308,6 +312,140 @@ git commit -m "Improve lecture workshop deck review experience"
 ```
 
 Expected: a clean baseline commit for the current visible deck before new harness files are added.
+
+## Task 0A: Collect Codex Conversation Session Corpus
+
+**Purpose:** Include the project's Codex conversation sessions as first-class source material, not just the current repo files. This prevents the harness from losing decisions, rejected options, quality failures, and user preferences that only exist in prior Codex conversations.
+
+**Files:**
+- Create: `scripts/collect-codex-session-corpus.js`
+- Create: `docs/harness/codex-session-inventory.md`
+- Create: `docs/harness/codex-session-source-map.json`
+- Create: `docs/harness/codex-session-decision-log.md`
+- Read: `/Users/sabyun/.codex/sessions/**/rollout-*.jsonl`
+- Read: `session-notes/*.md`
+- Read: `/Users/sabyun/.codex/memories/MEMORY.md`
+
+- [ ] **Step 1: Discover candidate Codex sessions**
+
+Create `scripts/collect-codex-session-corpus.js` that:
+
+```text
+1. Searches /Users/sabyun/.codex/sessions for jsonl files containing /Users/sabyun/goinfre/research_ai.
+2. Excludes subagent-only sessions unless their parent session is this project and their output was used as evidence.
+3. Groups files by top-level thread id when session metadata exposes it.
+4. Writes candidate sessions to docs/harness/codex-session-inventory.md.
+5. Marks each candidate as included, excluded-subagent, duplicate, or unavailable.
+```
+
+Run:
+
+```sh
+node scripts/collect-codex-session-corpus.js --discover
+```
+
+Expected:
+
+```text
+Wrote docs/harness/codex-session-inventory.md
+Top-level sessions discovered: 4
+Subagent sessions discovered: <count>
+```
+
+If the discovered top-level count is not 4, the inventory must list the mismatch and require manual selection before proceeding.
+
+- [ ] **Step 2: Extract session-level handoff summaries**
+
+For each included top-level Codex conversation session, write one section in `docs/harness/codex-session-inventory.md`:
+
+```text
+## Session <n>: <thread id or filename>
+
+Status: included|excluded|needs-review
+Date:
+Raw transcript path:
+Related commits:
+
+### 발견
+### 수행
+### 판단
+### 미해결
+### 근거
+```
+
+Rules:
+
+```text
+- The current session is included as Session 4 or the latest session.
+- Prior sessions are not trusted blindly; decisions must cite transcript path or repo artifact path.
+- If a session only produced a repo artifact, cite the artifact and mark the raw transcript as supporting evidence.
+- If a session is inaccessible, write unavailable with the missing path and impact.
+```
+
+- [ ] **Step 3: Create session source map**
+
+Create `docs/harness/codex-session-source-map.json`:
+
+```json
+{
+  "sessions": [
+    {
+      "id": "019e54d5-629f-7b80-89ac-a80c628987af",
+      "status": "included",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/23/rollout-...",
+      "summaryPath": "docs/harness/codex-session-inventory.md#session-1",
+      "repoArtifacts": [
+        "lecture-deck/HANDOFF.md",
+        "docs/harness/html-css-deck-automation-harness-v1.md"
+      ],
+      "decisionsExtracted": ["decision-001"],
+      "risksExtracted": ["risk-001"]
+    }
+  ]
+}
+```
+
+This file must be used by later source-grounding, skill, verification, and handoff agents as a source registry for conversation-derived decisions.
+
+- [ ] **Step 4: Create decision log**
+
+Create `docs/harness/codex-session-decision-log.md` with:
+
+```text
+# Codex Session Decision Log
+
+## Stable Decisions
+## Superseded Decisions
+## Quality Failures Observed
+## User Preferences
+## Workflow Requirements
+## Open Questions
+```
+
+Rules:
+
+```text
+- If two sessions conflict, the newer session wins only when it is explicitly about the same requirement.
+- Superseded decisions stay in the log with the reason they were superseded.
+- User preferences must distinguish "asked once for this deck" from "reusable workflow rule".
+```
+
+- [ ] **Step 5: Wire session corpus into later agents**
+
+Update the later agent and skill tasks so they require these reads before generating the generic harness:
+
+```text
+docs/harness/codex-session-inventory.md
+docs/harness/codex-session-source-map.json
+docs/harness/codex-session-decision-log.md
+session-notes/2026-05-23-ai-harness-automation-workflow.md
+```
+
+Expected rule:
+
+```text
+No generic deck-harness agent, skill, schema, or verification gate is complete until it has checked the Codex session decision log for applicable requirements.
+```
 
 ## Task 1: Export The Golden Reference Deck Contract
 
@@ -435,6 +573,9 @@ If any field is `low`, the exporter must write the exact slide id and field name
 - Create: `docs/harness/topic-to-deck-workflow.md`
 - Create: `docs/harness/deck-quality-rubric.md`
 - Create: `docs/harness/topic-to-deck-evaluation-template.md`
+- Read: `docs/harness/codex-session-inventory.md`
+- Read: `docs/harness/codex-session-source-map.json`
+- Read: `docs/harness/codex-session-decision-log.md`
 
 - [ ] **Step 1: Define the workflow document**
 
@@ -755,6 +896,7 @@ Overflow allowlist items must contain slide id, selector, reason, owner, and exp
 - Create: `deck-harness/agents/deck-builder-agent.md`
 - Create: `deck-harness/agents/verification-agent.md`
 - Create: `deck-harness/agents/handoff-agent.md`
+- Read: `docs/harness/codex-session-decision-log.md`
 
 - [ ] **Step 1: Create shared agent contract**
 
@@ -773,6 +915,12 @@ Every `deck-harness/agents/*.md` file must include these headings:
 ```
 
 Every agent must write a report section with the status block defined in "Agent Work Split". The verification agent is a reviewer of other agents' outputs; it must not repair deck-builder output silently.
+
+Each agent must include this rule:
+
+```text
+Before writing final output, check docs/harness/codex-session-decision-log.md for applicable stable decisions, superseded decisions, and quality failures. Cite any session-derived rule in Evidence Rules.
+```
 
 - [ ] **Step 2: Create research agent**
 
@@ -868,6 +1016,7 @@ handoff-agent:
 - Create: `deck-harness/skills/html-css-deck-builder/SKILL.md`
 - Create: `deck-harness/skills/deck-quality-gate/SKILL.md`
 - Create: `deck-harness/skills/handoff-maintainer/SKILL.md`
+- Read: `docs/harness/codex-session-decision-log.md`
 
 - [ ] **Step 1: Create shared skill skeleton**
 
@@ -898,6 +1047,7 @@ Rules:
 - Outputs names exact file paths.
 - Verification contains commands or concrete checks, not references to another section only.
 - Stop Conditions lists when the agent must stop and ask or mark FAIL.
+- Procedure includes a check of docs/harness/codex-session-decision-log.md when the skill is used for this project harness.
 ```
 
 - [ ] **Step 2: Create topic intake skill**
@@ -1844,6 +1994,8 @@ node deck-harness/scripts/verify-deck-quality.js generated-decks/sample-topic-li
 Completion requires:
 
 ```text
+- all four project-level Codex conversation sessions are included in docs/harness/codex-session-inventory.md, or any unavailable session is explicitly listed with impact.
+- docs/harness/codex-session-decision-log.md has been checked by generic agent, skill, verification, and handoff tasks.
 - claim-source-map coverage is 100% for slide-visible factual claims, or the claim is explicitly marked avoid/inference with a reason.
 - every presenter-review evidenceClaimId resolves to claim-source-map.json.
 - every workflow stage has a job-manifest.json entry with owner, input hash, output hash, status, and evidence path.
@@ -1854,6 +2006,9 @@ Completion requires:
 These reusable workflow files must exist with non-empty content:
 
 ```text
+docs/harness/codex-session-inventory.md
+docs/harness/codex-session-source-map.json
+docs/harness/codex-session-decision-log.md
 deck-harness/workflow.md
 deck-harness/quality-rubric.md
 deck-harness/topic-intake.template.md
@@ -1908,10 +2063,11 @@ Use subagent-driven execution:
 
 ```text
 Round 1: freeze current deck state and commit the current visible deck baseline
-Round 2: extract lecture-cuts golden-reference contract and quality rubric
-Round 3: build generic topic-to-deck agents, skills, templates, and schemas
-Round 4: build generic scaffold/build/validate/verify scripts
-Round 5: add lecture-cuts-specific reproduction contract and hooks
-Round 6: run sample-topic-fixture and sample-topic-live-research generation with browser quality gates
-Round 7: update handoff files, audit docs, and commit
+Round 2: collect the four project-level Codex conversation sessions and extract decisions, quality failures, and open risks
+Round 3: extract lecture-cuts golden-reference contract and quality rubric
+Round 4: build generic topic-to-deck agents, skills, templates, and schemas
+Round 5: build generic scaffold/build/validate/verify scripts
+Round 6: add lecture-cuts-specific reproduction contract and hooks
+Round 7: run sample-topic-fixture and sample-topic-live-research generation with browser quality gates
+Round 8: update handoff files, audit docs, and commit
 ```
