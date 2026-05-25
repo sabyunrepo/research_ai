@@ -151,12 +151,28 @@ expand-compare-visual: 11
 
 ## 미해결
 
-1. `lecture-cuts/16-2-hook-command.html`의 hook JSON을 공식 schema로 고쳐야 한다.
-2. `lecture-cuts/17-hook-advanced.html`의 "Prompt Hook / Agent Hook" 표현을 공식 이벤트명과 구분해야 한다.
-3. `lecture-cuts/18-1-mcp-bridge.html`에 Host / MCP Client / MCP Server / tools / resources / prompts 구분을 넣어야 한다.
-4. `lecture-cuts/21-1-final-artifact-structure.html`에 "강의용 harness path"와 "Claude Code 공식 skill path"를 분리해야 한다.
-5. standalone HTML `Prev/Next` 링크를 `assets/slides.js` 순서에 맞추거나, standalone nav는 index-only로 단순화해야 한다.
-6. 1280x720 발표 환경에서 `.deck-stage` 높이 계산을 수정해야 한다.
-7. overflow warning이 나온 slide들을 실제 화면 기준으로 선별 수정해야 한다.
-8. CSS visual 반복 구간 중 일부를 실제 파일 tree, screenshot, schema/code diff로 교체해야 한다.
-9. 20~30분 condensed deck과 4시간 workshop deck을 분리할지 결정해야 한다.
+## Resolution Status
+
+### 해결됨
+
+1. `lecture-cuts/16-2-hook-command.html`의 hook JSON을 공식 nested hook schema 형태로 수정했다.
+2. `lecture-cuts/17-hook-advanced.html`의 "Prompt Hook / Agent Hook" 표현을 제거하고, 공식 이벤트와 검사 깊이를 구분하도록 바꿨다.
+3. `lecture-cuts/18-1-mcp-bridge.html`에 Host / MCP Client / MCP Server / tools / resources / prompts 구분을 넣었다.
+4. `lecture-cuts/11-1-real-skill-folder.html`, `lecture-cuts/21-1-final-artifact-structure.html`에서 workshop harness path와 Claude Code 공식 skill path를 분리했다.
+5. 1280x720 projector viewport audit를 `scripts/audit-lecture-cuts.js`에 추가했고, 현재 87개 slide frame이 viewport 안에 들어온다.
+6. 반복적인 abstract visual 중 `06-1`, `08-2`, `11-1`, `21-1`, `21-6`을 실제 파일/폴더/산출물형 evidence window로 바꿨다.
+7. standalone HTML의 잘못된 Prev/Next 링크는 `Index / Deck / Review` 중심 nav로 단순화했다.
+8. `lecture-cuts/sources.html`을 추가하고, Presenter Review에 공식 출처 chip을 붙였다.
+9. 4시간 워크숍 전제를 `lecture-cuts/index.html`, `lecture-plan.html`, `lecture-cuts/assets/slides.js` 발표자 노트에 반영했다.
+
+### 남은 실사용 확인
+
+1. `WARN overflow`는 headless 검사 기준으로 남아 있다. 현재 1280x720 frame fit은 통과하지만, 실제 강의장 projector와 브라우저 zoom에서 제목/visual clipping이 체감되는지 확인해야 한다.
+2. 섹션 시작 슬라이드 일부는 inline speaker가 아니라 `presenter-preview.html` fallback script를 사용한다. `PASS presenter scripts - 87 review scripts resolved`는 통과했다.
+3. 20~30분 condensed deck은 이번 pass에서 만들지 않았다. 현재 canonical 자료는 4시간 워크숍용이다.
+
+## Next Session Prompt
+
+```text
+Continue from docs/audits/2026-05-25-lecture-materials-validation.md and verify the 4-hour workshop deck on the actual projector resolution. Do not create a condensed deck unless explicitly requested.
+```

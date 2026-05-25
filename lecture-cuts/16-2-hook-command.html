@@ -1,10 +1,17 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hook의 command는 실제 실행되는 검문소입니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">16</div><h2>Hook의 command는 실제 실행되는 검문소입니다</h2><p class="subtitle">“테스트해”라는 지시가 아니라 실제 명령을 연결합니다.</p><ul class="bullets"><li>처음에는 echo로 시작합니다.</li><li>확인 뒤 lint/test로 올립니다.</li><li>긴 명령은 범위를 좁힙니다.</li></ul><div class="note"><strong>발표 포인트</strong>“테스트해”라는 지시가 아니라 실제 명령을 연결합니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="파일과 산출물 시각자료"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>{
+<main class="slide"><section class="copy"><div class="eyebrow">16</div><h2>Hook의 command는 실제 실행되는 검문소입니다</h2><p class="subtitle">Hook은 이벤트에 matcher를 붙이고, 그 안에서 command를 실행합니다.</p><ul class="bullets"><li>처음에는 echo로 시작합니다.</li><li>확인 뒤 lint/test로 올립니다.</li><li>긴 명령은 범위를 좁힙니다.</li></ul><div class="note"><strong>발표 포인트</strong>“테스트해”라는 지시가 아니라 공식 schema에 맞는 실제 명령을 연결합니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="Claude Code hook schema 예시"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>{
   &quot;hooks&quot;: {
-    &quot;PostToolUse&quot;: [{
-      &quot;matcher&quot;: &quot;Edit|Write&quot;,
-      &quot;command&quot;: &quot;pnpm test&quot;
-    }]
+    &quot;PostToolUse&quot;: [
+      {
+        &quot;matcher&quot;: &quot;Edit|Write&quot;,
+        &quot;hooks&quot;: [
+          {
+            &quot;type&quot;: &quot;command&quot;,
+            &quot;command&quot;: &quot;pnpm test&quot;
+          }
+        ]
+      }
+    ]
   }
 }</code></pre></div></div></section></main>
 <nav class="nav"><a href="index.html">Index</a></nav></body></html>

@@ -24,6 +24,7 @@ async function loadScripts() {
         meta: `${slide.parent} · ${slide.reviewTitle}`,
         heading: slide.speaker.heading || slide.reviewTitle,
         script: slide.speaker.html,
+        sources: slide.sources || [],
       };
     }
 
@@ -34,6 +35,7 @@ async function loadScripts() {
       meta: cut?.querySelector(".preview-meta")?.textContent?.trim() || makeSlideNumber(index),
       heading: cut?.querySelector("h2")?.textContent?.trim() || slide.reviewTitle || `Slide ${index + 1}`,
       script: cut?.querySelector(".script-full")?.innerHTML || "<strong>상세 발표 스크립트</strong><p>등록된 스크립트가 없습니다.</p>",
+      sources: slide.sources || [],
     };
   });
 }
@@ -102,6 +104,21 @@ function makeScriptPanel(scriptInfo) {
   body.innerHTML = scriptInfo.script;
 
   panel.append(meta, heading, body);
+
+  if (scriptInfo.sources?.length) {
+    const sources = document.createElement("div");
+    sources.className = "review-sources";
+    scriptInfo.sources.forEach((source) => {
+      const link = document.createElement("a");
+      link.href = source.url;
+      link.textContent = source.label;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      sources.append(link);
+    });
+    panel.append(sources);
+  }
+
   return panel;
 }
 

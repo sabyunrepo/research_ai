@@ -337,6 +337,7 @@ async function runBrowserAudit(slides) {
     const client = await cdpClient(pageWs);
 
     for (const viewport of [
+      { name: "projector render", width: 1280, height: 720, mobile: false, requireViewportFit: true },
       { name: "desktop render", width: 1366, height: 768, mobile: false },
       { name: "mobile render", width: 390, height: 844, mobile: true },
     ]) {
@@ -345,6 +346,7 @@ async function runBrowserAudit(slides) {
       const report = await evaluate(client, `
         (async () => {
           const issues = [];
+          const viewportIssues = [];
           const imageIssues = [];
           const tolerance = 3;
           for (let index = 0; index < window.LECTURE_SLIDES.length; index += 1) {
@@ -355,6 +357,15 @@ async function runBrowserAudit(slides) {
             if (!activeFrame || !activeSlide) {
               issues.push({ slide: index + 1, reason: "missing active slide" });
               continue;
+            }
+            const frameRect = activeFrame.getBoundingClientRect();
+            if (frameRect.bottom > window.innerHeight + tolerance || frameRect.top < -tolerance) {
+              viewportIssues.push({
+                slide: window.LECTURE_SLIDES[index].file,
+                top: Math.round(frameRect.top),
+                bottom: Math.round(frameRect.bottom),
+                viewportHeight: window.innerHeight
+              });
             }
             [activeSlide, ...activeSlide.querySelectorAll("*")].forEach((element) => {
               if (element.scrollWidth > element.clientWidth + tolerance || element.scrollHeight > element.clientHeight + tolerance) {
@@ -380,6 +391,7 @@ async function runBrowserAudit(slides) {
             noteCount: document.querySelectorAll("#deck .note").length,
             errors: Array.from(document.querySelectorAll(".deck-error")).map((node) => node.textContent.trim()),
             issues,
+            viewportIssues,
             imageIssues
           };
         })()
@@ -401,6 +413,14 @@ async function runBrowserAudit(slides) {
         fail(`${viewport.name} images`, JSON.stringify(report.imageIssues.slice(0, 10)));
       } else {
         pass(`${viewport.name} images`, "all visible slide images loaded");
+      }
+
+      if (viewport.requireViewportFit) {
+        if (report.viewportIssues.length) {
+          fail("projector viewport fit", JSON.stringify(report.viewportIssues.slice(0, 20)));
+        } else {
+          pass("projector viewport fit", `${slides.length} slides checked`);
+        }
       }
 
       if (report.issues.length) {

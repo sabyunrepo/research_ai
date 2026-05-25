@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 에이전트 하네스 엔지니어링 Sources</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="deck-index">
+    <h1>근거 Sources</h1>
+    <p class="lead">
+      공식 용어와 설정 구조가 바뀔 수 있는 항목은 발표 전 이 링크를 다시 확인합니다.
+      슬라이드 본문은 입문용으로 단순화되어 있으며, 실제 적용은 각 공식 문서의 최신 schema를 기준으로 합니다.
+    </p>
+    <div class="index-actions">
+      <a href="index.html">Index</a>
+      <a href="deck.html">실제 발표용</a>
+      <a href="presenter-review.html">발표자 검토용</a>
+    </div>
+
+    <section class="source-list" aria-label="공식 근거 목록">
+      <article class="source-card">
+        <strong>Claude Code Hooks</strong>
+        <p>Hook event, matcher, command handler, Stop/SubagentStop 동작 확인용.</p>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/hooks">https://docs.anthropic.com/en/docs/claude-code/hooks</a>
+      </article>
+      <article class="source-card">
+        <strong>Claude Code Subagents</strong>
+        <p>Subagent의 별도 context, tool permission, project/user 경로 확인용.</p>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/sub-agents">https://docs.anthropic.com/en/docs/claude-code/sub-agents</a>
+      </article>
+      <article class="source-card">
+        <strong>Claude Code Skills</strong>
+        <p>Skill의 SKILL.md, .claude/skills 경로, progressive loading 확인용.</p>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/skills">https://docs.anthropic.com/en/docs/claude-code/skills</a>
+      </article>
+      <article class="source-card">
+        <strong>Model Context Protocol Server Features</strong>
+        <p>MCP server가 노출하는 tools, resources, prompts 구분 확인용.</p>
+        <a href="https://modelcontextprotocol.io/specification/draft/server/tools">Tools</a>
+        <a href="https://modelcontextprotocol.io/specification/draft/server/resources">Resources</a>
+        <a href="https://modelcontextprotocol.io/specification/draft/server/prompts">Prompts</a>
+      </article>
+      <article class="source-card">
+        <strong>OpenAI Evaluation Best Practices</strong>
+        <p>평가 기준, 테스트 세트, 반복적 품질 개선 설명 보강용.</p>
+        <a href="https://developers.openai.com/api/docs/guides/evaluation-best-practices">https://developers.openai.com/api/docs/guides/evaluation-best-practices</a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

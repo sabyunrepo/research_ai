@@ -61,7 +61,11 @@ window.LECTURE_SLIDES = [
     "file": "02-failure-patterns.html",
     "parent": "02",
     "kind": "main",
-    "reviewTitle": "실패는 보통 지능보다 절차 문제입니다"
+    "reviewTitle": "실패는 보통 지능보다 절차 문제입니다",
+    "speaker": {
+      "heading": "실패는 보통 지능보다 절차 문제입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션의 목적은 AI 도구가 왜 틀리는지 모델 탓으로만 돌리지 않고, 반복되는 실패 패턴을 구조로 보는 것입니다.</p><p>읽지 않고 고치기, 테스트 생략, 범위 확장, 컨텍스트 오염을 먼저 확인한 뒤, 뒤 섹션에서 각각 CLAUDE.md, Skill, Subagent, Hook, Evaluation으로 어떻게 막는지 연결합니다.</p>"
+    }
   },
   {
     "file": "02-1-why-llms-fail.html",
@@ -130,14 +134,18 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "반복 실패는 어느 하네스로 올릴지 결정합니다",
     "speaker": {
       "heading": "반복 실패는 어느 하네스로 올릴지 결정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>같은 피드백을 두 번 했다면 다음에는 구조로 막아야 합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>이 슬라이드는 실패 패턴 섹션의 결론이자 다음 섹션으로 넘어가는 다리입니다.</p><p>반복 지시는 CLAUDE.md, 반복 절차는 Skill, 반복 판단은 Subagent, 외부 확인은 MCP, 무조건 실행할 검증은 Hook이나 Evaluation으로 올린다는 분류 기준을 여기서 고정합니다.</p>"
     }
   },
   {
     "file": "13-spec-driven.html",
     "parent": "13",
     "kind": "main",
-    "reviewTitle": "Spec-driven은 vibe coding의 반대편입니다"
+    "reviewTitle": "Spec-driven은 vibe coding의 반대편입니다",
+    "speaker": {
+      "heading": "Spec-driven은 vibe coding의 반대편입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 즉흥적인 대화 구현에서 파일로 남는 합의로 넘어가는 전환점입니다.</p><p>목표, 비목표, 제약, 완료 기준을 먼저 고정하면 이후 prompt, few-shot, review, evaluation이 모두 같은 기준을 바라보게 됩니다.</p>"
+    }
   },
   {
     "file": "13-1-vibe-vs-spec.html",
@@ -352,14 +360,18 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "완료 전 현재 목표와 컨텍스트를 다시 맞춥니다",
     "speaker": {
       "heading": "완료 전 현재 목표와 컨텍스트를 다시 맞춥니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>긴 대화일수록 마지막에 범위와 증거를 재확인해야 합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>컨텍스트 섹션의 마무리는 “정보를 더 넣자”가 아니라 “지금 목표와 맞지 않는 오래된 가정을 걷어내자”입니다.</p><p>이 기준이 뒤의 Skill과 Handoff로 이어집니다. 필요한 절차는 Skill로 열고, 다음 세션에 남길 현재 상태는 Handoff로 고정합니다.</p>"
     }
   },
   {
     "file": "10-skills.html",
     "parent": "10",
     "kind": "main",
-    "reviewTitle": "Skill은 반복 절차의 매뉴얼입니다"
+    "reviewTitle": "Skill은 반복 절차의 매뉴얼입니다",
+    "speaker": {
+      "heading": "Skill은 반복 절차의 매뉴얼입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>여기서는 반복 지시를 항상 켜진 기억에 넣는 것과, 반복 절차를 필요할 때 여는 Skill로 분리하는 기준을 설명합니다.</p><p>4시간 워크숍에서는 수강생이 자기 프로젝트에서 자주 반복되는 작업 하나를 골라 Skill 후보로 분해해 보는 흐름으로 이어갑니다.</p>"
+    }
   },
   {
     "file": "10-1-skill-trigger-description.html",
@@ -405,7 +417,13 @@ window.LECTURE_SLIDES = [
     "speaker": {
       "heading": "deck-builder Skill은 폴더가 곧 작업 순서입니다",
       "html": "<strong>상세 발표 스크립트</strong><p>HTML/CSS deck 생성 절차는 SKILL.md, references, scripts, assets로 나누면 재사용하기 쉽습니다.</p><p>Skill 폴더는 모델에게 언제 읽고, 무엇을 실행하고, 어떤 예시를 참조할지 알려 주는 작은 작업장입니다.</p>"
-    }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      }
+    ]
   },
   {
     "file": "11-2-skill-frontmatter-fields.html",
@@ -447,7 +465,13 @@ window.LECTURE_SLIDES = [
     "file": "14-subagents.html",
     "parent": "14",
     "kind": "main",
-    "reviewTitle": "Subagent는 역할과 컨텍스트를 분리합니다"
+    "reviewTitle": "Subagent는 역할과 컨텍스트를 분리합니다",
+    "sources": [
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
   },
   {
     "file": "14-1-subagent-context-isolation.html",
@@ -509,7 +533,11 @@ window.LECTURE_SLIDES = [
     "file": "18-mcp.html",
     "parent": "18",
     "kind": "main",
-    "reviewTitle": "MCP는 실제 세계와 연결하는 Tool Layer입니다"
+    "reviewTitle": "MCP는 실제 세계와 연결하는 Tool Layer입니다",
+    "speaker": {
+      "heading": "MCP는 실제 세계와 연결하는 Tool Layer입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 모델이 외부 시스템을 직접 아는 것이 아니라, Host와 MCP client, MCP server, tool/resource/prompt를 통해 연결된다는 점을 잡아 줍니다.</p><p>핵심은 도구를 많이 붙이는 것이 아니라 읽기, 쓰기, 승인 권한을 나누고 필요한 순간에만 연결하는 것입니다.</p>"
+    }
   },
   {
     "file": "18-1-mcp-bridge.html",
@@ -518,8 +546,22 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "MCP는 모델과 외부 시스템 사이의 다리입니다",
     "speaker": {
       "heading": "MCP는 모델과 외부 시스템 사이의 다리입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>모델이 직접 시스템을 아는 것이 아니라 MCP server를 통해 도구를 호출합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
+      "html": "<strong>상세 발표 스크립트</strong><p>MCP는 모델이 외부 시스템을 직접 아는 구조가 아닙니다. Host app이 MCP client를 만들고, client가 MCP server와 통신하며, server가 tools, resources, prompts를 노출합니다.</p><p>이 슬라이드는 입문용 단순화입니다. 실제 설정은 공식 문서의 schema를 기준으로 확인해야 합니다.</p>"
+    },
+    "sources": [
+      {
+        "label": "MCP Tools",
+        "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+      },
+      {
+        "label": "MCP Resources",
+        "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+      },
+      {
+        "label": "MCP Prompts",
+        "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+      }
+    ]
   },
   {
     "file": "18-2-tool-permissions.html",
@@ -548,14 +590,18 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "역할과 도구를 한 장으로 분리합니다",
     "speaker": {
       "heading": "역할과 도구를 한 장으로 분리합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>하나의 자동화 업무를 Main, Subagent, MCP Tool, Human Review로 나눕니다.</p><p>예시는 HTML/CSS deck 생성 검토로 바꾸지만 개념은 일반적입니다. PR 리뷰, deck 생성, 리서치 정리 모두 판단자, 조사자, 검토자, 도구, 사람의 승인 책임을 나눌 수 있습니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>이 실습은 Agents와 Tools 섹션을 실제 업무 분해로 연결하는 체크포인트입니다.</p><p>Main은 결정과 통합, Subagent는 격리된 검토, MCP Tool은 외부 시스템 호출, Human Review는 승인과 책임을 맡는 식으로 나눠 봅니다.</p>"
     }
   },
   {
     "file": "16-hooks.html",
     "parent": "16",
     "kind": "main",
-    "reviewTitle": "Hook은 지시가 아니라 실행입니다"
+    "reviewTitle": "Hook은 지시가 아니라 실행입니다",
+    "speaker": {
+      "heading": "Hook은 지시가 아니라 실행입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 “테스트를 해라”라는 문장을 실제 이벤트 기반 명령으로 바꾸는 단계입니다.</p><p>처음에는 echo나 알림처럼 가벼운 command로 시작하고, 이후 lint/test나 종료 전 검증으로 올리는 운영 감각을 전달합니다.</p>"
+    }
   },
   {
     "file": "16-1-hook-event.html",
@@ -574,8 +620,14 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "Hook의 command는 실제 실행되는 검문소입니다",
     "speaker": {
       "heading": "Hook의 command는 실제 실행되는 검문소입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>“테스트해”라는 지시가 아니라 실제 명령을 연결합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
+      "html": "<strong>상세 발표 스크립트</strong><p>“테스트해”라는 지시는 잊힐 수 있지만, Hook command는 이벤트가 발생할 때 실제 명령을 실행합니다. Claude Code hook은 이벤트, matcher, hooks 배열, command handler의 구조를 맞춰야 합니다.</p><p>이 슬라이드는 입문용 단순화입니다. 실제 설정은 공식 문서의 schema를 기준으로 확인해야 합니다.</p>"
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      }
+    ]
   },
   {
     "file": "16-3-hook-result.html",
@@ -601,7 +653,17 @@ window.LECTURE_SLIDES = [
     "file": "17-hook-advanced.html",
     "parent": "17",
     "kind": "main",
-    "reviewTitle": "Hook도 단계가 있습니다"
+    "reviewTitle": "Hook도 단계가 있습니다",
+    "speaker": {
+      "heading": "Hook도 단계가 있습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>여기서 단계는 공식 이벤트 이름이 아니라 검사 깊이를 뜻합니다. 같은 Hook 체계 안에서도 echo, command, 종료 전 검증, 별도 context 리뷰처럼 점진적으로 강도를 올릴 수 있습니다.</p><p>이 슬라이드는 입문용 단순화입니다. 실제 설정은 공식 문서의 schema를 기준으로 확인해야 합니다.</p>"
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      }
+    ]
   },
   {
     "file": "17-1-hook-start-small.html",
@@ -617,7 +679,11 @@ window.LECTURE_SLIDES = [
     "file": "19-evaluation.html",
     "parent": "19",
     "kind": "main",
-    "reviewTitle": "완료의 기준은 검증입니다"
+    "reviewTitle": "완료의 기준은 검증입니다",
+    "speaker": {
+      "heading": "완료의 기준은 검증입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 사람이 보기 좋은 답변과 실제로 완료된 작업을 구분하는 기준을 세웁니다.</p><p>기계가 확인할 수 있는 test, lint, build와 사람이 판단해야 하는 요구사항 해석, 발표 적합성, 근거 품질을 나누어 설명합니다.</p>"
+    }
   },
   {
     "file": "19-1-machine-checks.html",
@@ -637,7 +703,13 @@ window.LECTURE_SLIDES = [
     "speaker": {
       "heading": "판단이 필요한 품질은 rubric으로 봅니다",
       "html": "<strong>상세 발표 스크립트</strong><p>LLM-as-judge나 reviewer도 평가 기준이 없으면 흔들립니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
+    },
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "19-3-human-checks.html",
@@ -682,7 +754,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "HTML/CSS Deck Automation Harness v1",
     "speaker": {
       "heading": "HTML/CSS Deck Automation Harness v1",
-      "html": "<strong>상세 발표 스크립트</strong><p>최종 실습은 발표자료 하나를 만드는 일이 아니라, 다음 발표자료도 같은 품질로 만드는 작업장을 만드는 일입니다.</p><p>source brief, slide spec, few-shot, HTML/CSS deck, presenter review, verification, handoff가 한 줄로 이어져야 반복 가능한 워크플로우가 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>마지막 섹션은 지금까지의 레이어를 하나의 작은 작업장으로 합치는 시간입니다.</p><p>수강생이 가져갈 산출물은 완성된 발표자료 하나가 아니라 source, spec, few-shot, deck, review, verification, handoff가 이어지는 반복 가능한 workflow입니다.</p>"
     }
   },
   {
@@ -693,7 +765,13 @@ window.LECTURE_SLIDES = [
     "speaker": {
       "heading": "최종 산출물은 lecture-deck/입니다",
       "html": "<strong>상세 발표 스크립트</strong><p>폴더 구조가 곧 운영 방식입니다.</p><p>source, spec, few-shot, skill, agents, hook, verification, handoff를 한 폴더 안에 두면 Claude가 매번 같은 절차로 발표자료를 만들 수 있습니다.</p>"
-    }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      }
+    ]
   },
   {
     "file": "21-10-practice-few-shot-placement.html",
