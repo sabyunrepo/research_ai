@@ -1,8 +1,8 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>좋은 CLAUDE.md는 짧고 실행 기준이 분명합니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">08</div><h2>좋은 CLAUDE.md는 짧고 실행 기준이 분명합니다</h2><p class="subtitle">항상 로드되는 문서는 15줄 안팎의 강한 규칙만 둡니다.</p><ul class="bullets"><li>반복되는 원칙만 남깁니다.</li><li>명령어는 검증 가능한 것만 둡니다.</li><li>긴 설명은 별도 문서로 분리합니다.</li></ul><div class="note"><strong>발표 포인트</strong>항상 로드되는 문서는 15줄 안팎의 강한 규칙만 둡니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="파일과 산출물 시각자료"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code># Project Rules
-- pnpm 사용
-- 수정 전 관련 파일 읽기
-- 테스트 skip 금지
-- 완료 보고에는 command/result/risk 포함
-- 큰 변경 전 plan 작성</code></pre></div></div></section></main>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Deck automation용 CLAUDE.md는 작업 순서를 고정합니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">08</div><h2>Deck automation용 CLAUDE.md는 작업 순서를 고정합니다</h2><p class="subtitle">항상 로드되는 규칙에는 산출물 순서, 수정 경계, 검증 명령만 남깁니다.</p><ul class="bullets"><li>source → spec → few-shot → HTML 순서를 고정합니다.</li><li>새 슬라이드 대량 추가보다 기존 컷 리라이트를 우선합니다.</li><li>완료 보고는 command, result, risk를 포함합니다.</li></ul><div class="note"><strong>발표 포인트</strong>CLAUDE.md는 긴 운영 매뉴얼이 아니라 deck 자동화가 매번 지켜야 하는 작업 레일입니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="deck automation CLAUDE.md example"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code># Deck Automation Rules
+- source.md -> slide-spec.json -> few-shots.md 순서
+- HTML/CSS는 기존 slide component를 재사용
+- presenter-review와 발표용 deck을 분리
+- 수정 뒤 node scripts/verify-deck.js 실행
+- 최종 보고: changed files / verification / risk</code></pre></div></div></section></main>
 <nav class="nav"><a href="index.html">Index</a></nav></body></html>

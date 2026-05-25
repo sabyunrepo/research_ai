@@ -1,10 +1,12 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>실제 Skill은 작은 폴더 단위로 관리됩니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">11</div><h2>실제 Skill은 작은 폴더 단위로 관리됩니다</h2><p class="subtitle">파일 구조를 보면 어떤 정보가 항상 로드되고 무엇이 지연 로드되는지 보입니다.</p><ul class="bullets"><li>SKILL.md가 진입점입니다.</li><li>scripts는 실행 가능한 반복 작업입니다.</li><li>references는 긴 설명을 분리합니다.</li></ul><div class="note"><strong>발표 포인트</strong>파일 구조를 보면 어떤 정보가 항상 로드되고 무엇이 지연 로드되는지 보입니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="파일과 산출물 시각자료"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>my-skill/
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>deck-builder Skill은 폴더가 곧 작업 순서입니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">11</div><h2>deck-builder Skill은 폴더가 곧 작업 순서입니다</h2><p class="subtitle">HTML/CSS deck 생성 절차는 SKILL.md, references, scripts, assets로 나누면 재사용하기 쉽습니다.</p><ul class="bullets"><li>SKILL.md는 호출 조건과 필수 절차만 담습니다.</li><li>scripts는 검증과 export처럼 반복 실행되는 작업입니다.</li><li>references와 assets는 긴 예시와 템플릿을 지연 로드합니다.</li></ul><div class="note"><strong>발표 포인트</strong>Skill 폴더는 모델에게 “언제 읽고, 무엇을 실행하고, 어떤 예시를 참조할지”를 알려 주는 작은 작업장입니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="deck-builder Skill folder"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>deck-builder/
   SKILL.md
   references/
-    examples.md
+    slide-spec-schema.md
+    few-shots.md
   scripts/
-    verify.js
+    verify-deck.js
+    export-pdf.js
   assets/
-    template.md</code></pre></div></div></section></main>
+    slide-template.html</code></pre></div></div></section></main>
 <nav class="nav"><a href="index.html">Index</a></nav></body></html>

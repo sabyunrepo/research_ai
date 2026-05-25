@@ -241,20 +241,20 @@ window.LECTURE_SLIDES = [
     "file": "06-1-good-few-shot.html",
     "parent": "06",
     "kind": "example",
-    "reviewTitle": "좋은 예시는 형식과 깊이를 같이 보여 줍니다",
+    "reviewTitle": "좋은 few-shot은 deck slide spec의 완성도를 보여 줍니다",
     "speaker": {
-      "heading": "좋은 예시는 형식과 깊이를 같이 보여 줍니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>파일, 영향, 이유, 검증을 포함한 예시가 출력 품질을 고정합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "좋은 few-shot은 deck slide spec의 완성도를 보여 줍니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>HTML/CSS deck 자동화에서는 원하는 슬라이드 spec의 깊이와 검증 기준을 예시로 고정합니다.</p><p>source, layout, visual, verification이 들어간 좋은 slide spec 예시를 보여 주면 모델은 결과물의 모양과 깊이를 동시에 따라옵니다.</p>"
     }
   },
   {
     "file": "06-2-bad-few-shot.html",
     "parent": "06",
     "kind": "example",
-    "reviewTitle": "나쁜 예시는 모호함을 재사용하게 만듭니다",
+    "reviewTitle": "나쁜 few-shot은 나쁜 slide spec까지 복제합니다",
     "speaker": {
-      "heading": "나쁜 예시는 모호함을 재사용하게 만듭니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>두루뭉술한 예시는 모델의 출력도 두루뭉술하게 만듭니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "나쁜 few-shot은 나쁜 slide spec까지 복제합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>모호한 예시는 HTML/CSS deck에서도 모호한 제목, 느슨한 레이아웃, 빠진 검증으로 이어집니다.</p><p>few-shot에는 좋은 예시뿐 아니라 피해야 할 slide spec도 짧게 넣어야 모델이 경계를 압니다.</p>"
     }
   },
   {
@@ -303,10 +303,10 @@ window.LECTURE_SLIDES = [
     "file": "08-2-good-claude-md.html",
     "parent": "08",
     "kind": "example",
-    "reviewTitle": "좋은 CLAUDE.md는 짧고 실행 기준이 분명합니다",
+    "reviewTitle": "Deck automation용 CLAUDE.md는 작업 순서를 고정합니다",
     "speaker": {
-      "heading": "좋은 CLAUDE.md는 짧고 실행 기준이 분명합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>항상 로드되는 문서는 15줄 안팎의 강한 규칙만 둡니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "Deck automation용 CLAUDE.md는 작업 순서를 고정합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>항상 로드되는 규칙에는 산출물 순서, 수정 경계, 검증 명령만 남깁니다.</p><p>source, spec, few-shot, HTML, verification, final report 순서를 고정하면 deck 작업이 대화 감각이 아니라 반복 가능한 절차로 바뀝니다.</p>"
     }
   },
   {
@@ -401,20 +401,20 @@ window.LECTURE_SLIDES = [
     "file": "11-1-real-skill-folder.html",
     "parent": "11",
     "kind": "main",
-    "reviewTitle": "실제 Skill은 작은 폴더 단위로 관리됩니다",
+    "reviewTitle": "deck-builder Skill은 폴더가 곧 작업 순서입니다",
     "speaker": {
-      "heading": "실제 Skill은 작은 폴더 단위로 관리됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>파일 구조를 보면 어떤 정보가 항상 로드되고 무엇이 지연 로드되는지 보입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "deck-builder Skill은 폴더가 곧 작업 순서입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>HTML/CSS deck 생성 절차는 SKILL.md, references, scripts, assets로 나누면 재사용하기 쉽습니다.</p><p>Skill 폴더는 모델에게 언제 읽고, 무엇을 실행하고, 어떤 예시를 참조할지 알려 주는 작은 작업장입니다.</p>"
     }
   },
   {
     "file": "11-2-skill-frontmatter-fields.html",
     "parent": "11",
     "kind": "main",
-    "reviewTitle": "frontmatter는 Skill의 이름과 호출 조건을 고정합니다",
+    "reviewTitle": "frontmatter는 deck-builder Skill의 호출 조건을 고정합니다",
     "speaker": {
-      "heading": "frontmatter는 Skill의 이름과 호출 조건을 고정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>모델은 이 짧은 메타데이터로 Skill 사용 여부를 판단합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "heading": "frontmatter는 deck-builder Skill의 호출 조건을 고정합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>모델은 이 짧은 메타데이터로 지금 deck-builder를 써야 하는가를 판단합니다.</p><p>description은 검색 키워드가 아니라 자동 호출 계약입니다. 너무 넓으면 아무 때나 켜지고, 너무 좁으면 필요한 순간에 빠집니다.</p>"
     }
   },
   {
@@ -548,7 +548,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "역할과 도구를 한 장으로 분리합니다",
     "speaker": {
       "heading": "역할과 도구를 한 장으로 분리합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>하나의 자동화 업무를 Main, Subagent, MCP Tool, Human Review로 나눕니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>하나의 자동화 업무를 Main, Subagent, MCP Tool, Human Review로 나눕니다.</p><p>예시는 HTML/CSS deck 생성 검토로 바꾸지만 개념은 일반적입니다. PR 리뷰, deck 생성, 리서치 정리 모두 판단자, 조사자, 검토자, 도구, 사람의 승인 책임을 나눌 수 있습니다.</p>"
     }
   },
   {
@@ -672,7 +672,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "완료 조건을 검증 게이트로 바꿉니다",
     "speaker": {
       "heading": "완료 조건을 검증 게이트로 바꿉니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>“테스트해줘”가 아니라 언제, 무엇을, 어떤 기준으로 통과시킬지 정합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>“테스트해줘”가 아니라 언제, 무엇을, 어떤 기준으로 통과시킬지 정합니다.</p><p>deck 작업에서는 일반 테스트와 함께 node scripts/verify-deck.js 같은 전용 검증을 게이트에 포함해 링크, 슬라이드 등록, presenter review 노출을 확인합니다.</p>"
     }
   },
   {
@@ -699,10 +699,10 @@ window.LECTURE_SLIDES = [
     "file": "21-10-practice-few-shot-placement.html",
     "parent": "21",
     "kind": "checkpoint",
-    "reviewTitle": "Few-shot은 slide spec 바로 다음에 둡니다",
+    "reviewTitle": "통합 실습: Few-shot 배치",
     "speaker": {
-      "heading": "Few-shot은 slide spec 바로 다음에 둡니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>Few-shot은 실습 3에 둡니다. spec 바로 다음에 있어야 Claude가 무엇을 만들지뿐 아니라 어떤 모양으로 답해야 하는지도 같이 고정됩니다.</p><p>좋은 slide spec, 나쁜 slide spec, 좋은 발표자 script, 좋은 최종 보고를 넣으면 결과물의 깊이와 형식이 안정됩니다.</p>"
+      "heading": "통합 실습: Few-shot 배치",
+      "html": "<strong>상세 발표 스크립트</strong><p>Final 섹션에서는 번호 대신 통합 실습으로 부릅니다. spec 바로 다음에 few-shot이 있어야 Claude가 무엇을 만들지뿐 아니라 어떤 모양으로 답해야 하는지도 같이 고정됩니다.</p><p>좋은 slide spec, 나쁜 slide spec, 좋은 발표자 script, 좋은 최종 보고를 넣으면 결과물의 깊이와 형식이 안정됩니다.</p>"
     }
   },
   {
@@ -742,7 +742,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "HANDOFF.md는 상태와 결정을 같이 남깁니다",
     "speaker": {
       "heading": "HANDOFF.md는 상태와 결정을 같이 남깁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>파일 목록보다 중요한 것은 왜 이렇게 만들었는지와 무엇이 아직 위험한지입니다.</p><p>좋은 handoff에는 목표, 현재 상태, 결정된 규칙, 핵심 파일, 검증 결과, 남은 작업이 들어갑니다. 이렇게 남기면 다음 Claude는 처음부터 다시 판단하지 않고, 이미 합의된 기준 위에서 이어서 작업합니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>파일 목록보다 중요한 것은 현재 상태, 결정, 검증, 남은 일, 다음 프롬프트입니다.</p><p>좋은 handoff에는 Current State, Decisions, Verification, Remaining Work, Next Prompt가 들어갑니다. 이렇게 남기면 다음 Claude는 처음부터 다시 판단하지 않고, 이미 합의된 기준 위에서 이어서 작업합니다.</p>"
     }
   },
   {
@@ -762,7 +762,7 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "발표자료 handoff를 작성합니다",
     "speaker": {
       "heading": "발표자료 handoff를 작성합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>다음 세션이 슬라이드 작업을 이어받을 수 있도록 상태 파일을 남깁니다.</p><p>실습에서는 Goal, Decisions, Verification, Remaining Work, Next Prompt 다섯 칸을 채웁니다. 이 결과물이 있어야 자동화 워크플로우가 한 번의 대화가 아니라 반복 가능한 운영 방식이 됩니다.</p>"
+      "html": "<strong>상세 발표 스크립트</strong><p>다음 세션이 슬라이드 작업을 이어받을 수 있도록 상태 파일을 남깁니다.</p><p>실습에서는 Current State, Decisions, Verification, Remaining Work, Next Prompt 다섯 칸을 채웁니다. 이 결과물이 있어야 자동화 워크플로우가 한 번의 대화가 아니라 반복 가능한 운영 방식이 됩니다.</p>"
     }
   },
   {
