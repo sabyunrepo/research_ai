@@ -2,6 +2,15 @@
 
 `deck-harness/` is the reusable topic-to-deck contract for building a new HTML/CSS lecture deck from raw material while keeping the same quality bar as `lecture-cuts/`.
 
+## Existing Deck Separation
+
+`deck-harness/` must improve the workflow logic without silently changing an existing deck output. Treat `lecture-cuts/` as a golden reference unless the user explicitly asks to edit the visible deck.
+
+- Do not change `lecture-cuts/deck.html`, `lecture-cuts/presenter-review.html`, or presentation runtime JS during workflow-only work.
+- Keep harness metadata, agents, skills, schemas, source maps, and validation scripts separate from rendered deck output.
+- Use `lecture-cuts/slide-spec.json` as a reproduction contract for the current result, not as permission to rewrite the result.
+- Future deck improvements such as glossary behavior, source precision, and overflow policy should be enforced in `deck-harness/` first, then applied to an output deck only after an explicit output-change request.
+
 ## Workflow Order
 
 1. Fill `topic-intake.md`.

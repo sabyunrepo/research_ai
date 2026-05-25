@@ -9,6 +9,17 @@
 - `scripts/run-lecture-cuts-hook.js` and `scripts/verify-lecture-cuts-harness.js` define the pre-handoff gate.
 - Visible deck output files are treated as generated/current-result artifacts and must remain stable unless the task explicitly asks for output changes.
 
+## Output Isolation
+
+- The current visible deck is not mixed with workflow-only improvements.
+- The following output/runtime files must stay stable during harness-only work:
+  - `lecture-cuts/deck.html`
+  - `lecture-cuts/presenter-review.html`
+  - `lecture-cuts/assets/deck.js`
+  - `lecture-cuts/assets/presenter-review.js`
+- Harness-only changes may add or update metadata and validation files such as `lecture-cuts/slide-spec.json`, `lecture-cuts/HANDOFF.md`, `lecture-cuts/agents/`, `lecture-cuts/skills/`, `lecture-cuts/hooks/`, `docs/harness/`, and `deck-harness/`.
+- If a future task intentionally changes visible output, regenerate `lecture-cuts/slide-spec.json` and record the reason, command evidence, and changed output files in this handoff.
+
 ## Inputs
 
 - `lecture-cuts/source.md`
