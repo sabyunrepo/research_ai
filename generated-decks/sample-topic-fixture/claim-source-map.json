@@ -1,0 +1,28 @@
+{
+  "topic": "sample-topic-fixture",
+  "checkedDate": "2026-05-25",
+  "claims": [
+    {
+      "id": "claim-001",
+      "claim": "좋은 발표자료 생성 워크플로우는 입력, 근거, 슬라이드 명세, 검증, handoff를 분리한다.",
+      "sourceType": "local",
+      "source": "deck-harness/workflow.md",
+      "checkedDate": "2026-05-25",
+      "useLocation": "slide",
+      "confidence": "high",
+      "notes": "Local fixture claim for smoke testing."
+    },
+    {
+      "id": "claim-002",
+      "claim": "검증 가능한 결과물은 command evidence와 artifact path를 남겨야 다음 세션에서 재현할 수 있다.",
+      "sourceType": "local",
+      "source": "deck-harness/quality-rubric.md",
+      "checkedDate": "2026-05-25",
+      "useLocation": "slide",
+      "confidence": "high",
+      "notes": "Local fixture claim for smoke testing."
+    }
+  ],
+  "claimsToAvoidReviewed": true,
+  "claimsToAvoid": []
+}

@@ -1,0 +1,51 @@
+{
+  "jobId": "job-sample-topic-live-research",
+  "topicSlug": "sample-topic-live-research",
+  "createdAt": "2026-05-25T03:59:29.651Z",
+  "stages": [
+    {
+      "name": "scaffold",
+      "owner": "scaffold-deck.js",
+      "inputs": [],
+      "outputs": [
+        "topic-intake.md",
+        "research-dossier.md",
+        "claim-source-map.json",
+        "section-plan.json",
+        "slide-spec.json",
+        "glossary.json"
+      ],
+      "inputHash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outputHash": "",
+      "status": "PASS",
+      "evidencePath": "HANDOFF.md#verification"
+    },
+    {
+      "name": "build-deck",
+      "owner": "deck-builder-agent",
+      "inputs": [
+        "slide-spec.json",
+        "claim-source-map.json",
+        "glossary.json",
+        "section-plan.json"
+      ],
+      "outputs": [
+        "deck.html",
+        "presenter-review.html",
+        "assets/slides.js",
+        "assets/style.css",
+        "assets/deck.js",
+        "assets/presenter-review.js",
+        "slides/slide-001.html",
+        "slides/slide-002.html",
+        "slides/slide-003.html",
+        "slides/slide-004.html",
+        "slides/slide-005.html"
+      ],
+      "inputHash": "sha256:54e7521f11026ded7c267fd5efa4845eb92a27703f86b34b0f0ab07b7a88ece9",
+      "outputHash": "sha256:710c8f9fb2cfff1117ae5e91ce3f6e7cd780120ffee2513b171fd07b9800c710",
+      "status": "PASS",
+      "evidencePath": "HANDOFF.md#verification"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "lecture-cuts-handoff",
+  "description": "Parse HANDOFF.md and agent evidence before completion.",
+  "events": ["pre-handoff"],
+  "command": "node ../scripts/verify-lecture-cuts-harness.js --handoff-only",
+  "passRule": "HANDOFF.md and docs/harness/lecture-cuts-agent-handoff.md contain required headings, latest command evidence, PASS/WARN/FAIL statuses, blocked/non-blocking risks, and next prompt."
+}

@@ -1,0 +1,7 @@
+{
+  "name": "lecture-cuts-audit",
+  "description": "Run static and browser audit for the lecture-cuts workshop deck.",
+  "events": ["manual", "pre-handoff"],
+  "command": "node ../scripts/audit-lecture-cuts.js",
+  "passRule": "The command exits with code 0 and reports no FAIL entries."
+}

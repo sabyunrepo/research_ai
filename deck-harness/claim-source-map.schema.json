@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-ai.local/deck-harness/claim-source-map.schema.json",
+  "title": "Claim Source Map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["topic", "checkedDate", "claims"],
+  "anyOf": [
+    {
+      "required": ["claimsToAvoid"],
+      "properties": {
+        "claimsToAvoid": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "required": ["claimsToAvoidReviewed"],
+      "properties": {
+        "claimsToAvoidReviewed": {
+          "const": true
+        }
+      }
+    }
+  ],
+  "properties": {
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkedDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "$comment": "claims[].id must be unique; enforce id-level uniqueness in the contract validator.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "claim",
+          "sourceType",
+          "source",
+          "checkedDate",
+          "useLocation",
+          "confidence",
+          "notes"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "sourceType": {
+                  "const": "inference"
+                }
+              },
+              "required": ["sourceType"]
+            },
+            "then": {
+              "properties": {
+                "notes": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "sourceType": {
+                  "enum": ["official", "supporting", "local"]
+                }
+              },
+              "required": ["sourceType"]
+            },
+            "then": {
+              "properties": {
+                "checkedDate": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                }
+              }
+            }
+          }
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^claim-[0-9]{3,}$"
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceType": {
+            "type": "string",
+            "enum": ["official", "supporting", "local", "inference"]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checkedDate": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "useLocation": {
+            "type": "string",
+            "enum": ["slide", "speaker-note", "appendix", "avoid"]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "claimsToAvoid": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "claim", "reason", "source"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^avoid-[0-9]{3,}$"
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "claimsToAvoidReviewed": {
+      "type": "boolean"
+    }
+  },
+  "$comment": "useLocation=avoid claims cannot be referenced by slide-spec.json; enforce cross-file resolution in the contract validator."
+}

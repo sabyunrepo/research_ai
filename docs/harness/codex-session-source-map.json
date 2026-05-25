@@ -1,0 +1,311 @@
+{
+  "generatedAt": "2026-05-25T03:43:30.992Z",
+  "projectRoot": "/Users/sabyun/goinfre/research_ai",
+  "expectedTopLevelSessions": 4,
+  "actualTopLevelSessions": 4,
+  "status": "PASS",
+  "sessions": [
+    {
+      "id": "019e53be-3348-7791-a7cc-c73f20a8d8c3",
+      "status": "included",
+      "date": "2026-05-23T07:30:34.440Z",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T16-30-34-019e53be-3348-7791-a7cc-c73f20a8d8c3.jsonl",
+      "summaryPath": "docs/harness/codex-session-inventory.md#session-1-019e53be-3348-7791-a7cc-c73f20a8d8c3",
+      "repoArtifacts": [
+        "session-notes/2026-05-23-ai-harness-automation-workflow.md",
+        "docs/harness/html-css-deck-automation-harness-v1.md",
+        "docs/superpowers/plans/2026-05-25-lecture-cuts-agent-harness-plan.md"
+      ],
+      "decisionsExtracted": [
+        "019e53be-3348-7791-a7cc-c73f20a8d8c3-decision-001",
+        "019e53be-3348-7791-a7cc-c73f20a8d8c3-decision-002",
+        "019e53be-3348-7791-a7cc-c73f20a8d8c3-decision-003",
+        "019e53be-3348-7791-a7cc-c73f20a8d8c3-decision-004",
+        "019e53be-3348-7791-a7cc-c73f20a8d8c3-decision-005"
+      ],
+      "risksExtracted": [
+        "019e53be-3348-7791-a7cc-c73f20a8d8c3-risk-001"
+      ]
+    },
+    {
+      "id": "019e54d5-629f-7b80-89ac-a80c628987af",
+      "status": "included",
+      "date": "2026-05-23T12:35:31.129Z",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-35-31-019e54d5-629f-7b80-89ac-a80c628987af.jsonl",
+      "summaryPath": "docs/harness/codex-session-inventory.md#session-2-019e54d5-629f-7b80-89ac-a80c628987af",
+      "repoArtifacts": [
+        "session-notes/2026-05-23-ai-harness-automation-workflow.md",
+        "docs/harness/html-css-deck-automation-harness-v1.md",
+        "docs/superpowers/plans/2026-05-25-lecture-cuts-agent-harness-plan.md"
+      ],
+      "decisionsExtracted": [
+        "019e54d5-629f-7b80-89ac-a80c628987af-decision-001",
+        "019e54d5-629f-7b80-89ac-a80c628987af-decision-002",
+        "019e54d5-629f-7b80-89ac-a80c628987af-decision-003",
+        "019e54d5-629f-7b80-89ac-a80c628987af-decision-004",
+        "019e54d5-629f-7b80-89ac-a80c628987af-decision-005"
+      ],
+      "risksExtracted": []
+    },
+    {
+      "id": "019e5ca4-1a92-7051-8c88-40b2ea9a4376",
+      "status": "included",
+      "date": "2026-05-25T00:58:39.146Z",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T09-58-39-019e5ca4-1a92-7051-8c88-40b2ea9a4376.jsonl",
+      "summaryPath": "docs/harness/codex-session-inventory.md#session-3-019e5ca4-1a92-7051-8c88-40b2ea9a4376",
+      "repoArtifacts": [
+        "session-notes/2026-05-23-ai-harness-automation-workflow.md",
+        "docs/harness/html-css-deck-automation-harness-v1.md",
+        "docs/superpowers/plans/2026-05-25-lecture-cuts-agent-harness-plan.md"
+      ],
+      "decisionsExtracted": [
+        "019e5ca4-1a92-7051-8c88-40b2ea9a4376-decision-001",
+        "019e5ca4-1a92-7051-8c88-40b2ea9a4376-decision-002",
+        "019e5ca4-1a92-7051-8c88-40b2ea9a4376-decision-003",
+        "019e5ca4-1a92-7051-8c88-40b2ea9a4376-decision-004",
+        "019e5ca4-1a92-7051-8c88-40b2ea9a4376-decision-005"
+      ],
+      "risksExtracted": [
+        "019e5ca4-1a92-7051-8c88-40b2ea9a4376-risk-001"
+      ]
+    },
+    {
+      "id": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "status": "included",
+      "date": "2026-05-25T01:10:02.984Z",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-10-02-019e5cae-89cd-78c3-aadd-162b9d24cec6.jsonl",
+      "summaryPath": "docs/harness/codex-session-inventory.md#session-4-019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "repoArtifacts": [
+        "session-notes/2026-05-23-ai-harness-automation-workflow.md",
+        "docs/harness/html-css-deck-automation-harness-v1.md",
+        "docs/superpowers/plans/2026-05-25-lecture-cuts-agent-harness-plan.md"
+      ],
+      "decisionsExtracted": [
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-001",
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-002",
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-003",
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-004",
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-005",
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-006",
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-decision-007"
+      ],
+      "risksExtracted": [
+        "019e5cae-89cd-78c3-aadd-162b9d24cec6-risk-001"
+      ]
+    }
+  ],
+  "subagentSessions": [
+    {
+      "id": "019e54d8-4bfd-7490-8aa5-fc497ea6b90b",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e54d5-629f-7b80-89ac-a80c628987af",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-38-41-019e54d8-4bfd-7490-8aa5-fc497ea6b90b.jsonl",
+      "agentNickname": "Curie",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e54d8-6d0d-72b1-a850-42fde7750286",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e54d5-629f-7b80-89ac-a80c628987af",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-38-50-019e54d8-6d0d-72b1-a850-42fde7750286.jsonl",
+      "agentNickname": "Zeno",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e54d8-8bb8-7c30-916f-d2d30ee3cdb3",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e54d5-629f-7b80-89ac-a80c628987af",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-38-58-019e54d8-8bb8-7c30-916f-d2d30ee3cdb3.jsonl",
+      "agentNickname": "Planck",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5a81-cfc8-7db0-a5bb-0fa914cea213",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e53be-3348-7791-a7cc-c73f20a8d8c3",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T00-01-57-019e5a81-cfc8-7db0-a5bb-0fa914cea213.jsonl",
+      "agentNickname": "Sagan",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5a81-ff04-7711-8606-3dc94d82c03e",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e53be-3348-7791-a7cc-c73f20a8d8c3",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T00-02-09-019e5a81-ff04-7711-8606-3dc94d82c03e.jsonl",
+      "agentNickname": "Newton",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5a84-fc0d-7c01-bda5-d6e614fb51da",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e53be-3348-7791-a7cc-c73f20a8d8c3",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T00-05-25-019e5a84-fc0d-7c01-bda5-d6e614fb51da.jsonl",
+      "agentNickname": "Hegel",
+      "agentRole": "worker"
+    },
+    {
+      "id": "019e5cb1-15a6-7043-8563-d1be6da1881b",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-12-49-019e5cb1-15a6-7043-8563-d1be6da1881b.jsonl",
+      "agentNickname": "Hegel",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5cb1-3ed5-7482-af86-708459953a7f",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-13-00-019e5cb1-3ed5-7482-af86-708459953a7f.jsonl",
+      "agentNickname": "Wegener",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5cb1-6299-7dd3-a3a7-daa6c9171e82",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-13-09-019e5cb1-6299-7dd3-a3a7-daa6c9171e82.jsonl",
+      "agentNickname": "Popper",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5cb2-4c68-7371-963b-53c76d75784b",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-14-09-019e5cb2-4c68-7371-963b-53c76d75784b.jsonl",
+      "agentNickname": "Einstein",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5cb2-6e22-77f2-9eac-b0025267e257",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-14-18-019e5cb2-6e22-77f2-9eac-b0025267e257.jsonl",
+      "agentNickname": "Euclid",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5cb2-8aae-7030-83f1-d84372e2b711",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T10-14-25-019e5cb2-8aae-7030-83f1-d84372e2b711.jsonl",
+      "agentNickname": "Averroes",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d18-5702-7fd2-bab9-b43e5848e94a",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-05-36-019e5d18-5702-7fd2-bab9-b43e5848e94a.jsonl",
+      "agentNickname": "Bernoulli",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d18-7fa8-7cc3-aaf9-d26688b12f87",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-05-47-019e5d18-7fa8-7cc3-aaf9-d26688b12f87.jsonl",
+      "agentNickname": "Laplace",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d18-a1ea-7181-be1f-41e6866c9ae8",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-05-55-019e5d18-a1ea-7181-be1f-41e6866c9ae8.jsonl",
+      "agentNickname": "Dirac",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d25-0edd-7061-8b5c-1b15332d135c",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-19-30-019e5d25-0edd-7061-8b5c-1b15332d135c.jsonl",
+      "agentNickname": "Boole",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d25-2f0b-7671-9b86-b9543aa16778",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-19-38-019e5d25-2f0b-7671-9b86-b9543aa16778.jsonl",
+      "agentNickname": "Darwin",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d25-5455-71e2-9a1e-6fdca3b96003",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-19-48-019e5d25-5455-71e2-9a1e-6fdca3b96003.jsonl",
+      "agentNickname": "Heisenberg",
+      "agentRole": "explorer"
+    },
+    {
+      "id": "019e5d25-70b3-7bf3-a0c0-bc77ceaf5d97",
+      "status": "excluded-subagent",
+      "parentThreadId": "019e5cae-89cd-78c3-aadd-162b9d24cec6",
+      "rawPath": "/Users/sabyun/.codex/sessions/2026/05/25/rollout-2026-05-25T12-19-55-019e5d25-70b3-7bf3-a0c0-bc77ceaf5d97.jsonl",
+      "agentNickname": "Ohm",
+      "agentRole": "explorer"
+    }
+  ],
+  "sessionNotes": [
+    {
+      "path": "session-notes/2026-05-23-ai-harness-automation-workflow.md",
+      "title": "AI Agent Harness Automation Workflow Session Notes"
+    }
+  ],
+  "memoryReferences": [
+    {
+      "line": 74,
+      "text": "scope: Use for `/Users/sabyun/goinfre/research_ai` deck-harness work where the user wants a reusable HTML/CSS lecture-deck workflow, spec-first generation, screenshot-based quality gates, and separation between harness logic and generate..."
+    },
+    {
+      "line": 75,
+      "text": "applies_to: cwd=/Users/sabyun/goinfre/research_ai; reuse_rule=safe for nearby lecture-deck workflow work in this repo and closely related export/reuse tasks, but re-check current harness scripts, agent files, and export boundaries before..."
+    },
+    {
+      "line": 77,
+      "text": "## Task 1: Build the lecture-deck workflow and generate the deck from source/spec artifacts, success"
+    },
+    {
+      "line": 81,
+      "text": "- rollout_summaries/2026-05-23T12-35-31-SzIX-html_css_deck_automation_harness_with_stop_quality_routing.md (cwd=/Users/sabyun/goinfre/research_ai, rollout_path=/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-35-31-019e54d5..."
+    },
+    {
+      "line": 85,
+      "text": "- lecture-deck, source.md, slide-spec.json, assets/slides.js, assets/visuals.css, slides/*.html, HANDOFF.md, verify-deck.js, render-check"
+    },
+    {
+      "line": 91,
+      "text": "- rollout_summaries/2026-05-23T12-35-31-SzIX-html_css_deck_automation_harness_with_stop_quality_routing.md (cwd=/Users/sabyun/goinfre/research_ai, rollout_path=/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-35-31-019e54d5..."
+    },
+    {
+      "line": 97,
+      "text": "## Task 3: Export only the reusable harness logic to `html_css.git` and clean up temporary workspaces, success"
+    },
+    {
+      "line": 101,
+      "text": "- rollout_summaries/2026-05-23T12-35-31-SzIX-html_css_deck_automation_harness_with_stop_quality_routing.md (cwd=/Users/sabyun/goinfre/research_ai, rollout_path=/Users/sabyun/.codex/sessions/2026/05/23/rollout-2026-05-23T21-35-31-019e54d5..."
+    },
+    {
+      "line": 105,
+      "text": "- git@github.com:sabyunrepo/html_css.git, html_css_harness_export, git worktree remove --force, git branch -D codex/codex-deck-harness, worktree prune, placeholders, generated deck content"
+    },
+    {
+      "line": 113,
+      "text": "- when the user explicitly asked to push only the workflow logic to `git@github.com:sabyunrepo/html_css.git` and then delete the temporary workspaces -> separate reusable harness code from generated deck content and clean up only the tem..."
+    },
+    {
+      "line": 117,
+      "text": "- The effective lecture-deck gate chain here was `node lecture-deck/scripts/run-hook.js harness-check`, `render-check`, `stop-quality`, and `pre-handoff`. [Task 1]"
+    },
+    {
+      "line": 118,
+      "text": "- `lecture-deck/scripts/verify-deck.js` is the canonical validation entrypoint for harness and browser checks. [Task 1]"
+    },
+    {
+      "line": 119,
+      "text": "- `lecture-deck/scripts/visual-quality-gate.js` is the screenshot-based stop gate; it captures screenshots, writes `.deck-quality/visual-quality-report.md`, and writes `.deck-quality/quality-remediation-plan.json`. [Task 1][Task 2]"
+    }
+  ]
+}

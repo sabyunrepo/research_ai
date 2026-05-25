@@ -1,0 +1,144 @@
+# Lecture Cuts Handoff
+
+## Current State
+
+- `lecture-cuts/` is the current 87-slide golden reference deck for the 4-hour Korean workshop.
+- `lecture-cuts/slide-spec.json` captures slide order, text, speaker source, source references, and content hashes.
+- `scripts/validate-lecture-cuts-contract.js` now fails if current HTML drifts from `slide-spec.json`.
+- `scripts/audit-lecture-cuts.js` now includes reproduction contract validation.
+- `scripts/run-lecture-cuts-hook.js` and `scripts/verify-lecture-cuts-harness.js` define the pre-handoff gate.
+- `lecture-cuts/assets/glossary.js` is the single glossary registry shared by deck and presenter review.
+
+## Inputs
+
+- `lecture-cuts/source.md`
+- `lecture-cuts/assets/slides.js`
+- `lecture-cuts/assets/glossary.js`
+- `lecture-cuts/*.html`
+- `lecture-cuts/presenter-preview.html`
+- `lecture-cuts/sources.html`
+- `lecture-cuts/slide-spec.json`
+- `docs/harness/lecture-cuts-content-inventory.md`
+- `docs/harness/lecture-cuts-source-map.json`
+- `docs/harness/codex-session-decision-log.md`
+
+## Evidence Map Status
+
+- PASS: 87 registered slides exported to `lecture-cuts/slide-spec.json`.
+- PASS: 87 current slide hashes match the exported reproduction contract.
+- WARN: 80 slides rely on the deck-level source appendix instead of per-slide source entries.
+
+## Source Coverage
+
+- PASS: Slides already marked with per-slide source evidence retain slide-level evidence.
+- WARN: Source-sensitive future edits must promote slide-visible factual claims to per-slide source entries.
+- Artifact Path: `docs/harness/lecture-cuts-source-map.json`
+
+## Decisions
+
+- `lecture-cuts/` remains the golden reference for current output quality.
+- `deck-harness/` is the reusable workflow for future topics.
+- `slide-spec.json` is a generated reproduction contract, not a hand-edited planning document.
+- Intentional slide content edits must regenerate `slide-spec.json`.
+- Handoff must include command evidence, artifact paths, agent findings, blocked risks, non-blocking risks, and a next prompt.
+
+## Changed Files
+
+- `scripts/collect-codex-session-corpus.js`
+- `scripts/export-lecture-cuts-contract.js`
+- `scripts/validate-lecture-cuts-contract.js`
+- `scripts/audit-lecture-cuts.js`
+- `scripts/run-lecture-cuts-hook.js`
+- `scripts/verify-lecture-cuts-harness.js`
+- `lecture-cuts/slide-spec.json`
+- `lecture-cuts/assets/glossary.js`
+- `lecture-cuts/source.md`
+- `lecture-cuts/HANDOFF.md`
+- `lecture-cuts/hooks/*.json`
+- `docs/harness/codex-session-*.md`
+- `docs/harness/codex-session-source-map.json`
+- `docs/harness/lecture-cuts-content-inventory.md`
+- `docs/harness/lecture-cuts-source-map.json`
+- `docs/harness/lecture-cuts-reproduction-contract.md`
+
+## Generated Artifacts
+
+- `docs/harness/codex-session-inventory.md`
+- `docs/harness/codex-session-source-map.json`
+- `docs/harness/codex-session-decision-log.md`
+- `lecture-cuts/slide-spec.json`
+- `docs/harness/lecture-cuts-content-inventory.md`
+- `docs/harness/lecture-cuts-source-map.json`
+
+## Quality Gate Artifacts
+
+- `docs/harness/lecture-cuts-reproduction-contract.md`
+- `lecture-cuts/hooks/lecture-cuts-contract.json`
+- `lecture-cuts/hooks/lecture-cuts-audit.json`
+- `lecture-cuts/hooks/lecture-cuts-handoff.json`
+
+## Verification
+
+### Command: node scripts/collect-codex-session-corpus.js --check
+
+- Exit Code: 0
+- PASS: 4 top-level Codex sessions discovered.
+- PASS: 19 subagent sessions recorded separately.
+- Artifact Path: `docs/harness/codex-session-inventory.md`
+
+### Command: node scripts/export-lecture-cuts-contract.js --check-confidence
+
+- Exit Code: 0
+- PASS: 87 slides checked.
+- PASS: 0 low-confidence extraction fields.
+- Artifact Path: `lecture-cuts/slide-spec.json`
+
+### Command: node scripts/validate-lecture-cuts-contract.js
+
+- Exit Code: 0
+- PASS: contract slide count, order, hashes, titles, speaker sources, and source-sensitive slide coverage.
+- WARN: 80 slides rely on deck-global source appendix only.
+- Artifact Path: `docs/harness/lecture-cuts-reproduction-contract.md`
+
+### Command: node scripts/audit-lecture-cuts.js
+
+- Exit Code: 0
+- PASS: static files, local references, reproduction contract, browser render, presenter scripts.
+- WARN: 13 slides use presenter-preview fallback rather than inline speaker script.
+- WARN: projector/desktop/mobile overflow detector still reports existing typography and visual-frame overflow warnings.
+- Artifact Path: `scripts/audit-lecture-cuts.js`
+
+### Command: node scripts/verify-lecture-cuts-harness.js
+
+- Exit Code: 0
+- PASS: syntax checks, reproduction contract, lecture-cuts audit, pre-handoff hooks.
+- PASS: `lecture-cuts/assets/glossary.js` syntax check is included in the unified gate.
+- Artifact Path: `scripts/verify-lecture-cuts-harness.js`
+
+### Browser Spot Check: http://127.0.0.1:8766/deck.html?glossary=central2#slide-23
+
+- PASS: `assets/glossary.js` loads before `assets/deck.js`.
+- PASS: glossary term hover uses the custom popover.
+- PASS: glossary terms do not use a native `title` tooltip.
+- PASS: partial `PR` matching inside `pressure` was not reproduced.
+
+## Agent Findings
+
+- PASS: Generic and lecture-cuts agent/skill files were generated by bounded worker tasks.
+- PASS: Full pre-handoff hook passed after `docs/harness/lecture-cuts-agent-handoff.md` was generated.
+
+## Blocked Risks
+
+- None for the completed contract/export tasks.
+
+## Non-Blocking Risks
+
+- Existing overflow warnings are preserved as audit WARN until an allowlist or visual remediation task handles them.
+- Current source map is strong enough for reproduction but not yet 100% per-slide claim grounding.
+- Full unified verification is pending until all worker-generated agent and skill files land.
+
+## Next Prompt
+
+```text
+lecture-cuts/HANDOFF.md부터 읽고, docs/harness/codex-session-decision-log.md와 lecture-cuts/slide-spec.json을 확인해줘. 변경 전에는 reproduction contract를 확인하고, 변경 후에는 node scripts/export-lecture-cuts-contract.js, node scripts/validate-lecture-cuts-contract.js, node scripts/audit-lecture-cuts.js, node scripts/verify-lecture-cuts-harness.js를 실행한 뒤 Verification과 Agent Findings를 최신 결과로 갱신해줘.
+```

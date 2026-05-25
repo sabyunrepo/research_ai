@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-ai.local/deck-harness/job-manifest.schema.json",
+  "title": "Deck Job Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["jobId", "topicSlug", "createdAt", "stages"],
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "topicSlug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "owner",
+          "inputs",
+          "outputs",
+          "inputHash",
+          "outputHash",
+          "status",
+          "evidencePath"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "topic-intake",
+              "research-dossier",
+              "claim-source-map",
+              "audience-workshop-goal",
+              "section-plan",
+              "slide-spec",
+              "speaker-script",
+              "visual-system",
+              "html-css-deck-build",
+              "presenter-review",
+              "verification-gates",
+              "handoff"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inputs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "outputs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "inputHash": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "outputHash": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["PASS", "WARN", "FAIL"]
+          },
+          "evidencePath": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "topic-intake"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "research-dossier"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "claim-source-map"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "audience-workshop-goal"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "section-plan"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "slide-spec"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "speaker-script"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "visual-system"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "html-css-deck-build"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "presenter-review"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "verification-gates"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "name": {
+                "const": "handoff"
+              }
+            },
+            "required": ["name"]
+          }
+        }
+      ]
+    }
+  },
+  "$comment": "Every workflow stage writes one manifest entry. status=FAIL blocks downstream generation. If an input changes, later stage outputHash values are stale until regenerated."
+}

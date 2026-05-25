@@ -1,0 +1,49 @@
+{
+  "jobId": "job-sample-topic-fixture",
+  "topicSlug": "sample-topic-fixture",
+  "createdAt": "2026-05-25T03:59:29.590Z",
+  "stages": [
+    {
+      "name": "scaffold",
+      "owner": "scaffold-deck.js",
+      "inputs": [],
+      "outputs": [
+        "topic-intake.md",
+        "research-dossier.md",
+        "claim-source-map.json",
+        "section-plan.json",
+        "slide-spec.json",
+        "glossary.json"
+      ],
+      "inputHash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outputHash": "",
+      "status": "PASS",
+      "evidencePath": "HANDOFF.md#verification"
+    },
+    {
+      "name": "build-deck",
+      "owner": "deck-builder-agent",
+      "inputs": [
+        "slide-spec.json",
+        "claim-source-map.json",
+        "glossary.json",
+        "section-plan.json"
+      ],
+      "outputs": [
+        "deck.html",
+        "presenter-review.html",
+        "assets/slides.js",
+        "assets/style.css",
+        "assets/deck.js",
+        "assets/presenter-review.js",
+        "slides/slide-001.html",
+        "slides/slide-002.html",
+        "slides/slide-003.html"
+      ],
+      "inputHash": "sha256:5dabd36a3469d5a134117142fabea38fbc5ecc17d287265d6744da499ba8793f",
+      "outputHash": "sha256:3ab0f97531b982da660c1905a2a984ef3e0dc74d6a6b4455eb0425f88d7ac4a7",
+      "status": "PASS",
+      "evidencePath": "HANDOFF.md#verification"
+    }
+  ]
+}

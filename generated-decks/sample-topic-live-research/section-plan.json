@@ -1,0 +1,13 @@
+{
+  "timeboxMinutes": 25,
+  "sections": [
+    {
+      "id": "section-01",
+      "title": "Skills And Tools",
+      "learningObjective": "Claude Code skills and MCP tools를 초심자에게 구분해서 설명한다.",
+      "estimatedMinutes": 25,
+      "practice": "map one repeated procedure to a skill and one external capability to an MCP tool",
+      "slides": ["slide-001", "slide-002", "slide-003", "slide-004", "slide-005"]
+    }
+  ]
+}

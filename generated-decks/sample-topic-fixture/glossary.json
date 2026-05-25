@@ -1,0 +1,16 @@
+{
+  "terms": [
+    {
+      "term": "handoff",
+      "aliases": ["이어받기"],
+      "definition": "다음 작업자가 같은 상태에서 이어갈 수 있도록 현재 결정, 검증, 남은 위험을 남기는 문서입니다.",
+      "match": "whole-word"
+    },
+    {
+      "term": "verification",
+      "aliases": ["검증"],
+      "definition": "작업이 실제로 끝났는지 명령과 산출물로 확인하는 과정입니다.",
+      "match": "whole-word"
+    }
+  ]
+}

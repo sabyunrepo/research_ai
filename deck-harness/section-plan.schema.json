@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-ai.local/deck-harness/section-plan.schema.json",
+  "title": "Section Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["timeboxMinutes", "sections"],
+  "properties": {
+    "timeboxMinutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "learningObjective",
+          "estimatedMinutes",
+          "practice",
+          "slides"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^section-[0-9]{2,}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "learningObjective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "estimatedMinutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "practice": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slides": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "$comment": "sum(sections[].estimatedMinutes) must not exceed timeboxMinutes, and every slide id must resolve after slide-spec generation; enforce these cross-field checks in the contract validator."
+}

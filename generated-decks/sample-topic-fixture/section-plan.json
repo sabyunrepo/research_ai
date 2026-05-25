@@ -1,0 +1,13 @@
+{
+  "timeboxMinutes": 15,
+  "sections": [
+    {
+      "id": "section-01",
+      "title": "Fixture Smoke",
+      "learningObjective": "로컬 근거만으로 deck-harness scaffold, build, verification 흐름이 동작하는지 확인한다.",
+      "estimatedMinutes": 15,
+      "practice": "build and verify the generated fixture deck",
+      "slides": ["slide-001", "slide-002", "slide-003"]
+    }
+  ]
+}

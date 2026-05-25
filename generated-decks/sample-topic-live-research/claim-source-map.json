@@ -1,0 +1,64 @@
+{
+  "topic": "Claude Code skills and MCP tools",
+  "checkedDate": "2026-05-25",
+  "claims": [
+    {
+      "id": "claim-001",
+      "claim": "Claude Code skills are defined with a SKILL.md file and can be invoked directly or loaded when relevant.",
+      "sourceType": "official",
+      "source": "https://code.claude.com/docs/en/skills",
+      "checkedDate": "2026-05-25",
+      "useLocation": "slide",
+      "confidence": "high",
+      "notes": "Official Claude Code skills documentation."
+    },
+    {
+      "id": "claim-002",
+      "claim": "Skill bodies are not always loaded; they load when the skill is used, which makes long procedure content cheaper until needed.",
+      "sourceType": "official",
+      "source": "https://code.claude.com/docs/en/skills",
+      "checkedDate": "2026-05-25",
+      "useLocation": "speaker-note",
+      "confidence": "high",
+      "notes": "Used in speaker note to explain why deck workflows belong in skills rather than always-on memory."
+    },
+    {
+      "id": "claim-003",
+      "claim": "MCP servers expose tools that clients can invoke on behalf of language models.",
+      "sourceType": "supporting",
+      "source": "https://modelcontextprotocol.io/specification/draft/server/tools",
+      "checkedDate": "2026-05-25",
+      "useLocation": "slide",
+      "confidence": "high",
+      "notes": "Protocol specification used as supporting context for tool-layer claims."
+    },
+    {
+      "id": "claim-004",
+      "claim": "A topic-to-deck workflow should keep source URLs in claim-source-map.json and let slide-spec.json reference only claim ids.",
+      "sourceType": "local",
+      "source": "deck-harness/quality-rubric.md",
+      "checkedDate": "2026-05-25",
+      "useLocation": "slide",
+      "confidence": "high",
+      "notes": "Local harness quality rule."
+    },
+    {
+      "id": "claim-005",
+      "claim": "For recurring deck generation, a skill is a better fit than always-on project memory when the content is a multi-step procedure.",
+      "sourceType": "inference",
+      "source": "https://code.claude.com/docs/en/skills",
+      "checkedDate": "2026-05-25",
+      "useLocation": "slide",
+      "confidence": "medium",
+      "notes": "Inference based on the official distinction that CLAUDE.md is always-on context while skill content loads when used."
+    }
+  ],
+  "claimsToAvoid": [
+    {
+      "id": "avoid-001",
+      "claim": "Put every reusable rule into CLAUDE.md.",
+      "reason": "Always-on memory can become noisy; procedural content should be moved to a skill when it is not needed every turn.",
+      "source": "https://code.claude.com/docs/en/skills"
+    }
+  ]
+}

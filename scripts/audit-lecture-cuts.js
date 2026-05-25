@@ -4,7 +4,7 @@ const http = require("node:http");
 const os = require("node:os");
 const path = require("node:path");
 const vm = require("node:vm");
-const { spawn } = require("node:child_process");
+const { execFileSync, spawn } = require("node:child_process");
 
 const root = path.resolve(__dirname, "..");
 const deckRoot = path.join(root, "lecture-cuts");
@@ -164,6 +164,28 @@ function runStaticAudit(slides) {
     warn("standalone nav order", navMismatches.slice(0, 20).join("; "));
   } else {
     pass("standalone nav order", "standalone Prev/Next links match registry where present");
+  }
+}
+
+function runReproductionContractAudit() {
+  try {
+    const output = execFileSync(process.execPath, [path.join(root, "scripts", "validate-lecture-cuts-contract.js")], {
+      cwd: root,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    pass("reproduction contract", "slide-spec.json matches the current lecture-cuts deck");
+
+    const sourceWarnings = output
+      .split("\n")
+      .filter((line) => line.startsWith("WARN source coverage"))
+      .join("; ");
+    if (sourceWarnings) {
+      warn("source coverage", sourceWarnings.replace(/^WARN source coverage - /, ""));
+    }
+  } catch (error) {
+    const detail = [error.stdout, error.stderr, error.message].filter(Boolean).join("\n").trim();
+    fail("reproduction contract", detail);
   }
 }
 
@@ -462,6 +484,7 @@ async function main() {
   try {
     const slides = getSlides();
     runStaticAudit(slides);
+    runReproductionContractAudit();
     await runBrowserAudit(slides);
   } catch (error) {
     fail("audit", error.message);

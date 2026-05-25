@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-ai.local/deck-harness/slide-spec.schema.json",
+  "title": "Slide Spec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["timeboxMinutes", "slides"],
+  "properties": {
+    "timeboxMinutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "section",
+          "sectionObjective",
+          "estimatedMinutes",
+          "title",
+          "message",
+          "bullets",
+          "visualIntent",
+          "speakerNote",
+          "evidenceClaimIds",
+          "glossaryTerms",
+          "qualityChecks"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": ["source"]
+            },
+            {
+              "required": ["sources"]
+            },
+            {
+              "required": ["sourceUrl"]
+            },
+            {
+              "required": ["sourceUrls"]
+            },
+            {
+              "required": ["checkedDate"]
+            },
+            {
+              "required": ["sourceType"]
+            },
+            {
+              "required": ["confidence"]
+            },
+            {
+              "required": ["sourceSummary"]
+            },
+            {
+              "required": ["sourceSummaries"]
+            }
+          ]
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sectionObjective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "estimatedMinutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bullets": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "visualIntent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "speakerNote": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidenceClaimIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^claim-[0-9]{3,}$"
+            }
+          },
+          "glossaryTerms": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "qualityChecks": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "$comment": "slide-spec.json must not contain source URLs, checkedDate, sourceType, confidence, or source summaries. evidenceClaimIds is the only bridge to claim-source-map.json. Total slide estimatedMinutes must not exceed the declared timebox; enforce cross-file and sum checks in the contract validator."
+}

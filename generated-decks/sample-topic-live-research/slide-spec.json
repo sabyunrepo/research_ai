@@ -1,0 +1,74 @@
+{
+  "slides": [
+    {
+      "id": "slide-001",
+      "section": "Skills And Tools",
+      "sectionObjective": "Claude Code skills와 MCP tools의 역할 차이를 이해한다.",
+      "estimatedMinutes": 4,
+      "title": "반복 절차는 Skill로 둡니다",
+      "message": "자주 반복하는 작업 순서는 SKILL.md로 분리하면 필요할 때만 열 수 있습니다.",
+      "bullets": ["반복 절차", "필요할 때 로드", "프로젝트별 재사용"],
+      "visualIntent": "작업대 옆에 닫힌 매뉴얼이 놓여 있다가 필요할 때 열리는 그림",
+      "speakerNote": "공식 문서는 skill을 SKILL.md 파일로 설명하고, 관련될 때 사용하거나 직접 호출할 수 있다고 설명합니다.",
+      "evidenceClaimIds": ["claim-001", "claim-002"],
+      "glossaryTerms": ["SKILL.md"],
+      "qualityChecks": ["official-source", "glossary"]
+    },
+    {
+      "id": "slide-002",
+      "section": "Skills And Tools",
+      "sectionObjective": "외부 기능 연결은 MCP tool layer로 설명한다.",
+      "estimatedMinutes": 5,
+      "title": "외부 기능은 MCP 도구로 연결합니다",
+      "message": "MCP는 AI가 외부 도구를 호출할 수 있게 하는 연결 규칙입니다.",
+      "bullets": ["도구 노출", "클라이언트 호출", "권한과 검증 필요"],
+      "visualIntent": "AI 작업대와 외부 도구가 플러그로 연결되는 그림",
+      "speakerNote": "MCP tools spec은 서버가 language model이 호출할 수 있는 tools를 노출한다고 설명합니다.",
+      "evidenceClaimIds": ["claim-003"],
+      "glossaryTerms": ["MCP"],
+      "qualityChecks": ["supporting-source", "beginner-term"]
+    },
+    {
+      "id": "slide-003",
+      "section": "Skills And Tools",
+      "sectionObjective": "근거와 슬라이드 문장을 분리한다.",
+      "estimatedMinutes": 5,
+      "title": "슬라이드는 claim id만 들고 갑니다",
+      "message": "URL, 확인 날짜, confidence는 source map에 두고 슬라이드는 claim id로 연결합니다.",
+      "bullets": ["source map", "slide spec", "presenter evidence"],
+      "visualIntent": "슬라이드 카드가 claim id로 근거 지도와 연결되는 그림",
+      "speakerNote": "이 구조는 같은 근거를 여러 슬라이드에서 재사용할 때 source update 부담을 줄입니다.",
+      "evidenceClaimIds": ["claim-004"],
+      "glossaryTerms": ["claim id"],
+      "qualityChecks": ["no-source-url-in-slide-spec", "evidence-resolution"]
+    },
+    {
+      "id": "slide-004",
+      "section": "Skills And Tools",
+      "sectionObjective": "inference claim을 명시적으로 다룬다.",
+      "estimatedMinutes": 5,
+      "title": "판단은 inference로 표시합니다",
+      "message": "공식 문서의 사실과 우리가 내린 설계 판단은 source map에서 구분합니다.",
+      "bullets": ["official claim", "supporting claim", "inference claim"],
+      "visualIntent": "근거 문서와 판단 메모가 다른 색 라벨로 구분되는 그림",
+      "speakerNote": "Skill이 반복 절차에 맞다는 말은 공식 문서 문장 그대로가 아니라, 로드 방식 설명에서 도출한 설계 판단입니다.",
+      "evidenceClaimIds": ["claim-001", "claim-005"],
+      "glossaryTerms": ["SKILL.md"],
+      "qualityChecks": ["inference-notes", "confidence"]
+    },
+    {
+      "id": "slide-005",
+      "section": "Skills And Tools",
+      "sectionObjective": "피해야 할 claim도 명시한다.",
+      "estimatedMinutes": 6,
+      "title": "피해야 할 주장도 기록합니다",
+      "message": "source map에는 사용할 claim뿐 아니라 쓰지 말아야 할 주장도 남깁니다.",
+      "bullets": ["과도한 일반화 방지", "리뷰 기준 제공", "다음 세션 보호"],
+      "visualIntent": "사용할 카드와 피할 카드를 분리하는 체크리스트",
+      "speakerNote": "모든 규칙을 CLAUDE.md에 넣자는 주장은 피해야 할 claim으로 남겨, 다음 에이전트가 다시 같은 방향으로 가지 않게 합니다.",
+      "evidenceClaimIds": ["claim-004", "claim-005"],
+      "glossaryTerms": ["claim id"],
+      "qualityChecks": ["claims-to-avoid", "handoff"]
+    }
+  ]
+}

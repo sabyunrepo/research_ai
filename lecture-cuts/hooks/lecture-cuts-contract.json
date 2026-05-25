@@ -1,0 +1,7 @@
+{
+  "name": "lecture-cuts-contract",
+  "description": "Validate slide-spec.json against the current lecture-cuts deck.",
+  "events": ["manual", "pre-handoff"],
+  "command": "node ../scripts/validate-lecture-cuts-contract.js",
+  "passRule": "The command exits with code 0 and reports no slide order or content hash drift."
+}
