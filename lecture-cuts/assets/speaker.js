@@ -1,9 +1,10 @@
 const speakerSlides = window.LECTURE_SLIDES || [];
 const speakerStatus = document.querySelector("#speakerStatus");
 const speakerSyncStatus = document.querySelector("#speakerSyncStatus");
-const currentSlideFrame = document.querySelector("#currentSlideFrame");
 const nextSlideFrame = document.querySelector("#nextSlideFrame");
+const nextSlideEmpty = document.querySelector("#nextSlideEmpty");
 const currentSlideLabel = document.querySelector("#currentSlideLabel");
+const currentSlideTitle = document.querySelector("#currentSlideTitle");
 const nextSlideLabel = document.querySelector("#nextSlideLabel");
 const speakerMeta = document.querySelector("#speakerMeta");
 const speakerPromptTitle = document.querySelector("#speakerPromptTitle");
@@ -13,13 +14,16 @@ const previousButton = document.querySelector("#speakerPrevious");
 const nextButton = document.querySelector("#speakerNext");
 const timerToggle = document.querySelector("#timerToggle");
 const timerReset = document.querySelector("#timerReset");
-const timerDisplay = document.querySelector("#speakerTimer");
+const totalTimerDisplay = document.querySelector("#speakerTotalTimer");
+const slideTimerDisplay = document.querySelector("#speakerSlideTimer");
 const stateEndpoint = "/api/presentation/state";
 const eventsEndpoint = "/api/presentation/events";
 let currentIndex = 0;
 let latestRevision = 0;
-let timerStartedAt = 0;
-let timerElapsedMs = 0;
+let totalTimerStartedAt = 0;
+let totalTimerElapsedMs = 0;
+let slideTimerStartedAt = 0;
+let slideTimerElapsedMs = 0;
 let timerInterval = null;
 
 function getSlideFile(slide) {
@@ -62,6 +66,53 @@ function renderCueList(cues = {}) {
   });
 }
 
+function applySpeakerGlossary() {
+  window.LECTURE_GLOSSARY?.apply?.(currentSlideTitle);
+  window.LECTURE_GLOSSARY?.apply?.(speakerPromptTitle);
+  window.LECTURE_GLOSSARY?.apply?.(speakerCuePanel);
+  window.LECTURE_GLOSSARY?.apply?.(speakerPromptBody);
+}
+
+function prepareNextSlidePreview() {
+  const previewDocument = nextSlideFrame.contentDocument;
+  if (!previewDocument) return;
+
+  let style = previewDocument.querySelector("#speakerPreviewStyle");
+  if (!style) {
+    style = previewDocument.createElement("style");
+    style.id = "speakerPreviewStyle";
+    previewDocument.head.append(style);
+  }
+  style.textContent = `
+    body { overflow: hidden !important; }
+    .nav { display: none !important; }
+    .slide {
+      min-height: auto !important;
+      grid-template-columns: 1fr !important;
+      align-content: start !important;
+    }
+    .copy {
+      order: -1 !important;
+      min-height: 0 !important;
+      padding: 42px 48px 28px !important;
+      align-content: start !important;
+    }
+    .slide-media {
+      order: 2 !important;
+      min-height: 0 !important;
+      max-height: 42vh !important;
+      padding: 16px 48px 42px !important;
+      place-items: start center !important;
+    }
+    .slide-media img,
+    .css-visual {
+      max-height: 38vh !important;
+    }
+  `;
+  window.LECTURE_GLOSSARY?.apply?.(previewDocument.querySelector(".slide"));
+  previewDocument.defaultView.scrollTo(0, 0);
+}
+
 function renderSpeaker(index) {
   if (!speakerSlides.length) {
     setSpeakerStatus("등록된 슬라이드가 없습니다.");
@@ -74,18 +125,28 @@ function renderSpeaker(index) {
   const currentFile = getSlideFile(currentSlide);
   const nextFile = nextSlide ? getSlideFile(nextSlide) : "";
   const speaker = currentSlide.speaker || {};
+  const currentTitle = speaker.heading || currentSlide.reviewTitle || currentFile;
 
-  currentSlideFrame.src = currentFile;
-  nextSlideFrame.src = nextFile || "about:blank";
+  if (nextSlide) {
+    nextSlideFrame.src = nextFile;
+    nextSlideFrame.hidden = false;
+    nextSlideEmpty.hidden = true;
+  } else {
+    nextSlideFrame.src = "about:blank";
+    nextSlideFrame.hidden = true;
+    nextSlideEmpty.hidden = false;
+  }
   currentSlideLabel.textContent = makeSlideLabel(currentIndex);
+  currentSlideTitle.textContent = currentTitle;
   nextSlideLabel.textContent = nextSlide ? makeSlideLabel(currentIndex + 1) : "마지막";
   speakerMeta.textContent = `${currentSlide.sectionTitle || "Slide"} · ${currentSlide.reviewTitle || currentFile}`;
-  speakerPromptTitle.textContent = speaker.heading || currentSlide.reviewTitle || currentFile;
+  speakerPromptTitle.textContent = currentTitle;
   speakerPromptBody.innerHTML = speaker.html || "<p>등록된 발표 프롬프트가 없습니다.</p>";
   renderCueList(speaker.cues || {});
+  applySpeakerGlossary();
   previousButton.disabled = currentIndex === 0;
   nextButton.disabled = currentIndex === speakerSlides.length - 1;
-  setSpeakerStatus(`${makeSlideLabel(currentIndex)} · ${currentSlide.reviewTitle || currentFile}`);
+  setSpeakerStatus(`${makeSlideLabel(currentIndex)} · ${currentTitle}`);
 }
 
 async function publishSpeakerState(index) {
@@ -112,7 +173,11 @@ async function publishSpeakerState(index) {
 }
 
 function setSpeakerSlide(index, options = {}) {
+  const previousIndex = currentIndex;
   renderSpeaker(index);
+  if (currentIndex !== previousIndex) {
+    resetSlideTimer();
+  }
   if (options.publish !== false) {
     publishSpeakerState(currentIndex);
   }
@@ -159,36 +224,65 @@ function formatElapsed(ms) {
   return `${String(minutes).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
+function elapsedTime(startedAt, elapsedMs) {
+  return elapsedMs + (startedAt ? Date.now() - startedAt : 0);
+}
+
 function updateTimer() {
-  const runningMs = timerStartedAt ? Date.now() - timerStartedAt : 0;
-  timerDisplay.textContent = formatElapsed(timerElapsedMs + runningMs);
+  totalTimerDisplay.textContent = formatElapsed(elapsedTime(totalTimerStartedAt, totalTimerElapsedMs));
+  slideTimerDisplay.textContent = formatElapsed(elapsedTime(slideTimerStartedAt, slideTimerElapsedMs));
+}
+
+function startTimerInterval() {
+  if (!timerInterval) {
+    timerInterval = setInterval(updateTimer, 250);
+  }
+}
+
+function stopTimerInterval() {
+  clearInterval(timerInterval);
+  timerInterval = null;
 }
 
 function toggleTimer() {
-  if (timerStartedAt) {
-    timerElapsedMs += Date.now() - timerStartedAt;
-    timerStartedAt = 0;
-    clearInterval(timerInterval);
-    timerInterval = null;
+  if (totalTimerStartedAt) {
+    const now = Date.now();
+    totalTimerElapsedMs += now - totalTimerStartedAt;
+    slideTimerElapsedMs += now - slideTimerStartedAt;
+    totalTimerStartedAt = 0;
+    slideTimerStartedAt = 0;
+    stopTimerInterval();
     timerToggle.textContent = "Start";
     updateTimer();
     return;
   }
 
-  timerStartedAt = Date.now();
-  timerInterval = setInterval(updateTimer, 250);
+  const now = Date.now();
+  totalTimerStartedAt = now;
+  slideTimerStartedAt = now;
+  startTimerInterval();
   timerToggle.textContent = "Pause";
   updateTimer();
 }
 
+function resetSlideTimer() {
+  slideTimerElapsedMs = 0;
+  slideTimerStartedAt = totalTimerStartedAt ? Date.now() : 0;
+  updateTimer();
+}
+
 function resetTimer() {
-  timerStartedAt = timerStartedAt ? Date.now() : 0;
-  timerElapsedMs = 0;
+  const now = Date.now();
+  totalTimerStartedAt = totalTimerStartedAt ? now : 0;
+  slideTimerStartedAt = totalTimerStartedAt ? now : 0;
+  totalTimerElapsedMs = 0;
+  slideTimerElapsedMs = 0;
   updateTimer();
 }
 
 previousButton.addEventListener("click", () => setSpeakerSlide(currentIndex - 1));
 nextButton.addEventListener("click", () => setSpeakerSlide(currentIndex + 1));
+nextSlideFrame.addEventListener("load", prepareNextSlidePreview);
 timerToggle.addEventListener("click", toggleTimer);
 timerReset.addEventListener("click", resetTimer);
 window.addEventListener("keydown", (event) => {

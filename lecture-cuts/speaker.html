@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI 에이전트 하네스 엔지니어링 Speaker Console</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/style.css?v=20260526-speaker">
+  <link rel="stylesheet" href="assets/style.css?v=20260527-speaker-topbar">
   <script defer src="assets/slides.js?v=20260525-korean-copy"></script>
-  <script defer src="assets/speaker.js?v=20260526-sync"></script>
+  <script defer src="assets/glossary.js?v=20260527-shared"></script>
+  <script defer src="assets/speaker.js?v=20260527-speaker-topbar"></script>
 </head>
 <body class="speaker-page">
   <header class="speaker-toolbar">
@@ -16,6 +17,24 @@
       <h1>발표자 콘솔</h1>
       <p class="deck-subtitle" id="speakerStatus">현재 슬라이드와 발표 프롬프트를 불러오는 중입니다.</p>
     </div>
+    <section class="speaker-topbar-status" aria-label="Current slide and timers">
+      <div class="speaker-topbar-current">
+        <p>현재 슬라이드</p>
+        <strong id="currentSlideLabel">-- / --</strong>
+        <h2 id="currentSlideTitle">불러오는 중입니다.</h2>
+      </div>
+      <div class="speaker-topbar-timers" aria-label="Presentation timers">
+        <div class="speaker-topbar-timer">
+          <small>총 강의시간</small>
+          <span id="speakerTotalTimer">00:00</span>
+        </div>
+        <div class="speaker-topbar-timer">
+          <small>슬라이드별 시간</small>
+          <span id="speakerSlideTimer">00:00</span>
+        </div>
+      </div>
+      <small id="speakerSyncStatus">동기화 준비 중</small>
+    </section>
     <nav class="deck-actions" aria-label="Speaker actions">
       <a href="deck.html" target="_blank" rel="noreferrer">발표 화면</a>
       <a href="presenter-review.html">검토/수정</a>
@@ -25,28 +44,16 @@
   </header>
 
   <main class="speaker-console">
-    <section class="speaker-preview-panel" aria-label="Current slide">
+    <section class="speaker-preview-panel speaker-next-panel" aria-label="Next slide">
       <div class="speaker-panel-header">
-        <span>현재</span>
-        <strong id="currentSlideLabel">-- / --</strong>
-      </div>
-      <iframe id="currentSlideFrame" class="speaker-slide-frame" title="현재 슬라이드"></iframe>
-    </section>
-
-    <section class="speaker-preview-panel" aria-label="Next slide">
-      <div class="speaker-panel-header">
-        <span>다음</span>
+        <span>다음 슬라이드</span>
         <strong id="nextSlideLabel">-- / --</strong>
       </div>
       <iframe id="nextSlideFrame" class="speaker-slide-frame" title="다음 슬라이드"></iframe>
+      <div id="nextSlideEmpty" class="speaker-empty-preview" hidden>다음 슬라이드가 없습니다.</div>
     </section>
 
     <aside class="speaker-notes-panel">
-      <div class="speaker-clock">
-        <span id="speakerTimer">00:00</span>
-        <small id="speakerSyncStatus">동기화 준비 중</small>
-      </div>
-
       <div class="speaker-controls" aria-label="Slide controls">
         <button type="button" id="speakerPrevious">이전</button>
         <button type="button" id="speakerNext">다음</button>
