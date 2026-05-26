@@ -37,14 +37,14 @@ Report status rules:
 Status: WARN
 Severity: P2
 Blocks handoff: no
-Required follow-up: none for source coverage; 55 slides now have slide-level evidence and 1 synthetic concept/example slide are explicitly allowlisted for deck-global coverage.
+Required follow-up: none for source coverage; 56 slides now have slide-level evidence and 1 synthetic concept/example slide are explicitly allowlisted for deck-global coverage.
 Evidence path: `docs/harness/lecture-cuts-reproduction-contract.md`
 
 ### 발견
 
 - Current contract validation passes slide count, registry order, registered file presence, slide hashes, title extraction, speaker-source resolution, and source-sensitive slide retention.
 - The validation command now reports PASS for source-sensitive coverage and source coverage allowlist handling.
-- Content inventory records 56 slides, 9 sections, 56 inline speaker notes, 10 deck-global source references, and 55 slide-specific source annotations.
+- Content inventory records 57 slides, 9 sections, 57 inline speaker notes, 10 deck-global source references, and 56 slide-specific source annotations.
 - Extraction confidence currently has no low-confidence fields.
 
 ### 수행
@@ -67,8 +67,8 @@ Evidence path: `docs/harness/lecture-cuts-reproduction-contract.md`
 
 ### 근거
 
-- `docs/harness/lecture-cuts-content-inventory.md#summary` - records 56 slides, source contract path, source map path, 55 slide-specific annotations, and 10 deck-global references.
-- `docs/harness/lecture-cuts-content-inventory.md#speaker-source-counts` - records 56 inline speaker notes.
+- `docs/harness/lecture-cuts-content-inventory.md#summary` - records 57 slides, source contract path, source map path, 56 slide-specific annotations, and 10 deck-global references.
+- `docs/harness/lecture-cuts-content-inventory.md#speaker-source-counts` - records 57 inline speaker notes.
 - `docs/harness/lecture-cuts-content-inventory.md#extraction-confidence` - states that there are no low-confidence fields.
 - `docs/harness/lecture-cuts-reproduction-contract.md#blocking-failures` - defines slide count, order, registered files, hashes, titles, speaker sources, and slide-level source evidence as blocking contract failures.
 - `docs/harness/codex-session-decision-log.md#stable-decisions` - requires 4-hour workshop quality, lecture-cuts as golden reference, source-backed technical claims, role-separated agents, and reusable harness gates.
@@ -83,7 +83,7 @@ Evidence path: `scripts/audit-lecture-cuts-speaker-sync.js`
 
 ### 발견
 
-- The deck is structurally reproducible and presenter scripts are now resolved inline for all 56 slides.
+- The deck is structurally reproducible and presenter scripts are now resolved inline for all 57 slides.
 - Current scan reports 0 presenter-preview fallback scripts, 0 generic presenter scripts, and 0 source-sensitive term mismatches.
 
 ### 수행
@@ -112,7 +112,7 @@ Evidence path: `scripts/audit-lecture-cuts-speaker-sync.js`
 - `lecture-cuts/HANDOFF.md` - records the current script-depth warning and the sync decision.
 - `docs/superpowers/plans/2026-05-25-lecture-cuts-speaker-sync-plan.md` - defines the implementation sequence and verification commands.
 - `scripts/audit-lecture-cuts-speaker-sync.js` - verifies presenter script resolution, generic-script removal, and source-sensitive term alignment.
-- `lecture-cuts/assets/slides.js` - contains 56 inline presenter scripts and slide-level source metadata.
+- `lecture-cuts/assets/slides.js` - contains 57 inline presenter scripts and slide-level source metadata.
 
 ## korean-copy-review-agent
 
@@ -146,7 +146,7 @@ Evidence path: `scripts/audit-lecture-cuts-korean-copy.js`
 ### 미해결
 
 - No projector, desktop, or mobile overflow warning remains.
-- Source coverage is resolved by later pass: 55 slide-level source annotations and 1 explicit deck-global allowlist entry.
+- Source coverage is resolved by later pass: 56 slide-level source annotations and 1 explicit deck-global allowlist entry.
 - Future copy passes should preserve the Korean-first first-use policy and literal artifact exceptions.
 
 ### 근거
@@ -154,7 +154,7 @@ Evidence path: `scripts/audit-lecture-cuts-korean-copy.js`
 - `lecture-cuts/skills/korean-copy-review/SKILL.md` - defines the reusable Korean copy review process and terminology defaults.
 - `lecture-cuts/agents/korean-copy-review-agent.md` - defines the agent report contract and fail conditions.
 - `scripts/audit-lecture-cuts-korean-copy.js` - reports current Korean copy PASS/WARN findings.
-- `scripts/audit-lecture-cuts-speaker-sync.js` - confirms 56 scripts resolved, 0 fallback scripts, 0 generic scripts, and 0 source-sensitive term mismatches.
+- `scripts/audit-lecture-cuts-speaker-sync.js` - confirms 57 scripts resolved, 0 fallback scripts, 0 generic scripts, and 0 source-sensitive term mismatches.
 - `lecture-cuts/assets/slides.js` - contains the synchronized presenter-script rewrites for the changed slides.
 
 ## claude-md-terminology-review
@@ -191,7 +191,7 @@ Evidence path: `scripts/audit-lecture-cuts-korean-copy.js`
 - `lecture-cuts/08-claude-md.html` - visible title now uses "항상 적용되는 프로젝트 지침".
 - `lecture-cuts/assets/slides.js` - presenter scripts and cues now distinguish prompt, project guidance, and handoff.
 - `lecture-cuts/index.html` - index label now uses "항상 적용되는 프로젝트 지침".
-- `scripts/audit-lecture-cuts-speaker-sync.js` - reports 56 scripts resolved and 0 term mismatches.
+- `scripts/audit-lecture-cuts-speaker-sync.js` - reports 57 scripts resolved and 0 term mismatches.
 
 ## pedagogy-flow-review-agent
 
@@ -246,7 +246,7 @@ Evidence path: `scripts/verify-lecture-cuts-harness.js`
 
 ### 발견
 
-- The deck now has 56 registered slides after the scoped compression pass.
+- The deck now has 57 registered slides after the scoped compression pass.
 - The first 29-slide teaching run now moves from problem framing into failure patterns, whole map, Spec/Prompt, persona, few-shot, and reasoning without returning to the older solution-first order.
 - Four repeated concept clusters were integrated: few-shot good/bad, failure-to-harness mapping, parallel safe/risky, and Hook Event/Command/Result.
 
@@ -264,16 +264,16 @@ Evidence path: `scripts/verify-lecture-cuts-harness.js`
 
 ### 미해결
 
-- Source coverage is now resolved by later pass: 55 slide-level source annotations and 1 explicit deck-global allowlist entry.
+- Source coverage is now resolved by later pass: 56 slide-level source annotations and 1 explicit deck-global allowlist entry.
 - No projector, desktop, or mobile overflow warning remains.
 - Korean copy audit no longer reports long-title/subtitle or mixed official-term warnings.
 
 ### 근거
 
-- `lecture-cuts/assets/slides.js` - canonical 56-slide registry and updated presenter scripts.
-- `lecture-cuts/slide-spec.json` - regenerated 56-slide reproduction contract.
+- `lecture-cuts/assets/slides.js` - canonical 57-slide registry and updated presenter scripts.
+- `lecture-cuts/slide-spec.json` - regenerated 57-slide reproduction contract.
 - `docs/harness/lecture-cuts-story-flow-map.md` - records the applied phase 2 compression.
-- `scripts/audit-lecture-cuts-speaker-sync.js` - reports 56 resolved scripts and 0 source-sensitive mismatches.
+- `scripts/audit-lecture-cuts-speaker-sync.js` - reports 57 resolved scripts and 0 source-sensitive mismatches.
 - `scripts/verify-lecture-cuts-harness.js` - reports the unified verification gate passing.
 
 ## slide-script-composition-review-agent
@@ -287,7 +287,7 @@ Evidence path: `docs/audits/2026-05-25-lecture-cuts-slide-script-composition-rev
 ### 발견
 
 - A reusable composition-review skill, agent contract, audit script, and dated report now exist for checking whether slide composition and presenter scripts support the same teaching point.
-- The heuristic pass checked all 56 slides and reported 0 P1, 0 P2, and 3 P3 transition findings.
+- The heuristic pass checked all 57 slides and reported 0 P1, 0 P2, and 3 P3 transition findings.
 - The read-only subagent pass found higher-signal manual candidates: Slide 32 carries too much script for the visible anchors, Slides 31-32 repeat the memory-layer transition, Slide 14 underuses half of the visible layer matrix, Slide 26 should point more directly to the rubric code, and `presenter-preview.html` may be confused with the current rehearsal surface.
 
 ### 수행
@@ -314,7 +314,7 @@ Evidence path: `docs/audits/2026-05-25-lecture-cuts-slide-script-composition-rev
 
 - `lecture-cuts/skills/slide-script-composition-review/SKILL.md` - defines the reusable review axes and report contract.
 - `lecture-cuts/agents/slide-script-composition-review-agent.md` - defines owned artifacts, required reads, and stop conditions.
-- `scripts/audit-lecture-cuts-slide-script-composition.js` - generates the 56-slide composition report and includes manual/subagent findings when present.
+- `scripts/audit-lecture-cuts-slide-script-composition.js` - generates the 57-slide composition report and includes manual/subagent findings when present.
 - `docs/audits/2026-05-25-lecture-cuts-slide-script-composition-agent-findings.md` - records the read-only subagent findings and recommended fix order.
 - `docs/audits/2026-05-25-lecture-cuts-slide-script-composition-review.md` - combined generated report used for this handoff.
 
@@ -328,7 +328,7 @@ Evidence path: `docs/audits/2026-05-26-lecture-cuts-cue-sample-report.md`
 
 ### 발견
 
-- The presenter needs rehearsal cues rather than a word-for-word script for a 4-hour, 56-slide workshop.
+- The presenter needs rehearsal cues rather than a word-for-word script for a 4-hour, 57-slide workshop.
 - The review UI can separate short cue prompts from the detailed preparation script without exposing cues in `deck.html`.
 - NotebookLM comparison was requested, but the local CLI failed before returning usable cue suggestions.
 
@@ -337,13 +337,13 @@ Evidence path: `docs/audits/2026-05-26-lecture-cuts-cue-sample-report.md`
 - Added editable `발표 큐` panels to `lecture-cuts/assets/presenter-review.js`.
 - Added cue save support to `scripts/serve-lecture-cuts-review.js`.
 - Added `speaker.cues` export support to `scripts/export-lecture-cuts-contract.js`.
-- Added cue content for all 56 slides in `lecture-cuts/assets/slides.js`.
+- Added cue content for all 57 slides in `lecture-cuts/assets/slides.js`.
 - Added cue-panel browser checks to `scripts/audit-lecture-cuts.js`.
 - Saved the NotebookLM request and cue sample report under `docs/audits/`.
 
 ### 판단
 
-- The cue workflow is usable for rehearsal: all 56 slides render cue panels, and all 56 panels contain cue content.
+- The cue workflow is usable for rehearsal: all 57 slides render cue panels, and all 57 panels contain cue content.
 - The cue wording should be reviewed by the presenter during rehearsal before treating it as final delivery support.
 - NotebookLM should be retried only after the CLI streaming parser issue is fixed or bypassed.
 
@@ -356,10 +356,10 @@ Evidence path: `docs/audits/2026-05-26-lecture-cuts-cue-sample-report.md`
 
 - `lecture-cuts/assets/presenter-review.js` - renders editable cue panels above the detailed script.
 - `scripts/serve-lecture-cuts-review.js` - accepts and persists `speaker.cues`.
-- `lecture-cuts/assets/slides.js` - stores cue objects for 56 slides.
+- `lecture-cuts/assets/slides.js` - stores cue objects for 57 slides.
 - `docs/audits/2026-05-26-lecture-cuts-cue-notebooklm-request.md` - NotebookLM comparison prompt.
 - `docs/audits/2026-05-26-lecture-cuts-cue-sample-report.md` - cue sample report and NotebookLM failure note.
-- `scripts/audit-lecture-cuts.js` - checks 56 cue panels and requires all 56 cue panels to contain content.
+- `scripts/audit-lecture-cuts.js` - checks 57 cue panels and requires all 57 cue panels to contain content.
 
 ## deck-file-url-runtime-agent
 
@@ -395,7 +395,7 @@ Evidence path: `lecture-cuts/assets/slide-html.js`
 - `lecture-cuts/deck.html` - loads `assets/slide-html.js` before `assets/deck.js`.
 - `lecture-cuts/assets/deck.js` - uses cached slide HTML when `window.location.protocol` is `file:`.
 - `scripts/export-lecture-cuts-contract.js` - regenerates `lecture-cuts/assets/slide-html.js`.
-- Playwright file URL smoke - reports 56 frames, active `00-title.html`, no deck error, and 0 browser console errors.
+- Playwright file URL smoke - reports 57 frames, active `00-title.html`, no deck error, and 0 browser console errors.
 
 ## quality-improvement-runtime-source-visual-pass
 
@@ -408,7 +408,7 @@ Evidence path: `docs/audits/2026-05-25-lecture-cuts-quality-improvement-master-p
 ### 발견
 
 - Direct `file://` runtime behavior is now covered by generated `assets/slide-html.js`, runtime diagnostics, validator cache-drift checks, and browser audit smoke.
-- Source coverage now has 0 unclassified deck-global-only slides; 55 slides have slide-level evidence and 1 synthetic concept/example slide are explicitly allowlisted.
+- Source coverage now has 0 unclassified deck-global-only slides; 56 slides have slide-level evidence and 1 synthetic concept/example slide are explicitly allowlisted.
 - The prioritized P1 visual findings for workbench cards, the rule-lift visual, and the read-before-edit code example were remediated.
 - Later code/file-tree/orbital visual warnings were also cleared from projector, desktop, and mobile audits.
 - Korean terminology P2 changes now include the formal first-use policy: Korean-first bilingual term on first teaching use, Korean prose afterward, literal artifacts preserved.
@@ -439,3 +439,57 @@ Evidence path: `docs/audits/2026-05-25-lecture-cuts-quality-improvement-master-p
 - `lecture-cuts/assets/deck.js` - records runtime diagnostics for fetch/cache loading behavior.
 - `lecture-cuts/assets/style.css` - contains the targeted visual fixes for the P1 overflow findings.
 - `lecture-cuts/sources.html` - contains the expanded source appendix for prompt engineering references.
+
+## 2026-05-26 Presentation Sync Console
+
+Status: PASS
+Severity: P2
+Blocks handoff: no
+Required follow-up: none
+
+### 수행
+
+- Added server-held presentation state and SSE fanout to `scripts/serve-lecture-cuts-review.js`.
+- Added `lecture-cuts/speaker.html` and `lecture-cuts/assets/speaker.js` for current slide, next slide, presenter prompt, timer, and previous/next controls.
+- Added `lecture-cuts/assets/presentation-sync.js` so `deck.html` publishes local slide changes and follows remote console changes.
+
+### 판단
+
+- `deck.html` remains the stage screen.
+- `speaker.html` is the presenter-owned console.
+- Both screens write the same server-side slide index, so either side can advance the presentation when served through the local review server.
+
+### 근거
+
+- `node scripts/validate-lecture-cuts-contract.js`
+- `node scripts/audit-lecture-cuts.js`
+- `node scripts/verify-lecture-cuts-harness.js`
+- Playwright smoke on `http://127.0.0.1:8777/deck.html` and `http://127.0.0.1:8777/speaker.html`: speaker next moved stage to slide 2, stage next moved speaker to slide 3, with no console/page errors.
+
+## 2026-05-26 Audience Review View
+
+Status: PASS
+Severity: P2
+Blocks handoff: no
+Required follow-up: none
+
+### 수행
+
+- Added `lecture-cuts/audience.html` and `lecture-cuts/assets/audience.js` for attendee-controlled review of only the slides already reached by the presenter.
+- Added `/api/audience/slides`, `/api/audience/slide/:index`, and `/api/audience/events` to `scripts/serve-lecture-cuts-review.js`.
+- Added Cloudflare-header public-route protection so public requests can reach audience assets and sanitized audience APIs, but not `deck.html`, `speaker.html`, raw slide HTML, `assets/slides.js`, or presenter scripts.
+
+### 판단
+
+- Audience view follows live by default, but attendees can move backward without changing the presenter/stage slide index.
+- Audience slide HTML is derived from the canonical slide files and registry, then stripped of `.note`, script/style tags, event handlers, and presenter metadata before being sent.
+- `deck.html`, `speaker.html`, and `audience.html` now all read from the same server-held presentation state instead of maintaining separate slide lists.
+
+### 근거
+
+- `node scripts/export-lecture-cuts-contract.js`
+- `node scripts/validate-lecture-cuts-contract.js`
+- `node scripts/audit-lecture-cuts.js`
+- `node scripts/verify-lecture-cuts-harness.js`
+- Public-request smoke with `cf-ray` header: `assets/slides.js` 404, `deck.html` 404, `audience.html` 200, future audience slide 403, current audience slide contained no `note`, `speaker`, `cues`, or script text.
+- Playwright audience smoke on `http://127.0.0.1:8777/audience.html`: live advanced to slide 3, attendee moved back to slide 2, and server presentation index stayed at 2 with no console/page errors.

@@ -547,8 +547,8 @@ function checkConfidence() {
   }
   const spec = JSON.parse(readText(slideSpecPath));
   const lows = collectLowConfidence(spec);
-  if (spec.slides.length !== 56) {
-    console.error(`FAIL expected 56 slides, found ${spec.slides.length}`);
+  if (spec.slides.length !== 58) {
+    console.error(`FAIL expected 58 slides, found ${spec.slides.length}`);
     process.exit(1);
   }
   if (lows.length) {

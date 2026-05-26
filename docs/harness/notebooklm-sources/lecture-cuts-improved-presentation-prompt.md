@@ -1,6 +1,6 @@
 # AI Agent Harness Engineering - 개선본 발표 프롬프트
 
-생성 시각: 2026-05-25T15:31:36.865Z
+생성 시각: 2026-05-26T15:18:59.064Z
 
 이 문서는 NotebookLM에서 `AI Agent Harness Engineering: Building Scalable Automation Workflows` 강의 덱의 발표 스크립트와 구성 검토를 요청할 때 사용할 기준 프롬프트입니다.
 
@@ -35,14 +35,14 @@
 ## 섹션 흐름
 
 - 00: 오프닝 / 문제 제기 (3 slides)
-- 01: 실패 패턴 (8 slides)
-- 02: 전체 지도 (4 slides)
-- 03: Spec / Prompt (16 slides)
-- 04: Context / Memory (8 slides)
-- 05: Skills / Superpowers (10 slides)
-- 06: Agents / Tools (11 slides)
-- 07: Hooks / Verification (12 slides)
-- 08: Final Workflow (11 slides)
+- 01: 실패 패턴 (6 slides)
+- 02: 전체 지도 (3 slides)
+- 03: Spec / Prompt (9 slides)
+- 04: Context / Memory (4 slides)
+- 05: Skills / Superpowers (6 slides)
+- 06: Agents / Tools (10 slides)
+- 07: Hooks / Verification (8 slides)
+- 08: Final Workflow (9 slides)
 
 ## 품질 기준
 
@@ -50,4 +50,4 @@
 - 공식 파일명과 명령어는 원문으로 유지합니다.
 - `CLAUDE.md`, `Skill`, `Subagent`, `Hook`, `MCP`, `Evaluation`, `HANDOFF.md` 같은 핵심 용어는 흐름상 필요한 곳에서 빠지면 안 됩니다.
 - 발표 스크립트에는 NotebookLM citation 표기인 `[1]`, `[2]`를 넣지 않습니다.
-- 완료 전에는 slide count 83, speaker script 83개, source-sensitive term alignment를 확인합니다.
+- 완료 전에는 slide count 58, speaker script 58개, source-sensitive term alignment를 확인합니다.

@@ -2,10 +2,10 @@
 
 ## Current State
 
-- `lecture-cuts/` is the current 56-slide golden reference deck for the 4-hour Korean workshop.
+- `lecture-cuts/` is the current 57-slide golden reference deck for the 4-hour Korean workshop.
 - `lecture-cuts/slide-spec.json` captures slide order, text, speaker source, source references, and content hashes.
 - Slide copy and presenter scripts are now treated as one coupled teaching surface: slide HTML changes must update presenter script, and script changes that alter claims/examples/flow must update slide HTML and `div.note`.
-- All 56 registered slides now have inline presenter scripts; no presenter-preview fallback or generic template presenter script remains.
+- All 57 registered slides now have inline presenter scripts; no presenter-preview fallback or generic template presenter script remains.
 - `scripts/validate-lecture-cuts-contract.js` now fails if current HTML drifts from `slide-spec.json`.
 - `scripts/audit-lecture-cuts.js` now includes reproduction contract validation, and `scripts/audit-lecture-cuts-speaker-sync.js` checks presenter-script specificity.
 - `scripts/audit-lecture-cuts-korean-copy.js` now checks Korean copy length, spacing candidates, repeated sentence starts, and Korean-first official terminology policy.
@@ -13,7 +13,7 @@
 - `lecture-cuts/skills/slide-redundancy-review/SKILL.md`, `lecture-cuts/agents/slide-redundancy-review-agent.md`, and `scripts/audit-lecture-cuts-slide-redundancy.js` define the neighboring-slide duplication review workflow.
 - `lecture-cuts/skills/slide-script-composition-review/SKILL.md`, `lecture-cuts/agents/slide-script-composition-review-agent.md`, and `scripts/audit-lecture-cuts-slide-script-composition.js` define the slide composition and presenter-script fit review workflow.
 - `scripts/serve-lecture-cuts-review.js` serves `presenter-review.html` with a local save API so presenter script edits can update `assets/slides.js`, slide copy edits can update each slide HTML file, and the reproduction contract is regenerated.
-- `presenter-review.html` now shows editable `발표 큐` fields above the detailed script. All 56 registered slides have cue content; actual audience deck output does not render cues.
+- `presenter-review.html` now shows editable `발표 큐` fields above the detailed script. All 57 registered slides have cue content; actual audience deck output does not render cues.
 - CLAUDE.md-related wording now consistently distinguishes `프롬프트=이번 요청`, `CLAUDE.md=항상 적용되는 프로젝트 지침`, and `HANDOFF.md=다음 세션 인수인계 상태 파일`.
 - `scripts/run-lecture-cuts-hook.js` and `scripts/verify-lecture-cuts-harness.js` define the pre-handoff gate.
 - `lecture-cuts/deck.html` now supports direct `file://` opening by loading generated `lecture-cuts/assets/slide-html.js` when browser `fetch()` cannot read local slide files.
@@ -49,21 +49,21 @@
 
 ## Evidence Map Status
 
-- PASS: 56 registered slides exported to `lecture-cuts/slide-spec.json`.
-- PASS: 56 current slide hashes match the exported reproduction contract.
-- PASS: 56 slides have inline presenter scripts.
+- PASS: 57 registered slides exported to `lecture-cuts/slide-spec.json`.
+- PASS: 57 current slide hashes match the exported reproduction contract.
+- PASS: 57 slides have inline presenter scripts.
 - PASS: 0 generic presenter scripts remain.
 - PASS: `lecture-cuts/assets/slide-html.js` matches the slide registry order and current slide HTML fragments.
-- PASS: direct `file://` presentation runtime loads 56 cached slide fragments.
-- PASS: direct `file://` presenter review runtime loads 56 review rows through the slide HTML cache.
-- PASS: presenter review renders 56 cue panels and all 56 cue panels have content.
+- PASS: direct `file://` presentation runtime loads 57 cached slide fragments.
+- PASS: direct `file://` presenter review runtime loads 57 review rows through the slide HTML cache.
+- PASS: presenter review renders 57 cue panels and all 57 cue panels have content.
 - PASS: direct `file://` presenter review disables save with a read-only status instead of throwing a failed fetch/save error.
-- PASS: 55 slides carry slide-level source annotations; 1 synthetic concept/example slide explicitly allow deck-global coverage.
+- PASS: 56 slides carry slide-level source annotations; 1 synthetic concept/example slide explicitly allow deck-global coverage.
 
 ## Source Coverage
 
 - PASS: Slides already marked with per-slide source evidence retain slide-level evidence.
-- PASS: 55 slides now carry slide-level source annotations.
+- PASS: 56 slides now carry slide-level source annotations.
 - PASS: 1 synthetic concept/example slide explicitly allow deck-global appendix coverage.
 - PASS: 0 unclassified deck-global-only slides remain.
 - Artifact Path: `docs/harness/lecture-cuts-source-map.json`
@@ -169,7 +169,7 @@
 ### Command: node scripts/export-lecture-cuts-contract.js --check-confidence
 
 - Exit Code: 0
-- PASS: 56 slides checked.
+- PASS: 57 slides checked.
 - PASS: 0 low-confidence extraction fields.
 - Artifact Path: `lecture-cuts/slide-spec.json`
 
@@ -178,13 +178,13 @@
 - Exit Code: 0
 - PASS: contract slide count, order, hashes, titles, speaker sources, and source-sensitive slide coverage.
 - PASS: source coverage allowlist covers 1 synthetic concept/example slide.
-- PASS: slide HTML cache order and drift checks passed for 56 cached fragments.
+- PASS: slide HTML cache order and drift checks passed for 57 cached fragments.
 - Artifact Path: `docs/harness/lecture-cuts-reproduction-contract.md`
 
 ### Command: node scripts/audit-lecture-cuts-speaker-sync.js
 
 - Exit Code: 0
-- PASS: 56 presenter scripts resolved.
+- PASS: 57 presenter scripts resolved.
 - PASS: 0 presenter-preview fallback scripts.
 - PASS: 0 generic presenter scripts.
 - PASS: 0 source-sensitive term mismatches.
@@ -210,7 +210,7 @@
 ### Command: node scripts/audit-lecture-cuts-slide-script-composition.js
 
 - Exit Code: 0
-- PASS: 56 slides checked by the composition report generator.
+- PASS: 57 slides checked by the composition report generator.
 - PASS: heuristic pass reports 0 P1 and 0 P2 findings.
 - WARN: manual/subagent findings identify Slide 31-32, Slide 32, Slide 14, Slide 26, and `presenter-preview.html` as next content-improvement candidates.
 - Artifact Path: `docs/audits/2026-05-25-lecture-cuts-slide-script-composition-review.md`
@@ -221,8 +221,8 @@
 - PASS: static files, local references, reproduction contract, browser render, presenter scripts.
 - PASS: 0 slides without inline speaker script.
 - PASS: source coverage allowlist covers 1 synthetic concept/example slide.
-- PASS: slide HTML cache order and drift checks passed for 56 cached fragments.
-- PASS: projector/desktop/mobile overflow checks pass for 56 slides.
+- PASS: slide HTML cache order and drift checks passed for 57 cached fragments.
+- PASS: projector/desktop/mobile overflow checks pass for 57 slides.
 - Artifact Path: `scripts/audit-lecture-cuts.js`
 
 ### Command: node scripts/verify-lecture-cuts-harness.js
@@ -237,7 +237,7 @@
 
 - Exit Code: 0
 - PASS: extraction confidence.
-- PASS: 56 slides checked.
+- PASS: 57 slides checked.
 - Artifact Path: `lecture-cuts/slide-spec.json`
 
 ### Command: node scripts/validate-lecture-cuts-contract.js
@@ -245,13 +245,13 @@
 - Exit Code: 0
 - PASS: contract slide count, order, registered files, hashes, titles, speaker sources, and source-sensitive slide coverage.
 - PASS: source coverage allowlist covers 1 synthetic concept/example slide.
-- PASS: slide HTML cache order and drift checks passed for 56 cached fragments.
+- PASS: slide HTML cache order and drift checks passed for 57 cached fragments.
 - Artifact Path: `docs/harness/lecture-cuts-reproduction-contract.md`
 
 ### Command: node scripts/audit-lecture-cuts-speaker-sync.js
 
 - Exit Code: 0
-- PASS: 56 presenter scripts resolved.
+- PASS: 57 presenter scripts resolved.
 - PASS: 0 presenter-preview fallback scripts.
 - PASS: 0 generic presenter scripts.
 - PASS: 0 source-sensitive term mismatches.
@@ -269,10 +269,10 @@
 
 - Exit Code: 0
 - PASS: slide registry, registered files, slide markup, local references, inline scripts, standalone nav order, reproduction contract, projector/desktop/mobile render load, note exposure, images, viewport fit, and presenter scripts.
-- PASS: file URL runtime smoke loaded 56 frames through `window.LECTURE_SLIDE_HTML`.
-- PASS: file URL presenter-review smoke loaded 56 review rows through `window.LECTURE_SLIDE_HTML`.
+- PASS: file URL runtime smoke loaded 57 frames through `window.LECTURE_SLIDE_HTML`.
+- PASS: file URL presenter-review smoke loaded 57 review rows through `window.LECTURE_SLIDE_HTML`.
 - PASS: file URL presenter-review save mode is read-only; HTTP presenter-review save API responds successfully through the local server.
-- PASS: presenter review renders 56 cue panels; all 56 cue panels contain rehearsal cues.
+- PASS: presenter review renders 57 cue panels; all 57 cue panels contain rehearsal cues.
 - PASS: projector/desktop/mobile overflow warnings are now 0 after code/file-tree/orbital visual and compact mobile fixes.
 - Artifact Path: `scripts/audit-lecture-cuts.js`
 
@@ -285,8 +285,8 @@
 ### Command: Playwright file URL smoke
 
 - Exit Code: 0
-- PASS: `file:///Users/sabyun/goinfre/research_ai/lecture-cuts/deck.html` renders 56 `.deck-frame` slides.
-- PASS: direct file runtime uses 56 cached fragments with `fetchLoaded=0` and `cacheFallbackLoaded=0`.
+- PASS: `file:///Users/sabyun/goinfre/research_ai/lecture-cuts/deck.html` renders 57 `.deck-frame` slides.
+- PASS: direct file runtime uses 57 cached fragments with `fetchLoaded=0` and `cacheFallbackLoaded=0`.
 - PASS: active slide is `00-title.html`.
 - PASS: no `.deck-error` text.
 - PASS: browser console errors 0 after direct `file://` cache loading.
@@ -295,8 +295,8 @@
 ### Command: Playwright file URL presenter-review smoke
 
 - Exit Code: 0
-- PASS: `file:///Users/sabyun/goinfre/research_ai/lecture-cuts/presenter-review.html` renders 56 `.review-cut` rows.
-- PASS: 56 `.review-cues` panels render; all 56 panels contain cue text.
+- PASS: `file:///Users/sabyun/goinfre/research_ai/lecture-cuts/presenter-review.html` renders 57 `.review-cut` rows.
+- PASS: 57 `.review-cues` panels render; all 57 panels contain cue text.
 - PASS: `window.LECTURE_SLIDE_HTML` is loaded.
 - PASS: save button is disabled with `읽기 전용: 저장은 로컬 서버에서 가능`.
 - PASS: no `.deck-error` text and browser console errors 0.
@@ -305,7 +305,7 @@
 ### Command: Playwright HTTP presenter-review save smoke
 
 - Exit Code: 0
-- PASS: `http://127.0.0.1:8766/presenter-review.html` renders 56 `.review-cut` rows.
+- PASS: `http://127.0.0.1:8766/presenter-review.html` renders 57 `.review-cut` rows.
 - PASS: `POST /api/presenter-review/save` returns 200 and accepts `speaker.cues` updates.
 - Artifact Path: `scripts/serve-lecture-cuts-review.js`
 
@@ -328,7 +328,7 @@
 - PASS: Direct file opening for `lecture-cuts/deck.html` is fixed with a generated slide HTML cache fallback.
 - PASS: Standalone Prev/Next navigation now matches `lecture-cuts/assets/slides.js`.
 - PASS: Korean-first official terminology policy is installed and the mixed-term audit now reports 0 warnings.
-- PASS: Presenter cue workflow is installed in `presenter-review.html`; all 56 slides have cue content.
+- PASS: Presenter cue workflow is installed in `presenter-review.html`; all 57 slides have cue content.
 - WARN: Slide-script composition review is now installed; manual findings point to Slide 31-32, Slide 32, Slide 14, Slide 26, and `presenter-preview.html` as the next presentation-quality pass.
 
 ## Blocked Risks
@@ -338,7 +338,7 @@
 ## Non-Blocking Risks
 
 - No blocking visual overflow risk is known; browser audit currently reports projector, desktop, and mobile overflow PASS.
-- Current source map has 55 slide-level source annotations and 1 explicit deck-global allowlist entry; no unclassified deck-global-only slide remains.
+- Current source map has 56 slide-level source annotations and 1 explicit deck-global allowlist entry; no unclassified deck-global-only slide remains.
 - Korean copy audit now treats first teaching use as Korean-first bilingual form, then requires Korean prose unless the token is a literal artifact/path/code identifier.
 - Slide 06/07 redundancy has been addressed; continue using the slide-redundancy review skill for future neighboring-slide concerns.
 - Glossary centralization and partial-term matching fixes are workflow requirements for future decks, but the visible lecture-cuts runtime was not changed in this workflow-only pass.
@@ -348,5 +348,5 @@
 ## Next Prompt
 
 ```text
-lecture-cuts/HANDOFF.md부터 읽고, docs/harness/codex-session-decision-log.md, lecture-cuts/slide-spec.json, docs/audits/2026-05-25-lecture-cuts-slide-script-composition-review.md, docs/audits/2026-05-26-lecture-cuts-cue-sample-report.md를 확인해줘. 발표 큐는 56장 전체에 들어갔으니 다음 pass는 큐 품질을 리허설 관점에서 다듬거나, Slide 31-32 경계, Slide 32 CLAUDE.md 설명 부하, Slide 14 matrix 대본, Slide 26 rubric code 대본을 함께 개선해줘. 변경 후에는 node scripts/export-lecture-cuts-contract.js, node scripts/validate-lecture-cuts-contract.js, node scripts/audit-lecture-cuts.js, node scripts/audit-lecture-cuts-korean-copy.js, node scripts/audit-lecture-cuts-speaker-sync.js, node scripts/audit-lecture-cuts-slide-script-composition.js, node scripts/verify-lecture-cuts-harness.js를 실행한 뒤 Verification과 Agent Findings를 최신 결과로 갱신해줘.
+lecture-cuts/HANDOFF.md부터 읽고, docs/harness/codex-session-decision-log.md, lecture-cuts/slide-spec.json, docs/audits/2026-05-25-lecture-cuts-slide-script-composition-review.md, docs/audits/2026-05-26-lecture-cuts-cue-sample-report.md를 확인해줘. 발표 큐는 57장 전체에 들어갔으니 다음 pass는 큐 품질을 리허설 관점에서 다듬거나, Slide 31-32 경계, Slide 32 CLAUDE.md 설명 부하, Slide 14 matrix 대본, Slide 26 rubric code 대본을 함께 개선해줘. 변경 후에는 node scripts/export-lecture-cuts-contract.js, node scripts/validate-lecture-cuts-contract.js, node scripts/audit-lecture-cuts.js, node scripts/audit-lecture-cuts-korean-copy.js, node scripts/audit-lecture-cuts-speaker-sync.js, node scripts/audit-lecture-cuts-slide-script-composition.js, node scripts/verify-lecture-cuts-harness.js를 실행한 뒤 Verification과 Agent Findings를 최신 결과로 갱신해줘.
 ```

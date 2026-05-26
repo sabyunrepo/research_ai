@@ -10,7 +10,7 @@
     "sourceMap": "docs/harness/lecture-cuts-source-map.json",
     "slideHtmlCache": "lecture-cuts/assets/slide-html.js"
   },
-  "slideCount": 56,
+  "slideCount": 58,
   "sourcePageLinks": [
     {
       "index": 1,
@@ -1201,7 +1201,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:45705926007cf9f5c1ee527ca44b3fb15689d0cf1bf1874a195d6eaee2a2f5a8",
+      "contentHash": "sha256:de40e9a795632dd4f2ccd738b4b2b96392a323ed56f16c798289c9734dc62713",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -1228,10 +1228,10 @@
       }
     },
     {
-      "id": "04-1-prompt-anatomy",
-      "file": "04-1-prompt-anatomy.html",
-      "sourceFile": "lecture-cuts/04-1-prompt-anatomy.html",
-      "parent": "04",
+      "id": "07-reasoning-prompts",
+      "file": "07-reasoning-prompts.html",
+      "sourceFile": "lecture-cuts/07-reasoning-prompts.html",
+      "parent": "07",
       "section": {
         "id": "03",
         "title": "Spec / Prompt",
@@ -1239,7 +1239,7 @@
         "total": 9,
         "isStart": false
       },
-      "title": "좋은 요청은 여섯개로 구성할 수 있습니다",
+      "title": "“단계별로 생각해”를 남발하지 않습니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1250,18 +1250,18 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:16458ece7820042db9a6ba2fff84ada1391378c945119c3cb40fbf59df680c42",
+      "contentHash": "sha256:ec72f5e1527c329eb4cd62defc5fbf41187699108c27e12a7721a4564ba3c1a0",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
-        "title": "lecture-cuts/04-1-prompt-anatomy.html:<h2>",
-        "subtitle": "lecture-cuts/04-1-prompt-anatomy.html:<p.subtitle>",
-        "bullets": "lecture-cuts/04-1-prompt-anatomy.html:<ul.bullets>",
-        "note": "lecture-cuts/04-1-prompt-anatomy.html:<div.note>",
-        "mediaRefs": "lecture-cuts/04-1-prompt-anatomy.html:href/src/url references",
+        "title": "lecture-cuts/07-reasoning-prompts.html:<h2>",
+        "subtitle": "lecture-cuts/07-reasoning-prompts.html:<p.subtitle>",
+        "bullets": "lecture-cuts/07-reasoning-prompts.html:<ul.bullets>",
+        "note": "lecture-cuts/07-reasoning-prompts.html:<div.note>",
+        "mediaRefs": "lecture-cuts/07-reasoning-prompts.html:href/src/url references",
         "speaker": "lecture-cuts/assets/slides.js:speaker",
         "sources": "lecture-cuts/assets/slides.js:sources",
-        "contentHash": "lecture-cuts/04-1-prompt-anatomy.html"
+        "contentHash": "lecture-cuts/07-reasoning-prompts.html"
       },
       "fieldConfidence": {
         "file": "high",
@@ -1299,7 +1299,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:de04d36c5b09fd6402fc376936ffb82563487d3af099cf2ca6df2a61394498f0",
+      "contentHash": "sha256:c1ef33b8d8a8cdc9887a2fea7cd8097b23e8d76a3b1902384b4d010ef7bd4a88",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -1326,10 +1326,10 @@
       }
     },
     {
-      "id": "07-reasoning-prompts",
-      "file": "07-reasoning-prompts.html",
-      "sourceFile": "lecture-cuts/07-reasoning-prompts.html",
-      "parent": "07",
+      "id": "04-1-prompt-anatomy",
+      "file": "04-1-prompt-anatomy.html",
+      "sourceFile": "lecture-cuts/04-1-prompt-anatomy.html",
+      "parent": "04",
       "section": {
         "id": "03",
         "title": "Spec / Prompt",
@@ -1337,7 +1337,7 @@
         "total": 9,
         "isStart": false
       },
-      "title": "“단계별로 생각해”를 남발하지 않습니다",
+      "title": "좋은요청은 여섯개의 섹션으로 나뉩니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1348,18 +1348,18 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:bfaa3d685bce582bd8d958d55c8d871506884244d50ba9e3b6d553f33855bd20",
+      "contentHash": "sha256:4e500b866c2c827658212ab50769630ad9b6e430b32ff490213c183d5934c1cb",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
-        "title": "lecture-cuts/07-reasoning-prompts.html:<h2>",
-        "subtitle": "lecture-cuts/07-reasoning-prompts.html:<p.subtitle>",
-        "bullets": "lecture-cuts/07-reasoning-prompts.html:<ul.bullets>",
-        "note": "lecture-cuts/07-reasoning-prompts.html:<div.note>",
-        "mediaRefs": "lecture-cuts/07-reasoning-prompts.html:href/src/url references",
+        "title": "lecture-cuts/04-1-prompt-anatomy.html:<h2>",
+        "subtitle": "lecture-cuts/04-1-prompt-anatomy.html:<p.subtitle>",
+        "bullets": "lecture-cuts/04-1-prompt-anatomy.html:<ul.bullets>",
+        "note": "lecture-cuts/04-1-prompt-anatomy.html:<div.note>",
+        "mediaRefs": "lecture-cuts/04-1-prompt-anatomy.html:href/src/url references",
         "speaker": "lecture-cuts/assets/slides.js:speaker",
         "sources": "lecture-cuts/assets/slides.js:sources",
-        "contentHash": "lecture-cuts/07-reasoning-prompts.html"
+        "contentHash": "lecture-cuts/04-1-prompt-anatomy.html"
       },
       "fieldConfidence": {
         "file": "high",
@@ -1386,7 +1386,7 @@
         "total": 9,
         "isStart": false
       },
-      "title": "결과 기준을 선명하게 요구합니다",
+      "title": "완료는 선언이 아니라 증거로 판단합니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1397,7 +1397,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:65a326e39ce29e6e03b6f4c4da74c381d818d29c82c17af9f99f59a1b22032bd",
+      "contentHash": "sha256:f9a76dc8321a36c353a08348c9d9befc8c844225cf05f426d48df9a3fa5e8130",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -1543,7 +1543,7 @@
         "total": 4,
         "isStart": false
       },
-      "title": "좋은 CLAUDE.md는 짧고 현재형입니다",
+      "title": "좋은 CLAUDE.md는 짧고 갱신 되어야합니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1559,7 +1559,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:4eb23fb354388bc375a4fe33495aeaac9bae5701e218ba6528a65c8a306a6d87",
+      "contentHash": "sha256:bd8e9daa34b35d509f701ae30eac019e580824268e23b676da1ed746c5090d23",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -1723,7 +1723,7 @@
         "total": 6,
         "isStart": true
       },
-      "title": "스킬은 반복 절차의 매뉴얼입니다",
+      "title": "스킬로 만들 일은 반복성과 기준이 있습니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1734,7 +1734,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:95d9ada7623b56eb6ab50aa3c6f6280edbba454d51e55f5570543378d03cea9a",
+      "contentHash": "sha256:be06d5267b76ac06b2e4852488081e677ccbea8e67fbaea9bc3330f46cc5e231",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -1772,7 +1772,7 @@
         "total": 6,
         "isStart": false
       },
-      "title": "스킬은 호출 조건, 절차, 자료를 나눕니다",
+      "title": "스킬은 호출 조건, 절차, 자료를 분리합니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1783,7 +1783,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:a48a2ec2aad34cdd07d5ee3e4810d957f672440104ed3a0f0a9d847fa6f60842",
+      "contentHash": "sha256:77a443e3e75d0fab8954ebba175bcc03a07ee7a0ed2c2ebb5be8c2e433d9790b",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -1821,7 +1821,7 @@
         "total": 6,
         "isStart": false
       },
-      "title": "실제 스킬 폴더가 작업 순서입니다",
+      "title": "스킬 폴더는 위에서 아래로 읽습니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -1837,7 +1837,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:ec8ddba882b9c5652cf94959285b6b601d77e0ab398094ddab4808b1002e1394",
+      "contentHash": "sha256:f1dc50aa16e59bae052543f5341e4ab4c82fad94aa7a0781d9c494c041a0c990",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -2029,7 +2029,7 @@
         "id": "06",
         "title": "Agents / Tools",
         "index": 1,
-        "total": 8,
+        "total": 10,
         "isStart": true
       },
       "title": "서브에이전트는 역할과 컨텍스트를 분리합니다",
@@ -2083,7 +2083,7 @@
         "id": "06",
         "title": "Agents / Tools",
         "index": 2,
-        "total": 8,
+        "total": 10,
         "isStart": false
       },
       "title": "Subagent는 작은 AI가 아니라 분리된 컨텍스트입니다",
@@ -2132,7 +2132,7 @@
         "id": "06",
         "title": "Agents / Tools",
         "index": 3,
-        "total": 8,
+        "total": 10,
         "isStart": false
       },
       "title": "Reviewer와 Researcher는 판단 축이 다릅니다",
@@ -2186,7 +2186,7 @@
         "id": "06",
         "title": "Agents / Tools",
         "index": 4,
-        "total": 8,
+        "total": 10,
         "isStart": false
       },
       "title": "요즘은 병렬 에이전트로 확장합니다",
@@ -2240,7 +2240,7 @@
         "id": "06",
         "title": "Agents / Tools",
         "index": 5,
-        "total": 8,
+        "total": 10,
         "isStart": false
       },
       "title": "병렬화는 안전한 경우와 위험한 경우를 나눕니다",
@@ -2254,7 +2254,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:1f98cff10d4c3351423d806c72b7adf83a8bf5a23f211f4142c07bbce79a3892",
+      "contentHash": "sha256:c85146af79ebe94bcd71dd464696737d93b2a90ebdf3a3bf744378c548fe523e",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -2281,6 +2281,60 @@
       }
     },
     {
+      "id": "18-2-tool-permissions",
+      "file": "18-2-tool-permissions.html",
+      "sourceFile": "lecture-cuts/18-2-tool-permissions.html",
+      "parent": "18",
+      "section": {
+        "id": "06",
+        "title": "Agents / Tools",
+        "index": 6,
+        "total": 10,
+        "isStart": false
+      },
+      "title": "에이전트 도구는 권한과 개수를 좁혀야 합니다",
+      "speakerSource": "inline",
+      "speakerSourceFile": "lecture-cuts/assets/slides.js",
+      "speakerSourceAnchor": "",
+      "sources": [
+        {
+          "label": "OpenAI Evaluation Best Practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+          "sourceScope": "slide"
+        },
+        {
+          "label": "Claude Code Subagents",
+          "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents",
+          "sourceScope": "slide"
+        }
+      ],
+      "contentHash": "sha256:23fe8ce7d0756e7ad555e4c53ead1b0e54b32e46215aa4f21f3df7c75eea842b",
+      "fieldSources": {
+        "file": "lecture-cuts/assets/slides.js:file",
+        "section": "lecture-cuts/assets/slides.js:section*",
+        "title": "lecture-cuts/18-2-tool-permissions.html:<h2>",
+        "subtitle": "lecture-cuts/18-2-tool-permissions.html:<p.subtitle>",
+        "bullets": "lecture-cuts/18-2-tool-permissions.html:<ul.bullets>",
+        "note": "lecture-cuts/18-2-tool-permissions.html:<div.note>",
+        "mediaRefs": "lecture-cuts/18-2-tool-permissions.html:href/src/url references",
+        "speaker": "lecture-cuts/assets/slides.js:speaker",
+        "sources": "lecture-cuts/assets/slides.js:sources",
+        "contentHash": "lecture-cuts/18-2-tool-permissions.html"
+      },
+      "fieldConfidence": {
+        "file": "high",
+        "section": "high",
+        "title": "high",
+        "subtitle": "high",
+        "bullets": "high",
+        "note": "high",
+        "mediaRefs": "high",
+        "speaker": "high",
+        "sources": "high",
+        "contentHash": "high"
+      }
+    },
+    {
       "id": "18-mcp",
       "file": "18-mcp.html",
       "sourceFile": "lecture-cuts/18-mcp.html",
@@ -2288,11 +2342,11 @@
       "section": {
         "id": "06",
         "title": "Agents / Tools",
-        "index": 6,
-        "total": 8,
+        "index": 7,
+        "total": 10,
         "isStart": false
       },
-      "title": "MCP는 외부 시스템과 연결하는 도구 레이어입니다",
+      "title": "MCP는 도구 연결을 표준화합니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -2326,7 +2380,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:0865a0fc336e1e1341e57f61468b153ea56f8eb40c5017e33385fa43c6bd59c9",
+      "contentHash": "sha256:36ac2a4ae755b61b5f2d7d32378b5b73ca9d716e3501d6596f31b9b7b9f24876",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -2353,25 +2407,43 @@
       }
     },
     {
-      "id": "18-2-tool-permissions",
-      "file": "18-2-tool-permissions.html",
-      "sourceFile": "lecture-cuts/18-2-tool-permissions.html",
+      "id": "18-1-mcp-structure",
+      "file": "18-1-mcp-structure.html",
+      "sourceFile": "lecture-cuts/18-1-mcp-structure.html",
       "parent": "18",
       "section": {
         "id": "06",
         "title": "Agents / Tools",
-        "index": 7,
-        "total": 8,
+        "index": 8,
+        "total": 10,
         "isStart": false
       },
-      "title": "도구는 권한과 개수를 좁혀야 합니다",
+      "title": "MCP는 AI 앱과 도구 서버를 연결합니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
       "sources": [
         {
-          "label": "OpenAI Evaluation Best Practices",
-          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+          "label": "Model Context Protocol Server Features",
+          "links": [
+            {
+              "label": "Tools",
+              "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+            },
+            {
+              "label": "Resources",
+              "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+            },
+            {
+              "label": "Prompts",
+              "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+            }
+          ],
+          "sourceScope": "slide"
+        },
+        {
+          "label": "Claude Code Skills",
+          "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
           "sourceScope": "slide"
         },
         {
@@ -2380,18 +2452,80 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:2f79057368f887183091d143522b01477640b6722e3ccd3f3bcfff3efe323140",
+      "contentHash": "sha256:2fc2f0cebe06591a9e6de13304ac47a9768b39a17a3015773326b2e833dcf088",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
-        "title": "lecture-cuts/18-2-tool-permissions.html:<h2>",
-        "subtitle": "lecture-cuts/18-2-tool-permissions.html:<p.subtitle>",
-        "bullets": "lecture-cuts/18-2-tool-permissions.html:<ul.bullets>",
-        "note": "lecture-cuts/18-2-tool-permissions.html:<div.note>",
-        "mediaRefs": "lecture-cuts/18-2-tool-permissions.html:href/src/url references",
+        "title": "lecture-cuts/18-1-mcp-structure.html:<h2>",
+        "subtitle": "lecture-cuts/18-1-mcp-structure.html:<p.subtitle>",
+        "bullets": "lecture-cuts/18-1-mcp-structure.html:<ul.bullets>",
+        "note": "lecture-cuts/18-1-mcp-structure.html:<div.note>",
+        "mediaRefs": "lecture-cuts/18-1-mcp-structure.html:href/src/url references",
         "speaker": "lecture-cuts/assets/slides.js:speaker",
         "sources": "lecture-cuts/assets/slides.js:sources",
-        "contentHash": "lecture-cuts/18-2-tool-permissions.html"
+        "contentHash": "lecture-cuts/18-1-mcp-structure.html"
+      },
+      "fieldConfidence": {
+        "file": "high",
+        "section": "high",
+        "title": "high",
+        "subtitle": "high",
+        "bullets": "high",
+        "note": "high",
+        "mediaRefs": "high",
+        "speaker": "high",
+        "sources": "high",
+        "contentHash": "high"
+      }
+    },
+    {
+      "id": "18-3-mcp-server-features",
+      "file": "18-3-mcp-server-features.html",
+      "sourceFile": "lecture-cuts/18-3-mcp-server-features.html",
+      "parent": "18",
+      "section": {
+        "id": "06",
+        "title": "Agents / Tools",
+        "index": 9,
+        "total": 10,
+        "isStart": false
+      },
+      "title": "MCP 서버는 세 가지를 제공합니다",
+      "speakerSource": "inline",
+      "speakerSourceFile": "lecture-cuts/assets/slides.js",
+      "speakerSourceAnchor": "",
+      "sources": [
+        {
+          "label": "Model Context Protocol Server Features",
+          "links": [
+            {
+              "label": "Tools",
+              "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+            },
+            {
+              "label": "Resources",
+              "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+            },
+            {
+              "label": "Prompts",
+              "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+            }
+          ],
+          "sourceScope": "slide"
+        }
+      ],
+      "contentHash": "sha256:82fd0003100f9523f92332a264c75d96f6913343c42fe97056d589b287cd0f54",
+      "fieldSources": {
+        "file": "lecture-cuts/assets/slides.js:file",
+        "section": "lecture-cuts/assets/slides.js:section*",
+        "title": "lecture-cuts/18-3-mcp-server-features.html:<h2>",
+        "subtitle": "lecture-cuts/18-3-mcp-server-features.html:<p.subtitle>",
+        "bullets": "lecture-cuts/18-3-mcp-server-features.html:<ul.bullets>",
+        "note": "lecture-cuts/18-3-mcp-server-features.html:<div.note>",
+        "mediaRefs": "lecture-cuts/18-3-mcp-server-features.html:href/src/url references",
+        "speaker": "lecture-cuts/assets/slides.js:speaker",
+        "sources": "lecture-cuts/assets/slides.js:sources",
+        "contentHash": "lecture-cuts/18-3-mcp-server-features.html"
       },
       "fieldConfidence": {
         "file": "high",
@@ -2414,8 +2548,8 @@
       "section": {
         "id": "06",
         "title": "Agents / Tools",
-        "index": 8,
-        "total": 8,
+        "index": 10,
+        "total": 10,
         "isStart": false
       },
       "title": "역할과 도구를 한 장으로 분리합니다",
@@ -2447,7 +2581,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:949b851c8984c58d602c9c451c0d89957d216b1f8ffbab5a02dd2e6ebabc6871",
+      "contentHash": "sha256:ef8c35b1c73d3c228fae3c57f9cde926831dc1b4c75eb43f49cfea12d7c00275",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -2624,7 +2758,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:378014d8322609c1271744de3ef629a1b5a1feb796ff53df5908d656d9eb1c92",
+      "contentHash": "sha256:944912654af78582b0016ff82d41af7073a2127fa0ec098d2d4861c0bc36a248",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",
@@ -2711,7 +2845,7 @@
         "total": 8,
         "isStart": false
       },
-      "title": "판단 검증은 rubric 없이는 흔들립니다",
+      "title": "Judge는 감상이 아니라 기준표로 판단합니다",
       "speakerSource": "inline",
       "speakerSourceFile": "lecture-cuts/assets/slides.js",
       "speakerSourceAnchor": "",
@@ -2722,7 +2856,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:2f494d9be60c8135bd60cc653c15ca6e580a3d518d82e0960e0ed45d9fdcb565",
+      "contentHash": "sha256:01706cfd6f52c52c0f6f6826bfcfd378e39a0d112de69409eb5258989f8861bd",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",

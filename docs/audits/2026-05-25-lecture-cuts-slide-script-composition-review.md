@@ -1,13 +1,13 @@
 # Lecture Cuts Slide-Script Composition Review
 
-Generated: 2026-05-26T13:34:46.922Z
+Generated: 2026-05-26T15:30:36.566Z
 
 ## Summary
 
-- Slides checked: 56
+- Slides checked: 58
 - P1 findings: 0
 - P2 findings: 0
-- P3 findings: 2
+- P3 findings: 4
 - Focus range checked: Slides 24-34, including current browser vicinity around Slide 29
 - Audit role: report generator for slide job clarity, script fit, explainability, flow bridge, and cognitive load
 
@@ -24,6 +24,20 @@ PASS: no blocking composition issue detected by heuristics.
   - 제안: 핵심 불릿 3-4개만 남기거나 보조 항목은 대본으로 이동합니다.
   - 수정면: slide HTML + presenter script
 
+- **P3 / flow / Slide 26 / `10-skills.html`**
+  - 제목: 스킬로 만들 일은 반복성과 기준이 있습니다
+  - 발견: 섹션 시작 슬라이드의 첫 문단에 전환 신호가 약합니다.
+  - 근거: previous 09-3-context-drift-check.html -> current 10-skills.html
+  - 제안: 첫 문단에 이전 섹션의 결론과 이번 섹션의 질문을 한 문장으로 연결합니다.
+  - 수정면: presenter script
+
+- **P3 / screen / Slide 27 / `10-1-skill-trigger-description.html`**
+  - 제목: 스킬은 호출 조건, 절차, 자료를 분리합니다
+  - 발견: 불릿이 5개 이상이라 한 장의 교육 역할이 넓어질 수 있습니다.
+  - 근거: 5 bullets
+  - 제안: 핵심 불릿 3-4개만 남기거나 보조 항목은 대본으로 이동합니다.
+  - 수정면: slide HTML + presenter script
+
 - **P3 / flow / Slide 32 / `14-subagents.html`**
   - 제목: 서브에이전트는 역할과 컨텍스트를 분리합니다
   - 발견: 섹션 시작 슬라이드의 첫 문단에 전환 신호가 약합니다.
@@ -32,6 +46,20 @@ PASS: no blocking composition issue detected by heuristics.
   - 수정면: presenter script
 
 ## Slide 24-34 Focus Findings
+
+- **P3 / flow / Slide 26 / `10-skills.html`**
+  - 제목: 스킬로 만들 일은 반복성과 기준이 있습니다
+  - 발견: 섹션 시작 슬라이드의 첫 문단에 전환 신호가 약합니다.
+  - 근거: previous 09-3-context-drift-check.html -> current 10-skills.html
+  - 제안: 첫 문단에 이전 섹션의 결론과 이번 섹션의 질문을 한 문장으로 연결합니다.
+  - 수정면: presenter script
+
+- **P3 / screen / Slide 27 / `10-1-skill-trigger-description.html`**
+  - 제목: 스킬은 호출 조건, 절차, 자료를 분리합니다
+  - 발견: 불릿이 5개 이상이라 한 장의 교육 역할이 넓어질 수 있습니다.
+  - 근거: 5 bullets
+  - 제안: 핵심 불릿 3-4개만 남기거나 보조 항목은 대본으로 이동합니다.
+  - 수정면: slide HTML + presenter script
 
 - **P3 / flow / Slide 32 / `14-subagents.html`**
   - 제목: 서브에이전트는 역할과 컨텍스트를 분리합니다

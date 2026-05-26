@@ -5,11 +5,11 @@
 
 ## Summary
 
-- Slide count: 56
+- Slide count: 58
 - Registry: lecture-cuts/assets/slides.js
 - Source contract: lecture-cuts/slide-spec.json
 - Source map: docs/harness/lecture-cuts-source-map.json
-- Slide-specific source annotations: 55
+- Slide-specific source annotations: 57
 - Deck-global source references: 10
 
 ## Section Counts
@@ -20,13 +20,13 @@
 - Spec / Prompt: 9
 - Context / Memory: 4
 - Skills / Superpowers: 6
-- Agents / Tools: 8
+- Agents / Tools: 10
 - Hooks / Verification: 8
 - Final Workflow: 9
 
 ## Speaker Source Counts
 
-- inline: 56
+- inline: 58
 
 ## Optional Field Coverage
 
@@ -56,19 +56,19 @@ No low-confidence fields. `node scripts/export-lecture-cuts-contract.js --check-
 | 13 | `13-spec-driven` | 바이브 구현에서 spec(명세)기반으로 | Spec / Prompt | inline | 2 | `sha256:a47c506b4725...` |
 | 14 | `13-2-spec-contract` | 좋은 명세는 네 가지를 고정합니다 | Spec / Prompt | inline | 1 | `sha256:feaf70b43639...` |
 | 15 | `13-4-spec-plan-review-flow` | Spec은 plan과 review로 이어져야 합니다 | Spec / Prompt | inline | 1 | `sha256:054206ae969c...` |
-| 16 | `04-prompt-layer` | 프롬프트는 이번 요청의 작업 지시입니다 | Spec / Prompt | inline | 5 | `sha256:45705926007c...` |
-| 17 | `04-1-prompt-anatomy` | 좋은 요청은 여섯개로 구성할 수 있습니다 | Spec / Prompt | inline | 1 | `sha256:16458ece7820...` |
-| 18 | `04-2-xml-boundaries` | 입력 경계가 선명하면 모델의 오독이 줄어듭니다 | Spec / Prompt | inline | 1 | `sha256:de04d36c5b09...` |
-| 19 | `07-reasoning-prompts` | “단계별로 생각해”를 남발하지 않습니다 | Spec / Prompt | inline | 1 | `sha256:bfaa3d685bce...` |
-| 20 | `07-1-reasoning-output-pattern` | 결과 기준을 선명하게 요구합니다 | Spec / Prompt | inline | 1 | `sha256:65a326e39ce2...` |
+| 16 | `04-prompt-layer` | 프롬프트는 이번 요청의 작업 지시입니다 | Spec / Prompt | inline | 5 | `sha256:de40e9a79563...` |
+| 17 | `07-reasoning-prompts` | “단계별로 생각해”를 남발하지 않습니다 | Spec / Prompt | inline | 1 | `sha256:ec72f5e1527c...` |
+| 18 | `04-2-xml-boundaries` | 입력 경계가 선명하면 모델의 오독이 줄어듭니다 | Spec / Prompt | inline | 1 | `sha256:c1ef33b8d8a8...` |
+| 19 | `04-1-prompt-anatomy` | 좋은요청은 여섯개의 섹션으로 나뉩니다 | Spec / Prompt | inline | 1 | `sha256:4e500b866c2c...` |
+| 20 | `07-1-reasoning-output-pattern` | 완료는 선언이 아니라 증거로 판단합니다 | Spec / Prompt | inline | 1 | `sha256:f9a76dc8321a...` |
 | 21 | `07-2-reasoning-avoid-overask` | 작업 성격에 따라 요청 강도를 조절합니다 | Spec / Prompt | inline | 1 | `sha256:ba3606fb9cb4...` |
 | 22 | `08-claude-md` | CLAUDE.md는 항상 적용되는 프로젝트 지침입니다 | Context / Memory | inline | 3 | `sha256:80e329cd0252...` |
-| 23 | `08-2-good-claude-md` | 좋은 CLAUDE.md는 짧고 현재형입니다 | Context / Memory | inline | 2 | `sha256:4eb23fb35438...` |
+| 23 | `08-2-good-claude-md` | 좋은 CLAUDE.md는 짧고 갱신 되어야합니다 | Context / Memory | inline | 2 | `sha256:bd8e9daa34b3...` |
 | 24 | `09-context-engineering` | 컨텍스트는 작업대 위 참고 자료입니다 | Context / Memory | inline | 3 | `sha256:0afdddb92418...` |
 | 25 | `09-3-context-drift-check` | 완료 전 현재 목표와 컨텍스트를 다시 맞춥니다 | Context / Memory | inline | 2 | `sha256:aca061643b6f...` |
-| 26 | `10-skills` | 스킬은 반복 절차의 매뉴얼입니다 | Skills / Superpowers | inline | 1 | `sha256:95d9ada7623b...` |
-| 27 | `10-1-skill-trigger-description` | 스킬은 호출 조건, 절차, 자료를 나눕니다 | Skills / Superpowers | inline | 1 | `sha256:a48a2ec2aad3...` |
-| 28 | `11-1-real-skill-folder` | 실제 스킬 폴더가 작업 순서입니다 | Skills / Superpowers | inline | 2 | `sha256:ec8ddba882b9...` |
+| 26 | `10-skills` | 스킬로 만들 일은 반복성과 기준이 있습니다 | Skills / Superpowers | inline | 1 | `sha256:be06d5267b76...` |
+| 27 | `10-1-skill-trigger-description` | 스킬은 호출 조건, 절차, 자료를 분리합니다 | Skills / Superpowers | inline | 1 | `sha256:77a443e3e75d...` |
+| 28 | `11-1-real-skill-folder` | 스킬 폴더는 위에서 아래로 읽습니다 | Skills / Superpowers | inline | 2 | `sha256:f1dc50aa16e5...` |
 | 29 | `12-superpowers` | Superpowers는 스킬 기반 하네스 패키지입니다 | Skills / Superpowers | inline | 1 | `sha256:df9868af75d8...` |
 | 30 | `12-1-superpowers-as-harness` | Superpowers는 스킬 묶음이 아니라 작업 규율입니다 | Skills / Superpowers | inline | 2 | `sha256:3dc5ca6f6692...` |
 | 31 | `12-2-superpowers-workflow-map` | 각 Superpower는 개발 루프의 다른 지점을 맡습니다 | Skills / Superpowers | inline | 2 | `sha256:840b1eeab895...` |
@@ -76,25 +76,27 @@ No low-confidence fields. `node scripts/export-lecture-cuts-contract.js --check-
 | 33 | `14-1-subagent-context-isolation` | Subagent는 작은 AI가 아니라 분리된 컨텍스트입니다 | Agents / Tools | inline | 1 | `sha256:d3db8045b78e...` |
 | 34 | `14-2-reviewer-subagent-example` | Reviewer와 Researcher는 판단 축이 다릅니다 | Agents / Tools | inline | 2 | `sha256:8f889064c48f...` |
 | 35 | `15-agent-teams` | 요즘은 병렬 에이전트로 확장합니다 | Agents / Tools | inline | 2 | `sha256:7f5a03d8a38c...` |
-| 36 | `15-1-parallel-safe` | 병렬화는 안전한 경우와 위험한 경우를 나눕니다 | Agents / Tools | inline | 1 | `sha256:1f98cff10d4c...` |
-| 37 | `18-mcp` | MCP는 외부 시스템과 연결하는 도구 레이어입니다 | Agents / Tools | inline | 3 | `sha256:0865a0fc336e...` |
-| 38 | `18-2-tool-permissions` | 도구는 권한과 개수를 좁혀야 합니다 | Agents / Tools | inline | 2 | `sha256:2f79057368f8...` |
-| 39 | `18-4-practice-agent-tool-split` | 역할과 도구를 한 장으로 분리합니다 | Agents / Tools | inline | 2 | `sha256:949b851c8984...` |
-| 40 | `16-hooks` | 훅은 지시가 아니라 실행 파이프라인입니다 | Hooks / Verification | inline | 3 | `sha256:8f1718d1e9f5...` |
-| 41 | `16-4-skill-vs-hook` | 스킬은 지침이고 Hook은 실행입니다 | Hooks / Verification | inline | 3 | `sha256:4248c9ddb1cb...` |
-| 42 | `17-hook-advanced` | 훅은 echo에서 test까지 단계적으로 키웁니다 | Hooks / Verification | inline | 3 | `sha256:378014d83226...` |
-| 43 | `19-evaluation` | 완료의 기준은 검증 증거입니다 | Hooks / Verification | inline | 1 | `sha256:3ff6290112c1...` |
-| 44 | `19-2-judge-checks` | 판단 검증은 rubric 없이는 흔들립니다 | Hooks / Verification | inline | 1 | `sha256:2f494d9be60c...` |
-| 45 | `20-loop-schedule` | 실전 자동화는 한 번 실행에서 끝나지 않습니다 | Hooks / Verification | inline | 3 | `sha256:0a42fb1d8fe4...` |
-| 46 | `20-1-loop-until-pass` | Loop는 통과할 때까지 반복하는 운영 구조입니다 | Hooks / Verification | inline | 1 | `sha256:c2acd84765f5...` |
-| 47 | `20-2-practice-verification-gate` | 완료 조건을 검증 게이트로 바꿉니다 | Hooks / Verification | inline | 1 | `sha256:f99c88ee3a4c...` |
-| 48 | `21-final-workflow` | Deck Harness v1 | Final Workflow | inline | 4 | `sha256:bde3d61dc315...` |
-| 49 | `21-1-final-artifact-structure` | 최종 산출물은 lecture-deck/입니다 | Final Workflow | inline | 4 | `sha256:e664bc144bb6...` |
-| 50 | `21-10-practice-few-shot-placement` | Few-shot은 명세 바로 뒤에 둡니다 | Final Workflow | inline | 1 | `sha256:3d4d3c68abce...` |
-| 51 | `21-2-bug-request-flow` | 자료는 하네스를 통과하며 발표자료가 됩니다 | Final Workflow | inline | 2 | `sha256:0b47e3dc2aaa...` |
-| 52 | `21-3-final-report-template` | 최종 보고는 덱 품질의 증거입니다 | Final Workflow | inline | 1 | `sha256:80a9cfecd23f...` |
-| 53 | `21-5-handoff-why` | Handoff는 상태와 다음 프롬프트를 남깁니다 | Final Workflow | inline | 1 | `sha256:ed76cc76063f...` |
-| 54 | `21-8-practice-handoff` | 발표자료 handoff를 작성합니다 | Final Workflow | inline | 1 | `sha256:d096d08e64ba...` |
-| 55 | `21-4-team-retrospective` | 팀 회고 질문은 하나면 충분합니다 | Final Workflow | inline | 5 | `sha256:eface9899fc0...` |
-| 56 | `21-9-practice-personal-harness` | 내 프로젝트에 가져갈 하네스 3개를 고릅니다 | Final Workflow | inline | 4 | `sha256:de7fec13237b...` |
+| 36 | `15-1-parallel-safe` | 병렬화는 안전한 경우와 위험한 경우를 나눕니다 | Agents / Tools | inline | 1 | `sha256:c85146af79eb...` |
+| 37 | `18-2-tool-permissions` | 에이전트 도구는 권한과 개수를 좁혀야 합니다 | Agents / Tools | inline | 2 | `sha256:23fe8ce7d075...` |
+| 38 | `18-mcp` | MCP는 도구 연결을 표준화합니다 | Agents / Tools | inline | 3 | `sha256:36ac2a4ae755...` |
+| 39 | `18-1-mcp-structure` | MCP는 AI 앱과 도구 서버를 연결합니다 | Agents / Tools | inline | 3 | `sha256:2fc2f0cebe06...` |
+| 40 | `18-3-mcp-server-features` | MCP 서버는 세 가지를 제공합니다 | Agents / Tools | inline | 1 | `sha256:82fd0003100f...` |
+| 41 | `18-4-practice-agent-tool-split` | 역할과 도구를 한 장으로 분리합니다 | Agents / Tools | inline | 2 | `sha256:ef8c35b1c73d...` |
+| 42 | `16-hooks` | 훅은 지시가 아니라 실행 파이프라인입니다 | Hooks / Verification | inline | 3 | `sha256:8f1718d1e9f5...` |
+| 43 | `16-4-skill-vs-hook` | 스킬은 지침이고 Hook은 실행입니다 | Hooks / Verification | inline | 3 | `sha256:4248c9ddb1cb...` |
+| 44 | `17-hook-advanced` | 훅은 echo에서 test까지 단계적으로 키웁니다 | Hooks / Verification | inline | 3 | `sha256:944912654af7...` |
+| 45 | `19-evaluation` | 완료의 기준은 검증 증거입니다 | Hooks / Verification | inline | 1 | `sha256:3ff6290112c1...` |
+| 46 | `19-2-judge-checks` | Judge는 감상이 아니라 기준표로 판단합니다 | Hooks / Verification | inline | 1 | `sha256:01706cfd6f52...` |
+| 47 | `20-loop-schedule` | 실전 자동화는 한 번 실행에서 끝나지 않습니다 | Hooks / Verification | inline | 3 | `sha256:0a42fb1d8fe4...` |
+| 48 | `20-1-loop-until-pass` | Loop는 통과할 때까지 반복하는 운영 구조입니다 | Hooks / Verification | inline | 1 | `sha256:c2acd84765f5...` |
+| 49 | `20-2-practice-verification-gate` | 완료 조건을 검증 게이트로 바꿉니다 | Hooks / Verification | inline | 1 | `sha256:f99c88ee3a4c...` |
+| 50 | `21-final-workflow` | Deck Harness v1 | Final Workflow | inline | 4 | `sha256:bde3d61dc315...` |
+| 51 | `21-1-final-artifact-structure` | 최종 산출물은 lecture-deck/입니다 | Final Workflow | inline | 4 | `sha256:e664bc144bb6...` |
+| 52 | `21-10-practice-few-shot-placement` | Few-shot은 명세 바로 뒤에 둡니다 | Final Workflow | inline | 1 | `sha256:3d4d3c68abce...` |
+| 53 | `21-2-bug-request-flow` | 자료는 하네스를 통과하며 발표자료가 됩니다 | Final Workflow | inline | 2 | `sha256:0b47e3dc2aaa...` |
+| 54 | `21-3-final-report-template` | 최종 보고는 덱 품질의 증거입니다 | Final Workflow | inline | 1 | `sha256:80a9cfecd23f...` |
+| 55 | `21-5-handoff-why` | Handoff는 상태와 다음 프롬프트를 남깁니다 | Final Workflow | inline | 1 | `sha256:ed76cc76063f...` |
+| 56 | `21-8-practice-handoff` | 발표자료 handoff를 작성합니다 | Final Workflow | inline | 1 | `sha256:d096d08e64ba...` |
+| 57 | `21-4-team-retrospective` | 팀 회고 질문은 하나면 충분합니다 | Final Workflow | inline | 5 | `sha256:eface9899fc0...` |
+| 58 | `21-9-practice-personal-harness` | 내 프로젝트에 가져갈 하네스 3개를 고릅니다 | Final Workflow | inline | 4 | `sha256:de7fec13237b...` |
 

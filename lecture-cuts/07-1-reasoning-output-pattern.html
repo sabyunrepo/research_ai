@@ -1,9 +1,9 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>결과 기준을 선명하게 요구합니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">07</div><h2>결과 기준을 선명하게 요구합니다</h2><p class="subtitle">무엇을 만들고, 무엇으로 확인하고, 어떻게 보고할지를 정해 줍니다.</p><ul class="bullets"><li>최종 결과물의 모양을 먼저 정합니다.</li><li>중간 확인 지점과 통과 기준을 적습니다.</li><li>마지막 보고에 증거와 남은 위험을 포함시킵니다.</li></ul><div class="note"><strong>발표 포인트</strong>생각 과정을 길게 요구하기보다 결과물, 확인 방법, 보고 기준을 선명하게 줍니다.</div></section><section class="slide-media"><div class="css-visual result-criteria-example" aria-label="결과 기준 예시 프롬프트"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>결제 오류를 고쳐줘.
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>완료는 선언이 아니라 증거로 판단합니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">07</div><h2>완료는 선언이 아니라 증거로 판단합니다</h2><p class="subtitle">작업 완료는 말이 아니라 실행 결과와 남은 위험으로 판단합니다.</p><ul class="bullets"><li>완료 선언보다 실행 증거를 요구합니다.</li><li>통과한 검증과 확인 못 한 범위를 나눕니다.</li><li>남은 위험을 다음 행동으로 연결합니다.</li></ul><div class="note"><strong>발표 포인트</strong>AI가 다 했다고 말할 때 무엇을 보고 믿을지 완료 판정 기준을 세웁니다.</div></section><section class="slide-media"><div class="css-visual result-criteria-example" aria-label="완료 증거 예시 보고"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>완료 보고
 
-01 결과물: 쿠폰 적용 뒤 결제 성공
-02 확인 지점: checkout/와 payments/ 흐름
-03 통과 기준: pnpm test checkout 통과
-04 보고 형식: 수정 파일, 검증 명령, 결과
-05 남은 위험: 확인 못 한 케이스 표시</code></pre></div></div></section></main>
-<nav class="nav"><a href="07-reasoning-prompts.html">Prev</a><a href="index.html">Index</a><a href="deck.html">Deck</a><a href="presenter-review.html">Review</a><a href="07-2-reasoning-avoid-overask.html">Next</a></nav></body></html>
+01 결과물: checkout 결제 흐름 수정
+02 실행 증거: pnpm test checkout 통과
+03 확인 못 한 범위: 실결제 PG 연동
+04 남은 위험: 쿠폰 중복 적용 케이스
+05 다음 행동: staging 결제 smoke 필요</code></pre></div></div></section></main>
+<nav class="nav"><a href="04-1-prompt-anatomy.html">Prev</a><a href="index.html">Index</a><a href="deck.html">Deck</a><a href="presenter-review.html">Review</a><a href="07-2-reasoning-avoid-overask.html">Next</a></nav></body></html>

@@ -15,16 +15,16 @@ The deck should not open with the full solution map. Learners first need to reco
 3. **Whole Map**: Slide 10-12  
    Present the workbench map, responsibility/failure mapping, and frequency/risk promotion criteria after learners feel the need.
 4. **Spec / Prompt**: Slide 13-21  
-   Start with the smallest control surface: contract, request shape, input boundaries, and reasoning strength.
+   Start with the smallest control surface: contract, reasoning strength, input boundaries, request shape, completion evidence, and request-weight control.
 5. **Context / Memory**: Slide 22-25  
    Separate always-on project guidance from current-task context.
 6. **Skills / Superpowers**: Slide 26-31  
    Move repeated procedures into reusable manuals and workflow discipline.
-7. **Agents / Tools**: Slide 32-39  
+7. **Agents / Tools**: Slide 32-41  
    Split roles, context, permissions, and external systems.
-8. **Hooks / Verification**: Slide 40-47  
+8. **Hooks / Verification**: Slide 42-49  
    Turn important checks from advice into execution, evidence, and looped repair.
-9. **Final Workflow**: Slide 48-56  
+9. **Final Workflow**: Slide 50-58  
    Assemble the full deck automation harness and write handoff/action plans.
 
 ## Editing Notes
