@@ -1,10 +1,3 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Reviewer agent는 diff와 결함 기준만 봅니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">14</div><h2>Reviewer agent는 diff와 결함 기준만 봅니다</h2><p class="subtitle">구현 의도보다 사용자 영향과 회귀 위험을 먼저 봅니다.</p><ul class="bullets"><li>버그, 회귀, 누락 테스트 우선</li><li>파일/라인/영향 중심 보고</li><li>칭찬보다 발견 사항 먼저</li></ul><div class="note"><strong>발표 포인트</strong>구현 의도보다 사용자 영향과 회귀 위험을 먼저 봅니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="파일과 산출물 시각자료"><div class="artifact-window"><div class="artifact-bar"><span></span><span></span><span></span></div><pre><code>Reviewer input:
-- diff
-- acceptance criteria
-- defect rubric
-Output:
-- findings by severity
-- test gaps
-- residual risk</code></pre></div></div></section></main>
-<nav class="nav"><a href="index.html">Index</a></nav></body></html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Reviewer와 Researcher는 판단 축이 다릅니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">Subagent</div><h2>Reviewer와 Researcher는 판단 축이 다릅니다</h2><p class="subtitle">리뷰어는 결함을 찾고, 리서처는 근거를 모읍니다.</p><ul class="bullets"><li>Reviewer: 결함, 회귀, 테스트 누락</li><li>Researcher: 공식 문서, 날짜, 출처</li><li>최종 선택은 메인 에이전트가 합니다.</li></ul><div class="note"><strong>발표 포인트</strong>Reviewer와 Researcher 예시를 한 장에서 비교합니다.</div></section><section class="slide-media"><div class="css-visual expand-matrix-visual" aria-label="reviewer and researcher subagent comparison"><div class="matrix-cell accent">Reviewer<br><span>결함 찾기</span></div><div class="matrix-cell">Researcher<br><span>근거 수집</span></div><div class="matrix-cell accent">Main<br><span>최종 판단</span></div></div></section></main>
+<nav class="nav"><a href="14-1-subagent-context-isolation.html">Prev</a><a href="index.html">Index</a><a href="deck.html">Deck</a><a href="presenter-review.html">Review</a><a href="15-agent-teams.html">Next</a></nav></body></html>

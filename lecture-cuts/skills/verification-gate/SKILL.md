@@ -19,6 +19,8 @@ Use this skill before handoff, after changes to `lecture-cuts/`, after source/sp
 - `docs/harness/lecture-cuts-reproduction-contract.md`
 - `scripts/validate-lecture-cuts-contract.js`
 - `scripts/audit-lecture-cuts.js`
+- `scripts/audit-lecture-cuts-korean-copy.js`
+- `scripts/audit-lecture-cuts-speaker-sync.js`
 - `scripts/verify-lecture-cuts-harness.js`
 - `lecture-cuts/HANDOFF.md`, when handoff exists
 - `docs/harness/lecture-cuts-agent-handoff.md`, when agent reports exist
@@ -46,6 +48,7 @@ Use this skill before handoff, after changes to `lecture-cuts/`, after source/sp
 - Syntax checks pass for shared runtime files.
 - Reproduction contract confirms 87 registered slides, stable slide order, present files, speaker source coverage, and intentional content hashes.
 - Audit confirms browser-rendered deck quality, source coverage status, presenter-review behavior, glossary behavior, and overflow status.
+- Korean copy audit confirms no blocking grammar, spacing, or slide-script synchronization issue remains.
 - Handoff evidence names the latest commands and the actual exit status.
 - A handoff with only file-existence checks is incomplete.
 
@@ -59,6 +62,8 @@ node --check lecture-cuts/assets/deck.js
 node --check lecture-cuts/assets/presenter-review.js
 node scripts/validate-lecture-cuts-contract.js
 node scripts/audit-lecture-cuts.js
+node scripts/audit-lecture-cuts-korean-copy.js
+node scripts/audit-lecture-cuts-speaker-sync.js
 ```
 
 Unified gate, when available:

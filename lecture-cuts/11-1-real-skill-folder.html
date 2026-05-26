@@ -1,12 +1,7 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>deck-builder Skill은 폴더가 곧 작업 순서입니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<main class="slide"><section class="copy"><div class="eyebrow">11</div><h2>deck-builder Skill은 폴더가 곧 작업 순서입니다</h2><p class="subtitle">HTML/CSS deck 생성 절차는 SKILL.md, references, scripts, assets로 나누면 재사용하기 쉽습니다.</p><ul class="bullets"><li>SKILL.md는 호출 조건과 필수 절차만 담습니다.</li><li>scripts는 검증과 export처럼 반복 실행되는 작업입니다.</li><li>references와 assets는 긴 예시와 템플릿을 지연 로드합니다.</li></ul><div class="note"><strong>발표 포인트</strong>Skill 폴더는 모델에게 “언제 읽고, 무엇을 실행하고, 어떤 예시를 참조할지”를 알려 주는 작은 작업장입니다.</div></section><section class="slide-media"><div class="css-visual expand-artifact-visual" aria-label="deck-builder Skill folder"><div class="evidence-window"><header><span class="evidence-dot"></span><span>project/.claude/skills/deck-builder/</span></header><pre><code>deck-builder/
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>실제 스킬 폴더가 작업 순서입니다</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<main class="slide"><section class="copy"><div class="eyebrow">Skill Structure</div><h2>실제 스킬 폴더가 작업 순서입니다</h2><p class="subtitle">좋은 스킬은 작고 선명하며, frontmatter가 호출 조건을 고정합니다.</p><ul class="bullets"><li>SKILL.md: 목적, 호출 조건, 절차</li><li>references/: 긴 설명과 예시</li><li>scripts/: 반복 실행 코드</li><li>assets/: 재사용 자료</li></ul><div class="note"><strong>발표 포인트</strong>좋은 스킬 구조와 실제 폴더 예시를 한 장에서 설명합니다.</div></section><section class="slide-media"><div class="css-visual file-tree-visual" aria-label="스킬 폴더 구조"><pre>deck-builder/
   SKILL.md
   references/
-    slide-spec-schema.md
-    few-shots.md
   scripts/
-    verify-deck.js
-    export-pdf.js
-  assets/
-    slide-template.html</code></pre><div class="evidence-caption">공식 Claude Code project skill 경로는 .claude/skills/&lt;skill-name&gt;/ 입니다.</div></div></div></section></main>
-<nav class="nav"><a href="index.html">Index</a></nav></body></html>
+  assets/</pre></div></section></main>
+<nav class="nav"><a href="10-1-skill-trigger-description.html">Prev</a><a href="index.html">Index</a><a href="deck.html">Deck</a><a href="presenter-review.html">Review</a><a href="12-superpowers.html">Next</a></nav></body></html>

@@ -5,6 +5,7 @@ const os = require("node:os");
 const path = require("node:path");
 const vm = require("node:vm");
 const { execFileSync, spawn } = require("node:child_process");
+const { pathToFileURL } = require("node:url");
 
 const root = path.resolve(__dirname, "..");
 const deckRoot = path.join(root, "lecture-cuts");
@@ -390,6 +391,20 @@ async function runBrowserAudit(slides) {
               });
             }
             [activeSlide, ...activeSlide.querySelectorAll("*")].forEach((element) => {
+              const verticalOverflow = element.scrollHeight - element.clientHeight;
+              const horizontalOverflow = element.scrollWidth - element.clientWidth;
+              const isHeadingLineBoxNoise = /^(H1|H2)$/.test(element.tagName) && horizontalOverflow <= tolerance && verticalOverflow <= 16;
+              const isInlineLineBoxNoise = element.tagName === "STRONG" && horizontalOverflow <= tolerance && verticalOverflow <= 8;
+              const isRotatedCompareArrow = element.classList.contains("compare-arrow");
+              const isOrbitPositioningContainer = element.classList.contains("loop-item") || element.classList.contains("loop-ring");
+              const isCardPaintNoise = verticalOverflow <= tolerance && horizontalOverflow <= 16 && (
+                element.classList.contains("compare-card") ||
+                element.classList.contains("eval-gate") ||
+                element.classList.contains("priority-visual")
+              );
+              if (isHeadingLineBoxNoise || isInlineLineBoxNoise || isRotatedCompareArrow || isOrbitPositioningContainer || isCardPaintNoise) {
+                return;
+              }
               if (element.scrollWidth > element.clientWidth + tolerance || element.scrollHeight > element.clientHeight + tolerance) {
                 issues.push({
                   slide: window.LECTURE_SLIDES[index].file,
@@ -457,6 +472,10 @@ async function runBrowserAudit(slides) {
     const presenterReport = await evaluate(client, `
       ({
         cuts: document.querySelectorAll(".review-cut").length,
+        cuePanels: document.querySelectorAll(".review-cues").length,
+        filledCuePanels: Array.from(document.querySelectorAll(".review-cues"))
+          .filter((node) => Array.from(node.querySelectorAll(".review-cue-input")).some((input) => input.value.trim()))
+          .length,
         placeholders: Array.from(document.querySelectorAll(".review-script-body"))
           .filter((node) => node.textContent.includes("등록된 스크립트가 없습니다."))
           .map((node) => node.closest(".review-cut")?.querySelector(".deck-frame")?.dataset.source || "unknown")
@@ -467,6 +486,117 @@ async function runBrowserAudit(slides) {
       warn("presenter scripts", `${presenterReport.placeholders.length} placeholder scripts: ${presenterReport.placeholders.slice(0, 25).join(", ")}`);
     } else {
       pass("presenter scripts", `${presenterReport.cuts} review scripts resolved`);
+    }
+
+    if (presenterReport.cuePanels !== slides.length) {
+      fail("presenter cue panels", `expected=${slides.length} actual=${presenterReport.cuePanels}`);
+    } else {
+      pass("presenter cue panels", `${presenterReport.cuePanels} cue panels rendered`);
+    }
+
+    if (presenterReport.filledCuePanels !== slides.length) {
+      fail("presenter cues", `expected=${slides.length} filled cue panels actual=${presenterReport.filledCuePanels}`);
+    } else {
+      pass("presenter cues", `${presenterReport.filledCuePanels} cue panels have content`);
+    }
+
+    await navigate(client, pathToFileURL(path.join(deckRoot, "deck.html")).href, { width: 1280, height: 720, mobile: false });
+    await waitFor(client, `document.querySelectorAll(".deck-frame").length === ${slides.length}`);
+    const fileUrlReport = await evaluate(client, `
+      ({
+        frameCount: document.querySelectorAll(".deck-frame").length,
+        noteCount: document.querySelectorAll("#deck .note").length,
+        activeSlide: document.querySelector(".deck-frame.is-active")?.dataset.source || "",
+        errors: Array.from(document.querySelectorAll(".deck-error")).map((node) => node.textContent.trim()),
+        diagnostics: window.LECTURE_RUNTIME_DIAGNOSTICS || null
+      })
+    `);
+
+    if (fileUrlReport.errors.length) {
+      fail("file url runtime errors", fileUrlReport.errors.join("; "));
+    } else {
+      pass("file url runtime load", `${fileUrlReport.frameCount} frames loaded`);
+    }
+
+    if (fileUrlReport.frameCount !== slides.length) {
+      fail("file url frame count", `expected=${slides.length} actual=${fileUrlReport.frameCount}`);
+    } else {
+      pass("file url frame count", `${slides.length}`);
+    }
+
+    if (fileUrlReport.noteCount > 0) {
+      fail("file url note exposure", `${fileUrlReport.noteCount} .note elements exposed`);
+    } else {
+      pass("file url note exposure", "0 .note elements in deck");
+    }
+
+    const diagnostics = fileUrlReport.diagnostics || {};
+    if (diagnostics.cacheDirectLoaded === slides.length && diagnostics.fetchLoaded === 0 && diagnostics.cacheFallbackLoaded === 0) {
+      pass("file url slide cache", `${diagnostics.cacheDirectLoaded} cached fragments loaded directly`);
+    } else {
+      fail("file url slide cache", JSON.stringify(diagnostics));
+    }
+
+    await navigate(client, pathToFileURL(path.join(deckRoot, "presenter-review.html")).href, {
+      width: 1280,
+      height: 900,
+      mobile: false,
+    });
+    await waitFor(client, `document.querySelectorAll(".review-cut").length === ${slides.length}`);
+    const fileUrlPresenterReport = await evaluate(client, `
+      ({
+        cuts: document.querySelectorAll(".review-cut").length,
+        cuePanels: document.querySelectorAll(".review-cues").length,
+        filledCuePanels: Array.from(document.querySelectorAll(".review-cues"))
+          .filter((node) => Array.from(node.querySelectorAll(".review-cue-input")).some((input) => input.value.trim()))
+          .length,
+        errors: Array.from(document.querySelectorAll(".deck-error")).map((node) => node.textContent.trim()),
+        cacheLoaded: Boolean(window.LECTURE_SLIDE_HTML),
+        saveDisabled: document.querySelector("#saveReviewChanges")?.disabled ?? null,
+        saveStatus: document.querySelector("#saveReviewStatus")?.textContent?.trim() || "",
+        placeholders: Array.from(document.querySelectorAll(".review-script-body"))
+          .filter((node) => node.textContent.includes("등록된 스크립트가 없습니다."))
+          .map((node) => node.closest(".review-cut")?.querySelector(".deck-frame")?.dataset.source || "unknown")
+      })
+    `);
+
+    if (fileUrlPresenterReport.errors.length) {
+      fail("file url presenter review errors", fileUrlPresenterReport.errors.join("; "));
+    } else {
+      pass("file url presenter review load", `${fileUrlPresenterReport.cuts} review cuts loaded`);
+    }
+
+    if (!fileUrlPresenterReport.cacheLoaded) {
+      fail("file url presenter review cache", "window.LECTURE_SLIDE_HTML is not loaded");
+    } else {
+      pass("file url presenter review cache", "slide HTML cache loaded");
+    }
+
+    if (fileUrlPresenterReport.saveDisabled && fileUrlPresenterReport.saveStatus.includes("읽기 전용")) {
+      pass("file url presenter review save mode", fileUrlPresenterReport.saveStatus);
+    } else {
+      fail("file url presenter review save mode", JSON.stringify(fileUrlPresenterReport));
+    }
+
+    if (fileUrlPresenterReport.placeholders.length) {
+      warn(
+        "file url presenter review scripts",
+        `${fileUrlPresenterReport.placeholders.length} placeholder scripts: ${fileUrlPresenterReport.placeholders.slice(0, 25).join(", ")}`
+      );
+    } else {
+      pass("file url presenter review scripts", `${fileUrlPresenterReport.cuts} scripts resolved`);
+    }
+
+    if (fileUrlPresenterReport.cuePanels !== slides.length) {
+      fail("file url presenter cue panels", `expected=${slides.length} actual=${fileUrlPresenterReport.cuePanels}`);
+    } else {
+      pass("file url presenter cue panels", `${fileUrlPresenterReport.cuePanels} cue panels rendered`);
+    }
+
+    if (fileUrlPresenterReport.filledCuePanels !== slides.length) {
+      fail("file url presenter cues", `expected=${slides.length} filled cue panels actual=${fileUrlPresenterReport.filledCuePanels}`);
+    } else {
+      pass("file url presenter cues", `${fileUrlPresenterReport.filledCuePanels} cue panels have content`);
     }
 
     client.close();

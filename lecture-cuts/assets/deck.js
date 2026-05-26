@@ -2,11 +2,18 @@ const slides = window.LECTURE_SLIDES || [];
 
 const deck = document.querySelector("#deck");
 const printButton = document.querySelector("#printDeck");
+const presentButton = document.querySelector("#presentDeck");
 const previousButton = document.querySelector("#previousSlide");
 const nextButton = document.querySelector("#nextSlide");
 const deckStatus = document.querySelector("#deckStatus");
 let frames = [];
 let currentSlideIndex = 0;
+window.LECTURE_RUNTIME_DIAGNOSTICS = {
+  fetchLoaded: 0,
+  cacheDirectLoaded: 0,
+  cacheFallbackLoaded: 0,
+  errors: [],
+};
 const glossaryTerms = [
   ["CLAUDE.md", "Claude Code가 프로젝트마다 읽는 규칙 파일입니다. 반복해서 말해야 하는 작업 원칙을 적어 둡니다."],
   ["HTML/CSS", "웹 페이지를 만드는 기본 언어입니다. 이 강의에서는 발표자료를 브라우저에서 보이게 만드는 형식으로 씁니다."],
@@ -173,12 +180,30 @@ function makeSectionLabel(slideInfo) {
 
 async function loadSlide(slideInfo, index) {
   const file = getSlideFile(slideInfo);
-  const response = await fetch(file, { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`${file} failed with ${response.status}`);
+  let html = "";
+
+  const cachedSlide = window.LECTURE_SLIDE_HTML?.[file];
+  if (window.location.protocol === "file:" && cachedSlide) {
+    html = cachedSlide;
+    window.LECTURE_RUNTIME_DIAGNOSTICS.cacheDirectLoaded += 1;
+  } else {
+    try {
+      const response = await fetch(file, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`${file} failed with ${response.status}`);
+      }
+      html = await response.text();
+      window.LECTURE_RUNTIME_DIAGNOSTICS.fetchLoaded += 1;
+    } catch (error) {
+      if (!cachedSlide) {
+        window.LECTURE_RUNTIME_DIAGNOSTICS.errors.push({ file, message: error.message });
+        throw error;
+      }
+      html = cachedSlide;
+      window.LECTURE_RUNTIME_DIAGNOSTICS.cacheFallbackLoaded += 1;
+    }
   }
 
-  const html = await response.text();
   const parsed = new DOMParser().parseFromString(html, "text/html");
   const slideElement = parsed.querySelector(".slide");
 
@@ -255,6 +280,34 @@ function moveSlide(delta) {
   setActiveSlide(currentSlideIndex + delta);
 }
 
+function setPresentationMode(isPresenting) {
+  document.body.classList.toggle("is-presenting", isPresenting);
+  if (presentButton) {
+    presentButton.textContent = isPresenting ? "Exit" : "Present";
+    presentButton.setAttribute("aria-pressed", String(isPresenting));
+  }
+}
+
+async function togglePresentationMode() {
+  const isFullscreen = Boolean(document.fullscreenElement);
+
+  if (isFullscreen || document.body.classList.contains("is-presenting")) {
+    if (isFullscreen) {
+      await document.exitFullscreen();
+    } else {
+      setPresentationMode(false);
+    }
+    return;
+  }
+
+  setPresentationMode(true);
+  try {
+    await document.documentElement.requestFullscreen();
+  } catch {
+    setPresentationMode(true);
+  }
+}
+
 function isTypingTarget(target) {
   return target?.closest?.("input, textarea, select, [contenteditable='true']");
 }
@@ -275,8 +328,14 @@ async function renderDeck() {
 }
 
 printButton?.addEventListener("click", () => window.print());
+presentButton?.addEventListener("click", () => {
+  togglePresentationMode();
+});
 previousButton?.addEventListener("click", () => moveSlide(-1));
 nextButton?.addEventListener("click", () => moveSlide(1));
+document.addEventListener("fullscreenchange", () => {
+  setPresentationMode(Boolean(document.fullscreenElement));
+});
 window.addEventListener("hashchange", () => setActiveSlide(getHashSlideIndex(), { updateHash: false }));
 window.addEventListener("keydown", (event) => {
   if (isTypingTarget(event.target)) {
@@ -295,6 +354,12 @@ window.addEventListener("keydown", (event) => {
   } else if (event.key === "End") {
     event.preventDefault();
     setActiveSlide(frames.length - 1);
+  } else if (event.key.toLowerCase() === "f") {
+    event.preventDefault();
+    togglePresentationMode();
+  } else if (event.key === "Escape" && document.body.classList.contains("is-presenting") && !document.fullscreenElement) {
+    event.preventDefault();
+    setPresentationMode(false);
   }
 });
 

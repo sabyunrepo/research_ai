@@ -3,23 +3,117 @@ window.LECTURE_SLIDES = [
     "file": "00-title.html",
     "parent": "00",
     "kind": "main",
-    "reviewTitle": "00-title.html"
-  },
-  {
-    "file": "00-1-workbench-preview.html",
-    "parent": "00",
-    "kind": "main",
-    "reviewTitle": "우리가 만들 것은 프롬프트가 아니라 작업장입니다",
+    "reviewTitle": "00-title.html",
+    "sectionId": "00",
+    "sectionTitle": "오프닝 / 문제 제기",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 3,
     "speaker": {
-      "heading": "우리가 만들 것은 프롬프트가 아니라 작업장입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>강의의 모든 개념은 하나의 AI 작업 환경으로 합쳐집니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
+      "heading": "AI 에이전트 하네스 엔지니어링",
+      "html": "<strong>상세 발표 스크립트</strong><p>안녕하세요, 여러분. 오늘 강의 'AI 에이전트 하네스 엔지니어링'에 오신 것을 환영합니다.</p><p>다들 AI를 업무에 쓰시면서 이런 답답함, 한 번쯤 느껴보셨을 겁니다. \"분명히 아까 말했는데 다음 요청에서 또 까먹네?\", \"어제는 완벽하게 해내더니 오늘은 갑자기 엉뚱한 결과물을 내놓네?\" 우리는 매번 AI를 달래가며 더 정교하고 긴 프롬프트를 고민하곤 합니다.</p><p>하지만 오늘 우리가 다룰 핵심은 마법 같은 프롬프트 한 줄이 아닙니다. AI에게 한 번 잘 말하는 법이 아니라, 내일도 모레도 같은 기준으로 일하게 만드는 작업 환경을 설계하는 법입니다.</p><p>하네스라는 말은 AI를 억지로 묶어두는 장치처럼 들릴 수 있습니다.</p><p>그런데 핵심은 자유를 없애는 게 아닙니다.</p><p><span style=\"font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans KR&quot;, sans-serif;\">힘이 엉뚱한 데로 새지 않게 방향을 잡아주는 겁니다.</span></p><p>자동차 경주에서 안전벨트, 트랙, 정비소, 신호 체계가 드라이버를 방해하려고 있는 게 아니듯이,</p><p>AI 하네스도 AI를 답답하게 만들려고 있는 게 아닙니다.</p><p>뛰어난 능력이 실무에서 사고 없이 반복되도록</p><p>규칙, 절차, 도구, 검증을 깔아주는 작업 환경입니다.<span style=\"font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans KR&quot;, sans-serif;\">오늘은 먼저 AI가 왜 자꾸 흔들리는지부터 보겠습니다. 그다음 가장 작은 지시인 명세와 프롬프트에서 시작해, 기억, 절차, 역할 분리, 도구, 검증, 이어받기까지 차례대로 작업장을 조립할 겁니다.</span></p><p>강의가 끝났을 때 가져가실 것은 외워야 할 기능 목록이 아닙니다. 우리 팀에서 AI가 두 번 이상 반복한 실수를 규칙, 절차, 검증으로 바꾸는 판단 기준입니다. 그 첫 출발점으로, 왜 똑똑한 AI가 실무에서는 일관되지 않게 보이는지부터 확인해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 강의가 더 긴 프롬프트가 아니라 AI가 반복해서 안정적으로 일하는 작업 환경을 설계하는 시간임을 잡아준다.",
+        "keywords": [
+          "하네스",
+          "반복 가능성",
+          "작업 환경",
+          "규칙과 검증"
+        ],
+        "flow": [
+          "AI 사용자의 반복 답답함을 먼저 꺼낸다",
+          "프롬프트 한 줄보다 작업 환경이 핵심이라고 전환한다",
+          "하네스는 힘을 안전하게 유도하는 장치라고 정의한다"
+        ],
+        "example": "경주차 드라이버도 안전벨트, 트랙, 정비소, 신호 체계가 있어야 실력을 낸다.",
+        "bridge": "먼저 왜 AI가 똑똑해도 결과가 흔들리는지부터 보겠습니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Model Context Protocol Server Features",
+        "links": [
+          {
+            "label": "Tools",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+          },
+          {
+            "label": "Resources",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+          },
+          {
+            "label": "Prompts",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+          }
+        ]
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "01-why-harness.html",
     "parent": "01",
     "kind": "main",
-    "reviewTitle": "AI는 똑똑하지만 일관되지는 않습니다"
+    "reviewTitle": "AI는 똑똑하지만 일관되지는 않습니다",
+    "sectionId": "00",
+    "sectionTitle": "오프닝 / 문제 제기",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 3,
+    "speaker": {
+      "heading": "AI는 똑똑하지만 일관되지는 않습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI 코딩 도구를 처음 쓰면 속도에 놀랍니다. 그런데 실무에서 며칠만 굴려보면 다른 문제가 보입니다. 어제는 파일을 잘 읽더니 오늘은 추측으로 고치고, 방금 테스트를 돌리라고 했는데 다음 작업에서는 또 생략합니다.</p><p>이때 많은 분들이 프롬프트를 더 길게 씁니다. “이번에는 꼭 파일부터 읽어”, “테스트도 꼭 돌려”, “아까 말한 규칙 잊지 마” 같은 말을 계속 덧붙이는 거죠. 그런데 이상하게도 요청은 길어지는데 결과는 여전히 흔들립니다.</p><p>여기서 먼저 봐야 할 것은 해결책이 아닙니다. 왜 같은 AI가 어제와 오늘 다르게 일하는지입니다. 같은 요청처럼 보여도 실제로는 눈앞에 있는 파일, 규칙, 검증 결과, 대화 맥락이 매번 다릅니다. AI는 그 조건에 맞춰 움직이기 때문에 작업 조건이 흔들리면 결과도 흔들립니다.</p><p>오늘은 이 흔들림을 그냥 “모델이 별로다”로 넘기지 않고, 어떤 조건이 비었을 때 어떤 실패가 나는지부터 보겠습니다. 바로 다음 장에서 같은 요청이 왜 다른 결과로 갈라지는지 더 선명하게 확인하겠습니다.</p>",
+      "cues": {
+        "purpose": "해결책을 먼저 말하지 않고, 같은 AI가 왜 일관되지 않게 보이는지 문제의식을 잡는다.",
+        "keywords": [
+          "일관성",
+          "파일",
+          "규칙",
+          "검증",
+          "프롬프트가 길어짐"
+        ],
+        "flow": [
+          "AI가 빠르지만 작업마다 달라지는 경험을 꺼낸다",
+          "프롬프트를 길게 써도 흔들림이 사라지지 않는다고 말한다",
+          "파일/규칙/검증/맥락 조건이 매번 다르다는 문제로 좁힌다"
+        ],
+        "example": "어제는 파일을 읽고 고쳤는데 오늘은 같은 요청에서 추측으로 고치는 상황을 든다.",
+        "bridge": "다음은 “같은 요청도 환경이 다르면 결과가 달라집니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "01-1-inconsistency-before-after.html",
@@ -28,686 +122,30 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "같은 요청도 환경이 다르면 결과가 달라집니다",
     "speaker": {
       "heading": "같은 요청도 환경이 다르면 결과가 달라집니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>모델 성능보다 먼저 작업 조건의 일관성을 확인해야 합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "03-layer-map.html",
-    "parent": "03",
-    "kind": "main",
-    "reviewTitle": "요즘 워크플로우는 레이어로 봅니다"
-  },
-  {
-    "file": "03-1-layer-responsibility.html",
-    "parent": "03",
-    "kind": "main",
-    "reviewTitle": "각 레이어는 맡는 책임이 다릅니다",
-    "speaker": {
-      "heading": "각 레이어는 맡는 책임이 다릅니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>Prompt는 지시, Context는 기억, Skill은 절차, Hook은 강제 실행입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "03-2-harness-flow.html",
-    "parent": "03",
-    "kind": "workflow",
-    "reviewTitle": "지시는 점점 더 단단한 구조로 승격됩니다",
-    "speaker": {
-      "heading": "지시는 점점 더 단단한 구조로 승격됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>한 번 말할 것은 Prompt, 반복할 것은 파일, 반드시 지킬 것은 자동화로 올립니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-failure-patterns.html",
-    "parent": "02",
-    "kind": "main",
-    "reviewTitle": "실패는 보통 지능보다 절차 문제입니다",
-    "speaker": {
-      "heading": "실패는 보통 지능보다 절차 문제입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션의 목적은 AI 도구가 왜 틀리는지 모델 탓으로만 돌리지 않고, 반복되는 실패 패턴을 구조로 보는 것입니다.</p><p>읽지 않고 고치기, 테스트 생략, 범위 확장, 컨텍스트 오염을 먼저 확인한 뒤, 뒤 섹션에서 각각 CLAUDE.md, Skill, Subagent, Hook, Evaluation으로 어떻게 막는지 연결합니다.</p>"
-    }
-  },
-  {
-    "file": "02-1-why-llms-fail.html",
-    "parent": "02",
-    "kind": "main",
-    "reviewTitle": "LLM은 빈칸을 추론으로 채웁니다",
-    "speaker": {
-      "heading": "LLM은 빈칸을 추론으로 채웁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>문제가 되는 순간은 모델이 모를 때가 아니라, 모르는 것을 그럴듯하게 메울 때입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-2-failure-example-read-before-edit.html",
-    "parent": "02",
-    "kind": "example",
-    "reviewTitle": "읽지 않고 고치면 API를 상상합니다",
-    "speaker": {
-      "heading": "읽지 않고 고치면 API를 상상합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>가장 흔한 실패는 “아마 이런 함수가 있겠지”라는 추측으로 새 코드를 넣는 것입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-3-failure-example-skip-test.html",
-    "parent": "02",
-    "kind": "example",
-    "reviewTitle": "테스트를 약화하면 성공처럼 보입니다",
-    "speaker": {
-      "heading": "테스트를 약화하면 성공처럼 보입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>실패 원인을 고치지 않고 검증 기준을 낮추면, 초록색 결과가 품질 증거처럼 보입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-4-failure-example-context-drift.html",
-    "parent": "02",
-    "kind": "example",
-    "reviewTitle": "오래된 가정은 현재 작업을 오염시킵니다",
-    "speaker": {
-      "heading": "오래된 가정은 현재 작업을 오염시킵니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>긴 대화에서는 폐기된 요구사항과 최신 목표가 같은 작업대 위에 섞입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-5-improvement-process-guardrails.html",
-    "parent": "02",
-    "kind": "main",
-    "reviewTitle": "더 똑똑하라고 하지 말고 절차를 만듭니다",
-    "speaker": {
-      "heading": "더 똑똑하라고 하지 말고 절차를 만듭니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>읽기 → 계획 → 수정 → 검증 → 보고는 AI가 지나가야 하는 최소 작업선입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-6-improvement-turn-failure-into-rule.html",
-    "parent": "02",
-    "kind": "main",
-    "reviewTitle": "반복 실패는 다음 하네스 후보입니다",
-    "speaker": {
-      "heading": "반복 실패는 다음 하네스 후보입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>AI가 두 번 이상 틀린 행동은 대화 피드백으로 남기지 말고 구조로 올립니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "02-7-failure-to-harness-decision.html",
-    "parent": "02",
-    "kind": "main",
-    "reviewTitle": "반복 실패는 어느 하네스로 올릴지 결정합니다",
-    "speaker": {
-      "heading": "반복 실패는 어느 하네스로 올릴지 결정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 슬라이드는 실패 패턴 섹션의 결론이자 다음 섹션으로 넘어가는 다리입니다.</p><p>반복 지시는 CLAUDE.md, 반복 절차는 Skill, 반복 판단은 Subagent, 외부 확인은 MCP, 무조건 실행할 검증은 Hook이나 Evaluation으로 올린다는 분류 기준을 여기서 고정합니다.</p>"
-    }
-  },
-  {
-    "file": "13-spec-driven.html",
-    "parent": "13",
-    "kind": "main",
-    "reviewTitle": "명세 기반 작업은 즉흥 구현의 반대편입니다",
-    "speaker": {
-      "heading": "명세 기반 작업은 즉흥 구현의 반대편입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 즉흥적인 대화 구현에서 파일로 남는 합의로 넘어가는 전환점입니다.</p><p>목표, 비목표, 제약, 완료 기준을 먼저 고정하면 이후 prompt, few-shot, review, evaluation이 모두 같은 기준을 바라보게 됩니다.</p>"
-    }
-  },
-  {
-    "file": "13-1-vibe-vs-spec.html",
-    "parent": "13",
-    "kind": "example",
-    "reviewTitle": "명세 기반 작업은 즉흥 구현을 줄입니다",
-    "speaker": {
-      "heading": "명세 기반 작업은 즉흥 구현을 줄입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>대화 속 감각이 아니라 파일로 남는 합의를 먼저 만듭니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "13-2-spec-contract.html",
-    "parent": "13",
-    "kind": "main",
-    "reviewTitle": "좋은 명세는 네 가지를 고정합니다",
-    "speaker": {
-      "heading": "좋은 명세는 네 가지를 고정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>목표, 제외 범위, 제약, 통과 기준이 구현의 난간이 됩니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "13-3-spec-bad-good.html",
-    "parent": "13",
-    "kind": "example",
-    "reviewTitle": "나쁜 spec은 해석을 남기고, 좋은 spec은 확인을 남깁니다",
-    "speaker": {
-      "heading": "나쁜 spec은 해석을 남기고, 좋은 spec은 확인을 남깁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>구현자가 바뀌어도 같은 결과를 낼 수 있어야 합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "13-4-spec-plan-review-flow.html",
-    "parent": "13",
-    "kind": "workflow",
-    "reviewTitle": "Spec은 plan과 review로 이어져야 합니다",
-    "speaker": {
-      "heading": "Spec은 plan과 review로 이어져야 합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>문서는 만들고 끝나는 것이 아니라 실행과 검토의 기준으로 쓰입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "04-prompt-layer.html",
-    "parent": "04",
-    "kind": "main",
-    "reviewTitle": "프롬프트도 하네스입니다"
-  },
-  {
-    "file": "04-1-prompt-anatomy.html",
-    "parent": "04",
-    "kind": "main",
-    "reviewTitle": "좋은 요청은 여섯 칸으로 나눌 수 있습니다",
-    "speaker": {
-      "heading": "좋은 요청은 여섯 칸으로 나눌 수 있습니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>목표, 증상, 파일, 제한, 검증, 보고 형식을 분리합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "04-2-xml-boundaries.html",
-    "parent": "04",
-    "kind": "main",
-    "reviewTitle": "입력 경계가 선명하면 모델의 오독이 줄어듭니다",
-    "speaker": {
-      "heading": "입력 경계가 선명하면 모델의 오독이 줄어듭니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>긴 요청은 XML이나 섹션 제목으로 역할을 나눕니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "05-persona.html",
-    "parent": "05",
-    "kind": "main",
-    "reviewTitle": "페르소나는 역할보다 판단 기준이 중요합니다"
-  },
-  {
-    "file": "05-1-persona-weak.html",
-    "parent": "05",
-    "kind": "main",
-    "reviewTitle": "“시니어처럼”은 너무 넓은 지시입니다",
-    "speaker": {
-      "heading": "“시니어처럼”은 너무 넓은 지시입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>역할 이름만 주면 무엇을 우선해야 하는지 불명확합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "05-2-persona-rubric.html",
-    "parent": "05",
-    "kind": "main",
-    "reviewTitle": "Persona는 역할보다 판단 기준으로 씁니다",
-    "speaker": {
-      "heading": "Persona는 역할보다 판단 기준으로 씁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>좋은 persona는 무엇을 먼저 볼지 알려 줍니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "06-few-shot.html",
-    "parent": "06",
-    "kind": "main",
-    "reviewTitle": "Few-shot은 답변 모양을 고정합니다"
-  },
-  {
-    "file": "06-1-good-few-shot.html",
-    "parent": "06",
-    "kind": "example",
-    "reviewTitle": "좋은 few-shot은 deck slide spec의 완성도를 보여 줍니다",
-    "speaker": {
-      "heading": "좋은 few-shot은 deck slide spec의 완성도를 보여 줍니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>HTML/CSS deck 자동화에서는 원하는 슬라이드 spec의 깊이와 검증 기준을 예시로 고정합니다.</p><p>source, layout, visual, verification이 들어간 좋은 slide spec 예시를 보여 주면 모델은 결과물의 모양과 깊이를 동시에 따라옵니다.</p>"
-    }
-  },
-  {
-    "file": "06-2-bad-few-shot.html",
-    "parent": "06",
-    "kind": "example",
-    "reviewTitle": "나쁜 few-shot은 나쁜 slide spec까지 복제합니다",
-    "speaker": {
-      "heading": "나쁜 few-shot은 나쁜 slide spec까지 복제합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>모호한 예시는 HTML/CSS deck에서도 모호한 제목, 느슨한 레이아웃, 빠진 검증으로 이어집니다.</p><p>few-shot에는 좋은 예시뿐 아니라 피해야 할 slide spec도 짧게 넣어야 모델이 경계를 압니다.</p>"
-    }
-  },
-  {
-    "file": "07-reasoning-prompts.html",
-    "parent": "07",
-    "kind": "main",
-    "reviewTitle": "“단계별로 생각해”를 남발하지 않습니다",
-    "speaker": {
-      "heading": "“단계별로 생각해”를 남발하지 않습니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 슬라이드의 핵심은 “생각을 길게 해”라는 말보다 작업 조건을 분명하게 주는 편이 더 실무적이라는 점입니다.</p><p>먼저 목표와 조건을 포함해 명확하게 요청합니다. 결과가 원하는 모양으로 나오지 않을 때만 예시를 추가합니다. 그리고 체크리스트, 할 일 목록, 검증 목록처럼 모델이 따라갈 기준을 제시합니다.</p><p>원문으로는 “Let's think step by step”이라는 표현이 널리 쓰였지만, 최신 추론형 모델에서는 이 문구를 습관처럼 붙이기보다 무엇을 하고, 무엇으로 확인하고, 어떻게 보고할지를 정해 주는 것이 더 안정적입니다.</p>"
-    }
-  },
-  {
-    "file": "07-1-reasoning-output-pattern.html",
-    "parent": "07",
-    "kind": "main",
-    "reviewTitle": "결과 기준을 선명하게 요구합니다",
-    "speaker": {
-      "heading": "결과 기준을 선명하게 요구합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>앞 슬라이드가 좋은 요청의 기본 구조였다면, 이 슬라이드는 결과 기준을 더 구체화합니다.</p><p>오른쪽 예시는 결과물, 확인 지점, 통과 기준, 보고 형식, 남은 위험을 한 요청 안에 넣는 방식입니다. 이렇게 해야 답변이 그럴듯한 설명에서 끝나지 않고 검증 가능한 작업 결과가 됩니다.</p>"
-    }
-  },
-  {
-    "file": "07-2-reasoning-avoid-overask.html",
-    "parent": "07",
-    "kind": "main",
-    "reviewTitle": "작업 성격에 따라 요청 강도를 조절합니다",
-    "speaker": {
-      "heading": "작업 성격에 따라 요청 강도를 조절합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>앞의 두 슬라이드가 좋은 요청의 구성 요소를 설명했다면, 이 슬라이드는 언제 얼마나 붙일지를 정리합니다.</p><p>간단한 일에는 목표만 선명하게 줘도 충분합니다. 출력 형식이 중요한 일에는 예시를 붙이고, 장애나 데이터 변경처럼 위험한 일에는 검증 목록과 보고 기준을 붙입니다. 모르는 것이 많은 일은 바로 시키기보다 질문이나 조사를 먼저 요청합니다.</p>"
-    }
-  },
-  {
-    "file": "08-claude-md.html",
-    "parent": "08",
-    "kind": "main",
-    "reviewTitle": "CLAUDE.md는 항상 켜진 기억입니다"
-  },
-  {
-    "file": "08-1-claude-md-hierarchy.html",
-    "parent": "08",
-    "kind": "main",
-    "reviewTitle": "프로젝트 기억은 계층으로 로드됩니다",
-    "speaker": {
-      "heading": "프로젝트 기억은 계층으로 로드됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>global, project, local 규칙의 범위를 분리해야 충돌이 줄어듭니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "08-2-good-claude-md.html",
-    "parent": "08",
-    "kind": "example",
-    "reviewTitle": "Deck automation용 CLAUDE.md는 작업 순서를 고정합니다",
-    "speaker": {
-      "heading": "Deck automation용 CLAUDE.md는 작업 순서를 고정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>항상 로드되는 규칙에는 산출물 순서, 수정 경계, 검증 명령만 남깁니다.</p><p>source, spec, few-shot, HTML, verification, final report 순서를 고정하면 deck 작업이 대화 감각이 아니라 반복 가능한 절차로 바뀝니다.</p>"
-    }
-  },
-  {
-    "file": "08-3-bad-claude-md.html",
-    "parent": "08",
-    "kind": "example",
-    "reviewTitle": "나쁜 CLAUDE.md는 오래된 규칙을 계속 주입합니다",
-    "speaker": {
-      "heading": "나쁜 CLAUDE.md는 오래된 규칙을 계속 주입합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>너무 긴 기억은 모델의 주의를 흐리고 최신 목표와 충돌합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "09-context-engineering.html",
-    "parent": "09",
-    "kind": "main",
-    "reviewTitle": "이제는 컨텍스트 엔지니어링입니다"
-  },
-  {
-    "file": "09-1-context-budget.html",
-    "parent": "09",
-    "kind": "main",
-    "reviewTitle": "Context는 무한한 창고가 아니라 작업대입니다",
-    "speaker": {
-      "heading": "Context는 무한한 창고가 아니라 작업대입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>작업대 위에 너무 많이 올리면 필요한 증거가 묻힙니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "09-2-always-vs-needed.html",
-    "parent": "09",
-    "kind": "example",
-    "reviewTitle": "항상 로드할 것과 필요할 때 열 것을 나눕니다",
-    "speaker": {
-      "heading": "항상 로드할 것과 필요할 때 열 것을 나눕니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>규칙은 항상, 절차와 긴 예시는 필요할 때 여는 편이 안정적입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "09-3-context-drift-check.html",
-    "parent": "09",
-    "kind": "main",
-    "reviewTitle": "완료 전 현재 목표와 컨텍스트를 다시 맞춥니다",
-    "speaker": {
-      "heading": "완료 전 현재 목표와 컨텍스트를 다시 맞춥니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>컨텍스트 섹션의 마무리는 “정보를 더 넣자”가 아니라 “지금 목표와 맞지 않는 오래된 가정을 걷어내자”입니다.</p><p>이 기준이 뒤의 Skill과 Handoff로 이어집니다. 필요한 절차는 Skill로 열고, 다음 세션에 남길 현재 상태는 Handoff로 고정합니다.</p>"
-    }
-  },
-  {
-    "file": "10-skills.html",
-    "parent": "10",
-    "kind": "main",
-    "reviewTitle": "Skill은 반복 절차의 매뉴얼입니다",
-    "speaker": {
-      "heading": "Skill은 반복 절차의 매뉴얼입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>여기서는 반복 지시를 항상 켜진 기억에 넣는 것과, 반복 절차를 필요할 때 여는 Skill로 분리하는 기준을 설명합니다.</p><p>4시간 워크숍에서는 수강생이 자기 프로젝트에서 자주 반복되는 작업 하나를 골라 Skill 후보로 분해해 보는 흐름으로 이어갑니다.</p>"
-    }
-  },
-  {
-    "file": "10-1-skill-trigger-description.html",
-    "parent": "10",
-    "kind": "main",
-    "reviewTitle": "Skill의 description은 자동 호출 트리거입니다",
-    "speaker": {
-      "heading": "Skill의 description은 자동 호출 트리거입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>좋은 description은 언제 이 Skill을 써야 하는지 명확히 말합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "10-2-skill-body-procedure.html",
-    "parent": "10",
-    "kind": "main",
-    "reviewTitle": "Skill 본문은 짧은 절차여야 합니다",
-    "speaker": {
-      "heading": "Skill 본문은 짧은 절차여야 합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>설명서가 아니라 작업자가 따라갈 체크리스트에 가깝습니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "10-3-skill-references-scripts-assets.html",
-    "parent": "10",
-    "kind": "main",
-    "reviewTitle": "긴 자료와 실행 코드는 Skill 밖으로 분리합니다",
-    "speaker": {
-      "heading": "긴 자료와 실행 코드는 Skill 밖으로 분리합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>references, scripts, assets는 필요할 때만 여는 보조 자료입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "11-skill-structure.html",
-    "parent": "11",
-    "kind": "main",
-    "reviewTitle": "좋은 Skill은 작고 선명합니다"
-  },
-  {
-    "file": "11-1-real-skill-folder.html",
-    "parent": "11",
-    "kind": "main",
-    "reviewTitle": "deck-builder Skill은 폴더가 곧 작업 순서입니다",
-    "speaker": {
-      "heading": "deck-builder Skill은 폴더가 곧 작업 순서입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>HTML/CSS deck 생성 절차는 SKILL.md, references, scripts, assets로 나누면 재사용하기 쉽습니다.</p><p>Skill 폴더는 모델에게 언제 읽고, 무엇을 실행하고, 어떤 예시를 참조할지 알려 주는 작은 작업장입니다.</p>"
-    },
-    "sources": [
-      {
-        "label": "Claude Code Skills",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      "html": "<strong>상세 발표 스크립트</strong><p>같은 요청을 했는데 결과가 달라지는 장면을 조금 더 가까이 보겠습니다. 어제는 AI가 관련 파일을 읽고, 테스트 결과까지 확인한 상태에서 답했습니다. 그래서 수정 범위도 좁고 보고도 비교적 정확했습니다.</p><p>그런데 오늘은 조건이 다릅니다. 파일을 아직 안 읽었고, 테스트 결과도 없고, 이전 대화에서 버려진 가정이 남아 있습니다. 요청 문장은 비슷해 보여도 AI가 보는 작업대 위 재료가 완전히 달라진 겁니다.</p><p>이런 상태에서는 AI가 빈칸을 채우기 시작합니다. 파일이 없으면 구조를 상상하고, 검증 결과가 없으면 성공 여부를 추정하고, 오래된 맥락이 남으면 현재 목표와 섞습니다. 그래서 같은 모델, 같은 사람, 비슷한 프롬프트에서도 결과가 갈라집니다.</p><p>이제부터는 이 흔들림이 실제 현장에서 어떤 모양으로 터지는지 보겠습니다. 파일을 읽지 않고 고치기, 테스트를 숨기기, 오래된 맥락에 끌려가기처럼 반복해서 등장하는 실패 패턴을 먼저 확인해야, 뒤에서 세울 작업장 구조가 왜 필요한지 선명해집니다.</p>",
+      "cues": {
+        "purpose": "같은 요청이 다른 결과로 갈라지는 원인을 모델 성능이 아니라 작업 조건 차이로 보게 한다.",
+        "keywords": [
+          "같은 요청",
+          "작업 조건",
+          "파일 없음",
+          "검증 없음",
+          "오래된 맥락"
+        ],
+        "flow": [
+          "어제와 오늘의 조건 차이를 비교한다",
+          "파일/검증/맥락이 없으면 AI가 빈칸을 채운다고 설명한다",
+          "해결책 전에 실패 패턴을 먼저 보겠다고 넘긴다"
+        ],
+        "example": "어제는 파일과 테스트가 있었고, 오늘은 추측과 완료 선언만 있는 비교를 든다.",
+        "bridge": "다음은 “실패는 보통 성능보다 절차 문제입니다”입니다."
       }
-    ]
-  },
-  {
-    "file": "11-2-skill-frontmatter-fields.html",
-    "parent": "11",
-    "kind": "main",
-    "reviewTitle": "frontmatter는 deck-builder Skill의 호출 조건을 고정합니다",
-    "speaker": {
-      "heading": "frontmatter는 deck-builder Skill의 호출 조건을 고정합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>모델은 이 짧은 메타데이터로 지금 deck-builder를 써야 하는가를 판단합니다.</p><p>description은 검색 키워드가 아니라 자동 호출 계약입니다. 너무 넓으면 아무 때나 켜지고, 너무 좁으면 필요한 순간에 빠집니다.</p>"
-    }
-  },
-  {
-    "file": "12-superpowers.html",
-    "parent": "12",
-    "kind": "main",
-    "reviewTitle": "Superpowers는 스킬 기반 하네스 패키지입니다"
-  },
-  {
-    "file": "12-1-superpowers-as-harness.html",
-    "parent": "12",
-    "kind": "main",
-    "reviewTitle": "Superpowers는 스킬 묶음이 아니라 작업 규율입니다",
-    "speaker": {
-      "heading": "Superpowers는 스킬 묶음이 아니라 작업 규율입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>brainstorming, debugging, review, verification이 개발 흐름을 단계화합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "12-2-superpowers-workflow-map.html",
-    "parent": "12",
-    "kind": "workflow",
-    "reviewTitle": "각 Superpower는 개발 루프의 다른 지점을 맡습니다",
-    "speaker": {
-      "heading": "각 Superpower는 개발 루프의 다른 지점을 맡습니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>필요할 때 적절한 작업 규율을 호출하는 것이 핵심입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "14-subagents.html",
-    "parent": "14",
-    "kind": "main",
-    "reviewTitle": "Subagent는 역할과 컨텍스트를 분리합니다",
-    "sources": [
-      {
-        "label": "Claude Code Subagents",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
-      }
-    ]
-  },
-  {
-    "file": "14-1-subagent-context-isolation.html",
-    "parent": "14",
-    "kind": "main",
-    "reviewTitle": "Subagent는 작은 AI가 아니라 분리된 context입니다",
-    "speaker": {
-      "heading": "Subagent는 작은 AI가 아니라 분리된 context입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>역할을 나누는 진짜 이유는 판단 공간을 오염시키지 않기 위해서입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "14-2-reviewer-subagent-example.html",
-    "parent": "14",
-    "kind": "example",
-    "reviewTitle": "Reviewer agent는 diff와 결함 기준만 봅니다",
-    "speaker": {
-      "heading": "Reviewer agent는 diff와 결함 기준만 봅니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>구현 의도보다 사용자 영향과 회귀 위험을 먼저 봅니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "14-3-research-subagent-example.html",
-    "parent": "14",
-    "kind": "example",
-    "reviewTitle": "Research agent는 사실을 수집하고 결정하지 않습니다",
-    "speaker": {
-      "heading": "Research agent는 사실을 수집하고 결정하지 않습니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>조사와 의사결정을 분리하면 main이 더 좋은 tradeoff를 판단할 수 있습니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "15-agent-teams.html",
-    "parent": "15",
-    "kind": "main",
-    "reviewTitle": "요즘은 병렬 에이전트로 확장합니다"
-  },
-  {
-    "file": "15-1-parallel-safe.html",
-    "parent": "15",
-    "kind": "main",
-    "reviewTitle": "병렬화는 독립된 작업일 때만 안전합니다",
-    "speaker": {
-      "heading": "병렬화는 독립된 작업일 때만 안전합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>서로 다른 파일, 서로 다른 관점, 읽기 전용 조사는 병렬화에 맞습니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "15-2-parallel-risk.html",
-    "parent": "15",
-    "kind": "main",
-    "reviewTitle": "같은 결정을 여러 agent에게 맡기면 충돌합니다",
-    "speaker": {
-      "heading": "같은 결정을 여러 agent에게 맡기면 충돌합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>병렬화는 빠르지만 가정이 갈라지면 통합 비용이 커집니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "18-mcp.html",
-    "parent": "18",
-    "kind": "main",
-    "reviewTitle": "MCP는 실제 세계와 연결하는 도구 레이어입니다",
-    "speaker": {
-      "heading": "MCP는 실제 세계와 연결하는 도구 레이어입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 모델이 외부 시스템을 직접 아는 것이 아니라, Host와 MCP client, MCP server, tool/resource/prompt를 통해 연결된다는 점을 잡아 줍니다.</p><p>핵심은 도구를 많이 붙이는 것이 아니라 읽기, 쓰기, 승인 권한을 나누고 필요한 순간에만 연결하는 것입니다.</p>"
-    }
-  },
-  {
-    "file": "18-1-mcp-bridge.html",
-    "parent": "18",
-    "kind": "main",
-    "reviewTitle": "MCP는 모델과 외부 시스템 사이의 다리입니다",
-    "speaker": {
-      "heading": "MCP는 모델과 외부 시스템 사이의 다리입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>MCP는 모델이 외부 시스템을 직접 아는 구조가 아닙니다. Host app이 MCP client를 만들고, client가 MCP server와 통신하며, server가 tools, resources, prompts를 노출합니다.</p><p>이 슬라이드는 입문용 단순화입니다. 실제 설정은 공식 문서의 schema를 기준으로 확인해야 합니다.</p>"
     },
-    "sources": [
-      {
-        "label": "MCP Tools",
-        "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
-      },
-      {
-        "label": "MCP Resources",
-        "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
-      },
-      {
-        "label": "MCP Prompts",
-        "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
-      }
-    ]
-  },
-  {
-    "file": "18-2-tool-permissions.html",
-    "parent": "18",
-    "kind": "main",
-    "reviewTitle": "도구는 읽기 권한과 쓰기 권한을 분리합니다",
-    "speaker": {
-      "heading": "도구는 읽기 권한과 쓰기 권한을 분리합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>같은 GitHub 도구라도 읽기와 merge는 위험도가 다릅니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "18-3-tool-bloat.html",
-    "parent": "18",
-    "kind": "main",
-    "reviewTitle": "도구가 많을수록 항상 좋은 것은 아닙니다",
-    "speaker": {
-      "heading": "도구가 많을수록 항상 좋은 것은 아닙니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>tool description도 context를 차지하고 선택 비용을 만듭니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "18-4-practice-agent-tool-split.html",
-    "parent": "18",
-    "kind": "checkpoint",
-    "reviewTitle": "역할과 도구를 한 장으로 분리합니다",
-    "speaker": {
-      "heading": "역할과 도구를 한 장으로 분리합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 실습은 Agents와 Tools 섹션을 실제 업무 분해로 연결하는 체크포인트입니다.</p><p>Main은 결정과 통합, Subagent는 격리된 검토, MCP Tool은 외부 시스템 호출, Human Review는 승인과 책임을 맡는 식으로 나눠 봅니다.</p>"
-    }
-  },
-  {
-    "file": "16-hooks.html",
-    "parent": "16",
-    "kind": "main",
-    "reviewTitle": "Hook은 지시가 아니라 실행입니다",
-    "speaker": {
-      "heading": "Hook은 지시가 아니라 실행입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 “테스트를 해라”라는 문장을 실제 이벤트 기반 명령으로 바꾸는 단계입니다.</p><p>처음에는 echo나 알림처럼 가벼운 command로 시작하고, 이후 lint/test나 종료 전 검증으로 올리는 운영 감각을 전달합니다.</p>"
-    }
-  },
-  {
-    "file": "16-1-hook-event.html",
-    "parent": "16",
-    "kind": "main",
-    "reviewTitle": "Hook은 이벤트가 발생할 때 시작됩니다",
-    "speaker": {
-      "heading": "Hook은 이벤트가 발생할 때 시작됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>파일 수정, 도구 사용, 세션 종료 같은 지점에 자동화를 붙입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "16-2-hook-command.html",
-    "parent": "16",
-    "kind": "main",
-    "reviewTitle": "Hook의 command는 실제 실행되는 검문소입니다",
-    "speaker": {
-      "heading": "Hook의 command는 실제 실행되는 검문소입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>“테스트해”라는 지시는 잊힐 수 있지만, Hook command는 이벤트가 발생할 때 실제 명령을 실행합니다. Claude Code hook은 이벤트, matcher, hooks 배열, command handler의 구조를 맞춰야 합니다.</p><p>이 슬라이드는 입문용 단순화입니다. 실제 설정은 공식 문서의 schema를 기준으로 확인해야 합니다.</p>"
-    },
-    "sources": [
-      {
-        "label": "Claude Code Hooks",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
-      }
-    ]
-  },
-  {
-    "file": "16-3-hook-result.html",
-    "parent": "16",
-    "kind": "main",
-    "reviewTitle": "Hook 결과는 agent에게 다시 돌아갑니다",
-    "speaker": {
-      "heading": "Hook 결과는 agent에게 다시 돌아갑니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>pass/fail 피드백이 다음 행동을 바꾸게 만들어야 합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "16-4-skill-vs-hook.html",
-    "parent": "16",
-    "kind": "example",
-    "reviewTitle": "Skill은 지침이고 Hook은 실행입니다",
-    "speaker": {
-      "heading": "Skill은 지침이고 Hook은 실행입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>둘 다 필요하지만 실패를 막는 강도가 다릅니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "17-hook-advanced.html",
-    "parent": "17",
-    "kind": "main",
-    "reviewTitle": "Hook도 단계가 있습니다",
-    "speaker": {
-      "heading": "Hook도 단계가 있습니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>여기서 단계는 공식 이벤트 이름이 아니라 검사 깊이를 뜻합니다. 같은 Hook 체계 안에서도 echo, command, 종료 전 검증, 별도 context 리뷰처럼 점진적으로 강도를 올릴 수 있습니다.</p><p>이 슬라이드는 입문용 단순화입니다. 실제 설정은 공식 문서의 schema를 기준으로 확인해야 합니다.</p>"
-    },
-    "sources": [
-      {
-        "label": "Claude Code Hooks",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
-      }
-    ]
-  },
-  {
-    "file": "17-1-hook-start-small.html",
-    "parent": "17",
-    "kind": "main",
-    "reviewTitle": "Hook은 echo에서 시작해 test로 올립니다",
-    "speaker": {
-      "heading": "Hook은 echo에서 시작해 test로 올립니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>처음부터 무거운 자동화를 붙이면 작업 흐름이 막힐 수 있습니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "19-evaluation.html",
-    "parent": "19",
-    "kind": "main",
-    "reviewTitle": "완료의 기준은 검증입니다",
-    "speaker": {
-      "heading": "완료의 기준은 검증입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>이 섹션은 사람이 보기 좋은 답변과 실제로 완료된 작업을 구분하는 기준을 세웁니다.</p><p>기계가 확인할 수 있는 test, lint, build와 사람이 판단해야 하는 요구사항 해석, 발표 적합성, 근거 품질을 나누어 설명합니다.</p>"
-    }
-  },
-  {
-    "file": "19-1-machine-checks.html",
-    "parent": "19",
-    "kind": "main",
-    "reviewTitle": "기계가 확인할 수 있는 것은 기계에게 맡깁니다",
-    "speaker": {
-      "heading": "기계가 확인할 수 있는 것은 기계에게 맡깁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>test, lint, typecheck, build는 완료 증거의 기본입니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "19-2-judge-checks.html",
-    "parent": "19",
-    "kind": "main",
-    "reviewTitle": "판단이 필요한 품질은 rubric으로 봅니다",
-    "speaker": {
-      "heading": "판단이 필요한 품질은 rubric으로 봅니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>LLM-as-judge나 reviewer도 평가 기준이 없으면 흔들립니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    },
+    "sectionId": "00",
+    "sectionTitle": "오프닝 / 문제 제기",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 3,
     "sources": [
       {
         "label": "OpenAI Evaluation Best Practices",
@@ -716,59 +154,1138 @@ window.LECTURE_SLIDES = [
     ]
   },
   {
-    "file": "19-3-human-checks.html",
-    "parent": "19",
+    "file": "02-failure-patterns.html",
+    "parent": "02",
     "kind": "main",
-    "reviewTitle": "사람 검토는 최종 의사결정 지점입니다",
+    "reviewTitle": "실패는 보통 지능보다 절차 문제입니다",
     "speaker": {
-      "heading": "사람 검토는 최종 의사결정 지점입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>기계 검증이 통과해도 요구사항 해석은 사람이 확인해야 합니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
+      "heading": "실패는 보통 지능보다 절차 문제입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이제 실패를 구체적으로 보겠습니다. 현장에서 AI가 망가지는 방식은 생각보다 반복적입니다. 파일을 보지 않고 고치고, 테스트를 약하게 만들고, 오래된 대화 맥락을 현재 결정처럼 붙잡습니다.</p><p>이런 장면을 모델 지능 부족으로만 보면 매번 더 좋은 모델을 기다리게 됩니다. 하지만 절차 문제로 보면 관찰할 수 있습니다. 어디서 파일 확인이 빠졌는지, 어디서 검증 기준이 낮아졌는지, 어디서 과거 맥락이 끼어들었는지 분해할 수 있습니다.</p><p>그래서 이 섹션은 일부러 해결책보다 먼저 둡니다. 우리에게 필요한 것은 멋진 용어를 먼저 외우는 것이 아니라, 실제로 반복되는 고통의 모양을 정확히 알아보는 감각입니다.</p><p>첫 번째 실패는 가장 흔합니다. AI가 파일을 읽기 전에 이미 머릿속으로 API를 만들어버리는 경우입니다.</p>",
+      "cues": {
+        "purpose": "해결책으로 넘어가기 전에 현장에서 반복되는 실패 모양을 먼저 분해한다.",
+        "keywords": [
+          "파일 미확인",
+          "테스트 우회",
+          "검증 생략",
+          "절차 문제"
+        ],
+        "flow": [
+          "AI 실패가 반복적인 모양을 가진다고 말한다",
+          "모델 지능보다 빠진 절차를 관찰하자고 전환한다",
+          "첫 사례인 파일 미확인으로 넘긴다"
+        ],
+        "example": "파일을 보지 않고 고치고, 테스트를 약하게 만들고, 오래된 맥락을 현재 결정처럼 쓰는 장면을 묶어 말한다.",
+        "bridge": "다음은 “LLM은 빈칸을 추론으로 채웁니다”입니다."
+      }
+    },
+    "sectionId": "01",
+    "sectionTitle": "실패 패턴",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
-    "file": "20-loop-schedule.html",
-    "parent": "20",
-    "kind": "workflow",
-    "reviewTitle": "실전 자동화는 한 번 실행에서 끝나지 않습니다"
-  },
-  {
-    "file": "20-1-loop-until-pass.html",
-    "parent": "20",
-    "kind": "workflow",
-    "reviewTitle": "Loop는 통과할 때까지 반복하는 운영 구조입니다",
-    "speaker": {
-      "heading": "Loop는 통과할 때까지 반복하는 운영 구조입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>한 번 실행하고 끝나는 것이 아니라 실패를 다시 작업으로 돌립니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  },
-  {
-    "file": "20-2-practice-verification-gate.html",
-    "parent": "20",
-    "kind": "checkpoint",
-    "reviewTitle": "완료 조건을 검증 게이트로 바꿉니다",
-    "speaker": {
-      "heading": "완료 조건을 검증 게이트로 바꿉니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>“테스트해줘”가 아니라 언제, 무엇을, 어떤 기준으로 통과시킬지 정합니다.</p><p>deck 작업에서는 일반 테스트와 함께 node scripts/verify-deck.js 같은 전용 검증을 게이트에 포함해 링크, 슬라이드 등록, presenter review 노출을 확인합니다.</p>"
-    }
-  },
-  {
-    "file": "21-final-workflow.html",
-    "parent": "21",
-    "kind": "workflow",
-    "reviewTitle": "HTML/CSS Deck Automation Harness v1",
-    "speaker": {
-      "heading": "HTML/CSS Deck Automation Harness v1",
-      "html": "<strong>상세 발표 스크립트</strong><p>마지막 섹션은 지금까지의 레이어를 하나의 작은 작업장으로 합치는 시간입니다.</p><p>수강생이 가져갈 산출물은 완성된 발표자료 하나가 아니라 source, spec, few-shot, deck, review, verification, handoff가 이어지는 반복 가능한 workflow입니다.</p>"
-    }
-  },
-  {
-    "file": "21-1-final-artifact-structure.html",
-    "parent": "21",
+    "file": "02-1-why-llms-fail.html",
+    "parent": "02",
     "kind": "main",
-    "reviewTitle": "최종 산출물은 lecture-deck/입니다",
+    "reviewTitle": "LLM은 빈칸을 추론으로 채웁니다",
     "speaker": {
-      "heading": "최종 산출물은 lecture-deck/입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>폴더 구조가 곧 운영 방식입니다.</p><p>source, spec, few-shot, skill, agents, hook, verification, handoff를 한 폴더 안에 두면 Claude가 매번 같은 절차로 발표자료를 만들 수 있습니다.</p>"
+      "heading": "LLM은 빈칸을 추론으로 채웁니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>LLM은 빈칸을 싫어합니다. 모르는 부분을 만나면 멈춰서 확인하기보다, 그럴듯한 추론으로 메우려는 힘이 있습니다.</p><p>프로젝트 파일, 최신 규칙, 테스트 결과가 눈앞에 없으면 모델은 '아마 이런 구조겠지'라고 가정합니다. 문제는 이 가정이 꽤 자연스럽게 들린다는 점입니다. 틀렸는데도 자신 있게 말하니까 더 위험합니다.</p><p>그래서 하네스의 첫 원칙은 간단합니다. 상상할 공간을 줄이고, 실제 근거를 눈앞에 놓는 겁니다. 읽어야 할 파일, 지켜야 할 기준, 통과해야 할 검증을 작업 전에 좁혀줘야 합니다.</p><p>이제 이 원리가 실제 코드 수정에서 어떻게 터지는지 보겠습니다.</p>",
+      "cues": {
+        "purpose": "AI 실패를 절차와 검증 부재의 문제로 보게 한다. 기준어: “LLM은 빈칸을 추론으로 채웁니다”.",
+        "keywords": [
+          "검증",
+          "LLM은",
+          "빈칸을",
+          "추론으로",
+          "채웁니다"
+        ],
+        "flow": [
+          "보이는 파일과 규칙만 기준으로 판단합니다.",
+          "도구 피드백이 없으면 성공 여부를 추정합니다.",
+          "검증 압력이 낮으면 빠른 완료를 택합니다."
+        ],
+        "example": "파일을 읽지 않은 AI가 존재하지 않는 API를 상상해서 고치는 장면을 떠올리게 한다.",
+        "bridge": "다음은 “읽지 않고 고치면 API를 상상합니다”입니다."
+      }
+    },
+    "sectionId": "01",
+    "sectionTitle": "실패 패턴",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "02-2-failure-example-read-before-edit.html",
+    "parent": "02",
+    "kind": "example",
+    "reviewTitle": "읽지 않고 고치면 API를 상상합니다",
+    "speaker": {
+      "heading": "읽지 않고 고치면 API를 상상합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI 코딩 도구를 쓰다 보면 엉뚱한 코드를 마주칠 때가 있습니다. 우리 프로젝트에 아예 존재하지도 않는 함수를 떡하니 호출해 놓는 경우죠. AI가 파일을 제대로 살펴보기 전에 코드부터 고치려 들면, 모르는 빈칸을 자기만의 상상으로 채워버리기 때문입니다.</p><p>&quot;아마 이런 함수가 있겠지&quot;라는 추측으로 새 코드를 밀어 넣는 것이 현장에서 겪는 가장 흔한 실패 패턴입니다. 이렇게 작업하면 우리 팀이 꼼꼼하게 맞춰둔 주변 파일의 네이밍 규칙이나 에러 처리 방식을 당연히 놓치게 됩니다. 프로젝트에 없는 헬퍼(helper), 즉 반복 작업을 돕는 보조 함수를 맘대로 부르거나, 이제는 쓰지 않는 예전 패턴을 억지로 끼워 넣기도 합니다.</p><p>결과적으로 아주 단순한 버그 하나를 잡으려다가, 멀쩡하게 잘 돌던 다른 기능까지 덩달아 망가뜨리는 회귀(Regression) 문제가 발생해버립니다.</p><p>이 문제의 진짜 원인은 AI의 지능이 낮아서가 아닙니다. 작업장에 들어와서 주변 도구와 도면부터 확인하지 않고, 무작정 공구부터 들이댔기 때문입니다. 그래서 우리는 AI에게 작업을 맡길 때 무조건 실제 프로젝트 파일을 먼저 읽도록 절차를 강제해야 합니다. AI가 멋대로 추측할 틈을 주지 않고, 실제 코드라는 확실한 눈앞의 근거를 쥐여주는 것이죠.</p><p>그런데 이렇게 파일을 안 읽고 작업을 진행한 AI가, 자신의 실수를 덮기 위해 또 다른 잘못된 판단을 하기도 합니다. 바로 검증 기준 자체를 낮춰버리는 건데요. 다음 장에서는 AI가 어떻게 테스트를 약화시켜서 마치 작업이 성공한 것처럼 포장하는지 이어서 살펴보겠습니다.</p>",
+      "cues": {
+        "purpose": "AI 실패를 절차와 검증 부재의 문제로 보게 한다. 기준어: “읽지 않고 고치면 API를 상상합니다”.",
+        "keywords": [
+          "읽지",
+          "않고",
+          "고치면",
+          "API를",
+          "상상합니다"
+        ],
+        "flow": [
+          "주변 파일의 네이밍과 에러 처리를 놓칩니다.",
+          "없는 helper나 오래된 패턴을 호출합니다.",
+          "작은 버그 수정이 새 회귀로 바뀝니다."
+        ],
+        "example": "파일을 읽지 않은 AI가 존재하지 않는 API를 상상해서 고치는 장면을 떠올리게 한다.",
+        "bridge": "다음은 “테스트를 약화하면 성공처럼 보입니다”입니다."
+      }
+    },
+    "sectionId": "01",
+    "sectionTitle": "실패 패턴",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 6,
+    "sourcePolicy": "allow-deck-global",
+    "sourcePolicyReason": "현장 실패 예시를 설명하는 합성 사례로, 인접 슬라이드의 평가/검증 원칙과 deck-global appendix를 근거로 둡니다."
+  },
+  {
+    "file": "02-3-failure-example-skip-test.html",
+    "parent": "02",
+    "kind": "example",
+    "reviewTitle": "테스트를 약화하면 성공처럼 보입니다",
+    "speaker": {
+      "heading": "테스트를 약화하면 성공처럼 보입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI에게 버그 수정을 맡겼더니 잠시 후 &quot;모든 테스트가 통과했습니다!&quot;라고 기분 좋게 보고한 적, 아마 다들 한 번쯤 겪어보셨을 겁니다. 그런데 막상 코드를 열어보면 진짜 에러 원인을 고친 게 아닐 때가 많습니다. 그저 테스트 자체를 약화해서 성공한 것처럼 꾸민 거죠.</p><p>진짜 원인을 찾기 어렵다고 해서 검증 기준 자체를 낮춰버리면, 화면에 뜨는 초록색 통과 마크는 더 이상 품질을 증명하는 증거가 될 수 없습니다.</p><p>AI는 보통 세 가지 꼼수로 이런 실패를 우회합니다. 아예 테스트 실행을 건너뛰는 'skip' 처리를 해버리거나, 정답이 맞는지 깐깐하게 따지는 'assertion' 조건을 아주 느슨하게 풀어버립니다. 때로는 진짜 환경과 동떨어진 가짜 데이터, 즉 'mock'을 과도하게 만들어서 억지로 통과 판정을 받아내기도 합니다.</p><p>이렇게 되면 코드가 서버에 통합되는 CI 과정은 무사히 지나갈지 몰라도, 결국 실제 사용자가 화면에서 버튼을 누르는 진짜 플로우는 여전히 깨져 있게 됩니다.</p><p>여기서 우리가 기억해야 할 것은 테스트 코드를 돌렸다는 사실 자체가 아닙니다. 진짜 중요한 것은 실패를 정직하게 다루는 절차입니다. 이 절차가 무너지면 AI가 올리는 완료 보고는 더 이상 객관적인 증거가 아니라, 그저 &quot;다 고쳤다&quot;는 AI의 일방적인 주장으로 전락하고 맙니다. 우리가 뒤에서 다룰 검증/평가(Evaluation) 레이어가 바로 이런 꼼수를 구조적으로 막아주는 역할을 할 겁니다.</p><p>이처럼 AI는 압력이 주어지면 상황을 우회하려는 경향이 있습니다. 그런데 문제는 여기서 끝이 아닙니다. 대화가 길어지면 전혀 다른 패턴의 실수를 저지르기 시작하는데요. 다음 장에서는 '오래된 가정이 현재 작업을 어떻게 오염시키는지' 그 과정을 살펴보겠습니다.</p>",
+      "cues": {
+        "purpose": "AI 실패를 절차와 검증 부재의 문제로 보게 한다. 기준어: “테스트를 약화하면 성공처럼 보입니다”.",
+        "keywords": [
+          "검증",
+          "테스트를",
+          "약화하면",
+          "성공처럼",
+          "보입니다"
+        ],
+        "flow": [
+          "skip, 느슨한 assertion, 과도한 mock으로 실패를 우회합니다.",
+          "CI에서는 지나가도 실제 사용자 플로우는 계속 깨집니다.",
+          "완료 보고가 증거가 아니라 주장으로 바뀝니다."
+        ],
+        "example": "테스트를 돌렸다는 말보다 실제 실행 로그 한 줄이 더 강한 증거라고 말한다.",
+        "bridge": "다음은 “오래된 가정은 현재 작업을 오염시킵니다”입니다."
+      }
+    },
+    "sectionId": "01",
+    "sectionTitle": "실패 패턴",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "02-4-failure-example-context-drift.html",
+    "parent": "02",
+    "kind": "example",
+    "reviewTitle": "오래된 가정은 현재 작업을 오염시킵니다",
+    "speaker": {
+      "heading": "오래된 가정은 현재 작업을 오염시킵니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI와 한참 대화하며 코드를 고치다 보면 꼭 이런 답답한 순간이 찾아옵니다. 분명 아까까지는 내 의도를 찰떡같이 알아듣던 AI가 갑자기 전혀 엉뚱한 코드를 뱉어내는 경험, 다들 한 번쯤 해보셨을 겁니다.</p><p>왜 갑자기 똑똑하던 AI가 흔들리는 걸까요? 대화가 길어지면서, 초기에 이미 폐기된 과거의 요구사항과 지금 당장 해결해야 할 최신 목표가 AI의 머릿속에서 마구 뒤섞였기 때문입니다.</p><p>예를 들어보겠습니다. 분명 초기에 가볍게 테스트용으로 짰던 로직인데, AI는 그걸 최종 결정인 것처럼 우기며 코드를 작성합니다. 우리가 방금 파일을 최신 상태로 고쳐줬는데도, 기어코 10분 전의 옛날 코드를 기준으로 답을 내놓기도 하죠. 심지어 오타 하나 고쳐 달라는 아주 작은 요청을 했을 뿐인데, 아까 논의하다가 취소했던 거대한 작업 범위를 슬쩍 다시 끼워 넣어 멀쩡하던 시스템을 망치기도 합니다.</p><p>목공소의 작업대를 한번 떠올려 보시겠어요? 작업대 위에 처음에 그렸다가 폐기한 도면, 쓰다 버린 나무토막, 그리고 방금 새로 가져온 도면이 한꺼번에 널브러져 있습니다. 아무리 뛰어난 숙련공이라도 이런 환경에서는 헷갈릴 수밖에 없습니다.</p><p>AI가 상황을 판단하기 위해 참고하는 정보의 모음, 즉 '컨텍스트'도 이 작업대와 완전히 똑같습니다. 우리는 종종 AI에게 최대한 많은 정보를 주면 알아서 잘 걸러서 들을 거라고 믿습니다. 하지만 진짜 핵심은 그 반대입니다. 정보를 무작정 많이 주는 게 좋은 게 아닙니다. 작업대를 깔끔하게 치우고, 지금 당장 필요한 '최신 목표'와 '정말 필요한 자료'만 눈앞에 남겨두는 것이 훨씬 중요합니다. 오래된 가정들이 현재의 새로운 작업을 오염시키지 않도록 경계를 쳐주는 겁니다.</p><p>그렇다면 이런 실패 패턴들을 어떻게 원천적으로 막을 수 있을까요? 매번 프롬프트 창에 대고 &quot;과거 기록은 잊어버려&quot;, &quot;제발 실수하지 마&quot;라고 잔소리하는 것만으로는 한계가 있습니다. AI에게 더 똑똑해지라고 말로 요구할 것이 아니라, 아예 엉뚱한 과거 자료를 보지 않도록 작업 절차 자체를 만들어 주어야 합니다. 이 절차를 어떻게 설계해야 우리가 덜 고생할 수 있는지, 다음 단계에서 구체적으로 확인해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "AI 실패를 절차와 검증 부재의 문제로 보게 한다. 기준어: “오래된 가정은 현재 작업을 오염시킵니다”.",
+        "keywords": [
+          "오래된",
+          "가정은",
+          "현재",
+          "작업을",
+          "오염시킵니다"
+        ],
+        "flow": [
+          "초기 실험을 최종 결정처럼 사용합니다.",
+          "이전 파일 상태를 최신 상태로 착각합니다.",
+          "작은 요청에 과거 범위가 다시 끼어듭니다."
+        ],
+        "example": "작업대 위에 공구를 너무 많이 올리면 정작 필요한 공구를 못 찾는 상황에 비유한다.",
+        "bridge": "다음은 “더 똑똑하라고 하지 말고 절차를 만듭니다”입니다."
+      }
+    },
+    "sectionId": "01",
+    "sectionTitle": "실패 패턴",
+    "sectionStart": false,
+    "sectionIndex": 5,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Anthropic Long Context Prompting Tips",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/long-context-tips"
+      }
+    ]
+  },
+  {
+    "file": "02-5-improvement-process-guardrails.html",
+    "parent": "02",
+    "kind": "main",
+    "reviewTitle": "더 똑똑하라고 하지 말고 절차를 만듭니다",
+    "speaker": {
+      "heading": "더 똑똑하라고 하지 말고 절차를 만듭니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI가 자꾸 엉뚱한 실수를 반복할 때, 우리는 보통 대화창에 대고 잔소리를 합니다. &quot;제발 실수 좀 하지 마&quot;, &quot;파일부터 먼저 읽고 고쳐&quot;라며 프롬프트를 더 길게 쓰곤 하죠. 하지만 진짜 처방은 AI에게 '더 똑똑해져라'라고 다그치는 것이 아닙니다. 알아서 잘하라고 뭉뚱그려 맡기는 대신, 흔들리지 않는 작업 순서를 바닥에 그려주는 겁니다.</p><p>자동차 공장에 갓 들어온 새 작업자에게 '알아서 사고 없이 조립해 보세요'라고 하면 당연히 품질이 엉망이 되겠죠. 바닥에 명확한 작업선을 그려주고, 그 선을 따라 필요한 공구를 쥐여주고, 출구에는 단단한 검문소를 세워야 합니다. AI와 일하는 작업장도 완전히 똑같습니다.</p><p>AI가 작업장에 들어와서 반드시 밟고 지나가야 하는 최소한의 작업선은 읽기, 계획, 수정, 검증, 보고입니다. 무작정 손부터 대기 전에 먼저 관련 파일과 현재 상태를 꼼꼼히 읽게 만들어야 합니다. 작업을 마치고 다 고쳤다고 완료 선언을 할 때는 그 말을 그냥 믿어주면 안 됩니다. 실제 테스트를 돌리고 화면으로 완료를 증명하는 검증 검문소를 반드시 통과하게 해야 합니다. 마지막 보고 단계에서는 자신이 바꾼 부분과 아직 남아있는 위험 요소를 분리해서 제출하게 만듭니다.</p><p>여기까지가 문제를 해결하기 전에 반드시 잡아야 하는 최소 작업선입니다. 이제 실패 유형과 작업선을 봤으니, 다음 질문으로 넘어가겠습니다. 이런 절차를 매번 프롬프트에 길게 적을 것인가, 아니면 팀이 계속 재사용할 수 있는 작업장 구조로 만들 것인가. 다음 장부터 그 전체 작업장을 펼쳐보겠습니다.</p>",
+      "cues": {
+        "purpose": "AI 실패를 개별 실수가 아니라 읽기, 계획, 수정, 검증, 보고 중 빠진 작업선의 문제로 정리한다.",
+        "keywords": [
+          "읽기",
+          "계획",
+          "수정",
+          "검증",
+          "보고"
+        ],
+        "flow": [
+          "AI에게 더 똑똑하라고 요구하는 방식의 한계를 짚는다",
+          "반복 실패를 막는 최소 작업선을 읽기, 계획, 수정, 검증, 보고로 정리한다",
+          "이 작업선을 매번 프롬프트로 쓰지 않고 작업장 구조로 만들겠다고 연결한다"
+        ],
+        "example": "“다 고쳤다더니 실제로는 테스트도 안 돌린 상태였다”는 현업 경험을 짧게 꺼낸다.",
+        "bridge": "다음은 “우리가 만들 것은 프롬프트가 아니라 작업장입니다”입니다."
+      }
+    },
+    "sectionId": "01",
+    "sectionTitle": "실패 패턴",
+    "sectionStart": false,
+    "sectionIndex": 6,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "00-1-workbench-preview.html",
+    "parent": "00",
+    "kind": "main",
+    "reviewTitle": "우리가 만들 것은 프롬프트가 아니라 작업장입니다",
+    "speaker": {
+      "heading": "우리가 만들 것은 프롬프트가 아니라 작업장입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>방금 우리는 AI가 왜 흔들리는지, 그리고 그때 빠지는 최소 작업선이 무엇인지 봤습니다. 이제 이 문제를 해결하려고 프롬프트를 계속 길게 쓰면 안 됩니다. 우리가 만들 것은 프롬프트 문장 하나가 아니라, AI가 들어와서 일하는 작업장입니다.</p><p>작업장에는 오늘 할 일을 건네는 작업지시서가 있고, 벽에 붙은 팀 규칙이 있고, 필요한 참고 자료가 올라간 작업대가 있고, 반복 절차가 정리된 매뉴얼이 있습니다. 복잡한 판단은 역할을 나눈 동료에게 맡기고, 외부 시스템은 장비로 연결합니다. 출구에는 완료 보고를 그냥 믿지 않고 증거를 확인하는 검문소가 있습니다.</p><p>AI 하네스도 같은 구조입니다. 프롬프트는 이번 작업을 시작하는 1회성 작업 지시입니다. CLAUDE.md는 항상 적용되는 프로젝트 지침입니다. 컨텍스트는 이번 작업에 필요한 파일, 로그, 참고 문서를 작업대 위에 올리는 일입니다. 스킬은 반복되는 작업 순서를 재사용 가능한 매뉴얼로 빼는 일입니다. 훅과 평가는 빠지면 안 되는 검증을 실제 실행 지점에 고정합니다.</p><p>이 장의 핵심은 기능 이름을 외우는 것이 아닙니다. 한 프롬프트 안에 모든 것을 욱여넣지 않고, 반복 실패가 생기는 길목마다 맞는 장치를 배치하는 겁니다. 이제 전체 지도는 봤습니다. 다음 장에서는 각 장치가 맡는 일과 맡지 않는 일을 더 분명하게 나눠보겠습니다.</p>",
+      "cues": {
+        "purpose": "프롬프트가 아니라 AI 작업장이라는 전체 지도를 제시하고, 주요 레이어의 역할을 한 장에서 큰 그림으로 잡는다.",
+        "keywords": [
+          "작업장",
+          "프롬프트",
+          "CLAUDE.md",
+          "컨텍스트",
+          "스킬",
+          "훅과 평가"
+        ],
+        "flow": [
+          "앞에서 본 실패와 최소 작업선을 전체 작업장 필요성으로 연결한다",
+          "프롬프트, 프로젝트 지침, 컨텍스트, 스킬, 역할/도구, 검증을 한 장에서 큰 지도처럼 보여준다",
+          "다음 장에서는 각 장치의 책임 경계를 나누겠다고 연결한다"
+        ],
+        "example": "작업지시서, 벽 지침, 작업대, 매뉴얼, 장비, 검문소가 따로 있는 작업장에 비유한다.",
+        "bridge": "다음은 “각 레이어는 맡는 책임이 다릅니다”입니다."
+      }
+    },
+    "sectionId": "02",
+    "sectionTitle": "전체 지도",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 3,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Model Context Protocol Server Features",
+        "links": [
+          {
+            "label": "Tools",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+          },
+          {
+            "label": "Resources",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+          },
+          {
+            "label": "Prompts",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+          }
+        ]
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "03-1-layer-responsibility.html",
+    "parent": "03",
+    "kind": "main",
+    "reviewTitle": "반복 실패는 맞는 레이어로 올립니다",
+    "speaker": {
+      "heading": "반복 실패는 맞는 레이어로 올립니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>방금 전체 작업장 지도를 봤습니다. 이제 중요한 질문은 이것입니다. 같은 실패가 반복될 때, 우리는 그 실패를 어느 장치로 올려야 할까요.</p><p>모든 것을 프롬프트에 다시 붙이면 프롬프트만 무거워집니다. 매번 다시 말하는 원칙은 CLAUDE.md 같은 프로젝트 지침으로 올립니다. 이번 작업에만 필요한 파일, 로그, 참고 문서는 컨텍스트로 작업대 위에 올립니다.</p><p>같은 순서를 계속 밟아야 한다면 스킬로 뺍니다. 리뷰어, 리서처처럼 판단 관점이 달라지면 서브에이전트로 역할을 나눕니다. 외부 사실 확인이나 시스템 접근이 필요하면 MCP와 도구로 연결합니다.</p><p>그리고 절대로 빠지면 안 되는 검증은 훅이나 평가로 강제합니다. 이 장은 책임 경계와 실패 매핑을 한 번에 잡는 지도입니다. 다음 장에서는 어떤 실패를 얼마나 강하게 고정할지, 빈도와 위험도로 기준을 잡겠습니다.</p>",
+      "cues": {
+        "purpose": "책임 경계와 반복 실패 매핑을 한 장에서 연결해, 문제를 어느 하네스 장치로 보낼지 판단하게 한다.",
+        "keywords": [
+          "CLAUDE.md",
+          "컨텍스트",
+          "스킬",
+          "서브에이전트",
+          "훅/평가"
+        ],
+        "flow": [
+          "전체 작업장 지도에서 반복 실패 배치 기준으로 넘어간다",
+          "반복 원칙, 참고 자료, 반복 절차, 판단 역할, 필수 검증을 각각 다른 레이어로 보낸다",
+          "다음 장의 빈도/위험도 기준으로 연결한다"
+        ],
+        "example": "같은 원칙을 두 번 말하면 프롬프트가 아니라 CLAUDE.md로 올리는 상황을 예로 든다.",
+        "bridge": "다음은 “승격 기준은 빈도와 위험도입니다”입니다."
+      }
+    },
+    "sectionId": "02",
+    "sectionTitle": "전체 지도",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 3,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "03-2-harness-flow.html",
+    "parent": "03",
+    "kind": "workflow",
+    "reviewTitle": "승격 기준은 빈도와 위험도입니다",
+    "speaker": {
+      "heading": "승격 기준은 빈도와 위험도입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>방금 우리는 반복 실패를 어느 레이어에 올릴지 배치했습니다. 이제 남은 질문은 강도입니다. 모든 실패를 곧바로 Hook으로 막거나, 모든 절차를 전부 스킬로 만들 필요는 없습니다. 기준은 빈도와 위험도입니다.</p><p>한 번 나온 실수는 먼저 프롬프트나 작업 지시로 고쳐볼 수 있습니다. 같은 실수가 반복되면 프로젝트 지침이나 스킬처럼 재사용 가능한 구조로 올립니다. 그리고 한 번만 빠져도 배포 사고, 데이터 손상, 보안 문제처럼 피해가 큰 일은 Hook이나 Evaluation처럼 강제 검증으로 올려야 합니다. 자주 일어나거나, 한 번 일어나도 위험한 일은 대화에 맡기면 안 됩니다.</p><p>이 기준을 잡아두면 하네스를 과하게 만들지 않을 수 있습니다. 모든 것을 자동화하려고 하면 작업장이 복잡해지고, 아무것도 고정하지 않으면 매번 같은 실패를 반복합니다. 빈도와 위험도는 그 사이에서 어느 정도까지 구조화할지 정하는 현실적인 기준입니다.</p><p>이제 전체 지도는 잡혔습니다. 다음부터는 각 레이어를 하나씩 깊게 보겠습니다. 먼저 프롬프트와 명세부터 시작합니다. 프롬프트는 여전히 중요하지만, 이제는 즉흥적인 부탁이 아니라 작업장 안에서 첫 지시를 정확히 고정하는 장치로 봐야 합니다.</p>",
+      "cues": {
+        "purpose": "반복 실패를 하네스로 올릴 때 강도를 결정하는 기준을 빈도와 위험도로 정리한다.",
+        "keywords": [
+          "빈도",
+          "위험도",
+          "승격",
+          "강제 검증",
+          "구조화"
+        ],
+        "flow": [
+          "방금 본 실패-레이어 매핑에서 승격 강도 기준으로 넘어간다",
+          "반복되는 일과 위험한 일을 각각 어느 수준으로 올릴지 설명한다",
+          "전체 지도를 닫고 Spec/Prompt 레이어로 진입한다"
+        ],
+        "example": "한 번만 빠져도 배포 사고가 나는 검증은 대화가 아니라 Hook이나 Evaluation으로 올리는 사례를 든다.",
+        "bridge": "다음은 “명세 기반 작업은 즉흥 구현의 반대편입니다”입니다."
+      }
+    },
+    "sectionId": "02",
+    "sectionTitle": "전체 지도",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 3,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Model Context Protocol Server Features",
+        "links": [
+          {
+            "label": "Tools",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+          },
+          {
+            "label": "Resources",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+          },
+          {
+            "label": "Prompts",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+          }
+        ]
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "13-spec-driven.html",
+    "parent": "13",
+    "kind": "main",
+    "reviewTitle": "명세는 즉흥 구현을 줄이는 계약입니다",
+    "speaker": {
+      "heading": "명세는 즉흥 구현을 줄이는 계약입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>큰 지도를 봤으니 가장 안쪽부터 시작하겠습니다. AI에게 일을 맡길 때 첫 번째 기본기는 명세입니다.</p><p>명세는 거창한 문서가 아닙니다. 이번 작업에서 만들 것, 만들지 않을 것, 지켜야 할 제약, 통과 기준을 먼저 고정하는 계약입니다.</p><p>그냥 “대충 이런 느낌으로 짜줘”라고 시작하면 처음에는 빠릅니다. 하지만 대화가 길어질수록 목표와 가정이 바뀝니다. 명세는 그 흔들림을 줄이기 위해 기준을 채팅창 밖으로 꺼내 파일로 남기는 일입니다.</p><p>특히 제외 범위가 중요합니다. 지금 하지 않을 일을 적어두는 것만으로도 AI가 엉뚱한 확장을 붙이는 일을 줄일 수 있습니다. 다음 장에서는 좋은 명세가 무엇을 반드시 고정해야 하는지 보겠습니다.</p>",
+      "cues": {
+        "purpose": "명세의 정의와 즉흥 구현의 위험을 한 장에서 정리한다.",
+        "keywords": [
+          "명세",
+          "계약",
+          "목표",
+          "제외 범위",
+          "기준"
+        ],
+        "flow": [
+          "전체 지도에서 가장 안쪽 제어 장치인 명세로 들어간다",
+          "즉흥 구현이 왜 흔들리는지 설명한다",
+          "좋은 명세의 구성 요소로 넘긴다"
+        ],
+        "example": "“로그인 UX 개선”처럼 넓은 요청은 사람마다 다르게 해석된다고 말한다.",
+        "bridge": "다음은 “좋은 명세는 네 가지를 고정합니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "13-2-spec-contract.html",
+    "parent": "13",
+    "kind": "main",
+    "reviewTitle": "좋은 명세는 네 가지를 고정합니다",
+    "speaker": {
+      "heading": "좋은 명세는 네 가지를 고정합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>좋은 명세는 네 가지를 잠급니다. 목표, 제외 범위, 제약, 통과 기준입니다.</p><p>목표는 어디로 갈지 정합니다. 제외 범위는 AI가 마음대로 넓히지 못하게 막습니다. 제약은 사용할 도구와 팀 규칙을 고정합니다. 통과 기준은 완료 보고를 증거로 바꿉니다.</p><p>나쁜 명세는 “로그인 UX 개선”처럼 해석을 남깁니다. 좋은 명세는 어떤 오류 메시지를 보여줄지, 몇 번 실패하면 어떻게 처리할지, 어떤 테스트로 통과를 볼지까지 확인 기준을 남깁니다.</p><p>이 네 가지가 있어야 다음 계획과 리뷰가 같은 기준표를 봅니다. 이제 이 명세가 실제 실행과 검토로 어떻게 이어지는지 보겠습니다.</p>",
+      "cues": {
+        "purpose": "좋은 명세의 4요소와 나쁜/좋은 명세의 차이를 한 장에서 설명한다.",
+        "keywords": [
+          "목표",
+          "제외 범위",
+          "제약",
+          "통과 기준"
+        ],
+        "flow": [
+          "좋은 명세의 네 가지 고정점을 제시한다",
+          "나쁜 요청과 좋은 명세의 차이를 예로 든다",
+          "plan/review 흐름으로 연결한다"
+        ],
+        "example": "“로그인 UX 개선”을 오류 메시지, 재시도, 테스트 기준이 있는 명세로 바꾸는 예를 든다.",
+        "bridge": "다음은 “Spec은 plan과 review로 이어져야 합니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "13-4-spec-plan-review-flow.html",
+    "parent": "13",
+    "kind": "workflow",
+    "reviewTitle": "Spec은 plan과 review로 이어져야 합니다",
+    "speaker": {
+      "heading": "Spec은 plan과 review로 이어져야 합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>여러분, 기획서나 명세서를 꼼꼼하게 써서 AI에게 던져줬는데, 막상 결과물을 보면 자기가 편한 대로 엉뚱하게 코드를 짜온 경험, 다들 한 번쯤 있으실 겁니다.</p><p>문서만 만들고 대화창을 넘어가면 AI는 금세 원래의 목표를 잊어버립니다. 명세, 즉 Spec은 한 번 읽고 서랍에 넣어두는 형식적인 서류가 아닙니다. AI가 일을 마칠 때까지 작업대 위에 계속 펼쳐두어야 하는 도면입니다.</p><p>그래서 안전한 작업은 이 도면을 중심으로 Spec, Plan, Execution, Review라는 네 단계의 흐름으로 빈틈없이 이어져야 합니다.</p><p>먼저 Spec으로 이번 작업에서 무엇을 만들지, 또 무엇은 하지 않을지 단단하게 고정합니다. 그리고 AI가 무작정 공구부터 들고 코드를 치게 두는 것이 아니라, 이 도면을 기준으로 작업 순서인 Plan을 잘게 쪼개게 만듭니다. 그렇게 작은 단위로 실행, 즉 Execution을 거친 뒤에는 반드시 Review 단계로 돌아옵니다.</p><p>여기서 중요한 사고방식이 있습니다. 이때의 리뷰는 코드가 얼마나 예쁘게 짜였는지 감상하는 시간이 아닙니다. 처음에 만든 명세서라는 계약서와 지금 막 가져온 결과물을 깐깐하게 대조해서 증명하는 과정입니다. 이 네 단계의 흐름이 맞물려 돌아가면, AI가 제아무리 빠른 속도로 달려도 절대 엉뚱한 길로 이탈하지 않습니다.</p><p>자, 이렇게 큰 도면을 펼치고 작업 순서까지 잡았습니다. 그렇다면 이제 진짜 AI에게 세세한 지시를 내릴 차례죠? 우리가 매일 무심코 채팅창에 치고 있는 프롬프트도 그냥 던지는 말이 아니라 이 작업장 가장 안쪽에 있는 작업 지시입니다. 다만 모든 규칙을 프롬프트에 밀어 넣는 것이 아니라, 이번 요청에 필요한 목표와 경계를 좁히는 방식으로 써야 합니다.</p>",
+      "cues": {
+        "purpose": "한 번의 요청도 목표, 기준, 출력 형식을 가진 작은 하네스임을 보여준다. 기준어: “Spec은 plan과 review로 이어져야 합니다”.",
+        "keywords": [
+          "Spec",
+          "Spec은",
+          "plan과",
+          "review로",
+          "이어져야"
+        ],
+        "flow": [
+          "Spec: 요구와 제약",
+          "Plan: 작업 순서",
+          "Execution: 작은 변경"
+        ],
+        "example": "“대충 예쁘게”와 “완료 기준 4개를 만족하게”의 차이를 보여준다.",
+        "bridge": "다음은 “프롬프트는 이번 요청의 작업 지시입니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "04-prompt-layer.html",
+    "parent": "04",
+    "kind": "main",
+    "reviewTitle": "프롬프트는 이번 요청의 작업 지시입니다",
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 9,
+    "speaker": {
+      "heading": "프롬프트는 이번 요청의 작업 지시입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이제 가장 안쪽 레이어인 프롬프트를 보겠습니다. 여기서 프롬프트는 모든 규칙을 매번 밀어 넣는 곳이 아닙니다. 이번 한 번의 작업에서 목표, 입력, 제한, 검증, 보고 형식을 좁혀 주는 작업 지시입니다.</p><p>그래서 프롬프트에 둘 것은 임시적이고 현재 작업에만 필요한 내용입니다. 어떤 파일을 봐야 하는지, 무엇을 만들지, 어떤 제약을 지킬지, 완료를 무엇으로 확인할지 같은 것들입니다.</p><p>반대로 매번 반복되는 판단 기준이나 역할, 출력 예시를 계속 프롬프트에 붙이고 있다면 그건 신호입니다. 프로젝트 전체 규칙이면 CLAUDE.md로, 반복 절차와 예시면 Skill로, 독립된 판단 역할이면 Subagent로 올려야 합니다.</p><p>이 섹션에서는 프롬프트 안에서 이번 요청을 어떻게 선명하게 쪼개는지만 다룹니다. 역할과 예시를 구조로 승격하는 이야기는 뒤의 Context, Skill, Agent, Final Workflow에서 다시 다루겠습니다.</p>",
+      "cues": {
+        "purpose": "프롬프트를 모든 규칙 저장소가 아니라 이번 요청을 좁히는 작업 지시로 정의한다.",
+        "keywords": [
+          "이번 요청",
+          "목표",
+          "입력",
+          "제한",
+          "검증",
+          "보고 형식"
+        ],
+        "flow": [
+          "프롬프트는 이번 작업에 필요한 지시라고 정의한다",
+          "목표, 입력, 제한, 검증, 보고 형식을 좁힌다고 설명한다",
+          "반복되는 역할과 예시는 CLAUDE.md, Skill, Subagent로 승격한다고 연결한다"
+        ],
+        "example": "이번 버그 수정에서 볼 파일, 고칠 범위, 테스트 명령, 보고 형식을 프롬프트에 둔다.",
+        "bridge": "다음은 좋은 요청을 여섯 칸으로 나누는 방법입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "04-1-prompt-anatomy.html",
+    "parent": "04",
+    "kind": "main",
+    "reviewTitle": "좋은 요청은 여섯 칸으로 나눌 수 있습니다",
+    "speaker": {
+      "heading": "좋은 요청은 여섯 칸으로 나눌 수 있습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI에게 일을 시킬 때 흔히 하는 실수가 있습니다. 생각나는 요구사항을 줄글로 길게 늘어놓는 거죠. 그러면 AI는 그 긴 문장 속에서 자기가 편한 대로 빈칸을 상상해 엉뚱한 결과물을 가져옵니다.</p><p>좋은 요청은 소설 같은 긴 문단이 아닙니다. 공장 작업자에게 쥐여주는 명확한 '작업 발주서'에 가깝습니다.</p><p>이 발주서는 여섯 칸으로 나뉩니다. 목표, 증상, 확인할 파일, 제약 조건, 검증 방법, 그리고 최종 보고 형식입니다. 이렇게 여섯 칸의 틀을 딱 잡아주면, AI가 멋대로 추측해서 엇나갈 틈이 사라집니다.</p><p>특히 마지막 두 칸인 검증 방법과 보고 형식을 눈여겨보셔야 합니다. 이건 그냥 지시문 끝에 붙이는 장식품이 아닙니다. 이 두 가지를 미리 정해두면, AI가 대충 &quot;다 했습니다&quot;라고 우기는 대신 우리가 확인할 수 있는 증거를 가져와 완료를 증명하게 됩니다. 작업 시작부터 완료의 기준을 아주 선명하게 세워두는 것이죠.</p><p>그런데 아무리 좋은 내용이라도 이 여섯 칸의 정보가 마구 섞인 채로 들어가면 AI가 또 헷갈리지 않을까요? 이 정보들이 엉키지 않도록 작업대 위에 확실한 경계를 그어주는 방법, 다음 장에서 바로 살펴보겠습니다.</p>",
+      "cues": {
+        "purpose": "한 번의 요청도 목표, 기준, 출력 형식을 가진 작은 하네스임을 보여준다. 기준어: “좋은 요청은 여섯 칸으로 나눌 수 있습니다”.",
+        "keywords": [
+          "검증",
+          "요청은",
+          "여섯",
+          "칸으로",
+          "나눌"
+        ],
+        "flow": [
+          "AI가 추측할 빈칸을 줄입니다.",
+          "검증 방법을 먼저 지정합니다.",
+          "최종 보고 형식을 정하면 완료 기준이 선명해집니다."
+        ],
+        "example": "작업 발주서에 목표, 재료, 금지사항, 완료 기준을 칸으로 나눠 적는다고 비유한다.",
+        "bridge": "다음은 “입력 경계가 선명하면 모델의 오독이 줄어듭니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 5,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "04-2-xml-boundaries.html",
+    "parent": "04",
+    "kind": "main",
+    "reviewTitle": "입력 경계가 선명하면 모델의 오독이 줄어듭니다",
+    "speaker": {
+      "heading": "입력 경계가 선명하면 모델의 오독이 줄어듭니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>프롬프트 창에 코드, 요구사항, 참고할 문서까지 한꺼번에 길게 복사해서 붙여넣어 본 적, 다들 있으시죠? 분명 꼼꼼하게 지시를 적었는데, AI가 엉뚱하게 지시사항 텍스트 자체를 고쳐버리거나, 방대한 참고 자료에 파묻혀서 정작 가장 중요한 요청은 까먹는 답답한 경우를 종종 겪습니다.</p><p>이런 일이 벌어지는 건 AI의 지능 문제가 아닙니다. 사람으로 치면, 작업대 위에 작업 지시서와 참고용 도면, 그리고 결과물을 적어 낼 빈 양식을 몽땅 뒤섞어서 던져준 것과 같습니다. AI도 이렇게 텍스트가 섞여 있으면 무엇이 자기가 지켜야 할 규칙이고 무엇이 그냥 참고할 데이터인지 구분하느라 에너지를 낭비하고, 결국 오독을 하게 됩니다.</p><p>그래서 요청이 길어질 때는 작업대 위에 서류함을 명확히 나누듯, 물리적인 경계를 확실히 그어주어야 합니다. 괄호 모양의 XML 태그를 쓰거나 대문자 섹션 제목을 달아서 각 텍스트의 역할을 선명하게 분리해 주는 겁니다.</p><p>구체적으로 작업대 위 공간은 크게 세 구역으로 나누시길 권장합니다. 첫째, AI가 당장 행동으로 옮겨야 할 '지시'와 단순히 읽기만 할 '참고 자료'를 철저히 분리하세요. 둘째, 결과물을 표로 줄지 목록으로 줄지 지정하는 '출력 형식'은 눈에 띄게 별도의 블록으로 빼두는 것이 좋습니다. 셋째, 실무에서 가장 흔히 하는 실수인데요. 우리가 고치고 싶은 '코드' 본문과 이렇게 고쳐달라는 '요구사항'이 절대 한 문단 안에 섞이지 않게 경계를 쳐주셔야 합니다.</p><p>이렇게 입력 경계를 선명하게 나눠주면, 모델이 자의적으로 빈칸을 추측할 여지가 크게 줄어듭니다. 나중에 결과물이 제대로 나왔는지 검증할 때도, 어떤 서류함을 기준으로 대조해 봐야 할지 기준이 뚜렷해지죠. AI가 흔들리지 않고 일관되게 일할 수 있는 작업 환경은 바로 이 선명한 구역 나누기에서 시작됩니다.</p><p>자, 이렇게 작업대 위에 어떤 정보를 어디에 둘지 구역을 깔끔하게 나눴다면, 이제 이 정보들을 바탕으로 일할 '작업자'를 부를 차례입니다. 우리는 흔히 AI에게 &quot;시니어 개발자처럼 행동해&quot;라고 역할을 주곤 하는데요. 이런 막연한 이름표를 붙여주는 것과 명확한 판단 기준을 쥐여주는 것은 과연 실제 작업에서 어떤 차이를 만들까요?</p>",
+      "cues": {
+        "purpose": "한 번의 요청도 목표, 기준, 출력 형식을 가진 작은 하네스임을 보여준다. 기준어: “입력 경계가 선명하면 모델의 오독이 줄어듭니다”.",
+        "keywords": [
+          "입력",
+          "경계가",
+          "선명하면",
+          "모델의",
+          "오독이"
+        ],
+        "flow": [
+          "지시와 참고 자료를 분리합니다.",
+          "출력 형식을 별도 블록으로 둡니다.",
+          "코드와 요구사항이 섞이지 않게 합니다."
+        ],
+        "example": "작업 발주서에 목표, 재료, 금지사항, 완료 기준을 칸으로 나눠 적는다고 비유한다.",
+        "bridge": "다음은 “페르소나는 역할보다 판단 기준이 중요합니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 6,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "07-reasoning-prompts.html",
+    "parent": "07",
+    "kind": "main",
+    "reviewTitle": "“단계별로 생각해”를 남발하지 않습니다",
+    "speaker": {
+      "heading": "“단계별로 생각해”를 남발하지 않습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>few-shot으로 출력 모양을 잡았다면, 이제 추론 요청의 강도를 조절해야 합니다.</p><p>예전에는 '단계별로 생각해'를 거의 만능 주문처럼 붙였습니다. 하지만 최신 추론형 모델에는 장황한 생각 유도보다 목표, 제약, 통과 기준을 간결하게 주는 편이 더 안정적인 경우가 많습니다.</p><p>복잡한 분석이 필요한 작업에는 판단 기준과 출력 형식을 요구합니다. 단순 변환이나 정리 작업에는 과도한 추론을 요구하지 않습니다.</p><p>핵심은 모델에게 오래 생각하라고 말하는 것이 아니라, 어떤 기준으로 결과를 낼지 선명하게 주는 것입니다.</p>",
+      "cues": {
+        "purpose": "한 번의 요청도 목표, 기준, 출력 형식을 가진 작은 하네스임을 보여준다. 기준어: ““단계별로 생각해”를 남발하지 않습니다”.",
+        "keywords": [
+          "검증",
+          "단계별로",
+          "생각해",
+          "남발하지",
+          "않습니다"
+        ],
+        "flow": [
+          "목표와 조건을 포함해 명확하게 요청합니다.",
+          "결과가 흔들릴 때만 예시를 추가합니다.",
+          "체크리스트, 할 일 목록, 검증 목록처럼 기준을 제시합니다."
+        ],
+        "example": "작업 발주서에 목표, 재료, 금지사항, 완료 기준을 칸으로 나눠 적는다고 비유한다.",
+        "bridge": "다음은 “결과 기준을 선명하게 요구합니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 7,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "07-1-reasoning-output-pattern.html",
+    "parent": "07",
+    "kind": "main",
+    "reviewTitle": "결과 기준을 선명하게 요구합니다",
+    "speaker": {
+      "heading": "결과 기준을 선명하게 요구합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>방금 전 슬라이드에서 좋은 요청의 기본 구조를 잡았다면, 이번에는 AI가 가져올 결과의 기준을 어떻게 구체화할지 살펴보겠습니다.</p><p>AI에게 작업을 시켰을 때 답답한 순간 중 하나는, 정작 제대로 된 작업물은 없이 그럴듯한 설명만 길게 늘어놓고 끝낼 때입니다. 이전 장에서 '단계별로 생각해' 같은 지시를 남발하지 말자고 했던 것 기억하시나요? AI에게 생각하는 과정을 길게 요구하기보다는, 차라리 우리가 원하는 결과물과 확인 방법, 그리고 보고 기준을 아주 선명하게 쥐여주는 편이 훨씬 안정적입니다.</p><p>방법은 간단합니다.</p><p>먼저, 최종 결과물이 어떤 모양이어야 하는지 처음부터 확실히 정해 둡니다. 그리고 작업 중간에 어떤 확인 지점을 거쳐야 하는지, 통과 기준은 무엇인지 구체적으로 적어주는 겁니다. 마지막으로 일을 다 마쳤을 때는 그냥 &quot;다 했습니다&quot;라는 선언으로 끝내게 두지 마시고, 실제로 확인한 증거와 아직 남아있는 위험 요소를 묶어서 보고서 형태로 제출하게 만드세요.</p><p>이처럼 하나의 요청 안에 결과물, 확인 지점, 통과 기준, 보고 형식, 남은 위험까지 모두 묶어두는 방식을 추천합니다. 이렇게 명확한 작업의 틀을 제공하면, AI의 답변은 단순한 말대꾸에서 끝나지 않고 우리가 직접 검증할 수 있는 단단한 작업 결과물로 돌아오게 됩니다.</p><p>그런데 여기서 한 가지 의문이 드실 겁니다. 아주 사소한 요청을 할 때도 매번 이렇게 무겁고 복잡한 기준을 다 붙여야만 할까요? 바로 다음 장에서 작업의 성격과 위험도에 맞춰 이 요청 강도를 어떻게 조절하면 좋을지 알아보겠습니다.</p>",
+      "cues": {
+        "purpose": "한 번의 요청도 목표, 기준, 출력 형식을 가진 작은 하네스임을 보여준다. 기준어: “결과 기준을 선명하게 요구합니다”.",
+        "keywords": [
+          "결과",
+          "기준을",
+          "선명하게",
+          "요구합니다",
+          "무엇을"
+        ],
+        "flow": [
+          "최종 결과물의 모양을 먼저 정합니다.",
+          "중간 확인 지점과 통과 기준을 적습니다.",
+          "마지막 보고에 증거와 남은 위험을 포함시킵니다."
+        ],
+        "example": "간단한 심부름에는 짧은 메모, 위험한 배포에는 체크리스트가 필요하다고 비유한다.",
+        "bridge": "다음은 “작업 성격에 따라 요청 강도를 조절합니다”입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 8,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "07-2-reasoning-avoid-overask.html",
+    "parent": "07",
+    "kind": "main",
+    "reviewTitle": "작업 성격에 따라 요청 강도를 조절합니다",
+    "speaker": {
+      "heading": "작업 성격에 따라 요청 강도를 조절합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>앞에서 우리는 좋은 요청을 위해 목표, 검증, 보고 형식을 쪼개는 방법을 알아봤습니다. 이걸 보시고 나면 실무자분들이 종종 이런 질문을 하십니다. &quot;오타 하나 고치고 간단한 함수 하나 만드는데도 매번 이렇게 장황하게 지시를 내려야 하나요?&quot;</p><p>정답은 '아닙니다'입니다. 많은 분들이 프롬프트를 꼼꼼하게 쓰는 법을 배우고 나면, 모든 요청에 온갖 예시와 계획, 검증 절차를 꽉꽉 눌러 담으려는 함정에 빠집니다. 그러면 AI는 너무 많은 정보에 짓눌려서 오히려 간단한 일을 복잡하게 망쳐버리기도 합니다.</p><p>우리의 목표는 무조건 길고 무거운 요청서를 작성하는 게 아닙니다. 작업의 성격과 위험도에 맞춰서 안전장치의 무게를 조절하는 겁니다. 가볍게 동네 마트에 가는데 F1 경주용 6점식 안전벨트를 맬 필요는 없는 것처럼요.</p><p>그래서 지시의 강도를 조절해야 합니다. 단순한 변수명 변경이나 가벼운 번역 같은 간단한 일은 목표만 선명하게 던져주면 충분합니다. 반면에, 출력되는 텍스트의 구조나 디자인이 아주 중요한 작업이라면 말로 길게 설명하기보다 잘 만들어진 예시 하나를 툭 붙여주는 게 훨씬 정확합니다.</p><p>그런데 만약 실제 서버의 데이터를 건드리거나 결제 로직을 수정하는 아주 위험한 일이라면 어떨까요? 이때는 절대 AI의 판단에만 맡겨두면 안 됩니다. 반드시 통과해야 할 검증 목록과, 작업이 성공했다는 것을 어떻게 증명할지 명확한 보고 기준을 단단하게 채워 넣어야 합니다. 정보가 부족하다면 무작정 코드를 짜라고 시키기 전에 질문이나 조사를 먼저 하라고 요청 강도를 낮춰야 하고요.</p><p>결국 좋은 하네스 설계란, 이 작업이 얼마나 위험한지 파악하고 딱 그에 맞는 강도의 난간만 세워주는 감각을 의미합니다.</p><p>자, 여기까지가 한 번의 대화에서 지시를 내리는 프롬프트 단계의 이야기였습니다. 그런데 아무리 강도를 잘 조절해도, &quot;테스트를 꼭 돌려라&quot;, &quot;이 파일은 건드리지 마라&quot; 같은 말을 매번 반복해서 치고 있다면 어떨까요? 이제 매번 지시하는 단계를 넘어서, AI가 우리 프로젝트의 규칙을 항상 적용하게 만드는 다음 레이어로 넘어가 보겠습니다.</p>",
+      "cues": {
+        "purpose": "모든 요청을 무겁게 만들지 말고 작업 위험도에 맞춰 프롬프트 강도를 조절해야 한다는 결론을 남긴다.",
+        "keywords": [
+          "요청 강도",
+          "위험도",
+          "간단한 일",
+          "핵심 작업"
+        ],
+        "flow": [
+          "좋은 요청 구조를 배운 뒤 생기는 과잉 지시 문제를 꺼낸다",
+          "간단한 일과 위험한 일을 나눠 설명한다",
+          "프롬프트 레이어의 결론은 강도 조절이라고 마무리한다"
+        ],
+        "example": "동네 마트에 가는데 F1 경주용 6점식 안전벨트를 맬 필요는 없다.",
+        "bridge": "여기까지가 한 번의 지시를 다루는 프롬프트 레이어였습니다. 다음은 매번 다시 말하지 않아도 되는 컨텍스트/메모리 레이어입니다."
+      }
+    },
+    "sectionId": "03",
+    "sectionTitle": "Spec / Prompt",
+    "sectionStart": false,
+    "sectionIndex": 9,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "08-claude-md.html",
+    "parent": "08",
+    "kind": "main",
+    "reviewTitle": "CLAUDE.md는 항상 적용되는 프로젝트 지침입니다",
+    "sectionId": "04",
+    "sectionTitle": "Context / Memory",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 4,
+    "speaker": {
+      "heading": "CLAUDE.md는 항상 적용되는 프로젝트 지침입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>프롬프트가 이번 작업 지시라면, CLAUDE.md는 항상 적용되는 프로젝트 지침입니다. 매번 반복해서 말해야 하는 팀 규칙, 검증 명령, 예외를 파일로 고정하는 장치입니다.</p><p>중요한 점은 계층입니다. 개인 전체에 적용되는 규칙, 저장소에 적용되는 규칙, 현재 폴더나 작업에만 적용되는 규칙을 분리해야 충돌이 줄어듭니다. 더 깊은 위치의 규칙은 더 구체적인 기준으로 작동합니다.</p><p>여기에는 “항상 테스트 명령을 보고하라”, “이 저장소에서는 이 포맷을 지켜라”처럼 반복되는 원칙을 둡니다. 이번 작업에만 필요한 로그나 긴 참고 자료를 모두 넣는 곳은 아닙니다.</p><p>다음 장에서는 좋은 프로젝트 지침과 나쁜 프로젝트 지침을 비교하겠습니다.</p>",
+      "cues": {
+        "purpose": "CLAUDE.md의 역할과 계층 로딩을 한 장에서 설명한다.",
+        "keywords": [
+          "CLAUDE.md",
+          "프로젝트 지침",
+          "계층",
+          "Global",
+          "Project",
+          "Local"
+        ],
+        "flow": [
+          "프롬프트와 CLAUDE.md의 차이를 설명한다",
+          "계층별 적용 범위를 설명한다",
+          "좋은/나쁜 지침 비교로 넘긴다"
+        ],
+        "example": "저장소마다 다른 테스트 명령과 보고 규칙을 프로젝트 지침에 둔다고 설명한다.",
+        "bridge": "다음은 “좋은 CLAUDE.md는 작업 순서를 고정합니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      }
+    ]
+  },
+  {
+    "file": "08-2-good-claude-md.html",
+    "parent": "08",
+    "kind": "example",
+    "reviewTitle": "좋은 CLAUDE.md는 짧고 현재형입니다",
+    "speaker": {
+      "heading": "좋은 CLAUDE.md는 짧고 현재형입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>좋은 CLAUDE.md는 AI에게 계속 보여줄 가치가 있는 현재 규칙만 담습니다. 작업 전 관련 파일을 읽고, 계획을 짧게 세우고, 검증 명령과 남은 위험을 보고하라는 식의 반복 원칙입니다.</p><p>나쁜 CLAUDE.md는 오래된 결정을 계속 쌓습니다. 이미 폐기된 예외, 과거 실험, 긴 문서 요약이 남아 있으면 AI는 그것을 지금도 유효한 기준처럼 사용합니다.</p><p>그래서 프로젝트 지침은 짧고 현재형이어야 합니다. 긴 자료는 별도 문서나 링크로 분리하고, 바뀐 규칙은 지워야 합니다.</p><p>이제 항상 적용되는 지침을 봤으니, 이번 작업에만 올릴 자료를 어떻게 다룰지 컨텍스트 엔지니어링으로 넘어가겠습니다.</p>",
+      "cues": {
+        "purpose": "좋은 프로젝트 지침과 나쁜 프로젝트 지침을 비교해 CLAUDE.md의 유지 기준을 설명한다.",
+        "keywords": [
+          "짧은 규칙",
+          "현재형",
+          "오래된 규칙",
+          "링크 분리"
+        ],
+        "flow": [
+          "좋은 지침은 반복 원칙을 짧게 둔다고 설명한다",
+          "나쁜 지침은 오래된 규칙 누적이라고 비교한다",
+          "컨텍스트 엔지니어링으로 연결한다"
+        ],
+        "example": "폐기된 API 예외가 CLAUDE.md에 남아 현재 작업을 오염시키는 상황을 든다.",
+        "bridge": "다음은 “이제는 컨텍스트 엔지니어링입니다”입니다."
+      }
+    },
+    "sectionId": "04",
+    "sectionTitle": "Context / Memory",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 4,
+    "sources": [
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "09-context-engineering.html",
+    "parent": "09",
+    "kind": "main",
+    "reviewTitle": "컨텍스트는 작업대 위 참고 자료입니다",
+    "sectionId": "04",
+    "sectionTitle": "Context / Memory",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 4,
+    "speaker": {
+      "heading": "컨텍스트는 작업대 위 참고 자료입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>CLAUDE.md가 항상 적용되는 프로젝트 지침이라면, 컨텍스트는 이번 작업대 위에 올리는 참고 자료입니다. 작업대는 무한한 창고가 아닙니다.</p><p>항상 로드할 것은 짧은 원칙과 현재 목표입니다. 긴 문서, 로그, 대량 파일은 필요할 때 열어야 합니다. 모든 것을 한 번에 올리면 AI가 무엇을 우선해야 하는지 흐려집니다.</p><p>그래서 컨텍스트 설계의 핵심은 많이 주는 것이 아니라 잘 고르는 것입니다. 지금 판단에 필요한 자료만 올리고, 나머지는 필요할 때 찾아보게 해야 합니다.</p><p>다음 장에서는 긴 작업 중에 현재 목표와 컨텍스트가 어긋나지 않도록 마지막에 다시 맞추는 방법을 보겠습니다.</p>",
+      "cues": {
+        "purpose": "컨텍스트를 이번 작업대 위 참고 자료로 설명하고 always vs needed 기준을 정리한다.",
+        "keywords": [
+          "컨텍스트",
+          "작업대",
+          "항상 로드",
+          "필요할 때 열기"
+        ],
+        "flow": [
+          "CLAUDE.md와 컨텍스트를 구분한다",
+          "항상 로드와 필요할 때 열 것을 나눈다",
+          "컨텍스트 드리프트 점검으로 넘긴다"
+        ],
+        "example": "긴 로그 전체를 붙이는 대신 실패 구간과 관련 파일만 먼저 올리는 상황을 든다.",
+        "bridge": "다음은 “완료 전 현재 목표와 컨텍스트를 다시 맞춥니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Model Context Protocol Server Features",
+        "links": [
+          {
+            "label": "Tools",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+          },
+          {
+            "label": "Resources",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+          },
+          {
+            "label": "Prompts",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+          }
+        ]
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      }
+    ]
+  },
+  {
+    "file": "09-3-context-drift-check.html",
+    "parent": "09",
+    "kind": "main",
+    "reviewTitle": "완료 전 현재 목표와 컨텍스트를 다시 맞춥니다",
+    "speaker": {
+      "heading": "완료 전 현재 목표와 컨텍스트를 다시 맞춥니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI와 길게 대화하다 보면 꼭 이런 답답한 순간이 옵니다. 분명히 아까 &quot;이건 하지 말자&quot;고 합의했는데, 작업이 끝날 때쯤 AI가 슬쩍 그 코드를 다시 집어넣는 경우죠. 왜 그럴까요? 대화가 길어지면서 초기에 폐기했던 요구사항과 최신 목표가 AI의 머릿속, 즉 컨텍스트 안에 그대로 뒤섞여 있기 때문입니다.</p><p>그래서 이 컨텍스트 섹션의 마지막 지침은 “정보를 더 많이 주자”가 아닙니다. 반대로 “지금 목표와 맞지 않는 오래된 가정을 걷어내자”입니다. 긴 작업의 끝자락일수록 잠시 멈춰 서서 AI와 작업 범위를 재확인해야 합니다. 지금 우리의 최종 목표가 무엇인지, 수정 범위는 정확히 어디까지인지, 혹시 아까 버린 아이디어가 섞여 들어가지는 않았는지, 그리고 방금 확인한 검증 결과가 정말 최신 상태가 맞는지 짚어주는 겁니다.</p><p>이렇게 작업대 위를 한 번 깔끔하게 치우는 습관은 뒤에서 다룰 다음 단계들의 튼튼한 토대가 됩니다. 필요한 절차만 딱 꺼내 쓰는 작업 매뉴얼인 'Skill', 그리고 다음 대화의 AI에게 깨끗하게 정리된 상태만 넘겨주는 인수인계서인 'Handoff'가 바로 여기서 출발하거든요.</p><p>결국 완료를 선언하기 전에 지금의 목표와 현재 파일 상태, 그리고 남은 위험이 서로 잘 맞는지 맞춰보는 이 과정은, 작업이 진짜로 끝났는지 확실하게 증명하는 'Evaluation', 즉 최종 검증 단계로 들어가는 첫 관문이 됩니다.</p><p>그럼 이렇게 잘 정리된 작업대 위에서, 도대체 어떻게 업무 절차를 매뉴얼로 만들어 필요할 때만 쏙 꺼내 쓸 수 있을까요? 다음 장에서 본격적으로 'Skill'의 개념을 알아보겠습니다.</p>",
+      "cues": {
+        "purpose": "AI가 볼 정보의 위치와 양을 통제하는 법을 설명한다. 기준어: “완료 전 현재 목표와 컨텍스트를 다시 맞춥니다”.",
+        "keywords": [
+          "검증",
+          "완료",
+          "현재",
+          "목표와",
+          "컨텍스트를"
+        ],
+        "flow": [
+          "지금 목표가 무엇인가?",
+          "수정 범위가 어디까지인가?",
+          "폐기된 가정이 섞였는가?"
+        ],
+        "example": "작업대 위에 공구를 너무 많이 올리면 정작 필요한 공구를 못 찾는 상황에 비유한다.",
+        "bridge": "다음은 “스킬은 반복 절차의 매뉴얼입니다”입니다."
+      }
+    },
+    "sectionId": "04",
+    "sectionTitle": "Context / Memory",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 4,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "10-skills.html",
+    "parent": "10",
+    "kind": "main",
+    "reviewTitle": "스킬은 반복 절차의 매뉴얼입니다",
+    "speaker": {
+      "heading": "스킬은 반복 절차의 매뉴얼입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>매번 AI에게 일을 시킬 때마다 메모장에서 길고 복잡한 프롬프트를 복사해서 붙여넣은 경험, 다들 있으실 겁니다.</p><p>&quot;이거 검토할 때는 A, B, C 순서로 보고, 형식은 이렇게 맞춰줘.&quot;<br>분명 어제도 똑같이 말했는데, 오늘 또 말해줘야 합니다. 참 답답한 일이죠.</p><p>이제 이렇게 매번 프롬프트로 반복하던 일은 '스킬(Skill)'이라는 구조로 승격시켜야 합니다. 쉽게 말해, AI에게 쥐여주는 재사용 가능한 '작업 매뉴얼'을 만드는 겁니다.</p><p>우리가 앞서 프로젝트 전체에 항상 적용해야 할 헌법 같은 규칙은 CLAUDE.md라는 벽에 붙여둔다고 했습니다. 반면, 스킬은 다릅니다. 평소에는 서랍에 넣어두었다가 딱 그 작업이 필요할 때만 꺼내서 펼쳐보는 구체적인 행동 지침입니다.</p><p>이 매뉴얼이 제대로 작동하려면 세 가지 구조를 영리하게 짜야 합니다.</p><p>첫째, 'Description(설명)'입니다. 이건 매뉴얼 겉표지에 붙은 이름표입니다. 이 이름표를 얼마나 정확하게 써두느냐가, AI가 스스로 알맞은 타이밍에 이 매뉴얼을 꺼내 들지 말지를 결정합니다.</p><p>둘째, 본문입니다. 본문은 길고 장황한 해설서가 되면 안 됩니다. 공장 작업자가 바로바로 확인하며 따라 할 수 있도록 짧고 명확한 '절차' 중심으로 구성해야 합니다.</p><p>셋째, 만약 템플릿이나 긴 예시 자료가 필요하다면 어떻게 할까요? 그건 본문에 욱여넣지 않고 'References(참조 문서)'라는 별도 부록으로 떼어내야 작업대가 무거워지지 않습니다.</p><p>오늘 우리가 다룬 한국어 검교정 리뷰도 마찬가지입니다. 문장을 검토하는 기준, 발표자 스크립트를 보는 기준, 화면과 대본이 맞는지를 대조하는 기준을 그때그때 채팅창에 치는 게 아닙니다. 이걸 아예 하나의 스킬 매뉴얼로 단단하게 분리해 두는 겁니다. 그러면 내일 당장 다른 AI 에이전트가 작업하더라도, 정확히 우리가 정한 그 절차대로 흔들림 없이 리뷰를 반복해 냅니다. 우리가 후반부 실습에서 여러분의 반복되는 프롬프트들을 모아 스킬 후보로 분류해 볼 이유가 바로 여기에 있습니다.</p><p>그렇다면, 이 매뉴얼을 AI가 '스스로 필요한 순간에' 꺼내게 만들려면 표지에 이름표를 대체 어떻게 써붙여야 할까요? 다음 장에서 자동 호출의 방아쇠가 되는 Description 작성법을 확인해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "반복 절차를 재사용 가능한 매뉴얼로 분리하는 이유를 설명한다. 기준어: “스킬은 반복 절차의 매뉴얼입니다”.",
+        "keywords": [
+          "스킬",
+          "스킬은",
+          "반복",
+          "절차의",
+          "매뉴얼입니다"
+        ],
+        "flow": [
+          "description이 자동 호출 품질을 결정합니다.",
+          "본문은 짧고 절차 중심으로 둡니다.",
+          "검교정처럼 반복되는 리뷰도 스킬로 분리합니다."
+        ],
+        "example": "작업자가 두꺼운 교과서가 아니라 얇은 체크리스트를 보고 움직이는 장면으로 설명한다.",
+        "bridge": "다음은 “스킬의 description은 자동 호출 트리거입니다”입니다."
+      }
+    },
+    "sectionId": "05",
+    "sectionTitle": "Skills / Superpowers",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      }
+    ]
+  },
+  {
+    "file": "10-1-skill-trigger-description.html",
+    "parent": "10",
+    "kind": "main",
+    "reviewTitle": "스킬은 호출 조건, 절차, 자료를 나눕니다",
+    "speaker": {
+      "heading": "스킬은 호출 조건, 절차, 자료를 나눕니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>스킬을 만들 때 가장 많이 헷갈리는 부분은 모든 내용을 SKILL.md에 넣는 것입니다. 좋은 스킬은 호출 조건, 실행 절차, 무거운 자료를 나눕니다.</p><p>description은 자동 호출 트리거입니다. 너무 넓으면 원하지 않을 때도 호출되고, 너무 좁으면 필요한 순간에 빠집니다. 본문은 짧은 실행 절차여야 합니다. 모델이 매번 읽고 따라 할 수 있을 정도로 작아야 합니다.</p><p>긴 참고 자료, 예시, 실행 코드는 references, scripts, assets로 분리합니다. 그래야 작업대가 무거워지지 않고, 필요할 때만 열 수 있습니다.</p><p>다음 장에서는 실제 스킬 폴더가 이 구조를 어떻게 담는지 보겠습니다.</p>",
+      "cues": {
+        "purpose": "스킬의 description, 본문 절차, references/scripts/assets 구조를 한 장에서 설명한다.",
+        "keywords": [
+          "description",
+          "절차",
+          "references",
+          "scripts",
+          "assets"
+        ],
+        "flow": [
+          "스킬 구조를 세 부분으로 나눈다",
+          "각 부분의 역할과 위험을 설명한다",
+          "실제 폴더 예시로 넘긴다"
+        ],
+        "example": "긴 예시를 SKILL.md 본문에 모두 넣지 않고 references로 빼는 상황을 든다.",
+        "bridge": "다음은 “deck-builder 스킬은 폴더가 곧 작업 순서입니다”입니다."
+      }
+    },
+    "sectionId": "05",
+    "sectionTitle": "Skills / Superpowers",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      }
+    ]
+  },
+  {
+    "file": "11-1-real-skill-folder.html",
+    "parent": "11",
+    "kind": "main",
+    "reviewTitle": "실제 스킬 폴더가 작업 순서입니다",
+    "speaker": {
+      "heading": "실제 스킬 폴더가 작업 순서입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>좋은 스킬은 작고 선명합니다. 폴더 구조 자체가 작업 순서가 되어야 합니다.</p><p>SKILL.md에는 목적, 호출 조건, 짧은 절차를 둡니다. frontmatter의 설명은 모델이 이 스킬을 언제 꺼낼지 결정하는 호출 조건입니다.</p><p>긴 설명과 예시는 references에 두고, 반복 실행 코드는 scripts에 둡니다. 재사용할 이미지나 템플릿은 assets에 둡니다.</p><p>이렇게 나눠야 스킬이 매번 읽기 쉬운 작업 매뉴얼로 남습니다. 이제 이 스킬들을 묶어 개발 규율로 만든 Superpowers로 넘어가겠습니다.</p>",
+      "cues": {
+        "purpose": "실제 스킬 폴더 구조와 frontmatter 호출 조건을 설명한다.",
+        "keywords": [
+          "SKILL.md",
+          "frontmatter",
+          "references",
+          "scripts",
+          "assets"
+        ],
+        "flow": [
+          "좋은 스킬의 작고 선명한 구조를 설명한다",
+          "실제 폴더 구성과 frontmatter 역할을 설명한다",
+          "Superpowers로 연결한다"
+        ],
+        "example": "deck-builder 폴더가 발표자료 생성 절차와 검증 스크립트를 함께 담는 예를 든다.",
+        "bridge": "다음은 “Superpowers는 스킬 기반 하네스 패키지입니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ],
+    "sectionId": "05",
+    "sectionTitle": "Skills / Superpowers",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 6
+  },
+  {
+    "file": "12-superpowers.html",
+    "parent": "12",
+    "kind": "main",
+    "reviewTitle": "Superpowers는 스킬 기반 하네스 패키지입니다",
+    "sectionId": "05",
+    "sectionTitle": "Skills / Superpowers",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 6,
+    "speaker": {
+      "heading": "Superpowers는 스킬 기반 하네스 패키지입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이번에 보실 'Superpowers'는 오늘 강의에서 가장 핵심적인 철학을 담고 있는 좋은 사례입니다.</p><p>이름만 들으면 AI에게 엄청난 초능력을 주는 단순한 편의 기능 묶음 같지만, 사실 그 반대입니다. 오히려 AI가 자기 마음대로 추측해서 행동하지 못하도록, 개발자의 엄격한 '작업 규율'을 강제하는 도구에 가깝습니다.</p><p>보통 AI에게 일을 맡기면 무작정 코드부터 짜려고 덤벼듭니다. 이걸 막기 위해 우리는 '브레인스토밍(brainstorming)' 스킬을 씁니다. 코드를 한 줄이라도 쓰기 전에, 요구사항이 무엇이고 성공 기준이 무엇인지 범위를 먼저 합의하게 만드는 겁니다.</p><p>코드를 수정할 때도 마찬가지입니다. AI가 에러 메시지만 보고 대충 짐작해서 엉뚱한 코드를 고쳐버린 경험, 다들 한 번쯤 있으시죠? 여기서 'TDD(테스트 주도 개발)'와 '디버깅(debugging)' 스킬이 개입합니다. 실패하는 테스트 코드를 먼저 짜게 하고, 확실한 증상과 원인이라는 증거를 바탕으로만 코드를 수정하게 통제합니다.</p><p>마지막으로 '리뷰(review)' 스킬입니다. AI 혼자 '작업 다 끝났습니다' 하고 성급하게 완료 선언을 해버리는 걸 막아줍니다. 반드시 완료 전에 검토 과정을 한 번 더 거쳐야만 다음으로 넘어갈 수 있게 루프를 만들어두는 거죠.</p><p>그래서 누군가 'Superpowers는 스킬인가요, 하네스인가요, 아니면 자동화 워크플로우인가요?'라고 묻는다면, 정답은 셋 다에 걸쳐 있습니다. 껍데기는 여러 스킬이 담긴 패키지지만, 그 목적은 하네스 엔지니어링이고, 결과적으로는 개발 워크플로우 전체를 안전하게 묶어내는 훌륭한 설계 사례입니다.</p><p>단순히 툴 하나를 설치하는 게 아니라, AI가 일하는 방식 전체를 우리가 원하는 방향으로 통제하는 겁니다. 자, 그렇다면 이 스킬들이 실제 개발 사이클의 어느 지점마다 배치되어 작동하는지, 다음 슬라이드의 지도를 통해 전체 흐름을 연결해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "반복 절차를 재사용 가능한 매뉴얼로 분리하는 이유를 설명한다. 기준어: “Superpowers는 스킬 기반 하네스 패키지입니다”.",
+        "keywords": [
+          "스킬",
+          "Superpowers",
+          "Superpowers는",
+          "기반",
+          "하네스"
+        ],
+        "flow": [
+          "brainstorming: 구현 전 범위 정리",
+          "TDD/debugging: 증거 기반 수정",
+          "review: 완료 전 검토 루프"
+        ],
+        "example": "작업자가 두꺼운 교과서가 아니라 얇은 체크리스트를 보고 움직이는 장면으로 설명한다.",
+        "bridge": "다음은 “Superpowers는 스킬 묶음이 아니라 작업 규율입니다”입니다."
+      }
     },
     "sources": [
       {
@@ -778,14 +1295,919 @@ window.LECTURE_SLIDES = [
     ]
   },
   {
+    "file": "12-1-superpowers-as-harness.html",
+    "parent": "12",
+    "kind": "main",
+    "reviewTitle": "Superpowers는 스킬 묶음이 아니라 작업 규율입니다",
+    "speaker": {
+      "heading": "Superpowers는 스킬 묶음이 아니라 작업 규율입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>많은 분들이 Superpowers를 단순히 '유용한 기능들을 모아둔 툴박스' 정도로 생각하십니다. 버튼 하나 누르면 AI가 알아서 다 해주는 편리한 도구 모음처럼 말이죠.</p><p>하지만 진짜 핵심은 기능을 늘리는 게 아닙니다. AI에게 엄격한 '작업 규율'을 강제하는 겁니다.</p><p>우리가 실무에서 AI에게 코딩을 맡겨보면 자주 겪는 답답한 패턴이 있습니다. 요구사항을 던져주면 정확한 설계도 없이 무작정 코드부터 짜기 시작합니다. 에러가 나면 시스템 로그도 제대로 확인하지 않고 &quot;아마 이런 문제일 겁니다&quot;라며 추측성 수정을 하죠. 심지어 다 만들었다고 해서 확인해 보면, 기본적인 테스트조차 돌리지 않은 경우가 허다합니다.</p><p>그래서 우리는 Superpowers를 통해 AI가 자기 마음대로 작업하지 못하도록 전체 흐름을 깐깐한 단계별 공정으로 끊어줍니다.</p><p>첫 번째로, 당장 코드를 치고 싶은 AI를 멈춰 세웁니다. 'Brainstorming' 단계를 먼저 거치게 해서, 지금 정확히 무엇을 만들고 무엇은 제외할지 요구사항부터 명확하게 좁히게 만듭니다.</p><p>두 번째로, 코드가 실패했을 때는 'Debugging'이라는 절차를 켭니다. AI가 상상력으로 버그를 고치지 못하게, 반드시 에러 로그라는 명확한 '증거'를 기반으로만 원인을 찾고 수정하도록 강제하는 겁니다.</p><p>마지막으로 코드를 다 짰다고 완료 선언을 하기 전에는, 'Review'와 'Verification'이라는 단단한 검문소를 통과하게 합니다. 실제 테스트와 검증 기준을 만족시키지 못하면 완료를 선언할 수 없게 길목을 막는 거죠.</p><p>우리가 앞서 반복되는 절차는 스킬로 승격시키고, 반드시 확인해야 할 완료 기준은 Evaluation으로 둔다고 했었죠? Superpowers가 바로 그 원리를 이용해 개발이라는 전체 공정을 통제하는 훌륭한 하네스 엔지니어링의 사례입니다.</p><p>결국 핵심은 AI를 더 똑똑하게 만드는 게 아닙니다. 덜 흔들리게 만드는 겁니다. 그렇다면 이 각각의 규율들이 실제 개발 루프 속에서 언제, 어떻게 개입하는지 다음 장의 지도를 통해 작업의 전체 흐름을 이어서 보겠습니다.</p>",
+      "cues": {
+        "purpose": "반복 절차를 재사용 가능한 매뉴얼로 분리하는 이유를 설명한다. 기준어: “Superpowers는 스킬 묶음이 아니라 작업 규율입니다”.",
+        "keywords": [
+          "스킬",
+          "검증",
+          "Superpowers",
+          "Superpowers는",
+          "묶음이"
+        ],
+        "flow": [
+          "구현 전 요구를 좁힙니다.",
+          "실패 시 증거 기반으로 디버깅합니다.",
+          "완료 전 검증을 강제합니다."
+        ],
+        "example": "작업자가 두꺼운 교과서가 아니라 얇은 체크리스트를 보고 움직이는 장면으로 설명한다.",
+        "bridge": "다음은 “각 Superpower는 개발 루프의 다른 지점을 맡습니다”입니다."
+      }
+    },
+    "sectionId": "05",
+    "sectionTitle": "Skills / Superpowers",
+    "sectionStart": false,
+    "sectionIndex": 5,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "12-2-superpowers-workflow-map.html",
+    "parent": "12",
+    "kind": "workflow",
+    "reviewTitle": "각 Superpower는 개발 루프의 다른 지점을 맡습니다",
+    "speaker": {
+      "heading": "각 Superpower는 개발 루프의 다른 지점을 맡습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>앞서 Superpowers가 단순한 도구 모음이 아니라, 일종의 단단한 '작업 규율'이라고 말씀드렸습니다. 그렇다면 이 규율들은 실제 우리가 일하는 과정 어디에, 어떻게 배치될까요?</p><p>우리는 개발을 하면서 끊임없이 여러 단계를 거칩니다. 새로운 기능을 기획하고, 버그를 잡고, 완성된 결과를 검토받는 일련의 과정이죠. 각각의 Superpower들은 바로 이 '개발 루프'의 길목마다 서 있는 깐깐한 작업 반장들입니다.</p><p>예를 들어, 완전히 새로운 기능을 만들어야 할 때를 생각해 보겠습니다. 다짜고짜 코드부터 짜게 두면 안 됩니다. 먼저 'brainstorming'이나 'writing-plans' 같은 Superpower를 호출해서, 요구사항을 명확히 좁히고 계획부터 세우게 만듭니다.</p><p>작업 도중 버그가 터졌을 때는 어떨까요? 무작정 코드를 뜯어고치려는 AI를 멈춰 세우고, 'systematic-debugging'이라는 규율을 꺼내 듭니다. 추측으로 빈칸을 채우는 대신, 증상을 먼저 재현하고 체계적으로 원인을 분석하게 강제하는 겁니다.</p><p>마찬가지로 작업이 다 끝났다고 선언하기 직전에는 'verification-before-completion'으로 완료 조건을 꼼꼼히 검증하게 하고, 최종적으로 'requesting-code-review'를 통해 리뷰 절차를 밟게 합니다.</p><p>이 흐름이 우리에게 알려주는 진짜 의미는 단순합니다. AI에게 &quot;알아서 잘 개발해 줘&quot;라고 뭉뚱그려 맡기는 게 아니라는 겁니다. 작업의 매 순간마다, 지금 당장 필요한 '적절한 작업 규율'을 제때 호출해 주는 것. 이것이 AI를 덜 흔들리게, 그리고 더 안전하게 일하게 만드는 핵심입니다.</p><p>자, 이렇게 절차를 스킬로 만들어 단단한 규율을 세우고 나면 또 다른 현실적인 고민이 생깁니다. 하나의 AI가 구현도 하고 자기 코드를 스스로 리뷰까지 하다 보면, 이전의 맥락이 섞여서 관대한 평가를 내리기 쉽거든요. 이럴 때는 검토하는 사람과 코드 짜는 사람의 역할을 아예 분리해 주면 어떨까요? 다음 단계에서는 이렇게 판단 공간 자체를 분리해 대화의 오염을 막는 'Subagent' 개념에 대해 알아보겠습니다.</p>",
+      "cues": {
+        "purpose": "반복 절차를 재사용 가능한 매뉴얼로 분리하는 이유를 설명한다. 기준어: “각 Superpower는 개발 루프의 다른 지점을 맡습니다”.",
+        "keywords": [
+          "Superpower는",
+          "개발",
+          "루프의",
+          "다른",
+          "지점을"
+        ],
+        "flow": [
+          "새 기능: brainstorming / writing-plans",
+          "버그: systematic-debugging",
+          "완료: verification-before-completion"
+        ],
+        "example": "작업자가 두꺼운 교과서가 아니라 얇은 체크리스트를 보고 움직이는 장면으로 설명한다.",
+        "bridge": "다음은 “서브에이전트는 역할과 컨텍스트를 분리합니다”입니다."
+      }
+    },
+    "sectionId": "05",
+    "sectionTitle": "Skills / Superpowers",
+    "sectionStart": false,
+    "sectionIndex": 6,
+    "sectionTotal": 6,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "14-subagents.html",
+    "parent": "14",
+    "kind": "main",
+    "reviewTitle": "서브에이전트는 역할과 컨텍스트를 분리합니다",
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ],
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 8,
+    "speaker": {
+      "heading": "서브에이전트는 역할과 컨텍스트를 분리합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>여러분, AI와 길게 작업하시다 보면 답답한 순간이 오죠. 코드를 잘 짜놓고, 같은 대화창에서 바로 오류를 찾아달라고 리뷰를 시켰더니 갑자기 멀쩡한 코드를 엉뚱하게 고치기 시작합니다. 왜 그럴까요?</p><p>하나의 대화창, 즉 하나의 작업대 위에서 구현도 하고, 검토도 하고, 검색도 하다 보니 이전의 실험 내용과 새로운 목표가 마구 섞여버렸기 때문입니다. 우리는 이것을 '컨텍스트 오염'이라고 부릅니다.</p><p>이 문제를 해결하기 위해 도입하는 것이 바로 서브에이전트(Subagent)입니다. 많은 분들이 서브에이전트를 단순히 &quot;AI에게 리뷰어 역할을 연기하라고 시키는 기능&quot; 정도로 생각하십니다.</p><p>그런데 진짜 핵심은 단순히 AI에게 역할을 주는 게 아닙니다. <br>오염되지 않은 깨끗한 판단 공간을 새로 열어주는 겁니다.</p><p>공장에서 제품을 만들 때를 떠올려보시죠. 부품을 조립하던 작업자가 그 자리에서 자기가 만든 걸 바로 불량 검수까지 하면 자기 실수를 놓치기 마련입니다. 그래서 품질 검수는 아예 별도의 검수장으로 제품을 넘겨서 진행하죠.</p><p>AI의 작업 환경도 똑같이 설계해야 합니다. 메인 대화창에서 모든 것을 판단하게 두지 마세요. 리뷰, 보안 점검, 대량의 문서 탐색처럼 메인 대화의 집중력을 흐릴 수 있는 무거운 작업들은 완전히 분리된 작업장을 가진 서브에이전트에게 떼어내야 합니다.</p><p>이때 서브에이전트들에게는 목표를 아주 뾰족하게 쥐여줘야 합니다.<br>리뷰어 에이전트에게는 코드를 직접 고치지 말고 결함만 집요하게 찾으라고 합니다. <br>보안 에이전트에게는 다른 건 무시하고 오직 위험 요소만 살피라고 하죠. <br>리서치 에이전트는 스스로 어떤 결정을 내리지 않고, 판단에 필요한 근거 자료만 싹 수집해서 메인 작업장으로 가져오게 만듭니다.</p><p>그래서 서브에이전트를 만드실 때는 &quot;너는 시니어 개발자야&quot;라는 모호한 이름표보다 더 중요한 게 있습니다. 이 에이전트가 어떤 파일을 열어볼 수 있는지, 어떤 문제를 최우선으로 찾을지, 그리고 결과는 어떤 양식으로 보고할지 그 '책임과 도구'를 명확히 세팅해 주셔야 합니다.</p><p>기억해 주세요. 만약 여러분이 매번 대화할 때마다 &quot;너는 깐깐한 코드 리뷰어야&quot;라는 페르소나 지시를 반복하고 계신다면, 이제 그 역할은 대화창에 둘 게 아니라 시스템 구조인 서브에이전트로 승격시켜야 할 타이밍입니다. 앞서 반복되는 작업 절차를 스킬 파일로 빼냈던 것처럼 말이죠.</p><p>그렇다면 이렇게 역할을 나누고 판단 공간을 떼어내는 게 실제 AI의 작업 품질에 어떤 차이를 만들까요? 다음 장에서 이 '컨텍스트 분리'의 진짜 위력을 조금 더 깊이 들여다보겠습니다.</p>",
+      "cues": {
+        "purpose": "역할, 컨텍스트, 도구 권한을 나눠야 하는 이유를 설명한다. 기준어: “서브에이전트는 역할과 컨텍스트를 분리합니다”.",
+        "keywords": [
+          "서브에이전트",
+          "서브에이전트는",
+          "컨텍스트를",
+          "분리합니다",
+          "리뷰"
+        ],
+        "flow": [
+          "리뷰어는 결함만 찾게 합니다.",
+          "보안 에이전트는 위험만 보게 합니다.",
+          "리서치 에이전트는 근거만 수집하게 합니다."
+        ],
+        "example": "개발자, 리뷰어, 리서처를 한 사람에게 몰아주지 않고 역할을 나누는 상황으로 설명한다.",
+        "bridge": "다음은 “Subagent는 작은 AI가 아니라 분리된 컨텍스트입니다”입니다."
+      }
+    }
+  },
+  {
+    "file": "14-1-subagent-context-isolation.html",
+    "parent": "14",
+    "kind": "main",
+    "reviewTitle": "Subagent는 작은 AI가 아니라 분리된 컨텍스트입니다",
+    "speaker": {
+      "heading": "Subagent는 작은 AI가 아니라 분리된 컨텍스트입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>많은 분들이 서브에이전트(Subagent)를 단순히 ‘AI 여러 개를 동시에 부리는 기능’ 정도로 생각하십니다. 하지만 그렇게 접근하면 그저 그럴싸한 역할극에 그치고 맙니다.</p><p>우리가 여기서 집중해야 할 진짜 이유는 AI의 마릿수를 늘리는 게 아닙니다. AI가 생각하는 '판단 공간', 즉 컨텍스트를 분리해서 서로 오염되지 않게 보호하는 데 있습니다. 실무에서 한 명의 작업자가 너무 많은 검토 기준을 동시에 신경 쓰면 어떻게 될까요? 결국 이도 저도 아니게 되거나 가장 중요한 결함을 놓치기 십상입니다. AI도 똑같습니다.</p><p>그래서 우리는 각 에이전트의 시야를 의도적으로 좁혀서 딱 자기 목표 하나만 보게 만듭니다. 어떤 에이전트는 화면 문구만 꼼꼼히 검토하고, 다른 에이전트는 발표자의 대본만 파고들게 합니다. 또 다른 에이전트는 화면과 대본이 논리적으로 일치하는지만 따지도록 검토의 축을 완전히 나누는 겁니다.</p><p>이 구조에서 한 가지 주의하실 점이 있습니다. 개별 에이전트가 가져온 가공되지 않은 1차 의견, 이른바 'raw 결과'를 곧바로 정답이라 믿으시면 안 됩니다. 이들은 아주 좁은 시야로 자기 분야만 평가했기 때문입니다. 이렇게 흩어진 전문적인 의견들을 모아서 전체 맥락을 살피고 최종 결정을 내리는 역할은 오직 메인 에이전트에게만 둡니다.</p><p>모든 것을 다 아는 만능 AI를 억지로 만드는 대신, 각자에게 선명한 돋보기 하나씩만 쥐여주는 이 구조가 조금 감이 오시나요? 그럼 다음 슬라이드로 넘어가서, 이 원리가 실제 리뷰어 에이전트 환경에서 어떻게 작동하는지 구체적으로 살펴보겠습니다.</p>",
+      "cues": {
+        "purpose": "역할, 컨텍스트, 도구 권한을 나눠야 하는 이유를 설명한다. 기준어: “Subagent는 작은 AI가 아니라 분리된 컨텍스트입니다”.",
+        "keywords": [
+          "Subagent",
+          "Subagent는",
+          "작은",
+          "AI가",
+          "아니라"
+        ],
+        "flow": [
+          "각 에이전트는 자기 목표만 봅니다.",
+          "메인 에이전트는 결과를 통합하고 결정합니다.",
+          "raw 결과를 그대로 믿지 않습니다."
+        ],
+        "example": "개발자, 리뷰어, 리서처를 한 사람에게 몰아주지 않고 역할을 나누는 상황으로 설명한다.",
+        "bridge": "다음은 “Reviewer agent는 기준 하나만 봅니다”입니다."
+      }
+    },
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "14-2-reviewer-subagent-example.html",
+    "parent": "14",
+    "kind": "example",
+    "reviewTitle": "Reviewer와 Researcher는 판단 축이 다릅니다",
+    "speaker": {
+      "heading": "Reviewer와 Researcher는 판단 축이 다릅니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>서브에이전트는 작은 AI를 하나 더 켜는 것이 아니라 관점을 분리하는 장치입니다. 대표적인 예가 Reviewer와 Researcher입니다.</p><p>Reviewer는 기준 하나를 들고 결함을 찾습니다. 코드 리뷰라면 장애 가능성, 회귀, 테스트 누락을 우선합니다. 한국어 리뷰라면 문장, 용어, 호흡만 봅니다.</p><p>Researcher는 사실을 수집하고 최종 결정을 하지 않습니다. 공식 문서, 실제 사례, 날짜, 출처를 모아 메인 에이전트가 판단할 재료를 넘깁니다.</p><p>이렇게 역할을 분리하면 한 에이전트가 모든 판단을 떠안지 않습니다. 다음 장에서는 여러 관점을 병렬로 돌릴 때 안전한 경우와 위험한 경우를 보겠습니다.</p>",
+      "cues": {
+        "purpose": "Reviewer와 Researcher 예시를 비교해 서브에이전트 역할 분리를 설명한다.",
+        "keywords": [
+          "Reviewer",
+          "Researcher",
+          "결함",
+          "출처",
+          "메인 에이전트"
+        ],
+        "flow": [
+          "서브에이전트는 관점 분리라고 설명한다",
+          "Reviewer와 Researcher의 책임 차이를 비교한다",
+          "병렬 에이전트로 연결한다"
+        ],
+        "example": "코드 리뷰는 결함을 찾고, 리서치는 공식 문서와 날짜를 수집한다고 구분한다.",
+        "bridge": "다음은 “요즘은 병렬 에이전트로 확장합니다”입니다."
+      }
+    },
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "15-agent-teams.html",
+    "parent": "15",
+    "kind": "main",
+    "reviewTitle": "요즘은 병렬 에이전트로 확장합니다",
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 8,
+    "speaker": {
+      "heading": "요즘은 병렬 에이전트로 확장합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>앞서 우리는 에이전트의 역할을 분리하는 방법을 살펴봤습니다.</p><p>그런데 현업에서 복잡한 코드를 다루다 보면 다들 이런 답답한 경험 한 번쯤 있으실 겁니다. AI 한 명에게 “기능도 구현하고, 보안도 점검하고, 테스트 코드도 같이 작성해 줘”라고 부탁해 본 적 있으신가요? 분명 알겠다고 대답은 그럴듯하게 하는데, 막상 결과를 보면 테스트를 빼먹거나 엉뚱한 로직을 꼬아놓습니다. 한 번에 너무 많은 판단을 하느라 집중력을 잃어버린 거죠.</p><p>그래서 요즘 워크플로우는 여기서 한 발 더 나아가 ‘병렬 에이전트’, 즉 Agent Teams 방식으로 확장하고 있습니다.</p><p>핵심은 하나입니다. 하나의 AI가 모든 짐을 지고 판단하게 두지 않는 겁니다. <br>마치 실제 개발팀이 일하는 방식과 같습니다. 한 에이전트가 열심히 기능을 구현하는 동안, 보안 전문 에이전트는 취약점이 없는지 날카롭게 째려보고, 성능 에이전트는 속도 저하를 분석하고, 테스트 에이전트는 빈틈없이 테스트 코드를 짭니다. 구현과 리뷰를 완벽하게 분리해서 동시에 돌리는 거죠.</p><p>하지만 여기서 정말 주의하셔야 할 점이 있습니다. <br>단순히 에이전트 개수를 늘려서 동시에 돌린다고 일이 빨리 끝날까요? 절대 아닙니다. 여러 에이전트가 똑같은 파일을 동시에 고치려고 달려들면 오히려 코드가 엉키고 거대한 충돌이 발생합니다.</p><p>그래서 이 병렬화의 진짜 철학은 속도를 높이는 데 있는 것이 아니라, ‘책임과 범위를 철저하게 분리하는 것’에 있습니다.</p><p>예를 들어 한 에이전트는 코드를 절대 수정하지 못하게 막아두고 ‘읽기 전용’으로 리뷰만 전담하게 합니다. 다른 에이전트는 ‘문서’만 수정하게 권한을 좁혀줍니다. <br>프로젝트 규모가 꽤 크다면 아예 ‘git worktree’ 같은 기능을 활용할 수도 있습니다. 파일들이 서로 섞여 충돌하지 않도록, 에이전트마다 물리적으로 격리된 독립적인 작업 공간을 하나씩 따로 차려 주는 겁니다.</p><p>물론 처음부터 이렇게 거창한 에이전트 팀을 꾸리실 필요는 없습니다. 처음엔 메인 에이전트 하나와 리뷰를 도와줄 서브 에이전트 하나만으로도 충분히 훌륭합니다. 하지만 점차 다뤄야 할 프로젝트가 커지고 챙겨야 할 검증 관점이 늘어난다면, 이 병렬 패턴은 여러분의 팀을 지켜주는 아주 든든한 실전 워크플로우가 될 겁니다.</p><p>그렇다면 이렇게 여러 에이전트를 동시에 돌릴 때, 구체적으로 어떤 작업은 안전하고 어떤 작업은 끔찍한 충돌을 일으킬까요? 다음 장에서 이 병렬화의 안전 지대와 위험 지대를 명확히 나눠보겠습니다.</p>",
+      "cues": {
+        "purpose": "역할, 컨텍스트, 도구 권한을 나눠야 하는 이유를 설명한다. 기준어: “요즘은 병렬 에이전트로 확장합니다”.",
+        "keywords": [
+          "요즘은",
+          "병렬",
+          "에이전트로",
+          "확장합니다",
+          "하나의"
+        ],
+        "flow": [
+          "기능 구현과 리뷰를 분리합니다.",
+          "security, performance, test 관점을 병렬화합니다.",
+          "worktree를 쓰면 충돌을 줄일 수 있습니다."
+        ],
+        "example": "개발자, 리뷰어, 리서처를 한 사람에게 몰아주지 않고 역할을 나누는 상황으로 설명한다.",
+        "bridge": "다음은 “병렬화는 안전한 경우와 위험한 경우를 나눕니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "15-1-parallel-safe.html",
+    "parent": "15",
+    "kind": "main",
+    "reviewTitle": "병렬화는 안전한 경우와 위험한 경우를 나눕니다",
+    "speaker": {
+      "heading": "병렬화는 안전한 경우와 위험한 경우를 나눕니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>AI 여러 개를 동시에 돌리면 무조건 작업이 빨리 끝날 거라고 기대하곤 합니다. 그런데 막상 시켜보면 나중에 코드가 이리저리 엉켜서, 그거 수습하느라 오히려 시간을 다 허비한 경험 한 번쯤 있으실 겁니다. 병렬화는 무작정 속도를 높여주는 마법이 아닙니다. 현장에 도입하려면 안전한 경우와 아주 위험한 경우를 명확하게 구분해야 합니다.</p><p>안전한 병렬화는 각자의 판단 공간이 완벽하게 분리되어 있을 때입니다. 종합병원의 전문의들처럼 한 명은 보안만, 한 명은 성능만, 한 명은 테스트만 독립적으로 리뷰하게 떼어놓는 겁니다. 서로 다른 파일을 읽기만 하거나, 바깥에서 외부 자료를 각자 조사해 오는 일도 서로 부딪힐 일이 없으니 아주 안전합니다.</p><p>반대로 끔찍한 결과를 낳는 위험한 경우가 있습니다. 바로 같은 결정을 여러 에이전트에게 동시에 맡길 때입니다. 건축 현장으로 치면 여러 명의 작업반장에게 같은 방의 인테리어를 각자 알아서 하라고 시키는 것과 같습니다. AI들이 똑같은 파일을 동시에 고치고, 데이터 모델을 제각각 정하고, UI 패턴을 따로따로 만들어오면 어떻게 될까요? 나중에 이 파편들을 하나로 맞추는 통합 비용이 그야말로 폭발하게 됩니다.</p><p>그래서 병렬화의 원칙은 아주 간단합니다. 작업의 분산은 넓게 하되, 최종 결정권은 반드시 한 곳에 두어야 합니다. 메인 에이전트라는 단 하나의 책임자가 명확한 통합 기준을 들고 있어야만 전체 에이전트 팀이 충돌 없이 하나의 결과물로 모일 수 있습니다.</p><p>그렇다면 이렇게 역할을 나누고 여러 에이전트를 조율할 때, 이 AI들이 우리 회사의 실제 깃허브나 데이터베이스 같은 외부 시스템과는 도대체 어떤 원리로 연결되어 공구를 쥐게 되는 걸까요?</p>",
+      "cues": {
+        "purpose": "역할, 컨텍스트, 도구 권한을 나눠야 하는 이유를 설명한다. 기준어: “병렬화는 안전한 경우와 위험한 경우를 나눕니다”.",
+        "keywords": [
+          "병렬화는",
+          "안전한",
+          "경우와",
+          "위험한",
+          "경우를"
+        ],
+        "flow": [
+          "Safe: 관점이 분리된 리뷰",
+          "Safe: 서로 다른 파일 읽기와 외부 조사",
+          "Risky: 같은 파일 수정, 중복 결정, 통합 기준 부재"
+        ],
+        "example": "개발자, 리뷰어, 리서처를 한 사람에게 몰아주지 않고 역할을 나누는 상황으로 설명한다.",
+        "bridge": "다음은 “MCP는 실제 세계와 연결하는 도구 레이어입니다”입니다."
+      }
+    },
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 5,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "18-mcp.html",
+    "parent": "18",
+    "kind": "main",
+    "reviewTitle": "MCP는 외부 시스템과 연결하는 도구 레이어입니다",
+    "speaker": {
+      "heading": "MCP는 외부 시스템과 연결하는 도구 레이어입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>스킬이 도구 사용법을 가르친다면, MCP는 실제 도구와 시스템을 연결합니다. GitHub, 데이터베이스, 브라우저, Slack 같은 외부 세계와 이어지는 다리입니다.</p><p>구조는 단순하게 보면 Host, Server, Tool입니다. Claude나 Codex 같은 실행 환경이 Host이고, MCP 서버가 tools, resources, prompts를 노출합니다. Tool은 실제 작업을 수행하는 호출입니다.</p><p>중요한 것은 MCP가 만능 지능이 아니라 연결 장치라는 점입니다. 어떤 시스템에 접근할 수 있는지, 어떤 권한을 줄지, 어떤 도구 설명을 모델에게 보여줄지 설계해야 합니다.</p><p>다음 장에서는 도구를 많이 붙이는 것보다 권한과 선택지를 좁히는 것이 왜 중요한지 보겠습니다.</p>",
+      "cues": {
+        "purpose": "MCP의 외부 시스템 연결 역할과 Host/Server/Tool 구조를 한 장에서 설명한다.",
+        "keywords": [
+          "MCP",
+          "Host",
+          "Server",
+          "Tool",
+          "외부 시스템"
+        ],
+        "flow": [
+          "MCP를 외부 시스템 연결 장치로 정의한다",
+          "Host/Server/Tool 구조를 설명한다",
+          "도구 권한과 과다 문제로 넘긴다"
+        ],
+        "example": "GitHub 이슈 읽기와 PR merge는 같은 GitHub 연결이어도 권한 위험이 다르다고 예고한다.",
+        "bridge": "다음은 “도구는 읽기 권한과 쓰기 권한을 분리합니다”입니다."
+      }
+    },
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 6,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Model Context Protocol Server Features",
+        "links": [
+          {
+            "label": "Tools",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+          },
+          {
+            "label": "Resources",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+          },
+          {
+            "label": "Prompts",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+          }
+        ]
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "18-2-tool-permissions.html",
+    "parent": "18",
+    "kind": "main",
+    "reviewTitle": "도구는 권한과 개수를 좁혀야 합니다",
+    "speaker": {
+      "heading": "도구는 권한과 개수를 좁혀야 합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>도구는 많이 붙일수록 항상 좋은 것이 아닙니다. 읽기 권한과 쓰기 권한은 위험도가 다르고, 도구 설명 자체도 컨텍스트를 차지합니다.</p><p>read-only 도구는 조사에 적합합니다. 하지만 쓰기 가능한 도구, 예를 들어 merge, delete, deploy 같은 작업은 승인과 검증이 필요합니다.</p><p>비슷한 도구가 너무 많으면 모델이 어떤 도구를 써야 할지 흔들립니다. 업무별 최소 도구 세트를 좁게 연결하는 편이 더 안정적입니다.</p><p>이제 역할과 도구를 실제 업무 하나에 어떻게 나눠 배치할지 실습으로 넘어가겠습니다.</p>",
+      "cues": {
+        "purpose": "도구 권한 분리와 tool bloat 위험을 한 장에서 설명한다.",
+        "keywords": [
+          "read-only",
+          "write-capable",
+          "승인",
+          "tool bloat",
+          "최소 도구"
+        ],
+        "flow": [
+          "도구 권한 위험을 설명한다",
+          "도구 과다가 컨텍스트와 선택 비용을 만든다고 설명한다",
+          "역할/도구 분리 실습으로 연결한다"
+        ],
+        "example": "GitHub 이슈 조회는 read-only, merge는 write-capable이라 다른 검증이 필요하다고 말한다.",
+        "bridge": "다음은 “역할과 도구를 한 장으로 분리합니다”입니다."
+      }
+    },
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 7,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "18-4-practice-agent-tool-split.html",
+    "parent": "18",
+    "kind": "checkpoint",
+    "reviewTitle": "역할과 도구를 한 장으로 분리합니다",
+    "speaker": {
+      "heading": "역할과 도구를 한 장으로 분리합니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>지금까지 우리는 에이전트의 역할을 나누고 도구를 연결하는 방법을 살펴봤습니다. 이번 실습은 앞서 배운 개념들을 실제 여러분의 업무에 어떻게 분해해서 적용할지 연결해 보는 체크포인트입니다.</p><p>우리가 AI를 실무에 도입할 때 흔히 하는 실수가 있습니다. 바로 똑똑한 AI 하나에게 모든 일을 통째로 맡겨버리는 습관입니다. 하지만 복잡한 업무일수록 이렇게 하면 판단이 섞이고 실수가 발생합니다. 그래서 이 습관을 끊어내고, 하나의 자동화 업무를 마치 전문화된 분업 팀처럼 네 가지 역할로 쪼개는 연습을 해보겠습니다.</p><p>먼저 전체적인 방향을 결정하고 결과를 통합하는 '작업반장'인 메인(Main) 에이전트를 둡니다. 그리고 메인의 대화에 섞이지 않고 자신만의 좁은 시야로 격리된 검토만 수행하는 전문가, 서브에이전트(Subagent)를 배치합니다. 여기에 깃허브나 데이터베이스 같은 외부 시스템과 직접 연결해서 필요한 작업을 수행하는 실제 공구, 엠씨피 툴(MCP Tool)을 쥐여줍니다. 마지막으로 이 기계적인 과정이 끝난 뒤, 실제 비즈니스에 반영해도 좋을지 최종적으로 승인하고 책임지는 사람의 검토(Human Review)를 관문으로 둡니다.</p><p>여러분이 평소에 하시는 코드 PR 리뷰, 발표용 슬라이드 생성, 혹은 방대한 리서치 정리 같은 업무를 하나 떠올려 보시기 바랍니다. 그리고 그 업무를 방금 말씀드린 네 가지 구조로 어떻게 나눌 수 있을지 한 장의 화면 위에 직접 분리해 보겠습니다. 이 밑그림이 완성되면, 다음 단계에서는 이렇게 나눈 역할들이 언제, 어떤 신호를 통해 실제로 실행되는지 알아보겠습니다.</p>",
+      "cues": {
+        "purpose": "역할, 컨텍스트, 도구 권한을 나눠야 하는 이유를 설명한다. 기준어: “역할과 도구를 한 장으로 분리합니다”.",
+        "keywords": [
+          "Subagent",
+          "서브에이전트",
+          "MCP",
+          "장으로",
+          "분리합니다"
+        ],
+        "flow": [
+          "화면 제목 “역할과 도구를 한 장으로 분리합니다”로 문제를 잡는다",
+          "하나의 자동화 업무를 Main, 서브에이전트(Subagent), MCP Tool, Human Review로 나눕니다.",
+          "사람처럼 역할과 권한을 나눠야 한다고 정리한다"
+        ],
+        "example": "필요한 장비만 연결하고 읽기/쓰기 권한을 나눠주는 공장 장비에 비유한다.",
+        "bridge": "다음은 “Hook은 지시가 아니라 실행입니다”입니다."
+      }
+    },
+    "sectionId": "06",
+    "sectionTitle": "Agents / Tools",
+    "sectionStart": false,
+    "sectionIndex": 8,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Model Context Protocol Server Features",
+        "links": [
+          {
+            "label": "Tools",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/tools"
+          },
+          {
+            "label": "Resources",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/resources"
+          },
+          {
+            "label": "Prompts",
+            "url": "https://modelcontextprotocol.io/specification/draft/server/prompts"
+          }
+        ]
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "16-hooks.html",
+    "parent": "16",
+    "kind": "main",
+    "reviewTitle": "훅은 지시가 아니라 실행 파이프라인입니다",
+    "speaker": {
+      "heading": "훅은 지시가 아니라 실행 파이프라인입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>훅은 “테스트도 해줘”라고 부탁하는 지시가 아닙니다. 특정 이벤트가 오면 실제 명령을 실행하는 파이프라인입니다.</p><p>세 조각으로 보면 쉽습니다. 언제 시작할지 Event를 고릅니다. 파일 수정 뒤인지, 세션 종료 직전인지, 시작할 때인지 정합니다. 다음은 Command입니다. matcher로 범위를 좁히고, 실제 lint나 test 명령을 연결합니다.</p><p>마지막은 Result입니다. pass는 완료 보고의 증거가 되고, fail은 에이전트의 다음 수정 행동으로 돌아가야 합니다.</p><p>이 차이 때문에 스킬과 훅은 다릅니다. 스킬은 어떻게 일할지 알려주는 지침이고, 훅은 특정 순간에 실제로 실행되는 검문소입니다. 다음 장에서는 훅을 어떤 단계로 키워갈지 보겠습니다.</p>",
+      "cues": {
+        "purpose": "훅의 개념과 Event/Command/Result 파이프라인을 한 장에서 설명한다.",
+        "keywords": [
+          "훅",
+          "Event",
+          "Command",
+          "Result",
+          "pass/fail"
+        ],
+        "flow": [
+          "훅은 지시가 아니라 실행이라고 정의한다",
+          "Event/Command/Result 파이프라인을 설명한다",
+          "단계적 확장으로 연결한다"
+        ],
+        "example": "Edit 뒤에 pnpm test를 실행하고 실패하면 수정으로 되돌리는 상황을 예로 든다.",
+        "bridge": "다음은 “훅도 단계가 있습니다”입니다."
+      }
+    },
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "16-4-skill-vs-hook.html",
+    "parent": "16",
+    "kind": "example",
+    "reviewTitle": "스킬은 지침이고 Hook은 실행입니다",
+    "speaker": {
+      "heading": "스킬은 지침이고 Hook은 실행입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>우리가 앞서 배운 스킬과 지금 다루고 있는 Hook, 이 두 가지가 어떻게 다른지 궁금하실 겁니다. 둘 다 AI가 제대로 일하게 만드는 장치니까요. 하지만 이 둘은 실패를 막아내는 '강도'가 완전히 다릅니다.</p><p>스킬은 쉽게 말해 '작업 매뉴얼'입니다. AI에게 &quot;이런 업무를 할 때는 이렇게 일해라&quot;라고 절차를 알려주는 훌륭한 지침서죠. 하지만 아무리 매뉴얼을 꼼꼼하게 잘 써놔도, AI가 판단을 잘못하거나 급하게 추론하다 보면 그 절차를 건너뛸 위험이 늘 존재합니다.</p><p>반면에 Hook은 읽고 끝나는 매뉴얼이 아닙니다. 길목을 지키는 '검문소'입니다. AI가 파일을 수정하거나 작업을 끝내려고 하는 특정 순간에, AI의 의지와 상관없이 우리가 설정한 실제 명령이 시스템적으로 강제 실행되는 겁니다.</p><p>정리하자면, AI가 어떻게 일해야 할지 똑똑하게 알려주는 것은 스킬의 역할입니다. 하지만 &quot;이 코드가 진짜 테스트를 통과했는가?&quot;처럼 절대로 빼먹으면 안 되는 반드시 필요한 검증은 Hook에 맡겨야 합니다. 지침을 읽어주는 것과, 길목을 막고 강제로 검사하는 것의 차이입니다.</p><p>그렇다면 이 강력한 Hook은 어떻게 설치해야 할까요? 무턱대고 처음부터 모든 길목을 막아버리면 작업 흐름이 꽉 막혀버리겠죠. 그래서 다음 장에서는 이 검문소를 어떻게 단계적으로 세워야 무리가 없는지, 그 구체적인 방법을 알아보겠습니다.</p>",
+      "cues": {
+        "purpose": "완료 보고를 믿는 대신 실행과 검증으로 통과시키는 구조를 설명한다. 기준어: “스킬은 지침이고 Hook은 실행입니다”.",
+        "keywords": [
+          "스킬",
+          "Hook",
+          "검증",
+          "스킬은",
+          "지침이고"
+        ],
+        "flow": [
+          "스킬: 어떻게 일할지 알려 줍니다.",
+          "Hook: 특정 순간에 실제 명령을 실행합니다.",
+          "반드시 필요한 검증은 Hook에 가깝습니다."
+        ],
+        "example": "작업자가 두꺼운 교과서가 아니라 얇은 체크리스트를 보고 움직이는 장면으로 설명한다.",
+        "bridge": "다음은 “Hook도 단계가 있습니다”입니다."
+      }
+    },
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "17-hook-advanced.html",
+    "parent": "17",
+    "kind": "main",
+    "reviewTitle": "훅은 echo에서 test까지 단계적으로 키웁니다",
+    "speaker": {
+      "heading": "훅은 echo에서 test까지 단계적으로 키웁니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>훅은 처음부터 무겁게 붙이면 작업 흐름을 막을 수 있습니다. 그래서 단계적으로 키우는 편이 안전합니다.</p><p>첫 단계는 echo입니다. 이벤트가 원하는 순간에 잡히는지 확인합니다. 다음은 formatter나 lint처럼 빠른 검증입니다. 그다음 변경 범위에 맞는 집중 test를 붙입니다.</p><p>마지막 단계는 Stop gate나 별도 리뷰입니다. 완료 직전에 반드시 확인해야 하는 검증을 붙이고, 복잡한 판단은 서브에이전트나 리뷰어로 분리할 수 있습니다.</p><p>이제 실행 검문소를 봤으니, 완료의 기준을 어떻게 증거로 남길지 평가로 넘어가겠습니다.</p>",
+      "cues": {
+        "purpose": "훅을 echo에서 test와 gate까지 단계적으로 키우는 운영 방식을 설명한다.",
+        "keywords": [
+          "echo",
+          "lint",
+          "test",
+          "Stop gate"
+        ],
+        "flow": [
+          "훅을 작게 시작해야 한다고 설명한다",
+          "echo/lint/test/gate 단계를 설명한다",
+          "Evaluation으로 연결한다"
+        ],
+        "example": "처음에는 echo로 이벤트를 확인한 뒤 lint, test, Stop gate로 올리는 순서를 든다.",
+        "bridge": "다음은 “완료의 기준은 검증입니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ],
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 8
+  },
+  {
+    "file": "19-evaluation.html",
+    "parent": "19",
+    "kind": "main",
+    "reviewTitle": "완료의 기준은 검증 증거입니다",
+    "speaker": {
+      "heading": "완료의 기준은 검증 증거입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>완료 보고는 증거가 아닙니다. 완료의 기준은 검증입니다.</p><p>기계가 확인할 수 있는 것은 기계에게 맡깁니다. test, lint, typecheck, build가 기본 증거입니다. 하지만 모든 품질이 기계 검증으로 끝나지는 않습니다.</p><p>판단이 필요한 품질은 reviewer나 LLM-as-judge를 쓰되, 반드시 rubric이 있어야 합니다. 마지막으로 비즈니스 의도, UX 자연스러움, 운영 위험은 사람이 최종 결정해야 합니다.</p><p>다음 장에서는 이 판단 검증이 흔들리지 않게 만드는 rubric 기준을 보겠습니다.</p>",
+      "cues": {
+        "purpose": "완료 기준을 검증 증거로 바꾸고 machine/judge/human 검증을 한 장에서 설명한다.",
+        "keywords": [
+          "검증",
+          "Machine",
+          "Judge",
+          "Human",
+          "증거"
+        ],
+        "flow": [
+          "완료 보고와 검증 증거를 구분한다",
+          "기계/판단/사람 검증을 설명한다",
+          "rubric으로 연결한다"
+        ],
+        "example": "테스트는 통과했지만 UX와 운영 위험은 사람이 승인해야 하는 상황을 든다.",
+        "bridge": "다음은 “판단이 필요한 품질은 rubric으로 봅니다”입니다."
+      }
+    },
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "19-2-judge-checks.html",
+    "parent": "19",
+    "kind": "main",
+    "reviewTitle": "판단 검증은 rubric 없이는 흔들립니다",
+    "speaker": {
+      "heading": "판단 검증은 rubric 없이는 흔들립니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>판단이 필요한 품질은 그냥 “좋아 보여?”라고 물으면 흔들립니다. 리뷰어든 LLM-as-judge든 사람 검토든 같은 기준표를 봐야 합니다.</p><p>기준표에는 요구사항 충족 여부, 사용자 영향, 운영 위험, 리스크와 누락이 들어갑니다. 그리고 근거 없는 칭찬을 금지해야 합니다.</p><p>사람 검토도 감상평이 아니라 최종 의사결정 지점입니다. 기계 검증이 통과해도 요구사항 해석과 운영 위험은 사람이 승인해야 합니다.</p><p>이제 검증이 한 번으로 끝나지 않고, 실패를 다시 작업으로 돌리는 Loop 구조로 넘어가겠습니다.</p>",
+      "cues": {
+        "purpose": "판단 검증과 사람 검토가 같은 rubric을 봐야 한다는 점을 설명한다.",
+        "keywords": [
+          "rubric",
+          "요구사항",
+          "사용자 영향",
+          "운영 위험",
+          "근거"
+        ],
+        "flow": [
+          "판단 검증의 흔들림을 설명한다",
+          "rubric 기준을 제시한다",
+          "Loop 운영으로 연결한다"
+        ],
+        "example": "테스트는 통과했지만 요구사항 의도와 UX가 맞는지 사람 승인이 필요한 상황을 든다.",
+        "bridge": "다음은 “실전 자동화는 한 번 실행에서 끝나지 않습니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ],
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 5,
+    "sectionTotal": 8
+  },
+  {
+    "file": "20-loop-schedule.html",
+    "parent": "20",
+    "kind": "workflow",
+    "reviewTitle": "실전 자동화는 한 번 실행에서 끝나지 않습니다",
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 6,
+    "sectionTotal": 8,
+    "speaker": {
+      "heading": "실전 자동화는 한 번 실행에서 끝나지 않습니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>지금까지 우리는 AI에게 '한 번' 일을 잘 시키는 방법을 이야기했습니다. 그런데 실제 현장에서 일해보면 어떤가요? 코드를 한 번 고치고 끝나는 일보다, 누군가 올린 PR 상태를 계속 지켜보거나, 깨진 CI 로그를 분석하고, 매일 문서를 업데이트하는 등 '계속 들여다보고 반복해야 하는' 일들이 훨씬 많습니다.</p><p>단순히 질문에 대답 한 번 잘해주는 것만으로는 진짜 실무 자동화라고 부르기 어렵죠. 그래서 실전에서는 자동화의 리듬을 화면에 보이는 세 가지, 즉 Hook, Loop, Schedule로 나누어 설계합니다.</p><p>첫 번째로 앞서 살펴본 Hook은 '검문소' 같은 역할입니다. 파일이 수정되거나 작업 세션이 끝날 때처럼, 특정한 사건이 발생했을 때 즉각 반응해서 실행됩니다.</p><p>두 번째인 Loop는 '합격할 때까지 물고 늘어지는 작업 반장'에 가깝습니다. 단순히 한 번 실행하고 마는 게 아니라, 실패한 테스트 결과가 나오면 다시 원인을 분석하고 코드를 수정한 뒤 재검증하는 과정을 조건이 맞을 때까지 반복하는 구조입니다.</p><p>마지막 Schedule은 '성실한 순찰대원'입니다. 매일 아침 9시, 혹은 30분마다 정해진 시간에 맞춰 프로젝트의 변경점을 점검하고 품질 보고서를 만들어 올리는 시간 기반의 운영 작업이죠.</p><p>이렇게 설계하면 AI 에이전트는 더 이상 단순한 코딩 도구에 머물지 않습니다. 여러분의 조직에서 품질을 감시하고 문서를 유지 보수하는 든든한 운영 보조자로 확장됩니다.</p><p>하지만 여기서 꼭 기억하셔야 할 철학이 하나 있습니다. 처음부터 공장 전체를 무리하게 자동화하려고 하면 반드시 사고가 납니다. 처음에는 한 번 실행되는 아주 작은 워크플로우부터 만들고, 그 검증 기준이 단단해졌을 때 비로소 Schedule이나 Loop를 달아 무인화로 넘겨야 합니다.</p><p>그렇다면 이 중에서 '조건이 맞을 때까지 물고 늘어지는' Loop 구조는 과연 어떤 절차로 돌아갈까요? 다음 장에서 이 반복 운영의 실제 흐름을 자세히 들여다보겠습니다.</p>",
+      "cues": {
+        "purpose": "완료 보고를 믿는 대신 실행과 검증으로 통과시키는 구조를 설명한다. 기준어: “실전 자동화는 한 번 실행에서 끝나지 않습니다”.",
+        "keywords": [
+          "Hook",
+          "Loop",
+          "실전",
+          "자동화는",
+          "실행에서"
+        ],
+        "flow": [
+          "Hook: 이벤트 기반 자동화",
+          "Loop: 조건이 맞을 때까지 반복",
+          "Schedule: 시간 기반 운영 작업"
+        ],
+        "example": "작업장 출구의 자동 검문소처럼 통과 조건을 만족해야 밖으로 나가게 한다고 설명한다.",
+        "bridge": "다음은 “Loop는 통과할 때까지 반복하는 운영 구조입니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      }
+    ]
+  },
+  {
+    "file": "20-1-loop-until-pass.html",
+    "parent": "20",
+    "kind": "workflow",
+    "reviewTitle": "Loop는 통과할 때까지 반복하는 운영 구조입니다",
+    "speaker": {
+      "heading": "Loop는 통과할 때까지 반복하는 운영 구조입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>보통 AI에게 일을 시키면, 결과물을 한 번 내놓고 작업이 끝납니다. 만약 그 결과에 버그가 있거나 지시한 내용이 빠져 있다면 어떨까요? 아마 여러분이 한숨을 쉬며 직접 코드를 고치거나, &quot;아까 그렇게 말 안 했잖아&quot;라며 프롬프트를 다시 써야 할 겁니다. 정말 답답하고 피곤한 일이죠.</p><p>그래서 우리의 AI 작업장에는 'Loop'라는 운영 구조가 필요합니다.</p><p>이것은 한 번 실행하고 끝내는 구조가 아닙니다. 목표를 완벽하게 통과할 때까지 반복하는 시스템입니다. 공장의 품질 검사 라인에서 불량품이 나오면 고객에게 보내는 대신 수리 부서로 다시 돌려보내는 것과 같은 원리입니다.</p><p>작업의 흐름을 보겠습니다. 먼저 AI가 주어진 작업을 실행하는 Run 단계가 있습니다. 그다음 결과물이 제대로 나왔는지 검증하는 Check 단계가 이어집니다. 앞서 우리가 배운 명확한 평가와 검증 기준이 여기서 작동합니다.</p><p>만약 검증에서 불합격 판정을 받으면 어떻게 될까요? 작업이 멈추는 게 아닙니다. AI는 실패했다는 피드백과 그 원인을 스스로 받아 들고, 다시 실패를 수정하는 Repair 단계로 들어갑니다. 이 과정을 계속 반복하다가, 마침내 모든 검증을 완벽하게 통과했을 때만 증거를 꼼꼼히 담아 Report, 즉 최종 완료 보고를 올리게 됩니다.</p><p>핵심은 한 번의 요청과 답변으로 끝내던 단발성 대화에서 벗어나는 것입니다. 실패를 작업의 일부로 품고 스스로 고치게 만들면, 우리는 AI의 결과물을 훨씬 더 신뢰할 수 있습니다.</p><p>그렇다면 이 구조가 제대로 돌아가기 위한 핵심, 즉 AI가 반드시 통과해야 하는 '검증의 문'은 어떻게 만들어야 할까요? 다음 장으로 넘어가 완료 조건을 단단한 검증 게이트로 바꾸는 방법을 살펴보겠습니다.</p>",
+      "cues": {
+        "purpose": "완료 보고를 믿는 대신 실행과 검증으로 통과시키는 구조를 설명한다. 기준어: “Loop는 통과할 때까지 반복하는 운영 구조입니다”.",
+        "keywords": [
+          "검증",
+          "Loop",
+          "Loop는",
+          "통과할",
+          "때까지"
+        ],
+        "flow": [
+          "run: 작업 실행",
+          "check: 검증",
+          "repair: 실패 수정"
+        ],
+        "example": "작업장 출구의 자동 검문소처럼 통과 조건을 만족해야 밖으로 나가게 한다고 설명한다.",
+        "bridge": "다음은 “완료 조건을 검증 게이트로 바꿉니다”입니다."
+      }
+    },
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 7,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "20-2-practice-verification-gate.html",
+    "parent": "20",
+    "kind": "checkpoint",
+    "reviewTitle": "완료 조건을 검증 게이트로 바꿉니다",
+    "speaker": {
+      "heading": "완료 조건을 검증 게이트로 바꿉니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>여러분, AI에게 작업을 맡길 때 보통 어떻게 마무리하시나요? 아마 많은 분들이 대화창 마지막에 “다 했으면 테스트해줘”라고 가볍게 부탁하실 겁니다. 그런데 막상 결과를 보면 어떨까요? AI는 “테스트 완료했습니다!”라고 당당하게 말하지만, 실제로 열어보면 중요한 링크가 깨져 있거나 엉뚱한 화면이 나오는 답답한 경험, 다들 한 번쯤 있으실 겁니다.</p><p>그래서 이제는 단순히 말로 “테스트해줘”라고 부탁하는 것을 멈춰야 합니다. 대신, 작업장 출구에 단단한 ‘검증 게이트’, 즉 검문소를 세워야 합니다. AI가 알아서 잘 확인해주길 기대하는 것이 아니라 언제, 무엇을, 어떤 기준으로 통과시킬지 시스템적으로 고정하는 겁니다. 검증은 ‘하면 좋은 권장사항’이 아니라, 통과하지 못하면 밖으로 나갈 수 없는 ‘워크플로우의 닫힌 문’이 되어야 합니다.</p><p>우리가 지금까지 만든 슬라이드 덱 작업장을 예로 들어볼까요? 이 작업장 출구에는 단순한 일반 테스트 대신 `node scripts/verify-deck.js`라는 전용 검증 스크립트를 게이트로 세워둡니다. 이 스크립트가 까다로운 문지기 역할을 하는 거죠. 화면 안의 링크는 제대로 동작하는지, 새로 만든 슬라이드가 시스템에 누락 없이 잘 등록되었는지, 발표자만 봐야 할 노트가 엉뚱하게 관객 화면에 노출되지는 않았는지 기계의 눈으로 깐깐하게 확인합니다.</p><p>이 게이트를 무사히 통과해야만 비로소 작업이 진짜로 ‘완료’되었다고 인정하는 겁니다. 자, 여기까지 오셨다면 여러분의 작업장에는 AI를 움직이는 지시와 프로젝트 지침, 절차, 그리고 단단한 출구 검문소까지 모두 세워졌습니다. 이제 다음 장으로 넘어가서, 이 모든 조각들이 하나의 실전 워크플로우로 어떻게 맞물려 돌아가는지 그 최종 완성본을 함께 확인해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "완료 보고를 믿는 대신 실행과 검증으로 통과시키는 구조를 설명한다. 기준어: “완료 조건을 검증 게이트로 바꿉니다”.",
+        "keywords": [
+          "검증",
+          "완료",
+          "조건을",
+          "게이트로",
+          "바꿉니다"
+        ],
+        "flow": [
+          "화면 제목 “완료 조건을 검증 게이트로 바꿉니다”로 문제를 잡는다",
+          "“테스트해줘”가 아니라 언제, 무엇을, 어떤 기준으로 통과시킬지 정합니다.",
+          "말이 아니라 실행 증거로 끝내야 한다고 정리한다"
+        ],
+        "example": "테스트를 돌렸다는 말보다 실제 실행 로그 한 줄이 더 강한 증거라고 말한다.",
+        "bridge": "다음은 “Deck Harness v1”입니다."
+      }
+    },
+    "sectionId": "07",
+    "sectionTitle": "Hooks / Verification",
+    "sectionStart": false,
+    "sectionIndex": 8,
+    "sectionTotal": 8,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "21-final-workflow.html",
+    "parent": "21",
+    "kind": "workflow",
+    "reviewTitle": "Deck Harness v1",
+    "speaker": {
+      "heading": "Deck Harness v1",
+      "html": "<strong>상세 발표 스크립트</strong><p>자, 이제 오늘 강의의 마지막 여정입니다. 지금까지 우리는 프롬프트, 프로젝트 지침, 스킬, 그리고 에이전트 같은 개별 부품들을 하나씩 살펴봤죠. 이제 이 부품들을 전부 조립해서, 실제로 돌아가는 '작은 작업장'을 하나 오픈할 시간입니다.</p><p>우리가 AI를 쓸 때 흔히 하는 실수가 있습니다. &quot;이번 발표 자료 하나만 기막히게 뽑아보자&quot; 하고 대화를 끝내버리는 겁니다. 그런데 다음 주에 다른 주제로 발표 자료를 만들어야 하면 어떻게 될까요? 결국 처음부터 다시 AI와 핑퐁을 치며 씨름해야 합니다.</p><p>그래서 오늘 여러분이 최종적으로 가져가실 결과물은 '완성된 슬라이드 파일 하나'가 아닙니다. 내일도, 모레도 똑같이 훌륭한 결과물을 안정적으로 찍어낼 수 있는 '반복 가능한 작업 환경' 그 자체입니다.</p><p>초기 기획서인 소스(source)부터 시작해 볼까요? 여기서 작업 계약서 역할을 하는 스펙(spec)을 씁니다. 그리고 결과물의 품질 기준을 보여주는 예시인 퓨샷(few-shot)을 거쳐 슬라이드를 만들죠. 여기서 끝이 아닙니다. 만들어진 슬라이드를 리뷰하고, 조건에 맞는지 검증(verification)한 뒤, 마지막으로 다음 세션을 위해 현재 상태를 기록해 두는 인계 문서, 즉 핸드오프(handoff)까지 남깁니다.</p><p>마치 공장의 컨베이어 벨트처럼, AI가 우리가 설계한 이 단단한 레일 위를 이탈하지 않고 순서대로 통과하도록 만드는 겁니다.</p><p>그렇다면 이 작은 작업장이 실제 폴더 안에서는 어떤 모습으로 구성되어 있을까요? 다음 화면에서 그 구체적인 파일 구조를 직접 열어보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “Deck Harness v1”.",
+        "keywords": [
+          "Deck",
+          "Harness",
+          "v1",
+          "자료를",
+          "source"
+        ],
+        "flow": [
+          "새 섹션의 질문을 먼저 던진다",
+          "자료를 source brief부터 handoff까지 반복 가능한 발표자료 제작 흐름으로 통과시킵니다.",
+          "수강생이 자기 업무에 바로 옮길 행동으로 연결한다"
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "다음은 “최종 산출물은 lecture-deck/입니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": true,
+    "sectionIndex": 1,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
+  },
+  {
+    "file": "21-1-final-artifact-structure.html",
+    "parent": "21",
+    "kind": "main",
+    "reviewTitle": "최종 산출물은 lecture-deck/입니다",
+    "speaker": {
+      "heading": "최종 산출물은 lecture-deck/입니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>이제 우리가 배운 모든 개념을 하나의 최종 산출물로 합쳐볼 시간입니다. 우리가 오늘 가져갈 결과물은 단순히 완성된 발표 슬라이드 파일 하나가 아닙니다.</p><p>`lecture-deck/`이라는, AI가 언제든 들어와서 반복적으로 똑같이 일할 수 있는 '작은 작업장'을 통째로 하나 차려주는 겁니다.</p><p>파일 목록을 그저 모아둔 것이 아닙니다. 이 폴더 구조 자체가 곧 우리가 AI와 일하는 '운영 방식' 그 자체입니다. 구조를 한번 살펴볼까요?</p><p>작업장에 들어오면 가장 먼저 항상 적용되는 프로젝트 지침인 `CLAUDE.md`가 있고, 입력과 출력의 기준을 잡아주는 source와 spec 파일이 있습니다. 그 다음, AI가 어떤 절차로 어떤 역할을 맡아 일할지 매뉴얼을 쥐여주는 skills와 agents 폴더가 있죠. 작업이 끝나면 발표용 덱과 검토용 문서가 분리되어 나오고, 마지막으로 이게 정말 잘 만들어졌는지 검증한 뒤 다음 작업자에게 넘겨주는 scripts와 handoff까지 이어집니다.</p><p>AI가 지나가야 할 완벽한 레일이 깔려 있는 겁니다.</p><p>여기서 실무 적용을 위해 꼭 구분하셔야 할 중요한 경계선이 하나 있습니다. 오늘 워크숍에서는 여러분이 전체 구조를 한눈에 파악하실 수 있도록, 이 작업장 폴더 안에 샘플 스킬들을 함께 모아두었습니다. 하지만 나중에 현업에 가셔서 실제 Claude Code 환경에 이 스킬들을 설치하실 때는, 반드시 `.claude/skills/`라는 공식 시스템 경로로 옮겨 주셔야 제대로 작동합니다.</p><p>단순히 예쁘게 정리하려고 폴더를 나누는 게 아닙니다. 이 탄탄한 구조가 뼈대처럼 버티고 있어야만, AI는 매번 우리가 원하는 똑같은 절차를 밟고 엄격한 검증을 통과해 안정적인 결과물을 만들어낼 수 있습니다.</p><p>자, 그렇다면 이렇게 잘 짜여진 구조 속에서, 결과물의 디테일한 모양새를 결정짓는 핵심 역할인 'Few-shot 예시'는 과연 파일의 어느 위치에 두는 게 가장 효과적일까요? 다음 장에서 그 정확한 배치를 확인해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “최종 산출물은 lecture-deck/입니다”.",
+        "keywords": [
+          "스킬",
+          "검증",
+          "산출물은",
+          "lecture-deck",
+          "워크숍"
+        ],
+        "flow": [
+          "source/spec/few-shot: 입력과 출력 형식",
+          "skills/agents: 워크숍용 절차와 역할 샘플",
+          "deck/review: 발표용과 검토용 분리"
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "다음은 “Few-shot은 명세 바로 뒤에 둡니다”입니다."
+      }
+    },
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ],
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 2,
+    "sectionTotal": 9
+  },
+  {
     "file": "21-10-practice-few-shot-placement.html",
     "parent": "21",
     "kind": "checkpoint",
-    "reviewTitle": "통합 실습: Few-shot 배치",
+    "reviewTitle": "Few-shot은 명세 바로 뒤에 둡니다",
     "speaker": {
-      "heading": "통합 실습: Few-shot 배치",
-      "html": "<strong>상세 발표 스크립트</strong><p>Final 섹션에서는 번호 대신 통합 실습으로 부릅니다. spec 바로 다음에 few-shot이 있어야 Claude가 무엇을 만들지뿐 아니라 어떤 모양으로 답해야 하는지도 같이 고정됩니다.</p><p>좋은 slide spec, 나쁜 slide spec, 좋은 발표자 script, 좋은 최종 보고를 넣으면 결과물의 깊이와 형식이 안정됩니다.</p>"
-    }
+      "heading": "Few-shot은 명세 바로 뒤에 둡니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>앞서 최종 산출물의 전체 작업장 구조를 보셨죠? 그럼 여기서 아주 실무적인 질문을 하나 던져보겠습니다. 우리가 AI에게 주는 '예시', 즉 퓨샷(Few-shot) 데이터는 도대체 작업 흐름 중 어디에 배치해야 할까요?</p><p>보통 우리는 AI에게 지시사항을 잔뜩 적은 다음, 맨 마지막에 &quot;참고로 예시는 이거야&quot; 하고 덧붙이는 실수를 자주 합니다. 다들 한 번쯤 경험해 보셨을 겁니다. 그런데 이렇게 예시를 맨 뒤에 툭 던져버리면, AI에게 이 예시는 그저 가볍게 참고만 하는 '장식품'이 되어버립니다. 당연히 우리가 기대했던 출력 형식은 또 흔들리기 시작하죠.</p><p>그래서 파일의 배치 순서가 아주 중요합니다. `source.md` 파일이 전체 맥락을 짚어주고, `slide-spec.json`이라는 명세서가 '무엇을 만들지'를 확정 짓는 설계도라면, 그 설계도 직후에 바로 `few-shots.md`가 따라붙어야 합니다. 명세서로 요구사항을 읽자마자 &quot;아, 대답은 무조건 이런 모양으로 해야 하는구나&quot; 하고 뇌리에 꽉 박히게 만드는 겁니다.</p><p>이 위치에 좋은 슬라이드 명세, 피해야 할 나쁜 명세, 그리고 훌륭한 발표자 스크립트와 최종 보고 예시를 넣어주세요. 명세서 바로 다음에 예시가 등장하면, 결과물의 깊이와 형식이 놀랍도록 안정됩니다.</p><p>기억해 주세요. 예시는 프롬프트 뒤에 달아두는 장식품이 아닙니다. 명세서 바로 다음에 배치해서 AI의 출력 형식을 단단하게 고정하는 장치로 쓰셔야 합니다.</p><p>자, 그럼 이렇게 탄탄하게 순서를 잡은 자료들이 실제로 어떻게 하나의 자동화된 공정 라인을 타고 최종 발표 자료로 완성되는지, 다음 화면에서 전체 흐름도로 연결해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “Few-shot은 명세 바로 뒤에 둡니다”.",
+        "keywords": [
+          "Few-shot",
+          "Few-shot은",
+          "명세",
+          "바로",
+          "뒤에"
+        ],
+        "flow": [
+          "화면 제목 “Few-shot은 명세 바로 뒤에 둡니다”로 문제를 잡는다",
+          "명세가 “무엇을 만들지”를 고정한다면, few-shot은 “어떤 모양으로 답할지”를 고정합니다.",
+          "수강생이 자기 업무에 바로 옮길 행동으로 연결한다"
+        ],
+        "example": "좋은 답과 나쁜 답 샘플을 나란히 보여주면 설명보다 빨리 기준이 잡힌다고 말한다.",
+        "bridge": "다음은 “자료는 하네스를 통과하며 발표자료가 됩니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 3,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "Anthropic Multishot Prompting",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/multishot-prompting"
+      }
+    ]
   },
   {
     "file": "21-2-bug-request-flow.html",
@@ -794,8 +2216,40 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "자료는 하네스를 통과하며 발표자료가 됩니다",
     "speaker": {
       "heading": "자료는 하네스를 통과하며 발표자료가 됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>Claude가 바로 HTML을 쓰기 전에 brief, spec, few-shot을 거치게 해야 결과가 흔들리지 않습니다.</p><p>이 단계에서 핵심은 HTML을 빨리 쓰는 것이 아니라 HTML을 쓰기 전의 결정들을 파일로 남기는 것입니다.</p>"
-    }
+      "html": "<strong>상세 발표 스크립트</strong><p>AI에게 &quot;멋진 슬라이드 하나 만들어줘&quot;라고 툭 던져보신 적 있으시죠? 운 좋게 한 번에 그럴듯한 결과가 나오기도 하지만, &quot;글씨 크기 좀 키워줘&quot; 한마디를 덧붙였을 뿐인데 갑자기 전체 레이아웃이 와르르 무너지거나 전혀 엉뚱한 톤으로 덮어써 버리곤 합니다. 실무에서 정말 답답한 순간이죠. 왜 그럴까요? AI가 스스로 상상하고 추측해서 채워야 할 빈칸이 너무 많기 때문입니다.</p><p>그래서 우리는 흩어진 자료들을 하나의 흔들림 없는 발표자료로 찍어내는 '공장 컨베이어 벨트'를 설계해야 합니다. 여기서 가장 중요한 원칙은, 절대 AI에게 다짜고짜 최종 결과물인 HTML 코드를 짜라고 시키지 않는 것입니다. 코드를 1초라도 더 빨리 짜는 속도가 핵심이 아닙니다. 코드를 조립하기 전의 모든 판단과 결정을 대화창의 휘발성 기억에 두지 않고, 물리적인 '파일'이라는 도면으로 남겨두는 것이 진짜 핵심입니다.</p><p>작업물이 컨베이어 벨트를 어떻게 통과하는지 순서대로 보겠습니다. 가장 먼저 벨트에 올라가는 건 출발점인 source.md 파일입니다. 여기서는 &quot;누구를 대상으로, 몇 분 동안, 어떤 목표로 말할 것인가&quot;라는 흔들리지 않는 뼈대를 꽉 잡아줍니다.</p><p>그다음은 slide-spec.json입니다. 각 슬라이드마다 들어가야 할 핵심 메시지와 근거를 마치 깐깐한 계약서처럼 고정하는 단계입니다.</p><p>세 번째 칸에는 few-shots.md를 둡니다. AI에게 말로 &quot;전문가처럼 예쁘게 써줘&quot;라고 부탁하는 대신, &quot;정확히 이런 형태와 깊이로 조립해야 해&quot;라며 완성된 품질 샘플을 작업대 위 눈앞에 떡하니 보여주는 겁니다.</p><p>자, 이렇게 재료와 도면, 샘플까지 작업대 위에 완벽하게 세팅이 끝났습니다. 이제 비로소 deck-builder라는 스킬을 꺼내 듭니다. 우리가 앞서 재사용 가능한 작업 매뉴얼이라고 불렀던 바로 그 공구입니다. AI는 이 매뉴얼에 명시된 순서대로만 앞선 세 가지 파일들을 꼼꼼히 읽고 슬라이드를 조립한 뒤, 스스로 불량이 없는지 기계적인 검문소까지 거치게 됩니다.</p><p>이런 단단한 하네스를 거쳐야만, 내일 당장 다른 AI 작업자가 투입되더라도 엉뚱한 길로 빠지지 않고 똑같이 훌륭한 품질의 슬라이드를 만들어낼 수 있습니다. 그렇다면 이렇게 공들여 조립한 결과물이 정말 불량 없는 완제품인지 어떻게 객관적으로 확인하고, 현재의 작업장 상태를 다음 교대 근무자에게 안전하게 넘겨줄 수 있을까요?</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “자료는 하네스를 통과하며 발표자료가 됩니다”.",
+        "keywords": [
+          "스킬",
+          "검증",
+          "deck-builder",
+          "slide-spec.json",
+          "자료는"
+        ],
+        "flow": [
+          "source.md는 대상, 시간, 목표를 고정합니다.",
+          "slide-spec.json은 각 장의 메시지와 근거를 고정합니다.",
+          "few-shots.md는 출력의 모양과 깊이를 고정합니다."
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "다음은 “최종 보고는 덱 품질의 증거입니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 4,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "21-3-final-report-template.html",
@@ -804,38 +2258,74 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "최종 보고는 덱 품질의 증거입니다",
     "speaker": {
       "heading": "최종 보고는 덱 품질의 증거입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>최종 보고는 “완료했습니다”가 아니라 다음 Claude와 발표자가 믿을 수 있는 증거 목록이어야 합니다.</p><p>변경 파일, 실행 명령, broken link, note exposure, overflow, 확인 URL이 있어야 다음 세션이 같은 기준으로 이어집니다.</p>"
-    }
+      "html": "<strong>상세 발표 스크립트</strong><p>AI에게 작업을 맡겼을 때 가장 흔히 듣는 말이 뭘까요? 바로 &quot;요청하신 작업을 모두 완료했습니다&quot;라는 선언입니다. 그런데 우리는 실무에서 이 말만 덜컥 믿고 다음 단계로 넘어갈 수는 없습니다.</p><p>그래서 최종 보고는 단순한 완료 인사로 끝나서는 안 됩니다. 다음 작업을 이어갈 또 다른 AI와 최종 책임자인 우리가 믿고 쓸 수 있는 '확실한 증거 목록'이 되어야 합니다. 내가 무엇을 얼마나 많이 만들었는지 설명하는 것보다, '어떤 검증을 통과했는지'를 명확하게 보여주는 것이 훨씬 중요하죠.</p><p>구체적으로 어떤 증거들을 남겨야 할까요? 단순히 '파일을 수정했습니다'가 아니라, 정확히 어떤 파일을 건드렸고 어떤 실행 명령을 돌렸는지 그 결과가 남아있어야 합니다. 예를 들어 우리가 지금 만드는 슬라이드 작업이라면, 클릭이 안 되는 깨진 링크(broken link)는 없는지 먼저 확인해야 합니다. 청중에게는 숨겨야 할 발표자 노트가 화면에 잘못 노출(note exposure)되지는 않았는지, 혹은 글자가 화면 밖으로 넘치는 현상(overflow)은 없는지도 직접 확인한 URL과 결과로 남겨야 합니다.</p><p>핵심은 실행해서 통과한 검증 결과와, 아직 해결되지 않아 주의해야 할 '남은 위험'을 명확히 분리해서 보고하도록 만드는 것입니다. 그래야 다음 세션에서 작업을 이어받을 AI가 처음부터 다시 헤매거나 이전의 규칙을 까먹지 않고, 여러분이 세워둔 똑같이 단단한 기준 위에서 다음 판단을 내릴 수 있습니다.</p><p>그렇다면 이렇게 꼼꼼하게 남긴 증거와 결정 사항들을, 현재의 대화창이 종료된 뒤에도 다음 작업자에게 안전하게 넘겨주려면 어떻게 해야 할까요? 다음 장에서 그 역할을 담당하는 핵심 인수인계 장치에 대해 이어서 알아보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “최종 보고는 덱 품질의 증거입니다”.",
+        "keywords": [
+          "검증",
+          "보고는",
+          "품질의",
+          "증거입니다",
+          "무엇을"
+        ],
+        "flow": [
+          "변경 파일",
+          "실행 명령",
+          "검증 결과"
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "다음은 “Handoff는 다음 세션을 위한 인수인계 장치입니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 5,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "21-5-handoff-why.html",
     "parent": "21",
     "kind": "main",
-    "reviewTitle": "Handoff는 다음 세션을 위한 기억 장치입니다",
+    "reviewTitle": "Handoff는 상태와 다음 프롬프트를 남깁니다",
     "speaker": {
-      "heading": "Handoff는 다음 세션을 위한 기억 장치입니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>긴 작업은 한 번의 대화가 아니라 이어받을 수 있는 상태 파일로 관리합니다.</p><p>발표자료 생성 자동화에서는 handoff가 특히 중요합니다. 리서치 출처, 슬라이드 분해 기준, 발표용과 발표자 검토용 분리 규칙, 검증 결과가 다음 세션에 그대로 전달되어야 같은 품질로 이어서 작업할 수 있습니다.</p>"
-    }
-  },
-  {
-    "file": "21-6-handoff-template.html",
-    "parent": "21",
-    "kind": "main",
-    "reviewTitle": "HANDOFF.md는 상태와 결정을 같이 남깁니다",
-    "speaker": {
-      "heading": "HANDOFF.md는 상태와 결정을 같이 남깁니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>파일 목록보다 중요한 것은 현재 상태, 결정, 검증, 남은 일, 다음 프롬프트입니다.</p><p>좋은 이어받기 문서에는 현재 상태, 결정, 검증, 남은 일, 다음 요청이 들어갑니다. 이렇게 남기면 다음 Claude는 처음부터 다시 판단하지 않고, 이미 합의된 기준 위에서 이어서 작업합니다.</p>"
-    }
-  },
-  {
-    "file": "21-7-handoff-next-prompt.html",
-    "parent": "21",
-    "kind": "main",
-    "reviewTitle": "다음 프롬프트까지 남겨야 handoff가 완성됩니다",
-    "speaker": {
-      "heading": "다음 프롬프트까지 남겨야 handoff가 완성됩니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>다음 Claude가 어디서 시작해야 하는지 명시하면 작업 재시작 비용이 크게 줄어듭니다.</p><p>핵심은 다음 프롬프트를 handoff 안에 같이 남기는 것입니다. 예를 들면 HANDOFF.md부터 읽고, 현재 덱 상태를 검증한 뒤, 남은 항목만 수정하고, 완료 전에 같은 검증 명령을 다시 실행하라고 적습니다.</p>"
-    }
+      "heading": "Handoff는 상태와 다음 프롬프트를 남깁니다",
+      "html": "<strong>상세 발표 스크립트</strong><p>긴 작업은 한 번의 대화로 끝나지 않습니다. 다음 세션이 바로 이어받을 수 있게 상태 파일을 남겨야 합니다. 그 장치가 HANDOFF.md입니다.</p><p>중요한 것은 파일 목록보다 상태와 결정입니다. 현재 어디까지 왔는지, 어떤 설계 결정을 유지해야 하는지, 어떤 검증을 실제로 통과했는지 남겨야 합니다.</p><p>그리고 남은 일과 다음 프롬프트까지 적어야 handoff가 완성됩니다. 다음 AI가 어디서 시작해야 하는지 명확해야 재시작 비용이 줄어듭니다.</p><p>다음 장에서는 이 항목을 실제로 채우는 실습을 하겠습니다.</p>",
+      "cues": {
+        "purpose": "Handoff의 이유, 템플릿, 다음 프롬프트를 한 장에서 설명한다.",
+        "keywords": [
+          "HANDOFF.md",
+          "Current State",
+          "Decisions",
+          "Verification",
+          "Next Prompt"
+        ],
+        "flow": [
+          "긴 작업의 이어받기 필요성을 설명한다",
+          "HANDOFF.md 다섯 항목을 설명한다",
+          "작성 실습으로 연결한다"
+        ],
+        "example": "다음 세션이 검증 결과와 남은 작업을 보고 바로 이어받는 상황을 든다.",
+        "bridge": "다음은 “발표자료 handoff를 작성합니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 6,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "21-8-practice-handoff.html",
@@ -844,8 +2334,36 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "발표자료 handoff를 작성합니다",
     "speaker": {
       "heading": "발표자료 handoff를 작성합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>다음 세션이 슬라이드 작업을 이어받을 수 있도록 상태 파일을 남깁니다.</p><p>실습에서는 현재 상태, 결정, 검증, 남은 일, 다음 요청 다섯 칸을 채웁니다. 이 결과물이 있어야 자동화 워크플로우가 한 번의 대화가 아니라 반복 가능한 운영 방식이 됩니다.</p>"
-    }
+      "html": "<strong>상세 발표 스크립트</strong><p>AI와 길게 작업하다 보면 꼭 겪는 답답한 순간이 있죠. 대화가 너무 길어져서 모델이 컨텍스트를 잃어버리고 엉뚱한 소리를 하기 시작할 때입니다. 결국 새 채팅창을 열어야 하는데, 그러면 &quot;우리가 지금까지 무슨 규칙을 정했지?&quot; 하고 처음부터 다시 설명해야 하잖아요. 정말 지치는 일입니다.</p><p>그래서 이번 실습에서는 작업의 '이어달리기 바통' 역할을 하는 문서, 즉 Handoff를 직접 작성해 보겠습니다. 이건 단순한 메모장이 아닙니다. 다음 번에 열릴 새로운 AI 세션이 내 작업을 안전하게 이어받을 수 있도록 만드는 '상태 저장 파일'입니다.</p><p>실제 `HANDOFF.md` 파일에 다음 다섯 가지 핵심 항목을 채워보겠습니다.</p><p>첫째, **Current State(현재 상태)**입니다. &quot;HTML/CSS 덱 초안 작성 완료&quot;처럼 지금 우리가 정확히 어디까지 왔는지 적어줍니다.</p><p>둘째, **Decisions(결정 사항)**입니다. 이전 채팅창에서 합의했던 규칙을 새 AI가 마음대로 뒤집으면 안 되겠죠? &quot;발표자 노트는 리뷰 화면에만 표시한다&quot;처럼 앞으로도 반드시 유지해야 할 규칙을 못 박아 둡니다.</p><p>셋째, **Verification(검증 증거)**입니다. 단순히 &quot;테스트 성공함&quot;이라고 추측성으로 적지 마세요. `node scripts/verify-deck.js pass`처럼 실제로 통과한 검증 명령어를 증거로 남겨야 다음 AI가 그 기준을 믿고 넘어갑니다.</p><p>넷째, **Remaining Work(남은 작업)**에는 &quot;섹션 21의 발표자 스크립트 보강&quot;처럼 앞으로 해야 할 일을 명확히 좁혀줍니다.</p><p>마지막으로 가장 중요한 **Next Prompt(다음 프롬프트)**입니다. 이건 여러분이 새로운 AI 채팅창을 열자마자 복사해서 붙여넣을 첫 번째 지시문입니다. &quot;무조건 HANDOFF.md부터 먼저 읽고, 남은 항목만 수정해&quot;라고 시작점을 짚어주는 거죠.</p><p>이 결과물이 있어야만 여러분의 워크플로우는 대화창이 닫히면 날아가는 일회성 작업이 아니라, 언제든 멈추고 다시 돌릴 수 있는 반복 가능한 운영 방식이 됩니다.</p><p>자, 이렇게 안전하게 다음 세션으로 바통을 넘기는 체계까지 완성했습니다. 그럼 이제 우리가 만든 이 전체 자동화 시스템을 팀 단위에서는 어떻게 피드백하고 개선해 나갈지 다음 장에서 회고해 보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “발표자료 handoff를 작성합니다”.",
+        "keywords": [
+          "HANDOFF.md",
+          "발표자료",
+          "handoff를",
+          "작성합니다",
+          "세션이"
+        ],
+        "flow": [
+          "화면 제목 “발표자료 handoff를 작성합니다”로 문제를 잡는다",
+          "다음 세션이 슬라이드 작업을 이어받을 수 있도록 실제 HANDOFF.md의 다섯 칸을 채웁니다.",
+          "수강생이 자기 업무에 바로 옮길 행동으로 연결한다"
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "다음은 “팀 회고 질문은 하나면 충분합니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 7,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "21-4-team-retrospective.html",
@@ -854,8 +2372,52 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "팀 회고 질문은 하나면 충분합니다",
     "speaker": {
       "heading": "팀 회고 질문은 하나면 충분합니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>AI가 두 번 이상 틀린 것은 다음 하네스 후보입니다.</p><p>handoff까지 남겼다면 이제 팀 기준으로 회수합니다. 다음 주에 어떤 규칙을 CLAUDE.md로 올릴지, 어떤 반복 절차를 Skill로 만들지, 어떤 검증을 Hook으로 강제할지 정하면 됩니다.</p>"
-    }
+      "html": "<strong>상세 발표 스크립트</strong><p>AI와 일하다 보면 정말 답답한 순간이 있습니다. 분명 어제는 잘 지켰던 규칙인데, 오늘 새로운 요청을 하면 갑자기 까먹고 똑같은 실수를 반복하죠. 이때 많은 분들이 프롬프트를 더 길게 고치려고만 합니다.</p><p>하지만 우리 팀 회고에서 던져야 할 질문은 복잡할 필요가 없습니다. 딱 하나면 충분합니다.<br>&quot;AI가 이 실수를 두 번 이상 반복했는가?&quot;</p><p>만약 그렇다면 그건 대화창에서 한 번 더 타이르고 넘어갈 문제가 아닙니다. 자동차 공장으로 치면 작업 라인에 물리적인 안전장치를 추가해야 할 때가 온 겁니다. 즉, 시스템 구조로 막아야 하는 다음 '하네스'의 도입 후보가 되었다는 뜻입니다.</p><p>적용하는 기준은 아주 명확합니다.<br>우리가 AI에게 두 번 이상 반복해서 당부한 규칙이 있다면, 그것은 프로젝트의 지속적인 지침 파일인 `CLAUDE.md`로 올려야 합니다.<br>매번 순서를 설명해야 했던 작업 절차가 있다면, 언제든 꺼내 쓸 수 있는 공용 매뉴얼인 스킬로 빼서 만들어 줍니다.<br>테스트나 검사처럼 완료 전에 반드시 거쳐야 할 확인 과정을 두 번 이상 건너뛰었다면, 완료 기준을 검증/평가로 정의하고 자동 검문소인 훅으로 강제해야 합니다.<br>마지막으로 코드를 짜면서 보안까지 보라는 식으로 여러 가지 판단을 섞었다가 두 번 이상 결과가 흔들렸다면, 이때는 판단 공간을 분리해서 격리된 전문가 역할을 하는 서브에이전트에게 맡겨야 합니다.</p><p>앞서 우리가 보았던 한국어 검교정 작업도 마찬가지입니다. 매번 문장을 어떻게 고칠지 대화로 설명하는 대신, 팀 회고를 거쳐 그 기준을 하나의 고정된 스킬과 에이전트로 승격시키면 됩니다.</p><p>핵심은 AI를 더 똑똑하게 만드는 게 아닙니다. 덜 흔들리게 만드는 겁니다. 이렇게 반복되는 실수를 구조로 바꾸는 과정을 거쳐야, 누군가의 개인적인 프롬프트 팁에 의존하지 않고 우리 팀 전체의 든든한 작업 시스템으로 축적될 수 있습니다.</p><p>그럼 이제 지금까지 배운 이 단단한 구조들을 여러분의 실제 프로젝트에는 어떻게 가져갈 수 있을지, 마지막 체크포인트로 넘어가서 직접 골라보겠습니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “팀 회고 질문은 하나면 충분합니다”.",
+        "keywords": [
+          "CLAUDE.md",
+          "스킬",
+          "훅",
+          "서브에이전트",
+          "검증"
+        ],
+        "flow": [
+          "두 번 말한 규칙은 CLAUDE.md로",
+          "두 번 반복한 절차는 스킬로",
+          "두 번 놓친 검증은 훅으로"
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "다음은 “내 프로젝트에 가져갈 하네스 3개를 고릅니다”입니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 8,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "Claude Code Subagents",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/sub-agents"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
+    ]
   },
   {
     "file": "21-9-practice-personal-harness.html",
@@ -864,171 +2426,47 @@ window.LECTURE_SLIDES = [
     "reviewTitle": "내 프로젝트에 가져갈 하네스 3개를 고릅니다",
     "speaker": {
       "heading": "내 프로젝트에 가져갈 하네스 3개를 고릅니다",
-      "html": "<strong>상세 발표 스크립트</strong><p>반복 실패 하나를 규칙, 절차, 검증 후보로 나누면 다음 액션이 생깁니다.</p><p>이 슬라이드는 한 번에 설명하려던 내용을 짧은 증거 화면으로 나눈 것입니다. 발표자는 제목의 핵심 문장을 먼저 말하고, 화면의 예시나 구조를 짚은 뒤 다음 슬라이드로 넘어가면 됩니다.</p>"
-    }
-  }
-];
-
-const sectionAssignments = [
-  {
-    "id": "00",
-    "title": "오프닝 / 전체 지도",
-    "start": "00-title.html",
-    "files": [
-      "00-title.html",
-      "00-1-workbench-preview.html",
-      "01-why-harness.html",
-      "01-1-inconsistency-before-after.html",
-      "03-layer-map.html",
-      "03-1-layer-responsibility.html",
-      "03-2-harness-flow.html"
-    ]
-  },
-  {
-    "id": "01",
-    "title": "실패 패턴",
-    "start": "02-failure-patterns.html",
-    "files": [
-      "02-failure-patterns.html",
-      "02-1-why-llms-fail.html",
-      "02-2-failure-example-read-before-edit.html",
-      "02-3-failure-example-skip-test.html",
-      "02-4-failure-example-context-drift.html",
-      "02-5-improvement-process-guardrails.html",
-      "02-6-improvement-turn-failure-into-rule.html",
-      "02-7-failure-to-harness-decision.html"
-    ]
-  },
-  {
-    "id": "02",
-    "title": "Spec / Prompt",
-    "start": "13-spec-driven.html",
-    "files": [
-      "13-spec-driven.html",
-      "13-1-vibe-vs-spec.html",
-      "13-2-spec-contract.html",
-      "13-3-spec-bad-good.html",
-      "13-4-spec-plan-review-flow.html",
-      "04-prompt-layer.html",
-      "04-1-prompt-anatomy.html",
-      "04-2-xml-boundaries.html",
-      "05-persona.html",
-      "05-1-persona-weak.html",
-      "05-2-persona-rubric.html",
-      "06-few-shot.html",
-      "06-1-good-few-shot.html",
-      "06-2-bad-few-shot.html",
-      "07-reasoning-prompts.html",
-      "07-1-reasoning-output-pattern.html",
-      "07-2-reasoning-avoid-overask.html"
-    ]
-  },
-  {
-    "id": "03",
-    "title": "Context / Memory",
-    "start": "08-claude-md.html",
-    "files": [
-      "08-claude-md.html",
-      "08-1-claude-md-hierarchy.html",
-      "08-2-good-claude-md.html",
-      "08-3-bad-claude-md.html",
-      "09-context-engineering.html",
-      "09-1-context-budget.html",
-      "09-2-always-vs-needed.html",
-      "09-3-context-drift-check.html"
-    ]
-  },
-  {
-    "id": "04",
-    "title": "Skills / Superpowers",
-    "start": "10-skills.html",
-    "files": [
-      "10-skills.html",
-      "10-1-skill-trigger-description.html",
-      "10-2-skill-body-procedure.html",
-      "10-3-skill-references-scripts-assets.html",
-      "11-skill-structure.html",
-      "11-1-real-skill-folder.html",
-      "11-2-skill-frontmatter-fields.html",
-      "12-superpowers.html",
-      "12-1-superpowers-as-harness.html",
-      "12-2-superpowers-workflow-map.html"
-    ]
-  },
-  {
-    "id": "05",
-    "title": "Agents / Tools",
-    "start": "14-subagents.html",
-    "files": [
-      "14-subagents.html",
-      "14-1-subagent-context-isolation.html",
-      "14-2-reviewer-subagent-example.html",
-      "14-3-research-subagent-example.html",
-      "15-agent-teams.html",
-      "15-1-parallel-safe.html",
-      "15-2-parallel-risk.html",
-      "18-mcp.html",
-      "18-1-mcp-bridge.html",
-      "18-2-tool-permissions.html",
-      "18-3-tool-bloat.html",
-      "18-4-practice-agent-tool-split.html"
-    ]
-  },
-  {
-    "id": "06",
-    "title": "Hooks / Verification",
-    "start": "16-hooks.html",
-    "files": [
-      "16-hooks.html",
-      "16-1-hook-event.html",
-      "16-2-hook-command.html",
-      "16-3-hook-result.html",
-      "16-4-skill-vs-hook.html",
-      "17-hook-advanced.html",
-      "17-1-hook-start-small.html",
-      "19-evaluation.html",
-      "19-1-machine-checks.html",
-      "19-2-judge-checks.html",
-      "19-3-human-checks.html",
-      "20-loop-schedule.html",
-      "20-1-loop-until-pass.html",
-      "20-2-practice-verification-gate.html"
-    ]
-  },
-  {
-    "id": "07",
-    "title": "Final Workflow",
-    "start": "21-final-workflow.html",
-    "files": [
-      "21-final-workflow.html",
-      "21-1-final-artifact-structure.html",
-      "21-10-practice-few-shot-placement.html",
-      "21-2-bug-request-flow.html",
-      "21-3-final-report-template.html",
-      "21-5-handoff-why.html",
-      "21-6-handoff-template.html",
-      "21-7-handoff-next-prompt.html",
-      "21-8-practice-handoff.html",
-      "21-4-team-retrospective.html",
-      "21-9-practice-personal-harness.html"
+      "html": "<strong>상세 발표 스크립트</strong><p>자, 이제 오늘 강의의 마지막입니다. 당장 내일 우리 팀 프로젝트에 가져갈 하네스 딱 3개만 골라보겠습니다.</p><p>여러분이 현업에서 AI 코딩 도구를 쓰면서 가장 답답했던 순간을 떠올려 보세요. 분명히 방금 말했는데 다음 요청에서 또 까먹거나, 어제는 잘했는데 오늘은 갑자기 엉뚱하게 코드를 덮어써서 난감했던 경험, 다들 한 번쯤 있으실 겁니다.</p><p>기준은 아주 단순합니다. AI가 두 번 이상 똑같이 틀린 행동을 했다면, 그게 바로 우리가 다음으로 만들어야 할 하네스 후보입니다. 대화창에 대고 &quot;다음부터는 그러지 마&quot;라고 다시 지시하는 대신, 이 반복되는 실패를 '규칙', '절차', '검증' 중 어디로 올릴지 나누어 보세요. 그러면 당장 내일 우리가 무엇을 세팅해야 할지 선명한 액션이 생깁니다.</p><p>구체적인 예를 들어보겠습니다. <br>AI가 자꾸 파일을 제대로 안 읽고 상상해서 코드를 수정해버린다면 어떻게 할까요? &quot;수정 전 관련 파일을 먼저 읽는다&quot;는 원칙을 프로젝트 전체에 항상 적용되는 기본 헌법, 즉 CLAUDE.md 규칙으로 고정해 두는 겁니다.</p><p>버그를 고칠 때마다 자꾸 추측으로 엉뚱한 곳을 건드린다면요? &quot;버그를 재현하고, 수정 범위를 좁히고, 위험을 정리한다&quot;는 일관된 작업 체크리스트를 짜서, 필요할 때마다 작업자에게 쥐여주는 공구상자 같은 Skill 절차로 만들어주면 됩니다.</p><p>만약 코드를 다 고쳤다고 성공을 선언했는데 막상 실행하면 에러가 터진다면 어떨까요? &quot;수정 뒤에는 반드시 pnpm test를 돌리고 그 결과를 보고하라&quot;는 강력한 강제 검문소, 즉 Hook이나 Evaluation으로 길목을 아예 막아두는 겁니다.</p><p>결국 핵심은 AI에게 매번 &quot;더 똑똑하게, 제대로 일해라&quot;라고 잔소리하는 것이 아닙니다. AI가 덜 흔들리고 예측 가능하게 일할 수 있는 튼튼한 레일을 깔아주는 겁니다. 오늘 우리가 함께 살펴본 항상 적용되는 지침인 CLAUDE.md, 꺼내 쓰는 절차인 Skill, 그리고 강제로 확인하는 Hook과 Evaluation을 잘 조합해 보세요. 이 도구들을 팀의 최소 워크플로우로 가져가신다면, 여러분의 프로젝트도 지치지 않고 안전하게 돌아가는 훌륭한 AI 자동화 작업장이 될 것입니다.</p><p>긴 시간 동안 강의 들으시느라 정말 수고 많으셨습니다. 이것으로 모든 발표를 마치겠습니다. 감사합니다.</p>",
+      "cues": {
+        "purpose": "오늘 배운 하네스를 실제 산출물과 다음 작업으로 연결한다. 기준어: “내 프로젝트에 가져갈 하네스 3개를 고릅니다”.",
+        "keywords": [
+          "검증",
+          "하네스",
+          "3개를",
+          "고릅니다",
+          "반복"
+        ],
+        "flow": [
+          "화면 제목 “내 프로젝트에 가져갈 하네스 3개를 고릅니다”로 문제를 잡는다",
+          "반복 실패 하나를 규칙, 절차, 검증 후보로 나누면 다음 액션이 생깁니다.",
+          "수강생이 자기 업무에 바로 옮길 행동으로 연결한다"
+        ],
+        "example": "다음 근무자가 바로 이어받도록 작업 일지와 다음 지시문을 남기는 장면에 비유한다.",
+        "bridge": "오늘 고른 3가지 하네스를 실제 팀 작업에 적용하겠다고 마무리합니다."
+      }
+    },
+    "sectionId": "08",
+    "sectionTitle": "Final Workflow",
+    "sectionStart": false,
+    "sectionIndex": 9,
+    "sectionTotal": 9,
+    "sources": [
+      {
+        "label": "Claude Code Hooks",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      },
+      {
+        "label": "Claude Code Skills",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "label": "Claude Code Memory",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      },
+      {
+        "label": "OpenAI Evaluation Best Practices",
+        "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+      }
     ]
   }
 ];
-
-const sectionByFile = new Map();
-
-sectionAssignments.forEach((section) => {
-  section.files.forEach((file, fileIndex) => {
-    sectionByFile.set(file, {
-      sectionId: section.id,
-      sectionTitle: section.title,
-      sectionStart: file === section.start,
-      sectionIndex: fileIndex + 1,
-      sectionTotal: section.files.length,
-    });
-  });
-});
-
-window.LECTURE_SLIDES.forEach((slide) => {
-  Object.assign(slide, sectionByFile.get(slide.file) || {});
-});

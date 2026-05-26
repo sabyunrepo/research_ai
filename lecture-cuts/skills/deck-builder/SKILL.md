@@ -30,6 +30,7 @@ Do not use this skill for the generic `deck-harness/` workflow or unrelated `lec
 - Updated `lecture-cuts/slide-spec.json` after intentional content changes.
 - Updated source metadata in `docs/harness/lecture-cuts-source-map.json` when slide-visible claims change.
 - Updated speaker notes in `lecture-cuts/assets/slides.js` or `lecture-cuts/presenter-preview.html`, matching the slide that changed.
+- Updated Korean copy and presenter-script wording using `lecture-cuts/skills/korean-copy-review/SKILL.md` when language quality or slide-script alignment changes.
 - Verification evidence from `node scripts/verify-lecture-cuts-harness.js`.
 
 ## Procedure
@@ -42,9 +43,10 @@ Do not use this skill for the generic `deck-harness/` workflow or unrelated `lec
 6. Edit slide HTML only after contract context is loaded.
 7. Preserve the current 87-slide order and section assignment unless the task explicitly asks to change structure.
 8. Keep projector-visible copy concise and Korean-first; keep presenter-only explanation in notes or presenter-review data.
-9. Update speaker notes and source metadata with the slide.
-10. Regenerate `lecture-cuts/slide-spec.json` after intentional content changes.
-11. Run `node scripts/verify-lecture-cuts-harness.js` before handoff.
+9. Use `lecture-cuts/skills/korean-copy-review/SKILL.md` for Korean copy, presenter script, terminology, or alignment rewrites.
+10. Update speaker notes and source metadata with the slide.
+11. Regenerate `lecture-cuts/slide-spec.json` after intentional content changes.
+12. Run `node scripts/verify-lecture-cuts-harness.js` before handoff.
 
 ## Quality Bar
 
@@ -63,6 +65,7 @@ Run these checks before reporting completion:
 ```sh
 node scripts/export-lecture-cuts-contract.js
 node scripts/export-lecture-cuts-contract.js --check-confidence
+node scripts/audit-lecture-cuts-korean-copy.js
 node scripts/verify-lecture-cuts-harness.js
 ```
 

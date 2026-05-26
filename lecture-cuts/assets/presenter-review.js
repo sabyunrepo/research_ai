@@ -1,6 +1,11 @@
 const slides = window.LECTURE_SLIDES || [];
+const slideHtmlCache = window.LECTURE_SLIDE_HTML || {};
 
 const reviewDeck = document.querySelector("#reviewDeck");
+const saveButton = document.querySelector("#saveReviewChanges");
+const saveStatus = document.querySelector("#saveReviewStatus");
+const canUseSaveApi = window.location.protocol !== "file:";
+const dirtySlides = new Map();
 const glossaryTerms = [
   ["CLAUDE.md", "Claude Code가 프로젝트마다 읽는 규칙 파일입니다. 반복해서 말해야 하는 작업 원칙을 적어 둡니다."],
   ["HTML/CSS", "웹 페이지를 만드는 기본 언어입니다. 이 강의에서는 발표자료를 브라우저에서 보이게 만드는 형식으로 씁니다."],
@@ -141,7 +146,112 @@ function makeSlideNumber(index) {
   return `${number} / ${slides.length}`;
 }
 
+function setSaveStatus(message, state = "") {
+  if (!saveStatus) return;
+  saveStatus.textContent = message;
+  saveStatus.dataset.state = state;
+}
+
+function updateSaveButton() {
+  if (!saveButton) return;
+  saveButton.disabled = !canUseSaveApi || dirtySlides.size === 0 || saveButton.dataset.saving === "true";
+}
+
+function cleanEditableHtml(html) {
+  const template = document.createElement("template");
+  template.innerHTML = html;
+  template.content.querySelectorAll("[data-glossary]").forEach((node) => {
+    node.replaceWith(document.createTextNode(node.textContent || ""));
+  });
+  template.content.querySelectorAll("script, style").forEach((node) => node.remove());
+  template.content.querySelectorAll("*").forEach((node) => {
+    [...node.attributes].forEach((attribute) => {
+      if (attribute.name.startsWith("on") || attribute.name === "contenteditable") {
+        node.removeAttribute(attribute.name);
+      }
+    });
+  });
+  return template.innerHTML.trim();
+}
+
+function getDirtyEntry(file) {
+  if (!dirtySlides.has(file)) {
+    dirtySlides.set(file, { file });
+  }
+  return dirtySlides.get(file);
+}
+
+function cleanSlideHtml(slideElement) {
+  const clone = slideElement.cloneNode(true);
+  clone.querySelectorAll("[data-glossary]").forEach((node) => {
+    node.replaceWith(document.createTextNode(node.textContent || ""));
+  });
+  clone.querySelectorAll("script, style").forEach((node) => node.remove());
+  clone.classList.remove("section-start-slide", "section-detail-slide");
+  clone.querySelectorAll("*").forEach((node) => {
+    [...node.attributes].forEach((attribute) => {
+      if (
+        attribute.name.startsWith("on") ||
+        attribute.name === "contenteditable" ||
+        attribute.name === "spellcheck" ||
+        attribute.name === "role" ||
+        attribute.name === "data-slide-editable"
+      ) {
+        node.removeAttribute(attribute.name);
+      }
+    });
+  });
+  return clone.outerHTML.trim();
+}
+
+function markScriptDirty(file, heading, body) {
+  const entry = getDirtyEntry(file);
+  entry.heading = heading.value.trim();
+  entry.html = cleanEditableHtml(body.innerHTML);
+  setSaveStatus(
+    canUseSaveApi ? `${dirtySlides.size}개 슬라이드 저장 대기` : "저장은 로컬 서버에서만 가능합니다",
+    canUseSaveApi ? "dirty" : "error"
+  );
+  updateSaveButton();
+}
+
+function markCuesDirty(file, controls) {
+  const entry = getDirtyEntry(file);
+  entry.cues = {
+    purpose: controls.purpose.value.trim(),
+    keywords: controls.keywords.value
+      .split(/[,\n]/)
+      .map((keyword) => keyword.trim())
+      .filter(Boolean),
+    flow: controls.flow.value
+      .split(/\n+/)
+      .map((step) => step.trim())
+      .filter(Boolean),
+    example: controls.example.value.trim(),
+    bridge: controls.bridge.value.trim(),
+  };
+  setSaveStatus(
+    canUseSaveApi ? `${dirtySlides.size}개 슬라이드 저장 대기` : "저장은 로컬 서버에서만 가능합니다",
+    canUseSaveApi ? "dirty" : "error"
+  );
+  updateSaveButton();
+}
+
+function markSlideDirty(file, slideElement) {
+  const entry = getDirtyEntry(file);
+  entry.slideHtml = cleanSlideHtml(slideElement);
+  setSaveStatus(
+    canUseSaveApi ? `${dirtySlides.size}개 슬라이드 저장 대기` : "저장은 로컬 서버에서만 가능합니다",
+    canUseSaveApi ? "dirty" : "error"
+  );
+  updateSaveButton();
+}
+
 async function fetchDocument(file) {
+  if (slideHtmlCache[file]) {
+    return new DOMParser().parseFromString(slideHtmlCache[file], "text/html");
+  }
+
   const response = await fetch(file, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`${file} failed with ${response.status}`);
@@ -151,24 +261,27 @@ async function fetchDocument(file) {
 }
 
 async function loadScripts() {
-  const preview = await fetchDocument("presenter-preview.html");
+  const needsPreview = slides.some((slide) => !slide.speaker);
+  const preview = needsPreview ? await fetchDocument("presenter-preview.html") : null;
   return slides.map((slide, index) => {
     if (slide.speaker) {
       return {
         meta: `${slide.parent} · ${slide.reviewTitle}`,
         heading: slide.speaker.heading || slide.reviewTitle,
         script: slide.speaker.html,
+        cues: slide.speaker.cues || null,
         sources: slide.sources || [],
       };
     }
 
     const sourceId = slide.scriptSource || `cut-${slide.parent || String(index).padStart(2, "0")}`;
     const id = `#${sourceId}`;
-    const cut = preview.querySelector(id);
+    const cut = preview?.querySelector(id);
     return {
       meta: cut?.querySelector(".preview-meta")?.textContent?.trim() || makeSlideNumber(index),
       heading: cut?.querySelector("h2")?.textContent?.trim() || slide.reviewTitle || `Slide ${index + 1}`,
       script: cut?.querySelector(".script-full")?.innerHTML || "<strong>상세 발표 스크립트</strong><p>등록된 스크립트가 없습니다.</p>",
+      cues: slide.speaker?.cues || null,
       sources: slide.sources || [],
     };
   });
@@ -189,6 +302,31 @@ function makeSectionLabel(slideInfo) {
     : `${slideInfo.sectionTitle} · ${range}`;
 }
 
+function makeSlideEditable(file, slideElement) {
+  const editableSelector = [
+    ".copy .eyebrow",
+    ".copy h1",
+    ".copy h2",
+    ".copy p",
+    ".copy li",
+    ".copy code",
+    ".slide-media .css-visual div",
+    ".slide-media .css-visual span",
+    ".slide-media .css-visual strong",
+    ".slide-media .css-visual p",
+    ".slide-media .css-visual code",
+  ].join(",");
+
+  slideElement.querySelectorAll(editableSelector).forEach((node) => {
+    if (node.closest(".note")) return;
+    node.contentEditable = "true";
+    node.spellcheck = true;
+    node.dataset.slideEditable = "true";
+    node.setAttribute("role", "textbox");
+  });
+  slideElement.addEventListener("input", () => markSlideDirty(file, slideElement));
+}
+
 async function loadSlide(slideInfo, index) {
   const file = getSlideFile(slideInfo);
   const parsed = await fetchDocument(file);
@@ -199,6 +337,7 @@ async function loadSlide(slideInfo, index) {
   }
 
   slideElement.querySelectorAll(".note").forEach((note) => note.remove());
+  makeSlideEditable(file, slideElement);
 
   const frame = document.createElement("article");
   frame.className = `deck-frame ${slideInfo.sectionStart ? "is-section-start" : "is-section-detail"}`;
@@ -209,7 +348,6 @@ async function loadSlide(slideInfo, index) {
   }
 
   slideElement.classList.add(slideInfo.sectionStart ? "section-start-slide" : "section-detail-slide");
-  applyGlossary(slideElement);
 
   const sectionLabel = document.createElement("div");
   sectionLabel.className = "deck-section-label";
@@ -223,6 +361,53 @@ async function loadSlide(slideInfo, index) {
   return frame;
 }
 
+function makeCueTextarea(labelText, value, ariaLabel) {
+  const label = document.createElement("label");
+  label.className = "review-field-label";
+  label.textContent = labelText;
+
+  const textarea = document.createElement("textarea");
+  textarea.className = "review-cue-input";
+  textarea.value = Array.isArray(value) ? value.join("\n") : value || "";
+  textarea.rows = Array.isArray(value) ? Math.max(2, Math.min(4, value.length)) : 2;
+  textarea.setAttribute("aria-label", ariaLabel);
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "review-cue-field";
+  wrapper.append(label, textarea);
+  return { wrapper, textarea };
+}
+
+function makeCuePanel(scriptInfo) {
+  const cues = scriptInfo.cues || {};
+  const panel = document.createElement("section");
+  panel.className = "review-cues";
+
+  const title = document.createElement("div");
+  title.className = "review-cues-title";
+  title.textContent = "발표 큐";
+
+  const purpose = makeCueTextarea("목적", cues.purpose, `${scriptInfo.meta} 발표 큐 목적`);
+  const keywords = makeCueTextarea("키워드", cues.keywords || [], `${scriptInfo.meta} 발표 큐 키워드`);
+  const flow = makeCueTextarea("말할 순서", cues.flow || [], `${scriptInfo.meta} 발표 큐 말할 순서`);
+  const example = makeCueTextarea("예시/비유", cues.example, `${scriptInfo.meta} 발표 큐 예시`);
+  const bridge = makeCueTextarea("다음 연결", cues.bridge, `${scriptInfo.meta} 발표 큐 다음 연결`);
+  const controls = {
+    purpose: purpose.textarea,
+    keywords: keywords.textarea,
+    flow: flow.textarea,
+    example: example.textarea,
+    bridge: bridge.textarea,
+  };
+
+  Object.values(controls).forEach((control) => {
+    control.addEventListener("input", () => markCuesDirty(scriptInfo.file, controls));
+  });
+
+  panel.append(title, purpose.wrapper, keywords.wrapper, flow.wrapper, example.wrapper, bridge.wrapper);
+  return panel;
+}
+
 function makeScriptPanel(scriptInfo) {
   const panel = document.createElement("section");
   panel.className = "review-script";
@@ -231,25 +416,44 @@ function makeScriptPanel(scriptInfo) {
   meta.className = "review-meta";
   meta.textContent = scriptInfo.meta;
 
-  const heading = document.createElement("h2");
-  heading.textContent = scriptInfo.heading;
+  const headingLabel = document.createElement("label");
+  headingLabel.className = "review-field-label";
+  headingLabel.textContent = "스크립트 제목";
+
+  const heading = document.createElement("input");
+  heading.className = "review-heading-input";
+  heading.type = "text";
+  heading.value = scriptInfo.heading;
+  heading.setAttribute("aria-label", `${scriptInfo.meta} 스크립트 제목`);
 
   const body = document.createElement("div");
-  body.className = "review-script-body";
+  body.className = "review-script-body is-editable";
   body.innerHTML = scriptInfo.script;
+  body.contentEditable = "true";
+  body.spellcheck = true;
+  body.setAttribute("role", "textbox");
+  body.setAttribute("aria-label", `${scriptInfo.meta} 발표 스크립트 본문`);
+  body.dataset.file = scriptInfo.file;
 
-  panel.append(meta, heading, body);
+  heading.addEventListener("input", () => markScriptDirty(scriptInfo.file, heading, body));
+  body.addEventListener("input", () => markScriptDirty(scriptInfo.file, heading, body));
+
+  panel.append(meta, makeCuePanel(scriptInfo), headingLabel, heading, body);
 
   if (scriptInfo.sources?.length) {
     const sources = document.createElement("div");
     sources.className = "review-sources";
     scriptInfo.sources.forEach((source) => {
-      const link = document.createElement("a");
-      link.href = source.url;
-      link.textContent = source.label;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      sources.append(link);
+      const sourceLinks = Array.isArray(source.links) ? source.links : [source];
+      sourceLinks.forEach((sourceLink) => {
+        if (!sourceLink.url) return;
+        const link = document.createElement("a");
+        link.href = sourceLink.url;
+        link.textContent = source.links ? `${source.label}: ${sourceLink.label}` : source.label;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        sources.append(link);
+      });
     });
     panel.append(sources);
   }
@@ -265,7 +469,10 @@ async function renderReviewDeck() {
     const slidesAndScripts = await Promise.all(
       slides.map(async (file, index) => ({
         frame: await loadSlide(file, index),
-        script: scripts[index],
+        script: {
+          ...scripts[index],
+          file: getSlideFile(file),
+        },
       })),
     );
 
@@ -284,3 +491,40 @@ async function renderReviewDeck() {
 }
 
 renderReviewDeck();
+
+async function saveReviewChanges() {
+  if (!canUseSaveApi) {
+    setSaveStatus("저장은 http://127.0.0.1:8766/presenter-review.html 에서 가능합니다", "error");
+    updateSaveButton();
+    return;
+  }
+  if (!dirtySlides.size || !saveButton) return;
+  saveButton.dataset.saving = "true";
+  updateSaveButton();
+  setSaveStatus("저장 중...", "saving");
+
+  try {
+    const response = await fetch("/api/presenter-review/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slides: [...dirtySlides.values()] }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || !payload.ok) {
+      throw new Error(payload.error || `저장 실패 ${response.status}`);
+    }
+    dirtySlides.clear();
+    setSaveStatus(`저장 완료: ${payload.saved}개 슬라이드`, "saved");
+  } catch (error) {
+    setSaveStatus(`저장 실패: ${error.message}`, "error");
+  } finally {
+    delete saveButton.dataset.saving;
+    updateSaveButton();
+  }
+}
+
+saveButton?.addEventListener("click", saveReviewChanges);
+if (!canUseSaveApi) {
+  setSaveStatus("읽기 전용: 저장은 로컬 서버에서 가능", "error");
+}
+updateSaveButton();

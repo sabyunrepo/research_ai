@@ -32,4 +32,4 @@ General technical learners and working professionals who are new to AI agent har
 ## Operating Rule
 
 Edit slide HTML only after loading this source brief, `lecture-cuts/slide-spec.json`, and `docs/harness/lecture-cuts-content-inventory.md`.
-After intentional content changes, regenerate `lecture-cuts/slide-spec.json` and rerun the unified gate.
+Slide HTML and presenter scripts are coupled teaching artifacts. When a slide changes, update its presenter script in `lecture-cuts/assets/slides.js` or `lecture-cuts/presenter-preview.html`; when a presenter script changes the claim, example, flow, or teaching point, update the corresponding slide HTML and `div.note`. After intentional content or script changes, regenerate `lecture-cuts/slide-spec.json` and rerun the unified gate.

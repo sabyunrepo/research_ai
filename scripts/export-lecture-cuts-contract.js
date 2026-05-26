@@ -10,6 +10,7 @@ const harnessRoot = path.join(root, "docs", "harness");
 const slideSpecPath = path.join(deckRoot, "slide-spec.json");
 const inventoryPath = path.join(harnessRoot, "lecture-cuts-content-inventory.md");
 const sourceMapPath = path.join(harnessRoot, "lecture-cuts-source-map.json");
+const slideHtmlCachePath = path.join(deckRoot, "assets", "slide-html.js");
 
 function readText(filePath) {
   return fs.readFileSync(filePath, "utf8");
@@ -81,6 +82,14 @@ function extractByClass(html, tagName, className) {
   );
   const match = html.match(pattern);
   return match ? match[1] : "";
+}
+
+function extractMainSlideHtml(html, file) {
+  const match = html.match(/<main\b[^>]*class=["'][^"']*\bslide\b[^"']*["'][^>]*>[\s\S]*<\/main>/i);
+  if (!match) {
+    throw new Error(`${file} does not include main.slide`);
+  }
+  return match[0];
 }
 
 function extractListItems(html, className) {
@@ -250,6 +259,7 @@ function resolveSpeaker(slide, previewCuts) {
         heading: slide.speaker.heading || slide.reviewTitle || "",
         html: slide.speaker.html || "",
         text: textFromHtml(slide.speaker.html || ""),
+        cues: slide.speaker.cues || null,
         sourceFile: "lecture-cuts/assets/slides.js",
       },
       source: "lecture-cuts/assets/slides.js:speaker",
@@ -507,6 +517,7 @@ function exportContract() {
       slideSpec: "lecture-cuts/slide-spec.json",
       contentInventory: "docs/harness/lecture-cuts-content-inventory.md",
       sourceMap: "docs/harness/lecture-cuts-source-map.json",
+      slideHtmlCache: "lecture-cuts/assets/slide-html.js",
     },
     sourcePageLinks,
     slides: slides.map((slide, index) => buildSlideContract(slide, index, previewCuts, sourcePageLinks)),
@@ -515,10 +526,17 @@ function exportContract() {
   writeText(slideSpecPath, stableJson(spec));
   writeText(sourceMapPath, stableJson(buildSourceMap(spec)));
   writeText(inventoryPath, buildInventory(spec));
+  writeText(
+    slideHtmlCachePath,
+    `window.LECTURE_SLIDE_HTML = ${stableJson(
+      Object.fromEntries(slides.map((slide) => [slide.file, extractMainSlideHtml(readText(path.join(deckRoot, slide.file)), slide.file)]))
+    )};`
+  );
 
   console.log(`Wrote ${rel(slideSpecPath)}`);
   console.log(`Wrote ${rel(sourceMapPath)}`);
   console.log(`Wrote ${rel(inventoryPath)}`);
+  console.log(`Wrote ${rel(slideHtmlCachePath)}`);
   console.log(`Slides exported: ${spec.slides.length}`);
   console.log(`Low-confidence fields: ${collectLowConfidence(spec).length}`);
 }
@@ -529,8 +547,8 @@ function checkConfidence() {
   }
   const spec = JSON.parse(readText(slideSpecPath));
   const lows = collectLowConfidence(spec);
-  if (spec.slides.length !== 87) {
-    console.error(`FAIL expected 87 slides, found ${spec.slides.length}`);
+  if (spec.slides.length !== 56) {
+    console.error(`FAIL expected 56 slides, found ${spec.slides.length}`);
     process.exit(1);
   }
   if (lows.length) {

@@ -98,8 +98,14 @@ function main() {
   }
 
   run("slides syntax", process.execPath, ["--check", "lecture-cuts/assets/slides.js"]);
+  run("slide html cache syntax", process.execPath, ["--check", "lecture-cuts/assets/slide-html.js"]);
   run("deck syntax", process.execPath, ["--check", "lecture-cuts/assets/deck.js"]);
   run("presenter review syntax", process.execPath, ["--check", "lecture-cuts/assets/presenter-review.js"]);
+  run("presenter review save server syntax", process.execPath, ["--check", "scripts/serve-lecture-cuts-review.js"]);
+  run("slide-script composition audit syntax", process.execPath, [
+    "--check",
+    "scripts/audit-lecture-cuts-slide-script-composition.js",
+  ]);
   console.log("PASS syntax checks");
 
   run("reproduction contract", process.execPath, ["scripts/validate-lecture-cuts-contract.js"]);
@@ -107,6 +113,18 @@ function main() {
 
   run("lecture-cuts audit", process.execPath, ["scripts/audit-lecture-cuts.js"]);
   console.log("PASS lecture-cuts audit");
+
+  run("lecture-cuts speaker sync audit", process.execPath, ["scripts/audit-lecture-cuts-speaker-sync.js"]);
+  console.log("PASS lecture-cuts speaker sync audit");
+
+  run("lecture-cuts Korean copy audit", process.execPath, ["scripts/audit-lecture-cuts-korean-copy.js"]);
+  console.log("PASS lecture-cuts Korean copy audit");
+
+  run("lecture-cuts slide redundancy audit", process.execPath, ["scripts/audit-lecture-cuts-slide-redundancy.js", "--slides", "6,7"]);
+  console.log("PASS lecture-cuts slide redundancy audit");
+
+  run("lecture-cuts slide-script composition audit", process.execPath, ["scripts/audit-lecture-cuts-slide-script-composition.js"]);
+  console.log("PASS lecture-cuts slide-script composition audit");
 
   run("pre-handoff hooks", process.execPath, ["scripts/run-lecture-cuts-hook.js", "pre-handoff"], { inherit: true });
   console.log("PASS pre-handoff hooks");

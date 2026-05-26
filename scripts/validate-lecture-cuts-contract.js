@@ -8,6 +8,7 @@ const root = path.resolve(__dirname, "..");
 const deckRoot = path.join(root, "lecture-cuts");
 const specPath = path.join(deckRoot, "slide-spec.json");
 const registryPath = path.join(deckRoot, "assets", "slides.js");
+const slideHtmlCachePath = path.join(deckRoot, "assets", "slide-html.js");
 const results = [];
 
 function record(level, name, detail = "") {
@@ -44,6 +45,35 @@ function loadSlides() {
     throw new Error("window.LECTURE_SLIDES must be a non-empty array");
   }
   return slides.map((slide) => (typeof slide === "string" ? { file: slide } : slide));
+}
+
+function loadSlideHtmlCache() {
+  if (!fs.existsSync(slideHtmlCachePath)) {
+    fail("slide html cache", "lecture-cuts/assets/slide-html.js is missing");
+    return null;
+  }
+  try {
+    const context = { window: {} };
+    vm.createContext(context);
+    vm.runInContext(readText(slideHtmlCachePath), context, { filename: "lecture-cuts/assets/slide-html.js" });
+    const cache = context.window.LECTURE_SLIDE_HTML;
+    if (!cache || typeof cache !== "object" || Array.isArray(cache)) {
+      fail("slide html cache", "window.LECTURE_SLIDE_HTML must be an object");
+      return null;
+    }
+    return cache;
+  } catch (error) {
+    fail("slide html cache", error.message);
+    return null;
+  }
+}
+
+function extractMainSlideHtml(html) {
+  const match = html.match(/<main\b[^>]*class=["'][^"']*\bslide\b[^"']*["'][^>]*>[\s\S]*?<\/main>/i);
+  if (!match) {
+    throw new Error("missing <main class=\"slide\">");
+  }
+  return match[0];
 }
 
 function loadSpec() {
@@ -141,6 +171,7 @@ function checkSourceSensitiveCoverage(registrySlides, contractSlides) {
   const byFile = new Map(contractSlides.map((slide) => [slide.file, slide]));
   const missingSlideSources = [];
   const deckGlobalOnly = [];
+  const allowDeckGlobal = [];
 
   registrySlides.forEach((registrySlide) => {
     const contractSlide = byFile.get(registrySlide.file);
@@ -148,11 +179,14 @@ function checkSourceSensitiveCoverage(registrySlides, contractSlides) {
       return;
     }
     const requiresSlideSource = Array.isArray(registrySlide.sources) && registrySlide.sources.length > 0;
+    const allowsDeckGlobal = registrySlide.sourcePolicy === "allow-deck-global";
     const hasSlideSource = Array.isArray(contractSlide.sources) && contractSlide.sources.some((source) => source.sourceScope === "slide");
     const hasAnySource = Array.isArray(contractSlide.sources) && contractSlide.sources.length > 0;
 
     if (requiresSlideSource && !hasSlideSource) {
       missingSlideSources.push(registrySlide.file);
+    } else if (allowsDeckGlobal && !hasSlideSource) {
+      allowDeckGlobal.push(registrySlide.file);
     } else if (!requiresSlideSource && !hasSlideSource && hasAnySource) {
       deckGlobalOnly.push(registrySlide.file);
     } else if (!hasAnySource) {
@@ -168,6 +202,55 @@ function checkSourceSensitiveCoverage(registrySlides, contractSlides) {
 
   if (deckGlobalOnly.length) {
     warn("source coverage", `${deckGlobalOnly.length} slides rely on deck-global source appendix only`);
+  }
+  if (allowDeckGlobal.length) {
+    pass("source coverage allowlist", `${allowDeckGlobal.length} slides explicitly allow deck-global coverage`);
+  }
+}
+
+function checkSlideHtmlCache(registrySlides) {
+  const cache = loadSlideHtmlCache();
+  if (!cache) {
+    return;
+  }
+
+  const expectedFiles = registrySlides.map((slide) => slide.file);
+  const actualFiles = Object.keys(cache);
+  const missing = expectedFiles.filter((file) => !Object.prototype.hasOwnProperty.call(cache, file));
+  const extra = actualFiles.filter((file) => !expectedFiles.includes(file));
+  const orderMismatches = expectedFiles
+    .map((file, index) => (actualFiles[index] === file ? null : `#${index + 1} cache=${actualFiles[index] || "missing"} expected=${file}`))
+    .filter(Boolean);
+  const drift = [];
+
+  expectedFiles.forEach((file) => {
+    if (!Object.prototype.hasOwnProperty.call(cache, file)) {
+      return;
+    }
+    try {
+      const expectedHtml = extractMainSlideHtml(readText(path.join(deckRoot, file)));
+      if (cache[file] !== expectedHtml) {
+        drift.push(file);
+      }
+    } catch (error) {
+      drift.push(`${file} (${error.message})`);
+    }
+  });
+
+  if (missing.length || extra.length || orderMismatches.length) {
+    fail("slide html cache order", [
+      missing.length ? `missing=${missing.join(", ")}` : "",
+      extra.length ? `extra=${extra.join(", ")}` : "",
+      orderMismatches.length ? orderMismatches.slice(0, 10).join("; ") : "",
+    ].filter(Boolean).join(" | "));
+  } else {
+    pass("slide html cache order", `${expectedFiles.length} cached fragments match registry order`);
+  }
+
+  if (drift.length) {
+    fail("slide html cache drift", drift.slice(0, 20).join(", "));
+  } else {
+    pass("slide html cache drift", `${expectedFiles.length} cached fragments match slide HTML`);
   }
 }
 
@@ -185,6 +268,7 @@ function main() {
     checkOrder(registrySlides, spec.slides);
     checkFilesAndHashes(spec.slides);
     checkSourceSensitiveCoverage(registrySlides, spec.slides);
+    checkSlideHtmlCache(registrySlides);
   }
 
   results.forEach((result) => {

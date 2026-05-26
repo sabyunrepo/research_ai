@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI 에이전트 하네스 엔지니어링 Presenter Review</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/style.css?v=20260525-glossary">
+  <link rel="stylesheet" href="assets/style.css?v=20260525-review-edit">
   <script defer src="assets/slides.js?v=20260525-korean-copy"></script>
-  <script defer src="assets/presenter-review.js?v=20260525-glossary-2"></script>
+  <script defer src="assets/slide-html.js?v=20260525-file-fallback"></script>
+  <script defer src="assets/presenter-review.js?v=20260525-file-fallback"></script>
 </head>
 <body class="review-page">
   <header class="deck-toolbar">
     <div>
       <p class="deck-kicker">Presenter Review</p>
       <h1>발표자 검토용</h1>
-      <p class="deck-subtitle">실제 발표 슬라이드와 상세 발표 스크립트를 함께 봅니다.</p>
+      <p class="deck-subtitle">실제 발표 슬라이드와 상세 발표 스크립트를 함께 보고 바로 수정합니다.</p>
     </div>
     <nav class="deck-actions" aria-label="Presenter review actions">
+      <button type="button" id="saveReviewChanges" class="save-review-button" disabled>저장</button>
+      <span id="saveReviewStatus" class="save-review-status" role="status" aria-live="polite">변경 없음</span>
       <a href="deck.html">실제 발표용</a>
       <a href="sources.html">근거 Sources</a>
       <a href="presenter-preview.html">스크립트 원본</a>

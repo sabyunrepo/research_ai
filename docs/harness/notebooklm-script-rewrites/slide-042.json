@@ -1,0 +1,39 @@
+{
+  "slideIndex": 42,
+  "file": "10-1-skill-trigger-description.html",
+  "title": "Skill의 description은 자동 호출 트리거입니다",
+  "requestedAt": "2026-05-25T11:19:36.681Z",
+  "freshChat": true,
+  "response": {
+    "answer": "Skill을 만들 때 가장 먼저 작성하는 것이 이름과 description, 즉 설명문입니다 [1]. 흔히들 파일 이름이 가장 중요하다고 생각하시지만, AI 에이전트 환경에서는 이름보다 이 description이 훨씬 더 중요합니다 [1].\n\n왜 그럴까요? 이 description은 단순한 참고용 안내문이 아니라, AI가 \"아, 지금 들어온 요청을 처리하려면 이 매뉴얼을 꺼내 써야겠구나\" 하고 스스로 판단하게 만드는 '자동 호출 트리거', 즉 작동 스위치 역할을 하기 때문입니다 [1].\n\n그래서 좋은 description은 이 Skill을 언제 써야 하는지 그 발동 조건을 아주 구체적으로 적어두어야 합니다 [1]. 만약 조건을 너무 넓고 뭉뚱그려 적어두면 어떻게 될까요? AI가 전혀 상관없는 요청을 받았을 때도 엉뚱하게 이 절차를 꺼내 들고 대화에 끼어들게 됩니다 [1]. 결국 우리가 반복해서 길게 입력하던 프롬프트를 자동화된 절차로 안전하게 옮기려면, 언제 이 파일을 열어볼지 그 기준부터 명확하게 잠가두어야 하는 것이죠 [1].\n\n자, 이렇게 description을 통해 '언제' 이 절차를 실행할지 정확히 약속했다면, 이제 그 안에는 실제로 '무엇을' 할지 적어줘야겠죠 [1]? 다음 장으로 넘어가서, Skill의 본문은 왜 길고 복잡한 설명서가 아니라 작업자가 바로 따라갈 수 있는 '짧은 절차'가 되어야 하는지 이어서 살펴보겠습니다 [1, 2].",
+    "conversation_id": "04f32e47-b19b-45ea-897e-20805af6d1b4",
+    "turn_number": 1,
+    "is_follow_up": false,
+    "references": [
+      {
+        "source_id": "75683e74-c7b3-43dd-9d85-a850b0cb9f4e",
+        "citation_number": 1,
+        "cited_text": "발표자 노트: 발표 포인트 좋은 description은 언제 이 Skill을 써야 하는지 명확히 말합니다.",
+        "start_char": 52425,
+        "end_char": 52484,
+        "chunk_id": "a4a1b781-7ae1-4f2d-8778-781dea860f3c",
+        "passage_id": null,
+        "answer_start_char": 52425,
+        "answer_end_char": 52942,
+        "score": 0.8567712652949375
+      },
+      {
+        "source_id": "75683e74-c7b3-43dd-9d85-a850b0cb9f4e",
+        "citation_number": 2,
+        "cited_text": "--------------------------------------------------------------------------------",
+        "start_char": 52942,
+        "end_char": 53024,
+        "chunk_id": "b49c25c4-77ba-411d-95aa-9d651a335bfe",
+        "passage_id": null,
+        "answer_start_char": 52942,
+        "answer_end_char": 53431,
+        "score": 0.86492017146544
+      }
+    ]
+  }
+}

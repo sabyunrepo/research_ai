@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-05-25T16:13:50.430Z",
+  "slides": [
+    {
+      "slide": 61,
+      "file": "16-hooks.html",
+      "title": "Hook은 지시가 아니라 실행입니다",
+      "issues": [],
+      "candidates": []
+    },
+    {
+      "slide": 83,
+      "file": "21-9-practice-personal-harness.html",
+      "title": "내 프로젝트에 가져갈 하네스 3개를 고릅니다",
+      "issues": [],
+      "candidates": []
+    }
+  ],
+  "sheetPaths": [
+    "/Users/sabyun/goinfre/research_ai/docs/audits/visual-overlap/contact-sheets/slides-61-83.png"
+  ]
+}

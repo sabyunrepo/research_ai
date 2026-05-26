@@ -1,0 +1,63 @@
+{
+  "slideIndex": 28,
+  "file": "06-1-good-few-shot.html",
+  "title": "좋은 few-shot은 슬라이드 명세의 완성도를 보여 줍니다",
+  "requestedAt": "2026-05-25T13:04:28.874Z",
+  "freshChat": true,
+  "response": {
+    "answer": "AI에게 슬라이드를 만들라고 시킬 때, 우리는 종종 \"예쁘게 잘 만들어 줘\"라고 말하곤 합니다 [1, 2]. 하지만 시스템이 자동으로 슬라이드를 찍어내는 환경에서 AI에게 정말 필요한 건 그런 모호한 감각이나 취향이 아닙니다 [1, 2].\n\n여기서 '퓨샷(Few-shot)', 즉 AI에게 답변의 모양을 고정하기 위해 미리 보여주는 몇 가지 예시가 아주 중요한 역할을 합니다 [1, 3]. \n\n좋은 예시는 AI에게 \"이 정도로 상세하게 써라\"라고 말로 길게 설명하지 않습니다 [4]. 대신 우리가 원하는 명세서의 깊이를 실제 모습 그대로 보여줍니다 [1, 4]. 원본 내용, 화면 레이아웃, 시각적인 디자인 기준, 그리고 완료를 증명하는 검증 기준까지 하나의 덩어리로 묶어서 말이죠 [1].\n\n현장에서 자주 하시는 실수가 불안한 마음에 예시의 '개수'를 무작정 늘리는 겁니다 [1, 4]. 하지만 정말 중요한 건 예시가 얼마나 많으냐가 아니라, 그 예시가 '최종 산출물과 얼마나 가까운가'입니다 [1]. \n\n실제로 슬라이드 설계도가 될 `slide-spec.json` 파일 안에 어떤 필드 이름이 들어가야 하는지, 내용은 얼마나 깊이 있게 적어야 하는지, 심지어 코드를 검증하는 명령까지 예시에 그대로 보여주세요 [4]. 이렇게 명세의 완성도를 꽉 잡아두면, 모델은 단순히 겉보기에 그럴듯한 제목만 흉내 내는 것을 넘어 우리가 원하는 결과물의 단단한 구조까지 정확하게 따라오게 됩니다 [4].\n\n그렇다면 반대로 생각해 보죠. 만약 AI에게 보여준 이 첫 예시가 엉성하고 모호하다면 어떤 일이 벌어질까요? 다음 슬라이드에서 나쁜 예시가 어떻게 작업 결과물 전체를 망치는지 확인해 보겠습니다 [2].",
+    "conversation_id": "04f32e47-b19b-45ea-897e-20805af6d1b4",
+    "turn_number": 1,
+    "is_follow_up": false,
+    "references": [
+      {
+        "source_id": "75683e74-c7b3-43dd-9d85-a850b0cb9f4e",
+        "citation_number": 1,
+        "cited_text": "출처",
+        "start_char": 37438,
+        "end_char": 37440,
+        "chunk_id": "f489e223-fda9-449b-bc26-cd31f5cf5b03",
+        "passage_id": null,
+        "answer_start_char": 37438,
+        "answer_end_char": 37980,
+        "score": 0.8484945850668798
+      },
+      {
+        "source_id": "75683e74-c7b3-43dd-9d85-a850b0cb9f4e",
+        "citation_number": 2,
+        "cited_text": "Slide 29 / 06-2-bad-few-shot",
+        "start_char": 38505,
+        "end_char": 38533,
+        "chunk_id": "a853bc2e-b526-44e6-b159-d6c436222e2f",
+        "passage_id": null,
+        "answer_start_char": 38505,
+        "answer_end_char": 39161,
+        "score": 0.846064791704459
+      },
+      {
+        "source_id": "75683e74-c7b3-43dd-9d85-a850b0cb9f4e",
+        "citation_number": 3,
+        "cited_text": "--------------------------------------------------------------------------------",
+        "start_char": 36422,
+        "end_char": 36504,
+        "chunk_id": "f7d53267-559d-44e7-b9af-bd98543da705",
+        "passage_id": null,
+        "answer_start_char": 36422,
+        "answer_end_char": 37438,
+        "score": 0.8344495476768048
+      },
+      {
+        "source_id": "75683e74-c7b3-43dd-9d85-a850b0cb9f4e",
+        "citation_number": 4,
+        "cited_text": "발표자 노트: 발표 포인트 좋은 few-shot은 “이 정도로 써라”를 말로 설명하지 않고 실제 슬라이드 명세 모양으로 보여 줍니다.",
+        "start_char": 37980,
+        "end_char": 38054,
+        "chunk_id": "373f7109-1c25-4dd2-b791-38a37c150a7b",
+        "passage_id": null,
+        "answer_start_char": 37980,
+        "answer_end_char": 38505,
+        "score": 0.8595351844599396
+      }
+    ]
+  }
+}

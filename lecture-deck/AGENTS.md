@@ -2,6 +2,11 @@
 
 This directory is an HTML/CSS Deck Automation Harness.
 
+## Instruction Ownership
+
+전역/사용자 레벨 AGENTS.md는 비워 두고, 이 프로젝트의 지침은 이 파일에서 관리한다.
+Shared agent rules may be added here only after they are adapted to this deck harness's source/spec/handoff workflow.
+
 ## Required workflow
 
 When creating or updating this deck, follow this order:
