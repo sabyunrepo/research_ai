@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 에이전트 하네스 엔지니어링 Audience</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/style.css?v=20260526-audience">
+  <script defer src="assets/audience.js?v=20260526-audience"></script>
+</head>
+<body class="audience-page">
+  <header class="audience-toolbar">
+    <div>
+      <p class="deck-kicker">Audience View</p>
+      <h1>AI 에이전트 하네스 엔지니어링</h1>
+      <p class="deck-subtitle" id="audienceStatus">공개된 슬라이드를 불러오는 중입니다.</p>
+    </div>
+    <nav class="deck-actions" aria-label="Audience actions">
+      <button type="button" id="audienceLiveToggle" aria-pressed="true">Live</button>
+    </nav>
+  </header>
+
+  <main class="audience-shell">
+    <section class="audience-stage" aria-label="Audience slide">
+      <button class="deck-nav-button deck-nav-previous" type="button" id="audiencePrevious" aria-label="이전 슬라이드">‹</button>
+      <iframe id="audienceSlideFrame" class="audience-slide-iframe" title="현재 공개 슬라이드"></iframe>
+      <button class="deck-nav-button deck-nav-next" type="button" id="audienceNext" aria-label="다음 슬라이드">›</button>
+    </section>
+
+    <aside class="audience-list-panel" aria-label="공개된 슬라이드 목록">
+      <div class="speaker-panel-header">
+        <span>공개됨</span>
+        <strong id="audienceProgress">-- / --</strong>
+      </div>
+      <div id="audienceSlideList" class="audience-slide-list"></div>
+    </aside>
+  </main>
+</body>
+</html>

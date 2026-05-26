@@ -11,7 +11,16 @@ const slidesPath = path.join(deckRoot, "assets", "slides.js");
 const portIndex = process.argv.indexOf("--port");
 const port = Number(portIndex >= 0 ? process.argv[portIndex + 1] : process.env.PORT || 8766);
 const host = process.env.HOST || "127.0.0.1";
+const audienceOnly = process.argv.includes("--audience-only") || process.env.AUDIENCE_ONLY === "1";
 const maxBodyBytes = 10 * 1024 * 1024;
+const presentationClients = new Set();
+const audienceClients = new Set();
+const presentationState = {
+  index: 0,
+  source: "server",
+  revision: 0,
+  updatedAt: new Date().toISOString(),
+};
 
 const contentTypes = new Map([
   [".html", "text/html; charset=utf-8"],
@@ -29,6 +38,20 @@ const contentTypes = new Map([
 function sendJson(response, statusCode, payload) {
   response.writeHead(statusCode, { "Content-Type": "application/json; charset=utf-8" });
   response.end(`${JSON.stringify(payload)}\n`);
+}
+
+function sendPresentationEvent(client, event, payload) {
+  client.write(`event: ${event}\n`);
+  client.write(`data: ${JSON.stringify(payload)}\n\n`);
+}
+
+function broadcastPresentationState() {
+  for (const client of presentationClients) {
+    sendPresentationEvent(client, "state", presentationState);
+  }
+  for (const client of audienceClients) {
+    sendPresentationEvent(client, "state", getAudienceState());
+  }
 }
 
 function readRequestJson(request) {
@@ -71,6 +94,10 @@ function writeSlides(slides) {
   fs.writeFileSync(slidesPath, `window.LECTURE_SLIDES = ${JSON.stringify(slides, null, 2)};\n`);
 }
 
+function getSlideFile(slide) {
+  return typeof slide === "string" ? slide : slide.file;
+}
+
 function getSlidePath(file) {
   const slidePath = path.normalize(path.join(deckRoot, file));
   if (!slidePath.startsWith(deckRoot + path.sep)) {
@@ -87,6 +114,92 @@ function extractMainSlide(html) {
 function extractNoteHtml(slideHtml) {
   const match = slideHtml.match(/<div\b[^>]*class=["'][^"']*\bnote\b[^"']*["'][^>]*>[\s\S]*?<\/div>/i);
   return match ? match[0] : "";
+}
+
+function sanitizeAudienceSlide(slideHtml) {
+  return slideHtml
+    .replace(/<div\b[^>]*class=["'][^"']*\bnote\b[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, "")
+    .replace(/<script\b[\s\S]*?<\/script>/gi, "")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, "")
+    .replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "");
+}
+
+function getAudienceSlides() {
+  const slides = loadSlides();
+  const maxIndex = Math.min(presentationState.index, slides.length - 1);
+  return slides.slice(0, maxIndex + 1).map((slide, index) => ({
+    index,
+    file: getSlideFile(slide),
+    title: slide.reviewTitle || getSlideFile(slide),
+    sectionId: slide.sectionId || "",
+    sectionTitle: slide.sectionTitle || "",
+    sectionStart: Boolean(slide.sectionStart),
+    sectionIndex: slide.sectionIndex || 1,
+    sectionTotal: slide.sectionTotal || 1,
+  }));
+}
+
+function getAudienceState() {
+  return {
+    index: presentationState.index,
+    revision: presentationState.revision,
+    updatedAt: presentationState.updatedAt,
+  };
+}
+
+function sendAudienceSlide(response, index) {
+  const slides = loadSlides();
+  if (!Number.isInteger(index) || index < 0 || index >= slides.length || index > presentationState.index) {
+    sendJson(response, 403, { ok: false, error: "아직 공개되지 않은 슬라이드입니다." });
+    return;
+  }
+
+  const slide = slides[index];
+  const file = getSlideFile(slide);
+  const rawHtml = fs.readFileSync(getSlidePath(file), "utf8");
+  const mainSlide = extractMainSlide(rawHtml);
+  if (!mainSlide) {
+    sendJson(response, 500, { ok: false, error: `${file}에서 main.slide를 찾지 못했습니다.` });
+    return;
+  }
+
+  const title = slide.reviewTitle || file;
+  const sectionLabel = slide.sectionTitle
+    ? slide.sectionStart
+      ? `SECTION ${slide.sectionId} · ${slide.sectionTitle}`
+      : `${slide.sectionTitle} · ${slide.sectionIndex || 1}/${slide.sectionTotal || 1}`
+    : "";
+  const safeSlide = sanitizeAudienceSlide(mainSlide);
+  const bodyClass = slide.sectionStart ? "is-section-start" : "is-section-detail";
+  response.writeHead(200, {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cache-Control": "no-store",
+  });
+  response.end(`<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <title>${escapeHtml(title)}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="audience-slide-body">
+  <article class="deck-frame audience-slide-frame ${bodyClass}" aria-label="${escapeHtml(title)}">
+    ${safeSlide}
+    <div class="deck-section-label">${escapeHtml(sectionLabel)}</div>
+    <div class="deck-slide-number">${String(index + 1).padStart(2, "0")} / ${slides.length}</div>
+  </article>
+</body>
+</html>`);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
 }
 
 function preserveNoteHtml(nextSlideHtml, previousSlideHtml) {
@@ -259,9 +372,93 @@ async function handleSave(request, response) {
   }
 }
 
-function serveStatic(request, response) {
+async function handlePresentationState(request, response) {
+  try {
+    const payload = await readRequestJson(request);
+    const slides = loadSlides();
+    const index = Number(payload.index);
+    if (!Number.isInteger(index) || index < 0 || index >= slides.length) {
+      throw new Error(`슬라이드 index가 범위를 벗어났습니다: ${payload.index}`);
+    }
+
+    presentationState.index = index;
+    presentationState.source = String(payload.source || "unknown").slice(0, 48);
+    presentationState.revision += 1;
+    presentationState.updatedAt = new Date().toISOString();
+    broadcastPresentationState();
+    sendJson(response, 200, { ok: true, ...presentationState });
+  } catch (error) {
+    sendJson(response, 400, { ok: false, error: error.message });
+  }
+}
+
+function handlePresentationEvents(request, response) {
+  response.writeHead(200, {
+    "Content-Type": "text/event-stream; charset=utf-8",
+    "Cache-Control": "no-store, no-transform",
+    Connection: "keep-alive",
+    "X-Accel-Buffering": "no",
+  });
+  response.write("\n");
+  presentationClients.add(response);
+  sendPresentationEvent(response, "state", presentationState);
+  request.on("close", () => {
+    presentationClients.delete(response);
+  });
+}
+
+function handleAudienceSlides(request, response) {
+  try {
+    sendJson(response, 200, {
+      ok: true,
+      state: getAudienceState(),
+      slides: getAudienceSlides(),
+    });
+  } catch (error) {
+    sendJson(response, 500, { ok: false, error: error.message });
+  }
+}
+
+function handleAudienceEvents(request, response) {
+  response.writeHead(200, {
+    "Content-Type": "text/event-stream; charset=utf-8",
+    "Cache-Control": "no-store, no-transform",
+    Connection: "keep-alive",
+    "X-Accel-Buffering": "no",
+  });
+  response.write("\n");
+  const client = {
+    write(chunk) {
+      response.write(chunk);
+    },
+  };
+  const sendState = () => sendPresentationEvent(client, "state", getAudienceState());
+  audienceClients.add(client);
+  sendState();
+  request.on("close", () => {
+    audienceClients.delete(client);
+  });
+}
+
+function isAudienceStaticPath(pathname) {
+  if (pathname === "/" || pathname === "/audience.html") return true;
+  if (pathname === "/assets/style.css" || pathname === "/assets/audience.js") return true;
+  return /^\/assets\/(?:handdrawn|generated)\/[\w.-]+\.(?:png|jpg|jpeg|svg|webp)$/i.test(pathname);
+}
+
+function isPublicAudienceRequest(request) {
+  return audienceOnly || Boolean(request.headers["cf-ray"] || request.headers["cf-connecting-ip"]);
+}
+
+function serveStatic(request, response, publicAudienceOnly = isPublicAudienceRequest(request)) {
   const url = new URL(request.url, `http://${request.headers.host || `${host}:${port}`}`);
-  const pathname = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
+  const rawPathname = decodeURIComponent(url.pathname);
+  if (publicAudienceOnly && !isAudienceStaticPath(rawPathname)) {
+    response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+    response.end("Not found\n");
+    return;
+  }
+  const pathname = rawPathname === "/" ? (publicAudienceOnly ? "/audience.html" : "/index.html") : rawPathname;
   const requestedPath = path.normalize(path.join(deckRoot, pathname));
 
   if (!requestedPath.startsWith(deckRoot + path.sep) && requestedPath !== deckRoot) {
@@ -285,12 +482,48 @@ function serveStatic(request, response) {
 }
 
 const server = http.createServer((request, response) => {
+  const publicAudienceOnly = isPublicAudienceRequest(request);
+  if (request.method === "GET" && request.url?.startsWith("/api/audience/slides")) {
+    handleAudienceSlides(request, response);
+    return;
+  }
+  if (request.method === "GET" && request.url?.startsWith("/api/audience/events")) {
+    handleAudienceEvents(request, response);
+    return;
+  }
+  if (request.method === "GET" && request.url?.startsWith("/api/audience/slide/")) {
+    const url = new URL(request.url, `http://${request.headers.host || `${host}:${port}`}`);
+    const index = Number(url.pathname.split("/").pop());
+    sendAudienceSlide(response, index);
+    return;
+  }
+  if (publicAudienceOnly) {
+    if (request.method === "GET" || request.method === "HEAD") {
+      serveStatic(request, response, publicAudienceOnly);
+      return;
+    }
+    response.writeHead(405, { "Content-Type": "text/plain; charset=utf-8" });
+    response.end("Method not allowed\n");
+    return;
+  }
+  if (request.method === "GET" && request.url?.startsWith("/api/presentation/state")) {
+    sendJson(response, 200, { ok: true, ...presentationState });
+    return;
+  }
+  if (request.method === "GET" && request.url?.startsWith("/api/presentation/events")) {
+    handlePresentationEvents(request, response);
+    return;
+  }
+  if (request.method === "POST" && request.url?.startsWith("/api/presentation/state")) {
+    handlePresentationState(request, response);
+    return;
+  }
   if (request.method === "POST" && request.url?.startsWith("/api/presenter-review/save")) {
     handleSave(request, response);
     return;
   }
   if (request.method === "GET" || request.method === "HEAD") {
-    serveStatic(request, response);
+    serveStatic(request, response, publicAudienceOnly);
     return;
   }
   response.writeHead(405, { "Content-Type": "text/plain; charset=utf-8" });
@@ -299,4 +532,7 @@ const server = http.createServer((request, response) => {
 
 server.listen(port, host, () => {
   console.log(`Presenter review server: http://${host}:${port}/presenter-review.html`);
+  console.log(`Speaker console: http://${host}:${port}/speaker.html`);
+  console.log(`Stage deck: http://${host}:${port}/deck.html`);
+  console.log(`Audience page: http://${host}:${port}/audience.html${audienceOnly ? " (audience-only)" : ""}`);
 });

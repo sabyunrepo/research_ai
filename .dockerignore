@@ -1,0 +1,9 @@
+.git
+.worktrees
+.playwright-mcp
+.claude
+.codex
+node_modules
+.DS_Store
+*.log
+

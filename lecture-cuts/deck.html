@@ -9,6 +9,7 @@
   <script defer src="assets/slides.js?v=20260525-korean-copy"></script>
   <script defer src="assets/slide-html.js?v=20260525-file-fallback"></script>
   <script defer src="assets/deck.js?v=20260525-present"></script>
+  <script defer src="assets/presentation-sync.js?v=20260526-sync"></script>
 </head>
 <body class="deck-page">
   <header class="deck-toolbar">
@@ -19,10 +20,13 @@
     </div>
     <nav class="deck-actions" aria-label="Deck actions">
       <a href="index.html">Index</a>
+      <a href="speaker.html">발표자 콘솔</a>
+      <a href="audience.html">청강자용</a>
       <a href="presenter-review.html">발표자 검토용</a>
       <button type="button" id="presentDeck">Present</button>
       <button type="button" id="printDeck">Print / PDF</button>
     </nav>
+    <span id="presentationSyncStatus" class="presentation-sync-status" role="status" aria-live="polite">동기화 준비 중</span>
   </header>
 
   <div class="deck-stage">

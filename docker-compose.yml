@@ -1,0 +1,36 @@
+services:
+  lecture-cuts:
+    build:
+      context: .
+    container_name: lecture-cuts
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8777
+    ports:
+      - "127.0.0.1:8777:8777"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8777/api/audience/slides').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: lecture-cuts-cloudflared
+    depends_on:
+      lecture-cuts:
+        condition: service_healthy
+    environment:
+      CLOUDFLARE_TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN:-}
+    profiles:
+      - tunnel
+    restart: unless-stopped

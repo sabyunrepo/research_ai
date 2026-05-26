@@ -8,6 +8,7 @@ const nextButton = document.querySelector("#nextSlide");
 const deckStatus = document.querySelector("#deckStatus");
 let frames = [];
 let currentSlideIndex = 0;
+let pendingSlideTarget = null;
 window.LECTURE_RUNTIME_DIAGNOSTICS = {
   fetchLoaded: 0,
   cacheDirectLoaded: 0,
@@ -24,6 +25,7 @@ const glossaryTerms = [
   ["SessionStart", "세션이 시작되거나 재개될 때 실행되는 Hook 이벤트입니다."],
   ["Evaluation", "결과가 기준을 만족하는지 확인하는 평가 절차입니다. 테스트, 리뷰, 채점표가 여기에 들어갑니다."],
   ["verification", "작업이 정말 끝났는지 증거로 확인하는 과정입니다. 테스트 실행, 링크 검사, 화면 확인 등이 포함됩니다."],
+  ["TDD", "Test-Driven Development의 약자입니다. 실패하는 테스트를 먼저 만들고, 그 테스트를 통과하도록 구현하는 개발 방식입니다."],
   ["Spec-driven", "감으로 바로 만들지 않고 목표, 제약, 완료 기준을 먼저 문서로 고정한 뒤 구현하는 방식입니다."],
   ["reasoning model", "복잡한 문제를 단계적으로 추론하도록 설계된 AI 모델입니다."],
   ["Subagents", "메인 대화와 분리된 별도 context에서 특정 역할을 맡는 AI 작업자들입니다."],
@@ -245,6 +247,9 @@ async function loadSlide(slideInfo, index) {
 
 function setActiveSlide(index, options = {}) {
   if (!frames.length) {
+    if (Number.isInteger(index)) {
+      pendingSlideTarget = { index, options };
+    }
     return;
   }
 
@@ -274,6 +279,14 @@ function setActiveSlide(index, options = {}) {
     const hash = `#slide-${currentSlideIndex + 1}`;
     history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
   }
+
+  window.dispatchEvent(new CustomEvent("lecture-slide-change", {
+    detail: {
+      index: currentSlideIndex,
+      file: getSlideFile(slides[currentSlideIndex]),
+      source: options.source || "deck",
+    },
+  }));
 }
 
 function moveSlide(delta) {
@@ -318,7 +331,12 @@ async function renderDeck() {
   try {
     frames = await Promise.all(slides.map(loadSlide));
     deck.append(...frames);
-    setActiveSlide(getHashSlideIndex(), { updateHash: !window.location.hash });
+    const initialTarget = pendingSlideTarget || {
+      index: getHashSlideIndex(),
+      options: { updateHash: !window.location.hash },
+    };
+    pendingSlideTarget = null;
+    setActiveSlide(initialTarget.index, initialTarget.options);
   } catch (error) {
     const message = document.createElement("p");
     message.className = "deck-error";
@@ -326,6 +344,21 @@ async function renderDeck() {
     deck.append(message);
   }
 }
+
+window.LECTURE_DECK_CONTROL = {
+  getSlideCount() {
+    return slides.length;
+  },
+  getCurrentSlideIndex() {
+    return currentSlideIndex;
+  },
+  setSlide(index, options = {}) {
+    setActiveSlide(index, options);
+  },
+  moveSlide(delta, options = {}) {
+    setActiveSlide(currentSlideIndex + delta, options);
+  },
+};
 
 printButton?.addEventListener("click", () => window.print());
 presentButton?.addEventListener("click", () => {

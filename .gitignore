@@ -2,3 +2,6 @@
 .DS_Store
 .claude/settings.local.json
 .worktrees/
+.env
+.env.*
+!.env.example
