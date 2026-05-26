@@ -442,7 +442,7 @@ function handleAudienceEvents(request, response) {
 
 function isAudienceStaticPath(pathname) {
   if (pathname === "/" || pathname === "/audience.html") return true;
-  if (pathname === "/assets/style.css" || pathname === "/assets/audience.js") return true;
+  if (pathname === "/assets/style.css" || pathname === "/assets/audience.js" || pathname === "/assets/glossary.js") return true;
   return /^\/assets\/(?:handdrawn|generated)\/[\w.-]+\.(?:png|jpg|jpeg|svg|webp)$/i.test(pathname);
 }
 

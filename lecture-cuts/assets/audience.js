@@ -3,15 +3,19 @@ const audienceProgress = document.querySelector("#audienceProgress");
 const audienceFrame = document.querySelector("#audienceSlideFrame");
 const audiencePrevious = document.querySelector("#audiencePrevious");
 const audienceNext = document.querySelector("#audienceNext");
-const audienceLiveToggle = document.querySelector("#audienceLiveToggle");
+const audienceFollowToggle = document.querySelector("#audienceFollowToggle");
+const audiencePanelToggle = document.querySelector("#audiencePanelToggle");
+const audiencePanelRestore = document.querySelector("#audiencePanelRestore");
+const audienceListPanel = document.querySelector(".audience-list-panel");
 const audienceSlideList = document.querySelector("#audienceSlideList");
 let availableSlides = [];
 let currentIndex = 0;
-let liveMode = true;
+let followMode = true;
 let latestRevision = 0;
 
 function setAudienceStatus(message) {
   audienceStatus.textContent = message;
+  window.LECTURE_GLOSSARY?.apply?.(audienceStatus);
 }
 
 function getMaxIndex() {
@@ -22,11 +26,19 @@ function makeLabel(index) {
   return `${String(index + 1).padStart(2, "0")} / ${availableSlides.length || "--"}`;
 }
 
-function setLiveMode(nextLiveMode) {
-  liveMode = nextLiveMode;
-  audienceLiveToggle.setAttribute("aria-pressed", String(liveMode));
-  audienceLiveToggle.textContent = liveMode ? "Live" : "Review";
-  audienceLiveToggle.dataset.state = liveMode ? "live" : "review";
+function setFollowMode(nextFollowMode) {
+  followMode = nextFollowMode;
+  audienceFollowToggle.setAttribute("aria-pressed", String(followMode));
+  audienceFollowToggle.dataset.state = followMode ? "following" : "paused";
+  audienceFollowToggle.textContent = followMode ? "따라가는 중" : "따라가기";
+}
+
+function setListPanelHidden(hidden) {
+  document.body.classList.toggle("audience-list-hidden", hidden);
+  audienceListPanel.hidden = hidden;
+  audiencePanelRestore.hidden = !hidden;
+  audiencePanelToggle.setAttribute("aria-expanded", String(!hidden));
+  audiencePanelToggle.textContent = hidden ? "표시" : "숨김";
 }
 
 function renderSlideList() {
@@ -43,7 +55,7 @@ function renderSlideList() {
     title.textContent = slide.title || slide.file;
     button.append(number, title);
     button.addEventListener("click", () => {
-      setLiveMode(false);
+      setFollowMode(false);
       setAudienceSlide(slide.index);
     });
     audienceSlideList.append(button);
@@ -60,10 +72,15 @@ function setAudienceSlide(index) {
   audienceProgress.textContent = makeLabel(currentIndex);
   audiencePrevious.disabled = currentIndex === 0;
   audienceNext.disabled = currentIndex >= getMaxIndex();
-  setAudienceStatus(`${makeLabel(currentIndex)} · ${slide.title || slide.file}${liveMode ? " · Live" : " · Review"}`);
+  setAudienceStatus(`공개됨 · ${slide.title || slide.file}`);
   audienceSlideList.querySelectorAll(".audience-slide-list-item").forEach((button) => {
     button.setAttribute("aria-current", String(Number(button.dataset.index) === currentIndex));
   });
+}
+
+function applyAudienceSlideGlossary() {
+  const slideDocument = audienceFrame.contentDocument;
+  window.LECTURE_GLOSSARY?.apply?.(slideDocument?.querySelector(".slide"));
 }
 
 async function refreshAudienceSlides(options = {}) {
@@ -75,7 +92,7 @@ async function refreshAudienceSlides(options = {}) {
   availableSlides = payload.slides || [];
   latestRevision = Math.max(latestRevision, payload.state?.revision || 0);
   renderSlideList();
-  const targetIndex = options.forceLive || liveMode ? getMaxIndex() : Math.min(currentIndex, getMaxIndex());
+  const targetIndex = options.forceFollow || followMode ? getMaxIndex() : Math.min(currentIndex, getMaxIndex());
   setAudienceSlide(targetIndex);
 }
 
@@ -91,7 +108,7 @@ function connectAudienceEvents() {
     }
     latestRevision = payload.revision || 0;
     try {
-      await refreshAudienceSlides({ forceLive: liveMode });
+      await refreshAudienceSlides({ forceFollow: followMode });
     } catch (error) {
       setAudienceStatus(`업데이트 실패: ${error.message}`);
     }
@@ -102,39 +119,39 @@ function connectAudienceEvents() {
 }
 
 audiencePrevious.addEventListener("click", () => {
-  setLiveMode(false);
+  setFollowMode(false);
   setAudienceSlide(currentIndex - 1);
 });
 audienceNext.addEventListener("click", () => {
-  const nextIndex = currentIndex + 1;
-  setLiveMode(nextIndex >= getMaxIndex());
-  setAudienceSlide(nextIndex);
+  setFollowMode(false);
+  setAudienceSlide(currentIndex + 1);
 });
-audienceLiveToggle.addEventListener("click", () => {
-  setLiveMode(!liveMode);
-  if (liveMode) {
+audienceFollowToggle.addEventListener("click", () => {
+  setFollowMode(!followMode);
+  if (followMode) {
     setAudienceSlide(getMaxIndex());
-  } else {
-    setAudienceStatus(`${makeLabel(currentIndex)} · Review`);
   }
 });
+audiencePanelToggle.addEventListener("click", () => setListPanelHidden(true));
+audiencePanelRestore.addEventListener("click", () => setListPanelHidden(false));
+audienceFrame.addEventListener("load", applyAudienceSlideGlossary);
 window.addEventListener("keydown", (event) => {
   if (event.target?.closest?.("input, textarea, select, [contenteditable='true']")) {
     return;
   }
   if (["ArrowLeft", "PageUp", "Backspace"].includes(event.key)) {
     event.preventDefault();
-    setLiveMode(false);
+    setFollowMode(false);
     setAudienceSlide(currentIndex - 1);
   } else if (["ArrowRight", "PageDown", " "].includes(event.key)) {
     event.preventDefault();
-    const nextIndex = currentIndex + 1;
-    setLiveMode(nextIndex >= getMaxIndex());
-    setAudienceSlide(nextIndex);
+    setFollowMode(false);
+    setAudienceSlide(currentIndex + 1);
   }
 });
 
-refreshAudienceSlides({ forceLive: true })
+setFollowMode(true);
+refreshAudienceSlides({ forceFollow: true })
   .then(connectAudienceEvents)
   .catch((error) => {
     setAudienceStatus(`청강자 화면을 불러오지 못했습니다: ${error.message}`);
