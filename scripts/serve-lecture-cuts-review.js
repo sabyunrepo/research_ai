@@ -236,14 +236,6 @@ function normalizeChange(change) {
   const cues = hasCues && change.cues && typeof change.cues === "object"
     ? {
         purpose: String(change.cues.purpose || "").trim(),
-        keywords: Array.isArray(change.cues.keywords)
-          ? change.cues.keywords.map((keyword) => String(keyword || "").trim()).filter(Boolean)
-          : [],
-        flow: Array.isArray(change.cues.flow)
-          ? change.cues.flow.map((step) => String(step || "").trim()).filter(Boolean)
-          : [],
-        example: String(change.cues.example || "").trim(),
-        bridge: String(change.cues.bridge || "").trim(),
       }
     : undefined;
   const slideHtml = Object.prototype.hasOwnProperty.call(change, "slideHtml") ? String(change.slideHtml || "").trim() : undefined;
@@ -268,10 +260,6 @@ function normalizeChange(change) {
   if (hasCues) {
     const cueTextLength = [
       cues.purpose,
-      cues.keywords.join(" "),
-      cues.flow.join(" "),
-      cues.example,
-      cues.bridge,
     ].join(" ").length;
     if (cueTextLength > 2000) {
       throw new Error(`${file}의 발표 큐가 너무 깁니다.`);

@@ -48,11 +48,7 @@ function setSpeakerStatus(message) {
 function renderCueList(cues = {}) {
   speakerCuePanel.replaceChildren();
   const rows = [
-    ["목적", cues.purpose],
-    ["키워드", Array.isArray(cues.keywords) ? cues.keywords.join(", ") : cues.keywords],
-    ["말할 순서", Array.isArray(cues.flow) ? cues.flow.join(" / ") : cues.flow],
-    ["예시", cues.example],
-    ["다음 연결", cues.bridge],
+    ["한줄 큐", cues.purpose],
   ].filter(([, value]) => value);
 
   rows.forEach(([label, value]) => {

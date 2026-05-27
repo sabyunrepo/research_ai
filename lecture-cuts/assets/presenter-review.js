@@ -220,16 +220,6 @@ function markCuesDirty(file, controls) {
   const entry = getDirtyEntry(file);
   entry.cues = {
     purpose: controls.purpose.value.trim(),
-    keywords: controls.keywords.value
-      .split(/[,\n]/)
-      .map((keyword) => keyword.trim())
-      .filter(Boolean),
-    flow: controls.flow.value
-      .split(/\n+/)
-      .map((step) => step.trim())
-      .filter(Boolean),
-    example: controls.example.value.trim(),
-    bridge: controls.bridge.value.trim(),
   };
   setSaveStatus(
     canUseSaveApi ? `${dirtySlides.size}개 슬라이드 저장 대기` : "저장은 로컬 서버에서만 가능합니다",
@@ -386,26 +376,18 @@ function makeCuePanel(scriptInfo) {
 
   const title = document.createElement("div");
   title.className = "review-cues-title";
-  title.textContent = "발표 큐";
+  title.textContent = "발표 큐 직접 수정";
 
-  const purpose = makeCueTextarea("목적", cues.purpose, `${scriptInfo.meta} 발표 큐 목적`);
-  const keywords = makeCueTextarea("키워드", cues.keywords || [], `${scriptInfo.meta} 발표 큐 키워드`);
-  const flow = makeCueTextarea("말할 순서", cues.flow || [], `${scriptInfo.meta} 발표 큐 말할 순서`);
-  const example = makeCueTextarea("예시/비유", cues.example, `${scriptInfo.meta} 발표 큐 예시`);
-  const bridge = makeCueTextarea("다음 연결", cues.bridge, `${scriptInfo.meta} 발표 큐 다음 연결`);
+  const purpose = makeCueTextarea("한줄 큐", cues.purpose, `${scriptInfo.meta} 발표 큐 한줄 큐`);
   const controls = {
     purpose: purpose.textarea,
-    keywords: keywords.textarea,
-    flow: flow.textarea,
-    example: example.textarea,
-    bridge: bridge.textarea,
   };
 
   Object.values(controls).forEach((control) => {
     control.addEventListener("input", () => markCuesDirty(scriptInfo.file, controls));
   });
 
-  panel.append(title, purpose.wrapper, keywords.wrapper, flow.wrapper, example.wrapper, bridge.wrapper);
+  panel.append(title, purpose.wrapper);
   return panel;
 }
 
