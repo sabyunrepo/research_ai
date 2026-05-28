@@ -342,6 +342,108 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; }
     }
+
+    @media (max-width: 720px) {
+      .deck {
+        gap: 18px;
+        padding: 18px;
+      }
+
+      .slide {
+        width: min(100%, calc(100vw - 36px));
+        min-height: 520px;
+        aspect-ratio: auto;
+        overflow: hidden;
+      }
+
+      .stage {
+        position: relative;
+        inset: auto;
+        padding: 26px 28px 92px;
+        gap: 16px;
+      }
+
+      .kicker {
+        font-size: 14px;
+      }
+
+      h1,
+      .headline-xl {
+        max-width: 100%;
+        font-size: 34px;
+        line-height: 1.12;
+      }
+
+      .subline {
+        max-width: 100%;
+        font-size: 20px;
+      }
+
+      .bridge {
+        left: 28px;
+        right: 28px;
+        bottom: 18px;
+        font-size: 16px;
+        line-height: 1.35;
+      }
+
+      .anchors,
+      .blank-list,
+      .map,
+      .handoff,
+      .term-map {
+        grid-template-columns: 1fr;
+        display: grid;
+        gap: 10px;
+      }
+
+      .anchor,
+      .blank,
+      .step b,
+      .handoff-card b,
+      .term-cell b {
+        font-size: 20px;
+      }
+
+      .anchor,
+      .step,
+      .handoff-card,
+      .term-cell {
+        min-height: auto;
+        padding: 12px 14px;
+      }
+
+      .mock-asset,
+      .doodle {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        min-height: auto;
+        margin-top: 4px;
+        transform: none;
+      }
+
+      .mock-asset b {
+        font-size: 20px;
+      }
+
+      .mock-asset span,
+      .handoff-card span,
+      .term-cell span {
+        font-size: 15px;
+      }
+
+      .quote {
+        max-width: 100%;
+        font-size: 24px;
+      }
+
+      .term-note {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -995,273 +1097,276 @@
       <div class="bridge">다음 Act에서는 역할과 도구 권한을 나눕니다.</div>
     </section>
 
+
     <section class="slide">
       <div class="note">5-1 · Act 4 recover · lecture only</div>
       <div class="stage">
         <div class="kicker">Act 5 · 역할 분리와 도구 권한</div>
-        <h1 class="headline-xl">매뉴얼이 있어도 한 명이 모든 일을 하면 판단이 섞입니다.</h1>
-
-        <div class="anchors"><div class="anchor">조사 판단</div><div class="anchor">구현 판단</div><div class="anchor">검토 판단</div></div>
+        <h1 class="headline-xl">김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.</h1>
+        <div class="anchors"><div class="anchor">자료 찾기</div><div class="anchor">결과물 만들기</div><div class="anchor">제출 전 확인</div></div>
       </div>
-      <div class="mock-asset"><b>한 명의 김아이</b><span>조사</span><span>구현</span><span>검토</span></div>
-      <div class="bridge">역할은 사람 수가 아니라 책임의 경계입니다.</div>
+      <div class="mock-asset"><b>김아이 혼자</b><span>자료 찾기</span><span>결과물</span><span>제출 전 확인</span></div>
+      <div class="bridge">회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-2 · role boundaries · lecture only</div>
+      <div class="note">5-2 · company approval roles · lecture only</div>
       <div class="stage">
 
-        <h1>역할은 사람 수가 아니라 책임의 경계입니다.</h1>
-
-        <div class="anchors"><div class="anchor">누가 무엇을 보는가</div><div class="anchor">누가 무엇을 판단하는가</div><div class="anchor">누가 어떤 도구를 쓰는가</div></div>
+        <h1>회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</h1>
+        <div class="anchors"><div class="anchor">담당자</div><div class="anchor">검토자</div><div class="anchor">승인자</div></div>
       </div>
-      <div class="mock-asset"><b>책임 경계</b><span>볼 자료</span><span>판단</span><span>쓸 도구</span></div>
-      <div class="bridge">먼저 조사 담당은 근거를 찾고 정리합니다.</div>
+      <div class="mock-asset"><b>회사 결재</b><span>담당자</span><span>검토자</span><span>승인자</span></div>
+      <div class="bridge">해야 할 일이 많아지면 다른 신입사원을 데려옵니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-3 · research role · lecture only</div>
+      <div class="note">5-3 · new hires team · lecture only</div>
       <div class="stage">
 
-        <h1>조사 담당은 근거를 찾고 정리합니다.</h1>
-
-        <div class="anchors"><div class="anchor">자료 확인</div><div class="anchor">출처 기록</div><div class="anchor">모르는 것 표시</div></div>
+        <h1>해야 할 일이 많아지면 다른 신입사원을 데려옵니다.</h1>
+        <div class="anchors"><div class="anchor">김아이</div><div class="anchor">최아이</div><div class="anchor">박아이</div></div>
       </div>
-      <div class="mock-asset"><b>조사 담당</b><span>자료</span><span>출처</span><span>모르는 것</span></div>
-      <div class="bridge">구현 담당은 정해진 지시와 자료로 결과물을 만듭니다.</div>
+      <div class="mock-asset"><b>신입사원 팀</b><span>김아이</span><span>최아이</span><span>박아이</span></div>
+      <div class="bridge">김아이는 근거를 찾고 모르는 것을 표시합니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-4 · implement role · lecture only</div>
+      <div class="note">5-4 · kimai research role · lecture only</div>
       <div class="stage">
 
-        <h1>구현 담당은 정해진 지시와 자료로 결과물을 만듭니다.</h1>
-
-        <div class="anchors"><div class="anchor">지시 따르기</div><div class="anchor">산출물 만들기</div><div class="anchor">임의 확장 금지</div></div>
+        <h1>김아이는 근거를 찾고 모르는 것을 표시합니다.</h1>
+        <div class="anchors"><div class="anchor">자료 찾기</div><div class="anchor">출처 남기기</div><div class="anchor">모르는 것 표시</div></div>
       </div>
-      <div class="mock-asset"><b>구현 담당</b><span>지시</span><span>자료</span><span>산출물</span></div>
-      <div class="bridge">검토 담당은 기준에 맞는지 확인합니다.</div>
+      <div class="mock-asset"><b>김아이 역할</b><span>자료</span><span>출처</span><span>모르는 것</span></div>
+      <div class="bridge">최아이는 정해진 지시와 자료로 결과물을 만듭니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-5 · review role · lecture only</div>
+      <div class="note">5-5 · choi writing role · lecture only</div>
       <div class="stage">
 
-        <h1>검토 담당은 기준에 맞는지 확인합니다.</h1>
-
-        <div class="anchors"><div class="anchor">기준 대조</div><div class="anchor">빠진 것 찾기</div><div class="anchor">통과/보류 판단</div></div>
+        <h1>최아이는 정해진 지시와 자료로 결과물을 만듭니다.</h1>
+        <div class="anchors"><div class="anchor">지시서 보기</div><div class="anchor">정해진 자료 사용</div><div class="anchor">보고서 초안 작성</div></div>
       </div>
-      <div class="mock-asset"><b>검토 담당</b><span>기준표</span><span>빠진 것</span><span>보류</span></div>
-      <div class="bridge">역할마다 붙는 매뉴얼도 달라질 수 있습니다.</div>
+      <div class="mock-asset"><b>최아이 역할</b><span>지시서</span><span>자료</span><span>초안</span></div>
+      <div class="bridge">박아이는 제출 기준에 맞는지 확인합니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-6 · role skill assignment · lecture only</div>
+      <div class="note">5-6 · park review role · lecture only</div>
       <div class="stage">
 
-        <h1>역할마다 붙는 매뉴얼이 달라질 수 있습니다.</h1>
-
-        <div class="anchors"><div class="anchor">조사 매뉴얼</div><div class="anchor">구현 매뉴얼</div><div class="anchor">검토 매뉴얼</div></div>
+        <h1>박아이는 제출 기준에 맞는지 확인합니다.</h1>
+        <div class="anchors"><div class="anchor">기준표 대조</div><div class="anchor">빠진 항목 찾기</div><div class="anchor">보류 또는 통과 표시</div></div>
       </div>
-      <div class="mock-asset"><b>역할별 Skill</b><span>조사 매뉴얼</span><span>구현 매뉴얼</span><span>검토 매뉴얼</span></div>
-      <div class="bridge">도구도 필요한 역할에게만 열어 줍니다.</div>
+      <div class="mock-asset"><b>박아이 역할</b><span>기준표</span><span>빠진 항목</span><span>통과/보류</span></div>
+      <div class="bridge">이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-7 · tool permission · lecture only</div>
+      <div class="note">5-7 · agent term mapping · lecture only</div>
       <div class="stage">
 
-        <h1>도구는 많이 열어 주는 것이 아니라 필요한 역할에게만 줍니다.</h1>
-
-        <div class="anchors"><div class="anchor">읽기 열쇠</div><div class="anchor">쓰기 열쇠</div><div class="anchor">실행 열쇠</div><div class="anchor">외부 연결 열쇠</div></div>
+        <h1>이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.</h1>
+        <div class="anchors"><div class="anchor">역할 지시문</div><div class="anchor">따로 보는 자료</div><div class="anchor">따로 맡은 책임</div></div>
       </div>
-      <div class="mock-asset"><b>도구 열쇠</b><span>읽기</span><span>쓰기</span><span>실행</span><span>외부 연결</span></div>
-      <div class="bridge">외부 도구와 자료를 잇는 통로가 MCP입니다.</div>
+      <div class="mock-asset"><b>Agent/Subagent</b><span>역할 지시문</span><span>자료</span><span>책임</span></div>
+      <div class="bridge">각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-8 · mcp passage · lecture only</div>
+      <div class="note">5-8 · skill assignment · lecture only</div>
       <div class="stage">
 
-        <h1>외부 도구와 자료를 잇는 통로가 MCP입니다.</h1>
-
-        <div class="anchors"><div class="anchor">회사 시스템 출입구</div><div class="anchor">역할별 접근</div><div class="anchor">필요한 도구만 연결</div></div>
+        <h1>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</h1>
+        <div class="anchors"><div class="anchor">조사 매뉴얼(Skill)</div><div class="anchor">작성 매뉴얼(Skill)</div><div class="anchor">검토 매뉴얼(Skill)</div></div>
       </div>
-      <div class="mock-asset"><b>MCP 통로</b><span>외부 도구</span><span>외부 자료</span><span>역할별 접근</span></div>
-      <div class="bridge">실습에서는 로컬에서 김아이 팀을 실행합니다.</div>
+      <div class="mock-asset"><b>자리별 매뉴얼</b><span>조사 Skill</span><span>작성 Skill</span><span>검토 Skill</span></div>
+      <div class="bridge">보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-9 · handoff to local practice</div>
+      <div class="note">5-9 · security permissions · lecture only</div>
       <div class="stage">
-        <h1>실습에서는 로컬에서 김아이 팀을 실행합니다.</h1>
-        <div class="handoff"><div class="handoff-card"><b>역할별 프롬프트</b><span>각 역할의 책임을 붙입니다.</span></div><div class="handoff-card"><b>Skill 배정</b><span>역할별 매뉴얼을 연결합니다.</span></div><div class="handoff-card"><b>Tool 권한과 실행 기록</b><span>필요한 도구만 열고 기록합니다.</span></div></div>
+
+        <h1>보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.</h1>
+        <div class="anchors"><div class="anchor">자료 열람 권한</div><div class="anchor">문서 작성 권한</div><div class="anchor">실행/검증 권한</div><div class="anchor">접근 가능한 구역</div></div>
       </div>
-      <div class="bridge">역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.</div>
+      <div class="mock-asset"><b>보안 권한</b><span>자료 열람</span><span>문서 작성</span><span>실행/검증</span><span>접근 구역</span></div>
+      <div class="bridge">MCP는 협력사에 요청을 보내는 공식 창구입니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">5-10 · bridge to Act 6</div>
+      <div class="note">5-10 · mcp partner window · lecture only</div>
       <div class="stage">
 
-        <h1>역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.</h1>
-
-        <div class="anchors"><div class="anchor">역할별 결과</div><div class="anchor">완료 선언</div><div class="anchor">검증 증거</div></div>
+        <h1>MCP는 협력사에 요청을 보내는 공식 창구입니다.</h1>
+        <div class="anchors"><div class="anchor">외부 자료 요청</div><div class="anchor">외부 도구 요청</div><div class="anchor">허가된 통로</div><div class="anchor">요청 기록</div></div>
       </div>
-      <div class="mock-asset"><b>빈 검문소</b><span>결과</span><span>완료 선언</span><span>증거칸</span></div>
+      <div class="mock-asset"><b>협력사 창구</b><span>외부 자료</span><span>외부 도구</span><span>허가 통로</span><span>기록</span></div>
+      <div class="bridge">실습에서는 에이전트 팀을 구현해 봅니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">5-11 · handoff to local practice</div>
+      <div class="stage">
+        <h1>실습에서는 에이전트 팀을 구현해 봅니다.</h1>
+        <div class="handoff"><div class="handoff-card"><b>김아이 역할</b><span>근거를 찾고 모르는 것을 표시합니다.</span></div><div class="handoff-card"><b>최아이 역할</b><span>정해진 지시와 자료로 결과물을 만듭니다.</span></div><div class="handoff-card"><b>박아이 역할</b><span>제출 기준에 맞는지 확인하고 실행 기록을 남깁니다.</span></div></div>
+      </div>
+      <div class="bridge">팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">5-12 · bridge to Act 6</div>
+      <div class="stage">
+
+        <h1>팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</h1>
+        <div class="anchors"><div class="anchor">역할별 결과</div><div class="anchor">완료 보고</div><div class="anchor">제출 전 증거</div><div class="anchor">다음 Act: 검문소</div></div>
+      </div>
+      <div class="mock-asset"><b>제출 전 확인</b><span>결과</span><span>완료 보고</span><span>증거</span><span>검문소</span></div>
       <div class="bridge">다음 Act에서는 완료 전 검문소를 세웁니다.</div>
     </section>
 
+
     <section class="slide">
-      <div class="note">6-1 · Act 1-5 recap · lecture only</div>
+      <div class="note">6-1 · required pre-submit check</div>
       <div class="stage">
         <div class="kicker">Act 6 · 검증과 하네스 구조</div>
-        <h1 class="headline-xl">필요한 장치를 다 세워도 마지막에는 증거가 필요합니다.</h1>
-
-        <div class="anchors"><div class="anchor">자료</div><div class="anchor">지시</div><div class="anchor">내규</div><div class="anchor">매뉴얼</div><div class="anchor">역할과 도구</div></div>
+        <h1 class="headline-xl">팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.</h1>
+        <div class="anchors"><div class="anchor">제출 전 확인</div><div class="anchor">빠진 항목 확인</div><div class="anchor">통과 또는 보류</div></div>
       </div>
-      <div class="mock-asset"><b>Act 1-5</b><span>정보</span><span>지시</span><span>내규</span><span>매뉴얼</span><span>역할/도구</span></div>
-      <div class="bridge">"완료했습니다"라는 말은 증거가 아닙니다.</div>
+      <div class="mock-asset"><b>필수검증</b><span>제출 전 확인</span><span>빠진 항목</span><span>통과/보류</span></div>
+      <div class="bridge">검증이 없으면 “끝냈습니다”라는 말만 남습니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-2 · complete is not proof · lecture only</div>
+      <div class="note">6-2 · completion claim no evidence</div>
       <div class="stage">
 
-        <h1>"완료했습니다"라는 말은 증거가 아닙니다.</h1>
-
-        <div class="anchors"><div class="anchor">말풍선</div><div class="anchor">빈 증거칸</div><div class="anchor">확인 전 상태</div></div>
+        <h1>검증이 없으면 “끝냈습니다”라는 말만 남습니다.</h1>
+        <div class="anchors"><div class="anchor">완료 보고</div><div class="anchor">확인 없음</div><div class="anchor">빈 증거</div></div>
       </div>
-      <div class="mock-asset"><b>증거칸</b><span>무엇을 했나</span><span>검증했나</span><span>남았나</span></div>
-      <div class="bridge">완료 전에는 무엇을 했는지 확인해야 합니다.</div>
+      <div class="mock-asset"><b>완료 보고만 있음</b><span>말만 있음</span><span>확인 없음</span><span>빈 증거</span></div>
+      <div class="bridge">품질검문소는 완료 보고 대신 증거를 봅니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-3 · work evidence · lecture only</div>
+      <div class="note">6-3 · quality gate evidence</div>
       <div class="stage">
 
-        <h1>완료 전에는 무엇을 했는지 확인해야 합니다.</h1>
-
-        <div class="anchors"><div class="anchor">수정한 것</div><div class="anchor">만든 것</div><div class="anchor">남긴 기록</div></div>
+        <h1>품질검문소는 완료 보고 대신 증거를 봅니다.</h1>
+        <div class="anchors"><div class="anchor">작업 기록</div><div class="anchor">기준 대조</div><div class="anchor">남은 위험</div></div>
       </div>
-      <div class="mock-asset"><b>작업 증거</b><span>수정</span><span>생성</span><span>기록</span></div>
-      <div class="bridge">완료 전에는 무엇을 검증했는지 확인해야 합니다.</div>
+      <div class="mock-asset"><b>품질검문소</b><span>작업 기록</span><span>기준 대조</span><span>남은 위험</span></div>
+      <div class="bridge">검증하려면 김아이가 작업 기록을 남겨야 합니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-4 · validation evidence · lecture only</div>
+      <div class="note">6-4 · work log evidence</div>
       <div class="stage">
 
-        <h1>완료 전에는 무엇을 검증했는지 확인해야 합니다.</h1>
-
-        <div class="anchors"><div class="anchor">기준 대조</div><div class="anchor">테스트 결과</div><div class="anchor">리뷰 결과</div></div>
+        <h1>검증하려면 김아이가 작업 기록을 남겨야 합니다.</h1>
+        <div class="anchors"><div class="anchor">무엇을 했는지</div><div class="anchor">어떤 순서로 했는지</div><div class="anchor">어떤 증거가 남았는지</div></div>
       </div>
-      <div class="mock-asset"><b>검증 증거</b><span>기준</span><span>테스트</span><span>리뷰</span></div>
-      <div class="bridge">완료 전에는 무엇이 남았는지 확인해야 합니다.</div>
+      <div class="mock-asset"><b>작업 기록</b><span>무엇을 했나</span><span>순서</span><span>증거</span></div>
+      <div class="bridge">검증은 처음 목표와 제출 기준에 맞는지 대조합니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-5 · remaining risk · lecture only</div>
+      <div class="note">6-5 · goal rubric check</div>
       <div class="stage">
 
-        <h1>완료 전에는 무엇이 남았는지 확인해야 합니다.</h1>
-
-        <div class="anchors"><div class="anchor">남은 위험</div><div class="anchor">못 한 검증</div><div class="anchor">다음 조치</div></div>
+        <h1>검증은 처음 목표와 제출 기준에 맞는지 대조합니다.</h1>
+        <div class="anchors"><div class="anchor">처음 목표</div><div class="anchor">제출 기준</div><div class="anchor">빠진 항목</div></div>
       </div>
-      <div class="mock-asset"><b>남은 것</b><span>위험</span><span>미검증</span><span>다음 조치</span></div>
-      <div class="bridge">검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.</div>
+      <div class="mock-asset"><b>기준 대조</b><span>처음 목표</span><span>제출 기준</span><span>빠진 항목</span></div>
+      <div class="bridge">남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-6 · checkpoint analogy · lecture only</div>
+      <div class="note">6-6 · risk handoff note</div>
       <div class="stage">
 
-        <h1>검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.</h1>
-
-        <div class="anchors"><div class="anchor">무엇을 했나</div><div class="anchor">무엇을 검증했나</div><div class="anchor">무엇이 남았나</div></div>
+        <h1>남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</h1>
+        <div class="anchors"><div class="anchor">못 한 확인</div><div class="anchor">남은 위험</div><div class="anchor">다음 조치</div></div>
       </div>
-      <div class="mock-asset"><b>검문소</b><span>증거 확인</span><span>통과</span><span>재시도</span></div>
-      <div class="bridge">AI에서 완료 직전에 켜지는 장치가 Hook입니다.</div>
+      <div class="mock-asset"><b>인수인계 기록</b><span>못 한 확인</span><span>남은 위험</span><span>다음 조치</span></div>
+      <div class="bridge">완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-7 · stop hook · lecture only</div>
+      <div class="note">6-7 · stop hook quality gate</div>
       <div class="stage">
 
-        <h1>AI에서 완료 직전에 켜지는 장치가 Hook입니다.</h1>
-
+        <h1>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</h1>
         <div class="anchors"><div class="anchor">완료 직전</div><div class="anchor">자동 실행</div><div class="anchor">Stop Hook</div></div>
       </div>
-      <div class="mock-asset"><b>Stop Hook</b><span>완료 직전</span><span>자동 실행</span><span>증거 확인</span></div>
-      <div class="bridge">Evaluation은 검문소의 통과 기준입니다.</div>
+      <div class="mock-asset"><b>Stop Hook</b><span>완료 직전</span><span>자동 실행</span><span>품질검문소</span></div>
+      <div class="bridge">통과와 보류를 가르는 기준이 Evaluation입니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-8 · evaluation criteria · lecture only</div>
+      <div class="note">6-8 · evaluation pass hold</div>
       <div class="stage">
 
-        <h1>Evaluation은 검문소의 통과 기준입니다.</h1>
-
-        <div class="anchors"><div class="anchor">기준표</div><div class="anchor">LLM Judge</div><div class="anchor">Quality Gate</div></div>
+        <h1>통과와 보류를 가르는 기준이 Evaluation입니다.</h1>
+        <div class="anchors"><div class="anchor">기준표</div><div class="anchor">AI 판정관</div><div class="anchor">통과 기준</div></div>
       </div>
-      <div class="mock-asset"><b>통과 기준</b><span>기준표</span><span>AI 판정관</span><span>Quality Gate</span></div>
-      <div class="bridge">State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다.</div>
+      <div class="mock-asset"><b>Evaluation</b><span>기준표</span><span>AI 판정관</span><span>통과 기준</span></div>
+      <div class="bridge">검문소에는 지금 상태를 적는 상태표가 필요합니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-9 · state board · lecture only</div>
+      <div class="note">6-9 · state status file</div>
       <div class="stage">
 
-        <h1>State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다.</h1>
-
-        <div class="anchors"><div class="anchor">processing</div><div class="anchor">complete</div><div class="anchor">attempts</div></div>
+        <h1>검문소에는 지금 상태를 적는 상태표가 필요합니다.</h1>
+        <div class="anchors"><div class="anchor">처리 중</div><div class="anchor">완료</div><div class="anchor">시도 횟수</div></div>
       </div>
-      <div class="mock-asset"><b>상태표</b><span>processing</span><span>complete</span><span>attempts</span></div>
-      <div class="bridge">Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다.</div>
+      <div class="mock-asset"><b>상태표</b><span>처리 중</span><span>완료</span><span>시도 횟수</span></div>
+      <div class="bridge">재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-10 · loop control · lecture only</div>
+      <div class="note">6-10 · loop control</div>
       <div class="stage">
 
-        <h1>Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다.</h1>
-
-        <div class="anchors"><div class="anchor">재시도 조건</div><div class="anchor">최대 시도</div><div class="anchor">멈출 조건</div></div>
+        <h1>재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.</h1>
+        <div class="anchors"><div class="anchor">다시 볼 조건</div><div class="anchor">최대 시도</div><div class="anchor">멈출 조건</div></div>
       </div>
-      <div class="mock-asset"><b>Loop 제어</b><span>재시도</span><span>최대 시도</span><span>멈춤</span></div>
-      <div class="bridge">실습에서는 완료 전 Stop hook 검문소를 설계합니다.</div>
+      <div class="mock-asset"><b>재검토 규칙</b><span>다시 볼 조건</span><span>최대 시도</span><span>멈춤</span></div>
+      <div class="bridge">실습에서는 제출 전 Stop Hook 검문소를 설계합니다.</div>
     </section>
 
     <section class="slide">
       <div class="note">6-11 · handoff to checkpoint practice</div>
       <div class="stage">
-        <h1>실습에서는 완료 전 Stop hook 검문소를 설계합니다.</h1>
-        <div class="handoff"><div class="handoff-card"><b>언제 켤지</b><span>완료 직전 trigger를 정합니다.</span></div><div class="handoff-card"><b>무엇을 볼지</b><span>완료 증거를 정합니다.</span></div><div class="handoff-card"><b>언제 멈출지</b><span>state와 loop 조건을 정합니다.</span></div></div>
+        <h1>실습에서는 제출 전 Stop Hook 검문소를 설계합니다.</h1>
+        <div class="handoff"><div class="handoff-card"><b>언제 켤지</b><span>완료 직전 trigger를 정합니다.</span></div><div class="handoff-card"><b>어떤 증거를 볼지</b><span>작업 기록, 기준 대조, 남은 위험을 정합니다.</span></div><div class="handoff-card"><b>언제 멈출지</b><span>상태표와 재검토 규칙을 정합니다.</span></div></div>
       </div>
       <div class="bridge">검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.</div>
     </section>
 
     <section class="slide">
-      <div class="note">6-12 · unlock structure · lecture only</div>
+      <div class="note">6-12 · unlock structure</div>
       <div class="stage">
 
         <h1>검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.</h1>
-
-        <div class="anchors"><div class="anchor">Stop hook 생성 프롬프트</div><div class="anchor">settings 예제</div><div class="anchor">status file 예제</div><div class="anchor">stop check 예제</div></div>
+        <div class="anchors"><div class="anchor">Stop Hook 생성 프롬프트</div><div class="anchor">settings 예제</div><div class="anchor">status file 예제</div><div class="anchor">stop check 예제</div></div>
       </div>
       <div class="mock-asset"><b>Unlock artifact</b><span>생성 프롬프트</span><span>settings</span><span>status file</span><span>stop check</span></div>
-      <div class="bridge">하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.</div>
+      <div class="bridge">하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.</div>
     </section>
 
     <section class="slide">
       <div class="note">6-13 · final harness map</div>
       <div class="stage">
 
-        <h1>하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.</h1>
-
-        <div class="anchors"><div class="anchor">정보 선별</div><div class="anchor">업무 지시</div><div class="anchor">회사 내규</div><div class="anchor">업무 매뉴얼</div><div class="anchor">역할과 도구</div><div class="anchor">완료 검문소</div></div>
+        <h1>하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.</h1>
+        <div class="anchors"><div class="anchor">정보 선별</div><div class="anchor">업무 지시</div><div class="anchor">회사 내규</div><div class="anchor">업무 매뉴얼</div><div class="anchor">역할과 권한</div><div class="anchor">완료 검문소</div></div>
       </div>
-      <div class="mock-asset"><b>Act 1-6</b><span>정보</span><span>지시</span><span>내규</span><span>매뉴얼</span><span>역할/도구</span><span>검문소</span></div>
+      <div class="mock-asset"><b>Act 1-6</b><span>정보</span><span>지시</span><span>내규</span><span>매뉴얼</span><span>역할/권한</span><span>검문소</span></div>
       <div class="bridge">이제 내 업무에 가져갈 장치부터 고르면 됩니다.</div>
     </section>
 
