@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Act 0 Mockup · 오늘의 약속</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #111111;
+      --muted: #5f6673;
+      --line: #111111;
+      --accent: #2563eb;
+      --soft: #f5f7fb;
+      --warn: #f7f7f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #e9edf3;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .deck {
+      display: grid;
+      gap: 28px;
+      padding: 28px;
+    }
+
+    .slide {
+      position: relative;
+      width: min(1280px, calc(100vw - 56px));
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+      background: var(--bg);
+      border: 2px solid var(--line);
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 46px 58px 54px;
+      display: grid;
+      gap: 26px;
+      align-content: start;
+      align-items: start;
+      grid-auto-rows: max-content;
+    }
+
+    .stage > :not(h1) {
+      animation: rise-in 420ms ease both;
+    }
+
+    .stage > :not(h1):nth-child(2) {
+      animation-delay: 90ms;
+    }
+
+    .stage > :not(h1):nth-child(3) {
+      animation-delay: 180ms;
+    }
+
+    .kicker {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 1040px;
+      font-family: "Comic Sans MS", "Bradley Hand", ui-sans-serif, system-ui, sans-serif;
+      font-size: 64px;
+      line-height: 1.06;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .headline-xl {
+      font-size: 86px;
+      max-width: 1080px;
+    }
+
+    .subline {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.35;
+      color: #2a2f38;
+      max-width: 900px;
+    }
+
+    .anchors {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .anchor {
+      min-width: 180px;
+      border: 2px solid var(--line);
+      border-radius: 0;
+      padding: 18px 20px;
+      font-size: 30px;
+      font-weight: 800;
+      background: #fff;
+      box-shadow: 5px 5px 0 #dbe4f7;
+      animation: rise-in 360ms ease both;
+    }
+
+    .anchor:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .anchor:nth-child(3) {
+      animation-delay: 240ms;
+    }
+
+    .anchor small {
+      display: block;
+      margin-top: 8px;
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .bridge {
+      position: absolute;
+      left: 58px;
+      right: 58px;
+      bottom: 26px;
+      padding-top: 14px;
+      border-top: 2px solid var(--line);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .doodle {
+      position: absolute;
+      right: 70px;
+      bottom: 96px;
+      width: 330px;
+      min-height: 230px;
+      border: 3px solid var(--line);
+      background: #fff;
+      transform: rotate(-1deg);
+      padding: 18px;
+    }
+
+    .doodle::before {
+      content: "";
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border: 3px solid var(--line);
+      border-radius: 50%;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+    }
+
+    .doodle::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 90px;
+      border: 3px solid var(--line);
+      border-radius: 60px 60px 8px 8px;
+      top: 102px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+    }
+
+    .label {
+      position: absolute;
+      left: 24px;
+      bottom: 18px;
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .blank-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 980px;
+    }
+
+    .context-blanks {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 590px;
+    }
+
+    .blank {
+      border-bottom: 4px solid var(--line);
+      padding: 18px 6px 12px;
+      font-size: 28px;
+      font-weight: 900;
+      animation: line-in 420ms ease both;
+    }
+
+    .blank:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .blank:nth-child(3) {
+      animation-delay: 240ms;
+    }
+
+    .blank:nth-child(4) {
+      animation-delay: 360ms;
+    }
+
+    .quote {
+      width: fit-content;
+      max-width: 760px;
+      border: 3px solid var(--line);
+      padding: 22px 28px;
+      font-size: 42px;
+      font-weight: 900;
+      background: var(--warn);
+      box-shadow: 7px 7px 0 #dbe4f7;
+    }
+
+    .contrast {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 2px solid var(--line);
+      padding: 24px;
+      min-height: 210px;
+      display: grid;
+      align-content: center;
+      gap: 12px;
+      background: #fff;
+    }
+
+    .panel.muted {
+      color: #777;
+      background: #fafafa;
+      border-style: dashed;
+    }
+
+    .panel strong {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    .panel span {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .step {
+      border: 2px solid var(--line);
+      padding: 16px 18px;
+      min-height: 126px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      background: #fff;
+      animation: rise-in 360ms ease both;
+    }
+
+    .step:nth-child(2) { animation-delay: 80ms; }
+    .step:nth-child(3) { animation-delay: 160ms; }
+    .step:nth-child(4) { animation-delay: 240ms; }
+    .step:nth-child(5) { animation-delay: 320ms; }
+    .step:nth-child(6) { animation-delay: 400ms; }
+
+    .step .num {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .step b {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .step small {
+      display: none;
+    }
+
+    .boundary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 980px;
+    }
+
+    .boundary .card {
+      border: 2px solid var(--line);
+      padding: 22px;
+      min-height: 190px;
+      background: #fff;
+    }
+
+    .boundary .card.active {
+      border-color: var(--accent);
+      box-shadow: 7px 7px 0 #dbe4f7;
+    }
+
+    .boundary b {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .boundary span {
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    .speech {
+      width: min(780px, 100%);
+      border: 3px solid var(--line);
+      padding: 28px 34px;
+      font-size: 42px;
+      font-weight: 900;
+      background: #fff;
+      box-shadow: 7px 7px 0 #dbe4f7;
+    }
+
+    .questions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .question {
+      border: 2px solid var(--line);
+      padding: 16px 18px;
+      font-size: 28px;
+      font-weight: 900;
+      background: var(--soft);
+    }
+
+    .note {
+      display: none;
+    }
+
+    .mock-asset {
+      position: absolute;
+      right: 58px;
+      top: 170px;
+      width: 330px;
+      min-height: 210px;
+      border: 3px solid var(--line);
+      background: #fff;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      align-content: center;
+      transform: rotate(1deg);
+    }
+
+    .mock-asset b {
+      font-size: 24px;
+    }
+
+    .mock-asset span {
+      border: 2px solid var(--line);
+      padding: 10px 12px;
+      font-size: 18px;
+      font-weight: 800;
+      background: var(--soft);
+    }
+
+    .mock-asset .thin {
+      background: #fff;
+      border-style: dashed;
+    }
+
+    .draw-line {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .draw-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 28px;
+      height: 3px;
+      background: var(--accent);
+      animation: draw-line 480ms ease both;
+    }
+
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes line-in {
+      from {
+        opacity: 0;
+        transform: translateX(-8px);
+        border-bottom-color: transparent;
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+        border-bottom-color: var(--line);
+      }
+    }
+
+    @keyframes draw-line {
+      from {
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+      to {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .slide {
+        width: calc(100vw - 24px);
+      }
+
+      .stage {
+        inset: 28px 28px 44px;
+      }
+
+      h1,
+      .headline-xl {
+        font-size: 42px;
+      }
+
+      .subline,
+      .anchor,
+      .blank,
+      .panel strong,
+      .speech {
+        font-size: 24px;
+      }
+
+      .doodle {
+        display: none;
+      }
+
+      .mock-asset {
+        display: none;
+      }
+
+      .map {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contrast,
+      .boundary {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-label="Act 0 slide mockup">
+    <section class="slide">
+      <div class="note">0-1 · story transition · no practice</div>
+      <div class="stage">
+        <div class="kicker">Act 0 · 오늘의 약속</div>
+        <h1 class="headline-xl">오늘은 김아이에게 일을 맡기는 날입니다.</h1>
+        <p class="subline">김아이는 새로 입사한 AI 신입사원입니다.</p>
+      </div>
+      <div class="doodle"><div class="label">김아이</div></div>
+      <div class="bridge">먼저 김아이가 어떤 직원인지부터 보겠습니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-2 · capability · no practice</div>
+      <div class="stage">
+        <h1 class="headline-xl">김아이는 빠르고 똑똑합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">읽기</div>
+          <div class="anchor">쓰기</div>
+          <div class="anchor">정리</div>
+        </div>
+      </div>
+      <div class="doodle"><div class="label">초안 3분</div></div>
+      <div class="bridge">하지만 빠르고 똑똑하다는 것이 알아서 잘한다는 뜻은 아닙니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-3 · limitation · no practice</div>
+      <div class="stage">
+        <h1>하지만 김아이는 회사 상황을 모릅니다.</h1>
+        <div class="blank-list context-blanks">
+          <div class="blank">무슨 회사?</div>
+          <div class="blank">어떤 부서?</div>
+          <div class="blank">어떤 제품?</div>
+          <div class="blank">일하는 방식?</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>설명용 이미지</b>
+        <span>회사</span>
+        <span>부서</span>
+        <span>제품</span>
+        <span>업무 방식</span>
+      </div>
+      <div class="bridge">일하는 방식까지 알려주지 않으면 김아이는 회사 업무의 빈칸을 추측합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-4 · real work analogy · no practice</div>
+      <div class="stage">
+        <h1>제품 리뷰자료 보고서는 그냥 만들 수 없습니다.</h1>
+        <div class="quote">"보고서 제출하게 만들어와."</div>
+        <div class="anchors">
+          <div class="anchor">제품을 모른다</div>
+          <div class="anchor">사용처를 모른다</div>
+          <div class="anchor">제출 형식을 모른다</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>보고서 빈칸</b>
+        <span>제품?</span>
+        <span>사용처?</span>
+        <span>제출 형식?</span>
+      </div>
+      <div class="bridge">오늘 우리가 배울 것은 이 빈칸을 줄이는 방법입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-5 · harness concept · no practice</div>
+      <div class="stage">
+        <h1>하네스 엔지니어링은 김아이가 일하기 쉬운 환경을 만드는 일입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">명확한 지시</div>
+          <div class="anchor">필요한 자료</div>
+          <div class="anchor">확인 기준</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>김아이 데스크</b>
+        <span>지시서</span>
+        <span>자료 묶음</span>
+        <span>체크리스트</span>
+      </div>
+      <div class="bridge">신입에게는 말 한마디보다 일하는 장치가 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-6 · harness devices · no practice</div>
+      <div class="stage">
+        <h1>신입에게는 지시서, 매뉴얼, 검문소가 필요합니다.</h1>
+        <div class="anchors">
+          <div class="anchor draw-line">지시서<small>이번 일을 분명히 맡긴다</small></div>
+          <div class="anchor draw-line">매뉴얼<small>반복 절차를 남긴다</small></div>
+          <div class="anchor draw-line">검문소<small>완료 전에 확인한다</small></div>
+        </div>
+      </div>
+      <div class="doodle"><div class="label">업무 환경</div></div>
+      <div class="bridge">오늘의 4시간은 이 장치들을 하나씩 만드는 시간입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-7 · journey map · tooltip only</div>
+      <div class="stage">
+        <h1>4시간 동안 김아이의 업무 환경을 하나씩 만듭니다.</h1>
+        <div class="map">
+          <div class="step"><div class="num">1</div><b>알려줄 정보</b></div>
+          <div class="step"><div class="num">2</div><b>업무 지시</b></div>
+          <div class="step"><div class="num">3</div><b>데스크 자료</b></div>
+          <div class="step"><div class="num">4</div><b>반복 매뉴얼</b></div>
+          <div class="step"><div class="num">5</div><b>역할과 도구</b></div>
+          <div class="step"><div class="num">6</div><b>완료 검문소</b></div>
+        </div>
+      </div>
+      <div class="bridge">다음 Act부터는 첫 번째 장치인 "무엇을 알려줄지"를 직접 다룹니다.</div>
+    </section>
+  </main>
+</body>
+</html>
