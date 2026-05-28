@@ -18,7 +18,7 @@
 - Act 0. 오늘의 약속: 김아이라는 AI 신입사원 서사와 하네스 엔지니어링 관점 소개
 - Act 1. 정보 선별 `(Information Selection / Context Curation)`: 업무에 필요한 자료와 기준을 먼저 고르는 법
 - Act 2. 좋은 업무 지시 `(Prompt Engineering / Task Specification)`: 산출물, 대상, 형식, 완료 기준을 지시로 쓰는 법
-- Act 3. 데스크와 회사 규칙판 `(Context Management / Memory / CLAUDE.md)`: 작업 공간과 조직 규칙을 AI가 참조하게 만드는 법
+- Act 3. CLAUDE.md 회사 내규 `(CLAUDE.md / Persistent Instructions / Rule Overload)`: 작업 자료와 회사 내규를 분리하고, 과한 내규가 일을 방해한다는 점을 이해시키는 법
 - Act 4. 반복 업무 매뉴얼 `(Skills / Reusable Procedures)`: 반복 가능한 절차를 매뉴얼로 고정하는 법
 - Act 5. 역할 분리와 도구 권한 `(Agents / Subagents / Tool Permissions / MCP)`: 역할, 권한, 도구 사용 범위를 나누는 법
 - Act 6. 검증과 하네스 구조 `(Hooks / Evaluation / LLM Judge / Quality Gate)`: 결과물을 검사하고 재시도하게 만드는 구조

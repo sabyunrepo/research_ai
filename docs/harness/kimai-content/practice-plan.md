@@ -27,8 +27,8 @@ Act 1-6 실습은 같은 반복 구조를 따른다.
 |---:|---|---|---|---|---|
 | 0 | none | no-practice | 없음 | Act 1 전환 이해 | 없음 |
 | 1 | act1-info-selection | selection-diagnostic | 업무별 정보 다중 선택 | 김아이 추측 빈칸 리포트 | 필수/조건부/방해 정보 점수 |
-| 2 | act2-prompt-iteration | prompt-writing | 자유 입력 지시문 | HTML/CSS 카드 미리보기 | 지시문 기준표 + 미리보기 검사 |
-| 3 | act3-context-workbench | context-selection | 컨텍스트 자료 선택 | 개선된 카드 미리보기 | 컨텍스트 영향/오염 분석 |
+| 2 | act2-prompt-iteration | prompt-writing | 자유 입력 지시문 | 보고서 초안 미리보기 | 업무 지시 기준표 + 빠진 조건 검사 |
+| 3 | act3-claude-md-setting | claude-md-setting | 적용 범위 선택 + 내규 초안 작성 | CLAUDE.md 내규 초안 | 과한 내규 + 충돌 내규 검사 |
 | 4 | act4-skill-authoring | skill-writing | mini-brainstorming Skill 문서 | Skill review report | 구조 검사 + 행동 검사 + LLM judge |
 | 5 | act5-local-team-run | local-execution | role/tool 배정과 로컬 실행 | execution log | 체크리스트 회고 |
 | 6 | act6-stop-hook-checkpoint | checklist-unlock | Hook 검문소 체크리스트 | unlock prompt + 예제 구조 | 100점 unlock scoring |
@@ -169,7 +169,7 @@ Practice name:
 Goal:
 
 ```text
-수강생이 반응형 카드 컴포넌트 제작 prompt를 직접 작성하고, 점수와 결과물을 보면서 개선한다.
+수강생이 제품 리뷰자료 보고서 업무 지시를 직접 작성하고, 피드백과 결과물을 보면서 개선한다.
 ```
 
 Learner input:
@@ -179,7 +179,7 @@ Learner input:
 Task:
 
 ```text
-김아이에게 강의 신청 페이지에 들어갈 반응형 카드 컴포넌트를 만들라고 지시해보세요.
+김아이에게 다음 주 경영회의에 제출할 제품 리뷰자료 보고서를 준비하라고 지시해보세요.
 ```
 
 Loop:
@@ -190,19 +190,19 @@ Attempt 1 -> Result -> Score -> Feedback -> Attempt 2 -> Compare -> Attempt 3 ->
 
 Generated output:
 
-- HTML/CSS 카드 컴포넌트 미리보기
-- HTML/CSS 코드 요약
+- 보고서 초안 미리보기
+- 빠진 업무 지시 조건 요약
 - 이전 시도 대비 점수 변화
 
 Mechanical scoring:
 
 ```text
-목표 있음: 20
-대상/사용 상황 있음: 15
-화면 크기 또는 반응형 조건 있음: 15
-제약 조건 있음: 15
-완료 기준 있음: 20
-보고/출력 형식 있음: 15
+보고서 목적 있음: 20
+사용 상황 있음: 15
+참고 자료 있음: 15
+비교 기준 있음: 15
+분량/톤/제외 조건 있음: 15
+형식/마감/확인 기준 있음: 20
 ```
 
 LLM judge role:
@@ -215,70 +215,59 @@ LLM judge role:
 Primary lesson:
 
 ```text
-좋은 prompt는 예쁜 문장이 아니라 목표, 조건, 자료, 완료 기준을 고정하는 업무 지시서다.
+좋은 prompt는 예쁜 문장이 아니라 목표, 자료, 기준, 완료 조건을 고정하는 업무 지시다.
 ```
 
-## 7. Act 3: 데스크 context 선택
+## 7. Act 3: CLAUDE.md 설정
 
-Practice ID: `act3-context-workbench`
+Practice ID: `act3-claude-md-setting`
 
-Activity type: `context-selection`
+Activity type: `claude-md-setting`
 
 Practice name:
 
 ```text
-실습 3: 김아이의 데스크를 세팅합니다
+실습 3: 김아이의 CLAUDE.md를 설정합니다
 ```
 
 Goal:
 
 ```text
-수강생이 작업 목표에 맞는 context 자료를 고르고, 선택한 자료가 산출물을 어떻게 바꾸는지 확인한다.
+수강생이 CLAUDE.md 적용 범위를 고르고, 김아이가 매번 지킬 회사 내규를 짧고 충돌 없이 작성한다.
 ```
 
 Learner input:
 
-- 15-20개의 context 후보 중 선택
+- 적용 범위 선택: global / user / project / subfolder
+- CLAUDE.md 내규 초안 작성
+- 과하거나 충돌하는 내규 제거 사유 작성
 
 Task:
 
 ```text
-Act 2에서 만든 반응형 카드 컴포넌트를 "AI 하네스 워크숍 신청 카드"로 개선하세요.
-```
-
-Candidate types:
-
-- 필수 context
-- 유용한 context
-- 조건부 context
-- 오염 context
-- 범위 밖 context
-
-Loop:
-
-```text
-Attempt 1 -> Generate -> Render -> Analyze -> Feedback -> Attempt 2 -> Compare -> Save
+김아이에게 적용할 CLAUDE.md 범위를 고르고, 반복해서 지킬 내규만 짧게 남기세요. 이번 작업 자료나 과한 제약은 빼세요.
 ```
 
 Generated output:
 
-- 개선된 카드 미리보기
-- 선택 context 영향 분석
-- 반영/무시/충돌/오염 자료 목록
+- CLAUDE.md 적용 범위 요약
+- CLAUDE.md 내규 초안
+- 과한 내규/충돌 내규 리포트
+- 이전 시도 대비 비교
 
 Verification:
 
-- final-title-check
-- stale-context-check
-- responsive-context-check
-- style-consistency-check
-- accessibility-context-check
-- scope-noise-check
+- scope-selection-check
+- persistent-rule-check
+- claude-md-brevity-check
+- rule-overload-check
+- scope-conflict-check
+- temporary-info-exclusion-check
 
 Primary lesson:
 
 ```text
-자료를 많이 넣는 것이 아니라 현재 목표에 맞는 자료를 정확히 올려야 한다.
+CLAUDE.md는 모든 것을 적는 곳이 아니라, 적용 범위에 맞는 짧고 반복되는 회사 내규를 설정하는 곳이다.
 ```
 
 ## 8. Act 4: 미니 브레인스토밍 Skill 작성

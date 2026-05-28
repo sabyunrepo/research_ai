@@ -102,10 +102,10 @@
       "sectionObjective": "수강생이 자신을 김아이를 이끄는 팀장으로 이해하고, 하네스 엔지니어링을 우수한 신입의 업무 능력을 끌어내는 환경과 피드백 루프로 받아들인다.",
       "estimatedMinutes": 1,
       "title": "팀장님의 첫 업무 지시가 도착했습니다.",
-      "message": "제품 리뷰자료 보고서 업무를 예로 들어, 제품, 보는 사람, 보고서 형식이 비면 김아이가 추측하게 된다는 점을 보여 줍니다.",
+      "message": "제품 리뷰자료 보고서 업무를 예로 들어, 제품, 사용 상황, 보고서 형식이 비면 김아이가 추측하게 된다는 점을 보여 줍니다.",
       "bullets": [
         "어떤 제품인지?",
-        "누가 보는지?",
+        "어디에 쓸지?",
         "보고서 형식은?"
       ],
       "visualIntent": "상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면",
@@ -117,7 +117,7 @@
         "팀장님의 역할은 이 빈칸을 김아이가 추측하지 않게 만드는 것입니다."
       ],
       "bridge": "팀장님의 역할은 이 빈칸을 김아이가 추측하지 않게 만드는 것입니다.",
-      "speakerNote": "제품 리뷰자료 보고서 업무를 예로 들어, 제품, 보는 사람, 보고서 형식이 비면 김아이가 추측하게 된다는 점을 보여 줍니다.",
+      "speakerNote": "제품 리뷰자료 보고서 업무를 예로 들어, 제품, 사용 상황, 보고서 형식이 비면 김아이가 추측하게 된다는 점을 보여 줍니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
@@ -233,10 +233,10 @@
       "sectionObjective": "수강생이 자신을 김아이를 이끄는 팀장으로 이해하고, 하네스 엔지니어링을 우수한 신입의 업무 능력을 끌어내는 환경과 피드백 루프로 받아들인다.",
       "estimatedMinutes": 2,
       "title": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
-      "message": "4시간 동안 책상 정리, 업무 지시서, 데스크 자료, 반복 매뉴얼, 역할과 도구, 체크리스트를 하나씩 갖춰 갑니다.",
+      "message": "4시간 동안 책상 정리, 업무 지시, 데스크 자료, 반복 매뉴얼, 역할과 도구, 체크리스트를 하나씩 갖춰 갑니다.",
       "bullets": [
         "책상 정리",
-        "업무 지시서",
+        "업무 지시",
         "체크리스트"
       ],
       "visualIntent": "상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면",
@@ -248,7 +248,7 @@
         "우수사원 프로젝트의 첫 단계는 책상 정리입니다."
       ],
       "bridge": "우수사원 프로젝트의 첫 단계는 책상 정리입니다.",
-      "speakerNote": "4시간 동안 책상 정리, 업무 지시서, 데스크 자료, 반복 매뉴얼, 역할과 도구, 체크리스트를 하나씩 갖춰 갑니다.",
+      "speakerNote": "4시간 동안 책상 정리, 업무 지시, 데스크 자료, 반복 매뉴얼, 역할과 도구, 체크리스트를 하나씩 갖춰 갑니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
@@ -333,10 +333,10 @@
       "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.",
-      "message": "제품 리뷰자료 보고서에서 필요한 제품, 보는 사람, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.",
+      "message": "제품 리뷰자료 보고서에서 필요한 제품, 사용 상황, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.",
       "bullets": [
         "어떤 제품?",
-        "누가 보는지?",
+        "어디에 쓸지?",
         "무엇과 비교?"
       ],
       "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
@@ -348,7 +348,7 @@
         "필요 없는 자료가 많은 문제로 넘긴다"
       ],
       "bridge": "필요한 자료가 없어도 문제지만, 필요 없는 자료가 많아도 문제입니다.",
-      "speakerNote": "제품 리뷰자료 보고서에서 필요한 제품, 보는 사람, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.",
+      "speakerNote": "제품 리뷰자료 보고서에서 필요한 제품, 사용 상황, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.",
       "qualityChecks": [
         "보고서 작성법으로 깊게 들어가지 않는다.",
         "책상 정리 비유와 연결된다.",
@@ -429,10 +429,10 @@
       "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
-      "message": "제품 자료, 보는 사람, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+      "message": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
       "bullets": [
         "제품 자료",
-        "보는 사람",
+        "사용 상황",
         "비교 기준",
         "보고서 형식"
       ],
@@ -445,7 +445,7 @@
         "김아이의 책상이 바로 컨텍스트입니다."
       ],
       "bridge": "김아이의 책상이 바로 컨텍스트입니다.",
-      "speakerNote": "제품 자료, 보는 사람, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+      "speakerNote": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
       "qualityChecks": [
         "보고서 작성법으로 깊게 들어가지 않는다.",
         "책상 정리 비유와 연결된다.",
@@ -554,23 +554,25 @@
       ]
     },
     {
-      "id": "act2-desk-ready-not-work",
+      "id": "act2-work-handoff",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "Act 1에서 고른 정보를 실제 업무 지시서로 묶어야 한다는 필요성을 연다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "책상이 일할 준비가 됐다고 일이 그냥 되지는 않습니다.",
-      "message": "자료가 준비됐으면 이제 김아이에게 일을 맡길 말이 필요합니다.",
-      "bullets": [],
-      "visualIntent": "Act 1에서 고른 정보 카드가 하나의 업무 지시서로 모이는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act2-info-to-instruction",
-      "presenterCues": [
-        "책상이 일할 준비가 됐다고 일이 그냥 되지는 않습니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "그 일을 혼자 처리할 수 있게 만드는 문서가 인수인계서입니다."
+      "title": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
+      "message": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+      "bullets": [
+        "정리된 책상"
       ],
-      "bridge": "그 일을 혼자 처리할 수 있게 만드는 문서가 인수인계서입니다.",
-      "speakerNote": "자료가 준비됐으면 이제 김아이에게 일을 맡길 말이 필요합니다.",
+      "visualIntent": "정리된 책상 앞에서 팀장이 김아이에게 다음 일을 맡기려는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-work-handoff",
+      "presenterCues": [
+        "Act 1에서 책상에 올릴 자료를 골랐다고 회수한다.",
+        "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+        "이제 문제는 어떻게 일을 시킬 것인가다."
+      ],
+      "bridge": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
+      "speakerNote": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -579,173 +581,33 @@
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
       ],
       "practiceId": null
     },
     {
-      "id": "act2-work-order-analogy",
+      "id": "act2-vague-outcome-risk",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-      "message": "인수인계서는 산출물, 조건, 완료 기준을 함께 넘겨 김아이가 혼자 움직이게 만듭니다.",
+      "title": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
+      "message": "제품 리뷰자료 보고서 준비해줘처럼 대충 던진 지시는 결과의 방향을 김아이에게 맡겨 버린다.",
       "bullets": [
-        "무엇을 만들지",
-        "무엇을 지킬지",
-        "언제 끝나는지"
+        "보고서?",
+        "요약표?",
+        "리뷰 모음?"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "좋은 지시서는 이 여섯 가지를 포함합니다."
-      ],
-      "bridge": "좋은 지시서는 이 여섯 가지를 포함합니다.",
-      "speakerNote": "인수인계서는 산출물, 조건, 완료 기준을 함께 넘겨 김아이가 혼자 움직이게 만듭니다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
-      ],
-      "practiceId": null
-    },
-    {
-      "id": "act2-instruction-goal-audience",
-      "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "좋은 업무 지시서에서 목표, 대상, 사용 상황을 먼저 고정해야 한다는 점을 설명한다.",
-      "estimatedMinutes": 1,
-      "title": "좋은 지시서는 목표와 대상을 먼저 고정합니다.",
-      "message": "목표, 대상, 사용 상황이 정해져야 김아이가 무엇을 누구에게 만들지 알 수 있습니다.",
-      "bullets": [
-        "목표",
-        "대상",
-        "사용 상황"
-      ],
-      "visualIntent": "업무 지시서 첫 구역에 목표, 대상, 사용 상황 칸이 크게 보이는 손그림",
+      "visualIntent": "짧은 지시 하나에서 서로 다른 세 가지 결과물이 갈라지는 손그림",
       "visualType": "generated-image",
-      "visualAssetId": "act2-instruction-goal-audience",
+      "visualAssetId": "act2-vague-outcome-risk",
       "presenterCues": [
-        "좋은 지시서는 목표와 대상을 먼저 고정합니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "그다음에는 김아이가 참고할 자료와 지킬 조건을 정합니다."
+        "모호한 지시는 실패를 바로 드러내지 않는다.",
+        "문제는 김아이가 그럴듯하지만 전혀 다른 결과를 만들 수 있다는 점이다.",
+        "같은 말에서 보고서, 표, 리뷰 모음이 모두 나올 수 있다."
       ],
-      "bridge": "그다음에는 김아이가 참고할 자료와 지킬 조건을 정합니다.",
-      "speakerNote": "목표, 대상, 사용 상황이 정해져야 김아이가 무엇을 누구에게 만들지 알 수 있습니다.",
-      "evidenceClaimIds": [
-        "claim-003"
-      ],
-      "glossaryTerms": [
-        "Prompt",
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
-      ],
-      "practiceId": null
-    },
-    {
-      "id": "act2-instruction-material-constraints",
-      "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "좋은 업무 지시서에서 참고 자료, 지킬 조건, 빼야 할 것을 분리해야 한다는 점을 설명한다.",
-      "estimatedMinutes": 1,
-      "title": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-      "message": "김아이가 무엇을 보고 일할지, 무엇을 지킬지, 무엇은 쓰지 말아야 할지를 분명히 해야 합니다.",
-      "bullets": [
-        "참고 자료",
-        "지킬 조건",
-        "빼야 할 것"
-      ],
-      "visualIntent": "업무 지시서 중간 구역에 참고 자료, 지킬 조건, 빼야 할 것 칸이 보이는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act2-instruction-material-constraints",
-      "presenterCues": [
-        "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "마지막으로 결과물이 어떤 모양이면 끝인지 정합니다."
-      ],
-      "bridge": "마지막으로 결과물이 어떤 모양이면 끝인지 정합니다.",
-      "speakerNote": "김아이가 무엇을 보고 일할지, 무엇을 지킬지, 무엇은 쓰지 말아야 할지를 분명히 해야 합니다.",
-      "evidenceClaimIds": [
-        "claim-003"
-      ],
-      "glossaryTerms": [
-        "Prompt",
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
-      ],
-      "practiceId": null
-    },
-    {
-      "id": "act2-instruction-output-done",
-      "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "좋은 업무 지시서에서 출력 형식, 완료 기준, 확인 방법을 정해야 한다는 점을 설명한다.",
-      "estimatedMinutes": 1,
-      "title": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-      "message": "출력 형식, 완료 기준, 확인 방법이 없으면 김아이는 스스로 끝났다고 판단합니다.",
-      "bullets": [
-        "출력 형식",
-        "완료 기준",
-        "확인 방법"
-      ],
-      "visualIntent": "업무 지시서 마지막 구역에 출력 형식, 완료 기준, 확인 방법 칸이 보이는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act2-instruction-output-done",
-      "presenterCues": [
-        "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "빠진 조건이 있으면 김아이는 자기 방식으로 채웁니다."
-      ],
-      "bridge": "빠진 조건이 있으면 김아이는 자기 방식으로 채웁니다.",
-      "speakerNote": "출력 형식, 완료 기준, 확인 방법이 없으면 김아이는 스스로 끝났다고 판단합니다.",
-      "evidenceClaimIds": [
-        "claim-003"
-      ],
-      "glossaryTerms": [
-        "Prompt",
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
-      ],
-      "practiceId": null
-    },
-    {
-      "id": "act2-vague-instruction-risk",
-      "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "짧은 지시문이 사용 화면, 화면 크기, 완료 기준을 비워 둔다는 점을 보여 준다.",
-      "estimatedMinutes": 2,
-      "title": "모호한 지시는 김아이가 어떤 사고를 칠지 모르게 만듭니다.",
-      "message": "짧은 요청은 편하지만 김아이는 화면, 크기, 완료 기준을 스스로 정해야 합니다.",
-      "bullets": [
-        "다른 화면",
-        "다른 크기",
-        "다른 완료 기준"
-      ],
-      "visualIntent": "짧은 지시 문장 옆에 사용 화면, 화면 크기, 완료 기준 빈칸 말풍선이 뜨는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act2-short-prompt-gaps",
-      "presenterCues": [
-        "모호한 지시는 김아이가 어떤 사고를 칠지 모르게 만듭니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "말하지 않은 부분은 김아이의 상상으로 채워집니다."
-      ],
-      "bridge": "말하지 않은 부분은 김아이의 상상으로 채워집니다.",
-      "speakerNote": "짧은 요청은 편하지만 김아이는 화면, 크기, 완료 기준을 스스로 정해야 합니다.",
+      "bridge": "말하지 않은 부분은 김아이 혼자 상상합니다.",
+      "speakerNote": "제품 리뷰자료 보고서 준비해줘처럼 대충 던진 지시는 결과의 방향을 김아이에게 맡겨 버린다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -754,65 +616,139 @@
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
       ],
       "practiceId": null
     },
     {
-      "id": "act2-missing-conditions",
+      "id": "act2-unspoken-imagination",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "말하지 않은 부분은 김아이 혼자 상상합니다.",
-      "message": "사용자, 화면 조건, 완료 기준을 말하지 않으면 김아이가 자기 기준으로 채웁니다.",
+      "message": "지시에서 빠진 목적, 자료, 완료 기준은 김아이가 자기 방식으로 채운다.",
       "bullets": [
-        "누가 쓰는지",
-        "어디서 보는지",
-        "언제 끝나는지"
+        "목적 추측",
+        "자료 추측",
+        "완료 추측"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
+      "visualIntent": "빈칸이 있는 업무 지시 옆에서 김아이가 자기 생각으로 칸을 채우는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-unspoken-imagination",
       "presenterCues": [
-        "말하지 않은 부분은 김아이 혼자 상상합니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "들어가는 정보가 좋아야 나오는 결과도 좋아집니다."
+        "Act 1에서는 책상에 자료가 없으면 김아이가 상상한다고 말했다.",
+        "Act 2에서는 업무 지시에서 말하지 않은 부분도 김아이 혼자 상상한다.",
+        "그래서 지시는 길이가 아니라 빠진 곳이 문제다."
       ],
       "bridge": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-      "speakerNote": "사용자, 화면 조건, 완료 기준을 말하지 않으면 김아이가 자기 기준으로 채웁니다.",
+      "speakerNote": "지시에서 빠진 목적, 자료, 완료 기준은 김아이가 자기 방식으로 채운다.",
       "evidenceClaimIds": [
-        "claim-002"
+        "claim-003"
       ],
-      "glossaryTerms": [],
+      "glossaryTerms": [
+        "Prompt"
+      ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
       ],
       "practiceId": null
     },
     {
       "id": "act2-input-output-principle",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "같은 요청도 지시서 칸이 채워지면 결과물 방향이 달라진다는 점을 비교한다.",
-      "estimatedMinutes": 2,
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "estimatedMinutes": 1,
       "title": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-      "message": "목표, 자료, 기준이 좋아야 결과의 방향과 완료 판단도 안정됩니다.",
+      "message": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
+      "bullets": [
+        "좋은 입력",
+        "좋은 판단",
+        "좋은 결과"
+      ],
+      "visualIntent": "입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-input-output-principle",
+      "presenterCues": [
+        "AI 결과물은 갑자기 좋아지지 않는다.",
+        "김아이에게 들어가는 정보가 좋아야 판단도 좋아진다.",
+        "좋은 프롬프트는 결국 좋은 업무 입력을 만드는 일이다."
+      ],
+      "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
+      "speakerNote": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "Prompt Engineering"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act2-handoff-document",
+      "section": "Act 2 · 좋은 업무 지시",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "estimatedMinutes": 1,
+      "title": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
+      "message": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
       "bullets": [
         "목표",
         "자료",
-        "기준"
+        "조건",
+        "완료 기준"
       ],
-      "visualIntent": "왼쪽에는 짧은 지시, 오른쪽에는 6칸이 채워진 업무 지시서가 있는 비교 손그림",
+      "visualIntent": "팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림",
       "visualType": "generated-image",
-      "visualAssetId": "act2-before-after-instruction",
+      "visualAssetId": "act2-handoff-document",
       "presenterCues": [
-        "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "이 업무 지시가 AI에게는 프롬프트입니다."
+        "인수인계서는 김아이가 혼자 움직일 수 있게 만드는 문서라고 설명한다.",
+        "Act 2의 인수인계서는 반복 매뉴얼이 아니라 이번 일을 맡기기 위한 조건 묶음이다.",
+        "이제 그 안에 무엇이 들어가야 하는지 세 부분으로 나눠 본다."
       ],
-      "bridge": "이 업무 지시가 AI에게는 프롬프트입니다.",
-      "speakerNote": "목표, 자료, 기준이 좋아야 결과의 방향과 완료 판단도 안정됩니다.",
+      "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
+      "speakerNote": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "Task Specification"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act2-goal-use-context",
+      "section": "Act 2 · 좋은 업무 지시",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "estimatedMinutes": 1,
+      "title": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
+      "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
+      "bullets": [
+        "무엇을 만들지",
+        "어디에 쓸지",
+        "무엇을 결정할지"
+      ],
+      "visualIntent": "인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-goal-use-context",
+      "presenterCues": [
+        "좋은 지시의 첫 부분은 일의 목표와 사용 상황이다.",
+        "보고서인지 표인지, 어디에 쓸지, 무엇을 결정할지가 먼저 정해져야 한다.",
+        "이 세 가지가 없으면 김아이가 결과 방향을 혼자 잡는다."
+      ],
+      "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
+      "speakerNote": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -821,439 +757,558 @@
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act2-materials-conditions",
+      "section": "Act 2 · 좋은 업무 지시",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "estimatedMinutes": 1,
+      "title": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
+      "message": "참고할 자료와 지켜야 할 조건을 섞지 않고 따로 말해야 김아이의 판단이 흔들리지 않는다.",
+      "bullets": [
+        "제품 자료",
+        "비교 기준",
+        "분량·톤·제외 조건"
+      ],
+      "visualIntent": "인수인계서 가운데에 참고 자료 묶음과 작업 조건 묶음이 분리되어 있는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-materials-conditions",
+      "presenterCues": [
+        "Act 1에서 고른 자료를 여기서 회수한다.",
+        "자료는 무엇을 보고 일할지이고, 조건은 어떤 선을 지킬지다.",
+        "둘을 따로 지정해야 김아이가 자료와 규칙을 섞지 않는다."
+      ],
+      "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "speakerNote": "참고할 자료와 지켜야 할 조건을 섞지 않고 따로 말해야 김아이의 판단이 흔들리지 않는다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "Context",
+        "Prompt"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act2-output-done-criteria",
+      "section": "Act 2 · 좋은 업무 지시",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "estimatedMinutes": 1,
+      "title": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "message": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
+      "bullets": [
+        "보고서 형식",
+        "마감",
+        "확인 기준"
+      ],
+      "visualIntent": "인수인계서 마지막 부분에 형식, 마감, 확인 기준 체크가 있는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-output-done-criteria",
+      "presenterCues": [
+        "업무는 시작 조건만큼 끝나는 조건도 중요하다.",
+        "보고서 형식, 마감, 확인 기준이 있어야 김아이가 완료를 혼자 판단하지 않는다.",
+        "여기까지가 AI에게 주는 업무 지시의 기본 구조다."
+      ],
+      "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+      "speakerNote": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "Evaluation"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
       ],
       "practiceId": null
     },
     {
       "id": "act2-prompt-term-mapping",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "AI에게 주는 업무 지시가 프롬프트입니다.",
-      "message": "프롬프트는 AI에게 이번 한 번의 일을 맡기는 업무 지시입니다.",
+      "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다.",
       "bullets": [
-        "업무 지시서",
-        "실행 조건",
+        "업무 지시",
+        "인수인계서",
         "Prompt",
         "Task Specification"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
+      "visualIntent": "한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-prompt-term-mapping",
       "presenterCues": [
-        "AI에게 주는 업무 지시가 프롬프트입니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "그래서 프롬프트는 문장이 아니라 업무 인수인계서로 봐야 합니다."
+        "여기서 실제 용어를 붙인다.",
+        "AI에게 주는 업무 지시를 프롬프트라고 부른다.",
+        "더 정확히 말하면 이번 일을 어떤 조건으로 수행할지 적은 작업 명세에 가깝다."
       ],
-      "bridge": "그래서 프롬프트는 문장이 아니라 업무 인수인계서로 봐야 합니다.",
-      "speakerNote": "프롬프트는 AI에게 이번 한 번의 일을 맡기는 업무 지시입니다.",
+      "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
+      "speakerNote": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다.",
       "evidenceClaimIds": [
-        "claim-002"
+        "claim-003"
       ],
       "glossaryTerms": [
-        "Prompt"
+        "Prompt",
+        "Task Specification"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
       ],
       "practiceId": null
     },
     {
-      "id": "act2-prompt-as-handoff",
+      "id": "act2-prompt-reframing",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "프롬프트는 문장이 아니라 업무 인수인계서입니다.",
-      "message": "해야 할 일, 지킬 조건, 완료 기준이 있어야 김아이가 덜 추측합니다.",
+      "title": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
+      "message": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
       "bullets": [
         "해야 할 일",
-        "지킬 조건",
-        "완료 기준"
+        "참고할 것",
+        "끝난 기준"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
+      "visualIntent": "화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-prompt-reframing",
       "presenterCues": [
-        "프롬프트는 문장이 아니라 업무 인수인계서입니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "이제 일을 지시하면 김아이가 부족한 조건을 알려 줍니다."
+        "좋은 프롬프트를 글쓰기 기술로 보지 않게 한다.",
+        "핵심은 문장을 멋지게 쓰는 것이 아니라 빠진 조건을 줄이는 것이다.",
+        "해야 할 일, 참고할 것, 끝난 기준이 들어가야 김아이가 덜 추측한다."
       ],
-      "bridge": "이제 일을 지시하면 김아이가 부족한 조건을 알려 줍니다.",
-      "speakerNote": "해야 할 일, 지킬 조건, 완료 기준이 있어야 김아이가 덜 추측합니다.",
+      "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
+      "speakerNote": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
       "evidenceClaimIds": [
-        "claim-002"
+        "claim-003"
       ],
       "glossaryTerms": [
-        "Prompt"
+        "Prompt Engineering"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
-      ],
-      "practiceId": null
-    },
-    {
-      "id": "act2-feedback-setup",
-      "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "일을 지시하면 김아이가 부족한 조건을 알려 줍니다.",
-      "message": "피드백은 평가가 아니라 김아이가 일을 시작하기 전에 부족한 조건을 되묻는 과정입니다.",
-      "bullets": [
-        "빠진 조건",
-        "애매한 조건",
-        "충돌한 조건"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "일을 지시하면 김아이가 부족한 조건을 알려 줍니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "실습에서는 이 피드백을 보고 지시서를 다시 채웁니다."
-      ],
-      "bridge": "실습에서는 이 피드백을 보고 지시서를 다시 채웁니다.",
-      "speakerNote": "피드백은 평가가 아니라 김아이가 일을 시작하기 전에 부족한 조건을 되묻는 과정입니다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
       ],
       "practiceId": null
     },
     {
       "id": "act2-practice-handoff",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "설명 슬라이드를 닫고 별도 Act 2 prompt-writing 실습 화면으로 넘어간다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "첫 실습은 지시서를 쓰고 부족한 조건을 채우는 일입니다.",
-      "message": "제품 리뷰자료 보고서를 맡길 지시서를 쓰고, 부족한 조건을 보고 다시 채웁니다.",
+      "title": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
+      "message": "설명 슬라이드를 닫고, 별도 실습 화면에서 제품 리뷰자료 보고서 업무 지시를 고치고 피드백을 본다.",
       "bullets": [
-        "지시서 쓰기",
-        "부족한 조건 보기",
-        "다시 채우기"
+        "대충 지시 보기",
+        "업무 지시 고치기",
+        "피드백 보고 다시 쓰기"
       ],
-      "visualIntent": "실습 UI가 아니라 Attempt 1, Score, Retry, Best Save 흐름 카드가 보이는 handoff slide",
-      "visualType": "minimal-diagram",
+      "visualIntent": "수강생이 제품 리뷰자료 보고서 업무 지시를 고치고 김아이가 피드백을 건네는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-practice-handoff",
       "presenterCues": [
-        "첫 실습은 지시서를 쓰고 부족한 조건을 채우는 일입니다.",
-        "한 슬라이드에서 한 메시지만 설명한다",
-        "첫 지시서는 완벽하지 않아도 됩니다. 부족한 조건을 보고 다시 채우면 됩니다."
+        "이제 별도 실습 화면으로 넘어간다.",
+        "첫 지시는 완벽하지 않아도 된다.",
+        "피드백을 보고 다시 지시하는 루프가 Act 2의 실습이다."
       ],
-      "bridge": "첫 지시서는 완벽하지 않아도 됩니다. 부족한 조건을 보고 다시 채우면 됩니다.",
-      "speakerNote": "제품 리뷰자료 보고서를 맡길 지시서를 쓰고, 부족한 조건을 보고 다시 채웁니다.",
+      "bridge": "첫 지시는 완벽하지 않아도 됩니다. 피드백을 보고 다시 지시하면 됩니다.",
+      "speakerNote": "설명 슬라이드를 닫고, 별도 실습 화면에서 제품 리뷰자료 보고서 업무 지시를 고치고 피드백을 본다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "Feedback Loop"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act3-act1-context-recover",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "Prompt는 팀장이 지금 내린 업무 지시입니다.",
+      "message": "Act 3의 첫 기준은 Prompt, Context, CLAUDE.md의 자리를 나누는 것이다. Prompt는 팀장이 지금 내린 업무 지시다.",
+      "bullets": [
+        "Prompt = 업무 지시",
+        "Context = 작업 자료",
+        "CLAUDE.md = 회사 내규"
+      ],
+      "visualIntent": "김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act3-act1-context-recover",
+      "presenterCues": [
+        "Act 3의 기준표를 먼저 세운다.",
+        "Prompt는 팀장이 지금 내린 업무 지시다.",
+        "Context는 책상 위 작업 자료이고, CLAUDE.md는 김아이가 항상 따라야 하는 회사 내규다."
+      ],
+      "bridge": "회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.",
+      "speakerNote": "Act 3의 첫 기준은 Prompt, Context, CLAUDE.md의 자리를 나누는 것이다. Prompt는 팀장이 지금 내린 업무 지시다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
       "glossaryTerms": [
         "Prompt",
-        "Evaluation"
+        "Context",
+        "CLAUDE.md"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 중간에 넣지 않는다.",
-        "다음 장 브릿지가 자연스럽다."
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
       ],
       "practiceId": null
     },
     {
-      "id": "act3-mixed-desk",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "좋은 지시도 자료가 섞이면 결과가 흔들린다는 문제를 연다.",
+      "id": "act3-rules-are-different",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "좋은 지시도 자료가 섞이면 결과가 엉킵니다.",
-      "message": "Act 3에서는 지시문이 아니라 김아이 데스크 위 자료를 다룬다.",
+      "title": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
+      "message": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준이다.",
       "bullets": [
-        "좋은 지시",
-        "섞인 자료",
-        "흔들린 결과"
+        "출퇴근 시간",
+        "업무 보고 체계",
+        "징계 기준"
       ],
-      "visualIntent": "현재 자료와 오래된 자료가 섞인 김아이 데스크",
+      "visualIntent": "공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림",
       "visualType": "generated-image",
-      "visualAssetId": "act3-mixed-desk",
+      "visualAssetId": "act3-rules-are-different",
       "presenterCues": [
-        "Act 2를 회수한다",
-        "컨텍스트를 자료 비유로 연다",
-        "실습 UI를 보여 주지 않는다"
+        "회사 내규는 이번 보고서 자료가 아니다.",
+        "출퇴근 시간, 업무 보고 체계, 징계 기준처럼 어떤 업무를 하든 기본으로 지켜야 하는 기준이다.",
+        "뒤에서 이 회사 내규 문서가 CLAUDE.md라고 연결한다."
       ],
-      "bridge": "데스크 위 자료가 다음 결과를 바꿉니다.",
-      "speakerNote": "좋은 지시가 있어도 어떤 자료를 함께 보느냐에 따라 결과가 달라진다고 설명한다.",
+      "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+      "speakerNote": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준이다.",
       "evidenceClaimIds": [
-        "claim-004"
+        "claim-003"
       ],
       "glossaryTerms": [
-        "Context"
+        "CLAUDE.md"
       ],
       "qualityChecks": [
-        "Act 2와 연결된다.",
-        "자료 섞임 문제가 보인다.",
-        "데스크 비유가 중심이다."
-      ]
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
     },
     {
-      "id": "act3-context-desk",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "컨텍스트를 김아이의 데스크 위 자료로 이해시킨다.",
-      "estimatedMinutes": 2,
-      "title": "컨텍스트는 김아이 데스크 위 자료입니다.",
-      "message": "김아이 데스크에는 필수 자료, 유용 자료, 오염 자료, 범위 밖 자료가 함께 올라올 수 있습니다.",
+      "id": "act3-claude-md-rule-board",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+      "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
       "bullets": [
-        "필수 자료",
-        "유용 자료",
-        "오염 자료",
-        "범위 밖"
+        "작업 지시",
+        "작업에 필요한 자료",
+        "작업 체크리스트"
       ],
-      "visualIntent": "김아이 데스크 위 자료를 필수, 유용, 오염, 범위 밖으로 구분한 손그림",
+      "visualIntent": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
       "visualType": "generated-image",
-      "visualAssetId": "act3-context-desk",
+      "visualAssetId": "act3-claude-md-rule-board",
       "presenterCues": [
-        "컨텍스트를 자료 더미가 아니라 분류가 필요한 데스크로 설명한다",
-        "4개 앵커를 한 장에서 보여 주되 문구를 짧게 둔다",
-        "오래된 자료 문제로 넘긴다"
+        "이 슬라이드는 Context를 회사 책상 비유로 다시 연결한다.",
+        "작업 지시는 지금 무엇을 하라는 말이고, 작업에 필요한 자료와 체크리스트는 이번 일을 완성하기 위한 자료다.",
+        "책상 위 자료는 이번 작업을 돕기 위한 것이지 회사 내규가 아니다."
       ],
-      "bridge": "데스크 위에 오래된 자료가 있으면 문제가 생깁니다.",
-      "speakerNote": "컨텍스트는 지금 작업할 때 눈앞에 놓인 자료라고 설명한다.",
+      "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
+      "speakerNote": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
       "evidenceClaimIds": [
-        "claim-004"
+        "claim-003"
       ],
       "glossaryTerms": [
+        "Prompt",
         "Context"
       ],
       "qualityChecks": [
-        "필수, 유용, 오염, 범위 밖이 모두 보인다.",
-        "Act 3 실습의 자료 분류와 연결된다."
-      ]
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
     },
     {
-      "id": "act3-stale-context",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "오래된 자료가 현재 기준을 오염시킨다는 점을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "오래된 자료는 김아이를 현재 기준으로 착각하게 합니다.",
-      "message": "폐기된 시안, 초기 제목, 미확정 정책은 성실한 자료처럼 보여도 결과를 흐릴 수 있다.",
+      "id": "act3-claude-md-fit",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
+      "message": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
       "bullets": [
-        "폐기된 시안",
-        "초기 제목",
-        "미확정 정책"
+        "중간에 바뀐 내용",
+        "이전 작업 자료",
+        "동시에 열린 두 업무"
       ],
-      "visualIntent": "현재 자료와 오염 자료가 섞인 비교 장면",
+      "visualIntent": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
       "visualType": "generated-image",
-      "visualAssetId": "act3-stale-context",
+      "visualAssetId": "act3-claude-md-fit",
       "presenterCues": [
-        "많이 주기가 좋은 것이 아니라고 말한다",
-        "오염 자료를 실제 회사 예로 든다",
-        "규칙판으로 연결한다"
+        "Context가 많다는 것보다 섞이는 것이 문제다.",
+        "중간에 바뀐 내용이 정리되지 않거나 이전 작업 자료가 남으면 현재 작업의 기준이 흐려진다.",
+        "같은 업무환경에서 두 가지 일을 동시에 열어 두면 김아이는 어느 쪽을 기준으로 해야 할지 헷갈린다."
       ],
-      "bridge": "그래서 자료는 많이가 아니라 맞게 골라야 합니다.",
-      "speakerNote": "자료 선택의 목표는 양이 아니라 현재 목표와의 적합성이다.",
+      "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
+      "speakerNote": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
       "evidenceClaimIds": [
-        "claim-004"
+        "claim-003"
       ],
       "glossaryTerms": [
-        "Context"
+        "Context",
+        "Stale Context"
       ],
       "qualityChecks": [
-        "오염 자료 예시가 구체적이다.",
-        "비난보다 진단 톤이다.",
-        "실습 선택 기준으로 이어진다."
-      ]
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act3-too-many-rules",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다.",
+      "message": "타부서 협업에서 반복해서 확인된 요청 양식, 보고 라인, 책임 소재는 다음에도 지킬 내규로 올릴 수 있다.",
+      "bullets": [
+        "요청 양식",
+        "보고 라인",
+        "책임 소재"
+      ],
+      "visualIntent": "타부서 협업 과정에서 요청 양식, 보고 라인, 책임 소재가 정리되어 회사 내규로 올라가는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act3-too-many-rules",
+      "presenterCues": [
+        "처음 하는 타부서 협업은 시행착오가 있다.",
+        "반복하다 보면 어떤 양식으로 요청해야 하는지, 누구에게 보고해야 하는지, 책임 소재가 어디인지가 정리된다.",
+        "이런 기준은 실행 순서 전체가 아니라 다음에도 지킬 협업 기준이므로 내규로 올릴 수 있다."
+      ],
+      "bridge": "CLAUDE.md에도 적용 범위가 있습니다.",
+      "speakerNote": "타부서 협업에서 반복해서 확인된 요청 양식, 보고 라인, 책임 소재는 다음에도 지킬 내규로 올릴 수 있다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "CLAUDE.md",
+        "Persistent Instructions"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act3-temporary-info-danger",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "CLAUDE.md에도 적용 범위가 있습니다.",
+      "message": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
+      "bullets": [
+        "global = 연방법",
+        "user = 주법",
+        "project = 회사 사규",
+        "subfolder = 부서 규칙"
+      ],
+      "visualIntent": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act3-temporary-info-danger",
+      "presenterCues": [
+        "global CLAUDE.md는 연방법처럼 가장 넓게 깔리는 기본 규칙이다.",
+        "user CLAUDE.md는 주법처럼 특정 사용자에게 항상 적용되는 기본 업무 방식이다.",
+        "project CLAUDE.md는 회사 사규, subfolder CLAUDE.md는 부서 규칙처럼 범위가 좁아질수록 구체화된다."
+      ],
+      "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
+      "speakerNote": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "CLAUDE.md"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act3-good-rule-board-shape",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
+      "message": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
+      "bullets": [
+        "로드 순서: global → user → project → subfolder",
+        "적용 강도: subfolder → project → user → global",
+        "가까운 규칙 우선"
+      ],
+      "visualIntent": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act3-good-rule-board-shape",
+      "presenterCues": [
+        "로드는 넓은 범위에서 좁은 범위로 진행된다: global, user, project, subfolder 순서다.",
+        "하지만 적용 강도는 반대로 이해하면 쉽다. 지금 작업 위치에 가까운 subfolder 규칙이 가장 구체적이고 강하다.",
+        "그래서 충돌이 있을 때는 현재 작업 위치에 더 가까운 CLAUDE.md를 먼저 확인한다."
+      ],
+      "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
+      "speakerNote": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "CLAUDE.md"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
+    },
+    {
+      "id": "act3-context-vs-claude-md",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
+      "estimatedMinutes": 1,
+      "title": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
+      "message": "내규가 너무 많으면 읽어야 할 것이 늘고, 이전 설정과 현재 설정이 충돌하며, 제약 때문에 실행이 느려진다.",
+      "bullets": [
+        "양이 많으면 안 읽음",
+        "이전 설정과 충돌",
+        "실행이 느려짐"
+      ],
+      "visualIntent": "너무 많은 회사 내규 앞에서 김아이가 읽지 못하고, 설정 충돌과 실행 지연을 겪는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act3-context-vs-claude-md",
+      "presenterCues": [
+        "내규는 많을수록 좋은 것이 아니다.",
+        "양이 많으면 사람도 안 읽고 AI도 중요한 기준을 놓치기 쉽다.",
+        "이전 설정과 현재 설정이 충돌하거나 제약이 너무 많으면 김아이는 일을 시작하기 어려워진다."
+      ],
+      "bridge": "이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.",
+      "speakerNote": "내규가 너무 많으면 읽어야 할 것이 늘고, 이전 설정과 현재 설정이 충돌하며, 제약 때문에 실행이 느려진다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "CLAUDE.md",
+        "Rule Overload"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
     },
     {
       "id": "act3-practice-handoff",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "설명부를 닫고 별도 컨텍스트 선택 실습으로 넘긴다.",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "실습에서는 김아이의 데스크 자료를 고릅니다.",
-      "message": "자료를 선택하고 결과를 생성한 뒤 어떤 자료가 반영되거나 오염시켰는지 본다.",
+      "title": "이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.",
+      "message": "설명 슬라이드를 닫고, 별도 실습 화면에서 적용 범위에 맞는 CLAUDE.md 내규를 직접 작성하고 줄인다.",
       "bullets": [
-        "자료 선택",
-        "카드 생성",
-        "오염 분석"
+        "적용 범위 선택",
+        "내규 초안 작성",
+        "과한 내규 줄이기"
       ],
-      "visualIntent": "자료 선택, 생성, 분석의 3단계 handoff",
-      "visualType": "minimal-diagram",
+      "visualIntent": "수강생이 김아이의 CLAUDE.md 설정 화면에서 적용 범위를 고르고 내규 초안을 짧게 정리하는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act3-practice-handoff",
       "presenterCues": [
-        "실습 UI는 다음 화면이라고 말한다",
-        "많이 고르기가 아니라고 강조한다",
-        "카드 개선 과제를 알린다"
+        "이 슬라이드는 실습 UI가 아니라 전환 슬라이드다.",
+        "다음 화면에서는 업무 지시와 자료를 분류하는 것이 아니라 CLAUDE.md를 직접 설정한다.",
+        "적용 범위를 고르고, 반복해서 지킬 내규를 짧게 쓰고, 과한 내규를 줄인다."
       ],
-      "bridge": "첫 목표는 AI 하네스 워크숍 신청 카드 개선입니다.",
-      "speakerNote": "이후 practice renderer가 act3-context-workbench를 담당한다.",
+      "bridge": "마지막으로 내규와 업무 매뉴얼도 구분해야 합니다.",
+      "speakerNote": "설명 슬라이드를 닫고, 별도 실습 화면에서 적용 범위에 맞는 CLAUDE.md 내규를 직접 작성하고 줄인다.",
       "evidenceClaimIds": [
-        "claim-004"
+        "claim-003"
       ],
       "glossaryTerms": [
-        "Context"
+        "Prompt",
+        "Context",
+        "CLAUDE.md"
       ],
       "qualityChecks": [
-        "실습 UI가 없다.",
-        "learner action이 명확하다.",
-        "practice로 자연스럽게 넘어간다."
-      ]
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
+      ],
+      "practiceId": null
     },
     {
       "id": "act3-to-act4-manual",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "반복 절차를 매뉴얼로 분리해야 한다는 Act 4 문제를 연다.",
+      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "자료를 잘 골라도 절차를 매번 다시 말하면 불안정합니다.",
-      "message": "반복되는 질문 순서와 기준은 매번 지시문에 붙이지 않고 매뉴얼로 분리해야 한다.",
+      "title": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
+      "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
       "bullets": [
-        "반복 질문",
-        "반복 기준",
-        "반복 출력"
+        "내규 = 기준",
+        "매뉴얼 = 순서",
+        "다음 Act = 반복 실행"
       ],
-      "visualIntent": "반복 절차를 매번 설명하는 장면",
+      "visualIntent": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act3-to-act4-manual",
       "presenterCues": [
-        "Act 3을 인정하고 남은 문제를 연다",
-        "절차 반복 비용을 말한다",
-        "Act 4로 넘긴다"
+        "Act 3를 닫고 Act 4 문제를 연다.",
+        "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 실행 순서다.",
+        "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만든다."
       ],
-      "bridge": "다음 Act에서는 반복 절차를 매뉴얼로 빼냅니다.",
-      "speakerNote": "자료 선택 이후에도 반복 절차 문제가 남는다는 bridge다.",
+      "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
+      "speakerNote": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
       "evidenceClaimIds": [
-        "claim-005"
+        "claim-003"
       ],
       "glossaryTerms": [
+        "CLAUDE.md",
         "Skill"
       ],
       "qualityChecks": [
-        "Act 4 필요성이 열린다.",
-        "반복 절차 문제가 보인다.",
-        "bridge가 명확하다."
-      ]
-    },
-    {
-      "id": "act3-desk-rule-analogy",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "데스크 자료와 회사 규칙판은 역할이 다릅니다.",
-      "message": "데스크 자료와 회사 규칙판은 역할이 다릅니다.",
-      "bullets": [
-        "데스크 자료",
-        "회사 규칙판",
-        "치울 자료"
+        "화면 메시지가 한 가지다.",
+        "Context와 CLAUDE.md의 위치가 분리된다.",
+        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
+        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "둘이 섞이면 김아이는 무엇이 현재 기준인지 헷갈립니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act3-rule-mixing-problem",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "이번 자료와 항상 규칙이 섞이면 기준이 흔들립니다.",
-      "message": "이번 자료와 항상 규칙이 섞이면 기준이 흔들립니다.",
-      "bullets": [
-        "임시 자료",
-        "항상 규칙",
-        "오래된 자료"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "AI에서는 데스크 자료가 Context, 회사 규칙판이 Project Rules입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act3-context-rules-term-mapping",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "데스크 자료는 Context, 규칙판은 Project Rules입니다.",
-      "message": "데스크 자료는 Context, 규칙판은 Project Rules입니다.",
-      "bullets": [
-        "Context",
-        "Project Rules",
-        "CLAUDE.md"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "그래서 Act 3는 이번 자료와 항상 규칙을 나누는 시간입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act3-practice-reason",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "Act 3는 이번 자료와 항상 규칙을 나누는 시간입니다.",
-      "message": "Act 3는 이번 자료와 항상 규칙을 나누는 시간입니다.",
-      "bullets": [
-        "올릴 자료",
-        "남길 규칙",
-        "치울 오염"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "다음 Act에서는 매번 반복되는 절차를 따로 빼냅니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
+      "practiceId": null
     },
     {
       "id": "act4-repeat-procedure",
@@ -2147,40 +2202,6 @@
         "개인 행동으로 끝난다.",
         "세 가지 선택 기준이 보인다.",
         "과도한 도입을 권하지 않는다."
-      ]
-    },
-    {
-      "id": "act3-rule-board",
-      "section": "Act 3 · 데스크와 회사 규칙판",
-      "sectionObjective": "항상 지킬 규칙은 일회성 자료가 아니라 회사 규칙판으로 분리한다.",
-      "estimatedMinutes": 2,
-      "title": "매번 지킬 규칙은 회사 규칙판에 둡니다.",
-      "message": "이번 작업 자료와 항상 유지할 규칙을 분리하면 지시문은 짧아지고 결과는 일관됩니다.",
-      "bullets": [
-        "이번 자료",
-        "항상 규칙",
-        "치울 오염"
-      ],
-      "visualIntent": "데스크 자료와 벽의 회사 규칙판이 분리된 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act3-rule-board",
-      "presenterCues": [
-        "CLAUDE.md 경로 설명으로 깊게 가지 않는다",
-        "회사 규칙판 비유를 유지한다",
-        "context 선택 실습으로 넘긴다"
-      ],
-      "bridge": "이제 어떤 자료를 데스크에 올릴지 실습합니다.",
-      "speakerNote": "회사 규칙판은 항상 유지되는 프로젝트 지침이라는 정도로 소개한다. 세부 파일 구조는 뒤로 보낸다.",
-      "evidenceClaimIds": [
-        "claim-005"
-      ],
-      "glossaryTerms": [
-        "Memory / CLAUDE.md"
-      ],
-      "qualityChecks": [
-        "자료와 규칙 차이가 보인다.",
-        "CLAUDE.md를 과하게 설명하지 않는다.",
-        "실습으로 이어진다."
       ]
     },
     {

@@ -57,7 +57,7 @@
           "prompt": "김아이에게 다음 주 경영회의에 제출할 제품 리뷰자료 보고서를 준비하게 해야 합니다. 어떤 정보를 함께 줘야 할까요? 모두 고르세요.",
           "required": [
             "제품 범위",
-            "보고서 독자",
+            "보고서 사용 상황",
             "리뷰 기간과 비교 기준",
             "필수 지표 또는 자료",
             "제출 형식과 분량",
@@ -128,30 +128,30 @@
       "activityType": "prompt-writing",
       "learnerInput": {
         "kind": "free-text",
-        "task": "강의 신청 페이지에 들어갈 반응형 카드 컴포넌트를 만들라고 지시한다."
+        "task": "다음 주 경영회의에 제출할 제품 리뷰자료 보고서를 준비하라고 지시한다."
       },
       "generatedOutput": [
-        "html-css-card-preview",
+        "report-draft-preview",
         "score-breakdown",
         "feedback",
         "best-prompt"
       ],
       "verification": {
         "checks": [
-          "goal-check",
-          "audience-context-check",
-          "responsive-condition-check",
-          "constraint-check",
-          "completion-criteria-check",
-          "output-format-check"
+          "purpose-check",
+          "use-context-check",
+          "reference-material-check",
+          "comparison-standard-check",
+          "tone-exclusion-check",
+          "format-deadline-done-check"
         ],
         "scoring": {
-          "goal": 20,
-          "audienceOrUseContext": 15,
-          "responsiveCondition": 15,
-          "constraints": 15,
-          "completionCriteria": 20,
-          "outputFormat": 15
+          "purpose": 20,
+          "referenceMaterials": 15,
+          "comparisonStandard": 15,
+          "toneAndExclusions": 15,
+          "formatDeadlineDoneCriteria": 20,
+          "useContext": 15
         },
         "llmJudge": [
           "specificity",
@@ -176,49 +176,62 @@
       },
       "saveTarget": [
         "best-prompt",
-        "best-html-css-preview"
+        "best-report-outline"
       ]
     },
     {
       "act": 3,
-      "id": "act3-context-workbench",
-      "title": "김아이의 데스크를 세팅합니다",
-      "activityType": "context-selection",
+      "id": "act3-claude-md-setting",
+      "title": "김아이의 CLAUDE.md를 설정합니다",
+      "activityType": "claude-md-setting",
       "learnerInput": {
-        "kind": "multi-select",
-        "candidateCount": "15~20",
-        "candidateCategories": [
-          "required-context",
-          "useful-context",
-          "conditional-context",
-          "polluting-context",
-          "out-of-scope-context"
+        "kind": "scope-select-and-rule-edit",
+        "scopeOptions": [
+          "global",
+          "user",
+          "project",
+          "subfolder"
+        ],
+        "candidateCount": "10~15",
+        "editableFields": [
+          "selectedScope",
+          "ruleDraft",
+          "removeReason"
         ]
       },
       "generatedOutput": [
-        "updated-card-preview",
-        "context-impact-analysis",
-        "contamination-report",
+        "claude-md-scope-summary",
+        "claude-md-rule-draft",
+        "rule-overload-report",
+        "conflict-warning",
         "comparison"
       ],
       "verification": {
         "checks": [
-          "final-title-check",
-          "stale-context-check",
-          "responsive-context-check",
-          "style-consistency-check",
-          "accessibility-context-check",
-          "scope-noise-check"
-        ]
+          "scope-selection-check",
+          "persistent-rule-check",
+          "claude-md-brevity-check",
+          "rule-overload-check",
+          "scope-conflict-check",
+          "temporary-info-exclusion-check"
+        ],
+        "scoring": {
+          "scopeSelection": 20,
+          "persistentRules": 20,
+          "brevity": 20,
+          "overloadAvoidance": 15,
+          "conflictAvoidance": 15,
+          "temporaryInfoExcluded": 10
+        }
       },
       "retryPolicy": {
         "minimumAttempts": 2,
         "recommendedAttempts": 3,
-        "retryUnit": "context-set",
+        "retryUnit": "claude-md-draft",
         "loop": [
           "attempt",
-          "generate",
-          "render",
+          "select-scope",
+          "draft",
           "analyze",
           "feedback",
           "retry",
@@ -227,8 +240,9 @@
         ]
       },
       "saveTarget": [
-        "best-context-set",
-        "best-rendered-card"
+        "selected-claude-md-scope",
+        "claude-md-rule-draft",
+        "removed-rule-list"
       ]
     },
     {

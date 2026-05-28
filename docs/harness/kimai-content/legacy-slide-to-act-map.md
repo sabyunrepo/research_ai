@@ -34,19 +34,19 @@ Generated: 2026-05-28
 | Source Slides | Use | Reason |
 |---|---|---|
 | 13-spec-driven, 13-2-spec-contract | primary | "좋은 업무 지시는 목표, 조건, 기준을 고정한다"로 재작성한다. |
-| 04-prompt-layer, 04-1-prompt-anatomy | primary | prompt 6칸 실습의 scoring rubric으로 쓴다. |
+| 04-prompt-layer, 04-1-prompt-anatomy | primary | prompt 조건 실습의 scoring rubric으로 쓴다. |
 | 04-2-xml-boundaries | support | XML 경계는 화면 용어가 아니라 입력 칸 분리 원칙으로 낮춘다. |
 | 13-4-spec-plan-review-flow | support | prompt 이후 plan/review 흐름은 Act 5/6로 분산한다. |
 | 07-reasoning-prompts, 07-2-reasoning-avoid-overask | appendix | 일반인 본편에서는 prompt 강도 조절의 보조 팁으로만 둔다. |
 
-## Act 3. 데스크와 회사 규칙판
+## Act 3. CLAUDE.md 회사 내규
 
 | Source Slides | Use | Reason |
 |---|---|---|
-| 09-context-engineering | primary | context를 "김아이 데스크 위 참고 자료"로 유지한다. |
-| 09-3-context-drift-check | primary | 오래된 자료가 결과를 오염시키는 검증 항목으로 쓴다. |
-| 08-claude-md, 08-2-good-claude-md | primary | CLAUDE.md는 "항상 적용되는 회사 규칙판"으로 소개한다. |
-| 02-4-failure-example-context-drift | primary | Act 3 실습의 before failure로 재배치한다. |
+| 09-context-engineering | support | 자료 선별은 Act 1에 흡수하고, Act 3에서는 Context와 CLAUDE.md를 분리하는 비교 재료로만 쓴다. |
+| 09-3-context-drift-check | support | 임시 정보나 오래된 결정이 CLAUDE.md에 남을 때 다음 작업을 오염시키는 사례로 낮춘다. |
+| 08-claude-md, 08-2-good-claude-md | primary | CLAUDE.md는 "항상 적용되는 회사 내규"으로 소개한다. |
+| 02-4-failure-example-context-drift | support | Act 1의 Context 설명과 중복하지 않도록, Act 3에서는 "임시 정보가 내규 문서에 남는 문제"로만 재해석한다. |
 
 ## Act 4. 반복 업무 매뉴얼
 

@@ -28,7 +28,7 @@
       "term": "Memory / CLAUDE.md",
       "definition": "매번 다시 말하지 않아도 항상 적용되는 프로젝트 지침.",
       "match": "exact-phrase",
-      "koreanLabel": "항상 적용되는 회사 규칙판",
+      "koreanLabel": "항상 적용되는 회사 내규",
       "analogy": "매번 다시 말하지 않아도 팀원이 지켜야 하는 사무실 규칙",
       "practiceMeaning": "Act 3 후반에 현재 prompt 밖으로 빼는 반복 규칙"
     },

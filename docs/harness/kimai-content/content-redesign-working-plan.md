@@ -32,7 +32,7 @@ Generated: 2026-05-28
 | Act 0. 오늘의 약속 | 12 | 7 | 강의 기대값, 김아이 세계관, Act 1 전환 |
 | Act 1. 정보 선별 | 28 | 9 | 제품 리뷰자료 보고서 중심의 필수/불필요 정보 선택 기록 |
 | Act 2. 좋은 업무 지시 | 42 | 9 | 3회 시도한 prompt와 best version |
-| Act 3. 데스크와 회사 규칙판 | 38 | 8 | context 선택, 오염 분석, rule board draft |
+| Act 3. CLAUDE.md 회사 내규 | 38 | 10 | 작업 자료/CLAUDE.md 내규 분리, 내규 과다 제거, CLAUDE.md 내규 초안 |
 | Break | 10 | 0 | 휴식 |
 | Act 4. 반복 업무 매뉴얼 | 35 | 8 | mini-brainstorming Skill 초안과 점수 |
 | Act 5. 역할 분리와 도구 권한 | 35 | 8 | local team role/tool assignment log |
@@ -52,8 +52,8 @@ Act별 반복 대상은 다르게 둔다.
 | Act | Learner Edits | Generated Output | Verification Focus |
 |---|---|---|---|
 | 1 | 정보 선택 | 김아이 추측 빈칸 리포트 | 빠진 필수 정보, 과한 정보 |
-| 2 | 지시문 | HTML/CSS 미리보기 | 목표, 제약, 완료 기준, 자료 |
-| 3 | context 자료 선택 | 같은 prompt의 다른 결과 | 관련성, 최신성, 오염 |
+| 2 | 지시문 | 보고서 초안 미리보기 | 목표, 제약, 완료 기준, 자료 |
+| 3 | 자료/규칙 후보 분류 | Context 목록과 CLAUDE.md 규칙 초안 | 임시 정보 제외, 반복 규칙 유지, 규칙 과다 제거 |
 | 4 | Skill 문서 | Skill review report | 호출 조건, 질문 절차, 승인 게이트 |
 | 5 | role/tool 배정 | local execution log | 역할 분리, 권한 최소화 |
 | 6 | 검문소 체크리스트 | hook prompt/example | 통과 조건, 증거, 무한 반복 방지 |
