@@ -1,0 +1,46 @@
+{
+  "timeboxMinutes": 12,
+  "slides": [
+    {
+      "id": "act0-workflow-map",
+      "section": "Act 0 · 오늘의 약속",
+      "sectionObjective": "4시간 일반인 대상 강의의 전체 여정을 보여 주고 Act 1 실습으로 연결한다.",
+      "estimatedMinutes": 3,
+      "title": "4시간 동안 김아이의 업무 환경을 하나씩 만듭니다.",
+      "message": "오늘 배울 것은 프롬프트 문장 하나가 아니라, AI가 흔들려도 다시 돌아오게 만드는 업무 시스템입니다.",
+      "bullets": [
+        "무엇을 알려줄까 / Prompt",
+        "어떤 자료를 올릴까 / Context",
+        "완료를 어떻게 확인할까 / Hook + Evaluation"
+      ],
+      "visualIntent": "김아이의 업무 환경이 말풍선, 지시서, 매뉴얼, 검증 게이트, 완료 확인으로 이어지는 손그림 여정 지도",
+      "visualType": "existing-image",
+      "visualAssetId": "kimai-workflow-map",
+      "presenterCues": [
+        "김아이는 빠르지만 회사 맥락은 모른다",
+        "오늘은 지시, 자료, 검증이 연결된 환경을 만든다",
+        "각 단계마다 직접 해보고 점수와 결과를 확인한다"
+      ],
+      "bridge": "다음: 김아이에게 대충 시키면 무엇을 추측하게 될까요?",
+      "xmlPrompt": {
+        "instruction": "<instruction>Act 0의 전체 지도 슬라이드를 만든다. 일반인 수강생에게 4시간 동안 김아이의 업무 환경을 하나씩 만든다는 기대값을 잡아 준다. 전문 용어는 보조 라벨과 툴팁으로만 연결하고, 긴 설명은 speakerNote에 둔다.</instruction>",
+        "screenContent": "<screen_content><headline>4시간 동안 김아이의 업무 환경을 하나씩 만듭니다.</headline><message>오늘 배울 것은 프롬프트 문장 하나가 아니라, AI가 흔들려도 다시 돌아오게 만드는 업무 시스템입니다.</message><anchors><anchor>무엇을 알려줄까 / Prompt</anchor><anchor>어떤 자료를 올릴까 / Context</anchor><anchor>완료를 어떻게 확인할까 / Hook + Evaluation</anchor></anchors><bridge>다음: 김아이에게 대충 시키면 무엇을 추측하게 될까요?</bridge></screen_content>",
+        "speakerNavigation": "<speaker_navigation><cue>김아이는 빠르지만 회사 맥락은 모른다</cue><cue>오늘은 지시, 자료, 검증이 연결된 환경을 만든다</cue><cue>각 단계마다 직접 해보고 점수와 결과를 확인한다</cue></speaker_navigation>",
+        "assetRequirement": "<asset_requirement>김아이의 업무 환경이 말풍선, 지시서, 매뉴얼, 검증 게이트, 완료 확인으로 이어지는 손그림 여정 지도를 사용한다. 이미지는 발표자가 그림을 보며 각 역을 짚어 설명할 수 있어야 한다.</asset_requirement>"
+      },
+      "interaction": {
+        "type": "tooltip",
+        "description": "Prompt, Context, Hook, Evaluation 용어에 마우스를 올리면 일반인용 설명 툴팁을 보여 준다."
+      },
+      "speakerNote": "김아이라는 AI 신입사원을 소개한 뒤, 오늘 강의가 프롬프트 예문 암기가 아니라 업무 환경을 만드는 시간임을 말한다. 지시, 자료, 검증의 세 축을 먼저 잡고, 이후 Skill과 Agent는 뒤에서 하나씩 연결한다고 예고한다. 마지막에는 첫 실습으로 넘어가기 위해 김아이가 무엇을 추측하는지 묻는다.",
+      "evidenceClaimIds": ["claim-001"],
+      "glossaryTerms": ["Prompt", "Context", "Hook", "Evaluation"],
+      "qualityChecks": [
+        "1280x720 한 화면에서 제목, 3개 앵커, 이미지, 브릿지가 보인다.",
+        "speakerNote 전문이 슬라이드 HTML에 노출되지 않는다.",
+        "전문 용어는 glossary tooltip으로 설명된다.",
+        "시각 자료는 hand-drawn minimal 방향을 따른다."
+      ]
+    }
+  ]
+}

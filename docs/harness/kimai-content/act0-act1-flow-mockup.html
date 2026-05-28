@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Act 0-6 Flow Mockup · 김아이 워크숍</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #111111;
+      --muted: #5f6673;
+      --line: #111111;
+      --accent: #2563eb;
+      --soft: #f5f7fb;
+      --warn: #f7f7f2;
+      --good: #eaf7ef;
+      --caution: #fff8dc;
+      --bad: #fff0f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #e9edf3;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .deck {
+      display: grid;
+      gap: 28px;
+      padding: 28px;
+    }
+
+    .slide {
+      position: relative;
+      width: min(1280px, calc(100vw - 56px));
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+      background: var(--bg);
+      border: 2px solid var(--line);
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 46px 58px 54px;
+      display: grid;
+      gap: 24px;
+      align-content: start;
+      align-items: start;
+      grid-auto-rows: max-content;
+    }
+
+    .stage > :not(h1) { animation: rise-in 420ms ease both; }
+
+    .kicker {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 1040px;
+      font-family: "Comic Sans MS", "Bradley Hand", ui-sans-serif, system-ui, sans-serif;
+      font-size: 64px;
+      line-height: 1.06;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .headline-xl {
+      font-size: 86px;
+      max-width: 1080px;
+    }
+
+    .subline {
+      margin: 0;
+      max-width: 900px;
+      font-size: 30px;
+      line-height: 1.35;
+      color: #2a2f38;
+    }
+
+    .bridge {
+      position: absolute;
+      left: 58px;
+      right: 58px;
+      bottom: 26px;
+      padding-top: 14px;
+      border-top: 2px solid var(--line);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .anchors {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .anchor {
+      min-width: 180px;
+      border: 2px solid var(--line);
+      padding: 18px 20px;
+      font-size: 30px;
+      font-weight: 900;
+      background: #fff;
+      box-shadow: 5px 5px 0 #dbe4f7;
+      animation: rise-in 360ms ease both;
+    }
+
+    .anchor small {
+      display: block;
+      margin-top: 8px;
+      font-size: 17px;
+      line-height: 1.35;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .quote {
+      width: fit-content;
+      max-width: 840px;
+      border: 3px solid var(--line);
+      padding: 22px 28px;
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 900;
+      background: var(--warn);
+      box-shadow: 7px 7px 0 #dbe4f7;
+    }
+
+    .mock-asset {
+      position: absolute;
+      right: 58px;
+      top: 168px;
+      width: 340px;
+      min-height: 246px;
+      border: 3px solid var(--line);
+      background: #fff;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      align-content: center;
+      transform: rotate(1deg);
+    }
+
+    .mock-asset b { font-size: 24px; }
+
+    .mock-asset span {
+      border: 2px solid var(--line);
+      padding: 10px 12px;
+      font-size: 18px;
+      font-weight: 800;
+      background: var(--soft);
+    }
+
+    .doodle {
+      position: absolute;
+      right: 70px;
+      bottom: 96px;
+      width: 330px;
+      min-height: 230px;
+      border: 3px solid var(--line);
+      background: #fff;
+      transform: rotate(-1deg);
+      padding: 18px;
+    }
+
+    .doodle::before {
+      content: "";
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border: 3px solid var(--line);
+      border-radius: 50%;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+    }
+
+    .doodle::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 90px;
+      border: 3px solid var(--line);
+      border-radius: 60px 60px 8px 8px;
+      top: 102px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+    }
+
+    .label {
+      position: absolute;
+      left: 24px;
+      bottom: 18px;
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .blank-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 590px;
+    }
+
+    .blank {
+      border-bottom: 4px solid var(--line);
+      padding: 18px 6px 12px;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .step {
+      border: 2px solid var(--line);
+      padding: 16px 18px;
+      min-height: 126px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      background: #fff;
+    }
+
+    .step .num {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .step b {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .handoff {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .handoff-card {
+      border: 2px solid var(--line);
+      padding: 18px;
+      min-height: 210px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      background: #fff;
+    }
+
+    .handoff-card b {
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    .handoff-card span {
+      border-left: 5px solid var(--accent);
+      padding-left: 10px;
+      font-size: 18px;
+      line-height: 1.3;
+      font-weight: 750;
+    }
+
+    .term-map {
+      display: grid;
+      grid-template-columns: 1.05fr 1.05fr 1.4fr 1.35fr;
+      gap: 10px;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .term-cell {
+      border: 2px solid var(--line);
+      background: #fff;
+      padding: 14px 16px;
+      min-height: 116px;
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      box-shadow: 4px 4px 0 #dbe4f7;
+    }
+
+    .term-cell .label-mini {
+      color: var(--accent);
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .term-cell b {
+      font-size: 24px;
+      line-height: 1.16;
+    }
+
+    .term-cell span {
+      font-size: 17px;
+      line-height: 1.32;
+      color: #2a2f38;
+      font-weight: 750;
+    }
+
+    .term-note {
+      max-width: 980px;
+      border-left: 7px solid var(--accent);
+      padding: 10px 0 10px 18px;
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 850;
+      color: #242934;
+    }
+
+    .note { display: none; }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-label="Act 0 to Act 6 flow mockup">
+    <section class="slide">
+      <div class="note">0-1 · story transition</div>
+      <div class="stage">
+        <div class="kicker">Act 0 · 오늘의 약속</div>
+        <h1 class="headline-xl">신입사원 김아이의 첫 출근날입니다.</h1>
+        <p class="subline">안녕하세요, 팀장님!</p>
+      </div>
+      <div class="doodle"><div class="label">김아이</div></div>
+      <div class="bridge">먼저 김아이가 어떤 신입사원인지 보겠습니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-2 · capability</div>
+      <div class="stage">
+        <h1 class="headline-xl">김아이는 뛰어난 신입사원입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">아는 것이 많고</div>
+          <div class="anchor">일 처리가 빠르고</div>
+          <div class="anchor">말도 잘합니다</div>
+        </div>
+      </div>
+      <div class="doodle"><div class="label">우수 인재</div></div>
+      <div class="bridge">하지만 뛰어나다고 모든 걸 아는 것은 아닙니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-3 · limitation</div>
+      <div class="stage">
+        <h1>똑똑하다고 모든 걸 아는 것은 아닙니다.</h1>
+        <div class="blank-list">
+          <div class="blank">뭐 하는 회사?</div>
+          <div class="blank">뭐 하는 부서?</div>
+          <div class="blank">주력 상품은?</div>
+          <div class="blank">내가 할 일은?</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>회사 맥락 빈칸</b>
+        <span>회사</span>
+        <span>부서</span>
+        <span>주력 상품</span>
+        <span>할 일</span>
+      </div>
+      <div class="bridge">모르는 부분을 말해 주지 않으면 김아이는 빈칸을 추측합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-4 · real work analogy</div>
+      <div class="stage">
+        <h1>팀장님의 첫 업무 지시가 도착했습니다.</h1>
+        <div class="quote">"제품 리뷰자료 보고서 제출하게 만들어와."</div>
+        <div class="anchors">
+          <div class="anchor">어떤 제품인지?</div>
+          <div class="anchor">누가 보는지?</div>
+          <div class="anchor">보고서 형식은?</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>보고서 빈칸</b>
+        <span>제품?</span>
+        <span>누가 봄?</span>
+        <span>형식?</span>
+      </div>
+      <div class="bridge">팀장님의 역할은 이 빈칸을 김아이가 추측하지 않게 만드는 것입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-5 · harness concept</div>
+      <div class="stage">
+        <h1>하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">잘 정돈된 책상</div>
+          <div class="anchor">명확한 지시</div>
+          <div class="anchor">최신 업무자료</div>
+          <div class="anchor">보고서 샘플</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>김아이 데스크</b>
+        <span>정돈된 책상</span>
+        <span>명확한 지시</span>
+        <span>최신 자료</span>
+        <span>보고서 샘플</span>
+      </div>
+      <div class="bridge">좋은 신입에게도 일할 수 있는 환경이 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-6 · harness devices</div>
+      <div class="stage">
+        <h1>신입은 한 번에 완벽하게 일을 끝내지 못합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">빠진 내용<small>필요한 정보가 빠질 수 있습니다.</small></div>
+          <div class="anchor">잘못 이해한 기준<small>팀장님의 의도와 다를 수 있습니다.</small></div>
+          <div class="anchor">어색한 결과<small>그럴듯하지만 제출하기 어려울 수 있습니다.</small></div>
+        </div>
+      </div>
+      <div class="doodle"><div class="label">초안 1</div></div>
+      <div class="bridge">그래서 체크리스트와 선임의 피드백이 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-7 · feedback loop</div>
+      <div class="stage">
+        <h1>체크리스트와 피드백이 보고서의 퀄리티를 높입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">무엇이 잘못됐는지<small>체크리스트로 빠진 곳을 찾습니다.</small></div>
+          <div class="anchor">무엇을 고칠지<small>선임의 피드백으로 방향을 잡습니다.</small></div>
+          <div class="anchor">다시 제출하기<small>고친 결과를 다시 확인합니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>보고서 개선</b>
+        <span>체크</span>
+        <span>피드백</span>
+        <span>재제출</span>
+      </div>
+      <div class="bridge">오늘의 4시간은 이 반복을 도와주는 장치들을 갖춰 주는 시간입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">0-8 · journey map</div>
+      <div class="stage">
+        <h1>오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.</h1>
+        <div class="map">
+          <div class="step"><div class="num">1</div><b>책상 정리</b></div>
+          <div class="step"><div class="num">2</div><b>업무 지시서</b></div>
+          <div class="step"><div class="num">3</div><b>데스크 자료</b></div>
+          <div class="step"><div class="num">4</div><b>반복 매뉴얼</b></div>
+          <div class="step"><div class="num">5</div><b>역할과 도구</b></div>
+          <div class="step"><div class="num">6</div><b>체크리스트</b></div>
+        </div>
+      </div>
+      <div class="bridge">우수사원 프로젝트의 첫 단계는 책상 정리입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-1 · transition · lecture only</div>
+      <div class="stage">
+        <div class="kicker">Act 1 · 책상 정리</div>
+        <h1 class="headline-xl">우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.</h1>
+        <p class="subline">프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.</p>
+      </div>
+      <div class="mock-asset">
+        <b>우수사원 프로젝트</b>
+        <span>책상 정리</span>
+        <span>보고서 자료</span>
+        <span>추측 줄이기</span>
+      </div>
+      <div class="bridge">김아이는 책상 위에 올라온 자료를 보고 일합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-2 · desk principle · lecture only</div>
+      <div class="stage">
+        <h1>김아이는 책상 위에 올라온 자료를 보고 일합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">보고 있는 자료<small>결과에 바로 반영됩니다.</small></div>
+          <div class="anchor">같이 놓인 기준<small>판단 방향을 정합니다.</small></div>
+          <div class="anchor">없는 정보<small>김아이가 직접 상상합니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>김아이 책상</b><span>자료</span><span>기준</span><span>빈칸</span></div>
+      <div class="bridge">책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-3 · missing materials · lecture only</div>
+      <div class="stage">
+        <h1>책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.</h1>
+        <div class="quote">"제품 리뷰자료 보고서 준비해줘."</div>
+        <div class="anchors">
+          <div class="anchor">어떤 제품?</div>
+          <div class="anchor">누가 보는지?</div>
+          <div class="anchor">무엇과 비교?</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>빈 책상</b><span>제품?</span><span>보는 사람?</span><span>비교 기준?</span></div>
+      <div class="bridge">필요한 자료가 없어도 문제지만, 필요 없는 자료가 많아도 문제입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-4 · messy desk · lecture only</div>
+      <div class="stage">
+        <h1>책상이 어지러워도 김아이의 판단은 흔들립니다.</h1>
+        <div class="anchors">
+          <div class="anchor">너무 많은 자료<small>중요한 것을 찾기 어려워집니다.</small></div>
+          <div class="anchor">관련 없는 자료<small>보고서 범위를 흐립니다.</small></div>
+          <div class="anchor">오래된 자료<small>현재 기준을 오염시킵니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>어지러운 책상</b><span>자료 더미</span><span>다른 제품</span><span>지난 기준</span></div>
+      <div class="bridge">그래서 책상 위 자료는 세 바구니로 나눕니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-5 · baskets · lecture only</div>
+      <div class="stage">
+        <h1>책상 위 자료는 세 바구니로 나눕니다.</h1>
+        <div class="anchors">
+          <div class="anchor">꼭 필요<small>없으면 김아이가 추측합니다.</small></div>
+          <div class="anchor">있으면 도움<small>판단을 도와주지만 필수는 아닙니다.</small></div>
+          <div class="anchor">지금은 치움<small>현재 목표를 흐릴 수 있습니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>자료 바구니</b><span>꼭 필요</span><span>있으면 도움</span><span>지금은 치움</span></div>
+      <div class="bridge">오늘 보고서에 필요한 자료만 책상 위에 올립니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-6 · report desk · lecture only</div>
+      <div class="stage">
+        <h1>오늘 보고서에 필요한 자료만 책상 위에 올립니다.</h1>
+        <div class="anchors">
+          <div class="anchor">제품 자료</div>
+          <div class="anchor">보는 사람</div>
+          <div class="anchor">비교 기준</div>
+          <div class="anchor">보고서 형식</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>보고서 책상</b><span>제품 자료</span><span>보는 사람</span><span>비교 기준</span><span>형식</span></div>
+      <div class="bridge">김아이의 책상이 바로 컨텍스트입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-7 · context mapping · lecture only</div>
+      <div class="stage">
+        <h1>김아이의 책상이 바로 컨텍스트입니다.</h1>
+        <div class="term-map">
+          <div class="term-cell"><div class="label-mini">현실 비유</div><b>책상</b><span>김아이가 일하면서 보는 자료와 기준입니다.</span></div>
+          <div class="term-cell"><div class="label-mini">작동 원리</div><b>판단 재료</b><span>책상 위 자료가 결과에 영향을 줍니다.</span></div>
+          <div class="term-cell"><div class="label-mini">실제 용어</div><b>Context</b><span>대화나 세션에 쌓인 작업 재료입니다.</span></div>
+          <div class="term-cell"><div class="label-mini">해야 할 일</div><b>Context Curation</b><span>올릴 것과 치울 것을 고르는 일입니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-8 · context curation · lecture only</div>
+      <div class="stage">
+        <h1>컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">올릴 자료<small>이번 일에 바로 씁니다.</small></div>
+          <div class="anchor">옆에 둘 자료<small>필요할 때 참고합니다.</small></div>
+          <div class="anchor">치울 자료<small>판단을 흐리면 내려놓습니다.</small></div>
+        </div>
+        <div class="term-note">Act 1의 정보 선별은 김아이의 대화 공간에 무엇을 올릴지 정하는 일입니다.</div>
+      </div>
+      <div class="bridge">첫 실습은 김아이 책상을 직접 정리하는 일입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">1-9 · handoff to separate practice</div>
+      <div class="stage">
+        <h1>첫 실습은 김아이 책상을 직접 정리하는 일입니다.</h1>
+        <div class="handoff">
+          <div class="handoff-card"><b>보고서 목표 읽기</b><span>김아이가 맡을 일을 먼저 확인합니다.</span></div>
+          <div class="handoff-card"><b>자료 바구니 나누기</b><span>꼭 필요, 있으면 도움, 지금은 치움을 구분합니다.</span></div>
+          <div class="handoff-card"><b>빈칸 리포트 보기</b><span>김아이가 무엇을 추측할지 확인합니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">첫 문제는 제품 리뷰자료 보고서입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-1 · recover Act 1 · lecture only</div>
+      <div class="stage">
+        <div class="kicker">Act 2 · 좋은 업무 지시</div>
+        <h1 class="headline-xl">책상이 일할 준비가 됐다고 일이 그냥 되지는 않습니다.</h1>
+        <p class="subline">자료가 준비됐으면 이제 김아이에게 일을 맡길 말이 필요합니다.</p>
+      </div>
+      <div class="mock-asset">
+        <b>준비된 책상</b>
+        <span>제품 리뷰자료</span>
+        <span>대상 독자</span>
+        <span>비교 기준</span>
+      </div>
+      <div class="bridge">그 일을 혼자 처리할 수 있게 만드는 문서가 인수인계서입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-2 · work order analogy · lecture only</div>
+      <div class="stage">
+        <h1>인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">무엇을 만들지<small>산출물과 목적을 정합니다.</small></div>
+          <div class="anchor">무엇을 지킬지<small>조건과 제약을 알려 줍니다.</small></div>
+          <div class="anchor">언제 끝나는지<small>완료 기준을 정합니다.</small></div>
+        </div>
+      </div>
+      <div class="bridge">좋은 지시서는 이 여섯 가지를 포함합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-3 · six slots · lecture only</div>
+      <div class="stage">
+        <h1>좋은 지시서는 목표와 대상을 먼저 고정합니다.</h1>
+        <div class="blank-flow">
+          <div class="blank-card">
+            <b>목표</b>
+            <span>무엇을 만들고 왜 만드는지 정합니다.</span>
+          </div>
+          <div class="blank-card">
+            <b>대상</b>
+            <span>누가 읽거나 사용할지 정합니다.</span>
+          </div>
+          <div class="blank-card">
+            <b>사용 상황</b>
+            <span>어떤 화면이나 회의에서 쓰일지 정합니다.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bridge">그다음에는 김아이가 참고할 자료와 지킬 조건을 정합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-3b · instruction material and constraints · lecture only</div>
+      <div class="stage">
+        <h1>좋은 지시서는 자료와 조건을 따로 지정합니다.</h1>
+        <div class="blank-flow">
+          <div class="blank-card">
+            <b>참고 자료</b>
+            <span>김아이가 무엇을 보고 일할지 정합니다.</span>
+          </div>
+          <div class="blank-card">
+            <b>지킬 조건</b>
+            <span>반응형, 톤, 분량 같은 제약을 정합니다.</span>
+          </div>
+          <div class="blank-card">
+            <b>빼야 할 것</b>
+            <span>쓰면 안 되는 자료나 방향도 함께 정합니다.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bridge">마지막으로 결과물이 어떤 모양이면 끝인지 정합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-3c · instruction output and done · lecture only</div>
+      <div class="stage">
+        <h1>좋은 지시서는 출력 형식과 완료 기준을 정합니다.</h1>
+        <div class="blank-flow">
+          <div class="blank-card">
+            <b>출력 형식</b>
+            <span>보고서, 표, 카드, 체크리스트처럼 결과 모양을 정합니다.</span>
+          </div>
+          <div class="blank-card">
+            <b>완료 기준</b>
+            <span>언제 끝났다고 볼지 검토 기준을 정합니다.</span>
+          </div>
+          <div class="blank-card">
+            <b>확인 방법</b>
+            <span>무엇을 보면 통과인지 확인 방법을 정합니다.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bridge">빠진 조건이 있으면 김아이는 자기 방식으로 채웁니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-4 · vague instruction risk · lecture only</div>
+      <div class="stage">
+        <h1>모호한 지시는 김아이가 어떤 사고를 칠지 모르게 만듭니다.</h1>
+        <div class="quote">"반응형 카드 만들어줘."</div>
+        <div class="anchors">
+          <div class="anchor">다른 화면</div>
+          <div class="anchor">다른 크기</div>
+          <div class="anchor">다른 완료 기준</div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>김아이의 질문</b>
+        <span>누가 쓰지?</span>
+        <span>모바일은?</span>
+        <span>완료 기준은?</span>
+      </div>
+      <div class="bridge">말하지 않은 부분은 김아이의 상상으로 채워집니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-5 · missing conditions · lecture only</div>
+      <div class="stage">
+        <h1>말하지 않은 부분은 김아이 혼자 상상합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">누가 쓰는지<small>사용자를 임의로 정합니다.</small></div>
+          <div class="anchor">어디서 보는지<small>화면 조건을 임의로 잡습니다.</small></div>
+          <div class="anchor">언제 끝나는지<small>완료 기준을 스스로 판단합니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>빈칸 추측</b>
+        <span>사용자</span>
+        <span>화면 크기</span>
+        <span>완료 기준</span>
+      </div>
+      <div class="bridge">들어가는 정보가 좋아야 나오는 결과도 좋아집니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-6 · input output principle · lecture only</div>
+      <div class="stage">
+        <h1>들어가는 정보가 좋아야 나오는 결과도 좋아집니다.</h1>
+        <div class="anchors">
+          <div class="anchor">목표<small>무엇을 만드는지 정합니다.</small></div>
+          <div class="anchor">자료<small>무엇을 참고할지 정합니다.</small></div>
+          <div class="anchor">기준<small>언제 끝났는지 정합니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset">
+        <b>입력과 출력</b>
+        <span>모호한 입력</span>
+        <span>흔들린 결과</span>
+        <span>명확한 입력</span>
+      </div>
+      <div class="bridge">이 업무 지시가 AI에게는 프롬프트입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-7 · term mapping · lecture only</div>
+      <div class="stage">
+        <h1>AI에게 주는 업무 지시가 프롬프트입니다.</h1>
+        <div class="term-map">
+          <div class="term-cell"><div class="label-mini">현실 비유</div><b>업무 지시서</b><span>신입이 바로 실행할 수 있게 쓰는 주문서입니다.</span></div>
+          <div class="term-cell"><div class="label-mini">작동 원리</div><b>실행 조건</b><span>목표, 자료, 제약, 완료 기준이 결과를 정합니다.</span></div>
+          <div class="term-cell"><div class="label-mini">실제 용어</div><b>Prompt</b><span>AI가 이번 요청에서 따라야 할 작업 지시입니다.</span></div>
+          <div class="term-cell"><div class="label-mini">하네스 관점</div><b>Task Specification</b><span>빠진 칸 없이 작업 조건을 고정합니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">그래서 프롬프트는 문장이 아니라 업무 인수인계서로 봐야 합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-8 · prompt as handoff · lecture only</div>
+      <div class="stage">
+        <h1>프롬프트는 문장이 아니라 업무 인수인계서입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">해야 할 일<small>이번 산출물을 고정합니다.</small></div>
+          <div class="anchor">지킬 조건<small>범위와 제약을 고정합니다.</small></div>
+          <div class="anchor">완료 기준<small>검토할 기준을 고정합니다.</small></div>
+        </div>
+      </div>
+      <div class="bridge">이제 일을 지시하면 김아이가 부족한 조건을 알려 줍니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-9 · feedback setup · lecture only</div>
+      <div class="stage">
+        <h1>일을 지시하면 김아이가 부족한 조건을 알려 줍니다.</h1>
+        <div class="anchors">
+          <div class="anchor">빠진 조건<small>아직 말하지 않은 칸입니다.</small></div>
+          <div class="anchor">애매한 조건<small>김아이가 다르게 해석할 수 있습니다.</small></div>
+          <div class="anchor">충돌한 조건<small>서로 맞지 않는 지시입니다.</small></div>
+        </div>
+      </div>
+      <div class="bridge">실습에서는 이 피드백을 보고 지시서를 다시 채웁니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">2-10 · handoff to separate practice</div>
+      <div class="stage">
+        <h1>첫 실습은 지시서를 쓰고 부족한 조건을 채우는 일입니다.</h1>
+        <div class="handoff">
+          <div class="handoff-card"><b>지시서 쓰기</b><span>제품 리뷰자료 보고서를 맡길 지시서를 씁니다.</span></div>
+          <div class="handoff-card"><b>부족한 조건 보기</b><span>김아이가 더 필요한 조건을 알려 줍니다.</span></div>
+          <div class="handoff-card"><b>다시 채우기</b><span>빠진 칸을 보완해 더 나은 지시서를 저장합니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">첫 지시서는 완벽하지 않아도 됩니다. 부족한 조건을 보고 다시 채우면 됩니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-1 · Act 2 recover · lecture only</div>
+      <div class="stage">
+        <div class="kicker">Act 3 · 데스크와 회사 규칙판</div>
+        <h1 class="headline-xl">좋은 지시도 자료가 섞이면 결과가 엉킵니다.</h1>
+        <p class="subline">이번에는 김아이의 데스크 위에 무엇을 올릴지 봅니다.</p>
+      </div>
+      <div class="mock-asset"><b>섞인 데스크</b><span>현재 자료</span><span>오래된 자료</span><span>미확정 자료</span></div>
+      <div class="bridge">데스크 위 자료가 다음 결과를 바꿉니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-2 · 컨텍스트 desk · lecture only</div>
+      <div class="stage">
+        <h1>컨텍스트는 김아이 데스크 위 자료입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">필수 자료<small>없으면 김아이가 추측합니다.</small></div>
+          <div class="anchor">유용 자료<small>있으면 판단이 빨라집니다.</small></div>
+          <div class="anchor">오염 자료<small>현재 기준을 흐립니다.</small></div>
+          <div class="anchor">범위 밖<small>이번 일에는 쓰지 않습니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>데스크 자료</b><span>필수</span><span>유용</span><span>오염</span><span>범위 밖</span></div>
+      <div class="bridge">데스크 위에 오래된 자료가 있으면 문제가 생깁니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-3 · stale 컨텍스트 · lecture only</div>
+      <div class="stage">
+        <h1>오래된 자료는 김아이를 현재 기준으로 착각하게 합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">폐기된 시안</div>
+          <div class="anchor">초기 제목</div>
+          <div class="anchor">미확정 정책</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>오염 자료</b><span>지난달 시안</span><span>옛 제목</span><span>미확정 할인</span></div>
+      <div class="bridge">그래서 자료는 많이가 아니라 맞게 골라야 합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-4 · rule board · lecture only</div>
+      <div class="stage">
+        <h1>매번 지킬 규칙은 회사 규칙판에 둡니다.</h1>
+        <div class="anchors">
+          <div class="anchor">이번 자료<small>현재 작업에만 필요합니다.</small></div>
+          <div class="anchor">항상 규칙<small>다음 작업에도 유지합니다.</small></div>
+          <div class="anchor">치울 오염<small>현재 기준을 흐립니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>회사 규칙판</b><span>항상 지킬 기준</span><span>데스크와 분리</span><span>CLAUDE.md 보조 라벨</span></div>
+      <div class="bridge">이제 어떤 자료를 데스크에 올릴지 실습합니다.</div>
+    </section>
+
+
+
+    <section class="slide">
+      <div class="note">3-5 · handoff to separate practice</div>
+      <div class="stage">
+        <h1>실습에서는 김아이의 데스크 자료를 고릅니다.</h1>
+        <div class="handoff">
+          <div class="handoff-card"><b>자료 선택</b><span>현재 목표에 맞는 컨텍스트를 고릅니다.</span></div>
+          <div class="handoff-card"><b>카드 생성</b><span>선택한 자료로 결과물을 다시 만듭니다.</span></div>
+          <div class="handoff-card"><b>오염 분석</b><span>반영, 무시, 충돌, 오염 자료를 봅니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">첫 목표는 AI 하네스 워크숍 신청 카드 개선입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-6 · bridge to Act 4</div>
+      <div class="stage">
+        <h1>자료를 잘 골라도 절차를 매번 다시 말하면 불안정합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">반복 질문</div>
+          <div class="anchor">반복 기준</div>
+          <div class="anchor">반복 출력</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>반복 절차</b><span>매번 설명</span><span>누락 위험</span><span>매뉴얼 필요</span></div>
+      <div class="bridge">다음 Act에서는 반복 절차를 매뉴얼로 빼냅니다.</div>
+    </section>
+
+
+    <section class="slide">
+      <div class="note">3-7 · analogy · lecture only</div>
+      <div class="stage">
+        <h1>데스크 자료와 회사 규칙판은 역할이 다릅니다.</h1>
+        <div class="anchors"><div class="anchor">데스크 자료<small>이번 일에만 필요한 자료입니다.</small></div><div class="anchor">회사 규칙판<small>매번 지켜야 하는 기준입니다.</small></div><div class="anchor">치울 자료<small>현재 판단을 흐리는 자료입니다.</small></div></div>
+      </div>
+      <div class="bridge">둘이 섞이면 김아이는 무엇이 현재 기준인지 헷갈립니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-8 · principle and problem · lecture only</div>
+      <div class="stage">
+        <h1>이번 자료와 항상 규칙이 섞이면 기준이 흔들립니다.</h1>
+        <div class="anchors"><div class="anchor">임시 자료<small>이번 작업이 끝나면 내려야 합니다.</small></div><div class="anchor">항상 규칙<small>다음 작업에도 남아야 합니다.</small></div><div class="anchor">오래된 자료<small>현재 작업을 오염시킵니다.</small></div></div>
+      </div>
+      <div class="bridge">AI에서는 데스크 자료가 Context, 회사 규칙판이 Project Rules입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-9 · term mapping · lecture only</div>
+      <div class="stage">
+        <h1>데스크 자료는 Context, 규칙판은 Project Rules입니다.</h1>
+        <div class="term-map"><div class="term-cell"><div class="label-mini">현실 비유</div><b>데스크 자료</b><span>이번 작업에서 보는 자료입니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Context</b><span>현재 결과에 반영될 작업 자료입니다.</span></div><div class="term-cell"><div class="label-mini">현실 비유</div><b>회사 규칙판</b><span>항상 지켜야 하는 기준입니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Project Rules</b><span>CLAUDE.md 같은 지속 규칙입니다.</span></div></div>
+      </div>
+      <div class="bridge">그래서 Act 3는 이번 자료와 항상 규칙을 나누는 시간입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">3-10 · practice reason · lecture only</div>
+      <div class="stage">
+        <h1>Act 3는 이번 자료와 항상 규칙을 나누는 시간입니다.</h1>
+        <div class="anchors"><div class="anchor">올릴 자료</div><div class="anchor">남길 규칙</div><div class="anchor">치울 오염</div></div>
+        <div class="term-note">이번 작업에만 필요한 자료와 계속 유지할 규칙을 분리해야 다음 결과가 흔들리지 않습니다.</div>
+      </div>
+      <div class="bridge">다음 Act에서는 매번 반복되는 절차를 따로 빼냅니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">4-1 · Act 3 recover · lecture only</div>
+      <div class="stage">
+        <div class="kicker">Act 4 · 반복 업무 매뉴얼</div>
+        <h1 class="headline-xl">반복 절차는 매뉴얼로 남깁니다.</h1>
+        <p class="subline">자주 쓰는 일하는 순서는 매뉴얼로 빼야 합니다.</p>
+      </div>
+      <div class="mock-asset"><b>반복 절차</b><span>질문 순서</span><span>승인 기준</span><span>출력 형식</span></div>
+      <div class="bridge">그래서 스킬이라는 업무 매뉴얼을 씁니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">4-2 · rushing Kimai · lecture only</div>
+      <div class="stage">
+        <h1>모호한 요청을 받으면 김아이는 바로 실행해 버릴 수 있습니다.</h1>
+        <div class="quote">"강의 실습 좀 재밌게 바꿔줘."</div>
+        <div class="anchors">
+          <div class="anchor">목표 미확인</div>
+          <div class="anchor">범위 미확인</div>
+          <div class="anchor">승인 전 구현</div>
+        </div>
+      </div>
+      <div class="bridge">먼저 물어보게 만드는 절차가 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">4-3 · skill manual · lecture only</div>
+      <div class="stage">
+        <h1>스킬은 언제 시작할지 먼저 정합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">호출 조건<small>어떤 요청에서 이 매뉴얼을 켤지 정합니다.</small></div>
+          <div class="anchor">입력 자료<small>시작 전에 무엇을 확인할지 정합니다.</small></div>
+          <div class="anchor">멈출 조건<small>바로 실행하지 말아야 할 때를 정합니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>업무 매뉴얼</b><span>호출 조건</span><span>입력 자료</span><span>멈출 조건</span></div>
+      <div class="bridge">시작 조건이 정해지면 반복 순서를 매뉴얼로 남깁니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">4-3b · skill procedure output · lecture only</div>
+      <div class="stage">
+        <h1>스킬은 반복 순서와 남길 결과를 정합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">질문 순서<small>무엇을 먼저 물어볼지 정합니다.</small></div>
+          <div class="anchor">승인 기준<small>언제 다음 단계로 갈지 정합니다.</small></div>
+          <div class="anchor">출력 형식<small>결정 내용을 어떤 모양으로 남길지 정합니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>업무 매뉴얼</b><span>질문</span><span>승인</span><span>기록</span></div>
+      <div class="bridge">오늘 만들 매뉴얼은 미니 브레인스토밍입니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">4-4 · mini brainstorming · lecture only</div>
+      <div class="stage">
+        <h1>좋은 매뉴얼은 구현 전에 질문하게 합니다.</h1>
+        <div class="anchors">
+          <div class="anchor">한 번에 하나씩</div>
+          <div class="anchor">접근안 비교</div>
+          <div class="anchor">승인 후 진행</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>Mini Brainstorming</b><span>질문</span><span>접근안</span><span>승인 게이트</span></div>
+      <div class="bridge">이제 이 구조를 직접 작성합니다.</div>
+    </section>
+
+
+
+    <section class="slide">
+      <div class="note">4-5 · handoff to separate practice</div>
+      <div class="stage">
+        <h1>실습에서는 미니 브레인스토밍 스킬을 만듭니다.</h1>
+        <div class="handoff">
+          <div class="handoff-card"><b>호출 조건</b><span>언제 이 매뉴얼을 쓸지 정합니다.</span></div>
+          <div class="handoff-card"><b>절차</b><span>질문과 승인 순서를 씁니다.</span></div>
+          <div class="handoff-card"><b>출력 형식</b><span>결정 내용을 어떻게 남길지 정합니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">먼저 모호한 요청에서 멈추는 절차를 씁니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">4-6 · bridge to Act 5</div>
+      <div class="stage">
+        <h1>매뉴얼이 있어도 한 명이 다 하면 판단이 섞입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">조사</div>
+          <div class="anchor">구현</div>
+          <div class="anchor">리뷰</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>역할 혼합</b><span>찾고</span><span>만들고</span><span>검토함</span></div>
+      <div class="bridge">다음 Act에서는 역할과 도구 권한을 나눕니다.</div>
+    </section>
+
+
+    <section class="slide"><div class="note">4-7 · analogy · lecture only</div><div class="stage"><h1>매뉴얼은 반복 업무를 매번 다시 설명하지 않기 위한 문서입니다.</h1><div class="anchors"><div class="anchor">언제 시작할지</div><div class="anchor">어떤 순서인지</div><div class="anchor">무엇을 남길지</div></div></div><div class="bridge">매뉴얼이 없으면 김아이는 매번 다른 순서로 시작합니다.</div></section>
+
+    <section class="slide"><div class="note">4-8 · principle and problem · lecture only</div><div class="stage"><h1>절차가 없으면 김아이는 매번 다른 순서로 시작합니다.</h1><div class="anchors"><div class="anchor">질문 누락</div><div class="anchor">승인 생략</div><div class="anchor">기록 누락</div></div></div><div class="bridge">AI에서 이 반복 매뉴얼이 Skill입니다.</div></section>
+
+    <section class="slide"><div class="note">4-9 · term mapping · lecture only</div><div class="stage"><h1>AI가 따라야 할 반복 매뉴얼이 Skill입니다.</h1><div class="term-map"><div class="term-cell"><div class="label-mini">현실 비유</div><b>업무 매뉴얼</b><span>반복 업무의 순서를 남깁니다.</span></div><div class="term-cell"><div class="label-mini">작동 원리</div><b>절차 고정</b><span>질문, 승인, 기록 순서를 정합니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Skill</b><span>반복 절차를 파일로 만든 가이드입니다.</span></div><div class="term-cell"><div class="label-mini">해야 할 일</div><b>Reusable Procedure</b><span>비슷한 요청을 같은 방식으로 시작하게 합니다.</span></div></div></div><div class="bridge">그래서 Act 4는 먼저 질문하게 만드는 매뉴얼을 쓰는 시간입니다.</div></section>
+
+    <section class="slide"><div class="note">4-10 · practice reason · lecture only</div><div class="stage"><h1>Act 4는 먼저 질문하게 만드는 매뉴얼을 쓰는 시간입니다.</h1><div class="anchors"><div class="anchor">호출 조건</div><div class="anchor">질문 순서</div><div class="anchor">승인 후 진행</div></div><div class="term-note">모호한 요청에서 바로 실행하지 않고, 목표와 범위를 먼저 좁히게 만드는 것이 핵심입니다.</div></div><div class="bridge">다음 Act에서는 한 명이 모든 판단을 섞지 않게 나눕니다.</div></section>
+
+    <section class="slide">
+      <div class="note">5-1 · Act 4 recover · lecture only</div>
+      <div class="stage">
+        <div class="kicker">Act 5 · 역할 분리와 도구 권한</div>
+        <h1 class="headline-xl">한 명이 조사, 구현, 리뷰를 모두 맡으면 판단이 섞입니다.</h1>
+      </div>
+      <div class="mock-asset"><b>한 명의 김아이</b><span>조사</span><span>구현</span><span>리뷰</span></div>
+      <div class="bridge">역할을 나누면 판단 기준도 나뉩니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">5-2 · role boundaries · lecture only</div>
+      <div class="stage">
+        <h1>역할은 사람 수가 아니라 책임의 경계입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">Coordinator</div>
+          <div class="anchor">Implementer</div>
+          <div class="anchor">Reviewer</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>김아이 팀</b><span>목표 정리</span><span>구현</span><span>검토</span></div>
+      <div class="bridge">각 역할에는 다른 매뉴얼과 도구가 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">5-3 · skill assignment · lecture only</div>
+      <div class="stage">
+        <h1>스킬은 필요한 역할에게만 붙입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">Coordinator</div>
+          <div class="anchor">mini-brainstorming</div>
+          <div class="anchor">직접 구현 금지</div>
+        </div>
+      </div>
+      <div class="bridge">도구 권한도 같은 방식으로 좁힙니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">5-4 · tool permission · lecture only</div>
+      <div class="stage">
+        <h1>도구는 많이 열어 주는 것이 아니라 필요한 역할에게만 줍니다.</h1>
+        <div class="anchors">
+          <div class="anchor">읽기 도구<small>자료와 파일을 확인합니다.</small></div>
+          <div class="anchor">쓰기 도구<small>파일과 산출물을 수정합니다.</small></div>
+          <div class="anchor">실행 도구<small>테스트와 검증을 돌립니다.</small></div>
+          <div class="anchor">외부 연결<small>MCP 같은 외부 도구를 붙입니다.</small></div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>Tool 권한</b><span>읽기</span><span>쓰기</span><span>실행</span><span>외부 연결</span></div>
+      <div class="bridge">외부 도구는 연결 통로를 통해 붙입니다.</div>
+    </section>
+
+
+
+    <section class="slide">
+      <div class="note">5-5 · handoff to local practice</div>
+      <div class="stage">
+        <h1>실습에서는 로컬에서 김아이 팀을 실행합니다.</h1>
+        <div class="handoff">
+          <div class="handoff-card"><b>역할 지시문</b><span>각 역할의 책임을 붙입니다.</span></div>
+          <div class="handoff-card"><b>권한 배정</b><span>필요한 도구만 열어 줍니다.</span></div>
+          <div class="handoff-card"><b>실행 기록</b><span>역할이 섞였는지 기록합니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">환경이 안 맞으면 관찰 모드 로그로 판단합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">5-6 · bridge to Act 6</div>
+      <div class="stage">
+        <h1>역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.</h1>
+        <div class="anchors">
+          <div class="anchor">완료 선언</div>
+          <div class="anchor">증거</div>
+          <div class="anchor">검문소</div>
+        </div>
+      </div>
+      <div class="bridge">다음 Act에서는 완료 전 자동 검문소를 세웁니다.</div>
+    </section>
+
+
+    <section class="slide"><div class="note">5-7 · analogy · lecture only</div><div class="stage"><h1>역할 카드는 한 사람이 모든 판단을 섞지 않게 하는 책임표입니다.</h1><div class="anchors"><div class="anchor">조사 담당</div><div class="anchor">구현 담당</div><div class="anchor">검토 담당</div></div></div><div class="bridge">역할과 도구 열쇠가 없으면 일이 뒤섞입니다.</div></section>
+
+    <section class="slide"><div class="note">5-8 · principle and problem · lecture only</div><div class="stage"><h1>역할과 도구 열쇠가 없으면 일이 뒤섞입니다.</h1><div class="anchors"><div class="anchor">조사자가 수정</div><div class="anchor">구현자가 셀프 리뷰</div><div class="anchor">검토자가 기준 없이 판단</div></div></div><div class="bridge">AI에서는 역할을 Agent로, 도구 열쇠를 Tool Permission으로 나눕니다.</div></section>
+
+    <section class="slide"><div class="note">5-9 · term mapping · lecture only</div><div class="stage"><h1>역할은 Agent, 도구 열쇠는 Tool Permission입니다.</h1><div class="term-map"><div class="term-cell"><div class="label-mini">현실 비유</div><b>역할 카드</b><span>책임과 판단 기준을 나눕니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Agent Role</b><span>조사, 구현, 검토 역할을 분리합니다.</span></div><div class="term-cell"><div class="label-mini">현실 비유</div><b>도구 열쇠</b><span>쓸 수 있는 도구를 제한합니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Tool Permission</b><span>MCP 같은 외부 도구 접근을 좁힙니다.</span></div></div></div><div class="bridge">그래서 Act 5는 누가 무엇을 보고 어떤 도구를 쓸지 나누는 시간입니다.</div></section>
+
+    <section class="slide"><div class="note">5-10 · practice reason · lecture only</div><div class="stage"><h1>Act 5는 역할과 도구 권한을 나누는 시간입니다.</h1><div class="anchors"><div class="anchor">책임</div><div class="anchor">볼 자료</div><div class="anchor">쓸 도구</div></div><div class="term-note">김아이 팀을 많이 만드는 것이 아니라, 각 역할이 자기 책임 안에서만 판단하게 만드는 것이 핵심입니다.</div></div><div class="bridge">다음 Act에서는 완료했다는 말 대신 증거를 확인합니다.</div></section>
+
+    <section class="slide">
+      <div class="note">6-1 · Act 5 recover · lecture only</div>
+      <div class="stage">
+        <div class="kicker">Act 6 · 검증과 하네스 구조</div>
+        <h1 class="headline-xl">"완료했습니다"라는 말은 증거가 아닙니다.</h1>
+        <p class="subline">무엇을 했고, 무엇을 검증했고, 무엇이 남았는지가 필요합니다.</p>
+      </div>
+      <div class="bridge">완료 직전에 자동 검문소가 필요합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">6-2 · stop checkpoint · lecture only</div>
+      <div class="stage">
+        <h1>자동 검문소는 완료 직전에 켜집니다.</h1>
+        <div class="anchors">
+          <div class="anchor">멈추기 직전</div>
+          <div class="anchor">증거 확인</div>
+          <div class="anchor">통과 또는 재시도</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>Stop Hook</b><span>완료 직전</span><span>증거 검사</span><span>재시도</span></div>
+      <div class="bridge">하지만 검문소도 끝낼 때를 알아야 합니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">6-3 · state guard · lecture only</div>
+      <div class="stage">
+        <h1>검문소에는 상태표가 있어야 무한 반복을 막습니다.</h1>
+        <div class="anchors">
+          <div class="anchor">processing</div>
+          <div class="anchor">complete</div>
+          <div class="anchor">attempts</div>
+        </div>
+      </div>
+      <div class="bridge">이제 체크리스트로 검문소를 설계합니다.</div>
+    </section>
+
+
+
+    <section class="slide">
+      <div class="note">6-4 · handoff to checkpoint practice</div>
+      <div class="stage">
+        <h1>실습에서는 완료 전 검문소를 체크리스트로 만듭니다.</h1>
+        <div class="handoff">
+          <div class="handoff-card"><b>Trigger</b><span>언제 검문소가 켜질지 고릅니다.</span></div>
+          <div class="handoff-card"><b>State</b><span>processing과 complete를 나눕니다.</span></div>
+          <div class="handoff-card"><b>완료 증거</b><span>검증 결과와 남은 위험을 요구합니다.</span></div>
+        </div>
+      </div>
+      <div class="bridge">검문소 설계가 통과되면 실제 Stop hook 생성 지시문이 열립니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">6-5 · unlock structure · lecture only</div>
+      <div class="stage">
+        <h1>검문소 설계가 통과되면 생성 지시문과 예제 구조가 열립니다.</h1>
+        <div class="anchors">
+          <div class="anchor">settings</div>
+          <div class="anchor">status file</div>
+          <div class="anchor">stop check</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>예제 구조</b><span>settings.local.json</span><span>.agent-status.json</span><span>stop-check.js</span></div>
+      <div class="bridge">이제 오늘 만든 장치들을 하나로 묶어 봅니다.</div>
+    </section>
+
+    <section class="slide">
+      <div class="note">6-6 · final harness map</div>
+      <div class="stage">
+        <h1>하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.</h1>
+        <div class="anchors">
+          <div class="anchor">정보와 지시</div>
+          <div class="anchor">자료와 매뉴얼</div>
+          <div class="anchor">역할과 검증</div>
+        </div>
+      </div>
+      <div class="mock-asset"><b>Act 1-6</b><span>선별</span><span>작업 장치</span><span>검문소</span></div>
+      <div class="bridge">이제 내 업무에 가져갈 장치부터 고르면 됩니다.</div>
+    </section>
+
+    <section class="slide"><div class="note">6-7 · analogy · lecture only</div><div class="stage"><h1>검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.</h1><div class="anchors"><div class="anchor">무엇을 했나</div><div class="anchor">무엇을 확인했나</div><div class="anchor">무엇이 남았나</div></div></div><div class="bridge">검문소가 없으면 완료 선언을 그대로 믿게 됩니다.</div></section>
+
+    <section class="slide"><div class="note">6-8 · principle and problem · lecture only</div><div class="stage"><h1>검문소가 없으면 완료 선언을 그대로 믿게 됩니다.</h1><div class="anchors"><div class="anchor">증거 없음</div><div class="anchor">기준 없음</div><div class="anchor">재시도 없음</div></div></div><div class="bridge">AI에서는 Hook, Evaluation, State가 이 일을 나눠 맡습니다.</div></section>
+
+    <section class="slide"><div class="note">6-9 · term mapping · lecture only</div><div class="stage"><h1>Hook은 켜는 순간, Evaluation은 통과 기준입니다.</h1><div class="term-map"><div class="term-cell"><div class="label-mini">현실 비유</div><b>검문소</b><span>완료 전에 증거를 확인합니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Hook</b><span>언제 자동으로 켜질지 정합니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>Evaluation</b><span>무엇을 통과로 볼지 판단합니다.</span></div><div class="term-cell"><div class="label-mini">실제 용어</div><b>State / Loop</b><span>재시도와 종료를 기록합니다.</span></div></div></div><div class="bridge">그래서 Act 6는 완료 전에 무엇을 확인하고 언제 재시도할지 정하는 시간입니다.</div></section>
+
+    <section class="slide"><div class="note">6-10 · practice reason · lecture only</div><div class="stage"><h1>Act 6는 완료 전 증거와 재시도 기준을 정하는 시간입니다.</h1><div class="anchors"><div class="anchor">완료 증거</div><div class="anchor">통과 기준</div><div class="anchor">재시도 조건</div></div><div class="term-note">김아이의 완료 선언을 믿는 대신, 무엇을 확인해야 멈출 수 있는지 기준을 세웁니다.</div></div><div class="bridge">오늘 만든 장치들을 내 업무에 가져갈 차례입니다.</div></section>
+
+  </main>
+</body>
+</html>

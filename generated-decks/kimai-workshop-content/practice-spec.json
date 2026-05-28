@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "topicSlug": "kimai-workshop-content",
+  "timeboxMinutes": 240,
+  "globalLoop": [
+    "input",
+    "output",
+    "verification",
+    "feedback",
+    "retry",
+    "compare",
+    "best-save"
+  ],
+  "activities": [
+    {
+      "act": 0,
+      "id": null,
+      "title": "오늘의 약속",
+      "activityType": "no-practice",
+      "status": "no-practice",
+      "purpose": "기대값 정렬, 김아이 세계관 소개, Act 1 정보 선별로 전환",
+      "allowedInteractions": [
+        "glossary-tooltip"
+      ],
+      "disallowedInteractions": [
+        "first-question-click-reveal",
+        "scored-quiz",
+        "prompt-input",
+        "context-selection",
+        "retry-loop",
+        "best-save"
+      ],
+      "nextPracticeId": "act1-info-selection"
+    },
+    {
+      "act": 1,
+      "id": "act1-info-selection",
+      "title": "김아이에게 무엇을 알려줘야 할까요?",
+      "activityType": "selection-diagnostic",
+      "learnerInput": {
+        "kind": "multi-select",
+        "items": [
+          "product-review-report",
+          "payment-button-bug",
+          "slide-improvement"
+        ],
+        "optionCategories": [
+          "required",
+          "conditional",
+          "distractor"
+        ]
+      },
+      "questionSeeds": [
+        {
+          "id": "product-review-report",
+          "title": "제품 리뷰자료 보고서",
+          "prompt": "김아이에게 다음 주 경영회의에 제출할 제품 리뷰자료 보고서를 준비하게 해야 합니다. 어떤 정보를 함께 줘야 할까요? 모두 고르세요.",
+          "required": [
+            "제품 범위",
+            "보고서 독자",
+            "리뷰 기간과 비교 기준",
+            "필수 지표 또는 자료",
+            "제출 형식과 분량",
+            "완료 기준과 제출 기한"
+          ],
+          "conditional": [
+            "지난 회의 질문 목록",
+            "경쟁 제품 리뷰 기사 2~3개",
+            "내부 표현 예시"
+          ],
+          "distractor": [
+            "회사 전체 연혁 자료",
+            "미확정 다음 분기 기능 아이디어",
+            "관련 없는 고객 문의 전체 원문",
+            "임원들이 좋아할 만하게 고급스럽게라는 단독 지시"
+          ]
+        },
+        {
+          "id": "payment-button-bug",
+          "title": "결제 버튼 오류 수정"
+        },
+        {
+          "id": "slide-improvement",
+          "title": "발표자료 슬라이드 다듬기"
+        }
+      ],
+      "generatedOutput": [
+        "blank-spaces-report",
+        "manager-type-title",
+        "selection-analysis",
+        "verification-log"
+      ],
+      "verification": {
+        "checks": [
+          "required-info-check",
+          "scope-noise-check",
+          "ambiguity-check",
+          "actionability-check"
+        ],
+        "scoring": {
+          "required": "+10~+20",
+          "conditional": "+2~+6",
+          "overScoped": "-3~-8",
+          "polluting": "-8~-15"
+        }
+      },
+      "retryPolicy": {
+        "minimumAttempts": 3,
+        "retryUnit": "question",
+        "loop": [
+          "round",
+          "feedback",
+          "next-round",
+          "final-score",
+          "review"
+        ]
+      },
+      "saveTarget": [
+        "selected-info-patterns",
+        "missed-required-info",
+        "over-selected-noise"
+      ]
+    },
+    {
+      "act": 2,
+      "id": "act2-prompt-iteration",
+      "title": "김아이에게 제대로 업무 지시하기",
+      "activityType": "prompt-writing",
+      "learnerInput": {
+        "kind": "free-text",
+        "task": "강의 신청 페이지에 들어갈 반응형 카드 컴포넌트를 만들라고 지시한다."
+      },
+      "generatedOutput": [
+        "html-css-card-preview",
+        "score-breakdown",
+        "feedback",
+        "best-prompt"
+      ],
+      "verification": {
+        "checks": [
+          "goal-check",
+          "audience-context-check",
+          "responsive-condition-check",
+          "constraint-check",
+          "completion-criteria-check",
+          "output-format-check"
+        ],
+        "scoring": {
+          "goal": 20,
+          "audienceOrUseContext": 15,
+          "responsiveCondition": 15,
+          "constraints": 15,
+          "completionCriteria": 20,
+          "outputFormat": 15
+        },
+        "llmJudge": [
+          "specificity",
+          "non-conflict",
+          "verifiability",
+          "not-too-verbose",
+          "ready-to-start"
+        ]
+      },
+      "retryPolicy": {
+        "minimumAttempts": 3,
+        "retryUnit": "prompt",
+        "loop": [
+          "attempt",
+          "result",
+          "score",
+          "feedback",
+          "retry",
+          "compare",
+          "save"
+        ]
+      },
+      "saveTarget": [
+        "best-prompt",
+        "best-html-css-preview"
+      ]
+    },
+    {
+      "act": 3,
+      "id": "act3-context-workbench",
+      "title": "김아이의 데스크를 세팅합니다",
+      "activityType": "context-selection",
+      "learnerInput": {
+        "kind": "multi-select",
+        "candidateCount": "15~20",
+        "candidateCategories": [
+          "required-context",
+          "useful-context",
+          "conditional-context",
+          "polluting-context",
+          "out-of-scope-context"
+        ]
+      },
+      "generatedOutput": [
+        "updated-card-preview",
+        "context-impact-analysis",
+        "contamination-report",
+        "comparison"
+      ],
+      "verification": {
+        "checks": [
+          "final-title-check",
+          "stale-context-check",
+          "responsive-context-check",
+          "style-consistency-check",
+          "accessibility-context-check",
+          "scope-noise-check"
+        ]
+      },
+      "retryPolicy": {
+        "minimumAttempts": 2,
+        "recommendedAttempts": 3,
+        "retryUnit": "context-set",
+        "loop": [
+          "attempt",
+          "generate",
+          "render",
+          "analyze",
+          "feedback",
+          "retry",
+          "compare",
+          "save"
+        ]
+      },
+      "saveTarget": [
+        "best-context-set",
+        "best-rendered-card"
+      ]
+    },
+    {
+      "act": 4,
+      "id": "act4-skill-authoring",
+      "title": "미니 브레인스토밍 Skill을 만듭니다",
+      "activityType": "skill-writing",
+      "learnerInput": {
+        "kind": "markdown-document",
+        "requiredSections": [
+          "frontmatter",
+          "name",
+          "description",
+          "when-to-use",
+          "steps",
+          "output-format"
+        ]
+      },
+      "generatedOutput": [
+        "skill-review-report",
+        "structure-check",
+        "behavior-check",
+        "improvement-suggestions"
+      ],
+      "verification": {
+        "checks": [
+          "frontmatter-check",
+          "name-check",
+          "description-trigger-check",
+          "steps-check",
+          "output-format-check",
+          "one-question-at-a-time-check",
+          "scope-boundary-check",
+          "approach-comparison-check",
+          "approval-gate-check",
+          "spec-output-check"
+        ],
+        "scoring": {
+          "clearTrigger": 20,
+          "oneQuestionAtATime": 15,
+          "scopeBoundary": 15,
+          "approachTradeoff": 15,
+          "approvalGate": 15,
+          "specRecord": 10,
+          "outputFormat": 10
+        },
+        "llmJudge": [
+          "prevents-rushing",
+          "question-load",
+          "decision-separation",
+          "workplace-fit"
+        ]
+      },
+      "retryPolicy": {
+        "minimumAttempts": 2,
+        "recommendedAttempts": 3,
+        "retryUnit": "skill-document",
+        "loop": [
+          "attempt",
+          "structure-check",
+          "behavior-check",
+          "feedback",
+          "retry",
+          "compare",
+          "save"
+        ]
+      },
+      "saveTarget": [
+        "final-mini-brainstorming-skill"
+      ]
+    },
+    {
+      "act": 5,
+      "id": "act5-local-team-run",
+      "title": "로컬에서 김아이 팀을 실행합니다",
+      "activityType": "local-execution",
+      "learnerInput": {
+        "kind": "local-agent-setup",
+        "roles": [
+          "Coordinator",
+          "Researcher",
+          "Implementer",
+          "Reviewer"
+        ],
+        "assignmentTypes": [
+          "role-prompt",
+          "skill-assignment",
+          "tool-permission",
+          "execution-log"
+        ]
+      },
+      "generatedOutput": [
+        "local-execution-log",
+        "role-output-summary",
+        "attempt-comparison"
+      ],
+      "verification": {
+        "scoringMode": "checklist-reflection",
+        "checks": [
+          "coordinator-goal-check",
+          "mini-brainstorming-applied-check",
+          "researcher-no-implementation-check",
+          "implementer-no-source-judgement-check",
+          "reviewer-no-direct-edit-check",
+          "role-output-separated-check",
+          "remaining-risk-report-check"
+        ]
+      },
+      "retryPolicy": {
+        "minimumAttempts": 2,
+        "retryUnit": "team-setup",
+        "loop": [
+          "attempt",
+          "record",
+          "reflect",
+          "retry",
+          "compare",
+          "share"
+        ]
+      },
+      "fallbackMode": "observer-mode-example-log",
+      "saveTarget": [
+        "role-tool-assignment",
+        "execution-log",
+        "attempt-comparison"
+      ]
+    },
+    {
+      "act": 6,
+      "id": "act6-stop-hook-checkpoint",
+      "title": "완료 전 Stop hook 검문소를 설계합니다",
+      "activityType": "checklist-unlock",
+      "learnerInput": {
+        "kind": "checklist",
+        "groups": [
+          "trigger",
+          "state",
+          "stop-condition",
+          "completion-evidence"
+        ]
+      },
+      "generatedOutput": [
+        "score",
+        "unlock-prompt",
+        "example-file-structure"
+      ],
+      "verification": {
+        "checks": [
+          "user-prompt-submit-processing-check",
+          "stop-completion-check",
+          "processing-complete-state-check",
+          "loop-guard-check",
+          "completion-evidence-check"
+        ],
+        "scoring": {
+          "processingStart": 20,
+          "stopCheck": 20,
+          "stateUse": 20,
+          "loopGuard": 20,
+          "completionEvidence": 20
+        },
+        "unlockScore": 100
+      },
+      "retryPolicy": {
+        "minimumAttempts": 1,
+        "retryUntil": "unlockScore",
+        "retryUnit": "checklist-selection",
+        "loop": [
+          "select",
+          "score",
+          "feedback",
+          "retry",
+          "unlock"
+        ]
+      },
+      "saveTarget": [
+        "checkpoint-design",
+        "unlock-prompt",
+        "example-structure"
+      ]
+    }
+  ]
+}

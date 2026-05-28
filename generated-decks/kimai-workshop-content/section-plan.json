@@ -1,0 +1,272 @@
+{
+  "timeboxMinutes": 240,
+  "sections": [
+    {
+      "id": "act-0",
+      "title": "오늘의 약속",
+      "learningObjective": "수강생이 자신을 김아이를 이끄는 팀장으로 이해하고, 하네스 엔지니어링을 AI 신입사원의 업무 능력을 끌어내는 업무 환경과 피드백 루프로 이해한다.",
+      "estimatedMinutes": 12,
+      "practiceMode": "no-practice-orientation",
+      "learnerOutput": "없음. Act 1 정보 선별 실습으로 넘어갈 준비만 만든다.",
+      "practiceId": null,
+      "nextPracticeId": "act1-info-selection",
+      "targetSlideCount": 8,
+      "plannedSlideIds": [
+        "act0-kimai-intro",
+        "act0-kimai-capable",
+        "act0-company-context",
+        "act0-real-work-analogy",
+        "act0-harness-concept",
+        "act0-first-draft-limits",
+        "act0-feedback-loop",
+        "act0-journey-map"
+      ],
+      "slides": [
+        "act0-kimai-intro",
+        "act0-kimai-capable",
+        "act0-company-context",
+        "act0-real-work-analogy",
+        "act0-harness-concept",
+        "act0-first-draft-limits",
+        "act0-feedback-loop",
+        "act0-journey-map"
+      ]
+    },
+    {
+      "id": "act-1",
+      "title": "책상 정리",
+      "learningObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "estimatedMinutes": 28,
+      "practiceMode": "selection-diagnostic",
+      "practiceId": "act1-info-selection",
+      "learnerOutput": "3문항 정보 선택 결과와 놓친 빈칸 리포트",
+      "targetSlideCount": 9,
+      "plannedSlideIds": [
+        "act1-desk-cleanup-open",
+        "act1-desk-principle",
+        "act1-missing-materials",
+        "act1-messy-desk",
+        "act1-info-baskets",
+        "act1-report-desk-materials",
+        "act1-context-mapping",
+        "act1-context-curation-close",
+        "act1-practice-handoff"
+      ],
+      "slides": [
+        "act1-desk-cleanup-open",
+        "act1-desk-principle",
+        "act1-missing-materials",
+        "act1-messy-desk",
+        "act1-info-baskets",
+        "act1-report-desk-materials",
+        "act1-context-mapping",
+        "act1-context-curation-close",
+        "act1-practice-handoff"
+      ]
+    },
+    {
+      "id": "act-2",
+      "title": "좋은 업무 지시",
+      "learningObjective": "목표, 조건, 자료, 완료 기준을 포함한 업무 지시가 결과물 품질을 바꾼다는 것을 확인한다.",
+      "estimatedMinutes": 42,
+      "practiceMode": "prompt-iteration",
+      "practiceId": "act2-prompt-iteration",
+      "learnerOutput": "3회 시도 지시문, 점수 변화, 가장 나은 지시문",
+      "targetSlideCount": 12,
+      "plannedSlideIds": [
+        "act2-desk-ready-not-work",
+        "act2-work-order-analogy",
+        "act2-instruction-goal-audience",
+        "act2-instruction-material-constraints",
+        "act2-instruction-output-done",
+        "act2-vague-instruction-risk",
+        "act2-missing-conditions",
+        "act2-input-output-principle",
+        "act2-prompt-term-mapping",
+        "act2-prompt-as-handoff",
+        "act2-feedback-setup",
+        "act2-practice-handoff"
+      ],
+      "slides": [
+        "act2-desk-ready-not-work",
+        "act2-work-order-analogy",
+        "act2-instruction-goal-audience",
+        "act2-instruction-material-constraints",
+        "act2-instruction-output-done",
+        "act2-vague-instruction-risk",
+        "act2-missing-conditions",
+        "act2-input-output-principle",
+        "act2-prompt-term-mapping",
+        "act2-prompt-as-handoff",
+        "act2-feedback-setup",
+        "act2-practice-handoff"
+      ]
+    },
+    {
+      "id": "act-3",
+      "title": "데스크와 회사 규칙판",
+      "learningObjective": "현재 작업 자료, 오래된 오염 자료, 항상 유지할 회사 규칙을 분리한다.",
+      "estimatedMinutes": 38,
+      "practiceMode": "context-selection-preview",
+      "practiceId": "act3-context-workbench",
+      "learnerOutput": "context 선택 목록, 오염 분석, rule board 초안",
+      "targetSlideCount": 10,
+      "plannedSlideIds": [
+        "act3-mixed-desk",
+        "act3-context-desk",
+        "act3-stale-context",
+        "act3-practice-handoff",
+        "act3-to-act4-manual",
+        "act3-desk-rule-analogy",
+        "act3-rule-mixing-problem",
+        "act3-context-rules-term-mapping",
+        "act3-practice-reason",
+        "act3-rule-board"
+      ],
+      "slides": [
+        "act3-mixed-desk",
+        "act3-context-desk",
+        "act3-stale-context",
+        "act3-practice-handoff",
+        "act3-to-act4-manual",
+        "act3-desk-rule-analogy",
+        "act3-rule-mixing-problem",
+        "act3-context-rules-term-mapping",
+        "act3-practice-reason",
+        "act3-rule-board"
+      ]
+    },
+    {
+      "id": "break",
+      "title": "휴식",
+      "learningObjective": "Act 4-6의 하네스 장치 실습으로 넘어가기 전 흐름을 끊는다.",
+      "estimatedMinutes": 10,
+      "practiceMode": "none",
+      "learnerOutput": "none",
+      "targetSlideCount": 0,
+      "plannedSlideIds": [],
+      "slides": []
+    },
+    {
+      "id": "act-4",
+      "title": "반복 업무 매뉴얼",
+      "learningObjective": "반복되는 작업 전 확인 절차를 스킬 문서로 분리한다.",
+      "estimatedMinutes": 35,
+      "practiceMode": "skill-writing",
+      "practiceId": "act4-skill-authoring",
+      "learnerOutput": "미니 브레인스토밍 스킬 초안과 검증 리포트",
+      "targetSlideCount": 11,
+      "plannedSlideIds": [
+        "act4-repeat-procedure",
+        "act4-rushing-kimai",
+        "act4-skill-start-condition",
+        "act4-skill-procedure-output",
+        "act4-mini-brainstorming-flow",
+        "act4-practice-handoff",
+        "act4-to-act5-roles",
+        "act4-manual-analogy",
+        "act4-no-procedure-problem",
+        "act4-skill-term-mapping",
+        "act4-practice-reason"
+      ],
+      "slides": [
+        "act4-repeat-procedure",
+        "act4-rushing-kimai",
+        "act4-skill-start-condition",
+        "act4-skill-procedure-output",
+        "act4-mini-brainstorming-flow",
+        "act4-practice-handoff",
+        "act4-to-act5-roles",
+        "act4-manual-analogy",
+        "act4-no-procedure-problem",
+        "act4-skill-term-mapping",
+        "act4-practice-reason"
+      ]
+    },
+    {
+      "id": "act-5",
+      "title": "역할 분리와 도구 권한",
+      "learningObjective": "역할, 스킬, 컨텍스트, 도구 권한을 분리해 김아이 팀을 구성한다.",
+      "estimatedMinutes": 35,
+      "practiceMode": "local-team-run",
+      "practiceId": "act5-local-team-run",
+      "learnerOutput": "role/tool assignment와 local execution log",
+      "targetSlideCount": 10,
+      "plannedSlideIds": [
+        "act5-one-kimai-problem",
+        "act5-role-boundaries",
+        "act5-skill-assignment",
+        "act5-practice-handoff",
+        "act5-to-act6-checkpoint",
+        "act5-role-card-analogy",
+        "act5-role-tool-problem",
+        "act5-agent-tool-term-mapping",
+        "act5-practice-reason",
+        "act5-tool-permission"
+      ],
+      "slides": [
+        "act5-one-kimai-problem",
+        "act5-role-boundaries",
+        "act5-skill-assignment",
+        "act5-practice-handoff",
+        "act5-to-act6-checkpoint",
+        "act5-role-card-analogy",
+        "act5-role-tool-problem",
+        "act5-agent-tool-term-mapping",
+        "act5-practice-reason",
+        "act5-tool-permission"
+      ]
+    },
+    {
+      "id": "act-6",
+      "title": "검증과 하네스 구조",
+      "learningObjective": "완료 선언을 믿지 않고 완료 전 자동 검문소와 평가 기준으로 확인한다.",
+      "estimatedMinutes": 32,
+      "practiceMode": "verification-gate-design",
+      "practiceId": "act6-stop-hook-checkpoint",
+      "learnerOutput": "Stop hook 검문소 설계와 unlock prompt",
+      "targetSlideCount": 10,
+      "plannedSlideIds": [
+        "act6-complete-is-not-proof",
+        "act6-stop-checkpoint",
+        "act6-state-loop-guard",
+        "act6-practice-handoff",
+        "act6-unlock-structure",
+        "act6-final-harness-map",
+        "act6-checkpoint-analogy",
+        "act6-no-checkpoint-problem",
+        "act6-hook-eval-term-mapping",
+        "act6-practice-reason"
+      ],
+      "slides": [
+        "act6-complete-is-not-proof",
+        "act6-stop-checkpoint",
+        "act6-state-loop-guard",
+        "act6-practice-handoff",
+        "act6-unlock-structure",
+        "act6-final-harness-map",
+        "act6-checkpoint-analogy",
+        "act6-no-checkpoint-problem",
+        "act6-hook-eval-term-mapping",
+        "act6-practice-reason"
+      ]
+    },
+    {
+      "id": "wrap-up",
+      "title": "내 업무에 가져가기",
+      "learningObjective": "수강생이 자신의 업무에 바로 적용할 하네스 장치 3개를 고른다.",
+      "estimatedMinutes": 8,
+      "practiceMode": "personal-action-selection",
+      "practiceId": "wrap-personal-harness",
+      "learnerOutput": "개인 하네스 3개 선택",
+      "targetSlideCount": 2,
+      "plannedSlideIds": [
+        "wrap-personal-harness",
+        "wrap-closing"
+      ],
+      "slides": [
+        "wrap-personal-harness"
+      ]
+    }
+  ]
+}

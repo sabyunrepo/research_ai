@@ -1,0 +1,2326 @@
+{
+  "assets": [
+    {
+      "id": "kimai-act0-visual-sheet",
+      "kind": "sprite-sheet",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-act0-visual-sheet.png",
+      "teachingRole": "Act 0에서 쓰는 설명용 손그림 자산을 한 장의 이미지 시트로 생성하고 crop-region으로 분할하기 위한 원본 시트",
+      "generationPrompt": "Create one sprite sheet for a Korean lecture deck, 2400x1600 px, white background, arranged as a clean 3 columns x 2 rows grid with generous whitespace. Each cell is a separate hand-drawn minimal black-line illustration with one blue accent and large readable Korean labels. Cell 1: Kimai as a new AI employee at a desk. Cell 2: Kimai facing blanks for company, department, product, workflow. Cell 3: a manager asks for a report and Kimai sees blanks for product, reader, submission format. Cell 4: Kimai desk with instruction sheet, reference materials, checklist. Cell 5: instruction sheet, reusable manual, completion checkpoint next to Kimai. Cell 6: full workflow map with instruction, desk materials, manual, roles/tools, checkpoint. No gradients, no glow, no photorealism, no decorative abstract background.",
+      "styleConstraints": [
+        "2400x1600 px",
+        "3 columns x 2 rows",
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "신입사원 김아이",
+        "회사 맥락 빈칸",
+        "보고서 지시 빈칸",
+        "하네스 데스크",
+        "지시서/매뉴얼/검문소",
+        "4시간 여정 지도"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "6 clearly separated cells",
+          "김아이",
+          "회사 맥락 빈칸",
+          "보고서 빈칸",
+          "지시서/자료/체크리스트",
+          "지시서/매뉴얼/검문소",
+          "전체 여정 지도"
+        ],
+        "mustNotShow": [
+          "셀 경계가 섞인 그림",
+          "실존 회사 로고",
+          "사진풍 이미지",
+          "그라데이션",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "한 장의 시트에서 6개 장면이 명확히 분리되는가?",
+          "각 crop만 봐도 발표자가 말할 포인트를 설명할 수 있는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "Act 0 설명용 김아이 손그림 6개가 3x2 격자로 배치된 이미지 시트",
+      "notes": "Display slots are based on 1280x720 slides with a 58px horizontal safe margin. Most slide illustrations should fit the right-side remaining area around 330x210 px in the mockup; final builder may crop each cell to assets/visuals/."
+    },
+    {
+      "id": "kimai-new-employee",
+      "kind": "crop-region",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-new-employee.png",
+      "sourceAssetId": "kimai-act0-visual-sheet",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 33.333,
+        "height": 50,
+        "unit": "percent"
+      },
+      "teachingRole": "김아이 세계관을 첫 화면에서 즉시 이해시킨다.",
+      "generationPrompt": "Crop cell 1 from kimai-act0-visual-sheet: Kimai as a new AI employee at a desk with a small name tag. Minimal black linework, one blue accent, readable Korean label 김아이.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "김아이",
+        "AI 신입사원",
+        "첫 출근"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "신입사원 명찰",
+          "데스크 또는 노트북"
+        ],
+        "mustNotShow": [
+          "과장된 로봇",
+          "미래 도시",
+          "복잡한 코드 화면"
+        ],
+        "teachingQuestions": [
+          "첫 화면에서 김아이가 AI 신입사원이라는 점이 보이는가?",
+          "지나치게 장난스럽지 않은가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "신입사원 김아이가 데스크에 앉아 있는 손그림"
+    },
+    {
+      "id": "kimai-workflow-map",
+      "kind": "crop-region",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-workflow-map.png",
+      "sourceAssetId": "kimai-act0-visual-sheet",
+      "crop": {
+        "x": 66.666,
+        "y": 50,
+        "width": 33.333,
+        "height": 50,
+        "unit": "percent"
+      },
+      "teachingRole": "김아이에게 일을 안정적으로 맡기기 위해 지시, 자료, 매뉴얼, 역할, 도구, 검문소가 순서대로 필요하다는 전체 지도를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal lecture illustration on white background. A new AI employee named Kimai sits at a simple desk. Around Kimai are six clear workflow stations: instruction, context workbench, company rule board, reusable manual, separated team roles, verification checkpoint. Use black linework and one blue accent only. No gradients, no glossy effects, no decorative abstract shapes.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "김아이는 빠르지만 회사 맥락은 모른다",
+        "업무 지시와 자료를 분리한다",
+        "반복 절차는 매뉴얼로 남긴다",
+        "역할과 도구를 나눈다",
+        "완료 전 검문소를 둔다"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이 또는 AI 신입사원",
+          "업무 지시 시작점",
+          "데스크 위 참고 자료",
+          "반복 업무 매뉴얼",
+          "완료 전 검문소"
+        ],
+        "mustNotShow": [
+          "김아이 없는 일반 아이콘 나열",
+          "추상 배경 장식",
+          "3개를 초과하는 색상",
+          "그라데이션이나 광택"
+        ],
+        "teachingQuestions": [
+          "그림만 보고 김아이에게 왜 업무 환경이 필요한지 설명할 수 있는가?",
+          "지시, 자료, 매뉴얼, 검문소의 차이가 눈에 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이를 중심으로 업무 지시, 데스크, 규칙판, 매뉴얼, 역할, 검문소가 이어지는 손그림 지도"
+    },
+    {
+      "id": "kimai-failure-scene",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "대충 시킨 업무에서 김아이가 빈칸을 추측해 잘못된 결과를 내는 첫 실패 장면을 보여 준다.",
+      "generationPrompt": "Hand-drawn minimal scene: a manager says '이거 알아서 잘 만들어줘' to Kimai, and Kimai looks at empty blanks labeled goal, source material, done criteria. The output paper is visibly mismatched. Black linework, one blue accent, white background.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "목표 없음",
+        "자료 없음",
+        "완료 기준 없음"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "상사의 애매한 지시",
+          "김아이",
+          "빈칸 3개",
+          "잘못된 결과물"
+        ],
+        "mustNotShow": [
+          "복잡한 코드 화면",
+          "공포스럽거나 비난하는 장면",
+          "장식용 추상 아이콘"
+        ],
+        "teachingQuestions": [
+          "이 장면만 보고 AI가 왜 추측했는지 말할 수 있는가?",
+          "실패 원인이 모델이 아니라 빈칸이라는 점이 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "애매한 지시를 받은 김아이가 목표, 자료, 완료 기준 빈칸을 추측하는 손그림 장면"
+    },
+    {
+      "id": "kimai-company-context-blanks",
+      "kind": "crop-region",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-company-context-blanks.png",
+      "sourceAssetId": "kimai-act0-visual-sheet",
+      "crop": {
+        "x": 33.333,
+        "y": 0,
+        "width": 33.333,
+        "height": 50,
+        "unit": "percent"
+      },
+      "teachingRole": "김아이가 회사, 부서, 제품, 업무 방식을 모르면 실제 회사 업무를 바로 수행할 수 없다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal lecture illustration on white background. Kimai, a new AI employee, sits at a desk facing four large empty labels: company, department, product, workflow. The scene should feel like a first day at work, not a tech diagram. Black linework, one blue accent, large readable Korean labels, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow"
+      ],
+      "explanationAnchors": [
+        "무슨 회사인지 모른다",
+        "어떤 부서가 있는지 모른다",
+        "어떤 제품을 만드는지 모른다",
+        "일이 어떤 순서로 진행되는지 모른다"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "회사 빈칸",
+          "부서 빈칸",
+          "제품 빈칸",
+          "업무 방식 빈칸"
+        ],
+        "mustNotShow": [
+          "실존 회사 로고",
+          "복잡한 조직도",
+          "작은 글씨가 많은 문서"
+        ],
+        "teachingQuestions": [
+          "그림만 보고 김아이가 회사 맥락을 모른다는 점을 설명할 수 있는가?",
+          "회사/부서/제품/업무 방식이 서로 다른 빈칸으로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이가 회사, 부서, 제품, 업무 방식 빈칸 앞에 앉아 있는 손그림"
+    },
+    {
+      "id": "kimai-report-request-gap",
+      "kind": "crop-region",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-report-request-gap.png",
+      "sourceAssetId": "kimai-act0-visual-sheet",
+      "crop": {
+        "x": 66.666,
+        "y": 0,
+        "width": 33.333,
+        "height": 50,
+        "unit": "percent"
+      },
+      "teachingRole": "보고서 제출 지시가 제품, 독자, 제출 형식을 빠뜨리면 김아이가 추측한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal lecture illustration on white background. A manager speech bubble says in Korean: 보고서 제출하게 만들어와. Kimai looks at a blank report draft with three missing labels: product, reader, submission format. Black linework, one blue accent, readable Korean labels, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "어떤 제품인지 모른다",
+        "누가 보는 보고서인지 모른다",
+        "어떤 형식으로 제출할지 모른다"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "팀장 말풍선",
+          "김아이",
+          "보고서 초안",
+          "제품 빈칸",
+          "독자 빈칸",
+          "제출 형식 빈칸"
+        ],
+        "mustNotShow": [
+          "완성 보고서처럼 보이는 자료",
+          "복잡한 차트",
+          "혼내는 분위기"
+        ],
+        "teachingQuestions": [
+          "이 그림만 보고 지시의 빈칸 3개를 설명할 수 있는가?",
+          "보고서가 아직 제출 가능한 산출물이 아니라는 점이 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이가 제품, 독자, 제출 형식이 비어 있는 보고서 지시를 받은 손그림"
+    },
+    {
+      "id": "act1-report-blank-taxonomy",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "제품 리뷰자료 보고서에서 김아이가 추측하는 빈칸을 제품, 독자, 기간, 비교 기준, 형식/기한으로 이름 붙여 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A blank product review report draft sits in front of Kimai. Five large readable Korean labels point to missing fields: 제품, 독자, 기간, 비교 기준, 형식/기한. The five labels are visually grouped into three simple clusters: 대상, 기준, 제출 조건. Use black linework and one blue accent only. No practice UI, no checkboxes, no score panel, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no practice UI"
+      ],
+      "explanationAnchors": [
+        "제품",
+        "독자",
+        "기간",
+        "비교 기준",
+        "형식/기한",
+        "대상/기준/제출 조건"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "빈 보고서 초안",
+          "제품 라벨",
+          "독자 라벨",
+          "기간 라벨",
+          "비교 기준 라벨",
+          "형식/기한 라벨",
+          "세 묶음 구조"
+        ],
+        "mustNotShow": [
+          "선택지 체크박스",
+          "점수",
+          "검증 로그",
+          "복잡한 차트",
+          "작은 글씨",
+          "그라데이션"
+        ],
+        "teachingQuestions": [
+          "그림만 보고 보고서 업무의 다섯 빈칸을 설명할 수 있는가?",
+          "다섯 항목이 대상/기준/제출 조건으로 묶여 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "제품 리뷰자료 보고서의 제품, 독자, 기간, 비교 기준, 형식과 기한 빈칸이 표시된 손그림"
+    },
+    {
+      "id": "act1-info-baskets",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Three clear baskets or trays are labeled 필수 정보, 있으면 도움, 방해 정보. Around them are simple document cards being sorted by a manager and Kimai. The cards should look like business materials, not UI controls. Use black linework and one blue accent only. No checkboxes, no score, no app interface, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no checkbox UI"
+      ],
+      "explanationAnchors": [
+        "필수 정보",
+        "있으면 도움",
+        "방해 정보",
+        "많이 주기가 아니라 고르기"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "세 개의 분리된 바구니",
+          "필수 정보 라벨",
+          "있으면 도움 라벨",
+          "방해 정보 라벨",
+          "분류되는 업무 자료 카드"
+        ],
+        "mustNotShow": [
+          "정답 표시",
+          "점수판",
+          "제출 버튼",
+          "복잡한 UI",
+          "실존 회사 로고"
+        ],
+        "teachingQuestions": [
+          "정보를 많이 주는 것이 아니라 분류하는 일로 보이는가?",
+          "세 분류가 발표자가 설명할 수 있을 만큼 명확한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "업무 자료 카드가 필수 정보, 있으면 도움, 방해 정보 바구니로 나뉘는 손그림"
+    },
+    {
+      "id": "act1-desk-curation",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Context Curation을 김아이의 데스크 위에 올릴 자료, 잠시 둘 자료, 치울 자료를 정리하는 일로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Kimai's desk is being organized into three zones with large labels: 올릴 자료, 잠시 둘 자료, 치울 자료. The scene should feel like preparing a new employee's desk before work. Add a small secondary label Context Curation, but Korean labels must be dominant. Use black linework and one blue accent only. No gradients, no glossy treatment, no practice UI.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no practice UI"
+      ],
+      "explanationAnchors": [
+        "김아이 데스크",
+        "올릴 자료",
+        "잠시 둘 자료",
+        "치울 자료",
+        "Context Curation"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이 데스크",
+          "올릴 자료 영역",
+          "잠시 둘 자료 영역",
+          "치울 자료 영역",
+          "업무 자료 카드"
+        ],
+        "mustNotShow": [
+          "컴퓨터 설정 화면",
+          "코드 에디터",
+          "점수판",
+          "추상 배경 장식",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "Context Curation이 데스크 정리 비유로 이해되는가?",
+          "올릴 자료와 치울 자료가 명확히 분리되어 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이 데스크 위 자료가 올릴 자료, 잠시 둘 자료, 치울 자료로 정리된 손그림"
+    },
+    {
+      "id": "act2-info-to-instruction",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Act 1에서 고른 정보 카드가 아직 업무 지시가 아니며, 김아이에게 맡길 수 있는 지시서로 묶여야 한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Several information cards from Act 1 labeled 제품, 독자, 기준, 기한 are scattered on the left. Kimai and a manager organize them into one clear 업무 지시서 document on the right. Use black linework and one blue accent only. No prompt input box, no score panel, no app UI, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no practice UI"
+      ],
+      "explanationAnchors": [
+        "정보 카드",
+        "업무 지시서",
+        "묶어서 맡기기"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "흩어진 정보 카드",
+          "업무 지시서 문서",
+          "김아이",
+          "정보가 하나로 묶이는 방향"
+        ],
+        "mustNotShow": [
+          "prompt 입력창",
+          "점수판",
+          "코드 화면",
+          "복잡한 UI",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "정보와 지시가 다른 단계로 보이는가?",
+          "고른 정보를 지시서로 묶어야 한다는 점을 설명할 수 있는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "흩어진 정보 카드가 김아이에게 줄 업무 지시서로 묶이는 손그림"
+    },
+    {
+      "id": "act2-six-slot-instruction",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "좋은 업무 지시가 목표, 사용 상황, 반응형 조건, 제약, 완료 기준, 출력 형식의 여섯 칸을 채운다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A large 업무 지시서 template has six readable boxes: 목표, 사용 상황, 반응형 조건, 제약, 완료 기준, 출력 형식. The six boxes are visually grouped into three clusters: 무엇을 만들까, 무엇을 지킬까, 언제 끝났나. Use black linework and one blue accent only. No gradients, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow"
+      ],
+      "explanationAnchors": [
+        "목표",
+        "사용 상황",
+        "반응형 조건",
+        "제약",
+        "완료 기준",
+        "출력 형식"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "업무 지시서",
+          "여섯 칸",
+          "세 묶음 구조",
+          "읽을 수 있는 한국어 라벨"
+        ],
+        "mustNotShow": [
+          "프롬프트 팁 목록처럼 보이는 장표",
+          "점수표",
+          "코드",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "6칸이 보이면서도 세 묶음으로 설명 가능한가?",
+          "좋은 prompt가 업무 지시서라는 비유가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "목표, 사용 상황, 반응형 조건, 제약, 완료 기준, 출력 형식이 있는 업무 지시서 6칸 손그림"
+    },
+    {
+      "id": "act2-short-prompt-gaps",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "짧은 지시인 '반응형 카드 만들어줘'가 사용 화면, 화면 크기, 완료 기준을 비워 둔다는 점을 진단한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A speech bubble says '반응형 카드 만들어줘'. Kimai looks at three large blank question bubbles: 어떤 화면?, 어떤 크기?, 어떻게 확인?. The mood should be diagnostic, not blaming. Use black linework and one blue accent only. No gradients, no score, no practice UI.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow"
+      ],
+      "explanationAnchors": [
+        "어떤 화면인가",
+        "어떤 크기인가",
+        "어떻게 확인하나"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "짧은 지시 말풍선",
+          "김아이",
+          "세 개의 빈칸 질문",
+          "진단하는 분위기"
+        ],
+        "mustNotShow": [
+          "혼나는 장면",
+          "정답 prompt",
+          "입력 폼",
+          "점수표"
+        ],
+        "teachingQuestions": [
+          "짧은 prompt의 빈칸을 바로 설명할 수 있는가?",
+          "비난이 아니라 진단으로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "반응형 카드 만들어줘라는 짧은 지시 옆에 어떤 화면, 어떤 크기, 어떻게 확인 빈칸이 보이는 손그림"
+    },
+    {
+      "id": "act2-before-after-instruction",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "같은 카드 컴포넌트 요청도 지시서 칸이 채워지면 결과물 방향이 달라진다는 점을 비교한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Split comparison: left side labeled Before shows a short request with empty blanks. Right side labeled After shows an 업무 지시서 with filled anchors: 강의 신청 페이지, 375px/1024px, 넘침 없음, HTML/CSS. Use black linework and one blue accent only. No final UI mockup, no code block, no score panel.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no code block"
+      ],
+      "explanationAnchors": [
+        "Before",
+        "After",
+        "강의 신청 페이지",
+        "375px과 1024px",
+        "넘침 없음"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "Before/After comparison",
+          "짧은 지시",
+          "채워진 업무 지시서",
+          "반응형 기준",
+          "완료 기준"
+        ],
+        "mustNotShow": [
+          "모범답안 암기처럼 긴 문단",
+          "HTML/CSS 미리보기",
+          "점수판",
+          "제출 버튼"
+        ],
+        "teachingQuestions": [
+          "같은 요청의 지시 품질 차이가 보이는가?",
+          "정답을 외우는 이미지가 아니라 구조 차이를 설명하는 이미지인가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "짧은 요청과 6칸이 채워진 업무 지시서를 비교하는 손그림"
+    },
+    {
+      "id": "act2-score-diagnostic",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Act 2 점수가 성적표가 아니라 업무 지시서에서 빠진 칸을 찾는 진단 장치라는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. An 업무 지시서 six-slot sheet receives three stamp types: 있음, 부분적, 빠짐. Kimai uses the stamps to find missing instruction slots. The mood is coaching and diagnostic, not grading. Use black linework and one blue accent only. No numeric score, no leaderboard, no app UI, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no leaderboard"
+      ],
+      "explanationAnchors": [
+        "있음",
+        "부분적",
+        "빠짐",
+        "빠진 칸 찾기"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "업무 지시서 6칸",
+          "있음 스탬프",
+          "부분적 스탬프",
+          "빠짐 스탬프",
+          "진단하는 김아이"
+        ],
+        "mustNotShow": [
+          "성적표",
+          "등수",
+          "불합격 도장",
+          "복잡한 로그",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "점수가 평가가 아니라 진단이라는 점이 보이는가?",
+          "다음 시도에서 보완할 칸을 찾는 장면으로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "업무 지시서 6칸에 있음, 부분적, 빠짐 스탬프를 찍어 빠진 칸을 찾는 손그림"
+    },
+    {
+      "id": "act3-mixed-desk",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "좋은 지시가 있어도 김아이 데스크 위에 현재 자료와 오래된 자료가 섞이면 결과가 흔들린다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai's desk contains mixed documents labeled 현재 자료, 오래된 자료, 미확정 자료. Show confusion caused by mixed materials. White background, black linework, one blue accent, readable Korean labels, no UI.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient",
+        "no practice UI"
+      ],
+      "explanationAnchors": [
+        "좋은 지시",
+        "섞인 자료",
+        "흔들린 결과"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이 데스크",
+          "현재 자료",
+          "오래된 자료",
+          "미확정 자료"
+        ],
+        "mustNotShow": [
+          "선택 UI",
+          "점수판",
+          "코드 화면"
+        ],
+        "teachingQuestions": [
+          "자료 섞임이 결과를 흔드는 문제로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이 데스크 위 현재 자료와 오래된 자료가 섞인 손그림"
+    },
+    {
+      "id": "act3-context-desk",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Context를 김아이가 지금 작업할 때 보는 데스크 위 자료로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai's clean desk has documents labeled 최종 제목, 모바일 조건, 접근성 기준. Add small label Context = 데스크 위 자료. White background, black linework, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient",
+        "no UI"
+      ],
+      "explanationAnchors": [
+        "지금 보는 자료",
+        "이번 일의 기준",
+        "결과에 반영될 단서"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "데스크",
+          "최종 제목",
+          "모바일 조건",
+          "접근성 기준"
+        ],
+        "mustNotShow": [
+          "복잡한 파일 트리",
+          "코드 에디터"
+        ],
+        "teachingQuestions": [
+          "Context가 데스크 위 자료로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이 데스크 위에 현재 작업 자료가 정리된 손그림"
+    },
+    {
+      "id": "act3-stale-context",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "폐기된 시안, 초기 제목, 미확정 정책 같은 오염 context가 현재 결과를 흐리는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Two piles: 현재 자료 and 오염 자료. The pollution pile includes 폐기된 시안, 초기 제목, 미확정 정책. Kimai looks uncertain. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "폐기된 시안",
+        "초기 제목",
+        "미확정 정책"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "현재 자료",
+          "오염 자료",
+          "폐기된 시안",
+          "초기 제목",
+          "미확정 정책"
+        ],
+        "mustNotShow": [
+          "혼내는 장면",
+          "복잡한 차트"
+        ],
+        "teachingQuestions": [
+          "오래된 자료가 오염으로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "현재 자료와 오염 자료가 분리된 손그림"
+    },
+    {
+      "id": "act3-to-act4-manual",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "자료를 잘 골라도 반복 절차를 매번 말하면 흔들리므로 매뉴얼이 필요하다는 Act 4 브릿지를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. A manager repeatedly tells Kimai the same procedure: 질문 순서, 기준, 출력 형식. A blank 업무 매뉴얼 waits on the side. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "반복 질문",
+        "반복 기준",
+        "반복 출력",
+        "매뉴얼 필요"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "반복 절차",
+          "업무 매뉴얼"
+        ],
+        "mustNotShow": [
+          "코드 화면",
+          "점수판"
+        ],
+        "teachingQuestions": [
+          "반복 절차를 매뉴얼로 빼야 함이 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "반복 절차를 매번 말하는 장면과 업무 매뉴얼 손그림"
+    },
+    {
+      "id": "act4-repeat-procedure",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "반복되는 질문 순서, 승인 기준, 출력 형식을 매번 말하면 흔들린다는 문제를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Repeated sticky notes around Kimai labeled 질문 순서, 승인 기준, 출력 형식, with an arrow to 업무 매뉴얼. White background, black linework, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "질문 순서",
+        "승인 기준",
+        "출력 형식"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "반복 절차",
+          "업무 매뉴얼"
+        ],
+        "mustNotShow": [
+          "실습 입력폼",
+          "코드"
+        ],
+        "teachingQuestions": [
+          "반복 절차 문제가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "반복 절차가 업무 매뉴얼로 옮겨지는 손그림"
+    },
+    {
+      "id": "act4-rushing-kimai",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "모호한 요청을 받으면 김아이가 목표와 범위를 확인하지 않고 바로 실행해 버릴 수 있음을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Speech bubble: 강의 실습 좀 재밌게 바꿔줘. Kimai rushes toward implementation while blanks 목표?, 범위?, 승인? remain. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "목표 미확인",
+        "범위 미확인",
+        "승인 전 구현"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "모호한 요청",
+          "김아이",
+          "목표 빈칸",
+          "범위 빈칸",
+          "승인 빈칸"
+        ],
+        "mustNotShow": [
+          "비난 장면",
+          "복잡한 UI"
+        ],
+        "teachingQuestions": [
+          "성급한 구현 문제가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "모호한 요청에 바로 실행하는 김아이와 목표 범위 승인 빈칸 손그림"
+    },
+    {
+      "id": "act4-skill-manual",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Skill을 반복 업무를 파일로 만든 매뉴얼로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai stands beside a document titled Skill 업무 매뉴얼 with sections 언제 쓰나, 어떤 순서인가, 무엇을 남기나. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "언제 쓰나",
+        "어떤 순서인가",
+        "무엇을 남기나"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "Skill 업무 매뉴얼",
+          "김아이",
+          "세 섹션"
+        ],
+        "mustNotShow": [
+          "코드 파일 트리 중심",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "Skill이 업무 매뉴얼로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이 옆 Skill 업무 매뉴얼 손그림"
+    },
+    {
+      "id": "act4-mini-brainstorming-flow",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "mini-brainstorming Skill이 구현 전에 질문, 접근안 비교, 승인 순서로 좁히게 만든다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. A simple flow: 질문 -> 접근안 비교 -> 승인 후 진행. Kimai pauses before implementation. White background, black linework, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "한 번에 하나씩",
+        "접근안 비교",
+        "승인 후 진행"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "질문",
+          "접근안 비교",
+          "승인 게이트",
+          "김아이"
+        ],
+        "mustNotShow": [
+          "실습 점수판",
+          "긴 문단"
+        ],
+        "teachingQuestions": [
+          "구현 전 질문 절차가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "질문, 접근안 비교, 승인 후 진행 흐름 손그림"
+    },
+    {
+      "id": "act4-to-act5-roles",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "매뉴얼이 있어도 조사, 구현, 리뷰를 한 명이 모두 맡으면 판단이 섞인다는 Act 5 브릿지를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. One Kimai wears three simple hats labeled 조사, 구현, 리뷰 and looks overloaded. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "조사",
+        "구현",
+        "리뷰"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "조사",
+          "구현",
+          "리뷰",
+          "역할 혼합"
+        ],
+        "mustNotShow": [
+          "여러 명 캐릭터만 나열",
+          "복잡한 조직도"
+        ],
+        "teachingQuestions": [
+          "역할 혼합 문제가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "한 김아이가 조사 구현 리뷰 역할을 동시에 맡는 손그림"
+    },
+    {
+      "id": "act5-one-kimai-problem",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "조사, 구현, 리뷰를 한 명이 모두 맡으면 판단이 섞이는 문제를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. One Kimai tries to do 조사, 구현, 리뷰 at the same desk and the papers overlap. White background, black linework, one blue accent, large labels.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "조사",
+        "구현",
+        "리뷰"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "한 명의 김아이",
+          "조사",
+          "구현",
+          "리뷰",
+          "섞인 판단"
+        ],
+        "mustNotShow": [
+          "복잡한 조직도",
+          "도구 UI"
+        ],
+        "teachingQuestions": [
+          "한 명이 모두 맡는 문제가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "한 김아이가 조사 구현 리뷰를 모두 맡아 판단이 섞이는 손그림"
+    },
+    {
+      "id": "act5-role-boundaries",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "역할은 사람 수가 아니라 책임의 경계라는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Three role cards labeled Coordinator, Implementer, Reviewer with clear responsibility boundaries. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "Coordinator",
+        "Implementer",
+        "Reviewer"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "역할 카드",
+          "책임 경계",
+          "Coordinator",
+          "Implementer",
+          "Reviewer"
+        ],
+        "mustNotShow": [
+          "작은 로봇 군단",
+          "복잡한 org chart"
+        ],
+        "teachingQuestions": [
+          "역할이 책임 경계로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "Coordinator Implementer Reviewer 역할 카드가 책임 경계로 나뉜 손그림"
+    },
+    {
+      "id": "act5-skill-assignment",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Act 4의 mini-brainstorming Skill을 Coordinator에게 붙이는 방식으로 Skill 배정을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. A mini-brainstorming Skill manual connects only to the Coordinator role card, with notes 목표 정리 and 직접 구현 금지. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "Coordinator",
+        "mini-brainstorming",
+        "직접 구현 금지"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "Coordinator",
+          "mini-brainstorming Skill",
+          "직접 구현 금지"
+        ],
+        "mustNotShow": [
+          "모든 역할에 같은 Skill 연결",
+          "코드 화면"
+        ],
+        "teachingQuestions": [
+          "Skill이 필요한 역할에게만 배정되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "mini-brainstorming Skill이 Coordinator 역할에만 연결된 손그림"
+    },
+    {
+      "id": "act5-to-act6-checkpoint",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "역할과 도구를 나눠도 완료 검문소가 없으면 부족하다는 Act 6 브릿지를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Role cards deliver outputs to a final area, but a missing 검문소 is shown as an empty gate. Labels 완료 선언, 증거, 검문소. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "완료 선언",
+        "증거",
+        "검문소"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "역할별 결과",
+          "완료 선언",
+          "증거",
+          "비어 있는 검문소"
+        ],
+        "mustNotShow": [
+          "코드 중심",
+          "점수판 중심"
+        ],
+        "teachingQuestions": [
+          "완료 검문소 필요성이 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "역할별 결과가 모였지만 완료 검문소가 없는 손그림"
+    },
+    {
+      "id": "act6-complete-is-not-proof",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "완료했습니다라는 말과 완료 증거가 다르다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai says 완료했습니다, but next to it are empty evidence boxes labeled 무엇을 했나, 무엇을 검증했나, 무엇이 남았나. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "무엇을 했나",
+        "무엇을 검증했나",
+        "무엇이 남았나"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "완료했습니다 말풍선",
+          "빈 증거칸",
+          "김아이"
+        ],
+        "mustNotShow": [
+          "처벌 장면",
+          "복잡한 로그"
+        ],
+        "teachingQuestions": [
+          "완료 선언과 증거 차이가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "완료했습니다 말풍선 옆에 비어 있는 완료 증거칸이 있는 손그림"
+    },
+    {
+      "id": "act6-stop-checkpoint",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Hook을 완료 전에 켜지는 자동 검문소로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai brings a finished task to a checkpoint gate labeled Stop Hook. The gate checks 증거 확인 and then branches to 통과 or 재시도. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "멈추기 직전",
+        "증거 확인",
+        "통과 또는 재시도"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "Stop Hook 검문소",
+          "증거 확인",
+          "통과",
+          "재시도"
+        ],
+        "mustNotShow": [
+          "JSON 중심",
+          "코드 화면"
+        ],
+        "teachingQuestions": [
+          "Hook이 완료 전 검문소로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이가 Stop Hook 검문소에서 증거 확인을 받는 손그림"
+    },
+    {
+      "id": "act6-state-loop-guard",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "processing, complete, attempts 상태표로 무한 반복을 막는 이유를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. A status board near a checkpoint shows processing, complete, attempts. Arrows show retry limited by attempts and complete allows exit. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "processing",
+        "complete",
+        "attempts"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "상태표",
+          "processing",
+          "complete",
+          "attempts",
+          "검문소"
+        ],
+        "mustNotShow": [
+          "무한 복잡한 루프",
+          "코드 중심"
+        ],
+        "teachingQuestions": [
+          "상태표가 무한 반복을 막는 장치로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "processing complete attempts 상태표가 검문소와 연결된 손그림"
+    },
+    {
+      "id": "act6-unlock-structure",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "검문소 설계가 통과되면 settings, status file, stop check 예제 구조가 열린다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Three simple file cards labeled settings, status file, stop check are unlocked by a checklist pass key labeled 검문소 통과. White background, black linework, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "settings",
+        "status file",
+        "stop check"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "검문소 통과",
+          "settings",
+          "status file",
+          "stop check"
+        ],
+        "mustNotShow": [
+          "긴 코드",
+          "복잡한 JSON"
+        ],
+        "teachingQuestions": [
+          "검문소 설계 통과 이후 예제 구조가 열린다는 점이 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "검문소 통과 키로 settings status file stop check 구조가 열리는 손그림"
+    },
+    {
+      "id": "act6-final-harness-map",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "Act 1~6의 정보, 지시, 자료, 매뉴얼, 역할, 검증이 하나의 하네스 업무 환경으로 연결됨을 정리한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. A final Kimai workflow map connects six stations: 정보 선별, 업무 지시, 데스크 자료, 매뉴얼, 역할/도구, 완료 검문소. White background, black linework, one blue accent, readable Korean labels.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "정보와 지시",
+        "자료와 매뉴얼",
+        "역할과 검증"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "Act 1 정보",
+          "Act 2 지시",
+          "Act 3 자료",
+          "Act 4 매뉴얼",
+          "Act 5 역할/도구",
+          "Act 6 검문소"
+        ],
+        "mustNotShow": [
+          "추상 아이콘만 나열",
+          "복잡한 기술 다이어그램"
+        ],
+        "teachingQuestions": [
+          "Act 1~6이 하나의 하네스로 연결되어 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "Act 1부터 Act 6까지 김아이 업무 환경이 연결된 최종 하네스 지도"
+    },
+    {
+      "id": "kimai-harness-desk-kit",
+      "kind": "crop-region",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-harness-desk-kit.png",
+      "sourceAssetId": "kimai-act0-visual-sheet",
+      "crop": {
+        "x": 0,
+        "y": 50,
+        "width": 33.333,
+        "height": 50,
+        "unit": "percent"
+      },
+      "teachingRole": "하네스 엔지니어링을 김아이 데스크에 지시서, 자료 묶음, 체크리스트를 갖춰 주는 일로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal lecture illustration on white background. Kimai's desk is organized with three clear items: instruction sheet, reference materials, checklist. The image should explain harness engineering as a work environment for a new AI employee. Black linework, one blue accent, readable Korean labels, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "명확한 지시",
+        "필요한 자료",
+        "확인 기준"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이 데스크",
+          "지시서",
+          "자료 묶음",
+          "체크리스트"
+        ],
+        "mustNotShow": [
+          "물리적 안전벨트",
+          "공장 배경",
+          "추상 아이콘만 나열"
+        ],
+        "teachingQuestions": [
+          "하네스 엔지니어링이 일하는 환경을 갖추는 일로 보이는가?",
+          "지시, 자료, 확인 기준이 분리되어 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이 데스크 위에 지시서, 자료 묶음, 체크리스트가 놓인 손그림"
+    },
+    {
+      "id": "kimai-manual-checkpoint",
+      "kind": "crop-region",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-manual-checkpoint.png",
+      "sourceAssetId": "kimai-act0-visual-sheet",
+      "crop": {
+        "x": 33.333,
+        "y": 50,
+        "width": 33.333,
+        "height": 50,
+        "unit": "percent"
+      },
+      "teachingRole": "신입에게 지시서, 매뉴얼, 검문소가 필요하다는 하네스 장치를 순서대로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal lecture illustration on white background. Kimai stands next to three workflow objects in order: instruction sheet, reusable manual, completion checkpoint gate. Use black linework, one blue accent, readable Korean labels, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "지시서",
+        "매뉴얼",
+        "검문소"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "지시서",
+          "업무 매뉴얼",
+          "완료 검문소"
+        ],
+        "mustNotShow": [
+          "처벌이나 감시처럼 보이는 장면",
+          "복잡한 프로세스 차트",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "세 장치를 발표자가 순서대로 짚을 수 있는가?",
+          "검문소가 처벌이 아니라 완료 확인으로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이 옆에 지시서, 매뉴얼, 완료 검문소가 순서대로 놓인 손그림"
+    },
+    {
+      "id": "kimai-verification-checkpoint",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "완료 선언을 그대로 믿지 않고 자동 검문소에서 증거와 점수로 확인한다는 Act 6 메시지를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal lecture illustration: Kimai brings a completed task to a checkpoint gate. The gate checks three papers: tests passed, rubric score, evidence log. Use black linework and one blue accent on white background. Keep labels large and readable.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable labels",
+        "no gradient",
+        "no glow"
+      ],
+      "explanationAnchors": [
+        "완료 선언",
+        "검증 증거",
+        "점수표",
+        "통과 또는 재시도"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "완료 전 검문소",
+          "증거 로그",
+          "점수표",
+          "재시도 경로"
+        ],
+        "mustNotShow": [
+          "경찰/처벌 이미지",
+          "불필요하게 위협적인 분위기",
+          "추상 방패 아이콘만 있는 그림"
+        ],
+        "teachingQuestions": [
+          "완료를 말이 아니라 증거로 본다는 점이 보이는가?",
+          "통과하지 못하면 재시도한다는 루프가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이가 완료물을 검문소에 가져가고 증거 로그와 점수표로 확인받는 손그림 장면"
+    },
+    {
+      "id": "act3-rule-board",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "이번 자료와 항상 유지할 회사 규칙판을 분리해야 한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai desk has 이번 자료 while a wall board labeled 회사 규칙판 has 항상 규칙. A separate bin says 치울 오염. White background, black linework, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "이번 자료",
+        "항상 규칙",
+        "치울 오염"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이 데스크",
+          "회사 규칙판",
+          "이번 자료",
+          "항상 규칙",
+          "치울 오염"
+        ],
+        "mustNotShow": [
+          "복잡한 파일 경로",
+          "코드 화면",
+          "점수판"
+        ],
+        "teachingQuestions": [
+          "데스크 자료와 회사 규칙판이 분리되어 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "데스크 자료와 회사 규칙판이 분리된 손그림"
+    },
+    {
+      "id": "act5-tool-permission",
+      "kind": "single-image",
+      "status": "planned",
+      "teachingRole": "도구 권한은 모든 역할에게 많이 주는 것이 아니라 필요한 역할에게만 줘야 한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Role cards receive different tool keys: 조사 도구, 수정 도구, 검증 도구. Show limited permission per role, not everyone having all tools. White background, one blue accent.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "조사 도구",
+        "수정 도구",
+        "검증 도구"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "역할 카드",
+          "조사 도구",
+          "수정 도구",
+          "검증 도구",
+          "제한된 권한"
+        ],
+        "mustNotShow": [
+          "모든 도구가 모두에게 열림",
+          "복잡한 UI",
+          "서버 구현"
+        ],
+        "teachingQuestions": [
+          "역할별 권한 제한이 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "역할별로 조사 수정 검증 도구 권한이 다르게 배정된 손그림"
+    },
+    {
+      "id": "act1-desk-contamination",
+      "kind": "single-image",
+      "status": "planned",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "sourcePath": null,
+      "teachingRole": "관련 없는 자료가 김아이의 데스크 위에 섞이면 의사결정이 혼란스러워지고 작업이 느려진다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Kimai sits at a desk for a product review report, but unrelated documents are mixed in: 다른 제품 자료, 지난달 기준, 미확정 의견. Show confusion and slower decision making without clutter. Use black linework and one blue accent only.",
+      "explanationAnchors": [
+        "다른 제품 자료",
+        "지난달 기준",
+        "미확정 의견"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이 데스크",
+          "관련 없는 자료",
+          "오래된 기준",
+          "혼란스러운 판단"
+        ],
+        "mustNotShow": [
+          "software UI",
+          "code",
+          "score panel"
+        ],
+        "teachingQuestions": [
+          "관련 없는 자료가 판단을 흔드는 장면으로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "관련 없는 자료와 오래된 기준이 섞여 혼란스러운 김아이 데스크 손그림"
+    },
+    {
+      "id": "act1-context-mapping",
+      "kind": "single-image",
+      "status": "planned",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "sourcePath": null,
+      "teachingRole": "현실의 데스크가 AI 대화/세션에 쌓이는 Context와 대응되고, Context Curation은 그 공간에 올릴 자료를 고르는 일임을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Left: a clean work desk labeled 데스크. Right: a chat/session stack labeled Context with cards 자료, 지시, 기준. A simple arrow connects them, with a small label Context Curation = 필요한 것만 올리기. Use black linework and one blue accent only.",
+      "explanationAnchors": [
+        "데스크",
+        "Context",
+        "대화/세션",
+        "Context Curation"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "데스크",
+          "Context",
+          "대화 또는 세션",
+          "필요한 것만 올리기"
+        ],
+        "mustNotShow": [
+          "complex architecture",
+          "code",
+          "chatbot marketing art"
+        ],
+        "teachingQuestions": [
+          "데스크 비유가 Context로 자연스럽게 연결되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "현실 데스크와 AI 대화 세션의 Context가 대응되는 손그림"
+    },
+    {
+      "id": "act1-source-failure-merge",
+      "kind": "single-image",
+      "status": "planned",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no gradient"
+      ],
+      "sourcePath": null,
+      "teachingRole": "기존 실패 사례를 읽기 전 수정, 느슨한 테스트, 오래된 가정이 모두 빈칸 추측 또는 컨텍스트 오염으로 묶인다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Three simple failure cards labeled 읽기 전 수정, 느슨한 테스트, 오래된 가정 flow into one desk labeled 빈칸 추측 / 오염 자료. Use black linework and one blue accent only. No code, no UI.",
+      "explanationAnchors": [
+        "읽기 전 수정",
+        "느슨한 테스트",
+        "오래된 가정"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "세 실패 사례",
+          "빈칸 추측",
+          "오염 자료"
+        ],
+        "mustNotShow": [
+          "detailed code",
+          "technical stack diagram"
+        ],
+        "teachingQuestions": [
+          "실패 사례가 Act 1의 빈칸 추측 문제로 압축되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "세 실패 사례가 빈칸 추측과 오염 자료로 모이는 손그림"
+    },
+    {
+      "id": "act1-report-direction-blanks",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-report-direction-blanks.png",
+      "teachingRole": "제품 리뷰자료 보고서의 방향을 정하는 빈칸이 대상 제품, 읽는 사람, 보고서 목적이라는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A blank product review report sheet. Three large labels are attached: 대상 제품, 읽는 사람, 보고서 목적. Kimai looks at the sheet and waits for those blanks to be filled. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "대상 제품",
+        "읽는 사람",
+        "보고서 목적"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "대상 제품",
+          "읽는 사람",
+          "보고서 목적"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text",
+          "app UI unless explicitly requested"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "대상 제품, 읽는 사람, 보고서 목적을 설명하는 손그림"
+    },
+    {
+      "id": "act1-report-criteria-blanks",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-report-criteria-blanks.png",
+      "teachingRole": "제품 리뷰자료 보고서의 숫자와 제출 조건을 정하는 빈칸이 기준 기간, 비교 기준, 제출 조건이라는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A product review report sheet with three bottom labels: 기준 기간, 비교 기준, 제출 조건. Simple arrows show these labels deciding how numbers are interpreted and when the report is done. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "기준 기간",
+        "비교 기준",
+        "제출 조건"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "기준 기간",
+          "비교 기준",
+          "제출 조건"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text",
+          "app UI unless explicitly requested"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "기준 기간, 비교 기준, 제출 조건을 설명하는 손그림"
+    },
+    {
+      "id": "act2-instruction-goal-audience",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act2-instruction-goal-audience.png",
+      "teachingRole": "좋은 업무 지시서가 목표, 대상, 사용 상황을 먼저 고정한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. An 업무 지시서 document has the first section enlarged with three boxes: 목표, 대상, 사용 상황. Kimai points to these boxes before starting work. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "목표",
+        "대상",
+        "사용 상황"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "목표",
+          "대상",
+          "사용 상황"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text",
+          "app UI unless explicitly requested"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "목표, 대상, 사용 상황을 설명하는 손그림"
+    },
+    {
+      "id": "act2-instruction-material-constraints",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act2-instruction-material-constraints.png",
+      "teachingRole": "좋은 업무 지시서가 참고 자료, 지킬 조건, 빼야 할 것을 따로 지정한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. An 업무 지시서 document has a middle section with three boxes: 참고 자료, 지킬 조건, 빼야 할 것. Separate piles of cards show use, follow, exclude. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "참고 자료",
+        "지킬 조건",
+        "빼야 할 것"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "참고 자료",
+          "지킬 조건",
+          "빼야 할 것"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text",
+          "app UI unless explicitly requested"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "참고 자료, 지킬 조건, 빼야 할 것을 설명하는 손그림"
+    },
+    {
+      "id": "act2-instruction-output-done",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act2-instruction-output-done.png",
+      "teachingRole": "좋은 업무 지시서가 출력 형식, 완료 기준, 확인 방법을 정한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. An 업무 지시서 document has the final section with three boxes: 출력 형식, 완료 기준, 확인 방법. A simple check mark appears only after all three are filled. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "출력 형식",
+        "완료 기준",
+        "확인 방법"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "출력 형식",
+          "완료 기준",
+          "확인 방법"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text",
+          "app UI unless explicitly requested"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "출력 형식, 완료 기준, 확인 방법을 설명하는 손그림"
+    },
+    {
+      "id": "act4-skill-start-condition",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act4-skill-start-condition.png",
+      "teachingRole": "스킬 매뉴얼은 호출 조건, 입력 자료, 멈출 조건을 먼저 정해야 한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A 업무 매뉴얼 first page shows three large fields: 호출 조건, 입력 자료, 멈출 조건. Kimai pauses before implementation and reads the manual. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "호출 조건",
+        "입력 자료",
+        "멈출 조건"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "호출 조건",
+          "입력 자료",
+          "멈출 조건"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text",
+          "app UI unless explicitly requested"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "호출 조건, 입력 자료, 멈출 조건을 설명하는 손그림"
+    },
+    {
+      "id": "kimai-first-draft-feedback",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-first-draft-feedback.png",
+      "teachingRole": "신입 김아이가 첫 초안에서 빠진 내용, 잘못 이해한 기준, 어색한 결과를 만들 수 있다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Kimai holds a first draft report. Three visible markers point to 빠진 내용, 잘못 이해한 기준, 어색한 결과. The mood is coaching, not failure. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "첫 보고서 초안",
+        "빠진 내용",
+        "잘못 이해한 기준",
+        "어색한 결과"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "첫 보고서 초안",
+          "빠진 내용",
+          "잘못 이해한 기준",
+          "어색한 결과"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "체크리스트와 피드백 루프가 장식이 아니라 의미로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "첫 보고서 초안, 빠진 내용, 잘못 이해한 기준, 어색한 결과을 설명하는 손그림"
+    },
+    {
+      "id": "kimai-feedback-loop",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/kimai-feedback-loop.png",
+      "teachingRole": "체크리스트와 선임 피드백, 재제출을 통해 보고서 품질이 올라가는 반복 구조를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A simple loop shows 보고서 초안 -> 체크리스트 -> 선임 피드백 -> 다시 제출 -> 개선된 보고서. Kimai and a manager review the checklist together. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "보고서 초안",
+        "체크리스트",
+        "선임 피드백",
+        "다시 제출",
+        "개선된 보고서"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "보고서 초안",
+          "체크리스트",
+          "선임 피드백",
+          "다시 제출",
+          "개선된 보고서"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
+          "체크리스트와 피드백 루프가 장식이 아니라 의미로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "보고서 초안, 체크리스트, 선임 피드백, 다시 제출, 개선된 보고서을 설명하는 손그림"
+    },
+    {
+      "id": "act1-desk-cleanup-open",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-desk-cleanup-open.png",
+      "teachingRole": "Act 0의 우수사원 프로젝트를 회수하고 첫 단계가 김아이 책상 정리라는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A simple 우수사원 프로젝트 map with step 1 책상 정리 highlighted. Kimai stands next to a desk before starting work. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "우수사원 프로젝트",
+        "책상 정리",
+        "김아이"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "우수사원 프로젝트",
+          "책상 정리",
+          "김아이"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 책상 정리 개념을 설명할 수 있는가?",
+          "자료를 올릴 것과 치울 것이 구분되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "우수사원 프로젝트, 책상 정리, 김아이을 설명하는 손그림"
+    },
+    {
+      "id": "act1-desk-principle",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-desk-principle.png",
+      "teachingRole": "김아이가 책상 위 자료와 기준을 보고 일하며 없는 정보는 상상한다는 원리를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Kimai desk with three large cards: 보고 있는 자료, 같이 놓인 기준, 없는 정보. The missing information card is shown as a blank. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "보고 있는 자료",
+        "같이 놓인 기준",
+        "없는 정보"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "보고 있는 자료",
+          "같이 놓인 기준",
+          "없는 정보"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 책상 정리 개념을 설명할 수 있는가?",
+          "자료를 올릴 것과 치울 것이 구분되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "보고 있는 자료, 같이 놓인 기준, 없는 정보을 설명하는 손그림"
+    },
+    {
+      "id": "act1-empty-desk-blanks",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-empty-desk-blanks.png",
+      "teachingRole": "빈 책상에서 제품, 보는 사람, 비교 기준을 김아이가 추측하게 된다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. An empty Kimai desk with floating question cards: 어떤 제품, 누가 보는지, 무엇과 비교. A report request note is on the side. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "빈 책상",
+        "어떤 제품",
+        "누가 보는지",
+        "무엇과 비교"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "빈 책상",
+          "어떤 제품",
+          "누가 보는지",
+          "무엇과 비교"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 책상 정리 개념을 설명할 수 있는가?",
+          "자료를 올릴 것과 치울 것이 구분되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "빈 책상, 어떤 제품, 누가 보는지, 무엇과 비교을 설명하는 손그림"
+    },
+    {
+      "id": "act1-messy-desk",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-messy-desk.png",
+      "teachingRole": "자료가 너무 많거나 관련 없거나 오래되면 김아이 판단이 흔들린다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A messy Kimai desk with piles labeled 너무 많은 자료, 관련 없는 자료, 오래된 자료. Kimai looks confused but not blamed. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "너무 많은 자료",
+        "관련 없는 자료",
+        "오래된 자료"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "너무 많은 자료",
+          "관련 없는 자료",
+          "오래된 자료"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 책상 정리 개념을 설명할 수 있는가?",
+          "자료를 올릴 것과 치울 것이 구분되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "너무 많은 자료, 관련 없는 자료, 오래된 자료을 설명하는 손그림"
+    },
+    {
+      "id": "act1-report-desk-materials",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-report-desk-materials.png",
+      "teachingRole": "오늘 보고서에 필요한 제품 자료, 보는 사람, 비교 기준, 보고서 형식만 책상에 올린다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A clean Kimai desk with four cards neatly placed: 제품 자료, 보는 사람, 비교 기준, 보고서 형식. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "제품 자료",
+        "보는 사람",
+        "비교 기준",
+        "보고서 형식"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "제품 자료",
+          "보는 사람",
+          "비교 기준",
+          "보고서 형식"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 책상 정리 개념을 설명할 수 있는가?",
+          "자료를 올릴 것과 치울 것이 구분되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "제품 자료, 보는 사람, 비교 기준, 보고서 형식을 설명하는 손그림"
+    },
+    {
+      "id": "act1-context-curation-close",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-context-curation-close.png",
+      "teachingRole": "컨텍스트 정리는 책상에 올릴 자료, 옆에 둘 자료, 치울 자료를 정하는 일임을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A desk organization scene with three zones: 올릴 자료, 옆에 둘 자료, 치울 자료. Cards move into the zones. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "올릴 자료",
+        "옆에 둘 자료",
+        "치울 자료"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "올릴 자료",
+          "옆에 둘 자료",
+          "치울 자료"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "발표자가 이 이미지로 책상 정리 개념을 설명할 수 있는가?",
+          "자료를 올릴 것과 치울 것이 구분되는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "올릴 자료, 옆에 둘 자료, 치울 자료을 설명하는 손그림"
+    },
+    {
+      "id": "act1-practice-handoff",
+      "kind": "minimal-diagram",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-practice-handoff.png",
+      "teachingRole": "Act 1 설명부를 닫고 별도 책상 정리 실습으로 넘어가는 흐름을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. Show three simple flow cards: 보고서 목표 읽기, 자료 바구니 나누기, 빈칸 리포트 보기. Use black linework and one blue accent only. Large readable Korean labels. No app UI, no score panel, no gradients.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "large readable Korean labels",
+        "no app UI",
+        "no gradient"
+      ],
+      "explanationAnchors": [
+        "보고서 목표 읽기",
+        "자료 바구니 나누기",
+        "빈칸 리포트 보기"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "보고서 목표 읽기",
+          "자료 바구니 나누기",
+          "빈칸 리포트 보기"
+        ],
+        "mustNotShow": [
+          "실습 입력 UI",
+          "점수판",
+          "검증 로그",
+          "작은 글씨"
+        ],
+        "teachingQuestions": [
+          "실습에서 할 행동이 세 단계로 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "보고서 목표 읽기, 자료 바구니 나누기, 빈칸 리포트 보기 흐름 손그림"
+    },
+    {
+      "id": "act1-missing-materials",
+      "kind": "generated-image",
+      "status": "planned",
+      "sourcePath": "assets/visuals/act1-missing-materials.png",
+      "teachingRole": "책상에 필요한 자료가 없으면 김아이가 상상으로 빈칸을 채우기 시작한다는 점을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A Kimai desk is missing necessary work materials. Floating question cards say 어떤 제품, 누가 보는지, 무엇과 비교. Kimai starts imagining the missing answers. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "필요한 자료 없음",
+        "어떤 제품",
+        "누가 보는지",
+        "무엇과 비교",
+        "상상 시작"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "필요한 자료 없음",
+          "어떤 제품",
+          "누가 보는지",
+          "무엇과 비교",
+          "상상 시작"
+        ],
+        "mustNotShow": [
+          "photorealistic image",
+          "decorative abstract background",
+          "gradient",
+          "small unreadable text"
+        ],
+        "teachingQuestions": [
+          "필요한 자료가 없어서 김아이가 상상한다는 의미가 보이는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "필요한 자료가 없는 책상에서 김아이가 어떤 제품, 누가 보는지, 무엇과 비교할지 상상하는 손그림"
+    }
+  ]
+}
