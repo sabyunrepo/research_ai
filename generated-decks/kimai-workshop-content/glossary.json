@@ -14,7 +14,7 @@
       "match": "whole-word",
       "koreanLabel": "데스크 위 참고 자료",
       "analogy": "신입사원 책상 위에 올려 둔 현재 업무 자료",
-      "practiceMeaning": "Act 3에서 선택하거나 제외하는 자료 후보"
+      "practiceMeaning": "Act 1에서 수강생이 필요한 자료와 방해 자료를 구분하는 대상"
     },
     {
       "term": "Session",
@@ -26,26 +26,26 @@
     },
     {
       "term": "Memory / CLAUDE.md",
-      "definition": "매번 다시 말하지 않아도 항상 적용되는 프로젝트 지침.",
+      "definition": "매번 다시 말하지 않아도 항상 적용되는 프로젝트 지침과 회사 내규.",
       "match": "exact-phrase",
       "koreanLabel": "항상 적용되는 회사 내규",
-      "analogy": "매번 다시 말하지 않아도 팀원이 지켜야 하는 사무실 규칙",
-      "practiceMeaning": "Act 3 후반에 현재 prompt 밖으로 빼는 반복 규칙"
+      "analogy": "어떤 업무를 하든 반복해서 지켜야 하는 회사 내규",
+      "practiceMeaning": "Act 3에서 적용 범위를 고르고 과한 내규를 줄이는 대상"
     },
     {
       "term": "Skill",
-      "definition": "반복 업무 절차를 호출 조건, 단계, 자료, 출력 형식으로 분리한 매뉴얼.",
+      "definition": "반복 업무를 같은 순서로 처리하게 만드는 호출 조건, 절차, 출력 형식이 있는 업무 매뉴얼.",
       "match": "whole-word",
       "koreanLabel": "반복 업무 매뉴얼",
-      "analogy": "자주 하는 일을 시작하기 전에 반드시 따라야 하는 체크 절차",
+      "analogy": "자주 하는 일을 매번 다시 설명하지 않도록 남긴 업무 매뉴얼",
       "practiceMeaning": "Act 4에서 작성하는 mini-brainstorming Skill 문서"
     },
     {
       "term": "Agent / Subagent",
-      "definition": "역할과 context와 도구 권한을 나눠 맡기는 AI 작업 단위.",
+      "definition": "책임, 볼 자료, Skill, 도구 권한을 나눠 맡기는 AI 작업 역할.",
       "match": "exact-phrase",
       "koreanLabel": "역할이 나뉜 김아이 팀",
-      "analogy": "조사 담당, 구현 담당, 리뷰 담당이 각자 다른 책상에서 일하는 구조",
+      "analogy": "조사 담당, 구현 담당, 검토 담당이 각자 다른 책임 카드로 일하는 구조",
       "practiceMeaning": "Act 5에서 역할별 목표, context, 도구를 나눠 배정하는 대상"
     },
     {
@@ -66,11 +66,11 @@
     },
     {
       "term": "Evaluation",
-      "definition": "산출물이 기준을 만족했는지 확인하는 채점 또는 검증 과정.",
+      "definition": "산출물이 기준을 만족했는지 확인하는 검문소의 통과 기준.",
       "match": "whole-word",
-      "koreanLabel": "채점표",
-      "analogy": "잘했는지 말로 묻지 않고 기준표로 확인하는 방식",
-      "practiceMeaning": "각 Act 실습 결과를 점수와 피드백으로 보여 주는 기준"
+      "koreanLabel": "검문소 통과 기준",
+      "analogy": "완료라고 말하기 전에 기준표로 증거를 확인하는 방식",
+      "practiceMeaning": "Act 6에서 Stop hook 검문소가 무엇을 통과로 볼지 정하는 기준"
     },
     {
       "term": "LLM judge",
@@ -87,6 +87,22 @@
       "koreanLabel": "AI 업무 시스템 만들기",
       "analogy": "좋은 직원 한 명에게 의존하지 않고 절차, 역할, 도구, 검문소를 갖춘 업무 환경",
       "practiceMeaning": "Act 1-6의 결과물을 하나로 연결한 최종 구조"
+    },
+    {
+      "term": "Quality Gate",
+      "definition": "완료로 인정하기 전에 반드시 통과해야 하는 품질 검문소.",
+      "match": "exact-phrase",
+      "koreanLabel": "품질 검문소",
+      "analogy": "업무 제출 전에 증거를 보고 통과 또는 보류를 정하는 최종 확인대",
+      "practiceMeaning": "Act 6에서 Stop hook 설계가 통과해야 unlock artifact가 열리는 기준"
+    },
+    {
+      "term": "State",
+      "definition": "검문소가 처리 중인지 완료됐는지, 몇 번 시도했는지 남기는 상태 기록.",
+      "match": "whole-word",
+      "koreanLabel": "상태표",
+      "analogy": "검문소 옆에 붙은 처리 중, 완료, 시도 횟수 기록판",
+      "practiceMeaning": "Act 6에서 무한 재시도를 막기 위해 설계하는 기록"
     }
   ]
 }

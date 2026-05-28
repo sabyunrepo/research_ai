@@ -1180,7 +1180,7 @@
       "presenterCues": [
         "로드는 넓은 범위에서 좁은 범위로 진행된다: global, user, project, subfolder 순서다.",
         "하지만 적용 강도는 반대로 이해하면 쉽다. 지금 작업 위치에 가까운 subfolder 규칙이 가장 구체적이고 강하다.",
-        "그래서 충돌이 있을 때는 현재 작업 위치에 더 가까운 CLAUDE.md를 먼저 확인한다."
+        "그래서 충돌이 있을 때는 현재 작업 위치에 더 가까운 CLAUDE.md를 실행 전 확인한다."
       ],
       "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
       "speakerNote": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
@@ -1311,867 +1311,6 @@
       "practiceId": null
     },
     {
-      "id": "act4-repeat-procedure",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "반복 절차를 매번 말하면 흔들린다는 문제를 회수한다.",
-      "estimatedMinutes": 1,
-      "title": "반복 절차는 매뉴얼로 남깁니다.",
-      "message": "자주 쓰는 질문 순서, 승인 기준, 출력 형식은 매뉴얼로 빼야 한다.",
-      "bullets": [
-        "질문 순서",
-        "승인 기준",
-        "출력 형식"
-      ],
-      "visualIntent": "반복 절차를 매번 다시 말하는 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act4-repeat-procedure",
-      "presenterCues": [
-        "Act 3 bridge를 회수한다",
-        "매뉴얼 비유를 연다",
-        "Skill 용어는 뒤에 붙인다"
-      ],
-      "bridge": "그래서 스킬이라는 업무 매뉴얼을 씁니다.",
-      "speakerNote": "반복 절차를 지시문 안에 계속 쓰는 비용을 설명한다.",
-      "evidenceClaimIds": [
-        "claim-006"
-      ],
-      "glossaryTerms": [
-        "Skill"
-      ],
-      "qualityChecks": [
-        "반복 문제가 보인다.",
-        "매뉴얼 비유가 열린다.",
-        "전문 용어가 앞서지 않는다."
-      ]
-    },
-    {
-      "id": "act4-rushing-kimai",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "Skill이 없을 때 김아이가 성급히 구현으로 달리는 문제를 보여 준다.",
-      "estimatedMinutes": 2,
-      "title": "모호한 요청을 받으면 김아이는 바로 실행해 버릴 수 있습니다.",
-      "message": "목표와 범위와 승인 여부가 정리되지 않으면 그럴듯한 아이디어를 먼저 쏟아낼 수 있다.",
-      "bullets": [
-        "목표 미확인",
-        "범위 미확인",
-        "승인 전 구현"
-      ],
-      "visualIntent": "모호한 요청에 바로 실행하는 김아이",
-      "visualType": "generated-image",
-      "visualAssetId": "act4-rushing-kimai",
-      "presenterCues": [
-        "AI를 비난하지 않는다",
-        "절차가 없어서 성급해진다고 설명한다",
-        "질문 절차로 연결한다"
-      ],
-      "bridge": "먼저 물어보게 만드는 절차가 필요합니다.",
-      "speakerNote": "나쁜 행동 예시를 보여 주되 실패 원인을 절차 부재로 잡는다.",
-      "evidenceClaimIds": [
-        "claim-006"
-      ],
-      "glossaryTerms": [
-        "Skill"
-      ],
-      "qualityChecks": [
-        "성급한 구현 문제가 보인다.",
-        "비난이 아니다.",
-        "절차 필요성이 열린다."
-      ]
-    },
-    {
-      "id": "act4-skill-start-condition",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "스킬 매뉴얼은 언제 시작하고 무엇을 확인하고 언제 멈출지부터 정해야 한다는 점을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "스킬은 언제 시작할지 먼저 정합니다.",
-      "message": "호출 조건, 입력 자료, 멈출 조건이 있어야 김아이가 모호한 요청에서 바로 실행하지 않습니다.",
-      "bullets": [
-        "호출 조건",
-        "입력 자료",
-        "멈출 조건"
-      ],
-      "visualIntent": "업무 매뉴얼 첫 장에 호출 조건, 입력 자료, 멈출 조건이 표시된 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act4-skill-start-condition",
-      "presenterCues": [
-        "스킬을 절차보다 먼저 시작 조건으로 설명한다",
-        "모호하면 멈추고 확인해야 한다고 말한다",
-        "반복 순서는 다음 장에서 다룬다"
-      ],
-      "bridge": "시작 조건이 정해지면 반복 순서를 매뉴얼로 남깁니다.",
-      "speakerNote": "스킬 설명을 한 장에 압축하지 않고, 시작 조건과 실행 절차를 분리한다.",
-      "evidenceClaimIds": [
-        "claim-006"
-      ],
-      "glossaryTerms": [
-        "Skill"
-      ],
-      "qualityChecks": [
-        "호출 조건과 멈출 조건이 보인다.",
-        "반복 순서를 다음 장으로 넘긴다."
-      ]
-    },
-    {
-      "id": "act4-skill-procedure-output",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "스킬 매뉴얼은 반복 순서와 남길 결과를 정해야 한다는 점을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "스킬은 반복 순서와 남길 결과를 정합니다.",
-      "message": "질문 순서, 승인 기준, 출력 형식이 있어야 비슷한 요청을 같은 방식으로 처리할 수 있습니다.",
-      "bullets": [
-        "질문 순서",
-        "승인 기준",
-        "출력 형식"
-      ],
-      "visualIntent": "질문, 승인, 기록 순서가 매뉴얼에 적힌 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act4-skill-manual",
-      "presenterCues": [
-        "반복 업무의 순서를 고정한다고 말한다",
-        "승인 기준이 있어야 바로 구현하지 않는다고 말한다",
-        "미니 브레인스토밍 실습으로 넘긴다"
-      ],
-      "bridge": "오늘 만들 매뉴얼은 미니 브레인스토밍입니다.",
-      "speakerNote": "스킬 설명 중 실행 절차와 출력만 다루는 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-006"
-      ],
-      "glossaryTerms": [
-        "Skill"
-      ],
-      "qualityChecks": [
-        "질문 순서, 승인 기준, 출력 형식이 보인다.",
-        "실습에서 쓸 매뉴얼 구조로 이어진다."
-      ]
-    },
-    {
-      "id": "act4-mini-brainstorming-flow",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "mini-brainstorming Skill이 구현 전에 질문, 비교, 승인하게 만든다는 점을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "좋은 매뉴얼은 구현 전에 질문하게 합니다.",
-      "message": "열린 요청은 바로 구현하지 않고 질문, 접근안 비교, 승인 순서로 좁힌다.",
-      "bullets": [
-        "한 번에 하나씩",
-        "접근안 비교",
-        "승인 후 진행"
-      ],
-      "visualIntent": "질문, 접근안, 승인 게이트 흐름",
-      "visualType": "generated-image",
-      "visualAssetId": "act4-mini-brainstorming-flow",
-      "presenterCues": [
-        "문서 문법보다 행동 변화를 말한다",
-        "승인 전 구현 금지를 강조한다",
-        "실습 작성으로 넘긴다"
-      ],
-      "bridge": "이제 이 구조를 직접 작성합니다.",
-      "speakerNote": "수강생은 자기 도구에 맞는 작은 Skill을 작성한다.",
-      "evidenceClaimIds": [
-        "claim-006"
-      ],
-      "glossaryTerms": [
-        "Skill"
-      ],
-      "qualityChecks": [
-        "질문 절차가 보인다.",
-        "승인 게이트가 보인다.",
-        "실습으로 이어진다."
-      ]
-    },
-    {
-      "id": "act4-practice-handoff",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "설명부를 닫고 별도 Skill 작성 실습으로 넘긴다.",
-      "estimatedMinutes": 1,
-      "title": "실습에서는 미니 브레인스토밍 스킬을 만듭니다.",
-      "message": "호출 조건, 질문 절차, 승인 게이트, 출력 형식을 직접 쓴다.",
-      "bullets": [
-        "호출 조건",
-        "절차",
-        "출력 형식"
-      ],
-      "visualIntent": "스킬 문서 세 구역 handoff",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "실습 UI는 다음 화면이라고 말한다",
-        "완성 문서보다 행동 변화가 중요하다고 말한다",
-        "첫 제출 후 고친다고 안내한다"
-      ],
-      "bridge": "먼저 모호한 요청에서 멈추는 절차를 씁니다.",
-      "speakerNote": "이후 practice renderer가 act4-skill-authoring을 담당한다.",
-      "evidenceClaimIds": [
-        "claim-006"
-      ],
-      "glossaryTerms": [
-        "Skill"
-      ],
-      "qualityChecks": [
-        "실습 UI가 없다.",
-        "learner action이 명확하다.",
-        "Skill 작성으로 이어진다."
-      ]
-    },
-    {
-      "id": "act4-to-act5-roles",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "매뉴얼이 있어도 역할이 섞이면 판단이 흔들린다는 Act 5 문제를 연다.",
-      "estimatedMinutes": 1,
-      "title": "매뉴얼이 있어도 한 명이 다 하면 판단이 섞입니다.",
-      "message": "조사, 구현, 리뷰가 한 역할 안에 섞이면 서로 다른 기준이 뒤섞인다.",
-      "bullets": [
-        "조사",
-        "구현",
-        "리뷰"
-      ],
-      "visualIntent": "한 김아이가 세 역할을 동시에 맡는 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act4-to-act5-roles",
-      "presenterCues": [
-        "Act 4를 인정한다",
-        "다음 문제를 역할 혼합으로 연다",
-        "Act 5로 넘긴다"
-      ],
-      "bridge": "다음 Act에서는 역할과 도구 권한을 나눕니다.",
-      "speakerNote": "좋은 Skill만으로는 충분하지 않고 역할 분리가 필요하다는 bridge다.",
-      "evidenceClaimIds": [
-        "claim-007"
-      ],
-      "glossaryTerms": [
-        "Agent / Subagent"
-      ],
-      "qualityChecks": [
-        "Act 5 필요성이 열린다.",
-        "역할 혼합 문제가 보인다.",
-        "bridge가 명확하다."
-      ]
-    },
-    {
-      "id": "act4-manual-analogy",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "매뉴얼은 반복 업무를 매번 다시 설명하지 않기 위한 문서입니다.",
-      "message": "매뉴얼은 반복 업무를 매번 다시 설명하지 않기 위한 문서입니다.",
-      "bullets": [
-        "언제 시작할지",
-        "어떤 순서인지",
-        "무엇을 남길지"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "매뉴얼이 없으면 김아이는 매번 다른 순서로 시작합니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act4-no-procedure-problem",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "절차가 없으면 김아이는 매번 다른 순서로 시작합니다.",
-      "message": "절차가 없으면 김아이는 매번 다른 순서로 시작합니다.",
-      "bullets": [
-        "질문 누락",
-        "승인 생략",
-        "기록 누락"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "AI에서 이 반복 매뉴얼이 Skill입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act4-skill-term-mapping",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "AI가 따라야 할 반복 매뉴얼이 Skill입니다.",
-      "message": "AI가 따라야 할 반복 매뉴얼이 Skill입니다.",
-      "bullets": [
-        "업무 매뉴얼",
-        "Skill",
-        "Reusable Procedure"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "그래서 Act 4는 먼저 질문하게 만드는 매뉴얼을 쓰는 시간입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act4-practice-reason",
-      "section": "Act 4 · 반복 업무 매뉴얼",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "Act 4는 먼저 질문하게 만드는 매뉴얼을 쓰는 시간입니다.",
-      "message": "Act 4는 먼저 질문하게 만드는 매뉴얼을 쓰는 시간입니다.",
-      "bullets": [
-        "호출 조건",
-        "질문 순서",
-        "승인 후 진행"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "다음 Act에서는 한 명이 모든 판단을 섞지 않게 나눕니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-one-kimai-problem",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "조사, 구현, 리뷰를 한 명이 모두 맡을 때 판단이 섞이는 문제를 연다.",
-      "estimatedMinutes": 1,
-      "title": "한 명이 조사, 구현, 리뷰를 모두 맡으면 판단이 섞입니다.",
-      "message": "각 작업은 필요한 기준과 도구가 다르므로 한 역할에 모두 섞으면 검토가 약해진다.",
-      "bullets": [
-        "조사",
-        "구현",
-        "리뷰"
-      ],
-      "visualIntent": "한 김아이가 세 역할을 동시에 처리하는 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act5-one-kimai-problem",
-      "presenterCues": [
-        "Act 4를 회수한다",
-        "역할 혼합 문제를 말한다",
-        "분리 필요성으로 넘긴다"
-      ],
-      "bridge": "역할을 나누면 판단 기준도 나뉩니다.",
-      "speakerNote": "역할 분리는 AI 숫자를 늘리는 것이 아니라 책임 경계를 나누는 일이다.",
-      "evidenceClaimIds": [
-        "claim-007"
-      ],
-      "glossaryTerms": [
-        "Agent / Subagent"
-      ],
-      "qualityChecks": [
-        "역할 혼합 문제가 보인다.",
-        "한 메시지만 있다.",
-        "역할 분리로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-role-boundaries",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "역할을 사람 수가 아니라 책임의 경계로 이해시킨다.",
-      "estimatedMinutes": 2,
-      "title": "역할은 사람 수가 아니라 책임의 경계입니다.",
-      "message": "Coordinator, Implementer, Reviewer가 서로 다른 책임을 가지면 결과와 검토가 분리된다.",
-      "bullets": [
-        "Coordinator",
-        "Implementer",
-        "Reviewer"
-      ],
-      "visualIntent": "역할 카드가 분리된 김아이 팀",
-      "visualType": "generated-image",
-      "visualAssetId": "act5-role-boundaries",
-      "presenterCues": [
-        "작은 AI 여러 명이라고 설명하지 않는다",
-        "책임 경계를 강조한다",
-        "Skill 배정으로 연결한다"
-      ],
-      "bridge": "각 역할에는 다른 매뉴얼과 도구가 필요합니다.",
-      "speakerNote": "Researcher는 필요 시 Implementer와 분리해 언급하되 화면 앵커는 3개로 유지한다.",
-      "evidenceClaimIds": [
-        "claim-007"
-      ],
-      "glossaryTerms": [
-        "Agent / Subagent"
-      ],
-      "qualityChecks": [
-        "역할별 책임이 보인다.",
-        "세 앵커 이하이다.",
-        "Skill 배정으로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-skill-assignment",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "Act 4의 mini-brainstorming Skill을 필요한 역할에게만 붙인다는 점을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "스킬은 필요한 역할에게만 붙입니다.",
-      "message": "mini-brainstorming은 작업을 시작하기 전 목표와 제약을 좁히는 Coordinator에게 붙인다.",
-      "bullets": [
-        "Coordinator",
-        "mini-brainstorming",
-        "직접 구현 금지"
-      ],
-      "visualIntent": "Act 4 Skill이 Coordinator 역할 카드에만 연결되는 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act5-skill-assignment",
-      "presenterCues": [
-        "Act 4 산출물을 회수한다",
-        "모든 역할에게 같은 Skill을 주지 않는다고 말한다",
-        "Tool 권한으로 넘긴다"
-      ],
-      "bridge": "도구 권한도 같은 방식으로 좁힙니다.",
-      "speakerNote": "Skill 배정은 역할 책임과 함께 봐야 한다.",
-      "evidenceClaimIds": [
-        "claim-007"
-      ],
-      "glossaryTerms": [
-        "Skill",
-        "Agent / Subagent"
-      ],
-      "qualityChecks": [
-        "Act 4 Skill이 회수된다.",
-        "역할별 배정이 보인다.",
-        "도구 권한으로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-practice-handoff",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "설명부를 닫고 별도 로컬 실행 실습으로 넘긴다.",
-      "estimatedMinutes": 1,
-      "title": "실습에서는 로컬에서 김아이 팀을 실행합니다.",
-      "message": "역할 프롬프트, Skill 배정, Tool 권한을 적용하고 실행 기록을 남긴다.",
-      "bullets": [
-        "역할 프롬프트",
-        "권한 배정",
-        "실행 기록"
-      ],
-      "visualIntent": "로컬 실행 체크리스트와 로그 템플릿 handoff",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "웹 채점이 아니라 로컬 실행이라고 말한다",
-        "관찰 모드 대안을 말한다",
-        "실행 기록이 중요하다고 강조한다"
-      ],
-      "bridge": "환경이 안 맞으면 관찰 모드 로그로 판단합니다.",
-      "speakerNote": "이후 로컬 실습은 act5-local-team-run 계약에서 진행한다.",
-      "evidenceClaimIds": [
-        "claim-007",
-        "claim-008"
-      ],
-      "glossaryTerms": [
-        "Agent / Subagent",
-        "MCP"
-      ],
-      "qualityChecks": [
-        "로컬 실행임이 보인다.",
-        "기록 대상이 명확하다.",
-        "실습 UI가 없다."
-      ]
-    },
-    {
-      "id": "act5-to-act6-checkpoint",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "역할과 도구를 나눠도 완료 검증이 필요하다는 Act 6 문제를 연다.",
-      "estimatedMinutes": 1,
-      "title": "역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.",
-      "message": "최종 완료는 역할별 결과가 아니라 검증 증거와 검문소로 판단해야 한다.",
-      "bullets": [
-        "완료 선언",
-        "증거",
-        "검문소"
-      ],
-      "visualIntent": "역할별 결과가 모였지만 검문소가 아직 없는 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act5-to-act6-checkpoint",
-      "presenterCues": [
-        "Act 5를 인정한다",
-        "완료 검증 문제를 연다",
-        "Act 6으로 넘긴다"
-      ],
-      "bridge": "다음 Act에서는 완료 전 자동 검문소를 세웁니다.",
-      "speakerNote": "역할 분리는 필요하지만 완료 판정은 별도의 검증 장치가 필요하다.",
-      "evidenceClaimIds": [
-        "claim-009"
-      ],
-      "glossaryTerms": [
-        "Hook",
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "Act 6 필요성이 열린다.",
-        "완료 선언과 증거 차이가 보인다.",
-        "bridge가 명확하다."
-      ]
-    },
-    {
-      "id": "act5-role-card-analogy",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "역할 카드는 한 사람이 모든 판단을 섞지 않게 하는 책임표입니다.",
-      "message": "역할 카드는 한 사람이 모든 판단을 섞지 않게 하는 책임표입니다.",
-      "bullets": [
-        "조사 담당",
-        "구현 담당",
-        "검토 담당"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "역할과 도구 열쇠가 없으면 일이 뒤섞입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-role-tool-problem",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "역할과 도구 열쇠가 없으면 일이 뒤섞입니다.",
-      "message": "역할과 도구 열쇠가 없으면 일이 뒤섞입니다.",
-      "bullets": [
-        "조사자가 수정",
-        "구현자가 셀프 리뷰",
-        "검토자가 기준 없이 판단"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "AI에서는 역할을 Agent로, 도구 열쇠를 Tool Permission으로 나눕니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-agent-tool-term-mapping",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "역할은 Agent, 도구 열쇠는 Tool Permission입니다.",
-      "message": "역할은 Agent, 도구 열쇠는 Tool Permission입니다.",
-      "bullets": [
-        "Agent Role",
-        "Tool Permission",
-        "MCP"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "그래서 Act 5는 누가 무엇을 보고 어떤 도구를 쓸지 나누는 시간입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act5-practice-reason",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "Act 5는 역할과 도구 권한을 나누는 시간입니다.",
-      "message": "Act 5는 역할과 도구 권한을 나누는 시간입니다.",
-      "bullets": [
-        "책임",
-        "볼 자료",
-        "쓸 도구"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "다음 Act에서는 완료했다는 말 대신 증거를 확인합니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act6-complete-is-not-proof",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "완료 선언과 완료 증거가 다르다는 문제를 연다.",
-      "estimatedMinutes": 1,
-      "title": "\"완료했습니다\"라는 말은 증거가 아닙니다.",
-      "message": "완료 판단에는 무엇을 했고, 무엇을 검증했고, 무엇이 남았는지가 필요하다.",
-      "bullets": [
-        "무엇을 했나",
-        "무엇을 검증했나",
-        "무엇이 남았나"
-      ],
-      "visualIntent": "완료 선언 말풍선과 비어 있는 증거칸",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-complete-is-not-proof",
-      "presenterCues": [
-        "Act 5를 회수한다",
-        "완료 선언을 그대로 믿지 않는다고 말한다",
-        "검문소로 연결한다"
-      ],
-      "bridge": "완료 직전에 자동 검문소가 필요합니다.",
-      "speakerNote": "비난이 아니라 업무 시스템의 완료 판정 문제로 설명한다.",
-      "evidenceClaimIds": [
-        "claim-009"
-      ],
-      "glossaryTerms": [
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "완료 선언과 증거 차이가 보인다.",
-        "검문소 필요성이 열린다.",
-        "전문 용어가 앞서지 않는다."
-      ]
-    },
-    {
-      "id": "act6-stop-checkpoint",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "Hook을 완료 전에 켜지는 자동 검문소로 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "자동 검문소는 완료 직전에 켜집니다.",
-      "message": "김아이가 멈추려는 순간 증거를 확인하고 통과 또는 재시도를 결정한다.",
-      "bullets": [
-        "멈추기 직전",
-        "증거 확인",
-        "통과 또는 재시도"
-      ],
-      "visualIntent": "김아이가 완료물을 검문소에 제출하는 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-stop-checkpoint",
-      "presenterCues": [
-        "Hook JSON부터 말하지 않는다",
-        "검문소 비유로 설명한다",
-        "상태표로 넘긴다"
-      ],
-      "bridge": "하지만 검문소도 끝낼 때를 알아야 합니다.",
-      "speakerNote": "Stop hook은 완료 직전 검사라고만 설명하고 구현 상세는 실습 unlock 이후로 둔다.",
-      "evidenceClaimIds": [
-        "claim-009"
-      ],
-      "glossaryTerms": [
-        "Hook",
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "검문소 비유가 중심이다.",
-        "완료 전 검사 시점이 보인다.",
-        "구현 세부로 가지 않는다."
-      ]
-    },
-    {
-      "id": "act6-state-loop-guard",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "processing/complete 상태와 attempts로 무한 반복을 막는 이유를 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "검문소에는 상태표가 있어야 무한 반복을 막습니다.",
-      "message": "processing과 complete를 구분하고 attempts를 세어야 계속 막기만 하는 검문소가 되지 않는다.",
-      "bullets": [
-        "processing",
-        "complete",
-        "attempts"
-      ],
-      "visualIntent": "업무 진행표와 검문소가 연결된 장면",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-state-loop-guard",
-      "presenterCues": [
-        "무한 반복 위험을 쉬운 비유로 말한다",
-        "상태표가 필요한 이유를 말한다",
-        "체크리스트 실습으로 넘긴다"
-      ],
-      "bridge": "이제 체크리스트로 검문소를 설계합니다.",
-      "speakerNote": "항상 block하는 Hook이 아니라 끝났을 때는 멈출 수 있는 Hook을 만든다는 점을 강조한다.",
-      "evidenceClaimIds": [
-        "claim-009"
-      ],
-      "glossaryTerms": [
-        "Hook"
-      ],
-      "qualityChecks": [
-        "무한 반복 방지가 보인다.",
-        "상태 개념이 쉬운 비유로 설명된다.",
-        "실습으로 이어진다."
-      ]
-    },
-    {
-      "id": "act6-practice-handoff",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "설명부를 닫고 별도 Stop hook 체크리스트 실습으로 넘긴다.",
-      "estimatedMinutes": 1,
-      "title": "실습에서는 완료 전 검문소를 체크리스트로 만듭니다.",
-      "message": "Trigger, State, 완료 증거를 고르고 100점이면 실제 생성 프롬프트를 연다.",
-      "bullets": [
-        "Trigger",
-        "State",
-        "완료 증거"
-      ],
-      "visualIntent": "세 묶음 체크리스트 handoff",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "실습 UI는 다음 화면이라고 말한다",
-        "100점 unlock 구조를 말한다",
-        "코드보다 설계가 먼저라고 강조한다"
-      ],
-      "bridge": "검문소 설계가 통과되면 실제 Stop hook 생성 프롬프트가 열립니다.",
-      "speakerNote": "이후 practice renderer가 act6-stop-hook-checkpoint를 담당한다.",
-      "evidenceClaimIds": [
-        "claim-009"
-      ],
-      "glossaryTerms": [
-        "Hook",
-        "Evaluation"
-      ],
-      "qualityChecks": [
-        "실습 UI가 없다.",
-        "learner action이 명확하다.",
-        "unlock 조건이 보인다."
-      ]
-    },
-    {
-      "id": "act6-unlock-structure",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "100점 체크리스트가 실제 Stop hook 생성 프롬프트와 예제 구조로 이어짐을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
-      "message": "settings, status file, stop check 구조로 완료 전 검문소를 만들 수 있다.",
-      "bullets": [
-        "settings",
-        "status file",
-        "stop check"
-      ],
-      "visualIntent": "설정 파일, 상태 파일, 검사 스크립트가 연결된 구조",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-unlock-structure",
-      "presenterCues": [
-        "코드를 깊게 설명하지 않는다",
-        "예제 구조만 보여 준다",
-        "최종 하네스 지도로 연결한다"
-      ],
-      "bridge": "이제 오늘 만든 장치들을 하나로 묶어 봅니다.",
-      "speakerNote": "100점 이후 제공될 산출물의 모양만 보여 주고 구현 상세는 하네스 워크플로우로 넘긴다.",
-      "evidenceClaimIds": [
-        "claim-009"
-      ],
-      "glossaryTerms": [
-        "Hook"
-      ],
-      "qualityChecks": [
-        "unlock 구조가 보인다.",
-        "구현 세부가 과하지 않다.",
-        "최종 정리로 이어진다."
-      ]
-    },
-    {
-      "id": "act6-final-harness-map",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "Act 1~6을 하나의 하네스 구조로 정리한다.",
-      "estimatedMinutes": 2,
-      "title": "하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.",
-      "message": "정보, 지시, 자료, 매뉴얼, 역할, 검증이 연결될 때 AI 업무는 시스템이 된다.",
-      "bullets": [
-        "정보와 지시",
-        "자료와 매뉴얼",
-        "역할과 검증"
-      ],
-      "visualIntent": "Act 1~6 결과물이 하나의 김아이 업무 환경으로 연결된 지도",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-final-harness-map",
-      "presenterCues": [
-        "각 Act의 역할을 짚는다",
-        "도구명이 아니라 업무 장치로 정리한다",
-        "개인 적용으로 넘긴다"
-      ],
-      "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
-      "speakerNote": "오늘 배운 것은 지시문 문장 하나가 아니라 반복 가능한 AI 업무 환경이라고 닫는다.",
-      "evidenceClaimIds": [
-        "claim-010"
-      ],
-      "glossaryTerms": [
-        "Harness Engineering"
-      ],
-      "qualityChecks": [
-        "Act 1~6이 연결된다.",
-        "전문 용어 나열로 끝나지 않는다.",
-        "개인 적용으로 이어진다."
-      ]
-    },
-    {
       "id": "wrap-personal-harness",
       "section": "Wrap-up · 내 업무에 가져가기",
       "sectionObjective": "수강생이 자신의 업무에 적용할 하네스 장치 3개를 고른다.",
@@ -2205,162 +1344,1249 @@
       ]
     },
     {
-      "id": "act5-tool-permission",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "도구 권한도 역할별 책임에 맞게 좁혀야 함을 설명한다.",
-      "estimatedMinutes": 2,
-      "title": "도구는 많이 열어 주는 것이 아니라 필요한 역할에게만 줍니다.",
-      "message": "도구 권한은 읽기, 쓰기, 실행, 외부 연결처럼 역할별로 필요한 범위만 열어 줍니다.",
+      "id": "act4-repeated-work-instructions",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
+      "message": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
       "bullets": [
-        "읽기 도구",
-        "쓰기 도구",
-        "실행 도구",
-        "외부 연결"
+        "매주 쓰는 회의 요약",
+        "매번 하는 자료 정리",
+        "자주 반복되는 리뷰 요청"
       ],
-      "visualIntent": "역할별로 읽기, 쓰기, 실행, 외부 연결 열쇠가 다르게 배정된 장면",
+      "visualIntent": "반복되는 작업에는 반복되는 지시가 따라옵니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
-      "visualAssetId": "act5-tool-permission",
+      "visualAssetId": "act4-repeated-work-instructions",
       "presenterCues": [
-        "도구를 종류별 권한으로 설명한다",
-        "외부 연결도 별도 권한이라고 말한다",
-        "MCP는 외부 연결의 예로만 짧게 언급한다"
+        "반복되는 작업에는 반복되는 지시가 따라옵니다.",
+        "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
+        "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다."
       ],
-      "bridge": "외부 도구는 연결 통로를 통해 붙입니다.",
-      "speakerNote": "중요한 것은 어떤 역할에게 어떤 외부 도구를 열어 줄지 결정하는 것이다. MCP 서버 구현은 다루지 않는다.",
+      "bridge": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
+      "speakerNote": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
       "evidenceClaimIds": [
-        "claim-008"
+        "claim-001"
       ],
       "glossaryTerms": [
-        "MCP",
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-human-bound-instructions",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
+      "message": "반복 지시가 사람의 기억과 말솜씨에 묶이면 팀장이 매번 설명하고, 표현이 달라지고, 김아이는 이전 순서를 재사용하기 어렵습니다.",
+      "bullets": [
+        "팀장이 매번 설명",
+        "사람마다 다른 표현",
+        "이전 순서 재사용 어려움"
+      ],
+      "visualIntent": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-human-bound-instructions",
+      "presenterCues": [
+        "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
+        "반복 지시가 사람의 기억과 말솜씨에 묶이면 팀장이 매번 설명하고, 표현이 달라지고, 김아이는 이전 순서를 재사용하기 어렵습니다.",
+        "매번 다른 지시는 김아이의 시작점을 흔듭니다."
+      ],
+      "bridge": "매번 다른 지시는 김아이의 시작점을 흔듭니다.",
+      "speakerNote": "반복 지시가 사람의 기억과 말솜씨에 묶이면 팀장이 매번 설명하고, 표현이 달라지고, 김아이는 이전 순서를 재사용하기 어렵습니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-different-instruction-starts",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "매번 다른 지시는 김아이의 시작점을 흔듭니다.",
+      "message": "같은 반복 업무라도 지시가 매번 다르면 김아이는 어떤 날은 질문하고, 어떤 날은 바로 작성하고, 어떤 날은 확인 없이 끝냅니다.",
+      "bullets": [
+        "어떤 날은 먼저 질문",
+        "어떤 날은 바로 작성",
+        "어떤 날은 확인 없이 종료"
+      ],
+      "visualIntent": "매번 다른 지시는 김아이의 시작점을 흔듭니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-different-instruction-starts",
+      "presenterCues": [
+        "매번 다른 지시는 김아이의 시작점을 흔듭니다.",
+        "같은 반복 업무라도 지시가 매번 다르면 김아이는 어떤 날은 질문하고, 어떤 날은 바로 작성하고, 어떤 날은 확인 없이 끝냅니다.",
+        "작업별 업무 매뉴얼을 만들어 사용해 봅시다."
+      ],
+      "bridge": "작업별 업무 매뉴얼을 만들어 사용해 봅시다.",
+      "speakerNote": "같은 반복 업무라도 지시가 매번 다르면 김아이는 어떤 날은 질문하고, 어떤 날은 바로 작성하고, 어떤 날은 확인 없이 끝냅니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-task-manual-outside",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "작업별 업무 매뉴얼을 만들어 사용해 봅시다.",
+      "message": "업무 매뉴얼은 작업 순서를 김아이의 즉흥 판단이나 팀장 기억에 맡기지 않고 문서로 고정하는 장치입니다.",
+      "bullets": [
+        "김아이 머릿속에 맡기지 않음",
+        "팀장 기억에 맡기지 않음",
+        "문서로 같은 순서 유지"
+      ],
+      "visualIntent": "작업별 업무 매뉴얼을 만들어 사용해 봅시다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-task-manual-outside",
+      "presenterCues": [
+        "작업별 업무 매뉴얼을 만들어 사용해 봅시다.",
+        "업무 매뉴얼은 작업 순서를 김아이의 즉흥 판단이나 팀장 기억에 맡기지 않고 문서로 고정하는 장치입니다.",
+        "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다."
+      ],
+      "bridge": "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.",
+      "speakerNote": "업무 매뉴얼은 작업 순서를 김아이의 즉흥 판단이나 팀장 기억에 맡기지 않고 문서로 고정하는 장치입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-manual-candidate-check",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.",
+      "message": "모든 일을 매뉴얼로 만들지 않습니다. 자주 반복되고, 같은 기준으로 판단해야 하고, 실수 비용이 큰 일이 매뉴얼 후보입니다.",
+      "bullets": [
+        "자주 반복되는 일",
+        "같은 기준이 필요한 일",
+        "실수 비용이 큰 일"
+      ],
+      "visualIntent": "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-manual-candidate-check",
+      "presenterCues": [
+        "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.",
+        "모든 일을 매뉴얼로 만들지 않습니다. 자주 반복되고, 같은 기준으로 판단해야 하고, 실수 비용이 큰 일이 매뉴얼 후보입니다.",
+        "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다."
+      ],
+      "bridge": "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.",
+      "speakerNote": "모든 일을 매뉴얼로 만들지 않습니다. 자주 반복되고, 같은 기준으로 판단해야 하고, 실수 비용이 큰 일이 매뉴얼 후보입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-not-everything-manual",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.",
+      "message": "한 번만 할 일, 기준이 아직 흔들리는 일, 상황이 매번 완전히 다른 일은 매뉴얼보다 지금 업무 지시로 처리하는 편이 낫습니다.",
+      "bullets": [
+        "한 번만 할 일",
+        "기준이 아직 흔들리는 일",
+        "상황이 매번 다른 일"
+      ],
+      "visualIntent": "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-not-everything-manual",
+      "presenterCues": [
+        "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.",
+        "한 번만 할 일, 기준이 아직 흔들리는 일, 상황이 매번 완전히 다른 일은 매뉴얼보다 지금 업무 지시로 처리하는 편이 낫습니다.",
+        "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다."
+      ],
+      "bridge": "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.",
+      "speakerNote": "한 번만 할 일, 기준이 아직 흔들리는 일, 상황이 매번 완전히 다른 일은 매뉴얼보다 지금 업무 지시로 처리하는 편이 낫습니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-manual-start-conditions",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.",
+      "message": "매뉴얼 후보가 정해지면 어떤 요청에서 켤지, 시작 전에 어떤 재료를 확인할지, 무엇이 부족하면 멈출지를 먼저 정합니다.",
+      "bullets": [
+        "어떤 요청에서 켤지",
+        "시작 전에 확인할 재료",
+        "무엇이 부족하면 멈출지"
+      ],
+      "visualIntent": "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-manual-start-conditions",
+      "presenterCues": [
+        "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.",
+        "매뉴얼 후보가 정해지면 어떤 요청에서 켤지, 시작 전에 어떤 재료를 확인할지, 무엇이 부족하면 멈출지를 먼저 정합니다.",
+        "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다."
+      ],
+      "bridge": "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.",
+      "speakerNote": "매뉴얼 후보가 정해지면 어떤 요청에서 켤지, 시작 전에 어떤 재료를 확인할지, 무엇이 부족하면 멈출지를 먼저 정합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-short-procedure",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.",
+      "message": "매뉴얼 본문에는 실행 전 확인 조건, 차례대로 할 작업 단계, 중간 점검 기준, 결과물 형식, 남길 기록을 짧게 씁니다.",
+      "bullets": [
+        "실행 전 확인 조건",
+        "차례대로 할 작업 단계",
+        "중간 점검 기준",
+        "결과물 형식",
+        "남길 기록"
+      ],
+      "visualIntent": "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-short-procedure",
+      "presenterCues": [
+        "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.",
+        "매뉴얼 본문에는 실행 전 확인 조건, 차례대로 할 작업 단계, 중간 점검 기준, 결과물 형식, 남길 기록을 짧게 씁니다.",
+        "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다."
+      ],
+      "bridge": "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.",
+      "speakerNote": "매뉴얼 본문에는 실행 전 확인 조건, 차례대로 할 작업 단계, 중간 점검 기준, 결과물 형식, 남길 기록을 짧게 씁니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-manual-supporting-materials",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.",
+      "message": "매뉴얼 본문에 모든 것을 넣지 않고, 예시 자료와 체크리스트와 판단 기준표와 실행 재료는 따로 두고 필요할 때 꺼냅니다.",
+      "bullets": [
+        "예시 자료",
+        "체크리스트",
+        "판단 기준표",
+        "실행 재료"
+      ],
+      "visualIntent": "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-manual-supporting-materials",
+      "presenterCues": [
+        "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.",
+        "매뉴얼 본문에 모든 것을 넣지 않고, 예시 자료와 체크리스트와 판단 기준표와 실행 재료는 따로 두고 필요할 때 꺼냅니다.",
+        "AI가 읽는 반복 업무 매뉴얼이 Skill입니다."
+      ],
+      "bridge": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+      "speakerNote": "매뉴얼 본문에 모든 것을 넣지 않고, 예시 자료와 체크리스트와 판단 기준표와 실행 재료는 따로 두고 필요할 때 꺼냅니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-skill-term-mapping",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+      "message": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
+      "bullets": [
+        "호출 조건",
+        "짧은 절차",
+        "참고자료",
+        "출력 형식"
+      ],
+      "visualIntent": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-skill-term-mapping",
+      "presenterCues": [
+        "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+        "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
+        "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다."
+      ],
+      "bridge": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
+      "speakerNote": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-practice-handoff",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
+      "message": "미니 브레인스토밍은 Skill 전체 개념의 한 예시이며, 시작 조건, 절차, 참고 예시, 남길 결과를 연습하기 위해 선택한 과제입니다.",
+      "bullets": [
+        "Skill이 켜지는 조건",
+        "실행 전 확인할 질문",
+        "접근안 비교 순서",
+        "마지막 결정 기록"
+      ],
+      "visualIntent": "별도 실습 화면으로 넘기는 handoff slide",
+      "visualType": "none",
+      "visualAssetId": null,
+      "presenterCues": [
+        "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
+        "미니 브레인스토밍은 Skill 전체 개념의 한 예시이며, 시작 조건, 절차, 참고 예시, 남길 결과를 연습하기 위해 선택한 과제입니다.",
+        "매뉴얼이 있어도 역할 판단은 분리해야 합니다."
+      ],
+      "bridge": "매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
+      "speakerNote": "미니 브레인스토밍은 Skill 전체 개념의 한 예시이며, 시작 조건, 절차, 참고 예시, 남길 결과를 연습하기 위해 선택한 과제입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act4-to-act5-roles",
+      "section": "Act 4 · 반복 업무 매뉴얼",
+      "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
+      "message": "Skill은 반복 절차를 안정시키지만, 조사 판단과 구현 판단과 검토 판단을 한 역할이 모두 맡으면 여전히 섞일 수 있습니다.",
+      "bullets": [
+        "조사 판단",
+        "구현 판단",
+        "검토 판단"
+      ],
+      "visualIntent": "매뉴얼이 있어도 역할 판단은 분리해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act4-to-act5-roles",
+      "presenterCues": [
+        "매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
+        "Skill은 반복 절차를 안정시키지만, 조사 판단과 구현 판단과 검토 판단을 한 역할이 모두 맡으면 여전히 섞일 수 있습니다.",
+        "다음 Act에서는 역할과 도구 권한을 나눕니다."
+      ],
+      "bridge": "다음 Act에서는 역할과 도구 권한을 나눕니다.",
+      "speakerNote": "Skill은 반복 절차를 안정시키지만, 조사 판단과 구현 판단과 검토 판단을 한 역할이 모두 맡으면 여전히 섞일 수 있습니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill",
         "Agent / Subagent"
       ],
       "qualityChecks": [
-        "읽기, 쓰기, 실행, 외부 연결이 모두 보인다.",
-        "도구를 많이 여는 것이 아니라 좁히는 흐름이 보인다."
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
       ]
     },
     {
-      "id": "act6-checkpoint-analogy",
+      "id": "act5-one-kimai-problem",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "매뉴얼이 있어도 한 명이 모든 일을 하면 판단이 섞입니다.",
+      "message": "매뉴얼은 순서를 잡아 주지만 한 역할이 모든 결정을 하면 조사 근거, 구현 선택, 검토 기준이 섞입니다.",
+      "bullets": [
+        "조사 판단",
+        "구현 판단",
+        "검토 판단"
+      ],
+      "visualIntent": "매뉴얼이 있어도 한 명이 모든 일을 하면 판단이 섞입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-one-kimai-problem",
+      "presenterCues": [
+        "매뉴얼이 있어도 한 명이 모든 일을 하면 판단이 섞입니다.",
+        "매뉴얼은 순서를 잡아 주지만 한 역할이 모든 결정을 하면 조사 근거, 구현 선택, 검토 기준이 섞입니다.",
+        "역할은 사람 수가 아니라 책임의 경계입니다."
+      ],
+      "bridge": "역할은 사람 수가 아니라 책임의 경계입니다.",
+      "speakerNote": "매뉴얼은 순서를 잡아 주지만 한 역할이 모든 결정을 하면 조사 근거, 구현 선택, 검토 기준이 섞입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Agent / Subagent"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-role-boundaries",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "역할은 사람 수가 아니라 책임의 경계입니다.",
+      "message": "역할을 나눈다는 말은 AI를 많이 부르는 것이 아니라 봐야 할 자료, 내려야 할 판단, 쓸 수 있는 도구를 나누는 뜻입니다.",
+      "bullets": [
+        "누가 무엇을 보는가",
+        "누가 무엇을 판단하는가",
+        "누가 어떤 도구를 쓰는가"
+      ],
+      "visualIntent": "역할은 사람 수가 아니라 책임의 경계입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-role-boundaries",
+      "presenterCues": [
+        "역할은 사람 수가 아니라 책임의 경계입니다.",
+        "역할을 나눈다는 말은 AI를 많이 부르는 것이 아니라 봐야 할 자료, 내려야 할 판단, 쓸 수 있는 도구를 나누는 뜻입니다.",
+        "먼저 조사 담당은 근거를 찾고 정리합니다."
+      ],
+      "bridge": "먼저 조사 담당은 근거를 찾고 정리합니다.",
+      "speakerNote": "역할을 나눈다는 말은 AI를 많이 부르는 것이 아니라 봐야 할 자료, 내려야 할 판단, 쓸 수 있는 도구를 나누는 뜻입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Agent / Subagent"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-research-role",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "조사 담당은 근거를 찾고 정리합니다.",
+      "message": "조사 담당은 결과물을 고치는 사람이 아니라 자료를 확인하고 출처를 기록하고 모르는 것을 표시하는 역할입니다.",
+      "bullets": [
+        "자료 확인",
+        "출처 기록",
+        "모르는 것 표시"
+      ],
+      "visualIntent": "조사 담당은 근거를 찾고 정리합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-research-role",
+      "presenterCues": [
+        "조사 담당은 근거를 찾고 정리합니다.",
+        "조사 담당은 결과물을 고치는 사람이 아니라 자료를 확인하고 출처를 기록하고 모르는 것을 표시하는 역할입니다.",
+        "구현 담당은 정해진 지시와 자료로 결과물을 만듭니다."
+      ],
+      "bridge": "구현 담당은 정해진 지시와 자료로 결과물을 만듭니다.",
+      "speakerNote": "조사 담당은 결과물을 고치는 사람이 아니라 자료를 확인하고 출처를 기록하고 모르는 것을 표시하는 역할입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Agent / Subagent"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-implement-role",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "구현 담당은 정해진 지시와 자료로 결과물을 만듭니다.",
+      "message": "구현 담당은 받은 지시와 자료 안에서 산출물을 만들고, 마음대로 조사 범위나 목표를 넓히지 않습니다.",
+      "bullets": [
+        "지시 따르기",
+        "산출물 만들기",
+        "임의 확장 금지"
+      ],
+      "visualIntent": "구현 담당은 정해진 지시와 자료로 결과물을 만듭니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-implement-role",
+      "presenterCues": [
+        "구현 담당은 정해진 지시와 자료로 결과물을 만듭니다.",
+        "구현 담당은 받은 지시와 자료 안에서 산출물을 만들고, 마음대로 조사 범위나 목표를 넓히지 않습니다.",
+        "검토 담당은 기준에 맞는지 확인합니다."
+      ],
+      "bridge": "검토 담당은 기준에 맞는지 확인합니다.",
+      "speakerNote": "구현 담당은 받은 지시와 자료 안에서 산출물을 만들고, 마음대로 조사 범위나 목표를 넓히지 않습니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Agent / Subagent"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-review-role",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "검토 담당은 기준에 맞는지 확인합니다.",
+      "message": "검토 담당은 구현자의 자기 확신을 그대로 믿지 않고 기준에 대조해 빠진 것과 위험을 드러냅니다.",
+      "bullets": [
+        "기준 대조",
+        "빠진 것 찾기",
+        "통과/보류 판단"
+      ],
+      "visualIntent": "검토 담당은 기준에 맞는지 확인합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-review-role",
+      "presenterCues": [
+        "검토 담당은 기준에 맞는지 확인합니다.",
+        "검토 담당은 구현자의 자기 확신을 그대로 믿지 않고 기준에 대조해 빠진 것과 위험을 드러냅니다.",
+        "역할마다 붙는 매뉴얼도 달라질 수 있습니다."
+      ],
+      "bridge": "역할마다 붙는 매뉴얼도 달라질 수 있습니다.",
+      "speakerNote": "검토 담당은 구현자의 자기 확신을 그대로 믿지 않고 기준에 대조해 빠진 것과 위험을 드러냅니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Agent / Subagent"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-role-skill-assignment",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "역할마다 붙는 매뉴얼이 달라질 수 있습니다.",
+      "message": "조사 담당, 구현 담당, 검토 담당은 서로 다른 Skill 매뉴얼을 가질 수 있습니다.",
+      "bullets": [
+        "조사 매뉴얼",
+        "구현 매뉴얼",
+        "검토 매뉴얼"
+      ],
+      "visualIntent": "역할마다 붙는 매뉴얼이 달라질 수 있습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-role-skill-assignment",
+      "presenterCues": [
+        "역할마다 붙는 매뉴얼이 달라질 수 있습니다.",
+        "조사 담당, 구현 담당, 검토 담당은 서로 다른 Skill 매뉴얼을 가질 수 있습니다.",
+        "도구도 필요한 역할에게만 열어 줍니다."
+      ],
+      "bridge": "도구도 필요한 역할에게만 열어 줍니다.",
+      "speakerNote": "조사 담당, 구현 담당, 검토 담당은 서로 다른 Skill 매뉴얼을 가질 수 있습니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Skill",
+        "Agent / Subagent"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-tool-permission",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "도구는 많이 열어 주는 것이 아니라 필요한 역할에게만 줍니다.",
+      "message": "Tool Permission은 역할별로 읽기, 쓰기, 실행, 외부 연결 열쇠를 필요한 만큼만 주는 구조입니다.",
+      "bullets": [
+        "읽기 열쇠",
+        "쓰기 열쇠",
+        "실행 열쇠",
+        "외부 연결 열쇠"
+      ],
+      "visualIntent": "도구는 많이 열어 주는 것이 아니라 필요한 역할에게만 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-tool-permission",
+      "presenterCues": [
+        "도구는 많이 열어 주는 것이 아니라 필요한 역할에게만 줍니다.",
+        "Tool Permission은 역할별로 읽기, 쓰기, 실행, 외부 연결 열쇠를 필요한 만큼만 주는 구조입니다.",
+        "외부 도구와 자료를 잇는 통로가 MCP입니다."
+      ],
+      "bridge": "외부 도구와 자료를 잇는 통로가 MCP입니다.",
+      "speakerNote": "Tool Permission은 역할별로 읽기, 쓰기, 실행, 외부 연결 열쇠를 필요한 만큼만 주는 구조입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "MCP"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-mcp-passage",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "외부 도구와 자료를 잇는 통로가 MCP입니다.",
+      "message": "MCP는 서버 구현 설명이 아니라 회사 시스템에 들어가는 표준 출입구처럼 외부 도구와 자료를 AI에게 연결하는 통로입니다.",
+      "bullets": [
+        "회사 시스템 출입구",
+        "역할별 접근",
+        "필요한 도구만 연결"
+      ],
+      "visualIntent": "외부 도구와 자료를 잇는 통로가 MCP입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-mcp-passage",
+      "presenterCues": [
+        "외부 도구와 자료를 잇는 통로가 MCP입니다.",
+        "MCP는 서버 구현 설명이 아니라 회사 시스템에 들어가는 표준 출입구처럼 외부 도구와 자료를 AI에게 연결하는 통로입니다.",
+        "실습에서는 로컬에서 김아이 팀을 실행합니다."
+      ],
+      "bridge": "실습에서는 로컬에서 김아이 팀을 실행합니다.",
+      "speakerNote": "MCP는 서버 구현 설명이 아니라 회사 시스템에 들어가는 표준 출입구처럼 외부 도구와 자료를 AI에게 연결하는 통로입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "MCP"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-practice-handoff",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "실습에서는 로컬에서 김아이 팀을 실행합니다.",
+      "message": "웹 채점 화면이 아니라 로컬 실행형 실습에서 역할별 프롬프트, Skill 배정, Tool 권한, 실행 기록 템플릿을 확인합니다.",
+      "bullets": [
+        "역할별 프롬프트",
+        "Skill 배정",
+        "Tool 권한",
+        "실행 기록"
+      ],
+      "visualIntent": "실습에서는 로컬에서 김아이 팀을 실행합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "none",
+      "visualAssetId": null,
+      "presenterCues": [
+        "실습에서는 로컬에서 김아이 팀을 실행합니다.",
+        "웹 채점 화면이 아니라 로컬 실행형 실습에서 역할별 프롬프트, Skill 배정, Tool 권한, 실행 기록 템플릿을 확인합니다.",
+        "역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다."
+      ],
+      "bridge": "역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.",
+      "speakerNote": "웹 채점 화면이 아니라 로컬 실행형 실습에서 역할별 프롬프트, Skill 배정, Tool 권한, 실행 기록 템플릿을 확인합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Agent / Subagent",
+        "MCP"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act5-to-act6-checkpoint",
+      "section": "Act 5 · 역할 분리와 도구 권한",
+      "sectionObjective": "AI를 많이 늘리는 것이 아니라 책임, Skill, 도구 권한을 역할별로 분리하는 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.",
+      "message": "역할과 도구 분리는 판단 섞임을 줄이지만 마지막에는 완료 증거를 확인하는 검문소가 필요합니다.",
+      "bullets": [
+        "역할별 결과",
+        "완료 선언",
+        "검증 증거"
+      ],
+      "visualIntent": "역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act5-to-act6-checkpoint",
+      "presenterCues": [
+        "역할과 도구를 나눠도 완료 선언만으로는 충분하지 않습니다.",
+        "역할과 도구 분리는 판단 섞임을 줄이지만 마지막에는 완료 증거를 확인하는 검문소가 필요합니다.",
+        "다음 Act에서는 완료 전 검문소를 세웁니다."
+      ],
+      "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+      "speakerNote": "역할과 도구 분리는 판단 섞임을 줄이지만 마지막에는 완료 증거를 확인하는 검문소가 필요합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Hook",
+        "Evaluation"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-act1-5-recap",
       "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "필요한 장치를 다 세워도 마지막에는 증거가 필요합니다.",
+      "message": "자료, 지시, 내규, 매뉴얼, 역할과 도구를 나눴어도 마지막에는 실제 증거를 확인해야 합니다.",
+      "bullets": [
+        "자료",
+        "지시",
+        "내규",
+        "매뉴얼",
+        "역할과 도구"
+      ],
+      "visualIntent": "필요한 장치를 다 세워도 마지막에는 증거가 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-act1-5-recap",
+      "presenterCues": [
+        "필요한 장치를 다 세워도 마지막에는 증거가 필요합니다.",
+        "자료, 지시, 내규, 매뉴얼, 역할과 도구를 나눴어도 마지막에는 실제 증거를 확인해야 합니다.",
+        "\"완료했습니다\"라는 말은 증거가 아닙니다."
+      ],
+      "bridge": "\"완료했습니다\"라는 말은 증거가 아닙니다.",
+      "speakerNote": "자료, 지시, 내규, 매뉴얼, 역할과 도구를 나눴어도 마지막에는 실제 증거를 확인해야 합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Harness Engineering"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-complete-is-not-proof",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "\"완료했습니다\"라는 말은 증거가 아닙니다.",
+      "message": "완료 선언은 출발점일 뿐이고, 무엇을 했는지와 무엇을 검증했는지와 무엇이 남았는지를 확인해야 합니다.",
+      "bullets": [
+        "말풍선",
+        "빈 증거칸",
+        "확인 전 상태"
+      ],
+      "visualIntent": "\"완료했습니다\"라는 말은 증거가 아닙니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-complete-is-not-proof",
+      "presenterCues": [
+        "\"완료했습니다\"라는 말은 증거가 아닙니다.",
+        "완료 선언은 출발점일 뿐이고, 무엇을 했는지와 무엇을 검증했는지와 무엇이 남았는지를 확인해야 합니다.",
+        "완료 전에는 무엇을 했는지 확인해야 합니다."
+      ],
+      "bridge": "완료 전에는 무엇을 했는지 확인해야 합니다.",
+      "speakerNote": "완료 선언은 출발점일 뿐이고, 무엇을 했는지와 무엇을 검증했는지와 무엇이 남았는지를 확인해야 합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Hook"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-done-work-evidence",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "완료 전에는 무엇을 했는지 확인해야 합니다.",
+      "message": "어떤 파일을 만들었는지, 어떤 항목을 고쳤는지, 어떤 기록을 남겼는지 산출 행위의 증거가 필요합니다.",
+      "bullets": [
+        "수정한 것",
+        "만든 것",
+        "남긴 기록"
+      ],
+      "visualIntent": "완료 전에는 무엇을 했는지 확인해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-done-work-evidence",
+      "presenterCues": [
+        "완료 전에는 무엇을 했는지 확인해야 합니다.",
+        "어떤 파일을 만들었는지, 어떤 항목을 고쳤는지, 어떤 기록을 남겼는지 산출 행위의 증거가 필요합니다.",
+        "완료 전에는 무엇을 검증했는지 확인해야 합니다."
+      ],
+      "bridge": "완료 전에는 무엇을 검증했는지 확인해야 합니다.",
+      "speakerNote": "어떤 파일을 만들었는지, 어떤 항목을 고쳤는지, 어떤 기록을 남겼는지 산출 행위의 증거가 필요합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Evaluation"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-validation-evidence",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "완료 전에는 무엇을 검증했는지 확인해야 합니다.",
+      "message": "결과물을 만들었다는 사실과 기준을 통과했다는 사실은 다르므로 확인한 기준과 결과를 함께 남겨야 합니다.",
+      "bullets": [
+        "기준 대조",
+        "테스트 결과",
+        "리뷰 결과"
+      ],
+      "visualIntent": "완료 전에는 무엇을 검증했는지 확인해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-validation-evidence",
+      "presenterCues": [
+        "완료 전에는 무엇을 검증했는지 확인해야 합니다.",
+        "결과물을 만들었다는 사실과 기준을 통과했다는 사실은 다르므로 확인한 기준과 결과를 함께 남겨야 합니다.",
+        "완료 전에는 무엇이 남았는지 확인해야 합니다."
+      ],
+      "bridge": "완료 전에는 무엇이 남았는지 확인해야 합니다.",
+      "speakerNote": "결과물을 만들었다는 사실과 기준을 통과했다는 사실은 다르므로 확인한 기준과 결과를 함께 남겨야 합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Evaluation"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-remaining-risk",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "완료 전에는 무엇이 남았는지 확인해야 합니다.",
+      "message": "남은 위험, 못 한 검증, 다음 조치를 숨기지 않고 남겨야 완료 판단이 정확해집니다.",
+      "bullets": [
+        "남은 위험",
+        "못 한 검증",
+        "다음 조치"
+      ],
+      "visualIntent": "완료 전에는 무엇이 남았는지 확인해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-remaining-risk",
+      "presenterCues": [
+        "완료 전에는 무엇이 남았는지 확인해야 합니다.",
+        "남은 위험, 못 한 검증, 다음 조치를 숨기지 않고 남겨야 완료 판단이 정확해집니다.",
+        "검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다."
+      ],
+      "bridge": "검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.",
+      "speakerNote": "남은 위험, 못 한 검증, 다음 조치를 숨기지 않고 남겨야 완료 판단이 정확해집니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Quality Gate"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-checkpoint-gate",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
       "estimatedMinutes": 1,
       "title": "검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.",
-      "message": "검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.",
+      "message": "검문소는 벌주는 곳이 아니라 완료 선언 전에 무엇을 했고 검증했고 남겼는지 확인하는 자리입니다.",
       "bullets": [
         "무엇을 했나",
-        "무엇을 확인했나",
+        "무엇을 검증했나",
         "무엇이 남았나"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
+      "visualIntent": "검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-checkpoint-gate",
       "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
+        "검문소는 완료라고 말하기 전에 증거를 확인하는 자리입니다.",
+        "검문소는 벌주는 곳이 아니라 완료 선언 전에 무엇을 했고 검증했고 남겼는지 확인하는 자리입니다.",
+        "AI에서 완료 직전에 켜지는 장치가 Hook입니다."
       ],
-      "bridge": "검문소가 없으면 완료 선언을 그대로 믿게 됩니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
+      "bridge": "AI에서 완료 직전에 켜지는 장치가 Hook입니다.",
+      "speakerNote": "검문소는 벌주는 곳이 아니라 완료 선언 전에 무엇을 했고 검증했고 남겼는지 확인하는 자리입니다.",
       "evidenceClaimIds": [
-        "claim-002"
+        "claim-001"
       ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act6-no-checkpoint-problem",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "검문소가 없으면 완료 선언을 그대로 믿게 됩니다.",
-      "message": "검문소가 없으면 완료 선언을 그대로 믿게 됩니다.",
-      "bullets": [
-        "증거 없음",
-        "기준 없음",
-        "재시도 없음"
-      ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "AI에서는 Hook, Evaluation, State가 이 일을 나눠 맡습니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
-      "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
-      ]
-    },
-    {
-      "id": "act6-hook-eval-term-mapping",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
-      "estimatedMinutes": 1,
-      "title": "Hook은 켜는 순간, Evaluation은 통과 기준입니다.",
-      "message": "Hook은 켜는 순간, Evaluation은 통과 기준입니다.",
-      "bullets": [
+      "glossaryTerms": [
         "Hook",
-        "Evaluation",
-        "State / Loop"
+        "Quality Gate"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
-      "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
-      ],
-      "bridge": "그래서 Act 6는 완료 전에 무엇을 확인하고 언제 재시도할지 정하는 시간입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
-      "evidenceClaimIds": [
-        "claim-002"
-      ],
-      "glossaryTerms": [],
       "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
       ]
     },
     {
-      "id": "act6-practice-reason",
+      "id": "act6-stop-hook",
       "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "비유를 작동 원리, 문제 조건, 실제 하네스 용어, 실습 이유로 연결한다.",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
       "estimatedMinutes": 1,
-      "title": "Act 6는 완료 전 증거와 재시도 기준을 정하는 시간입니다.",
-      "message": "Act 6는 완료 전 증거와 재시도 기준을 정하는 시간입니다.",
+      "title": "AI에서 완료 직전에 켜지는 장치가 Hook입니다.",
+      "message": "Hook은 코드 이벤트보다 먼저, 작업을 멈추거나 완료하려는 순간 자동으로 켜지는 검문소로 이해합니다.",
       "bullets": [
-        "완료 증거",
-        "통과 기준",
-        "재시도 조건"
+        "완료 직전",
+        "자동 실행",
+        "Stop Hook"
       ],
-      "visualIntent": "현실 업무 비유와 실제 하네스 용어가 대응되는 간단한 설명 화면",
-      "visualType": "minimal-diagram",
+      "visualIntent": "AI에서 완료 직전에 켜지는 장치가 Hook입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-stop-hook",
       "presenterCues": [
-        "현실 비유를 먼저 말한다",
-        "작동 원리와 문제가 생기는 조건을 설명한다",
-        "마지막에 실제 용어와 실습 이유를 연결한다"
+        "AI에서 완료 직전에 켜지는 장치가 Hook입니다.",
+        "Hook은 코드 이벤트보다 먼저, 작업을 멈추거나 완료하려는 순간 자동으로 켜지는 검문소로 이해합니다.",
+        "Evaluation은 검문소의 통과 기준입니다."
       ],
-      "bridge": "오늘 만든 장치들을 내 업무에 가져갈 차례입니다.",
-      "speakerNote": "사용자가 제안한 비유 -> 원리 -> 문제 -> 용어 -> 실습 이유 구조를 따른 추가 설명 슬라이드다.",
+      "bridge": "Evaluation은 검문소의 통과 기준입니다.",
+      "speakerNote": "Hook은 코드 이벤트보다 먼저, 작업을 멈추거나 완료하려는 순간 자동으로 켜지는 검문소로 이해합니다.",
       "evidenceClaimIds": [
-        "claim-002"
+        "claim-001"
       ],
-      "glossaryTerms": [],
+      "glossaryTerms": [
+        "Hook"
+      ],
       "qualityChecks": [
-        "A=B 단순 치환으로 끝나지 않는다.",
-        "발표 문장으로 자연스럽다.",
-        "실습 이유로 이어진다."
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-evaluation-criteria",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "Evaluation은 검문소의 통과 기준입니다.",
+      "message": "Evaluation은 점수 자체가 아니라 무엇을 통과로 볼지 정하는 기준이며, LLM Judge와 Quality Gate가 이를 보조합니다.",
+      "bullets": [
+        "기준표",
+        "LLM Judge",
+        "Quality Gate"
+      ],
+      "visualIntent": "Evaluation은 검문소의 통과 기준입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-evaluation-criteria",
+      "presenterCues": [
+        "Evaluation은 검문소의 통과 기준입니다.",
+        "Evaluation은 점수 자체가 아니라 무엇을 통과로 볼지 정하는 기준이며, LLM Judge와 Quality Gate가 이를 보조합니다.",
+        "State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다."
+      ],
+      "bridge": "State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다.",
+      "speakerNote": "Evaluation은 점수 자체가 아니라 무엇을 통과로 볼지 정하는 기준이며, LLM Judge와 Quality Gate가 이를 보조합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Evaluation",
+        "LLM judge",
+        "Quality Gate"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-state-board",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다.",
+      "message": "검문소는 처리 중인지, 통과했는지, 몇 번 시도했는지를 기록해야 다음 행동을 정할 수 있습니다.",
+      "bullets": [
+        "processing",
+        "complete",
+        "attempts"
+      ],
+      "visualIntent": "State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-state-board",
+      "presenterCues": [
+        "State는 지금 검문소가 처리 중인지 완료됐는지 기록합니다.",
+        "검문소는 처리 중인지, 통과했는지, 몇 번 시도했는지를 기록해야 다음 행동을 정할 수 있습니다.",
+        "Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다."
+      ],
+      "bridge": "Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다.",
+      "speakerNote": "검문소는 처리 중인지, 통과했는지, 몇 번 시도했는지를 기록해야 다음 행동을 정할 수 있습니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "State"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-loop-control",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다.",
+      "message": "실패 후 다시 시도하는 구조에는 재시도 조건, 최대 시도, 멈출 조건이 함께 있어야 합니다.",
+      "bullets": [
+        "재시도 조건",
+        "최대 시도",
+        "멈출 조건"
+      ],
+      "visualIntent": "Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-loop-control",
+      "presenterCues": [
+        "Loop 제어가 없으면 재시도가 끝나지 않을 수 있습니다.",
+        "실패 후 다시 시도하는 구조에는 재시도 조건, 최대 시도, 멈출 조건이 함께 있어야 합니다.",
+        "실습에서는 완료 전 Stop hook 검문소를 설계합니다."
+      ],
+      "bridge": "실습에서는 완료 전 Stop hook 검문소를 설계합니다.",
+      "speakerNote": "실패 후 다시 시도하는 구조에는 재시도 조건, 최대 시도, 멈출 조건이 함께 있어야 합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "State"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-practice-handoff",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "실습에서는 완료 전 Stop hook 검문소를 설계합니다.",
+      "message": "별도 실습 화면에서 완료 직전에 켜지는 검문소의 trigger, evidence, state/loop 조건을 설계합니다.",
+      "bullets": [
+        "언제 켤지",
+        "무엇을 볼지",
+        "언제 멈출지"
+      ],
+      "visualIntent": "실습에서는 완료 전 Stop hook 검문소를 설계합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "none",
+      "visualAssetId": null,
+      "presenterCues": [
+        "실습에서는 완료 전 Stop hook 검문소를 설계합니다.",
+        "별도 실습 화면에서 완료 직전에 켜지는 검문소의 trigger, evidence, state/loop 조건을 설계합니다.",
+        "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다."
+      ],
+      "bridge": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
+      "speakerNote": "별도 실습 화면에서 완료 직전에 켜지는 검문소의 trigger, evidence, state/loop 조건을 설계합니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Hook",
+        "State"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-unlock-structure",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
+      "message": "Act 6은 100점으로 끝나지 않고 Stop hook 생성 프롬프트와 settings, status file, stop check 예제 구조를 unlock artifact로 엽니다.",
+      "bullets": [
+        "Stop hook 생성 프롬프트",
+        "settings 예제",
+        "status file 예제",
+        "stop check 예제"
+      ],
+      "visualIntent": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-unlock-structure",
+      "presenterCues": [
+        "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
+        "Act 6은 100점으로 끝나지 않고 Stop hook 생성 프롬프트와 settings, status file, stop check 예제 구조를 unlock artifact로 엽니다.",
+        "하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다."
+      ],
+      "bridge": "하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.",
+      "speakerNote": "Act 6은 100점으로 끝나지 않고 Stop hook 생성 프롬프트와 settings, status file, stop check 예제 구조를 unlock artifact로 엽니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Hook"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
+      ]
+    },
+    {
+      "id": "act6-final-harness-map",
+      "section": "Act 6 · 검증과 하네스 구조",
+      "sectionObjective": "완료 선언을 믿는 대신 Hook, Evaluation, State, Loop로 완료 전 증거를 확인하는 검문소 구조를 이해한다.",
+      "estimatedMinutes": 1,
+      "title": "하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.",
+      "message": "하네스는 좋은 프롬프트 하나가 아니라 정보, 지시, 내규, 매뉴얼, 역할, 도구, 검문소가 연결된 업무 환경입니다.",
+      "bullets": [
+        "정보 선별",
+        "업무 지시",
+        "회사 내규",
+        "업무 매뉴얼",
+        "역할과 도구",
+        "완료 검문소"
+      ],
+      "visualIntent": "하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualType": "generated-image",
+      "visualAssetId": "act6-final-harness-map",
+      "presenterCues": [
+        "하네스는 김아이가 흔들려도 돌아오게 만드는 업무 환경입니다.",
+        "하네스는 좋은 프롬프트 하나가 아니라 정보, 지시, 내규, 매뉴얼, 역할, 도구, 검문소가 연결된 업무 환경입니다.",
+        "이제 내 업무에 가져갈 장치부터 고르면 됩니다."
+      ],
+      "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+      "speakerNote": "하네스는 좋은 프롬프트 하나가 아니라 정보, 지시, 내규, 매뉴얼, 역할, 도구, 검문소가 연결된 업무 환경입니다.",
+      "evidenceClaimIds": [
+        "claim-001"
+      ],
+      "glossaryTerms": [
+        "Harness Engineering"
+      ],
+      "qualityChecks": [
+        "회사 업무 비유가 먼저 보인다.",
+        "한 슬라이드에 한 메시지만 담긴다.",
+        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
+        "다음 슬라이드 브릿지가 자연스럽다."
       ]
     }
   ]
