@@ -17,8 +17,8 @@
 
 - Act 0. 오늘의 약속: 김아이라는 AI 신입사원 서사와 하네스 엔지니어링 관점 소개
 - Act 1. 정보 선별 `(Information Selection / Context Curation)`: 업무에 필요한 자료와 기준을 먼저 고르는 법
-- Act 2. 좋은 업무 지시 `(Prompt Engineering / Task Specification)`: 산출물, 대상, 형식, 완료 기준을 지시로 쓰는 법
-- Act 3. CLAUDE.md 회사 내규 `(CLAUDE.md / Persistent Instructions / Rule Overload)`: 작업 자료와 회사 내규를 분리하고, 과한 내규가 일을 방해한다는 점을 이해시키는 법
+- Act 2. 좋은 업무 지시 `(Prompt Engineering / Task Specification)`: 무엇을 만들지, 어디에 쓸지, 어떤 형식으로 낼지, 언제 끝난 것으로 볼지를 지시로 쓰는 법
+- Act 3. CLAUDE.md 회사 내규 `(CLAUDE.md / Persistent Instructions / Rule Overload)`: Prompt, Context, CLAUDE.md를 구분하고, CLAUDE.md 적용 범위/적용 강도/과한 내규 문제를 이해시키는 법
 - Act 4. 반복 업무 매뉴얼 `(Skills / Reusable Procedures)`: 반복 가능한 절차를 매뉴얼로 고정하는 법
 - Act 5. 역할 분리와 도구 권한 `(Agents / Subagents / Tool Permissions / MCP)`: 역할, 권한, 도구 사용 범위를 나누는 법
 - Act 6. 검증과 하네스 구조 `(Hooks / Evaluation / LLM Judge / Quality Gate)`: 결과물을 검사하고 재시도하게 만드는 구조
@@ -45,6 +45,20 @@
 - 다른 Act에도 같은 설명 구조를 적용한다. 예를 들어 매뉴얼 비유는 `반복 업무 절차 -> 절차가 없을 때의 문제 -> Skill`, 검문소 비유는 `완료 전 확인 -> 증거가 없을 때의 문제 -> Hook/Evaluation`으로 연결한다.
 - 사용자가 특정 Act만 지시한 경우 그 Act만 확장한다. 다른 Act에는 원칙이나 TODO성 방향만 남기고, 실제 슬라이드/목업 확장은 요청받은 Act 범위 안에서만 진행한다.
 - 슬라이드 화면에는 긴 대본을 넣지 않는다. 발표자 힌트, 전환 질문, 강조 문장은 source의 speaker note 영역에 둔다.
+
+## Kimai Metaphor Dictionary
+
+- `김아이`는 AI 신입사원이고, `팀장`은 사용자를 뜻한다.
+- `책상` 또는 `데스크`는 김아이가 지금 일을 하기 위해 올려 둔 작업 자료 공간이며, 실제 하네스 용어로는 `Context`다.
+- `업무 지시`는 팀장이 지금 내린 요청이며, 실제 하네스 용어로는 `Prompt`다.
+- `회사 내규`는 김아이가 매번 지켜야 하는 공통 기준이며, 실제 하네스 용어로는 `CLAUDE.md`다.
+- `업무 매뉴얼`은 반복 업무를 처리하는 순서이며, 실제 하네스 용어로는 `Skill`이다.
+- `검문소`는 완료 전 증거를 확인하는 기준이며, 실제 하네스 용어로는 `Hook`, `Evaluation`, `Quality Gate`다.
+- Act 2에서는 `누가 볼지`나 `대상`보다 `어디에 쓸지`, `무엇을 만들지`, `어떤 형식으로 낼지`, `언제 끝난 것으로 볼지`를 우선 표현한다.
+- Act 3에서 Context는 Act 1의 데스크 비유를 회수하는 보조 개념이다. Act 3의 중심은 `CLAUDE.md 회사 내규` 설정이다.
+- Act 3의 CLAUDE.md 범위 비유는 `global = 연방법`, `user = 주법`, `project = 회사 사규`, `subfolder = 부서 규칙`으로 통일한다.
+- CLAUDE.md 로드 순서는 `global -> user -> project -> subfolder`이고, 적용 강도는 `subfolder -> project -> user -> global`이다. 현재 작업 위치에 가까운 규칙이 더 구체적이고 강하다.
+- Act 3 실습은 자료/규칙 분류가 아니라 `CLAUDE.md 적용 범위 선택 -> 내규 초안 작성 -> 과한 내규 줄이기`로 연결한다.
 
 ## Visual Asset Rules
 
