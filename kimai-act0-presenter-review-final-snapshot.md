@@ -1,0 +1,82 @@
+- main [ref=e2] [box=160,0,1120,2287]:
+  - heading "Presenter Review" [level=1] [ref=e3] [box=184,61,1072,38]
+  - generic [ref=e5] [box=184,121,1072,2087]:
+    - generic [ref=e6] [box=184,144,527,2042]:
+      - generic [ref=e7] [box=203,163,489,21]: Act 0 · 오늘의 약속
+      - heading "4시간 동안 김아이의 업무 환경을 하나씩 만듭니다." [level=2] [ref=e8] [box=203,201,489,175]
+      - paragraph [ref=e9] [box=203,392,489,41]: 오늘 배울 것은 프롬프트 문장 하나가 아니라, AI가 흔들려도 다시 돌아오게 만드는 업무 시스템입니다.
+    - generic [ref=e10] [box=729,144,527,2042]:
+      - strong [ref=e11] [box=748,163,105,19]: Speaker Note
+      - paragraph [ref=e12] [box=748,198,489,82]: 김아이라는 AI 신입사원을 소개한 뒤, 오늘 강의가 프롬프트 예문 암기가 아니라 업무 환경을 만드는 시간임을 말한다. 지시, 자료, 검증의 세 축을 먼저 잡고, 이후 Skill과 Agent는 뒤에서 하나씩 연결한다고 예고한다. 마지막에는 첫 실습으로 넘어가기 위해 김아이가 무엇을 추측하는지 묻는다.
+      - strong [ref=e13] [box=748,296,119,19]: Presenter Cues
+      - list [ref=e14] [box=748,331,489,62]:
+        - listitem [ref=e15] [box=788,331,449,21]: 김아이는 빠르지만 회사 맥락은 모른다
+        - listitem [ref=e16] [box=788,351,449,21]: 오늘은 지시, 자료, 검증이 연결된 환경을 만든다
+        - listitem [ref=e17] [box=788,372,449,21]: 각 단계마다 직접 해보고 점수와 결과를 확인한다
+      - strong [ref=e18] [box=748,408,145,19]: Visual / Interaction
+      - list [ref=e19] [box=748,443,489,218]:
+        - listitem [ref=e20] [box=788,443,449,19]: "Type: existing-image"
+        - listitem [ref=e21] [box=788,462,449,19]: "Asset ID: kimai-journey-map"
+        - listitem [ref=e22] [box=788,481,449,62]: "Teaching role: 슬라이드의 글과 함께 Act 0 전체 여정을 설명하고, 그림이 담당하는 구간은 그림 안의 요소만 짚어도 설명할 수 있게 하는 김아이 중심 여정 지도"
+        - listitem [ref=e23] [box=788,543,449,57]: "Prompt: Use the top-row journey-map region from generated-decks/kimai-act0-prototype/prompts/kimai-work-environment-sheet.xml"
+        - listitem [ref=e24] [box=788,600,449,41]: "Interaction: tooltip - Prompt, Context, Hook, Evaluation 용어에 마우스를 올리면 일반인용 설명 툴팁을 보여 준다."
+        - listitem [ref=e25] [box=788,641,449,21]: "Bridge: 다음: 김아이에게 대충 시키면 무엇을 추측하게 될까요?"
+      - strong [ref=e26] [box=748,677,208,19]: Asset Explanation Anchors
+      - list [ref=e27] [box=748,712,489,103]:
+        - listitem [ref=e28] [box=788,712,449,21]: 김아이는 빠르지만 회사 맥락은 모른다
+        - listitem [ref=e29] [box=788,733,449,21]: 지시, 자료, 규칙, 매뉴얼은 서로 다른 역할이다
+        - listitem [ref=e30] [box=788,753,449,21]: 역할과 도구를 나누면 판단이 덜 섞인다
+        - listitem [ref=e31] [box=788,774,449,21]: 완료는 말이 아니라 검증 게이트로 확인한다
+        - listitem [ref=e32] [box=788,794,449,21]: 오늘 4시간 동안 이 환경을 하나씩 만든다
+      - strong [ref=e33] [box=748,831,196,19]: Visual Semantic Contract
+      - strong [ref=e34] [box=948,831,86,19]: Must Show
+      - list [ref=e35] [box=748,866,489,185]:
+        - listitem [ref=e36] [box=788,866,449,21]: 김아이 또는 AI 신입사원이 중앙에 있어야 한다
+        - listitem [ref=e37] [box=788,886,449,21]: 상사 또는 업무 요청자가 왼쪽에서 업무를 주는 모습이 보여야 한다
+        - listitem [ref=e38] [box=788,907,449,21]: 업무 지시서가 첫 단계로 보여야 한다
+        - listitem [ref=e39] [box=788,927,449,21]: 자료 또는 맥락이 업무 지시와 별도 요소로 보여야 한다
+        - listitem [ref=e40] [box=788,948,449,21]: 회사 규칙판 또는 반복 규칙이 별도 요소로 보여야 한다
+        - listitem [ref=e41] [box=788,968,449,21]: 업무 매뉴얼 또는 Skill 책자가 보여야 한다
+        - listitem [ref=e42] [box=788,989,449,21]: 역할 분리 또는 작은 팀이 보여야 한다
+        - listitem [ref=e43] [box=788,1009,449,21]: 도구 또는 권한 연결이 보여야 한다
+        - listitem [ref=e44] [box=788,1030,449,21]: 완료 전 검증 게이트와 체크 표시가 마지막에 보여야 한다
+      - strong [ref=e45] [box=748,1066,117,19]: Must Not Show
+      - list [ref=e46] [box=748,1101,489,82]:
+        - listitem [ref=e47] [box=788,1101,449,21]: 김아이 없이 일반 아이콘만 일렬로 나열된 워크플로우
+        - listitem [ref=e48] [box=788,1122,449,21]: 추상적 도형만 있는 프로세스 다이어그램
+        - listitem [ref=e49] [box=788,1142,449,21]: 어두운 미래형 관제실
+        - listitem [ref=e50] [box=788,1163,449,21]: 설명할 요소가 없는 장식 배경
+      - strong [ref=e51] [box=748,1199,153,19]: Teaching Questions
+      - list [ref=e52] [box=748,1234,489,103]:
+        - listitem [ref=e53] [box=788,1234,449,41]: 슬라이드의 글과 함께 볼 때 오늘 배울 전체 흐름을 30초 안에 설명할 수 있는가?
+        - listitem [ref=e54] [box=788,1275,449,21]: 그림이 맡은 설명 구간은 그림만 보고도 말할 수 있을 만큼 구체적인가?
+        - listitem [ref=e55] [box=788,1296,449,21]: 지시, 자료, 규칙, 매뉴얼, 검증이 서로 다른 요소로 보이는가?
+        - listitem [ref=e56] [box=788,1316,449,21]: 김아이가 중심에 있어 신입 AI 비유가 유지되는가?
+      - strong [ref=e57] [box=748,1353,138,19]: Review Threshold
+      - list [ref=e58] [box=748,1388,489,19]:
+        - listitem [ref=e59] [box=788,1388,449,19]: "Minimum pass score: 85"
+      - strong [ref=e60] [box=748,1423,161,19]: Visual Review Status
+      - list [ref=e61] [box=748,1458,489,141]:
+        - listitem [ref=e62] [box=788,1458,449,19]: "Status: PASS"
+        - listitem [ref=e63] [box=788,1477,449,19]: "Score: 90"
+        - listitem [ref=e64] [box=788,1496,449,103]: "Summary: 상단 crop은 중앙의 큰 김아이를 기준으로 왼쪽 업무 요청자, 업무 지시서, 맥락/자료, 회사 규칙판, 스킬/매뉴얼, 역할 분담 팀, 도구/권한, 최종 검증 게이트가 좌우로 연결되어 있다. 슬라이드의 3개 앵커와 함께 보면 발표자가 4시간 강의의 전체 업무 환경을 그림 요소를 짚으며 설명할 수 있다."
+      - strong [ref=e65] [box=748,1614,216,19]: Forbidden Element Findings
+      - list [ref=e66] [box=748,1649,489,246]:
+        - listitem [ref=e67] [box=788,1649,449,82]: "Not observed: 김아이 없이 일반 아이콘만 일렬로 나열된 워크플로우 - 중앙의 큰 Kimai 캐릭터와 오른쪽 검증 게이트 안의 작은 Kimai가 반복 등장하고, 왼쪽 매니저와 업무 환경 패널들이 함께 있어 아이콘만 나열된 흐름이 아니다."
+        - listitem [ref=e68] [box=788,1731,449,62]: "Not observed: 추상적 도형만 있는 프로세스 다이어그램 - 말풍선, 클립보드, 문서/데이터베이스, 규칙 보드, 펼친 책, 로봇 팀, 도구 상자, 자물쇠, 검증 게이트처럼 실제 강의 개념을 가리키는 사물이 들어 있다."
+        - listitem [ref=e69] [box=788,1793,449,41]: "Not observed: 어두운 미래형 관제실 - 배경은 흰색이고 검은 손그림 선과 파란 강조색만 사용되며, 관제실 배경이나 어두운 조명 효과가 없다."
+        - listitem [ref=e70] [box=788,1834,449,62]: "Not observed: 설명할 요소가 없는 장식 배경 - 각 패널은 업무 요청, 지시서, 맥락 자료, 규칙판, 매뉴얼, 역할 팀, 도구 권한, 검증 게이트라는 발표 설명 대상을 가지고 있고 배경 장식은 거의 없다."
+      - strong [ref=e71] [box=748,1911,188,19]: XML Prompt Boundaries
+      - group [ref=e72] [box=748,1940,489,19]:
+        - generic "Instruction" [ref=e73] [cursor=pointer] [box=748,1940,489,19]
+      - group [ref=e74] [box=748,1969,489,19]:
+        - generic "Screen Content" [ref=e75] [cursor=pointer] [box=748,1969,489,19]
+      - group [ref=e76] [box=748,1998,489,19]:
+        - generic "Speaker Navigation" [ref=e77] [cursor=pointer] [box=748,1998,489,19]
+      - group [ref=e78] [box=748,2027,489,19]:
+        - generic "Asset Requirement" [ref=e79] [cursor=pointer] [box=748,2027,489,19]
+      - strong [ref=e80] [box=748,2056,147,19]: Evidence Claim IDs
+      - list [ref=e81] [box=748,2089,489,63]:
+        - listitem [ref=e82] [box=788,2089,449,63]:
+          - strong [ref=e83] [box=788,2091,69,17]: claim-001
+          - text: ": lecture-cuts redesign is structured around a 4-hour general-audience workshop using the AI new hire Kimai narrative. (docs/harness/lecture-cuts-redesign-master-spec.md)"

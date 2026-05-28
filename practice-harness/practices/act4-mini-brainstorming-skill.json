@@ -1,0 +1,77 @@
+{
+  "id": "act4-mini-brainstorming-skill",
+  "title": "실습 4: 미니 브레인스토밍 Skill을 만듭니다",
+  "type": "skill-document",
+  "maxScore": 100,
+  "unlockThreshold": 90,
+  "act": 4,
+  "learning": {
+    "goal": "Superpowers brainstorming 절차를 바탕으로 반복되는 요구사항 정리 절차를 mini-brainstorming Skill로 만듭니다.",
+    "task": "사용자가 막연한 아이디어나 기능 요청을 했을 때, 바로 구현하지 않고 프로젝트 맥락 확인, 한 번에 한 질문, 접근안 비교, 승인 게이트 순서로 범위를 좁히는 Skill 문서를 작성하세요.",
+    "why": "Skill은 김아이에게 매번 다시 설명하지 않아도 되는 반복 업무 매뉴얼입니다. Superpowers의 brainstorming은 구현 전에 맥락을 확인하고, 질문으로 범위를 좁히고, 사용자가 승인한 설계만 다음 단계로 넘기는 안전장치입니다.",
+    "hints": [
+      "frontmatter에는 name과 description을 넣고, description에는 막연한 아이디어나 기능 요청이 들어왔을 때 쓰는 trigger를 적으세요.",
+      "Steps에는 Superpowers처럼 Explore project context, 한 번에 하나의 질문, 2-3개 접근안 비교, 추천안 제시를 넣으세요.",
+      "구현이나 plan으로 넘어가기 전에는 HARD-GATE로 사용자 승인 여부를 확인하게 하세요."
+    ],
+    "starterTemplate": "---\nname: mini-brainstorming\ndescription: TODO: Use when a user has a vague idea, unclear feature request, or lesson activity and needs a scoped brainstorming session before implementation.\n---\n\n# Mini Brainstorming Skill\n\nSuperpowers brainstorming을 수업용으로 줄인 Skill입니다. 목표는 바로 만들기 전에 맥락을 확인하고, 질문으로 범위를 좁히고, 사용자가 승인한 설계만 다음 단계로 넘기는 것입니다.\n\n## HARD-GATE\nTODO: Do not write code, scaffold files, or create an implementation plan until the user approves the proposed design. 사용자가 승인하기 전에는 구현으로 넘어가지 않는 규칙을 자기 말로 완성하세요.\n\n## Steps\n1. TODO: Explore project context - 현재 파일, 기존 규칙, 사용자 목표를 어떻게 확인할지 쓰세요.\n2. TODO: Ask one question at a time - 한 번에 하나의 질문만 하고 답을 기다리는 규칙을 쓰세요.\n3. TODO: Keep the scope boundary explicit - 범위 밖 기능과 하지 않을 일을 어떻게 표시할지 쓰세요.\n4. TODO: Compare 2-3 approaches - 2-3개 접근안, 장단점, tradeoff를 어떻게 비교할지 쓰세요.\n5. TODO: Present the design - goal, audience, constraints, chosen approach, rejected alternatives를 어떻게 정리할지 쓰세요.\n6. TODO: Ask for approval before moving - 최종 spec이나 구현 계획으로 넘어가기 전 사용자 승인을 어떻게 받을지 쓰세요.\n7. TODO: Handoff - 승인 뒤 implementation plan 또는 담당 agent 작업으로 넘기는 기준을 쓰세요.\n\n## Output Format\n- TODO: Trigger summary\n- TODO: Current question\n- TODO: Approach comparison\n- TODO: Proposed design\n- TODO: Approval request\n",
+    "retryPrompts": [
+      "점수가 낮으면 description trigger와 Steps 구조가 실제 Skill 형식인지 먼저 확인하세요.",
+      "두 번째 시도에서는 Superpowers의 one question at a time, approach comparison, HARD-GATE, spec output을 더 분명하게 적으세요."
+    ],
+    "bridge": "다음 Act에서는 좋은 Skill을 한 명에게 모두 맡기지 않고, Coordinator와 Reviewer 같은 역할로 나눕니다."
+  },
+  "criteria": [
+    {
+      "id": "trigger-description",
+      "label": "트리거 설명",
+      "points": 20,
+      "checkId": "description-trigger-check",
+      "missingFeedback": "description에 이 Skill을 언제 써야 하는지 트리거가 필요합니다."
+    },
+    {
+      "id": "one-question-at-a-time",
+      "label": "한 번에 한 질문",
+      "points": 15,
+      "checkId": "one-question-at-a-time-check",
+      "missingFeedback": "브레인스토밍 단계에서 한 번에 하나의 질문만 하고 답을 기다리는 규칙이 필요합니다."
+    },
+    {
+      "id": "scope-boundary",
+      "label": "범위 경계",
+      "points": 15,
+      "checkId": "scope-boundary-check",
+      "missingFeedback": "선택한 아이디어 밖으로 벗어나지 않도록 범위 경계를 명시해야 합니다."
+    },
+    {
+      "id": "approach-comparison",
+      "label": "접근안 비교",
+      "points": 15,
+      "checkId": "approach-comparison-check",
+      "missingFeedback": "최소 두 가지 접근안을 비교하고 장단점이나 tradeoff를 설명하는 행동 기준이 필요합니다."
+    },
+    {
+      "id": "approval-gate",
+      "label": "승인 게이트",
+      "points": 15,
+      "checkId": "approval-gate-check",
+      "missingFeedback": "최종 spec이나 구현 계획으로 넘어가기 전에 사용자 승인을 받는 게이트가 필요합니다."
+    },
+    {
+      "id": "spec-output",
+      "label": "Spec 산출",
+      "points": 10,
+      "checkId": "spec-output-check",
+      "missingFeedback": "브레인스토밍 결과를 goal, audience, constraints, chosen approach 같은 spec으로 정리해야 합니다."
+    },
+    {
+      "id": "output-format",
+      "label": "출력 형식",
+      "points": 10,
+      "checkId": "output-format-check",
+      "missingFeedback": "사용자가 볼 최종 응답 형식을 Output Format 섹션으로 정의해야 합니다."
+    }
+  ],
+  "items": [],
+  "templates": []
+}

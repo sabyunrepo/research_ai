@@ -144,7 +144,7 @@ Reviewed: none found.
         name: "scaffold",
         owner: "scaffold-deck.js",
         inputs: [],
-        outputs: ["topic-intake.md", "research-dossier.md", "claim-source-map.json", "section-plan.json", "slide-spec.json", "glossary.json"],
+        outputs: ["topic-intake.md", "research-dossier.md", "claim-source-map.json", "section-plan.json", "slide-spec.json", "glossary.json", "asset-pack.json"],
         inputHash: hashText(""),
         outputHash: "",
         status: "PASS",
@@ -153,6 +153,13 @@ Reviewed: none found.
     ],
   };
   writeNew(path.join(deckDir, "job-manifest.json"), json(manifest));
+
+  writeNew(
+    path.join(deckDir, "asset-pack.json"),
+    json({
+      assets: [],
+    })
+  );
 
   writeNew(
     path.join(deckDir, "HANDOFF.md"),
@@ -170,6 +177,7 @@ Scaffold created. Fill source map, section plan, glossary, and slide spec before
 - section-plan.json
 - slide-spec.json
 - glossary.json
+- asset-pack.json
 
 ## Evidence Map Status
 

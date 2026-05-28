@@ -1,0 +1,294 @@
+{
+  "id": "act1-info-selection",
+  "title": "실습 1: 김아이에게 무엇을 알려줘야 할까요?",
+  "type": "multi-question-choice",
+  "maxScore": 100,
+  "unlockThreshold": 90,
+  "act": 1,
+  "learning": {
+    "goal": "김아이가 이상하게 답하는 이유를 모델 탓으로만 보지 않고, 필요한 정보가 비어 있으면 김아이가 빈칸을 추측한다는 점을 확인합니다.",
+    "task": "각 상황의 목표를 보고 김아이에게 필요한 정보와 지금 주면 오히려 헷갈리는 불필요한 정보를 구분하세요.",
+    "why": "이 실습은 완벽한 프롬프트를 쓰는 시간이 아닙니다. 일을 맡기기 전에 어떤 정보가 필요하고 어떤 정보는 과하거나 오염되는지 고르는 진단 실습입니다.",
+    "hints": [
+      "완벽한 프롬프트를 만들려고 하지 말고, 먼저 김아이가 추측하면 안 되는 빈칸을 찾으세요.",
+      "실무에서 그럴듯해 보이는 정보라도 지금 목표와 직접 관련이 없으면 빼는 편이 낫습니다.",
+      "문제를 틀리면 왜 김아이가 추측하거나 헷갈리는지 설명을 보고 다시 고르세요."
+    ],
+    "bridge": "Act 2에서는 이렇게 고른 정보를 바탕으로 김아이에게 좋은 업무 지시 프롬프트를 직접 작성합니다."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "title": "반응형 카드 컴포넌트",
+      "prompt": "김아이에게 강의 신청 페이지에 들어갈 반응형 카드 컴포넌트를 만들게 해야 합니다. 어떤 정보를 함께 줘야 할까요? 모두 고르세요.",
+      "choices": [
+        {
+          "id": "q1-purpose-action",
+          "label": "카드가 들어갈 페이지의 목적과 사용자가 눌러야 할 행동",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "페이지 목적과 행동이 없으면 김아이가 카드의 우선순위를 추측합니다."
+        },
+        {
+          "id": "q1-responsive-breakpoints",
+          "label": "모바일 375px, 데스크톱 1024px 기준의 배치 조건",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "화면 기준이 없으면 기본 데스크톱 화면만 보고 만들 수 있습니다."
+        },
+        {
+          "id": "q1-real-content",
+          "label": "카드에 들어갈 제목, 설명, 가격, CTA 문구",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "실제 콘텐츠가 없으면 김아이가 임의 문구와 가격을 채웁니다."
+        },
+        {
+          "id": "q1-brand-style",
+          "label": "기존 브랜드 색상과 버튼 스타일",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "브랜드 기준이 없으면 기존 화면과 다른 톤으로 만들 수 있습니다."
+        },
+        {
+          "id": "q1-state-verification",
+          "label": "텍스트 overflow, hover/focus 상태, 반응형 확인 기준",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "검증 기준이 없으면 깨지는 상태를 확인하지 못합니다."
+        },
+        {
+          "id": "q1-output-format",
+          "label": "결과를 HTML/CSS 코드블록으로 나눠 달라는 출력 형식",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "출력 형식이 없으면 바로 붙여 넣기 어려운 답이 나올 수 있습니다."
+        },
+        {
+          "id": "q1-old-design-system",
+          "label": "작년에 쓰던 랜딩 페이지의 전체 디자인 시스템",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "전체 디자인 시스템은 지금 카드 하나를 만드는 범위를 넓힙니다."
+        },
+        {
+          "id": "q1-competitor-screenshots",
+          "label": "경쟁사 카드 UI 스크린샷 10장",
+          "kind": "conditional",
+          "points": 2,
+          "feedback": "참고는 될 수 있지만 요구사항보다 모방을 앞세울 수 있습니다."
+        },
+        {
+          "id": "q1-premium-tone",
+          "label": "\"프리미엄하고 세련된 느낌\"이라는 톤 설명",
+          "kind": "helpful",
+          "points": 2,
+          "feedback": "톤 설명은 보조 정보지만 구체 기준과 함께 있어야 합니다."
+        },
+        {
+          "id": "q1-perfect-all-devices",
+          "label": "모든 브라우저와 모든 디바이스에서 완벽해야 한다는 요구",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "완벽이라는 말은 검증 가능한 화면 기준을 대신하지 못합니다."
+        },
+        {
+          "id": "q1-future-payment-data",
+          "label": "나중에 붙일 결제 기능의 데이터 구조",
+          "kind": "pollution",
+          "points": -5,
+          "feedback": "미래 결제 데이터는 현재 카드 제작 목표를 오염시킵니다."
+        },
+        {
+          "id": "q1-company-copy",
+          "label": "회사 소개 페이지의 전체 카피 문구",
+          "kind": "pollution",
+          "points": -5,
+          "feedback": "회사 소개 전체 카피는 현재 카드 콘텐츠 범위를 벗어납니다."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "title": "결제 버튼 오류 수정",
+      "prompt": "김아이에게 결제 페이지의 \"신청하기\" 버튼이 가끔 눌리지 않는 문제를 조사하고 수정하게 해야 합니다. 어떤 정보를 함께 줘야 할까요? 모두 고르세요.",
+      "choices": [
+        {
+          "id": "q2-browser-size",
+          "label": "문제가 발생한 브라우저와 화면 크기",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "발생 환경이 없으면 김아이가 문제를 재현하기 어렵습니다."
+        },
+        {
+          "id": "q2-user-steps",
+          "label": "버튼을 누르기 전 사용자가 거친 단계",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "사용자 단계가 없으면 어떤 상태에서 버튼이 막히는지 추측하게 됩니다."
+        },
+        {
+          "id": "q2-related-files",
+          "label": "관련 파일 또는 컴포넌트 이름",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "관련 파일이 없으면 조사 범위가 불필요하게 넓어집니다."
+        },
+        {
+          "id": "q2-recent-changes",
+          "label": "최근 수정된 결제 페이지 변경 내역",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "최근 변경 내역이 없으면 원인 후보의 우선순위가 흐려집니다."
+        },
+        {
+          "id": "q2-reproduction-criteria",
+          "label": "재현 성공/실패 여부를 확인할 기준",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "재현 기준이 없으면 고쳤는지 판단하기 어렵습니다."
+        },
+        {
+          "id": "q2-post-fix-verification",
+          "label": "수정 후 실행해야 할 확인 절차",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "수정 후 확인 절차가 없으면 같은 문제가 남아도 놓칠 수 있습니다."
+        },
+        {
+          "id": "q2-payment-erd",
+          "label": "결제 도메인 전체 ERD",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "전체 ERD는 버튼 클릭 불가 버그에 비해 조사 범위가 큽니다."
+        },
+        {
+          "id": "q2-old-ab-copy",
+          "label": "6개월 전 A/B 테스트에서 사용한 버튼 문구",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "예전 버튼 문구는 클릭 불가 원인 분석과 거리가 멉니다."
+        },
+        {
+          "id": "q2-next-quarter-flow",
+          "label": "아직 확정되지 않은 다음 분기 결제 플로우 초안",
+          "kind": "pollution",
+          "points": -5,
+          "feedback": "미확정 플로우는 현재 버그 수정 판단을 오염시킵니다."
+        },
+        {
+          "id": "q2-support-ticket-dump",
+          "label": "고객센터에 들어온 결제 관련 문의 전체 원문",
+          "kind": "conditional",
+          "points": 2,
+          "feedback": "일부 힌트는 될 수 있지만 전체 원문은 노이즈가 큽니다."
+        },
+        {
+          "id": "q2-natural-fix",
+          "label": "\"사용자가 불편하지 않게 자연스럽게 고쳐줘\"라는 요구",
+          "kind": "helpful",
+          "points": 2,
+          "feedback": "방향은 맞지만 재현과 검증 기준을 대신할 수 없습니다."
+        },
+        {
+          "id": "q2-button-color-opinion",
+          "label": "버튼 색상을 더 눈에 띄게 바꾸자는 의견",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "색상 의견은 클릭 불가 버그의 원인 분석을 흐립니다."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "title": "발표자료 슬라이드 다듬기",
+      "prompt": "김아이에게 AI 하네스 강의의 첫 섹션 슬라이드를 더 이해하기 쉽게 다듬게 해야 합니다. 어떤 정보를 함께 줘야 할까요? 모두 고르세요.",
+      "choices": [
+        {
+          "id": "q3-audience-duration",
+          "label": "청중 수준과 강의 시간",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "청중 수준과 시간이 없으면 설명 난이도와 밀도를 임의로 정하게 됩니다."
+        },
+        {
+          "id": "q3-learning-goal",
+          "label": "첫 섹션에서 수강생이 얻어야 할 학습 목표",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "학습 목표가 없으면 슬라이드가 무엇을 남겨야 하는지 흐려집니다."
+        },
+        {
+          "id": "q3-core-metaphor-terms",
+          "label": "유지해야 할 핵심 비유와 용어",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "유지할 비유와 용어가 없으면 강의 흐름이 끊길 수 있습니다."
+        },
+        {
+          "id": "q3-edit-boundaries",
+          "label": "바꿔도 되는 범위와 건드리면 안 되는 범위",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "수정 범위가 없으면 필요한 구조까지 바꿀 수 있습니다."
+        },
+        {
+          "id": "q3-screen-constraints",
+          "label": "슬라이드 글자 크기와 발표 화면 제약",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "화면 제약이 없으면 강의장에서 읽기 어려운 슬라이드가 됩니다."
+        },
+        {
+          "id": "q3-review-criteria",
+          "label": "완료 후 확인할 기준: 작은 글씨, 중복, 흐름 단절 여부",
+          "kind": "required",
+          "points": 6,
+          "missingFeedback": "확인 기준이 없으면 개선 완료 여부를 판단하기 어렵습니다."
+        },
+        {
+          "id": "q3-full-script",
+          "label": "전체 4시간 강의의 모든 발표 스크립트",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "전체 스크립트는 첫 섹션 다듬기에는 과합니다."
+        },
+        {
+          "id": "q3-other-instructor-slides",
+          "label": "참고할 만한 다른 강사의 슬라이드 30장",
+          "kind": "conditional",
+          "points": 2,
+          "feedback": "참고는 될 수 있지만 현재 섹션 메시지를 흐릴 수 있습니다."
+        },
+        {
+          "id": "q3-new-practice-ideas",
+          "label": "아직 검증되지 않은 새 실습 아이디어 전체",
+          "kind": "pollution",
+          "points": -5,
+          "feedback": "검증되지 않은 새 실습은 현재 슬라이드 개선 범위를 오염시킵니다."
+        },
+        {
+          "id": "q3-easy-only",
+          "label": "\"일반인이 이해할 수 있게 쉽게\"라는 단독 지시",
+          "kind": "helpful",
+          "points": 2,
+          "feedback": "방향은 맞지만 검증 가능한 기준과 함께 있어야 합니다."
+        },
+        {
+          "id": "q3-design-moodboard",
+          "label": "발표자가 개인적으로 좋아하는 디자인 무드보드",
+          "kind": "noise",
+          "points": -4,
+          "feedback": "개인 취향 무드보드는 학습 목표보다 스타일을 앞세울 수 있습니다."
+        },
+        {
+          "id": "q3-hook-evaluation-plan",
+          "label": "이후 섹션에서 다룰 Hook과 Evaluation의 상세 구현 계획",
+          "kind": "pollution",
+          "points": -5,
+          "feedback": "이후 섹션의 상세 구현 계획은 첫 섹션 수정 범위를 벗어납니다."
+        }
+      ]
+    }
+  ]
+}

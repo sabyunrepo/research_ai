@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node lecture-deck/scripts/run-hook.js pre-handoff",
+            "command": "node /Users/byeonsanghun/goinfre/research_ai/.codex/stop-hook.js",
             "timeout": 90
           }
         ]

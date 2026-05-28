@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-ai.local/deck-harness/asset-review.schema.json",
+  "title": "Deck Asset Review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reviewedAt", "reviewMethod", "assets"],
+  "properties": {
+    "reviewedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewMethod": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assetId", "status", "score", "summary", "mustShowResults", "forbiddenElementFindings"],
+        "properties": {
+          "assetId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": ["PASS", "FAIL", "WARN"]
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mustShowResults": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "result", "evidence"],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "result": {
+                  "type": "string",
+                  "enum": ["PASS", "FAIL"]
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "forbiddenElementFindings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "observed", "evidence"],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "observed": {
+                  "type": "boolean"
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$comment": "Runtime validation in verify-deck-quality.js additionally checks assetId uniqueness and requires exactly one mustShowResults/forbiddenElementFindings row for each matching semanticRequirements label. forbiddenElementFindings.observed=true means the forbidden element is present and blocks projector PASS."
+}

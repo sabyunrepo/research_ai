@@ -1,0 +1,113 @@
+{
+  "id": "act6-stop-hook-gate",
+  "title": "실습 6: 완료 전 Stop hook 검문소를 설계합니다",
+  "type": "checklist-unlock",
+  "maxScore": 100,
+  "unlockThreshold": 100,
+  "act": 6,
+  "learning": {
+    "goal": "AI가 완료했다고 말하기 직전에 Stop hook 검문소가 완료 증거와 반복 안전장치를 확인하게 설계합니다.",
+    "task": "완료 전 자동 검문소에 필요한 Trigger, State, Stop 조건, Evidence 항목을 고르세요. 100점을 맞추면 실제 Stop hook 생성 프롬프트가 열립니다.",
+    "why": "항상 block하는 Hook은 무한 반복을 만들 수 있습니다. 미완료일 때만 막고, 완료 증거가 충분할 때는 통과시키는 구조가 필요합니다.",
+    "hints": [
+      "새 요청이 들어오면 processing 상태를 만들고, 완료 직전에는 Stop hook이 evidence를 검사한다고 생각하세요.",
+      "loop guard와 complete 상태가 없으면 검문소가 계속 같은 block을 반복할 수 있습니다.",
+      "검증 명령 결과와 통과 로그처럼 발표자가 볼 수 있는 완료 증거를 남겨야 합니다."
+    ],
+    "kindLegend": [
+      {
+        "kind": "requiredForUnlock",
+        "label": "필수",
+        "description": "검문소가 안전하게 작동하려면 반드시 필요합니다."
+      },
+      {
+        "kind": "blocksUnlock",
+        "label": "차단",
+        "description": "선택하면 무한 반복이나 잘못된 완료 판단을 만들 수 있습니다."
+      }
+    ],
+    "unlockIntro": "100점을 맞추면 Claude Code용 Stop hook 생성 프롬프트와 예제 파일 구조가 열립니다.",
+    "bridge": "이 검문소까지 연결하면 Prompt, Context, Skill, Agent, Tool, Hook이 하나의 하네스로 닫힙니다."
+  },
+  "groups": [
+    {
+      "id": "trigger",
+      "title": "언제 멈출지 정합니다",
+      "items": [
+        {
+          "id": "trigger-before-final",
+          "label": "최종 응답 직전에 실행",
+          "points": 10,
+          "requiredForUnlock": true
+        },
+        {
+          "id": "trigger-not-on-start",
+          "label": "작업 시작 때가 아니라 완료 판단 때 확인",
+          "points": 10,
+          "requiredForUnlock": true
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "title": "완료 상태를 기록합니다",
+      "items": [
+        {
+          "id": "state-read-attempt",
+          "label": "이전 검문 결과를 읽음",
+          "points": 10,
+          "requiredForUnlock": true
+        },
+        {
+          "id": "state-write-complete",
+          "label": "통과 후 완료 상태를 남김",
+          "points": 10,
+          "requiredForUnlock": true
+        }
+      ]
+    },
+    {
+      "id": "stopCondition",
+      "title": "멈춤 조건과 반복 방지를 분리합니다",
+      "items": [
+        {
+          "id": "stop-requires-incomplete",
+          "label": "미완료일 때만 block",
+          "points": 15,
+          "requiredForUnlock": true
+        },
+        {
+          "id": "stop-loop-guard",
+          "label": "반복 block을 막는 loop guard",
+          "points": 15,
+          "requiredForUnlock": true
+        },
+        {
+          "id": "stop-always-block",
+          "label": "항상 block",
+          "points": -30,
+          "blocksUnlock": true,
+          "feedback": "항상 block하면 에이전트가 완료 상태로 빠져나오지 못하고 같은 검문을 반복할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "통과 근거를 남깁니다",
+      "items": [
+        {
+          "id": "evidence-run-tests",
+          "label": "검증 명령 실행 결과 확인",
+          "points": 15,
+          "requiredForUnlock": true
+        },
+        {
+          "id": "evidence-show-logs",
+          "label": "통과 로그를 발표자가 볼 수 있게 남김",
+          "points": 15,
+          "requiredForUnlock": true
+        }
+      ]
+    }
+  ]
+}

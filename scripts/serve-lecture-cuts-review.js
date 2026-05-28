@@ -5,6 +5,14 @@ const http = require("node:http");
 const path = require("node:path");
 const vm = require("node:vm");
 
+const { createPracticeApp } = require("../practice-harness/src/create-practice-app");
+const {
+  createPracticeDefinitionStore,
+} = require("../practice-harness/src/practice-definition-store");
+const {
+  createMemoryAttemptStore,
+} = require("../practice-harness/src/stores/memory-attempt-store");
+
 const root = path.resolve(__dirname, "..");
 const deckRoot = path.join(root, "lecture-cuts");
 const slidesPath = path.join(deckRoot, "assets", "slides.js");
@@ -21,6 +29,13 @@ const presentationState = {
   revision: 0,
   updatedAt: new Date().toISOString(),
 };
+const practiceApp = createPracticeApp({
+  definitionStore: createPracticeDefinitionStore(),
+  attemptStore: createMemoryAttemptStore({
+    maxAttempts: Number(process.env.PRACTICE_MAX_ATTEMPTS || 10000),
+  }),
+  judgeProvider: "none",
+});
 
 const contentTypes = new Map([
   [".html", "text/html; charset=utf-8"],
@@ -438,27 +453,52 @@ function isPublicAudienceRequest(request) {
   return audienceOnly || Boolean(request.headers["cf-ray"] || request.headers["cf-connecting-ip"]);
 }
 
+function getRequestPathname(request) {
+  try {
+    return new URL(request.url, `http://${request.headers.host || `${host}:${port}`}`)
+      .pathname;
+  } catch {
+    return null;
+  }
+}
+
+function isPracticeApiPath(pathname) {
+  return pathname === "/api/practices" || pathname.startsWith("/api/practices/");
+}
+
+function sendText(response, statusCode, message) {
+  response.writeHead(statusCode, { "Content-Type": "text/plain; charset=utf-8" });
+  response.end(`${message}\n`);
+}
+
 function serveStatic(request, response, publicAudienceOnly = isPublicAudienceRequest(request)) {
   const url = new URL(request.url, `http://${request.headers.host || `${host}:${port}`}`);
-  const rawPathname = decodeURIComponent(url.pathname);
+  let rawPathname;
+  try {
+    rawPathname = decodeURIComponent(url.pathname);
+  } catch {
+    sendText(response, 400, "Bad request");
+    return;
+  }
   if (publicAudienceOnly && !isAudienceStaticPath(rawPathname)) {
-    response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-    response.end("Not found\n");
+    sendText(response, 404, "Not found");
     return;
   }
   const pathname = rawPathname === "/" ? (publicAudienceOnly ? "/audience.html" : "/index.html") : rawPathname;
   const requestedPath = path.normalize(path.join(deckRoot, pathname));
 
   if (!requestedPath.startsWith(deckRoot + path.sep) && requestedPath !== deckRoot) {
-    response.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
-    response.end("Forbidden\n");
+    sendText(response, 403, "Forbidden");
     return;
   }
 
   fs.readFile(requestedPath, (error, data) => {
     if (error) {
-      response.writeHead(error.code === "ENOENT" ? 404 : 500, { "Content-Type": "text/plain; charset=utf-8" });
-      response.end(error.code === "ENOENT" ? "Not found\n" : `${error.message}\n`);
+      sendText(
+        response,
+        error.code === "ENOENT" ? 404 : 500,
+        error.code === "ENOENT" ? "Not found" : error.message,
+      );
       return;
     }
     response.writeHead(200, {
@@ -471,17 +511,25 @@ function serveStatic(request, response, publicAudienceOnly = isPublicAudienceReq
 
 const server = http.createServer((request, response) => {
   const publicAudienceOnly = isPublicAudienceRequest(request);
-  if (request.method === "GET" && request.url?.startsWith("/api/audience/slides")) {
+  const pathname = getRequestPathname(request);
+  if (!pathname) {
+    sendText(response, 400, "Bad request");
+    return;
+  }
+  if (isPracticeApiPath(pathname)) {
+    practiceApp(request, response);
+    return;
+  }
+  if (request.method === "GET" && pathname === "/api/audience/slides") {
     handleAudienceSlides(request, response);
     return;
   }
-  if (request.method === "GET" && request.url?.startsWith("/api/audience/events")) {
+  if (request.method === "GET" && pathname === "/api/audience/events") {
     handleAudienceEvents(request, response);
     return;
   }
-  if (request.method === "GET" && request.url?.startsWith("/api/audience/slide/")) {
-    const url = new URL(request.url, `http://${request.headers.host || `${host}:${port}`}`);
-    const index = Number(url.pathname.split("/").pop());
+  if (request.method === "GET" && pathname.startsWith("/api/audience/slide/")) {
+    const index = Number(pathname.split("/").pop());
     sendAudienceSlide(response, index);
     return;
   }
@@ -490,23 +538,22 @@ const server = http.createServer((request, response) => {
       serveStatic(request, response, publicAudienceOnly);
       return;
     }
-    response.writeHead(405, { "Content-Type": "text/plain; charset=utf-8" });
-    response.end("Method not allowed\n");
+    sendText(response, 405, "Method not allowed");
     return;
   }
-  if (request.method === "GET" && request.url?.startsWith("/api/presentation/state")) {
+  if (request.method === "GET" && pathname === "/api/presentation/state") {
     sendJson(response, 200, { ok: true, ...presentationState });
     return;
   }
-  if (request.method === "GET" && request.url?.startsWith("/api/presentation/events")) {
+  if (request.method === "GET" && pathname === "/api/presentation/events") {
     handlePresentationEvents(request, response);
     return;
   }
-  if (request.method === "POST" && request.url?.startsWith("/api/presentation/state")) {
+  if (request.method === "POST" && pathname === "/api/presentation/state") {
     handlePresentationState(request, response);
     return;
   }
-  if (request.method === "POST" && request.url?.startsWith("/api/presenter-review/save")) {
+  if (request.method === "POST" && pathname === "/api/presenter-review/save") {
     handleSave(request, response);
     return;
   }
@@ -514,13 +561,14 @@ const server = http.createServer((request, response) => {
     serveStatic(request, response, publicAudienceOnly);
     return;
   }
-  response.writeHead(405, { "Content-Type": "text/plain; charset=utf-8" });
-  response.end("Method not allowed\n");
+  sendText(response, 405, "Method not allowed");
 });
 
 server.listen(port, host, () => {
-  console.log(`Presenter review server: http://${host}:${port}/presenter-review.html`);
-  console.log(`Speaker console: http://${host}:${port}/speaker.html`);
-  console.log(`Stage deck: http://${host}:${port}/deck.html`);
-  console.log(`Audience page: http://${host}:${port}/audience.html${audienceOnly ? " (audience-only)" : ""}`);
+  const address = server.address();
+  const actualPort = typeof address === "object" && address ? address.port : port;
+  console.log(`Presenter review server: http://${host}:${actualPort}/presenter-review.html`);
+  console.log(`Speaker console: http://${host}:${actualPort}/speaker.html`);
+  console.log(`Stage deck: http://${host}:${actualPort}/deck.html`);
+  console.log(`Audience page: http://${host}:${actualPort}/audience.html${audienceOnly ? " (audience-only)" : ""}`);
 });

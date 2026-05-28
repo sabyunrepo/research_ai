@@ -1,0 +1,117 @@
+{
+  "id": "act2-prompt-brief",
+  "title": "실습 2: 김아이에게 제대로 업무 지시하기",
+  "type": "prompt-brief",
+  "maxScore": 100,
+  "unlockThreshold": 90,
+  "act": 2,
+  "learning": {
+    "goal": "Act 1에서 실패한 반응형 카드 요청을 다시 맡깁니다. 이번에는 김아이가 추측하지 않도록 좋은 업무 지시의 6칸을 채운 프롬프트를 직접 작성합니다.",
+    "task": "강의 신청 페이지에 들어갈 반응형 카드 컴포넌트를 HTML/CSS로 만들도록 김아이에게 지시하세요.",
+    "why": "좋은 프롬프트는 긴 글이 아니라 목표, 대상, 조건, 제약, 완료 기준, 출력 형식이 빠지지 않은 업무 지시서입니다.",
+    "beforeExample": "반응형 카드 만들어줘",
+    "hints": [
+      "처음부터 정답을 베끼지 말고, 먼저 자기 말로 작성한 뒤 점수와 빠진 칸을 확인하세요.",
+      "모바일 375px과 데스크톱 1024px에서 배치가 어떻게 달라져야 하는지 적으면 반응형 조건이 분명해집니다.",
+      "hover/focus, 텍스트 넘침, HTML/CSS 코드블록처럼 완료 후 확인할 기준과 출력 형식을 같이 요청하세요."
+    ],
+    "ingredients": [
+      {
+        "label": "목표",
+        "description": "무엇을 만들거나 고칠지 한 문장으로 적습니다."
+      },
+      {
+        "label": "대상/사용 상황",
+        "description": "누가 어떤 화면에서 쓰는지 적습니다."
+      },
+      {
+        "label": "반응형 조건",
+        "description": "모바일과 데스크톱에서 달라지는 배치 기준을 적습니다."
+      },
+      {
+        "label": "제약 조건",
+        "description": "기술, 색상, 접근성, 라이브러리 사용 여부를 제한합니다."
+      },
+      {
+        "label": "완료 기준",
+        "description": "hover, focus, overflow처럼 확인해야 할 상태를 적습니다."
+      },
+      {
+        "label": "출력 형식",
+        "description": "HTML과 CSS를 어떻게 받을지 요청합니다."
+      }
+    ],
+    "retryPrompts": [
+      "점수가 낮으면 빠진 칸 하나만 먼저 보강해서 다시 실행하세요.",
+      "90점 이상이 되면 같은 요청을 더 짧고 명확하게 줄여 보는 2차 시도를 해보세요."
+    ],
+    "bridge": "다음 Act에서는 이 정보를 매번 프롬프트에 다 쓰지 않고, 김아이의 작업대에 올릴 자료로 분리합니다."
+  },
+  "criteria": [
+    {
+      "id": "goal",
+      "label": "목표",
+      "points": 20,
+      "checkId": "prompt-goal-check",
+      "patternGroups": [
+        ["카드", "컴포넌트"],
+        ["만들", "구현", "작성"]
+      ],
+      "missingFeedback": "무엇을 만들거나 구현해야 하는지 목표를 더 분명히 적어 주세요."
+    },
+    {
+      "id": "audience-context",
+      "label": "청중과 맥락",
+      "points": 15,
+      "checkId": "audience-context-check",
+      "patternGroups": [["강의", "신청", "페이지", "사용자", "수강생"]],
+      "missingFeedback": "누가 어떤 상황에서 쓰는지 강의, 신청 페이지, 사용자 같은 맥락이 필요합니다."
+    },
+    {
+      "id": "responsive-condition",
+      "label": "반응형 조건",
+      "points": 15,
+      "checkId": "responsive-condition-check",
+      "patternGroups": [
+        ["375", "모바일", "세로"],
+        ["768", "1024", "데스크톱", "grid"]
+      ],
+      "missingFeedback": "모바일과 데스크톱에서 어떻게 달라져야 하는지 반응형 조건을 적어 주세요."
+    },
+    {
+      "id": "constraints",
+      "label": "제약 조건",
+      "points": 15,
+      "checkId": "constraints-check",
+      "patternGroups": [
+        ["HTML", "CSS"],
+        ["색상", "접근성", "라이브러리", "overflow", "넘치지"]
+      ],
+      "missingFeedback": "HTML/CSS, 색상, 접근성, 라이브러리, 넘침 방지 같은 제약을 넣어 주세요."
+    },
+    {
+      "id": "completion-criteria",
+      "label": "완료 기준",
+      "points": 20,
+      "checkId": "completion-criteria-check",
+      "patternGroups": [
+        ["hover", "focus", "상태"],
+        ["확인", "검증", "넘치지"]
+      ],
+      "missingFeedback": "hover, focus, 상태 확인, 검증처럼 완료를 판단할 기준이 필요합니다."
+    },
+    {
+      "id": "output-format",
+      "label": "출력 형식",
+      "points": 15,
+      "checkId": "output-format-check",
+      "patternGroups": [
+        ["HTML과 CSS", "HTML", "CSS"],
+        ["코드블록", "나눠", "출력"]
+      ],
+      "missingFeedback": "코드블록으로 HTML과 CSS를 나눠 출력하는 형식을 요청해 주세요."
+    }
+  ],
+  "items": [],
+  "templates": []
+}

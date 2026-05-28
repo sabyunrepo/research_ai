@@ -1,0 +1,19 @@
+- generic [active] [ref=e1] [box=0,0,1024,768]:
+  - main [ref=e2] [box=0,0,1024,768]:
+    - main [ref=e4] [box=26,112,972,545]:
+      - generic [ref=e5] [box=58,140,908,226]:
+        - generic [ref=e6] [box=58,140,908,21]: Act 0 · 오늘의 약속
+        - heading "4시간 동안 김아이의 업무 환경을 하나씩 만듭니다." [level=2] [ref=e7] [box=58,170,908,42]
+        - paragraph [ref=e8] [box=58,224,908,26]: 오늘 배울 것은 프롬프트 문장 하나가 아니라, AI가 흔들려도 다시 돌아오게 만드는 업무 시스템입니다.
+        - list [ref=e9] [box=58,263,908,46]:
+          - listitem [ref=e10] [box=79,263,280,46]: 무엇을 알려줄까 / Prompt
+          - listitem [ref=e11] [box=383,263,280,46]: 어떤 자료를 올릴까 / Context
+          - listitem [ref=e12] [box=686,263,280,46]: 완료를 어떻게 확인할까 / Hook + Evaluation
+        - generic [ref=e13] [box=58,324,908,42]: "다음: 김아이에게 대충 시키면 무엇을 추측하게 될까요?"
+      - region "김아이의 업무 환경이 말풍선, 지시서, 매뉴얼, 검증 게이트, 완료 확인으로 이어지는 손그림 여정 지도" [ref=e14] [box=58,382,908,247]:
+        - figure [ref=e15] [box=58,382,908,247]:
+          - img "김아이의 업무 환경이 말풍선, 지시서, 매뉴얼, 검증 게이트, 완료 확인으로 이어지는 손그림 여정 지도" [ref=e16] [box=62,419,900,172]
+  - navigation "slide navigation" [ref=e17] [box=424,701,176,52]:
+    - button "Prev" [ref=e18] [box=435,710,53,34]
+    - generic [ref=e19] [box=498,717,27,19]: 1 / 1
+    - button "Next" [ref=e20] [box=536,710,53,34]

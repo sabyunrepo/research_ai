@@ -18,6 +18,7 @@ Do not use it when `claim-source-map.json`, `section-plan.json`, or `quality-rub
 - `generated-decks/<slug>/section-plan.json`
 - `deck-harness/quality-rubric.md`
 - `generated-decks/<slug>/glossary.json`
+- `generated-decks/<slug>/asset-pack.json`
 - `docs/harness/codex-session-decision-log.md` when working inside this project harness.
 - `docs/harness/lecture-cuts-content-inventory.md` as the golden-reference structure benchmark.
 
@@ -32,13 +33,22 @@ Do not use it when `claim-source-map.json`, `section-plan.json`, or `quality-rub
 3. Use `docs/harness/lecture-cuts-content-inventory.md` to calibrate sectioning, speaker-source separation, and benchmark quality, without copying topic-specific content.
 4. Build slide entries from the section plan and research dossier.
 5. Reference evidence only through `evidenceClaimIds`; do not embed raw URLs in slide bodies.
-6. Keep projector text concise and put explanations, caveats, and teaching notes in speaker notes.
+6. Reference visuals through `visualAssetId` when an image asset exists; do not duplicate long image prompts inside every slide.
+7. Confirm every projector-referenced `visualAssetId` has `asset-pack.json` semantic requirements: `mustShow`, `mustNotShow`, `teachingQuestions`, and `minimumPassScore`.
+8. Separate prompt-generation instructions from projector text with `xmlPrompt`:
+   - `instruction`: what the deck generator should do.
+   - `screenContent`: only what may appear on the slide.
+   - `speakerNavigation`: what helps the presenter know the speaking order.
+   - `assetRequirement`: what the visual asset must explain.
+9. Keep projector text concise and put explanations, caveats, and teaching notes in speaker notes.
 
 ## Quality Bar
 
 - Each slide has one clear message.
 - Every factual or product/API claim references valid `evidenceClaimIds`.
 - Difficult English or developer terms reference `glossaryTerms`.
+- Image assets reference valid `visualAssetId` entries from `asset-pack.json`, and those assets define visual semantic requirements.
+- XML-style boundaries prevent instructions, source text, and screen copy from being mixed.
 - Speaker notes are separate from projector content.
 - The declared section pacing fits the timebox in `topic-intake.md`.
 

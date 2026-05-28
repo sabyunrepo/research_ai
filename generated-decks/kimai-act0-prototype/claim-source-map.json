@@ -1,0 +1,28 @@
+{
+  "topic": "kimai-act0-prototype",
+  "checkedDate": "2026-05-28",
+  "claims": [
+    {
+      "id": "claim-001",
+      "claim": "lecture-cuts redesign is structured around a 4-hour general-audience workshop using the AI new hire Kimai narrative.",
+      "sourceType": "local",
+      "source": "docs/harness/lecture-cuts-redesign-master-spec.md",
+      "checkedDate": "2026-05-28",
+      "useLocation": "slide",
+      "confidence": "high",
+      "notes": "Used for Act 0 audience, duration, and Kimai framing."
+    },
+    {
+      "id": "claim-002",
+      "claim": "The deck visual direction is hand-drawn minimal with white background, black text, blue accent, and generated hand-drawn illustration assets.",
+      "sourceType": "local",
+      "source": "디자인.md",
+      "checkedDate": "2026-05-28",
+      "useLocation": "speaker-note",
+      "confidence": "high",
+      "notes": "Used for the visual style and existing hand-drawn asset requirement."
+    }
+  ],
+  "claimsToAvoidReviewed": true,
+  "claimsToAvoid": []
+}

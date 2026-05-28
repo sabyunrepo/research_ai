@@ -1,0 +1,41 @@
+<image_instruction>
+Create a single 16:9 hand-drawn lecture illustration sheet for a Korean general-audience AI workshop about a new AI employee named Kimai.
+</image_instruction>
+
+<style_constraints>
+white background; minimal black linework; one blue accent; hand-drawn lecture illustration; no photorealism; no gradients; no glossy treatment; no dark cinematic background; no decorative stock illustration
+</style_constraints>
+
+<main_character>
+Kimai is a friendly AI new employee. Kimai should be visually recognizable across all regions as a small rounded robot or office new-hire character with a simple face and one blue accent.
+</main_character>
+
+<sheet_layout>
+Top row: one wide full journey map centered on Kimai.
+Middle row: four panels for bad brief, good brief, context desk, and rule board.
+Bottom row: five panels for skill manual, agent team, tool permissions, stop hook gate, and evaluation harness.
+</sheet_layout>
+
+<top_row_journey_map>
+Show Kimai in the center. On the left, a manager gives a work request. Around Kimai, separate visible stations show: work instruction, context/materials, company rule board, skill/manual, role-split team, tools/permissions, and final verification gate with a check mark. This is not a generic icon workflow; it is Kimai's work environment.
+</top_row_journey_map>
+
+<panel_requirements>
+bad brief: vague speech bubble, confused Kimai, multiple guessed outcomes, empty completion criteria.
+good brief: structured instruction with goal, audience, constraints, completion criteria, output format, and result preview.
+context desk: desk with mixed useful, stale, conflicting, and unnecessary material cards.
+rule board: company rule board with three repeated rules and Kimai referencing it.
+skill manual: manual cards labeled trigger, procedure, example, verification.
+agent team: implementer, reviewer, researcher, and security roles with distinct information/tools.
+tool permissions: tool box, permission badges, allowed and blocked tools, lock symbol.
+stop hook gate: processing/complete status, checklist, gate, return loop if incomplete.
+evaluation harness: user input, rule rubric, LLM judge, preview, feedback report, verification log.
+</panel_requirements>
+
+<teaching_requirement>
+Slides will use text and image together. The image does not need to explain the entire lecture alone, but every region used for visual explanation must be specific enough that a presenter can point at the image elements and explain that part without reading a script.
+</teaching_requirement>
+
+<forbidden>
+Do not create generic icons without Kimai. Do not create abstract process diagrams. Do not use neon, glow, 3D, cinematic darkness, stock illustration style, or background decoration that does not teach the concept.
+</forbidden>

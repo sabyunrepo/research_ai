@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-ai.local/deck-harness/asset-pack.schema.json",
+  "title": "Deck Asset Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assets"],
+  "properties": {
+    "assets": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "status", "teachingRole", "generationPrompt", "explanationAnchors"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": ["single-image", "sprite-sheet", "crop-region", "existing-image"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["planned", "existing", "generated", "cropped"]
+          },
+          "sourcePath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceAssetId": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "crop": {
+            "type": "object",
+            "$comment": "For percent crops, runtime validation in validate-deck-contract.js enforces x + width <= 100 and y + height <= 100.",
+            "additionalProperties": false,
+            "required": ["x", "y", "width", "height", "unit"],
+            "properties": {
+              "x": { "type": "number", "minimum": 0 },
+              "y": { "type": "number", "minimum": 0 },
+              "width": { "type": "number", "exclusiveMinimum": 0 },
+              "height": { "type": "number", "exclusiveMinimum": 0 },
+              "unit": { "type": "string", "enum": ["px", "percent"] }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "unit": { "const": "percent" }
+                  },
+                  "required": ["unit"]
+                },
+                "then": {
+                  "properties": {
+                    "x": { "maximum": 100 },
+                    "y": { "maximum": 100 },
+                    "width": { "maximum": 100 },
+                    "height": { "maximum": 100 }
+                  }
+                }
+              }
+            ]
+          },
+          "teachingRole": {
+            "type": "string",
+            "minLength": 1
+          },
+          "generationPrompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "styleConstraints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "explanationAnchors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "semanticRequirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mustShow", "mustNotShow", "teachingQuestions", "minimumPassScore"],
+            "properties": {
+              "mustShow": {
+                "type": "array",
+                "minItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "mustNotShow": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "teachingQuestions": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "minimumPassScore": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$comment": "asset-pack.json stores reusable generated-image requirements, source paths, sprite/crop metadata, and teaching anchors. slide-spec.json should reference assets by visualAssetId instead of duplicating image prompts."
+}

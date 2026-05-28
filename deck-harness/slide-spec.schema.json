@@ -126,6 +126,72 @@
               "type": "string",
               "minLength": 1
             }
+          },
+          "presenterCues": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "bridge": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visualType": {
+            "type": "string",
+            "enum": ["generated-image", "existing-image", "practice-ui", "artifact", "minimal-diagram"]
+          },
+          "visualAsset": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visualAssetId": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "visualPrompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "xmlPrompt": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["instruction", "screenContent", "speakerNavigation", "assetRequirement"],
+            "properties": {
+              "instruction": {
+                "type": "string",
+                "minLength": 1
+              },
+              "screenContent": {
+                "type": "string",
+                "minLength": 1
+              },
+              "speakerNavigation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "assetRequirement": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "interaction": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "description"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["none", "tooltip", "click-reveal", "input-form", "checklist", "preview"]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           }
         }
       }
