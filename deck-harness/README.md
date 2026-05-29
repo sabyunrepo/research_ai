@@ -21,14 +21,21 @@
 6. Create `asset-pack.json` with generated-image requirements, source paths, sprite/crop metadata, teaching anchors, and semantic requirements for projector-referenced visual assets.
 7. Record stage status in `job-manifest.json`.
 8. Create `slide-spec.json`.
-9. Draft speaker script and visual system.
-10. Create `asset-review.json` after visual inspection or an equivalent image review.
-11. Build the HTML/CSS deck.
-12. Review presenter view.
-13. Run verification gates.
-14. Finish `HANDOFF.md` with commands, evidence, risks, and next prompt.
+9. Run structure validation before image generation:
+   `node deck-harness/scripts/validate-deck-contract.js --stage=structure generated-decks/<slug>`.
+10. Draft speaker script and visual system.
+11. Create or map visual assets for every projector-referenced `visualAssetId`.
+12. Create `asset-review.json` after visual inspection or an equivalent image review.
+13. Run projector validation:
+   `node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>`.
+14. Build the HTML/CSS deck.
+15. Review presenter view.
+16. Run verification gates.
+17. Finish `HANDOFF.md` with commands, evidence, risks, and next prompt.
 
 Slide HTML must not start until `research-dossier.md`, `claim-source-map.json`, `section-plan.json`, `glossary.json`, `asset-pack.json`, `job-manifest.json`, and `slide-spec.json` exist.
+
+`--stage=structure` is the pre-asset gate. It validates source, section, glossary, slide, manifest, and asset-contract shape while allowing referenced visual assets to remain `planned`. Planned projector assets are reported as WARN and still block the default projector gate. The default validation stage is `projector`; it requires every referenced `visualAssetId` to be generated, mapped, or cropped before HTML/CSS deck build.
 
 ## File Roles
 
@@ -58,12 +65,14 @@ Final projector PASS requires:
 ## Completion Conditions
 
 - Every schema JSON file parses as valid JSON.
+- `node deck-harness/scripts/validate-deck-contract.js --stage=structure generated-decks/<slug>` passes before visual generation begins.
 - The source map validates and every `evidenceClaimIds` item resolves to `claim-source-map.json`.
 - The asset pack validates and every `visualAssetId` item resolves to `asset-pack.json`.
 - Every projector-referenced `visualAssetId` has semantic requirements and a passing visual semantic review.
 - The slide spec contains no source URLs, checked dates, source types, confidence values, or source summaries.
 - Instruction prompts, screen text, speaker navigation, and asset requirements are separated with `xmlPrompt` blocks instead of being mixed in slide-visible copy.
 - Every glossary term used by a slide resolves to the glossary registry.
+- `node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>` passes before projector deck build.
 - Rendered deck and presenter review match `slide-spec.json`.
 - Desktop/mobile browser checks pass with no text overlap; overflow is blocked unless covered by a valid unexpired allowlist entry.
 - Final handoff includes commands, evidence paths, and remaining risks.

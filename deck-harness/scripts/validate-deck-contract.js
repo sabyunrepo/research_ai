@@ -29,8 +29,35 @@ const allowedCropKeys = new Set(["x", "y", "width", "height", "unit"]);
 const allowedSemanticRequirementKeys = new Set(["mustShow", "mustNotShow", "teachingQuestions", "minimumPassScore"]);
 
 function usage() {
-  console.error("Usage: node deck-harness/scripts/validate-deck-contract.js <deck-dir>");
+  console.error("Usage: node deck-harness/scripts/validate-deck-contract.js [--stage=structure|projector] <deck-dir>");
   process.exit(1);
+}
+
+function parseArgs(argv) {
+  const options = { stage: "projector", deckDirInput: null };
+  argv.forEach((arg) => {
+    if (arg.startsWith("--stage=")) {
+      options.stage = arg.slice("--stage=".length);
+      return;
+    }
+    if (arg === "--structure-only") {
+      options.stage = "structure";
+      return;
+    }
+    if (arg === "--projector") {
+      options.stage = "projector";
+      return;
+    }
+    if (!options.deckDirInput) {
+      options.deckDirInput = arg;
+      return;
+    }
+    usage();
+  });
+  if (!["structure", "projector"].includes(options.stage)) {
+    usage();
+  }
+  return options;
 }
 
 function resolveDeckDir(input) {
@@ -241,11 +268,12 @@ function validateGlossary(glossary) {
   return terms;
 }
 
-function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack) {
+function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options = {}) {
   assert(Array.isArray(spec.slides), "slide-spec.slides must be an array");
   const claimIds = new Set(claimMap.claims.map((claim) => claim.id));
   const avoidClaimIds = new Set(claimMap.claims.filter((claim) => claim.useLocation === "avoid").map((claim) => claim.id));
   const assetIds = new Set((assetPack.assets || []).map((asset) => asset.id));
+  const warnings = [];
   const slideIds = new Set();
   let minutes = 0;
   spec.slides.forEach((slide, index) => {
@@ -278,10 +306,16 @@ function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack) {
       const assetPath = path.isAbsolute(slide.visualAsset) ? slide.visualAsset : path.join(root, slide.visualAsset);
       assert(fs.existsSync(assetPath), `${slide.id}.visualAsset does not exist: ${slide.visualAsset}`);
     }
-    if (slide.visualAssetId !== undefined) {
+    if (slide.visualAssetId != null) {
       assert(assetIds.has(slide.visualAssetId), `${slide.id} references missing asset ${slide.visualAssetId}`);
       const asset = assetPack.assets.find((item) => item.id === slide.visualAssetId);
-      assert(asset.status !== "planned", `${slide.id} references planned asset ${slide.visualAssetId}; generate or map it before build`);
+      if (asset.status === "planned") {
+        if (options.stage === "structure") {
+          warnings.push(`${slide.id} references planned asset ${slide.visualAssetId}; projector build remains blocked`);
+        } else {
+          assert(false, `${slide.id} references planned asset ${slide.visualAssetId}; generate or map it before build`);
+        }
+      }
       assert(!/prototype/i.test(asset.notes || ""), `${slide.id} references prototype asset ${slide.visualAssetId}; replace it before projector build`);
       assert(
         Array.isArray(asset.explanationAnchors) && asset.explanationAnchors.length >= 3,
@@ -306,7 +340,7 @@ function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack) {
     }
     checkForbiddenFields(slide, `slide ${slide.id}`);
   });
-  return { slideIds, minutes };
+  return { slideIds, minutes, warnings };
 }
 
 function validateManifest(deckDir, manifest) {
@@ -326,7 +360,8 @@ function validateManifest(deckDir, manifest) {
 }
 
 function main() {
-  const deckDir = resolveDeckDir(process.argv[2]);
+  const options = parseArgs(process.argv.slice(2));
+  const deckDir = resolveDeckDir(options.deckDirInput);
   requiredFiles.forEach((file) => assert(fs.existsSync(path.join(deckDir, file)), `${file} is missing`));
 
   const claimMap = readJson(deckDir, "claim-source-map.json");
@@ -338,7 +373,7 @@ function main() {
 
   validateClaimMap(claimMap);
   const glossaryTerms = validateGlossary(glossary);
-  const { slideIds, minutes } = validateSlideSpec(spec, claimMap, glossaryTerms, assetPack);
+  const { slideIds, minutes, warnings } = validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options);
   validateSectionPlan(sectionPlan, slideIds);
   assert(minutes <= sectionPlan.timeboxMinutes, `slide estimated minutes ${minutes} exceed timebox ${sectionPlan.timeboxMinutes}`);
   validateManifest(deckDir, manifest);
@@ -349,12 +384,19 @@ function main() {
     assert(registry.length === spec.slides.length, `rendered slide count ${registry.length} differs from spec ${spec.slides.length}`);
   }
 
-  console.log("PASS generated deck contract");
+  console.log(`PASS generated deck contract (${options.stage})`);
   console.log(`PASS source map schema - ${claimMap.claims.length} claims`);
   console.log(`PASS slide spec schema - ${spec.slides.length} slides`);
   console.log("PASS evidence claim resolution");
   console.log("PASS glossary registry");
   console.log(`PASS asset pack - ${assetPack.assets.length} assets`);
+  if (warnings.length) {
+    console.log(`WARN planned visual assets - ${warnings.length}`);
+    warnings.slice(0, 10).forEach((warning) => console.log(`WARN ${warning}`));
+    if (warnings.length > 10) {
+      console.log(`WARN ${warnings.length - 10} more planned visual asset references`);
+    }
+  }
 }
 
 try {

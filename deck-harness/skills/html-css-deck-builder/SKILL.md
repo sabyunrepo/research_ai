@@ -38,7 +38,7 @@ Do not start slide HTML from research notes, outline text, or visual inspiration
 
 ## Procedure
 
-1. Run the contract validator first; do not write HTML until `slide-spec.json` exists and validates with its source map, section plan, glossary, asset pack, and manifest.
+1. Run the default projector contract validator first; do not write HTML until `slide-spec.json` exists, every projector-referenced `visualAssetId` is no longer `planned`, and the source map, section plan, glossary, asset pack, visual review, and manifest validate.
 2. If this is this project harness, read `docs/harness/codex-session-decision-log.md` and apply requirements for browser-rendered HTML/CSS, 1280x720 projector fit, desktop/mobile audit, custom glossary tooltip behavior, presenter review, and reproducible handoff evidence.
 3. Preserve screen/speaker separation: projector slides show concise screen text; presenter review shows `speakerNote` and `evidenceClaimIds`.
 4. Preserve instruction/screen separation: `xmlPrompt.instruction` and `xmlPrompt.assetRequirement` must not appear in projector slide HTML.

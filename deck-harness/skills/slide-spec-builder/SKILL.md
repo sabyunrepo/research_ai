@@ -55,7 +55,7 @@ Do not use it when `claim-source-map.json`, `section-plan.json`, or `quality-rub
 ## Verification
 
 - Before writing `slide-spec.json`, run `node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>` and expect FAIL because `slide-spec.json` is not yet present.
-- After writing `slide-spec.json`, run `node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>` and expect PASS after source map, section plan, glossary, and slide spec validate.
+- After writing `slide-spec.json`, run `node deck-harness/scripts/validate-deck-contract.js --stage=structure generated-decks/<slug>` and expect PASS after source map, section plan, glossary, slide spec, and asset contract shape validate. WARN lines for `planned` visual assets are acceptable at this stage and mean visual generation/review still blocks projector build.
 - `rg -n "\"evidenceClaimIds\"|\"glossaryTerms\"|\"speakerNote\"|\"section\"" generated-decks/<slug>/slide-spec.json`
 - Confirm no slide uses raw source URLs instead of `evidenceClaimIds`.
 
