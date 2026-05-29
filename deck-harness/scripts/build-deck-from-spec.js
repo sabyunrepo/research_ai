@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const crypto = require("node:crypto");
-const { spawnSync } = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
+const zlib = require("node:zlib");
 
 const root = path.resolve(__dirname, "..", "..");
 const harnessRoot = path.join(root, "deck-harness");
@@ -119,38 +119,155 @@ function sourceAssetFor(assetPack, asset) {
 }
 
 function cropImage(sourcePath, targetPath, crop) {
-  const script = `
-import sys
-from PIL import Image
-
-source, target, x, y, width, height, unit = sys.argv[1:]
-image = Image.open(source)
-img_width, img_height = image.size
-x = float(x)
-y = float(y)
-width = float(width)
-height = float(height)
-if unit == "percent":
-    left = round(img_width * x / 100)
-    top = round(img_height * y / 100)
-    right = round(img_width * (x + width) / 100)
-    bottom = round(img_height * (y + height) / 100)
-else:
-    left = round(x)
-    top = round(y)
-    right = round(x + width)
-    bottom = round(y + height)
-cropped = image.crop((left, top, right, bottom))
-cropped.save(target)
-`;
   fs.mkdirSync(path.dirname(targetPath), { recursive: true });
-  const result = spawnSync("python3", ["-c", script, sourcePath, targetPath, String(crop.x), String(crop.y), String(crop.width), String(crop.height), crop.unit], {
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-  });
-  if (result.status !== 0) {
-    throw new Error(`failed to crop visual asset: ${result.stderr || result.stdout}`);
+  const image = readPng(sourcePath);
+  const left = crop.unit === "percent" ? Math.round(image.width * crop.x / 100) : Math.round(crop.x);
+  const top = crop.unit === "percent" ? Math.round(image.height * crop.y / 100) : Math.round(crop.y);
+  const width = crop.unit === "percent" ? Math.round(image.width * crop.width / 100) : Math.round(crop.width);
+  const height = crop.unit === "percent" ? Math.round(image.height * crop.height / 100) : Math.round(crop.height);
+  if (left < 0 || top < 0 || width <= 0 || height <= 0 || left + width > image.width || top + height > image.height) {
+    throw new Error(`crop is outside image bounds for ${sourcePath}`);
   }
+  const output = Buffer.alloc(width * height * image.bytesPerPixel);
+  for (let row = 0; row < height; row += 1) {
+    const sourceStart = ((top + row) * image.width + left) * image.bytesPerPixel;
+    const targetStart = row * width * image.bytesPerPixel;
+    image.pixels.copy(output, targetStart, sourceStart, sourceStart + width * image.bytesPerPixel);
+  }
+  fs.writeFileSync(targetPath, writePng({ width, height, colorType: image.colorType, bitDepth: image.bitDepth, pixels: output }));
+}
+
+function readPng(filePath) {
+  const buffer = fs.readFileSync(filePath);
+  const signature = "89504e470d0a1a0a";
+  if (buffer.subarray(0, 8).toString("hex") !== signature) {
+    throw new Error(`unsupported image format for crop-region, expected PNG: ${filePath}`);
+  }
+  let offset = 8;
+  let header = null;
+  const idat = [];
+  while (offset < buffer.length) {
+    const length = buffer.readUInt32BE(offset);
+    const type = buffer.subarray(offset + 4, offset + 8).toString("ascii");
+    const data = buffer.subarray(offset + 8, offset + 8 + length);
+    offset += length + 12;
+    if (type === "IHDR") {
+      header = {
+        width: data.readUInt32BE(0),
+        height: data.readUInt32BE(4),
+        bitDepth: data[8],
+        colorType: data[9],
+        compression: data[10],
+        filter: data[11],
+        interlace: data[12],
+      };
+    } else if (type === "IDAT") {
+      idat.push(data);
+    } else if (type === "IEND") {
+      break;
+    }
+  }
+  if (!header) {
+    throw new Error(`PNG is missing IHDR: ${filePath}`);
+  }
+  if (header.bitDepth !== 8 || header.compression !== 0 || header.filter !== 0 || header.interlace !== 0) {
+    throw new Error(`unsupported PNG crop format for ${filePath}; expected 8-bit non-interlaced PNG`);
+  }
+  const bytesPerPixelByColorType = { 0: 1, 2: 3, 4: 2, 6: 4 };
+  const bytesPerPixel = bytesPerPixelByColorType[header.colorType];
+  if (!bytesPerPixel) {
+    throw new Error(`unsupported PNG color type ${header.colorType} for ${filePath}`);
+  }
+  const inflated = zlib.inflateSync(Buffer.concat(idat));
+  const rowBytes = header.width * bytesPerPixel;
+  const pixels = Buffer.alloc(rowBytes * header.height);
+  let sourceOffset = 0;
+  for (let y = 0; y < header.height; y += 1) {
+    const filterType = inflated[sourceOffset];
+    sourceOffset += 1;
+    const row = inflated.subarray(sourceOffset, sourceOffset + rowBytes);
+    sourceOffset += rowBytes;
+    unfilterPngRow(row, pixels, y * rowBytes, rowBytes, bytesPerPixel, filterType, y === 0 ? null : pixels.subarray((y - 1) * rowBytes, y * rowBytes));
+  }
+  return { ...header, bytesPerPixel, pixels };
+}
+
+function unfilterPngRow(row, output, targetOffset, rowBytes, bytesPerPixel, filterType, previousRow) {
+  for (let x = 0; x < rowBytes; x += 1) {
+    const left = x >= bytesPerPixel ? output[targetOffset + x - bytesPerPixel] : 0;
+    const up = previousRow ? previousRow[x] : 0;
+    const upLeft = previousRow && x >= bytesPerPixel ? previousRow[x - bytesPerPixel] : 0;
+    let value;
+    if (filterType === 0) {
+      value = row[x];
+    } else if (filterType === 1) {
+      value = row[x] + left;
+    } else if (filterType === 2) {
+      value = row[x] + up;
+    } else if (filterType === 3) {
+      value = row[x] + Math.floor((left + up) / 2);
+    } else if (filterType === 4) {
+      value = row[x] + paethPredictor(left, up, upLeft);
+    } else {
+      throw new Error(`unsupported PNG filter type ${filterType}`);
+    }
+    output[targetOffset + x] = value & 0xff;
+  }
+}
+
+function paethPredictor(left, up, upLeft) {
+  const p = left + up - upLeft;
+  const pa = Math.abs(p - left);
+  const pb = Math.abs(p - up);
+  const pc = Math.abs(p - upLeft);
+  if (pa <= pb && pa <= pc) return left;
+  if (pb <= pc) return up;
+  return upLeft;
+}
+
+function writePng(image) {
+  const bytesPerPixelByColorType = { 0: 1, 2: 3, 4: 2, 6: 4 };
+  const bytesPerPixel = bytesPerPixelByColorType[image.colorType];
+  const rowBytes = image.width * bytesPerPixel;
+  const raw = Buffer.alloc((rowBytes + 1) * image.height);
+  for (let y = 0; y < image.height; y += 1) {
+    raw[y * (rowBytes + 1)] = 0;
+    image.pixels.copy(raw, y * (rowBytes + 1) + 1, y * rowBytes, (y + 1) * rowBytes);
+  }
+  const ihdr = Buffer.alloc(13);
+  ihdr.writeUInt32BE(image.width, 0);
+  ihdr.writeUInt32BE(image.height, 4);
+  ihdr[8] = image.bitDepth;
+  ihdr[9] = image.colorType;
+  ihdr[10] = 0;
+  ihdr[11] = 0;
+  ihdr[12] = 0;
+  return Buffer.concat([
+    Buffer.from("89504e470d0a1a0a", "hex"),
+    pngChunk("IHDR", ihdr),
+    pngChunk("IDAT", zlib.deflateSync(raw)),
+    pngChunk("IEND", Buffer.alloc(0)),
+  ]);
+}
+
+function pngChunk(type, data) {
+  const typeBuffer = Buffer.from(type, "ascii");
+  const length = Buffer.alloc(4);
+  length.writeUInt32BE(data.length, 0);
+  const crc = Buffer.alloc(4);
+  crc.writeUInt32BE(crc32(Buffer.concat([typeBuffer, data])), 0);
+  return Buffer.concat([length, typeBuffer, data, crc]);
+}
+
+function crc32(buffer) {
+  let crc = 0xffffffff;
+  for (const byte of buffer) {
+    crc ^= byte;
+    for (let bit = 0; bit < 8; bit += 1) {
+      crc = crc & 1 ? (crc >>> 1) ^ 0xedb88320 : crc >>> 1;
+    }
+  }
+  return (crc ^ 0xffffffff) >>> 0;
 }
 
 function copyVisualAsset(deckDir, slide, assetPack) {
