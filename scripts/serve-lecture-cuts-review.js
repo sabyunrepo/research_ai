@@ -14,12 +14,12 @@ const {
 } = require("../practice-harness/src/stores/memory-attempt-store");
 
 const root = path.resolve(__dirname, "..");
-const deckRoot = path.join(root, "lecture-cuts");
-const slidesPath = path.join(deckRoot, "assets", "slides.js");
+const deckRegistryPath = path.join(root, "presentation-decks.json");
 const portIndex = process.argv.indexOf("--port");
 const port = Number(portIndex >= 0 ? process.argv[portIndex + 1] : process.env.PORT || 8766);
 const host = process.env.HOST || "127.0.0.1";
 const audienceOnly = process.argv.includes("--audience-only") || process.env.AUDIENCE_ONLY === "1";
+let deckSelection = resolveDeckSelection();
 const maxBodyBytes = 10 * 1024 * 1024;
 const presentationClients = new Set();
 const audienceClients = new Set();
@@ -49,6 +49,99 @@ const contentTypes = new Map([
   [".svg", "image/svg+xml; charset=utf-8"],
   [".webp", "image/webp"],
 ]);
+
+function getArgValue(name) {
+  const index = process.argv.indexOf(name);
+  return index >= 0 ? process.argv[index + 1] : "";
+}
+
+function readDeckRegistry() {
+  if (!fs.existsSync(deckRegistryPath)) {
+    return { defaultDeck: "lecture-cuts", decks: [] };
+  }
+  return JSON.parse(fs.readFileSync(deckRegistryPath, "utf8"));
+}
+
+function listDecksAndExit() {
+  const registry = readDeckRegistry();
+  const decks = Array.isArray(registry.decks) ? registry.decks : [];
+  decks.forEach((deck) => {
+    const marker = deck.id === registry.defaultDeck ? "*" : " ";
+    console.log(`${marker} ${deck.id}\t${deck.root}\t${deck.status || "unknown"}\t${deck.title || ""}`);
+  });
+  process.exit(0);
+}
+
+function normalizeDeckSelection(deck) {
+  return {
+    ...deck,
+    root: path.isAbsolute(deck.root) ? deck.root : path.join(root, deck.root),
+  };
+}
+
+function findDeckSelection(deckId) {
+  const registry = readDeckRegistry();
+  const decks = Array.isArray(registry.decks) ? registry.decks : [];
+  const deck = decks.find((entry) => entry.id === deckId);
+  if (!deck) {
+    const known = decks.map((entry) => entry.id).join(", ") || "(none)";
+    throw new Error(`Unknown presentation deck: ${deckId}. Known decks: ${known}`);
+  }
+  if (deck.status && deck.status !== "ready") {
+    throw new Error(`Presentation deck is not ready: ${deckId} (${deck.status})`);
+  }
+  return normalizeDeckSelection(deck);
+}
+
+function resolveDeckSelection() {
+  if (process.argv.includes("--list-decks")) {
+    listDecksAndExit();
+  }
+
+  const explicitRoot = getArgValue("--deck-root") || process.env.PRESENTATION_DECK_ROOT || "";
+  if (explicitRoot) {
+    const resolvedRoot = path.isAbsolute(explicitRoot) ? explicitRoot : path.join(root, explicitRoot);
+    return {
+      id: path.basename(resolvedRoot),
+      title: path.basename(resolvedRoot),
+      root: resolvedRoot,
+      contract: "custom",
+    };
+  }
+
+  const registry = readDeckRegistry();
+  const deckId = getArgValue("--deck") || process.env.PRESENTATION_DECK || registry.defaultDeck || "lecture-cuts";
+  return findDeckSelection(deckId);
+}
+
+function getDeckRoot() {
+  return deckSelection.root;
+}
+
+function getSlidesPath() {
+  return path.join(getDeckRoot(), "assets", "slides.js");
+}
+
+function validateDeckRoot() {
+  const requiredFiles = [
+    "deck.html",
+    "speaker.html",
+    "audience.html",
+    "presenter-review.html",
+    path.join("assets", "slides.js"),
+    path.join("assets", "style.css"),
+    path.join("assets", "deck.js"),
+    path.join("assets", "speaker.js"),
+    path.join("assets", "audience.js"),
+  ];
+  const deckRoot = getDeckRoot();
+  const missing = requiredFiles.filter((file) => !fs.existsSync(path.join(deckRoot, file)));
+  if (missing.length) {
+    throw new Error(`Presentation deck ${deckSelection.id} is missing runtime files: ${missing.join(", ")}`);
+  }
+}
+
+validateDeckRoot();
 
 function sendJson(response, statusCode, payload) {
   response.writeHead(statusCode, { "Content-Type": "application/json; charset=utf-8" });
@@ -95,6 +188,7 @@ function readRequestJson(request) {
 }
 
 function loadSlides() {
+  const slidesPath = getSlidesPath();
   const code = fs.readFileSync(slidesPath, "utf8");
   const context = { window: {} };
   vm.createContext(context);
@@ -106,6 +200,7 @@ function loadSlides() {
 }
 
 function writeSlides(slides) {
+  const slidesPath = getSlidesPath();
   fs.writeFileSync(slidesPath, `window.LECTURE_SLIDES = ${JSON.stringify(slides, null, 2)};\n`);
 }
 
@@ -114,6 +209,7 @@ function getSlideFile(slide) {
 }
 
 function getSlidePath(file) {
+  const deckRoot = getDeckRoot();
   const slidePath = path.normalize(path.join(deckRoot, file));
   if (!slidePath.startsWith(deckRoot + path.sep)) {
     throw new Error(`허용되지 않는 슬라이드 경로입니다: ${file}`);
@@ -295,6 +391,9 @@ function normalizeChange(change) {
 }
 
 function regenerateContract() {
+  if (deckSelection.contract !== "lecture-cuts") {
+    return "";
+  }
   const result = spawnSync(process.execPath, ["scripts/export-lecture-cuts-contract.js"], {
     cwd: root,
     encoding: "utf8",
@@ -363,7 +462,7 @@ async function handleSave(request, response) {
         savedScripts,
         savedCues,
         savedSlides,
-        regenerated: true,
+        regenerated: Boolean(exportOutput),
         exportOutput,
       });
       return;
@@ -466,6 +565,171 @@ function isPracticeApiPath(pathname) {
   return pathname === "/api/practices" || pathname.startsWith("/api/practices/");
 }
 
+function publicDeck(deck) {
+  return {
+    id: deck.id,
+    title: deck.title || deck.id,
+    root: deck.root,
+    status: deck.status || "unknown",
+    notes: deck.notes || "",
+    selected: deck.id === deckSelection.id,
+    available: (deck.status || "") === "ready",
+  };
+}
+
+function handleDeckList(response) {
+  const registry = readDeckRegistry();
+  const decks = Array.isArray(registry.decks) ? registry.decks : [];
+  sendJson(response, 200, {
+    ok: true,
+    currentDeck: deckSelection.id,
+    defaultDeck: registry.defaultDeck || "",
+    decks: decks.map(publicDeck),
+  });
+}
+
+async function handleDeckSelect(request, response) {
+  try {
+    const payload = await readRequestJson(request);
+    const deckId = String(payload.deckId || "").trim();
+    if (!deckId) {
+      throw new Error("deckId가 필요합니다.");
+    }
+    const nextDeck = findDeckSelection(deckId);
+    const previousDeckId = deckSelection.id;
+    deckSelection = nextDeck;
+    validateDeckRoot();
+    presentationState.index = 0;
+    presentationState.source = "deck-switch";
+    presentationState.revision += 1;
+    presentationState.updatedAt = new Date().toISOString();
+    broadcastPresentationState();
+    sendJson(response, 200, {
+      ok: true,
+      previousDeckId,
+      currentDeck: deckSelection.id,
+      state: presentationState,
+    });
+  } catch (error) {
+    sendJson(response, 400, { ok: false, error: error.message });
+  }
+}
+
+function sendDeckSelector(response) {
+  response.writeHead(200, {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cache-Control": "no-store",
+  });
+  response.end(`<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentation Decks</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { margin: 0; background: #f7f5f0; color: #171717; }
+    main { width: min(960px, calc(100vw - 40px)); margin: 48px auto; }
+    header { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 24px; }
+    h1 { margin: 0; font-size: 34px; letter-spacing: 0; }
+    p { line-height: 1.6; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    a, button { border: 1px solid #171717; background: #fffdf7; color: #171717; border-radius: 6px; padding: 10px 14px; font: inherit; text-decoration: none; cursor: pointer; }
+    button[disabled] { color: #8a8176; border-color: #c9c1b8; cursor: not-allowed; }
+    .deck-list { display: grid; gap: 12px; }
+    .deck-card { border: 1px solid #171717; border-radius: 8px; background: #fffdf7; padding: 18px; display: grid; gap: 12px; }
+    .deck-card[data-selected="true"] { box-shadow: inset 0 0 0 3px #f4c542; }
+    .deck-head { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
+    .deck-head h2 { margin: 0; font-size: 22px; letter-spacing: 0; }
+    .meta { margin: 0; color: #59524a; font-size: 14px; }
+    .status { white-space: nowrap; border: 1px solid #171717; border-radius: 999px; padding: 4px 10px; background: #f4c542; font-size: 13px; }
+    .status[data-ready="false"] { background: #eee8dc; color: #6f665f; border-color: #c9c1b8; }
+    #status { min-height: 24px; color: #3d332a; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>발표자료 선택</h1>
+        <p id="status">등록된 발표자료를 불러오는 중입니다.</p>
+      </div>
+      <nav class="actions" aria-label="현재 발표 화면">
+        <a href="/deck.html">발표 화면</a>
+        <a href="/speaker.html">발표자 콘솔</a>
+        <a href="/audience.html">청강자 화면</a>
+        <a href="/presenter-review.html">검토/수정</a>
+      </nav>
+    </header>
+    <section id="deckList" class="deck-list" aria-label="등록된 발표자료"></section>
+  </main>
+  <script>
+    const deckList = document.querySelector("#deckList");
+    const status = document.querySelector("#status");
+
+    async function fetchDecks() {
+      const response = await fetch("/api/decks", { cache: "no-store" });
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) throw new Error(payload.error || "덱 목록을 불러오지 못했습니다.");
+      return payload;
+    }
+
+    async function selectDeck(deckId) {
+      status.textContent = deckId + " 발표자료로 전환하는 중입니다.";
+      const response = await fetch("/api/decks/current", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ deckId }),
+      });
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) throw new Error(payload.error || "발표자료를 바꾸지 못했습니다.");
+      await render();
+      status.textContent = deckId + " 발표자료로 전환했습니다. 발표 화면과 발표자 콘솔을 새로고침하세요.";
+    }
+
+    function makeCard(deck) {
+      const card = document.createElement("article");
+      card.className = "deck-card";
+      card.dataset.selected = String(deck.selected);
+      const readyText = deck.available ? (deck.selected ? "현재 선택됨" : "사용 가능") : "준비 필요";
+      card.innerHTML = \`
+        <div class="deck-head">
+          <div>
+            <h2>\${deck.title}</h2>
+            <p class="meta">\${deck.id} · \${deck.root}</p>
+          </div>
+          <span class="status" data-ready="\${deck.available}">\${readyText}</span>
+        </div>
+        <p class="meta">\${deck.notes || ""}</p>
+      \`;
+      const actions = document.createElement("div");
+      actions.className = "actions";
+      const select = document.createElement("button");
+      select.type = "button";
+      select.textContent = deck.selected ? "선택됨" : "이 덱으로 전환";
+      select.disabled = deck.selected || !deck.available;
+      select.addEventListener("click", () => selectDeck(deck.id).catch((error) => {
+        status.textContent = error.message;
+      }));
+      actions.append(select);
+      card.append(actions);
+      return card;
+    }
+
+    async function render() {
+      const payload = await fetchDecks();
+      deckList.replaceChildren(...payload.decks.map(makeCard));
+      status.textContent = "현재 선택된 발표자료: " + payload.currentDeck;
+    }
+
+    render().catch((error) => {
+      status.textContent = error.message;
+    });
+  </script>
+</body>
+</html>`);
+}
+
 function sendText(response, statusCode, message) {
   response.writeHead(statusCode, { "Content-Type": "text/plain; charset=utf-8" });
   response.end(`${message}\n`);
@@ -485,6 +749,7 @@ function serveStatic(request, response, publicAudienceOnly = isPublicAudienceReq
     return;
   }
   const pathname = rawPathname === "/" ? (publicAudienceOnly ? "/audience.html" : "/index.html") : rawPathname;
+  const deckRoot = getDeckRoot();
   const requestedPath = path.normalize(path.join(deckRoot, pathname));
 
   if (!requestedPath.startsWith(deckRoot + path.sep) && requestedPath !== deckRoot) {
@@ -518,6 +783,18 @@ const server = http.createServer((request, response) => {
   }
   if (isPracticeApiPath(pathname)) {
     practiceApp(request, response);
+    return;
+  }
+  if (!publicAudienceOnly && request.method === "GET" && pathname === "/") {
+    sendDeckSelector(response);
+    return;
+  }
+  if (!publicAudienceOnly && request.method === "GET" && pathname === "/api/decks") {
+    handleDeckList(response);
+    return;
+  }
+  if (!publicAudienceOnly && request.method === "POST" && pathname === "/api/decks/current") {
+    handleDeckSelect(request, response);
     return;
   }
   if (request.method === "GET" && pathname === "/api/audience/slides") {
@@ -567,6 +844,8 @@ const server = http.createServer((request, response) => {
 server.listen(port, host, () => {
   const address = server.address();
   const actualPort = typeof address === "object" && address ? address.port : port;
+  console.log(`Presentation deck: ${deckSelection.id} (${path.relative(root, getDeckRoot()) || "."})`);
+  console.log(`Deck selector: http://${host}:${actualPort}/`);
   console.log(`Presenter review server: http://${host}:${actualPort}/presenter-review.html`);
   console.log(`Speaker console: http://${host}:${actualPort}/speaker.html`);
   console.log(`Stage deck: http://${host}:${actualPort}/deck.html`);

@@ -1,0 +1,21 @@
+{
+  "defaultDeck": "lecture-cuts",
+  "decks": [
+    {
+      "id": "lecture-cuts",
+      "title": "AI 에이전트 하네스 엔지니어링",
+      "root": "lecture-cuts",
+      "contract": "lecture-cuts",
+      "status": "ready",
+      "notes": "기존 4시간 발표자료. 발표 화면, 발표자 콘솔, 청강자 화면, presenter review 저장을 모두 지원한다."
+    },
+    {
+      "id": "kimai-act0-prototype",
+      "title": "김아이 Act 0 프로토타입",
+      "root": "generated-decks/kimai-act0-prototype",
+      "contract": "deck-harness",
+      "status": "deck-only",
+      "notes": "현재는 deck-harness 단독 런타임이다. 기존 발표자 콘솔/청강자 화면 계약으로 변환한 뒤 선택 실행 가능하다."
+    }
+  ]
+}

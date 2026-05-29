@@ -18,6 +18,20 @@ Node로 직접 실행:
 node scripts/serve-lecture-cuts-review.js --port 8777
 ```
 
+등록된 발표자료를 확인:
+
+```sh
+node scripts/serve-lecture-cuts-review.js --list-decks
+```
+
+특정 발표자료를 골라 실행:
+
+```sh
+node scripts/serve-lecture-cuts-review.js --deck lecture-cuts --port 8777
+```
+
+등록 파일은 `presentation-decks.json`이다. 새 발표자료도 기존 발표 인프라를 그대로 쓰려면 해당 디렉터리에 `deck.html`, `speaker.html`, `audience.html`, `presenter-review.html`, `assets/slides.js`, `assets/style.css`, `assets/deck.js`, `assets/speaker.js`, `assets/audience.js`를 갖춘 뒤 registry에 추가한다.
+
 Docker로 실행:
 
 ```sh
