@@ -6,44 +6,44 @@
   "unlockThreshold": 80,
   "act": 5,
   "learning": {
-    "goal": "Superpowers의 subagent-driven development 흐름을 바탕으로 김아이 팀을 역할, Skill, Tool 권한, 리뷰 게이트로 나눠 실행합니다.",
+    "goal": "김아이 팀을 팀장, 조사 담당, 실행 담당, 검토 담당 역할로 나누고 각자 맡을 도구와 검토 기준을 정해 로컬에서 실행합니다.",
     "task": "아래 에이전트 팀 프롬프트를 한 번에 복사해서 자기 AI 도구에 붙여 넣고, 결과 화면에는 실행 기록만 남기세요. 이 Act는 웹 점수 채점보다 로컬에서 Coordinator, Researcher, Implementer, Reviewer가 분리되는 경험이 목적입니다.",
-    "why": "Superpowers는 fresh subagent, spec compliance review, code quality review, verification-before-completion으로 역할을 분리합니다. 한 명의 김아이가 조사, 구현, 리뷰, 최종 판단을 모두 맡으면 판단이 섞이므로 역할과 도구 권한을 나눠야 합니다.",
+    "why": "한 명의 김아이가 조사, 구현, 리뷰, 최종 판단을 모두 맡으면 판단이 섞입니다. 그래서 새 담당자를 배정하듯 역할을 나누고, 요구사항 확인, 품질 검토, 완료 전 검증을 따로 확인해야 합니다.",
     "hints": [
-      "Coordinator에게 Act 4의 mini-brainstorming Skill과 Superpowers식 fresh subagent 배정을 맡기세요.",
-      "Researcher는 프로젝트 맥락 읽기만, Implementer는 구현과 테스트만, Reviewer는 spec compliance와 code quality review만 맡긴다고 제한하세요.",
-      "마지막에는 verification-before-completion 원칙처럼 검증 명령과 결과를 확인한 뒤에만 완료라고 적으세요."
+      "Coordinator에게 Act 4의 mini-brainstorming Skill과 새 담당자 배정을 맡기세요.",
+      "Researcher는 프로젝트 맥락 읽기만, Implementer는 구현과 테스트만, Reviewer는 요구사항 확인과 코드 품질 검토만 맡긴다고 제한하세요.",
+      "마지막에는 완료 전 검증 원칙처럼 검증 명령과 결과를 확인한 뒤에만 완료라고 적으세요."
     ],
     "roleTemplates": [
       {
         "role": "Coordinator",
         "title": "Coordinator prompt",
-        "body": "당신은 Coordinator입니다. Superpowers brainstorming 방식으로 목표와 제약을 먼저 정리하고 Act 4의 mini-brainstorming Skill을 적용하세요. Researcher, Implementer, Reviewer를 fresh subagent처럼 분리해 배정하되 직접 구현하지 마세요. 최종 보고에는 역할별 결과, 검증 로그, 남은 위험을 분리해 적으세요."
+        "body": "당신은 Coordinator입니다. 목표와 제약을 먼저 정리하고 Act 4의 mini-brainstorming Skill을 적용하세요. Researcher, Implementer, Reviewer를 새 담당자처럼 분리해 배정하되 직접 구현하지 마세요. 최종 보고에는 역할별 결과, 검증 로그, 남은 위험을 분리해 적으세요."
       },
       {
         "role": "Researcher",
         "title": "Researcher prompt",
-        "body": "당신은 Researcher입니다. Superpowers brainstorming의 Explore project context 단계처럼 관련 파일, 문서, 근거를 읽고 요약하세요. 구현하거나 파일을 수정하지 마세요. 불확실한 정보와 확인한 정보를 분리해 보고하세요."
+        "body": "당신은 Researcher입니다. 프로젝트 맥락 확인 단계처럼 관련 파일, 문서, 근거를 읽고 요약하세요. 구현하거나 파일을 수정하지 마세요. 불확실한 정보와 확인한 정보를 분리해 보고하세요."
       },
       {
         "role": "Implementer",
         "title": "Implementer prompt",
-        "body": "당신은 Implementer입니다. 합의된 범위의 구현과 테스트 실행만 맡습니다. 출처 신뢰도 판단, spec compliance 승인, code quality 승인은 하지 마세요. 변경 파일과 실행한 명령을 보고하세요."
+        "body": "당신은 Implementer입니다. 합의된 범위의 구현과 테스트 실행만 맡습니다. 출처 신뢰도 판단, 요구사항 승인, 코드 품질 승인은 하지 마세요. 변경 파일과 실행한 명령을 보고하세요."
       },
       {
         "role": "Reviewer",
         "title": "Reviewer prompt",
-        "body": "당신은 Reviewer입니다. Superpowers의 spec compliance review와 code quality review를 나눠 수행하세요. diff, 테스트 출력, 요구사항 충족 여부를 검토하되 직접 수정하지 말고 문제, 영향, 필요한 수정을 보고하세요."
+        "body": "당신은 Reviewer입니다. 요구사항 충족 검토와 코드 품질 검토를 나눠 수행하세요. diff, 테스트 출력, 요구사항 충족 여부를 검토하되 직접 수정하지 말고 문제, 영향, 필요한 수정을 보고하세요."
       }
     ],
     "toolPermissions": [
-      "Coordinator: Superpowers brainstorming과 fresh subagent 배정은 가능하지만 직접 구현은 금지",
-      "Researcher: read/search/browser로 Explore project context는 가능하지만 write/edit은 금지",
-      "Implementer: edit/test/build는 가능하지만 출처 판단, spec compliance 승인, code quality 승인 금지",
-      "Reviewer: read/test/review와 spec compliance/code quality review는 가능하지만 직접 수정 금지"
+      "Coordinator: mini-brainstorming과 새 담당자 배정은 가능하지만 직접 구현은 금지",
+      "Researcher: read/search/browser로 프로젝트 맥락 확인은 가능하지만 write/edit은 금지",
+      "Implementer: edit/test/build는 가능하지만 출처 판단, 요구사항 승인, 코드 품질 승인 금지",
+      "Reviewer: read/test/review와 요구사항/코드 품질 검토는 가능하지만 직접 수정 금지"
     ],
-    "teamPrompt": "한 번에 복사해서 로컬 AI 도구에 붙여 넣으세요.\n\n목표: Superpowers 방식의 김아이 에이전트 팀을 만들어 하나의 작은 작업을 역할별로 나눠 실행한다.\n\n작업 주제:\n- 지금 진행 중인 실습 페이지 또는 작은 문서/코드 개선 하나를 고른다.\n- 큰 기능을 만들지 말고, 30분 안에 검증 가능한 작은 변경만 다룬다.\n\nSuperpowers 원칙:\n- brainstorming: 구현 전에 프로젝트 맥락을 확인하고, 한 번에 하나의 질문으로 범위를 좁힌다.\n- fresh subagent: 역할마다 새 에이전트처럼 좁은 책임과 필요한 맥락만 준다.\n- spec compliance review: 요구사항을 빠뜨렸는지 먼저 검토한다.\n- code quality review: 구조, 테스트, 유지보수 위험을 별도로 검토한다.\n- verification-before-completion: 검증 명령과 결과를 확인하기 전에는 완료라고 쓰지 않는다.\n\n팀 구성:\n1. Coordinator\n   - Act 4의 mini-brainstorming Skill을 먼저 적용한다.\n   - 목표, 제약, 완료 기준을 한 문장씩 정리한다.\n   - Researcher, Implementer, Reviewer를 fresh subagent처럼 나누되 직접 구현하지 않는다.\n2. Researcher\n   - Explore project context 담당이다. 관련 파일, 문서, 근거를 읽고 요약한다.\n   - write/edit 권한 없이 read/search/browser만 사용한다고 가정한다.\n   - 불확실한 정보와 확인한 정보를 분리한다.\n3. Implementer\n   - 합의된 범위만 구현하고 테스트 또는 검증 명령을 실행한다.\n   - 출처 신뢰도 판단, spec compliance 승인, code quality 승인은 하지 않는다.\n   - 변경 파일과 실행 명령, 결과를 남긴다.\n4. Reviewer\n   - 1차로 spec compliance review를 수행한다.\n   - 2차로 code quality review를 수행한다.\n   - diff, 테스트 출력, 요구사항 충족 여부를 검토하되 직접 수정하지 않는다.\n\n진행 방식:\n- Attempt 1: 위 역할 그대로 실행한다.\n- Attempt 2: 역할 배정 또는 Tool 권한 하나를 바꿔 다시 실행한다.\n- 마지막에는 Coordinator가 역할별 결과, 검증 로그, 남은 위험을 한 화면에 정리한다.\n\n출력 형식:\n## Agent Team Runbook\n### Goal\n### Role Assignment\n### Attempt 1 Result\n### Attempt 2 Change\n### Verification Log\n### Remaining Risk\n\n금지:\n- 한 에이전트가 조사, 구현, 리뷰, 최종 승인을 모두 맡지 않는다.\n- Researcher는 구현하지 않는다.\n- Reviewer는 직접 수정하지 않는다.\n- 검증 없이 완료라고 쓰지 않는다.",
-    "runbookTemplate": "Attempt 1\nCoordinator:\n- Goal:\n- Constraints:\n- Skill: mini-brainstorming / Superpowers brainstorming\n- Fresh subagent split:\nResearcher:\n- Read:\n- Explore project context:\n- Did not implement:\nImplementer:\n- Ran local execution:\n- Changed:\n- Did not approve spec compliance or code quality:\nReviewer:\n- Spec compliance review:\n- Code quality review:\n- Did not edit:\nResult:\n- What passed:\n- What mixed roles or failed:\n\nAttempt 2\nCoordinator:\n- Changed role assignment:\n- Changed tool permission:\nResult:\n- Local execution note:\n- Verification-before-completion evidence:\nFinal report:\n- Remaining risk:",
+    "teamPrompt": "한 번에 복사해서 로컬 AI 도구에 붙여 넣으세요.\n\n목표: 김아이 에이전트 팀을 만들어 하나의 작은 작업을 역할별로 나눠 실행한다.\n\n작업 주제:\n- 지금 진행 중인 실습 페이지 또는 작은 문서/코드 개선 하나를 고른다.\n- 큰 기능을 만들지 말고, 30분 안에 검증 가능한 작은 변경만 다룬다.\n\n역할 분리 원칙:\n- brainstorming: 구현 전에 프로젝트 맥락을 확인하고, 한 번에 하나의 질문으로 범위를 좁힌다.\n- 새 담당자 배정: 역할마다 좁은 책임과 필요한 맥락만 준다.\n- 요구사항 확인: 사용자가 요구한 조건을 빠뜨렸는지 먼저 검토한다.\n- 코드 품질 검토: 구조, 테스트, 유지보수 위험을 별도로 검토한다.\n- 완료 전 검증: 검증 명령과 결과를 확인하기 전에는 완료라고 쓰지 않는다.\n\n팀 구성:\n1. Coordinator\n   - Act 4의 mini-brainstorming Skill을 먼저 적용한다.\n   - 목표, 제약, 완료 기준을 한 문장씩 정리한다.\n   - Researcher, Implementer, Reviewer를 새 담당자처럼 나누되 직접 구현하지 않는다.\n2. Researcher\n   - 프로젝트 맥락 확인 담당이다. 관련 파일, 문서, 근거를 읽고 요약한다.\n   - write/edit 권한 없이 read/search/browser만 사용한다고 가정한다.\n   - 불확실한 정보와 확인한 정보를 분리한다.\n3. Implementer\n   - 합의된 범위만 구현하고 테스트 또는 검증 명령을 실행한다.\n   - 출처 신뢰도 판단, 요구사항 승인, 코드 품질 승인은 하지 않는다.\n   - 변경 파일과 실행 명령, 결과를 남긴다.\n4. Reviewer\n   - 1차로 요구사항 충족 검토를 수행한다.\n   - 2차로 코드 품질 검토를 수행한다.\n   - diff, 테스트 출력, 요구사항 충족 여부를 검토하되 직접 수정하지 않는다.\n\n진행 방식:\n- Attempt 1: 위 역할 그대로 실행한다.\n- Attempt 2: 역할 배정 또는 Tool 권한 하나를 바꿔 다시 실행한다.\n- 마지막에는 Coordinator가 역할별 결과, 검증 로그, 남은 위험을 한 화면에 정리한다.\n\n출력 형식:\n## Agent Team Runbook\n### Goal\n### Role Assignment\n### Attempt 1 Result\n### Attempt 2 Change\n### Verification Log\n### Remaining Risk\n\n금지:\n- 한 에이전트가 조사, 구현, 리뷰, 최종 승인을 모두 맡지 않는다.\n- Researcher는 구현하지 않는다.\n- Reviewer는 직접 수정하지 않는다.\n- 검증 없이 완료라고 쓰지 않는다.",
+    "runbookTemplate": "Attempt 1\nCoordinator:\n- Goal:\n- Constraints:\n- Skill: mini-brainstorming\n- New role split:\nResearcher:\n- Read:\n- Project context checked:\n- Did not implement:\nImplementer:\n- Ran local execution:\n- Changed:\n- Did not approve requirements or code quality:\nReviewer:\n- Requirement review:\n- Code quality review:\n- Did not edit:\nResult:\n- What passed:\n- What mixed roles or failed:\n\nAttempt 2\nCoordinator:\n- Changed role assignment:\n- Changed tool permission:\nResult:\n- Local execution note:\n- Verification-before-completion evidence:\nFinal report:\n- Remaining risk:",
     "bridge": "다음 Act에서는 역할과 도구를 나눠도 완료를 말로만 믿지 않고, 자동 검문소로 증거를 확인합니다."
   },
   "roles": [
@@ -51,48 +51,6 @@
     "Researcher",
     "Implementer",
     "Reviewer"
-  ],
-  "checklist": [
-    {
-      "id": "coordinator-goal",
-      "label": "Coordinator가 먼저 목표와 제약을 정리했는가",
-      "points": 15
-    },
-    {
-      "id": "coordinator-skill",
-      "label": "Coordinator가 mini-brainstorming Skill을 적용했는가",
-      "points": 15
-    },
-    {
-      "id": "researcher-no-implementation",
-      "label": "Researcher가 구현하지 않았는가",
-      "points": 15
-    },
-    {
-      "id": "implementer-no-source-judgment",
-      "label": "Implementer가 출처 판단을 임의로 하지 않았는가",
-      "points": 10
-    },
-    {
-      "id": "reviewer-no-edit",
-      "label": "Reviewer가 직접 수정하지 않았는가",
-      "points": 15
-    },
-    {
-      "id": "separated-outputs",
-      "label": "역할별 출력이 분리되어 있는가",
-      "points": 15
-    },
-    {
-      "id": "final-risk",
-      "label": "최종 보고에 남은 위험이 포함되어 있는가",
-      "points": 5
-    },
-    {
-      "id": "attempt2-change",
-      "label": "2차 시도에서 역할이나 도구 권한을 바꿔봤는가",
-      "points": 10
-    }
   ],
   "criteria": [],
   "items": [],

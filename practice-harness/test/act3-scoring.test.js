@@ -8,6 +8,8 @@ const { scorePracticeAttempt } = require("../src/scoring-engine");
 const practicesDir = path.join(__dirname, "..", "practices");
 
 const EXPECTED_CHECK_IDS = [
+  "scope-selection-check",
+  "rule-trim-check",
   "line-limit-check",
   "core-sections-check",
   "safety-rules-check",
@@ -56,13 +58,14 @@ function goodClaudeMd() {
   ].join("\n");
 }
 
-test("act3 definition is a CLAUDE.md editing practice with an installer source", () => {
+test("act3 definition is a CLAUDE.md scope and rule-trimming practice", () => {
   const practice = loadPractice();
 
   assert.equal(practice.type, "claude-memory");
   assert.match(practice.title, /CLAUDE\.md/);
-  assert.equal(typeof practice.learning.sourceTemplate, "string");
-  assert.match(practice.learning.sourceTemplate, /Beginner Claude Code Instructions/);
+  assert.ok(Array.isArray(practice.learning.scopeOptions));
+  assert.ok(Array.isArray(practice.learning.ruleCards));
+  assert.ok(practice.learning.scopeOptions.some((option) => option.id === "project"));
   assert.match(practice.learning.task, /CLAUDE\.md/);
 });
 
@@ -72,6 +75,13 @@ test("good compressed CLAUDE.md scores at least 90 with every check passing", ()
   const result = scorePracticeAttempt({
     practice,
     input: {
+      scope: "project",
+      removedRuleIds: [
+        "remove-skip-tests",
+        "remove-old-purple",
+        "remove-api-key",
+        "remove-direct-output-edit",
+      ],
       document: goodClaudeMd(),
     },
   });
@@ -89,22 +99,29 @@ test("good compressed CLAUDE.md scores at least 90 with every check passing", ()
   );
 });
 
-test("installer source copied as final CLAUDE.md stays below unlock threshold", () => {
+test("wrong scope and untrimmed rule cards stay below unlock threshold", () => {
   const practice = loadPractice();
 
   const result = scorePracticeAttempt({
     practice,
     input: {
-      document: practice.learning.sourceTemplate,
+      scope: "global",
+      removedRuleIds: ["keep-user-changes"],
+      document: goodClaudeMd(),
     },
   });
 
   assert.ok(result.score < practice.unlockThreshold);
   assert.equal(
-    result.checks.find((check) => check.id === "installer-noise-check").status,
+    result.checks.find((check) => check.id === "scope-selection-check").status,
     "fail",
   );
-  assert.ok(result.feedback.some((item) => item.type === "installer_noise"));
+  assert.equal(
+    result.checks.find((check) => check.id === "rule-trim-check").status,
+    "fail",
+  );
+  assert.ok(result.feedback.some((item) => item.type === "wrong_scope"));
+  assert.ok(result.feedback.some((item) => item.type === "rule_overload"));
 });
 
 test("dangerous or stale memory rules lower the score and explain the risk", () => {
@@ -113,6 +130,13 @@ test("dangerous or stale memory rules lower the score and explain the risk", () 
   const result = scorePracticeAttempt({
     practice,
     input: {
+      scope: "project",
+      removedRuleIds: [
+        "remove-skip-tests",
+        "remove-old-purple",
+        "remove-api-key",
+        "remove-direct-output-edit",
+      ],
       document: [
         goodClaudeMd(),
         "",
@@ -131,10 +155,24 @@ test("dangerous or stale memory rules lower the score and explain the risk", () 
   assert.ok(result.feedback.some((item) => item.type === "dangerous_memory"));
 });
 
-test("throws invalid_input when CLAUDE.md document is blank or missing", () => {
+test("throws invalid_input when CLAUDE.md scope, removed rule ids, or document are invalid", () => {
   const practice = loadPractice();
 
-  for (const input of [undefined, null, {}, { document: "" }, { document: " \n\t" }]) {
+  for (const input of [
+    undefined,
+    null,
+    {},
+    { scope: "project", removedRuleIds: [], document: "" },
+    { scope: "project", removedRuleIds: [], document: " \n\t" },
+    { scope: "missing", removedRuleIds: [], document: goodClaudeMd() },
+    { scope: "project", removedRuleIds: "remove-skip-tests", document: goodClaudeMd() },
+    { scope: "project", removedRuleIds: ["missing-rule"], document: goodClaudeMd() },
+    {
+      scope: "project",
+      removedRuleIds: ["remove-skip-tests", "remove-skip-tests"],
+      document: goodClaudeMd(),
+    },
+  ]) {
     assert.throws(
       () =>
         scorePracticeAttempt({

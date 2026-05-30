@@ -42,11 +42,11 @@ test("lists and loads practice definitions, and rejects unknown ids", () => {
       unlockThreshold: 90,
       act: 2,
     },
-    {
-      id: "act3-context-workbench",
-      title: "실습 3: CLAUDE.md 기본 기억을 정리합니다",
-      type: "claude-memory",
-      maxScore: 100,
+      {
+        id: "act3-context-workbench",
+        title: "실습 3: CLAUDE.md 기본 기억을 정리합니다",
+        type: "claude-memory",
+        maxScore: 100,
       unlockThreshold: 90,
       act: 3,
     },

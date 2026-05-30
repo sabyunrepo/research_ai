@@ -1,6 +1,7 @@
 .playwright-mcp/
 .codex/
 .tmp/
+node_modules/
 .DS_Store
 .claude/settings.local.json
 .worktrees/

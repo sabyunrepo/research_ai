@@ -12,17 +12,6 @@ function loadPractice() {
   return store.getPractice("act5-agent-team-runbook");
 }
 
-const COMPLETE_CHECKED_IDS = [
-  "coordinator-goal",
-  "coordinator-skill",
-  "researcher-no-implementation",
-  "implementer-no-source-judgment",
-  "reviewer-no-edit",
-  "separated-outputs",
-  "final-risk",
-  "attempt2-change",
-];
-
 const COMPLETE_RECORD = `
 Attempt 1
 Coordinator:
@@ -88,7 +77,6 @@ test("complete runbook record scores at least 90 and passes deterministic checks
   const result = scorePracticeAttempt({
     practice,
     input: {
-      checkedIds: COMPLETE_CHECKED_IDS,
       record: COMPLETE_RECORD,
     },
   });
@@ -112,7 +100,7 @@ test("complete runbook record scores at least 90 and passes deterministic checks
   );
 });
 
-test("copy-paste team prompt record can unlock without checklist scoring", () => {
+test("complete team runbook record can unlock without checklist scoring", () => {
   const practice = loadPractice();
 
   const result = scorePracticeAttempt({
@@ -124,16 +112,15 @@ test("copy-paste team prompt record can unlock without checklist scoring", () =>
 
   assert.ok(result.score >= 90);
   assert.ok(result.checks.every((check) => check.status === "pass"));
-  assert.deepEqual(result.checkedIds, []);
+  assert.equal(Object.prototype.hasOwnProperty.call(result, "checkedIds"), false);
 });
 
-test("keyword soup with headings and checked ids stays below unlock threshold", () => {
+test("keyword soup with headings stays below unlock threshold", () => {
   const practice = loadPractice();
 
   const result = scorePracticeAttempt({
     practice,
     input: {
-      checkedIds: COMPLETE_CHECKED_IDS,
       record: KEYWORD_SOUP_RECORD,
     },
   });
@@ -156,11 +143,6 @@ test("single-agent record scores below 70 and fails role separation", () => {
   const result = scorePracticeAttempt({
     practice,
     input: {
-      checkedIds: [
-        "coordinator-goal",
-        "coordinator-skill",
-        "final-risk",
-      ],
       record: SINGLE_AGENT_RECORD,
     },
   });
@@ -181,7 +163,6 @@ test("short record without local execution note scores low and returns structure
   const result = scorePracticeAttempt({
     practice,
     input: {
-      checkedIds: COMPLETE_CHECKED_IDS,
       record: `
 Attempt 1
 Coordinator:
@@ -212,17 +193,14 @@ Result:
   );
 });
 
-test("throws invalid_input for blank, missing, unknown, or duplicate checked ids", () => {
+test("throws invalid_input for blank or missing records", () => {
   const practice = loadPractice();
 
   for (const input of [
     undefined,
     null,
     {},
-    { checkedIds: COMPLETE_CHECKED_IDS, record: "" },
-    { checkedIds: "coordinator-goal", record: COMPLETE_RECORD },
-    { checkedIds: ["coordinator-goal", "missing-check"], record: COMPLETE_RECORD },
-    { checkedIds: ["coordinator-goal", "coordinator-goal"], record: COMPLETE_RECORD },
+    { record: "" },
   ]) {
     assert.throws(
       () =>

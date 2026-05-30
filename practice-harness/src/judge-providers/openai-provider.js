@@ -49,7 +49,7 @@ function createOpenAiJudgeProvider({
     async evaluate({ practice, attempt, deterministicResult }) {
       const rubric = rubricForPractice(practice);
       if (!rubric) {
-        throw new Error(`No OpenAI judge rubric for practice: ${practice && practice.id}`);
+        return null;
       }
 
       const response = await fetchImpl(url, {
@@ -60,6 +60,7 @@ function createOpenAiJudgeProvider({
         },
         body: JSON.stringify({
           model,
+          temperature: 0,
           input: rubric.inputBuilder({ practice, attempt, deterministicResult }),
           text: {
             format: {
