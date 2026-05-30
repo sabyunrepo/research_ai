@@ -353,6 +353,33 @@ pre {
   line-height: 1.4;
 }
 
+.example-callout {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 2px dashed var(--line);
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+.example-callout span {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.example-callout small,
+.field-help,
+.field-error {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.field-error {
+  color: var(--danger);
+}
+
 .template-header,
 .unlock-artifact-header {
   display: flex;

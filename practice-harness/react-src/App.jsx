@@ -286,7 +286,7 @@ function StatusBanner({ submitState }) {
   if (submitState.status === "error") {
     return (
       <div className="status-banner error" role="alert">
-        <strong>제출하지 못했습니다.</strong>
+        <strong>{submitState.title || "제출하지 못했습니다."}</strong>
         <span>{submitState.message}</span>
       </div>
     );
@@ -483,7 +483,9 @@ function Act1Practice({ practice, onSubmit, disabled }) {
           ))}
         </div>
         <div className="context-step-controls">
-          <button type="button" className="secondary-button" disabled={disabled || choicePageIndex === 0} onClick={() => setChoicePageIndex(choicePageIndex - 1)}>이전</button>
+          {choicePageIndex > 0 ? (
+            <button type="button" className="secondary-button" disabled={disabled} onClick={() => setChoicePageIndex(choicePageIndex - 1)}>이전</button>
+          ) : null}
           {questionResult ? (
             <>
               {questionResult.passed && questionIndex < practice.questions.length - 1 ? (
@@ -514,41 +516,69 @@ function Act1Practice({ practice, onSubmit, disabled }) {
 function Act2Practice({ practice, onSubmit, disabled }) {
   const [step, setStep] = useState(0);
   const [prompt, setPrompt] = useState("");
+  const [promptError, setPromptError] = useState("");
+  const canSubmit = prompt.trim().length > 0;
+
+  function updatePrompt(value) {
+    setPrompt(value);
+    if (value.trim()) setPromptError("");
+  }
+
+  function submitPrompt(event) {
+    event.preventDefault();
+    if (!prompt.trim()) {
+      setPromptError("김아이에게 보낼 지시문을 입력해야 실행할 수 있습니다.");
+      return;
+    }
+    onSubmit({ prompt: prompt.trim() });
+  }
+
   return (
-    <form className="practice-form practice-form-prompt-brief" onSubmit={(event) => {
-      event.preventDefault();
-      onSubmit({ prompt: event.currentTarget.elements.prompt.value });
-    }} aria-busy={disabled}>
+    <form className="practice-form practice-form-prompt-brief" onSubmit={submitPrompt} aria-busy={disabled}>
       <section className="section-block prompt-step-slide">
         <p className="step-label">단계 {step + 1}/3 · {PROMPT_STEPS[step]}</p>
-        {step < 2 ? (
+        {step === 0 ? (
           <>
-            {step === 0 ? <LearningGuide practice={practice} /> : null}
-            {practice.learning?.ingredients ? (
-              <div className="pill-grid">
-                {practice.learning.ingredients.map((item) => (
-                  <div className="pill-card" key={item.label}>
-                    <strong><GlossaryText>{item.label}</GlossaryText></strong>
-                    <span><GlossaryText>{item.description}</GlossaryText></span>
-                  </div>
-                ))}
+            <LearningGuide practice={practice} />
+            {practice.learning?.beforeExample ? (
+              <div className="example-callout">
+                <strong>Before</strong>
+                <span><GlossaryText>{practice.learning.beforeExample}</GlossaryText></span>
+                <small><GlossaryText>이 요청은 김아이가 목표와 완료 기준을 추측하게 만듭니다.</GlossaryText></small>
               </div>
             ) : null}
+          </>
+        ) : step === 1 ? (
+          <>
+            <h2>좋은 업무 지시의 6칸</h2>
+            <p><GlossaryText>아래 6칸이 모두 들어가야 김아이가 추측하지 않고 작업할 수 있습니다.</GlossaryText></p>
+            <div className="pill-grid">
+              {(practice.learning?.ingredients || []).map((item) => (
+                <div className="pill-card" key={item.label}>
+                  <strong><GlossaryText>{item.label}</GlossaryText></strong>
+                  <span><GlossaryText>{item.description}</GlossaryText></span>
+                </div>
+              ))}
+            </div>
           </>
         ) : (
           <>
             <h2>김아이에게 보낼 지시문</h2>
             <p><GlossaryText>목표, 맥락, 제약, 완료 기준, 출력 형식을 한 번에 확인할 수 있게 적으세요.</GlossaryText></p>
             <label className="field-label" htmlFor="prompt">입력</label>
-            <textarea id="prompt" name="prompt" value={prompt} disabled={disabled} onInput={(event) => setPrompt(event.target.value)} onChange={(event) => setPrompt(event.target.value)} />
+            <textarea id="prompt" name="prompt" value={prompt} disabled={disabled} aria-describedby="prompt-help prompt-error" onInput={(event) => updatePrompt(event.target.value)} onChange={(event) => updatePrompt(event.target.value)} />
+            <p id="prompt-help" className="field-help"><GlossaryText>입력 후 실행을 누르면 검증 중 모달이 뜨고, 점수와 빠진 항목이 결과 모달에 표시됩니다.</GlossaryText></p>
+            {promptError ? <p id="prompt-error" className="field-error" role="alert">{promptError}</p> : null}
           </>
         )}
         <div className="context-step-controls">
-          <button type="button" className="secondary-button" disabled={disabled || step === 0} onClick={() => setStep(step - 1)}>이전</button>
+          {step > 0 ? (
+            <button type="button" className="secondary-button" disabled={disabled} onClick={() => setStep(step - 1)}>이전</button>
+          ) : null}
           {step < 2 ? (
             <button type="button" className="primary-button" disabled={disabled} onClick={() => setStep(step + 1)}>다음</button>
           ) : (
-            <button type="submit" className="primary-button" disabled={disabled}>{disabled ? "검사 중..." : "실행"}</button>
+            <button type="submit" className="primary-button" disabled={disabled || !canSubmit}>{disabled ? "검사 중..." : canSubmit ? "실행" : "지시문 입력 필요"}</button>
           )}
         </div>
       </section>
@@ -1068,7 +1098,11 @@ function App() {
       else setIsLoadingPractice(false);
     }).catch((error) => {
       setIsLoadingPractice(false);
-      setSubmitState({ status: "error", message: error.message });
+      setSubmitState({
+        status: "error",
+        title: "실습 화면을 불러오지 못했습니다.",
+        message: error.message,
+      });
     });
   }, []);
 
@@ -1095,7 +1129,11 @@ function App() {
       setPractice(body.practice);
     } catch (error) {
       setPractice(next);
-      setSubmitState({ status: "error", message: error.message });
+      setSubmitState({
+        status: "error",
+        title: "실습 화면을 불러오지 못했습니다.",
+        message: error.message,
+      });
     } finally {
       setIsLoadingPractice(false);
     }
@@ -1134,7 +1172,11 @@ function App() {
       setAttempt(body.attempt);
       setSubmitState({ status: "idle", message: "" });
     } catch (error) {
-      setSubmitState({ status: "error", message: error.message });
+      setSubmitState({
+        status: "error",
+        title: "제출하지 못했습니다.",
+        message: error.message,
+      });
     }
   }
 

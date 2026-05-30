@@ -44,6 +44,21 @@ function createServer({ judgeProvider = "none" } = {}) {
   return http.createServer(createPracticeStaticApp({ apiApp }));
 }
 
+function createFailingPracticeListServer() {
+  return http.createServer(createPracticeStaticApp({
+    apiApp(_request, response) {
+      response.writeHead(500, {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "no-store",
+      });
+      response.end(JSON.stringify({
+        ok: false,
+        error: { code: "forced_practice_load_failure", message: "forced practice load failure" },
+      }));
+    },
+  }));
+}
+
 function listen(server) {
   return new Promise((resolve, reject) => {
     server.once("error", reject);
@@ -387,6 +402,10 @@ async function verifyAct1RejectsRandomChoice(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/1`);
   await waitForText(client, "오늘 할 일");
   await clickButton(client, "문제 시작");
+  const firstChoicePreviousVisible = await client.evaluate(`
+    Array.from(document.querySelectorAll("button")).some((item) => item.textContent.trim() === "이전")
+  `);
+  assert.equal(firstChoicePreviousVisible, false, "Act 1 first choice page must not show a disabled previous button");
   const guideStillVisible = await client.evaluate("document.body.innerText.includes('오늘 할 일')");
   assert.equal(guideStillVisible, false, "Act 1 guide should leave the main work area after starting");
   const initialDialogVisible = await client.evaluate("Boolean(document.querySelector('[role=\"dialog\"]'))");
@@ -437,6 +456,70 @@ async function verifyAct1QuestionScoreReflectsSelections(client, baseUrl) {
     unrelatedQuestionFeedbackVisible,
     false,
     "Act 1 question modal must not show missing feedback from later unanswered questions",
+  );
+}
+
+async function verifyAct2StepUx(client, baseUrl) {
+  await navigate(client, `${baseUrl}/act/2`);
+  const entryStateJson = await client.evaluate(`
+    JSON.stringify((() => ({
+      hasErrorBanner: Boolean(document.querySelector('.status-banner.error')),
+      hasPreviousButton: Array.from(document.querySelectorAll("button")).some((item) => item.textContent.trim() === "이전"),
+      hasBeforeExample: document.body.innerText.includes("반응형 카드 만들어줘"),
+      ingredientCardCount: document.querySelectorAll(".pill-card").length,
+    }))())
+  `);
+  const entryState = JSON.parse(entryStateJson);
+  assert.equal(entryState.hasErrorBanner, false, "Act 2 direct entry must not show a stale submit error");
+  assert.equal(entryState.hasPreviousButton, false, "Act 2 first step must not show a disabled previous button");
+  assert.equal(entryState.hasBeforeExample, true, "Act 2 first step should show the before example");
+  assert.equal(entryState.ingredientCardCount, 0, "Act 2 first step must not duplicate the six-ingredient grid");
+
+  await clickButton(client, "다음");
+  const criteriaStateJson = await client.evaluate(`
+    JSON.stringify((() => ({
+      hasPreviousButton: Array.from(document.querySelectorAll("button")).some((item) => item.textContent.trim() === "이전"),
+      hasBeforeExample: document.body.innerText.includes("반응형 카드 만들어줘"),
+      ingredientCardCount: document.querySelectorAll(".pill-card").length,
+    }))())
+  `);
+  const criteriaState = JSON.parse(criteriaStateJson);
+  assert.equal(criteriaState.hasPreviousButton, true, "Act 2 second step should allow going back");
+  assert.equal(criteriaState.hasBeforeExample, false, "Act 2 second step must not repeat the before example");
+  assert.equal(criteriaState.ingredientCardCount, 6, "Act 2 second step must show exactly six ingredient cards");
+
+  await clickButton(client, "다음");
+  await waitFor(client, "document.querySelector('textarea[name=\"prompt\"]')");
+  const blankSubmitStateJson = await client.evaluate(`
+    JSON.stringify((() => {
+      const submit = Array.from(document.querySelectorAll("button")).find((item) =>
+        item.textContent.trim() === "지시문 입력 필요"
+      );
+      return {
+        hasErrorBanner: Boolean(document.querySelector('.status-banner.error')),
+        submitDisabled: Boolean(submit && submit.disabled),
+        helpVisible: document.body.innerText.includes("입력 후 실행을 누르면 검증 중 모달이 뜨고"),
+      };
+    })())
+  `);
+  const blankSubmitState = JSON.parse(blankSubmitStateJson);
+  assert.equal(blankSubmitState.hasErrorBanner, false, "Act 2 blank input must not show a backend error banner");
+  assert.equal(blankSubmitState.submitDisabled, true, "Act 2 execute button must stay disabled until prompt is non-blank");
+  assert.equal(blankSubmitState.helpVisible, true, "Act 2 final step must explain that execution opens a progress modal");
+}
+
+async function verifyInitialPracticeLoadFailureCopy(client, baseUrl) {
+  await client.send("Page.navigate", { url: `${baseUrl}/act/2` });
+  await client.waitForLoad();
+  await waitForText(client, "실습 화면을 불러오지 못했습니다.");
+  await waitForText(client, "forced practice load failure");
+  const submitFailureCopyVisible = await client.evaluate(`
+    document.body.innerText.includes("제출하지 못했습니다.")
+  `);
+  assert.equal(
+    submitFailureCopyVisible,
+    false,
+    "Initial practice load failure must not be described as a submit failure",
   );
 }
 
@@ -652,6 +735,15 @@ async function main() {
     await close(delayedServer);
   }
 
+  const failingLoadServer = createFailingPracticeListServer();
+  const failingLoadBaseUrl = await listen(failingLoadServer);
+  try {
+    await verifyInitialPracticeLoadFailureCopy(browser.client, failingLoadBaseUrl);
+    console.log("PASS initial practice load failure uses loading error copy");
+  } finally {
+    await close(failingLoadServer);
+  }
+
   const server = createServer();
   const baseUrl = await listen(server);
   try {
@@ -667,6 +759,8 @@ async function main() {
     console.log("PASS act1 rejects random/noise-only choice");
     await verifyAct1QuestionScoreReflectsSelections(browser.client, baseUrl);
     console.log("PASS act1 question score reflects selected choices");
+    await verifyAct2StepUx(browser.client, baseUrl);
+    console.log("PASS act2 step UX avoids duplicate guidance and blank-submit errors");
     await verifyGlossaryTooltip(browser.client, baseUrl);
     console.log("PASS glossary tooltips render with custom popover");
     await verifyAct2VaguePromptShowsFailure(browser.client, baseUrl);

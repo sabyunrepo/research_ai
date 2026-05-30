@@ -121,6 +121,13 @@ test("React app shows pending state and protects against duplicate submits", asy
   assert.match(source, /event\.key === "Escape"/);
   assert.match(source, /onKeyDown=\{onDialogKeyDown\}/);
   assert.match(source, /aria-describedby=\{activeTooltipId\}/);
+  assert.match(source, /김아이에게 보낼 지시문을 입력해야 실행할 수 있습니다/);
+  assert.match(source, /지시문 입력 필요/);
+  assert.match(source, /입력 후 실행을 누르면 검증 중 모달이 뜨고/);
+  assert.match(source, /practice\.learning\?\.beforeExample/);
+  assert.match(source, /step > 0/);
+  assert.match(source, /실습 화면을 불러오지 못했습니다/);
+  assert.match(source, /title: "제출하지 못했습니다."/);
 });
 
 test("React app preserves required Act 3, Act 4, Act 5, and Act 6 learner affordances", async () => {

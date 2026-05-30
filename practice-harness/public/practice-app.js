@@ -13021,7 +13021,7 @@
         if (submitState.status === "idle") return null;
         if (submitState.status === "error") {
           return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "status-banner error", role: "alert", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "\uC81C\uCD9C\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4." }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: submitState.title || "\uC81C\uCD9C\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4." }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: submitState.message })
           ] });
         }
@@ -13175,7 +13175,7 @@
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: choice.kind })
           ] }, choice.id)) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "context-step-controls", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "secondary-button", disabled: disabled || choicePageIndex === 0, onClick: () => setChoicePageIndex(choicePageIndex - 1), children: "\uC774\uC804" }),
+            choicePageIndex > 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "secondary-button", disabled, onClick: () => setChoicePageIndex(choicePageIndex - 1), children: "\uC774\uC804" }) : null,
             questionResult ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
               questionResult.passed && questionIndex < practice.questions.length - 1 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "primary-button", disabled, onClick: () => {
                 setQuestionIndex(questionIndex + 1);
@@ -13195,31 +13195,52 @@
       function Act2Practice({ practice, onSubmit, disabled }) {
         const [step, setStep] = useState(0);
         const [prompt, setPrompt] = useState("");
-        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("form", { className: "practice-form practice-form-prompt-brief", onSubmit: (event) => {
+        const [promptError, setPromptError] = useState("");
+        const canSubmit = prompt.trim().length > 0;
+        function updatePrompt(value) {
+          setPrompt(value);
+          if (value.trim()) setPromptError("");
+        }
+        function submitPrompt(event) {
           event.preventDefault();
-          onSubmit({ prompt: event.currentTarget.elements.prompt.value });
-        }, "aria-busy": disabled, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block prompt-step-slide", children: [
+          if (!prompt.trim()) {
+            setPromptError("\uAE40\uC544\uC774\uC5D0\uAC8C \uBCF4\uB0BC \uC9C0\uC2DC\uBB38\uC744 \uC785\uB825\uD574\uC57C \uC2E4\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.");
+            return;
+          }
+          onSubmit({ prompt: prompt.trim() });
+        }
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("form", { className: "practice-form practice-form-prompt-brief", onSubmit: submitPrompt, "aria-busy": disabled, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block prompt-step-slide", children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { className: "step-label", children: [
             "\uB2E8\uACC4 ",
             step + 1,
             "/3 \xB7 ",
             PROMPT_STEPS[step]
           ] }),
-          step < 2 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-            step === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LearningGuide, { practice }) : null,
-            practice.learning?.ingredients ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "pill-grid", children: practice.learning.ingredients.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "pill-card", children: [
+          step === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LearningGuide, { practice }),
+            practice.learning?.beforeExample ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "example-callout", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Before" }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: practice.learning.beforeExample }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uC774 \uC694\uCCAD\uC740 \uAE40\uC544\uC774\uAC00 \uBAA9\uD45C\uC640 \uC644\uB8CC \uAE30\uC900\uC744 \uCD94\uCE21\uD558\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4." }) })
+            ] }) : null
+          ] }) : step === 1 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uC88B\uC740 \uC5C5\uBB34 \uC9C0\uC2DC\uC758 6\uCE78" }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uC544\uB798 6\uCE78\uC774 \uBAA8\uB450 \uB4E4\uC5B4\uAC00\uC57C \uAE40\uC544\uC774\uAC00 \uCD94\uCE21\uD558\uC9C0 \uC54A\uACE0 \uC791\uC5C5\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4." }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "pill-grid", children: (practice.learning?.ingredients || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "pill-card", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: item.label }) }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: item.description }) })
-            ] }, item.label)) }) : null
+            ] }, item.label)) })
           ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uAE40\uC544\uC774\uC5D0\uAC8C \uBCF4\uB0BC \uC9C0\uC2DC\uBB38" }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uBAA9\uD45C, \uB9E5\uB77D, \uC81C\uC57D, \uC644\uB8CC \uAE30\uC900, \uCD9C\uB825 \uD615\uC2DD\uC744 \uD55C \uBC88\uC5D0 \uD655\uC778\uD560 \uC218 \uC788\uAC8C \uC801\uC73C\uC138\uC694." }) }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", { className: "field-label", htmlFor: "prompt", children: "\uC785\uB825" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", { id: "prompt", name: "prompt", value: prompt, disabled, onInput: (event) => setPrompt(event.target.value), onChange: (event) => setPrompt(event.target.value) })
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", { id: "prompt", name: "prompt", value: prompt, disabled, "aria-describedby": "prompt-help prompt-error", onInput: (event) => updatePrompt(event.target.value), onChange: (event) => updatePrompt(event.target.value) }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { id: "prompt-help", className: "field-help", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uC785\uB825 \uD6C4 \uC2E4\uD589\uC744 \uB204\uB974\uBA74 \uAC80\uC99D \uC911 \uBAA8\uB2EC\uC774 \uB728\uACE0, \uC810\uC218\uC640 \uBE60\uC9C4 \uD56D\uBAA9\uC774 \uACB0\uACFC \uBAA8\uB2EC\uC5D0 \uD45C\uC2DC\uB429\uB2C8\uB2E4." }) }),
+            promptError ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { id: "prompt-error", className: "field-error", role: "alert", children: promptError }) : null
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "context-step-controls", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "secondary-button", disabled: disabled || step === 0, onClick: () => setStep(step - 1), children: "\uC774\uC804" }),
-            step < 2 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "primary-button", disabled, onClick: () => setStep(step + 1), children: "\uB2E4\uC74C" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "submit", className: "primary-button", disabled, children: disabled ? "\uAC80\uC0AC \uC911..." : "\uC2E4\uD589" })
+            step > 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "secondary-button", disabled, onClick: () => setStep(step - 1), children: "\uC774\uC804" }) : null,
+            step < 2 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "primary-button", disabled, onClick: () => setStep(step + 1), children: "\uB2E4\uC74C" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "submit", className: "primary-button", disabled: disabled || !canSubmit, children: disabled ? "\uAC80\uC0AC \uC911..." : canSubmit ? "\uC2E4\uD589" : "\uC9C0\uC2DC\uBB38 \uC785\uB825 \uD544\uC694" })
           ] })
         ] }) });
       }
@@ -13645,7 +13666,11 @@
             else setIsLoadingPractice(false);
           }).catch((error) => {
             setIsLoadingPractice(false);
-            setSubmitState({ status: "error", message: error.message });
+            setSubmitState({
+              status: "error",
+              title: "\uC2E4\uC2B5 \uD654\uBA74\uC744 \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.",
+              message: error.message
+            });
           });
         }, []);
         useEffect(() => {
@@ -13670,7 +13695,11 @@
             setPractice(body.practice);
           } catch (error) {
             setPractice(next);
-            setSubmitState({ status: "error", message: error.message });
+            setSubmitState({
+              status: "error",
+              title: "\uC2E4\uC2B5 \uD654\uBA74\uC744 \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.",
+              message: error.message
+            });
           } finally {
             setIsLoadingPractice(false);
           }
@@ -13707,7 +13736,11 @@
             setAttempt(body.attempt);
             setSubmitState({ status: "idle", message: "" });
           } catch (error) {
-            setSubmitState({ status: "error", message: error.message });
+            setSubmitState({
+              status: "error",
+              title: "\uC81C\uCD9C\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.",
+              message: error.message
+            });
           }
         }
         const currentKey = useMemo(() => practice?.id || "none", [practice?.id]);
