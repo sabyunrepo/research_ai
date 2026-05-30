@@ -123,7 +123,7 @@ test("React app shows pending state and protects against duplicate submits", asy
   assert.match(source, /aria-describedby=\{activeTooltipId\}/);
 });
 
-test("React app preserves required Act 3, Act 5, and Act 6 learner affordances", async () => {
+test("React app preserves required Act 3, Act 4, Act 5, and Act 6 learner affordances", async () => {
   const source = await fs.readFile(REACT_SOURCE_PATH, "utf8");
 
   assert.match(source, /sourceTemplate/);
@@ -135,6 +135,9 @@ test("React app preserves required Act 3, Act 5, and Act 6 learner affordances",
   assert.match(source, /CLAUDE\.md 적용 범위 선택/);
   assert.match(source, /과한 내규 제거/);
   assert.match(source, /프로젝트 루트에 남길 CLAUDE\.md 초안/);
+  assert.match(source, /learning\.starterTemplate/);
+  assert.match(source, /기본 제공 Skill 템플릿/);
+  assert.match(source, /템플릿 복사/);
   assert.match(source, /learning\.teamPrompt/);
   assert.match(source, /roleTemplates/);
   assert.match(source, /toolPermissions/);

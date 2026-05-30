@@ -13237,6 +13237,7 @@
         }, children: state === "copied" ? "\uBCF5\uC0AC\uB428" : state === "failed" ? "\uBCF5\uC0AC \uC2E4\uD328" : children });
       }
       function TextPractice({ practice, fieldName, onSubmit, disabled }) {
+        const learning = practice.learning || {};
         const [value, setValue] = useState("");
         return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", { className: `practice-form practice-form-${practice.type}`, onSubmit: (event) => {
           event.preventDefault();
@@ -13244,6 +13245,14 @@
           onSubmit({ [fieldName]: submittedValue });
         }, "aria-busy": disabled, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LearningGuide, { practice }),
+          learning.starterTemplate ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block template-block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "template-header", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uAE30\uBCF8 \uC81C\uACF5 Skill \uD15C\uD50C\uB9BF" }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CopyButton, { text: learning.starterTemplate, children: "\uD15C\uD50C\uB9BF \uBCF5\uC0AC" })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uC774 \uD15C\uD50C\uB9BF\uC740 \uCD9C\uBC1C\uC810\uC785\uB2C8\uB2E4. \uB300\uAD04\uD638 placeholder\uB97C \uC2E4\uC81C \uADDC\uCE59\uACFC \uCD9C\uB825 \uD615\uC2DD\uC73C\uB85C \uBC14\uAFD4\uC57C \uD1B5\uACFC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4." }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", { children: learning.starterTemplate })
+          ] }) : null,
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "Skill \uBB38\uC11C \uCD08\uC548" }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", { className: "field-label", htmlFor: fieldName, children: "\uC785\uB825" }),

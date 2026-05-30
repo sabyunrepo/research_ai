@@ -336,6 +336,43 @@ async function checkValues(client, name, values) {
 async function expectScore(client, scoreText) {
   await waitFor(client, `document.querySelector(".score-meter strong") && document.querySelector(".score-meter strong").textContent.trim() === ${JSON.stringify(scoreText)}`);
   await waitFor(client, "Boolean(document.querySelector('#result-dialog[role=\"dialog\"]'))");
+  await assertResultModalContract(client, scoreText);
+}
+
+async function assertResultModalContract(client, scoreText) {
+  const summaryJson = await client.evaluate(`
+    JSON.stringify((() => {
+      const dialog = document.querySelector('#result-dialog[role="dialog"]');
+      const meter = document.querySelector('#score-meter');
+      const retryHeading = Array.from(document.querySelectorAll('.result-section h3')).find((heading) =>
+        heading.textContent.trim() === '다시 시도할 때'
+      );
+      return {
+        dialogVisible: Boolean(dialog),
+        scoreText: meter?.querySelector('strong')?.textContent.trim() || '',
+        scoreClassName: meter?.className || '',
+        hasNextAction: Boolean(dialog && dialog.innerText.includes('다음 행동')),
+        hasMissingItems: Boolean(dialog && dialog.innerText.includes('빠진 항목')),
+        hasRetrySection: Boolean(retryHeading),
+        hasInlineResult: Boolean(document.querySelector('.inline-result')),
+        hasNextPracticeCopy: Boolean(dialog && dialog.innerText.includes('다음 실습')),
+      };
+    })())
+  `);
+  const summary = JSON.parse(summaryJson);
+  assert.equal(summary.dialogVisible, true, "result must be shown in a modal dialog");
+  assert.equal(summary.scoreText, scoreText, "result modal score must match expected score");
+  assert.equal(summary.hasNextAction, true, "result modal must explain the next action");
+  assert.equal(summary.hasMissingItems, true, "result modal must show missing-item feedback");
+  assert.equal(summary.hasInlineResult, false, "result must not also render as an inline result");
+  assert.equal(summary.hasNextPracticeCopy, false, "result modal must not expose next-practice navigation");
+  if (scoreText === "100점") {
+    assert.match(summary.scoreClassName, /pass/, "100점 result must use pass styling");
+    assert.equal(summary.hasRetrySection, false, "passing result must not show retry instructions");
+  } else {
+    assert.match(summary.scoreClassName, /fail/, "non-100 result must use fail styling");
+    assert.equal(summary.hasRetrySection, true, "non-100 result must show retry instructions");
+  }
 }
 
 async function expectResultIncludes(client, scoreText, text) {
@@ -493,6 +530,18 @@ async function verifyAct3WrongScopeShowsFailure(client, baseUrl) {
   await expectResultIncludes(client, "80점", "점수가 부족합니다.");
 }
 
+async function verifyAct4StarterTemplateShowsFailure(client, baseUrl) {
+  await navigate(client, `${baseUrl}/act/4`);
+  const starterTemplate = await client.evaluate(`
+    document.querySelector('.template-block pre')?.textContent || ''
+  `);
+  assert.match(starterTemplate, /name: mini-brainstorming/);
+  await fillTextarea(client, "document", starterTemplate);
+  await submitForm(client);
+  await expectResultIncludes(client, "89점", "점수가 부족합니다.");
+  await waitForText(client, "placeholder");
+}
+
 async function verifyAct5SingleAgentShowsFailure(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/5`);
   await fillTextarea(client, "record", `
@@ -624,6 +673,8 @@ async function main() {
     console.log("PASS act2 vague prompt shows locked failure result");
     await verifyAct3WrongScopeShowsFailure(browser.client, baseUrl);
     console.log("PASS act3 wrong scope shows locked failure result");
+    await verifyAct4StarterTemplateShowsFailure(browser.client, baseUrl);
+    console.log("PASS act4 starter template shows locked failure result");
     await verifyAct5SingleAgentShowsFailure(browser.client, baseUrl);
     console.log("PASS act5 single-agent record shows locked failure result");
     await verifyAct6MissingLoopGuardShowsFailure(browser.client, baseUrl);

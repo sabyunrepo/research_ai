@@ -575,6 +575,7 @@ function CopyButton({ text, children }) {
 }
 
 function TextPractice({ practice, fieldName, onSubmit, disabled }) {
+  const learning = practice.learning || {};
   const [value, setValue] = useState("");
   return (
     <form className={`practice-form practice-form-${practice.type}`} onSubmit={(event) => {
@@ -583,6 +584,16 @@ function TextPractice({ practice, fieldName, onSubmit, disabled }) {
       onSubmit({ [fieldName]: submittedValue });
     }} aria-busy={disabled}>
       <LearningGuide practice={practice} />
+      {learning.starterTemplate ? (
+        <section className="section-block template-block">
+          <div className="template-header">
+            <h2>기본 제공 Skill 템플릿</h2>
+            <CopyButton text={learning.starterTemplate}>템플릿 복사</CopyButton>
+          </div>
+          <p><GlossaryText>이 템플릿은 출발점입니다. 대괄호 placeholder를 실제 규칙과 출력 형식으로 바꿔야 통과할 수 있습니다.</GlossaryText></p>
+          <pre>{learning.starterTemplate}</pre>
+        </section>
+      ) : null}
       <section className="section-block">
         <h2>Skill 문서 초안</h2>
         <label className="field-label" htmlFor={fieldName}>입력</label>
