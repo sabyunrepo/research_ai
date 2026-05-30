@@ -13055,10 +13055,11 @@
       }
       function Heading({ practice }) {
         if (!practice) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { id: "practice-heading", className: "practice-heading" });
+        const isLocalPromptOnly = practice.learning?.singlePromptOnly;
         return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { id: "practice-heading", className: "practice-heading", children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: `Act ${practice.act} \xB7 ${practice.type}` }) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: practice.title }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: `\uD1B5\uACFC \uAE30\uC900 ${percentScore(practice.unlockThreshold, practice.maxScore)}\uC810. \uAC01 \uC2E4\uC2B5\uC740 \uAC15\uC758 \uB4A4\uC5D0 \uAC1C\uBCC4\uB85C \uD480 \uC218 \uC788\uACE0, Act 1\uC740 \uBB38\uC81C\uBCC4\uB85C \uACB0\uACFC\uB97C \uD655\uC778\uD569\uB2C8\uB2E4.` }) })
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: isLocalPromptOnly ? "\uC774 \uC2E4\uC2B5\uC740 \uC6F9\uC5D0\uC11C \uCC44\uC810\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uD504\uB86C\uD504\uD2B8\uB97C \uBCF5\uC0AC\uD574 \uB85C\uCEEC AI \uB3C4\uAD6C\uC5D0\uC11C \uC9C1\uC811 \uC2E4\uD589\uD558\uACE0 \uACB0\uACFC\uB97C \uD655\uC778\uD558\uC138\uC694." : `\uD1B5\uACFC \uAE30\uC900 ${percentScore(practice.unlockThreshold, practice.maxScore)}\uC810. \uAC01 \uC2E4\uC2B5\uC740 \uAC15\uC758 \uB4A4\uC5D0 \uAC1C\uBCC4\uB85C \uD480 \uC218 \uC788\uACE0, Act 1\uC740 \uBB38\uC81C\uBCC4\uB85C \uACB0\uACFC\uB97C \uD655\uC778\uD569\uB2C8\uB2E4.` }) })
         ] });
       }
       function LearningGuide({ practice }) {
@@ -13320,6 +13321,22 @@
       function LocalRunbookPractice({ practice, onSubmit, disabled }) {
         const learning = practice.learning || {};
         const [record, setRecord] = useState(learning.runbookTemplate || "");
+        if (learning.singlePromptOnly) {
+          return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "practice-form practice-form-local-runbook", "aria-busy": disabled, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LearningGuide, { practice }),
+            learning.teamPrompt ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block template-block single-prompt-block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "template-header", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uD558\uB098\uC758 \uC2E4\uD589 \uD504\uB86C\uD504\uD2B8" }),
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CopyButton, { text: learning.teamPrompt, children: "\uD504\uB86C\uD504\uD2B8 \uBCF5\uC0AC" })
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", { children: learning.teamPrompt })
+            ] }) : null,
+            learning.localTestGuide?.length ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uB85C\uCEEC\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uD558\uB294 \uC21C\uC11C" }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", { className: "permission-list", children: learning.localTestGuide.map((step) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: step }) }, step)) })
+            ] }) : null
+          ] });
+        }
         return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", { className: "practice-form practice-form-local-runbook", onSubmit: (event) => {
           event.preventDefault();
           onSubmit({ record: event.currentTarget.elements.record.value });

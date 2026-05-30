@@ -331,11 +331,14 @@ function isBlockingChoice(choice) {
 
 function Heading({ practice }) {
   if (!practice) return <div id="practice-heading" className="practice-heading" />;
+  const isLocalPromptOnly = practice.learning?.singlePromptOnly;
   return (
     <div id="practice-heading" className="practice-heading">
       <p><GlossaryText>{`Act ${practice.act} · ${practice.type}`}</GlossaryText></p>
       <h1><GlossaryText>{practice.title}</GlossaryText></h1>
-      <p><GlossaryText>{`통과 기준 ${percentScore(practice.unlockThreshold, practice.maxScore)}점. 각 실습은 강의 뒤에 개별로 풀 수 있고, Act 1은 문제별로 결과를 확인합니다.`}</GlossaryText></p>
+      <p><GlossaryText>{isLocalPromptOnly
+        ? "이 실습은 웹에서 채점하지 않습니다. 프롬프트를 복사해 로컬 AI 도구에서 직접 실행하고 결과를 확인하세요."
+        : `통과 기준 ${percentScore(practice.unlockThreshold, practice.maxScore)}점. 각 실습은 강의 뒤에 개별로 풀 수 있고, Act 1은 문제별로 결과를 확인합니다.`}</GlossaryText></p>
     </div>
   );
 }
@@ -680,6 +683,30 @@ function ClaudeMemoryPractice({ practice, onSubmit, disabled }) {
 function LocalRunbookPractice({ practice, onSubmit, disabled }) {
   const learning = practice.learning || {};
   const [record, setRecord] = useState(learning.runbookTemplate || "");
+  if (learning.singlePromptOnly) {
+    return (
+      <section className="practice-form practice-form-local-runbook" aria-busy={disabled}>
+        <LearningGuide practice={practice} />
+        {learning.teamPrompt ? (
+          <section className="section-block template-block single-prompt-block">
+            <div className="template-header">
+              <h2>하나의 실행 프롬프트</h2>
+              <CopyButton text={learning.teamPrompt}>프롬프트 복사</CopyButton>
+            </div>
+            <pre>{learning.teamPrompt}</pre>
+          </section>
+        ) : null}
+        {learning.localTestGuide?.length ? (
+          <section className="section-block">
+            <h2>로컬에서 테스트하는 순서</h2>
+            <ol className="permission-list">
+              {learning.localTestGuide.map((step) => <li key={step}><GlossaryText>{step}</GlossaryText></li>)}
+            </ol>
+          </section>
+        ) : null}
+      </section>
+    );
+  }
   return (
     <form className="practice-form practice-form-local-runbook" onSubmit={(event) => {
       event.preventDefault();

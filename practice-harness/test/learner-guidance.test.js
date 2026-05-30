@@ -67,28 +67,24 @@ test("Act 3 exposes the provided CLAUDE.md source and split guidance", () => {
   );
 });
 
-test("Act 5 exposes local execution templates, tool permissions, and runbook shape", () => {
+test("Act 5 exposes a single local agent-team prompt", () => {
   const practice = loadPractice("act5-agent-team-runbook");
 
   assertLearningBasics(practice);
-  assert.match(practice.learning.goal, /로컬|역할|Tool|Skill/);
-  assert.ok(Array.isArray(practice.learning.roleTemplates));
-  assert.deepEqual(
-    practice.learning.roleTemplates.map((item) => item.role),
-    ["Coordinator", "Researcher", "Implementer", "Reviewer"],
-  );
-  assert.ok(Array.isArray(practice.learning.toolPermissions));
-  assert.ok(practice.learning.toolPermissions.length >= 4);
+  assert.match(practice.learning.goal, /하나의 프롬프트|로컬/);
+  assert.equal(practice.learning.singlePromptOnly, true);
   assert.equal(typeof practice.learning.teamPrompt, "string");
-  assert.match(practice.learning.teamPrompt, /한 번에 복사/);
+  assert.match(practice.learning.teamPrompt, /김아이 에이전트팀 실행 프롬프트/);
   assert.match(practice.learning.teamPrompt, /Coordinator/);
   assert.match(practice.learning.teamPrompt, /Researcher/);
   assert.match(practice.learning.teamPrompt, /Implementer/);
   assert.match(practice.learning.teamPrompt, /Reviewer/);
-  assert.match(practice.learning.teamPrompt, /역할 분리|새 담당자/);
+  assert.match(practice.learning.teamPrompt, /작업 주제/);
   assert.match(practice.learning.teamPrompt, /요구사항 확인|요구사항 충족/);
   assert.match(practice.learning.teamPrompt, /code quality|코드 품질/i);
-  assert.match(practice.learning.teamPrompt, /verification-before-completion|완료 전 검증/i);
+  assert.match(practice.learning.teamPrompt, /완료.*검증|검증.*완료/i);
+  assert.ok(Array.isArray(practice.learning.localTestGuide));
+  assert.ok(practice.learning.localTestGuide.length >= 5);
 });
 
 test("Act 4 exposes Skill-writing goal, hints, and starter template", () => {

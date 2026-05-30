@@ -88,6 +88,8 @@ test("React app decomposes the learner UI into act-specific components", async (
   assert.doesNotMatch(source, /title=\{/);
   assert.match(source, /function PracticeNavigator/);
   assert.match(source, /function LearningGuide/);
+  assert.match(source, /singlePromptOnly/);
+  assert.match(source, /웹에서 채점하지 않습니다/);
   assert.match(source, /function isRequiredChoice/);
   assert.match(source, /function isBlockingChoice/);
   assert.match(source, /function Act1Practice/);
@@ -145,12 +147,11 @@ test("React app preserves required Act 3, Act 4, Act 5, and Act 6 learner afford
   assert.match(source, /기본 제공 Skill 템플릿/);
   assert.match(source, /템플릿 복사/);
   assert.match(source, /learning\.teamPrompt/);
-  assert.match(source, /roleTemplates/);
-  assert.match(source, /toolPermissions/);
-  assert.match(source, /runbookTemplate/);
-  assert.match(source, /팀 프롬프트 복사/);
-  assert.match(source, /역할별 프롬프트 템플릿/);
-  assert.match(source, /Skill 배정과 Tool 권한 안내/);
+  assert.match(source, /singlePromptOnly/);
+  assert.match(source, /하나의 실행 프롬프트/);
+  assert.match(source, /프롬프트 복사/);
+  assert.match(source, /로컬에서 테스트하는 순서/);
+  assert.match(source, /localTestGuide/);
   assert.match(source, /practice\.groups \|\|/);
   assert.match(source, /unlockArtifact/);
   assert.match(source, /프롬프트 복사/);

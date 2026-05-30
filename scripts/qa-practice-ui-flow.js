@@ -634,18 +634,32 @@ async function verifyAct4StarterTemplateShowsFailure(client, baseUrl) {
   await waitForText(client, "placeholder");
 }
 
-async function verifyAct5SingleAgentShowsFailure(client, baseUrl) {
+async function verifyAct5PresentsSingleLocalPrompt(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/5`);
-  await fillTextarea(client, "record", `
-Attempt 1
-Coordinator:
-- I gave one agent every responsibility: research, implementation, source judgment, review, and final report.
-- The same agent edited files, decided whether sources were reliable, ran no separate reviewer step, and wrote all outputs together.
-Result:
-- One person handled everything without separated role outputs.
-`);
-  await submitForm(client);
-  await expectResultIncludes(client, "10점", "점수가 부족합니다.");
+  await waitForText(client, "하나의 실행 프롬프트");
+  await waitForText(client, "김아이 에이전트팀 실행 프롬프트");
+  await waitForText(client, "로컬에서 테스트하는 순서");
+  const act5StateJson = await client.evaluate(`
+    JSON.stringify((() => ({
+      promptCopyButtons: Array.from(document.querySelectorAll("button")).filter((button) =>
+        button.textContent.trim() === "프롬프트 복사"
+      ).length,
+      hasRecordTextarea: Boolean(document.querySelector('textarea[name="record"]')),
+      hasSubmitButton: Boolean(document.querySelector('form button[type="submit"]')),
+      hasRoleTemplateCards: document.body.innerText.includes("역할별 프롬프트 템플릿"),
+      hasToolPermissionBlock: document.body.innerText.includes("Skill 배정과 Tool 권한 안내"),
+      hasScoreHeader: document.querySelector("#practice-heading")?.innerText.includes("통과 기준") || false,
+      hasLocalHeader: document.querySelector("#practice-heading")?.innerText.includes("웹에서 채점하지 않습니다") || false,
+    }))())
+  `);
+  const act5State = JSON.parse(act5StateJson);
+  assert.equal(act5State.promptCopyButtons, 1, "Act 5 should expose exactly one copyable team prompt");
+  assert.equal(act5State.hasRecordTextarea, false, "Act 5 should not ask for a web execution record");
+  assert.equal(act5State.hasSubmitButton, false, "Act 5 should be presentation-only in the web UI");
+  assert.equal(act5State.hasRoleTemplateCards, false, "Act 5 should not split the single prompt into role cards");
+  assert.equal(act5State.hasToolPermissionBlock, false, "Act 5 should keep tool rules inside the single prompt");
+  assert.equal(act5State.hasScoreHeader, false, "Act 5 heading must not show score-based completion copy");
+  assert.equal(act5State.hasLocalHeader, true, "Act 5 heading must explain local execution instead of web scoring");
 }
 
 async function verifyAct6MissingLoopGuardShowsFailure(client, baseUrl) {
@@ -711,12 +725,7 @@ async function completeAct4(client, baseUrl) {
 
 async function completeAct5(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/5`);
-  await waitForText(client, "역할별 프롬프트 템플릿");
-  await waitForText(client, "Skill 배정과 Tool 권한 안내");
-  await waitForText(client, "실행 기록 템플릿");
-  await fillTextarea(client, "record", successfulAttemptCaseByAct(5).body.input.record);
-  await submitForm(client);
-  await expectScore(client, "100점");
+  await verifyAct5PresentsSingleLocalPrompt(client, baseUrl);
 }
 
 async function completeAct6(client, baseUrl) {
@@ -780,13 +789,13 @@ async function main() {
     console.log("PASS act3 unsafe document shows locked failure result");
     await verifyAct4StarterTemplateShowsFailure(browser.client, baseUrl);
     console.log("PASS act4 starter template shows locked failure result");
-    await verifyAct5SingleAgentShowsFailure(browser.client, baseUrl);
-    console.log("PASS act5 single-agent record shows locked failure result");
+    await verifyAct5PresentsSingleLocalPrompt(browser.client, baseUrl);
+    console.log("PASS act5 presents one local agent-team prompt");
     await verifyAct6MissingLoopGuardShowsFailure(browser.client, baseUrl);
     console.log("PASS act6 missing loop guard hides unlock artifact");
     for (const [name, flow] of flows) {
       await flow(browser.client, baseUrl);
-      console.log(`PASS ${name} UI flow submits and renders 100점`);
+      console.log(name === "act5" ? "PASS act5 UI flow presents local workflow prompt" : `PASS ${name} UI flow submits and renders 100점`);
     }
     console.log("PASS practice UI flow QA");
   } finally {
