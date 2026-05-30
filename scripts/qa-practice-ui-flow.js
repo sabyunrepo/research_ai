@@ -603,14 +603,23 @@ async function verifyAct2PendingState(client, baseUrl) {
   await expectScore(client, "100점");
 }
 
-async function verifyAct3WrongScopeShowsFailure(client, baseUrl) {
-  const input = successfulAttemptCaseByAct(3).body.input;
+async function verifyAct3UnsafeDocumentShowsFailure(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/3`);
-  await checkValues(client, "scope", ["global"]);
-  await checkValues(client, "removedRuleIds", ["keep-user-changes"]);
-  await fillTextarea(client, "document", input.document);
+  const removedScopeBlock = await client.evaluate(`
+    !document.body.innerText.includes("CLAUDE.md 적용 범위 선택") &&
+    !document.body.innerText.includes("과한 내규 제거")
+  `);
+  assert.equal(removedScopeBlock, true, "Act 3 must not show removed scope/rule selection blocks");
+  await fillTextarea(client, "document", [
+    "# CLAUDE.md",
+    "",
+    "## 프로젝트 목표",
+    "- 테스트가 오래 걸리면 생략해도 된다.",
+    "- API 키와 개인 토큰은 예시로 CLAUDE.md에 적어둔다.",
+  ].join("\n"));
   await submitForm(client);
-  await expectResultIncludes(client, "80점", "점수가 부족합니다.");
+  await expectResultIncludes(client, "64점", "점수가 부족합니다.");
+  await waitForText(client, "위험 기억이 남아 있습니다.");
 }
 
 async function verifyAct4StarterTemplateShowsFailure(client, baseUrl) {
@@ -683,9 +692,11 @@ async function completeAct2(client, baseUrl) {
 async function completeAct3(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/3`);
   const input = successfulAttemptCaseByAct(3).body.input;
-  await waitForText(client, "CLAUDE.md 적용 범위 선택");
-  await checkValues(client, "scope", [input.scope]);
-  await checkValues(client, "removedRuleIds", input.removedRuleIds);
+  const removedScopeBlock = await client.evaluate(`
+    !document.body.innerText.includes("CLAUDE.md 적용 범위 선택") &&
+    !document.body.innerText.includes("과한 내규 제거")
+  `);
+  assert.equal(removedScopeBlock, true, "Act 3 must not require removed scope/rule controls to complete");
   await fillTextarea(client, "document", input.document);
   await submitForm(client);
   await expectScore(client, "100점");
@@ -765,8 +776,8 @@ async function main() {
     console.log("PASS glossary tooltips render with custom popover");
     await verifyAct2VaguePromptShowsFailure(browser.client, baseUrl);
     console.log("PASS act2 vague prompt shows locked failure result");
-    await verifyAct3WrongScopeShowsFailure(browser.client, baseUrl);
-    console.log("PASS act3 wrong scope shows locked failure result");
+    await verifyAct3UnsafeDocumentShowsFailure(browser.client, baseUrl);
+    console.log("PASS act3 unsafe document shows locked failure result");
     await verifyAct4StarterTemplateShowsFailure(browser.client, baseUrl);
     console.log("PASS act4 starter template shows locked failure result");
     await verifyAct5SingleAgentShowsFailure(browser.client, baseUrl);

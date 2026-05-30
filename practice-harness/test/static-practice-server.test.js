@@ -135,12 +135,11 @@ test("React app preserves required Act 3, Act 4, Act 5, and Act 6 learner afford
 
   assert.match(source, /sourceTemplate/);
   assert.match(source, /defaultDocument/);
-  assert.match(source, /scopeOptions/);
-  assert.match(source, /ruleCards/);
+  assert.match(source, /defaultRemovedRuleIds/);
   assert.match(source, /기본 제공 파일 확인/);
   assert.match(source, /원본 전체 복사/);
-  assert.match(source, /CLAUDE\.md 적용 범위 선택/);
-  assert.match(source, /과한 내규 제거/);
+  assert.doesNotMatch(source, /CLAUDE\.md 적용 범위 선택/);
+  assert.doesNotMatch(source, /과한 내규 제거/);
   assert.match(source, /프로젝트 루트에 남길 CLAUDE\.md 초안/);
   assert.match(source, /learning\.starterTemplate/);
   assert.match(source, /기본 제공 Skill 템플릿/);

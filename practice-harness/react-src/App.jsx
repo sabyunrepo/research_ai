@@ -636,25 +636,18 @@ function TextPractice({ practice, fieldName, onSubmit, disabled }) {
 
 function ClaudeMemoryPractice({ practice, onSubmit, disabled }) {
   const learning = practice.learning || {};
-  const [scope, setScope] = useState("project");
-  const [removedRuleIds, setRemovedRuleIds] = useState(new Set());
+  const defaultScope = "project";
+  const defaultRemovedRuleIds = (learning.ruleCards || [])
+    .filter((rule) => rule.kind === "remove")
+    .map((rule) => rule.id);
   const [documentValue, setDocumentValue] = useState(learning.defaultDocument || "");
-
-  function toggleRule(ruleId) {
-    setRemovedRuleIds((current) => {
-      const next = new Set(current);
-      if (next.has(ruleId)) next.delete(ruleId);
-      else next.add(ruleId);
-      return next;
-    });
-  }
 
   return (
     <form className="practice-form practice-form-claude-memory" onSubmit={(event) => {
       event.preventDefault();
       onSubmit({
-        scope,
-        removedRuleIds: Array.from(removedRuleIds),
+        scope: defaultScope,
+        removedRuleIds: defaultRemovedRuleIds,
         document: event.currentTarget.elements.document.value,
       });
     }} aria-busy={disabled}>
@@ -673,38 +666,11 @@ function ClaudeMemoryPractice({ practice, onSubmit, disabled }) {
         </section>
       ) : null}
       <section className="section-block">
-        <h2>CLAUDE.md 적용 범위 선택</h2>
-        <div className="option-list scope-options">
-          {(learning.scopeOptions || []).map((option) => (
-            <label className="choice-row" key={option.id}>
-              <input type="radio" name="scope" value={option.id} checked={scope === option.id} disabled={disabled} onChange={() => setScope(option.id)} />
-              <span><GlossaryText>{option.label}</GlossaryText></span>
-              <small><GlossaryText>{option.description}</GlossaryText></small>
-            </label>
-          ))}
-        </div>
-      </section>
-      <section className="section-block">
-        <h2>과한 내규 제거</h2>
-        <p><GlossaryText>항상 켜두면 위험하거나 충돌하는 규칙만 제거 대상으로 선택하세요.</GlossaryText></p>
-        <div className="option-list rule-card-list">
-          {(learning.ruleCards || []).map((rule) => (
-            <label className="choice-row" key={rule.id}>
-              <input type="checkbox" name="removedRuleIds" value={rule.id} checked={removedRuleIds.has(rule.id)} disabled={disabled} onChange={() => toggleRule(rule.id)} />
-              <span><GlossaryText>{rule.label}</GlossaryText></span>
-              <small>{rule.kind === "remove" ? "제거 후보" : "유지 후보"}</small>
-            </label>
-          ))}
-        </div>
-      </section>
-      <section className="section-block">
         <h2>프로젝트 루트에 남길 CLAUDE.md 초안</h2>
         <label className="field-label" htmlFor="document">입력</label>
         <textarea id="document" name="document" value={documentValue} disabled={disabled} onInput={(event) => setDocumentValue(event.target.value)} onChange={(event) => setDocumentValue(event.target.value)} />
       </section>
       <SubmitBar disabled={disabled} onReset={() => {
-        setScope("project");
-        setRemovedRuleIds(new Set());
         setDocumentValue(learning.defaultDocument || "");
       }} />
     </form>

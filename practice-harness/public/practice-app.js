@@ -13284,22 +13284,14 @@
       }
       function ClaudeMemoryPractice({ practice, onSubmit, disabled }) {
         const learning = practice.learning || {};
-        const [scope, setScope] = useState("project");
-        const [removedRuleIds, setRemovedRuleIds] = useState(/* @__PURE__ */ new Set());
+        const defaultScope = "project";
+        const defaultRemovedRuleIds = (learning.ruleCards || []).filter((rule) => rule.kind === "remove").map((rule) => rule.id);
         const [documentValue, setDocumentValue] = useState(learning.defaultDocument || "");
-        function toggleRule(ruleId) {
-          setRemovedRuleIds((current) => {
-            const next = new Set(current);
-            if (next.has(ruleId)) next.delete(ruleId);
-            else next.add(ruleId);
-            return next;
-          });
-        }
         return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", { className: "practice-form practice-form-claude-memory", onSubmit: (event) => {
           event.preventDefault();
           onSubmit({
-            scope,
-            removedRuleIds: Array.from(removedRuleIds),
+            scope: defaultScope,
+            removedRuleIds: defaultRemovedRuleIds,
             document: event.currentTarget.elements.document.value
           });
         }, "aria-busy": disabled, children: [
@@ -13316,30 +13308,11 @@
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", { children: learning.sourceTemplate })
           ] }) : null,
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "CLAUDE.md \uC801\uC6A9 \uBC94\uC704 \uC120\uD0DD" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "option-list scope-options", children: (learning.scopeOptions || []).map((option) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", { className: "choice-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", { type: "radio", name: "scope", value: option.id, checked: scope === option.id, disabled, onChange: () => setScope(option.id) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: option.label }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: option.description }) })
-            ] }, option.id)) })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uACFC\uD55C \uB0B4\uADDC \uC81C\uAC70" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uD56D\uC0C1 \uCF1C\uB450\uBA74 \uC704\uD5D8\uD558\uAC70\uB098 \uCDA9\uB3CC\uD558\uB294 \uADDC\uCE59\uB9CC \uC81C\uAC70 \uB300\uC0C1\uC73C\uB85C \uC120\uD0DD\uD558\uC138\uC694." }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "option-list rule-card-list", children: (learning.ruleCards || []).map((rule) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", { className: "choice-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", { type: "checkbox", name: "removedRuleIds", value: rule.id, checked: removedRuleIds.has(rule.id), disabled, onChange: () => toggleRule(rule.id) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: rule.label }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: rule.kind === "remove" ? "\uC81C\uAC70 \uD6C4\uBCF4" : "\uC720\uC9C0 \uD6C4\uBCF4" })
-            ] }, rule.id)) })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "section-block", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "\uD504\uB85C\uC81D\uD2B8 \uB8E8\uD2B8\uC5D0 \uB0A8\uAE38 CLAUDE.md \uCD08\uC548" }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", { className: "field-label", htmlFor: "document", children: "\uC785\uB825" }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", { id: "document", name: "document", value: documentValue, disabled, onInput: (event) => setDocumentValue(event.target.value), onChange: (event) => setDocumentValue(event.target.value) })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SubmitBar, { disabled, onReset: () => {
-            setScope("project");
-            setRemovedRuleIds(/* @__PURE__ */ new Set());
             setDocumentValue(learning.defaultDocument || "");
           } })
         ] });
