@@ -651,6 +651,65 @@ textarea {
   background: var(--danger-soft);
 }
 
+.attempt-history {
+  border-color: var(--accent);
+}
+
+.attempt-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.attempt-summary-grid div {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--soft-line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.attempt-summary-grid strong {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.attempt-summary-grid span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.attempt-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.attempt-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--soft-line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.attempt-list li.current {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.attempt-list small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
 .verification-log {
   overflow: auto;
 }
@@ -724,6 +783,11 @@ textarea {
     width: 100%;
     max-height: calc(100vh - 16px);
     padding: 12px;
+  }
+
+  .attempt-summary-grid,
+  .attempt-list li {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .practice-list {

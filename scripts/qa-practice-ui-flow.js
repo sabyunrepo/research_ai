@@ -394,6 +394,15 @@ async function verifyGlossaryTooltip(client, baseUrl) {
   await waitFor(client, "document.querySelector('#glossaryPopover.is-visible') && document.querySelector('#glossaryPopover').textContent.length > 10");
   const tooltipText = await client.evaluate("document.querySelector('#glossaryPopover').textContent");
   assert.match(tooltipText, /화면|웹|모바일|데스크톱/);
+  const describedBy = await client.evaluate("document.activeElement.getAttribute('aria-describedby')");
+  assert.equal(describedBy, "glossaryPopover", "glossary trigger must reference the tooltip with aria-describedby");
+  await client.evaluate(`
+    document.activeElement.dispatchEvent(new KeyboardEvent("keydown", {
+      key: "Escape",
+      bubbles: true,
+    }))
+  `);
+  await waitFor(client, "!document.querySelector('#glossaryPopover.is-visible')");
 }
 
 async function verifyAct2VaguePromptShowsFailure(client, baseUrl) {
@@ -403,6 +412,21 @@ async function verifyAct2VaguePromptShowsFailure(client, baseUrl) {
   await fillTextarea(client, "prompt", "반응형 카드 만들어줘");
   await submitForm(client);
   await expectResultIncludes(client, "20점", "점수가 부족합니다.");
+  const focusInsideDialog = await client.evaluate("Boolean(document.querySelector('#result-dialog')?.contains(document.activeElement))");
+  assert.equal(focusInsideDialog, true, "result modal should move focus inside the dialog");
+  await client.evaluate(`
+    document.activeElement.dispatchEvent(new KeyboardEvent("keydown", {
+      key: "Escape",
+      bubbles: true,
+    }))
+  `);
+  await waitFor(client, "!document.querySelector('#result-dialog[role=\"dialog\"]')");
+  await fillTextarea(client, "prompt", successfulAttemptCaseByAct(2).body.input.prompt);
+  await submitForm(client);
+  await expectScore(client, "100점");
+  await waitForText(client, "시도 비교");
+  await waitForText(client, "현재 세션 최고 점수");
+  await waitForText(client, "직전 시도 대비 변화");
   const nextPracticeVisible = await client.evaluate("document.body.innerText.includes('다음 실습')");
   assert.equal(nextPracticeVisible, false, "Act 2 result modal must not expose next-practice navigation");
 }

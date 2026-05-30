@@ -1,6 +1,6 @@
 const { createRoot } = require("react-dom/client");
 const React = require("react");
-const { useEffect, useMemo, useRef, useState } = React;
+const { useEffect, useId, useMemo, useRef, useState } = React;
 
 const ACT1_PAGE_SIZE = 4;
 const PROMPT_STEPS = ["상황 이해", "6칸 기준", "지시문 작성"];
@@ -209,18 +209,21 @@ function glossaryParts(text) {
 }
 
 function GlossaryTerm({ label, explanation }) {
+  const tooltipId = useId();
+  const activeTooltipId = "glossaryPopover";
   const show = (event) => {
     const target = event.currentTarget;
     const doc = target.ownerDocument;
     const win = doc.defaultView || window;
-    let popover = doc.querySelector("#glossaryPopover");
+    let popover = doc.querySelector(`#${activeTooltipId}`);
     if (!popover) {
       popover = doc.createElement("div");
-      popover.id = "glossaryPopover";
+      popover.id = activeTooltipId;
       popover.className = "glossary-popover";
       popover.setAttribute("role", "tooltip");
       doc.body.append(popover);
     }
+    popover.dataset.owner = tooltipId;
     popover.textContent = explanation;
     popover.classList.add("is-visible");
     const rect = target.getBoundingClientRect();
@@ -237,7 +240,13 @@ function GlossaryTerm({ label, explanation }) {
     popover.style.top = `${Math.min(Math.max(top, margin), win.innerHeight - popoverRect.height - margin)}px`;
   };
   const hide = (event) => {
-    event.currentTarget.ownerDocument.querySelector("#glossaryPopover")?.classList.remove("is-visible");
+    const popover = event.currentTarget.ownerDocument.querySelector(`#${activeTooltipId}`);
+    if (popover?.dataset.owner === tooltipId) popover.classList.remove("is-visible");
+  };
+  const onKeyDown = (event) => {
+    if (event.key !== "Escape") return;
+    hide(event);
+    event.stopPropagation();
   };
   return (
     <span
@@ -245,11 +254,13 @@ function GlossaryTerm({ label, explanation }) {
       data-glossary={explanation}
       tabIndex={0}
       role="button"
+      aria-describedby={activeTooltipId}
       aria-label={`${label}: ${explanation}`}
       onMouseEnter={show}
       onMouseLeave={hide}
       onFocus={show}
       onBlur={hide}
+      onKeyDown={onKeyDown}
     >
       {label}
     </span>
@@ -777,14 +788,104 @@ function JudgeResult({ judge }) {
   );
 }
 
-function ResultDialog({ attempt, practice, loading, resultContext, onRetry }) {
+function focusableElements(container) {
+  return Array.from(container.querySelectorAll([
+    "button:not([disabled])",
+    "input:not([disabled])",
+    "textarea:not([disabled])",
+    "select:not([disabled])",
+    "a[href]",
+    "[tabindex]:not([tabindex='-1'])",
+  ].join(","))).filter((element) => !element.hasAttribute("aria-hidden"));
+}
+
+function AttemptHistory({ attempts, currentAttemptId }) {
+  if (!attempts || attempts.length < 2) return null;
+  const currentIndex = attempts.findIndex((item) => item.attemptId === currentAttemptId);
+  const previous = currentIndex > 0 ? attempts[currentIndex - 1] : attempts[attempts.length - 2];
+  const current = attempts.find((item) => item.attemptId === currentAttemptId) || attempts[attempts.length - 1];
+  const bestScore = Math.max(...attempts.map((item) => percentScore(item.score, item.maxScore)));
+  const previousScore = previous ? percentScore(previous.score, previous.maxScore) : null;
+  const currentScore = percentScore(current.score, current.maxScore);
+  const delta = previousScore === null ? 0 : currentScore - previousScore;
+  const deltaLabel = delta > 0 ? `+${delta}점` : `${delta}점`;
+  const recentAttempts = attempts.slice(-4).reverse();
+  return (
+    <section className="result-section attempt-history">
+      <h3>시도 비교</h3>
+      <p><GlossaryText>다시 제출한 결과가 이전 시도보다 어떻게 달라졌는지 확인하세요.</GlossaryText></p>
+      <div className="attempt-summary-grid">
+        <div>
+          <strong>{bestScore}점</strong>
+          <span>현재 세션 최고 점수</span>
+        </div>
+        <div>
+          <strong>{deltaLabel}</strong>
+          <span>직전 시도 대비 변화</span>
+        </div>
+      </div>
+      <ol className="attempt-list">
+        {recentAttempts.map((item) => (
+          <li key={item.attemptId} className={item.attemptId === currentAttemptId ? "current" : ""}>
+            <span>{item.attemptId === currentAttemptId ? "이번 시도" : `${item.attemptNumber}번째 시도`}</span>
+            <strong>{percentScore(item.score, item.maxScore)}점</strong>
+            <small>{item.unlocked ? "통과" : "재시도 필요"}</small>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function ResultDialog({ attempt, practice, loading, resultContext, attemptHistory, onRetry }) {
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (!loading && !attempt) return undefined;
+    const previousFocus = document.activeElement;
+    window.setTimeout(() => {
+      if (attempt) closeButtonRef.current?.focus();
+      else dialogRef.current?.focus();
+    }, 0);
+    return () => {
+      if (previousFocus && typeof previousFocus.focus === "function" && document.contains(previousFocus)) {
+        previousFocus.focus();
+      }
+    };
+  }, [attempt?.attemptId, loading]);
+
+  function onDialogKeyDown(event) {
+    if (event.key === "Escape" && attempt) {
+      event.preventDefault();
+      onRetry();
+      return;
+    }
+    if (event.key !== "Tab" || !dialogRef.current) return;
+    const focusable = focusableElements(dialogRef.current);
+    if (!focusable.length) {
+      event.preventDefault();
+      dialogRef.current.focus();
+      return;
+    }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
   if (!loading && !attempt) return null;
 
   if (loading) {
     const usesAiReview = practice?.act >= 2 && practice?.act <= 5;
     return (
       <div className="result-modal-backdrop" role="presentation">
-        <section id="result-dialog" className="result-dialog is-pending" role="dialog" aria-modal="true" aria-live="polite" aria-labelledby="result-dialog-title" aria-describedby="result-dialog-description">
+        <section id="result-dialog" ref={dialogRef} tabIndex={-1} onKeyDown={onDialogKeyDown} className="result-dialog is-pending" role="dialog" aria-modal="true" aria-live="polite" aria-labelledby="result-dialog-title" aria-describedby="result-dialog-description">
           <div className="pending-dialog-header">
             <span className="spinner large-spinner" aria-hidden="true" />
             <div>
@@ -826,10 +927,10 @@ function ResultDialog({ attempt, practice, loading, resultContext, onRetry }) {
   const displayScore = percentScore(attempt.score, attempt.maxScore);
   return (
     <div className="result-modal-backdrop" role="presentation">
-      <section id="result-dialog" className="result-dialog" role="dialog" aria-modal="true" aria-live="polite" aria-labelledby="result-dialog-title">
+      <section id="result-dialog" ref={dialogRef} tabIndex={-1} onKeyDown={onDialogKeyDown} className="result-dialog" role="dialog" aria-modal="true" aria-live="polite" aria-labelledby="result-dialog-title">
         <div className="result-dialog-header">
           <h2 id="result-dialog-title">검증 결과</h2>
-          <button type="button" className="secondary-button small-button" onClick={onRetry}>닫기</button>
+          <button type="button" ref={closeButtonRef} className="secondary-button small-button" onClick={onRetry}>닫기</button>
         </div>
         <div id="score-meter" className={`score-meter ${attempt.unlocked ? "pass" : "fail"}`}>
           <strong>{displayScore}점</strong>
@@ -854,6 +955,7 @@ function ResultDialog({ attempt, practice, loading, resultContext, onRetry }) {
               <p><GlossaryText>점수가 낮은 이유를 하나씩 고친 뒤 같은 입력을 다시 제출해 점수 변화를 확인하세요.</GlossaryText></p>
             </section>
           ) : null}
+          <AttemptHistory attempts={attemptHistory} currentAttemptId={attempt.attemptId} />
           {attempt.unlockArtifact ? (
             <section className="result-section unlock-artifact">
               <div className="unlock-artifact-header">
@@ -906,6 +1008,7 @@ function App() {
   const [sessionId, setSessionId] = useState(stableSessionId);
   const [submitState, setSubmitState] = useState({ status: "idle", message: "" });
   const [isLoadingPractice, setIsLoadingPractice] = useState(true);
+  const [attemptHistoryByPractice, setAttemptHistoryByPractice] = useState({});
   const pendingClientAttemptIds = useRef({});
 
   const isSubmitting = submitState.status === "submitting";
@@ -977,6 +1080,10 @@ function App() {
         }),
       });
       delete pendingClientAttemptIds.current[practice.id];
+      setAttemptHistoryByPractice((current) => ({
+        ...current,
+        [practice.id]: (current[practice.id] || []).concat(body.attempt),
+      }));
       setAttempt(body.attempt);
       setSubmitState({ status: "idle", message: "" });
     } catch (error) {
@@ -1015,6 +1122,7 @@ function App() {
           practice={practice}
           loading={isSubmitting}
           resultContext={resultContext}
+          attemptHistory={practice ? attemptHistoryByPractice[practice.id] || [] : []}
           onRetry={() => {
             setAttempt(null);
             setResultContext(null);

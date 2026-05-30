@@ -12753,7 +12753,7 @@
       var import_jsx_runtime = __toESM(require_jsx_runtime());
       var { createRoot } = require_client();
       var React = require_react();
-      var { useEffect, useMemo, useRef, useState } = React;
+      var { useEffect, useId, useMemo, useRef, useState } = React;
       var ACT1_PAGE_SIZE = 4;
       var PROMPT_STEPS = ["\uC0C1\uD669 \uC774\uD574", "6\uCE78 \uAE30\uC900", "\uC9C0\uC2DC\uBB38 \uC791\uC131"];
       var GLOSSARY_TERMS = [
@@ -12952,18 +12952,21 @@
         return parts;
       }
       function GlossaryTerm({ label, explanation }) {
+        const tooltipId = useId();
+        const activeTooltipId = "glossaryPopover";
         const show = (event) => {
           const target = event.currentTarget;
           const doc = target.ownerDocument;
           const win = doc.defaultView || window;
-          let popover = doc.querySelector("#glossaryPopover");
+          let popover = doc.querySelector(`#${activeTooltipId}`);
           if (!popover) {
             popover = doc.createElement("div");
-            popover.id = "glossaryPopover";
+            popover.id = activeTooltipId;
             popover.className = "glossary-popover";
             popover.setAttribute("role", "tooltip");
             doc.body.append(popover);
           }
+          popover.dataset.owner = tooltipId;
           popover.textContent = explanation;
           popover.classList.add("is-visible");
           const rect = target.getBoundingClientRect();
@@ -12978,7 +12981,13 @@
           popover.style.top = `${Math.min(Math.max(top, margin), win.innerHeight - popoverRect.height - margin)}px`;
         };
         const hide = (event) => {
-          event.currentTarget.ownerDocument.querySelector("#glossaryPopover")?.classList.remove("is-visible");
+          const popover = event.currentTarget.ownerDocument.querySelector(`#${activeTooltipId}`);
+          if (popover?.dataset.owner === tooltipId) popover.classList.remove("is-visible");
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== "Escape") return;
+          hide(event);
+          event.stopPropagation();
         };
         return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           "span",
@@ -12987,11 +12996,13 @@
             "data-glossary": explanation,
             tabIndex: 0,
             role: "button",
+            "aria-describedby": activeTooltipId,
             "aria-label": `${label}: ${explanation}`,
             onMouseEnter: show,
             onMouseLeave: hide,
             onFocus: show,
             onBlur: hide,
+            onKeyDown,
             children: label
           }
         );
@@ -13395,11 +13406,96 @@
           ] }, title) : null)
         ] });
       }
-      function ResultDialog({ attempt, practice, loading, resultContext, onRetry }) {
+      function focusableElements(container) {
+        return Array.from(container.querySelectorAll([
+          "button:not([disabled])",
+          "input:not([disabled])",
+          "textarea:not([disabled])",
+          "select:not([disabled])",
+          "a[href]",
+          "[tabindex]:not([tabindex='-1'])"
+        ].join(","))).filter((element) => !element.hasAttribute("aria-hidden"));
+      }
+      function AttemptHistory({ attempts, currentAttemptId }) {
+        if (!attempts || attempts.length < 2) return null;
+        const currentIndex = attempts.findIndex((item) => item.attemptId === currentAttemptId);
+        const previous = currentIndex > 0 ? attempts[currentIndex - 1] : attempts[attempts.length - 2];
+        const current = attempts.find((item) => item.attemptId === currentAttemptId) || attempts[attempts.length - 1];
+        const bestScore = Math.max(...attempts.map((item) => percentScore(item.score, item.maxScore)));
+        const previousScore = previous ? percentScore(previous.score, previous.maxScore) : null;
+        const currentScore = percentScore(current.score, current.maxScore);
+        const delta = previousScore === null ? 0 : currentScore - previousScore;
+        const deltaLabel = delta > 0 ? `+${delta}\uC810` : `${delta}\uC810`;
+        const recentAttempts = attempts.slice(-4).reverse();
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "result-section attempt-history", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "\uC2DC\uB3C4 \uBE44\uAD50" }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uB2E4\uC2DC \uC81C\uCD9C\uD55C \uACB0\uACFC\uAC00 \uC774\uC804 \uC2DC\uB3C4\uBCF4\uB2E4 \uC5B4\uB5BB\uAC8C \uB2EC\uB77C\uC84C\uB294\uC9C0 \uD655\uC778\uD558\uC138\uC694." }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "attempt-summary-grid", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [
+                bestScore,
+                "\uC810"
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "\uD604\uC7AC \uC138\uC158 \uCD5C\uACE0 \uC810\uC218" })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: deltaLabel }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "\uC9C1\uC804 \uC2DC\uB3C4 \uB300\uBE44 \uBCC0\uD654" })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", { className: "attempt-list", children: recentAttempts.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { className: item.attemptId === currentAttemptId ? "current" : "", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: item.attemptId === currentAttemptId ? "\uC774\uBC88 \uC2DC\uB3C4" : `${item.attemptNumber}\uBC88\uC9F8 \uC2DC\uB3C4` }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [
+              percentScore(item.score, item.maxScore),
+              "\uC810"
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: item.unlocked ? "\uD1B5\uACFC" : "\uC7AC\uC2DC\uB3C4 \uD544\uC694" })
+          ] }, item.attemptId)) })
+        ] });
+      }
+      function ResultDialog({ attempt, practice, loading, resultContext, attemptHistory, onRetry }) {
+        const dialogRef = useRef(null);
+        const closeButtonRef = useRef(null);
+        useEffect(() => {
+          if (!loading && !attempt) return void 0;
+          const previousFocus = document.activeElement;
+          window.setTimeout(() => {
+            if (attempt) closeButtonRef.current?.focus();
+            else dialogRef.current?.focus();
+          }, 0);
+          return () => {
+            if (previousFocus && typeof previousFocus.focus === "function" && document.contains(previousFocus)) {
+              previousFocus.focus();
+            }
+          };
+        }, [attempt?.attemptId, loading]);
+        function onDialogKeyDown(event) {
+          if (event.key === "Escape" && attempt) {
+            event.preventDefault();
+            onRetry();
+            return;
+          }
+          if (event.key !== "Tab" || !dialogRef.current) return;
+          const focusable = focusableElements(dialogRef.current);
+          if (!focusable.length) {
+            event.preventDefault();
+            dialogRef.current.focus();
+            return;
+          }
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
         if (!loading && !attempt) return null;
         if (loading) {
           const usesAiReview = practice?.act >= 2 && practice?.act <= 5;
-          return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "result-modal-backdrop", role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "result-dialog", className: "result-dialog is-pending", role: "dialog", "aria-modal": "true", "aria-live": "polite", "aria-labelledby": "result-dialog-title", "aria-describedby": "result-dialog-description", children: [
+          return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "result-modal-backdrop", role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "result-dialog", ref: dialogRef, tabIndex: -1, onKeyDown: onDialogKeyDown, className: "result-dialog is-pending", role: "dialog", "aria-modal": "true", "aria-live": "polite", "aria-labelledby": "result-dialog-title", "aria-describedby": "result-dialog-description", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "pending-dialog-header", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "spinner large-spinner", "aria-hidden": "true" }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
@@ -13431,10 +13527,10 @@
         const nextAction = attempt.unlocked ? "\uD1B5\uACFC\uD588\uC2B5\uB2C8\uB2E4. \uACB0\uACFC\uB97C \uD655\uC778\uD558\uACE0 \uB2EB\uC544\uB3C4 \uB429\uB2C8\uB2E4." : hasNextAct1Question ? "\uC810\uC218\uAC00 \uBD80\uC871\uD574\uB3C4 \uAC15\uC758 \uD750\uB984\uC0C1 \uB2E4\uC74C \uBB38\uC81C\uB85C \uB118\uC5B4\uAC08 \uC218 \uC788\uC2B5\uB2C8\uB2E4." : "\uC810\uC218\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4. \uC544\uB798 \uD56D\uBAA9\uC744 \uACE0\uCE5C \uB4A4 \uB2E4\uC2DC \uC81C\uCD9C\uD558\uC138\uC694.";
         const passedChecks = (attempt.verificationLog || []).filter((entry) => entry.status === "pass");
         const displayScore = percentScore(attempt.score, attempt.maxScore);
-        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "result-modal-backdrop", role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "result-dialog", className: "result-dialog", role: "dialog", "aria-modal": "true", "aria-live": "polite", "aria-labelledby": "result-dialog-title", children: [
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "result-modal-backdrop", role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "result-dialog", ref: dialogRef, tabIndex: -1, onKeyDown: onDialogKeyDown, className: "result-dialog", role: "dialog", "aria-modal": "true", "aria-live": "polite", "aria-labelledby": "result-dialog-title", children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "result-dialog-header", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { id: "result-dialog-title", children: "\uAC80\uC99D \uACB0\uACFC" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: "secondary-button small-button", onClick: onRetry, children: "\uB2EB\uAE30" })
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", ref: closeButtonRef, className: "secondary-button small-button", onClick: onRetry, children: "\uB2EB\uAE30" })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { id: "score-meter", className: `score-meter ${attempt.unlocked ? "pass" : "fail"}`, children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [
@@ -13460,6 +13556,7 @@
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "\uB2E4\uC2DC \uC2DC\uB3C4\uD560 \uB54C" }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uC810\uC218\uAC00 \uB0AE\uC740 \uC774\uC720\uB97C \uD558\uB098\uC529 \uACE0\uCE5C \uB4A4 \uAC19\uC740 \uC785\uB825\uC744 \uB2E4\uC2DC \uC81C\uCD9C\uD574 \uC810\uC218 \uBCC0\uD654\uB97C \uD655\uC778\uD558\uC138\uC694." }) })
             ] }) : null,
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AttemptHistory, { attempts: attemptHistory, currentAttemptId: attempt.attemptId }),
             attempt.unlockArtifact ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "result-section unlock-artifact", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "unlock-artifact-header", children: [
                 /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: attempt.unlockArtifact.title }),
@@ -13506,6 +13603,7 @@
         const [sessionId, setSessionId] = useState(stableSessionId);
         const [submitState, setSubmitState] = useState({ status: "idle", message: "" });
         const [isLoadingPractice, setIsLoadingPractice] = useState(true);
+        const [attemptHistoryByPractice, setAttemptHistoryByPractice] = useState({});
         const pendingClientAttemptIds = useRef({});
         const isSubmitting = submitState.status === "submitting";
         useEffect(() => {
@@ -13571,6 +13669,10 @@
               })
             });
             delete pendingClientAttemptIds.current[practice.id];
+            setAttemptHistoryByPractice((current) => ({
+              ...current,
+              [practice.id]: (current[practice.id] || []).concat(body.attempt)
+            }));
             setAttempt(body.attempt);
             setSubmitState({ status: "idle", message: "" });
           } catch (error) {
@@ -13606,6 +13708,7 @@
                 practice,
                 loading: isSubmitting,
                 resultContext,
+                attemptHistory: practice ? attemptHistoryByPractice[practice.id] || [] : [],
                 onRetry: () => {
                   setAttempt(null);
                   setResultContext(null);

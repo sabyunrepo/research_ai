@@ -97,6 +97,8 @@ test("React app decomposes the learner UI into act-specific components", async (
   assert.match(source, /function ResultDialog/);
   assert.doesNotMatch(source, /아직 제출하지 않았습니다/);
   assert.match(source, /function JudgeResult/);
+  assert.match(source, /function AttemptHistory/);
+  assert.match(source, /시도 비교/);
 });
 
 test("React app shows pending state and protects against duplicate submits", async () => {
@@ -112,6 +114,10 @@ test("React app shows pending state and protects against duplicate submits", asy
   assert.match(source, /function clientAttemptIdFor/);
   assert.match(source, /clientAttemptId: clientAttemptIdFor\(practice\)/);
   assert.match(source, /disabled=\{disabled\}/);
+  assert.match(source, /function focusableElements/);
+  assert.match(source, /event\.key === "Escape"/);
+  assert.match(source, /onKeyDown=\{onDialogKeyDown\}/);
+  assert.match(source, /aria-describedby=\{activeTooltipId\}/);
 });
 
 test("React app preserves required Act 3, Act 5, and Act 6 learner affordances", async () => {
@@ -183,6 +189,9 @@ test("React stylesheet makes loading, results, and unlock artifacts readable", a
   assert.match(stylesheet, /@keyframes spin/);
   assert.match(stylesheet, /\.score-meter\.pending\s*{/);
   assert.match(stylesheet, /\.result-section\s*{/);
+  assert.match(stylesheet, /\.attempt-history\s*{/);
+  assert.match(stylesheet, /\.attempt-summary-grid\s*{/);
+  assert.match(stylesheet, /\.attempt-list li\.current\s*{/);
   assert.match(stylesheet, /\.verification-log\s*{/);
   assert.match(stylesheet, /\.unlock-artifact\s*{/);
   assert.match(stylesheet, /\.unlock-artifact pre\s*{/);
