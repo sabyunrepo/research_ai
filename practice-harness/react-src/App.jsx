@@ -186,7 +186,13 @@ function practiceFromLocation(practices) {
 
 function percentScore(score, maxScore) {
   if (!maxScore) return 0;
-  return Math.round((score / maxScore) * 100);
+  return Math.max(0, Math.min(100, Math.round((score / maxScore) * 100)));
+}
+
+function questionMaxScore(question) {
+  return (question?.choices || [])
+    .filter((choice) => choice.kind === "required")
+    .reduce((sum, choice) => sum + Math.max(0, choice.points || 0), 0);
 }
 
 function glossaryParts(text) {
@@ -447,6 +453,9 @@ function Act1Practice({ practice, onSubmit, disabled }) {
       { answers: { ...answers, [question.id]: selectedIds } },
       {
         kind: "act1-question",
+        questionId: question.id,
+        questionTitle: question.title,
+        passed,
         hasNextQuestion: questionIndex < practice.questions.length - 1,
       },
     );
@@ -837,6 +846,19 @@ function AttemptHistory({ attempts, currentAttemptId }) {
   );
 }
 
+function act1QuestionResult({ attempt, practice, resultContext }) {
+  if (resultContext?.kind !== "act1-question") return null;
+  const question = (practice?.questions || []).find((item) => item.id === resultContext.questionId);
+  const questionScore = (attempt.questionScores || []).find((item) => item.questionId === resultContext.questionId);
+  if (!question || !questionScore) return null;
+  return {
+    question,
+    score: questionScore.score,
+    maxScore: questionMaxScore(question),
+    feedback: (attempt.feedback || []).filter((item) => item.questionId === resultContext.questionId),
+  };
+}
+
 function ResultDialog({ attempt, practice, loading, resultContext, attemptHistory, onRetry }) {
   const dialogRef = useRef(null);
   const closeButtonRef = useRef(null);
@@ -918,13 +940,27 @@ function ResultDialog({ attempt, practice, loading, resultContext, attemptHistor
     );
   }
   const hasNextAct1Question = resultContext?.kind === "act1-question" && resultContext.hasNextQuestion;
-  const nextAction = attempt.unlocked
+  const act1Result = act1QuestionResult({ attempt, practice, resultContext });
+  const act1QuestionPassed = resultContext?.kind === "act1-question" && resultContext.passed;
+  const nextAction = act1Result
+    ? act1QuestionPassed
+      ? hasNextAct1Question
+        ? "이 문제를 통과했습니다. 다음 문제로 이동하세요."
+        : "이 문제를 통과했습니다. 결과를 확인하고 닫아도 됩니다."
+      : hasNextAct1Question
+        ? "이 문제 점수가 부족합니다. 빠진 항목을 고치거나 다음 문제로 넘어갈 수 있습니다."
+        : "이 문제 점수가 부족합니다. 아래 항목을 고친 뒤 다시 확인하세요."
+    : attempt.unlocked
     ? "통과했습니다. 결과를 확인하고 닫아도 됩니다."
     : hasNextAct1Question
       ? "점수가 부족해도 강의 흐름상 다음 문제로 넘어갈 수 있습니다."
       : "점수가 부족합니다. 아래 항목을 고친 뒤 다시 제출하세요.";
   const passedChecks = (attempt.verificationLog || []).filter((entry) => entry.status === "pass");
-  const displayScore = percentScore(attempt.score, attempt.maxScore);
+  const displayScore = act1Result
+    ? percentScore(act1Result.score, act1Result.maxScore)
+    : percentScore(attempt.score, attempt.maxScore);
+  const feedbackItems = act1Result ? act1Result.feedback : attempt.feedback || [];
+  const passedForDisplay = act1Result ? act1QuestionPassed : attempt.unlocked;
   return (
     <div className="result-modal-backdrop" role="presentation">
       <section id="result-dialog" ref={dialogRef} tabIndex={-1} onKeyDown={onDialogKeyDown} className="result-dialog" role="dialog" aria-modal="true" aria-live="polite" aria-labelledby="result-dialog-title">
@@ -932,7 +968,7 @@ function ResultDialog({ attempt, practice, loading, resultContext, attemptHistor
           <h2 id="result-dialog-title">검증 결과</h2>
           <button type="button" ref={closeButtonRef} className="secondary-button small-button" onClick={onRetry}>닫기</button>
         </div>
-        <div id="score-meter" className={`score-meter ${attempt.unlocked ? "pass" : "fail"}`}>
+        <div id="score-meter" className={`score-meter ${passedForDisplay ? "pass" : "fail"}`}>
           <strong>{displayScore}점</strong>
           <span>{nextAction}</span>
         </div>
@@ -943,13 +979,13 @@ function ResultDialog({ attempt, practice, loading, resultContext, attemptHistor
           </section>
           <section className="result-section">
             <h3>빠진 항목</h3>
-            <FeedbackItemList items={attempt.feedback?.length ? attempt.feedback : [{ message: "빠진 항목이 없습니다." }]} />
+            <FeedbackItemList items={feedbackItems.length ? feedbackItems : [{ message: "빠진 항목이 없습니다." }]} />
           </section>
           <section className="result-section">
             <h3>좋았던 점</h3>
             <FeedbackItemList items={passedChecks.length ? passedChecks.slice(0, 3) : [{ message: "아직 통과한 검증 항목이 없습니다." }]} itemClassName="pass" />
           </section>
-          {!attempt.unlocked ? (
+          {!passedForDisplay ? (
             <section className="result-section">
               <h3>다시 시도할 때</h3>
               <p><GlossaryText>점수가 낮은 이유를 하나씩 고친 뒤 같은 입력을 다시 제출해 점수 변화를 확인하세요.</GlossaryText></p>

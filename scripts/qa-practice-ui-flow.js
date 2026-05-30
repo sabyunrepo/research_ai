@@ -374,6 +374,35 @@ async function verifyAct1RejectsRandomChoice(client, baseUrl) {
   assert.equal(wronglyPassed, false, "Act 1 random/noise-only choice must not pass question 1");
 }
 
+async function verifyAct1QuestionScoreReflectsSelections(client, baseUrl) {
+  await navigate(client, `${baseUrl}/act/1`);
+  await clickButton(client, "문제 시작");
+  await checkValues(client, "q1", [
+    "q1-purpose-action",
+    "q1-responsive-breakpoints",
+    "q1-real-content",
+    "q1-brand-style",
+  ]);
+  await clickButton(client, "다음 선택지");
+  await checkValues(client, "q1", [
+    "q1-state-verification",
+    "q1-output-format",
+  ]);
+  await clickButton(client, "다음 선택지");
+  await clickButton(client, "문제 확인");
+  await expectScore(client, "100점");
+  await waitForText(client, "이 문제를 통과했습니다. 다음 문제로 이동하세요.");
+  await waitForText(client, "빠진 항목이 없습니다.");
+  const unrelatedQuestionFeedbackVisible = await client.evaluate(`
+    document.body.innerText.includes("발생 환경이 없으면 김아이가 문제를 재현하기 어렵습니다.")
+  `);
+  assert.equal(
+    unrelatedQuestionFeedbackVisible,
+    false,
+    "Act 1 question modal must not show missing feedback from later unanswered questions",
+  );
+}
+
 async function verifyGlossaryTooltip(client, baseUrl) {
   await navigate(client, `${baseUrl}/act/2`);
   await waitFor(client, "document.querySelectorAll('[data-glossary]').length >= 3");
@@ -587,6 +616,8 @@ async function main() {
     ];
     await verifyAct1RejectsRandomChoice(browser.client, baseUrl);
     console.log("PASS act1 rejects random/noise-only choice");
+    await verifyAct1QuestionScoreReflectsSelections(browser.client, baseUrl);
+    console.log("PASS act1 question score reflects selected choices");
     await verifyGlossaryTooltip(browser.client, baseUrl);
     console.log("PASS glossary tooltips render with custom popover");
     await verifyAct2VaguePromptShowsFailure(browser.client, baseUrl);

@@ -261,6 +261,10 @@ test("POST /api/practices/act1-info-selection/attempts returns attempt JSON", as
     assert.match(response.body.attempt.createdAt, /^\d{4}-\d{2}-\d{2}T/);
     assert.ok(Array.isArray(response.body.attempt.checks));
     assert.ok(Array.isArray(response.body.attempt.feedback));
+    assert.ok(Array.isArray(response.body.attempt.questionScores));
+    assert.equal(response.body.attempt.questionScores.length, 3);
+    assert.equal(response.body.attempt.questionScores[0].questionId, "q1");
+    assert.equal(response.body.attempt.questionScores[0].score, 36);
     assert.ok(Array.isArray(response.body.attempt.verificationLog));
   } finally {
     await server.close();

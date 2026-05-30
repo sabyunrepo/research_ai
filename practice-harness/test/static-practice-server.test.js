@@ -98,6 +98,9 @@ test("React app decomposes the learner UI into act-specific components", async (
   assert.doesNotMatch(source, /아직 제출하지 않았습니다/);
   assert.match(source, /function JudgeResult/);
   assert.match(source, /function AttemptHistory/);
+  assert.match(source, /function act1QuestionResult/);
+  assert.match(source, /function questionMaxScore/);
+  assert.match(source, /이 문제를 통과했습니다/);
   assert.match(source, /시도 비교/);
 });
 

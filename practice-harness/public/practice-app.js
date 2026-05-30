@@ -12931,7 +12931,10 @@
       }
       function percentScore(score, maxScore) {
         if (!maxScore) return 0;
-        return Math.round(score / maxScore * 100);
+        return Math.max(0, Math.min(100, Math.round(score / maxScore * 100)));
+      }
+      function questionMaxScore(question) {
+        return (question?.choices || []).filter((choice) => choice.kind === "required").reduce((sum, choice) => sum + Math.max(0, choice.points || 0), 0);
       }
       function glossaryParts(text) {
         const value = String(text);
@@ -13139,6 +13142,9 @@
             { answers: { ...answers, [question.id]: selectedIds } },
             {
               kind: "act1-question",
+              questionId: question.id,
+              questionTitle: question.title,
+              passed,
               hasNextQuestion: questionIndex < practice.questions.length - 1
             }
           );
@@ -13453,6 +13459,18 @@
           ] }, item.attemptId)) })
         ] });
       }
+      function act1QuestionResult({ attempt, practice, resultContext }) {
+        if (resultContext?.kind !== "act1-question") return null;
+        const question = (practice?.questions || []).find((item) => item.id === resultContext.questionId);
+        const questionScore = (attempt.questionScores || []).find((item) => item.questionId === resultContext.questionId);
+        if (!question || !questionScore) return null;
+        return {
+          question,
+          score: questionScore.score,
+          maxScore: questionMaxScore(question),
+          feedback: (attempt.feedback || []).filter((item) => item.questionId === resultContext.questionId)
+        };
+      }
       function ResultDialog({ attempt, practice, loading, resultContext, attemptHistory, onRetry }) {
         const dialogRef = useRef(null);
         const closeButtonRef = useRef(null);
@@ -13524,15 +13542,19 @@
           ] }) });
         }
         const hasNextAct1Question = resultContext?.kind === "act1-question" && resultContext.hasNextQuestion;
-        const nextAction = attempt.unlocked ? "\uD1B5\uACFC\uD588\uC2B5\uB2C8\uB2E4. \uACB0\uACFC\uB97C \uD655\uC778\uD558\uACE0 \uB2EB\uC544\uB3C4 \uB429\uB2C8\uB2E4." : hasNextAct1Question ? "\uC810\uC218\uAC00 \uBD80\uC871\uD574\uB3C4 \uAC15\uC758 \uD750\uB984\uC0C1 \uB2E4\uC74C \uBB38\uC81C\uB85C \uB118\uC5B4\uAC08 \uC218 \uC788\uC2B5\uB2C8\uB2E4." : "\uC810\uC218\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4. \uC544\uB798 \uD56D\uBAA9\uC744 \uACE0\uCE5C \uB4A4 \uB2E4\uC2DC \uC81C\uCD9C\uD558\uC138\uC694.";
+        const act1Result = act1QuestionResult({ attempt, practice, resultContext });
+        const act1QuestionPassed = resultContext?.kind === "act1-question" && resultContext.passed;
+        const nextAction = act1Result ? act1QuestionPassed ? hasNextAct1Question ? "\uC774 \uBB38\uC81C\uB97C \uD1B5\uACFC\uD588\uC2B5\uB2C8\uB2E4. \uB2E4\uC74C \uBB38\uC81C\uB85C \uC774\uB3D9\uD558\uC138\uC694." : "\uC774 \uBB38\uC81C\uB97C \uD1B5\uACFC\uD588\uC2B5\uB2C8\uB2E4. \uACB0\uACFC\uB97C \uD655\uC778\uD558\uACE0 \uB2EB\uC544\uB3C4 \uB429\uB2C8\uB2E4." : hasNextAct1Question ? "\uC774 \uBB38\uC81C \uC810\uC218\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4. \uBE60\uC9C4 \uD56D\uBAA9\uC744 \uACE0\uCE58\uAC70\uB098 \uB2E4\uC74C \uBB38\uC81C\uB85C \uB118\uC5B4\uAC08 \uC218 \uC788\uC2B5\uB2C8\uB2E4." : "\uC774 \uBB38\uC81C \uC810\uC218\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4. \uC544\uB798 \uD56D\uBAA9\uC744 \uACE0\uCE5C \uB4A4 \uB2E4\uC2DC \uD655\uC778\uD558\uC138\uC694." : attempt.unlocked ? "\uD1B5\uACFC\uD588\uC2B5\uB2C8\uB2E4. \uACB0\uACFC\uB97C \uD655\uC778\uD558\uACE0 \uB2EB\uC544\uB3C4 \uB429\uB2C8\uB2E4." : hasNextAct1Question ? "\uC810\uC218\uAC00 \uBD80\uC871\uD574\uB3C4 \uAC15\uC758 \uD750\uB984\uC0C1 \uB2E4\uC74C \uBB38\uC81C\uB85C \uB118\uC5B4\uAC08 \uC218 \uC788\uC2B5\uB2C8\uB2E4." : "\uC810\uC218\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4. \uC544\uB798 \uD56D\uBAA9\uC744 \uACE0\uCE5C \uB4A4 \uB2E4\uC2DC \uC81C\uCD9C\uD558\uC138\uC694.";
         const passedChecks = (attempt.verificationLog || []).filter((entry) => entry.status === "pass");
-        const displayScore = percentScore(attempt.score, attempt.maxScore);
+        const displayScore = act1Result ? percentScore(act1Result.score, act1Result.maxScore) : percentScore(attempt.score, attempt.maxScore);
+        const feedbackItems = act1Result ? act1Result.feedback : attempt.feedback || [];
+        const passedForDisplay = act1Result ? act1QuestionPassed : attempt.unlocked;
         return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "result-modal-backdrop", role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "result-dialog", ref: dialogRef, tabIndex: -1, onKeyDown: onDialogKeyDown, className: "result-dialog", role: "dialog", "aria-modal": "true", "aria-live": "polite", "aria-labelledby": "result-dialog-title", children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "result-dialog-header", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { id: "result-dialog-title", children: "\uAC80\uC99D \uACB0\uACFC" }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", ref: closeButtonRef, className: "secondary-button small-button", onClick: onRetry, children: "\uB2EB\uAE30" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { id: "score-meter", className: `score-meter ${attempt.unlocked ? "pass" : "fail"}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { id: "score-meter", className: `score-meter ${passedForDisplay ? "pass" : "fail"}`, children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [
               displayScore,
               "\uC810"
@@ -13546,13 +13568,13 @@
             ] }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "result-section", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "\uBE60\uC9C4 \uD56D\uBAA9" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FeedbackItemList, { items: attempt.feedback?.length ? attempt.feedback : [{ message: "\uBE60\uC9C4 \uD56D\uBAA9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4." }] })
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FeedbackItemList, { items: feedbackItems.length ? feedbackItems : [{ message: "\uBE60\uC9C4 \uD56D\uBAA9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4." }] })
             ] }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "result-section", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "\uC88B\uC558\uB358 \uC810" }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FeedbackItemList, { items: passedChecks.length ? passedChecks.slice(0, 3) : [{ message: "\uC544\uC9C1 \uD1B5\uACFC\uD55C \uAC80\uC99D \uD56D\uBAA9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4." }], itemClassName: "pass" })
             ] }),
-            !attempt.unlocked ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "result-section", children: [
+            !passedForDisplay ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "result-section", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "\uB2E4\uC2DC \uC2DC\uB3C4\uD560 \uB54C" }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GlossaryText, { children: "\uC810\uC218\uAC00 \uB0AE\uC740 \uC774\uC720\uB97C \uD558\uB098\uC529 \uACE0\uCE5C \uB4A4 \uAC19\uC740 \uC785\uB825\uC744 \uB2E4\uC2DC \uC81C\uCD9C\uD574 \uC810\uC218 \uBCC0\uD654\uB97C \uD655\uC778\uD558\uC138\uC694." }) })
             ] }) : null,
