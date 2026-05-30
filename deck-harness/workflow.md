@@ -1,5 +1,6 @@
 # Topic-To-Deck Workflow
 
+00 Context Triage / Targeted Research Pack
 01 Topic Intake
 02 Research Dossier
 03 Claim / Source Map
@@ -19,7 +20,8 @@
 ## Source-Of-Truth Chain
 
 ```text
-topic-intake.md
+context-research-pack.md (optional, required when current/local/library research is needed)
+  -> topic-intake.md
   -> research-dossier.md
   -> claim-source-map.json
   -> section-plan.json
@@ -82,6 +84,7 @@ node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>
 
 ## Stage Contracts
 
+- Context Triage / Targeted Research Pack routes local project context, current external research, optional tool availability, library/API feasibility, and brainstorming-adjacent research questions. It must be written under the project root and validated with `node scripts/validate-context-research-pack.js <pack>`. Missing optional tools such as Context7, browser, PPT parser, or other MCP tools must be recorded as skipped with fallback and install recommendation instead of blocking.
 - Topic Intake fixes topic, audience, timebox, must-cover items, must-avoid items, source preferences, visual preference, and success criteria.
 - Research Dossier collects official sources, supporting sources, usable claims, claims to avoid, date-sensitive notes, examples, and analogies.
 - Claim / Source Map is the only place for source URL, source type, checked date, use location, confidence, and source notes.

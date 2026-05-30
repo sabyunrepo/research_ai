@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskType": "document-review",
+  "purpose": "Verify documents through claim-source support, contradiction checks, audience fit, actionability, currentness, and decision clarity.",
+  "verificationAxes": [
+    "material claims map to sources or accepted assumptions",
+    "date-sensitive claims include checked-date evidence",
+    "terms, decisions, and owners are defined",
+    "contradictions and unresolved questions are surfaced",
+    "reader, use case, and actionability are aligned"
+  ],
+  "blindSpotPatterns": [
+    {
+      "id": "document-unsupported-claim-pass",
+      "severity": "P1",
+      "description": "Document verifier passes persuasive prose without checking claim support or assumptions.",
+      "detector": "Verdict lacks claim-source table or accepted-assumption list."
+    },
+    {
+      "id": "document-audience-actionability-miss",
+      "severity": "P2",
+      "description": "Document verifier checks grammar but misses whether the intended reader can act on the document.",
+      "detector": "Evidence lacks audience/use-case fit, decisions, owner, or action list."
+    }
+  ],
+  "repairStrategy": "Repair the document by adding sources, assumptions, decisions, definitions, owners, or reader-specific structure.",
+  "improveStrategy": "Add claim-source, contradiction, currentness, or audience-fit requirement to the verifier harness.",
+  "sampleTasks": [
+    {
+      "id": "sample-document-prd-review",
+      "description": "Verify a PRD or report for supported claims, contradictions, reader fit, and decisions.",
+      "mustSelect": [
+        "claim-source support scan",
+        "contradiction and missing-decision scan"
+      ],
+      "mustDetect": [
+        "document-unsupported-claim-pass"
+      ]
+    }
+  ]
+}

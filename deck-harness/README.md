@@ -13,29 +13,31 @@
 
 ## Workflow Order
 
+0. Run Context Triage with `.codex/skills/context-research-orchestrator/SKILL.md` when the topic needs local constraints, current facts, library/API feasibility, or source collection before brainstorming.
 1. Fill `topic-intake.md`.
-2. Write `research-dossier.md`.
-3. Create `claim-source-map.json`.
-4. Create `section-plan.json`.
-5. Create `glossary.json`.
-6. Create `asset-pack.json` with generated-image requirements, source paths, sprite/crop metadata, teaching anchors, and semantic requirements for projector-referenced visual assets.
-7. Record stage status in `job-manifest.json`.
-8. Create `slide-spec.json`.
-9. Run structure validation before image generation:
+2. After the topic direction is clear, run Targeted Research when needed and write or update `context-research-pack.md`.
+3. Write `research-dossier.md`.
+4. Create `claim-source-map.json`.
+5. Create `section-plan.json`.
+6. Create `glossary.json`.
+7. Create `asset-pack.json` with generated-image requirements, source paths, sprite/crop metadata, teaching anchors, and semantic requirements for projector-referenced visual assets.
+8. Record stage status in `job-manifest.json`.
+9. Create `slide-spec.json`.
+10. Run structure validation before image generation:
    `node deck-harness/scripts/validate-deck-contract.js --stage=structure generated-decks/<slug>`.
-10. Draft speaker script and visual system.
-11. Export the design-grounded image prompt queue:
+11. Draft speaker script and visual system.
+12. Export the design-grounded image prompt queue:
    `node deck-harness/scripts/prepare-asset-generation-prompts.js generated-decks/<slug>`.
-12. Create or map visual assets for every projector-referenced `visualAssetId` from `asset-generation-prompts.md`.
-13. Materialize the asset pack and crop outputs:
+13. Create or map visual assets for every projector-referenced `visualAssetId` from `asset-generation-prompts.md`.
+14. Materialize the asset pack and crop outputs:
    `node deck-harness/scripts/build-asset-pack.js generated-decks/<slug>`.
-14. Create `asset-review.json` after visual inspection or an equivalent image review.
-15. Run projector validation:
+15. Create `asset-review.json` after visual inspection or an equivalent image review.
+16. Run projector validation:
    `node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>`.
-16. Build the HTML/CSS deck.
-17. Review presenter view.
-18. Run verification gates.
-19. Finish `HANDOFF.md` with commands, evidence, risks, and next prompt.
+17. Build the HTML/CSS deck.
+18. Review presenter view.
+19. Run verification gates.
+20. Finish `HANDOFF.md` with commands, evidence, risks, and next prompt.
 
 Slide HTML must not start until `research-dossier.md`, `claim-source-map.json`, `section-plan.json`, `glossary.json`, `asset-pack.json`, `job-manifest.json`, and `slide-spec.json` exist.
 
@@ -59,6 +61,7 @@ The Kimai visual QA gates are split for reviewability:
 - `workflow.md`: stage order, required inputs, and blocking rules.
 - `quality-rubric.md`: pass/fail bar for content, pedagogy, visual quality, and verification.
 - `*.template.md`: starter documents for intake, research, visual system, evaluation, and handoff.
+- `context-research-pack.md`: optional pre-dossier artifact for routing local context, current research, optional tool availability, and brainstorming-adjacent research questions. It must remain under the project root.
 - `*.schema.json`: JSON contracts for evidence, sections, slides, glossary, and job manifest.
 - `asset-pack.schema.json`: reusable generated-image and image-crop contract. Slides reference image assets by `visualAssetId`; crop regions are materialized into real files under `assets/visuals/` during build. Projector-referenced visual assets must include `semanticRequirements` with `mustShow`, `mustNotShow`, `teachingQuestions`, and `minimumPassScore`.
 - `asset-review.schema.json`: visual semantic review contract. `forbiddenElementFindings.observed: true` means a forbidden `semanticRequirements.mustNotShow` element was seen and blocks projector PASS. Each review also records the reviewed `sourcePath`, current asset file SHA-256, and current `semanticRequirements` SHA-256 so stale PASS reviews fail after image, crop, or semantic-contract changes.

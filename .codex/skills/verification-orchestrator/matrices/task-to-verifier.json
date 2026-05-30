@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "defaultTaskType": "generic-code-change",
+  "taskTypes": [
+    {
+      "id": "practice-ui",
+      "description": "Learner-facing practice-harness UI, scoring, feedback, modal, glossary, or browser flow work.",
+      "verifierProfiles": [
+        {
+          "id": "critical-practice-harness-verifier",
+          "agentPath": "practice-harness/agents/critical-practice-harness-verifier-agent.md",
+          "role": "independent learner-facing practice verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "docs/harness/lecture-cuts-redesign-master-spec.md",
+        "docs/superpowers/plans/2026-05-28-practice-harness-act1-6-expansion.md",
+        "practice-harness/practices/*.json",
+        "practice-harness/react-src/App.jsx",
+        "practice-harness/public/practice-app.js",
+        "practice-harness/public/styles.css"
+      ],
+      "evidenceCommands": [
+        "npm run qa:practice"
+      ],
+      "evidenceArtifacts": [
+        ".tmp/practice-browser-qa/act1-desktop.png",
+        ".tmp/practice-browser-qa/act1-mobile.png",
+        ".tmp/practice-browser-qa/act2-desktop.png",
+        ".tmp/practice-browser-qa/act2-mobile.png",
+        ".tmp/practice-browser-qa/act3-desktop.png",
+        ".tmp/practice-browser-qa/act3-mobile.png",
+        ".tmp/practice-browser-qa/act4-desktop.png",
+        ".tmp/practice-browser-qa/act4-mobile.png",
+        ".tmp/practice-browser-qa/act5-desktop.png",
+        ".tmp/practice-browser-qa/act5-mobile.png",
+        ".tmp/practice-browser-qa/act6-desktop.png",
+        ".tmp/practice-browser-qa/act6-mobile.png"
+      ],
+      "blocksHandoffWhen": [
+        "Browser QA is missing for a learner-facing change.",
+        "A result appears outside the required modal flow.",
+        "A learner can pass without the planned objective, hints, retry loop, or unlock artifact."
+      ]
+    },
+    {
+      "id": "lecture-cuts",
+      "description": "Main lecture-cuts deck, metadata, source map, presenter review, handoff, hook, or reproduction contract work.",
+      "verifierProfiles": [
+        {
+          "id": "harness-verification-agent",
+          "agentPath": "lecture-cuts/agents/harness-verification-agent.md",
+          "role": "lecture-cuts verification matrix owner"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "lecture-cuts/AGENTS.md",
+        "lecture-cuts/skills/verification-gate/SKILL.md",
+        "docs/harness/lecture-cuts-reproduction-contract.md",
+        "lecture-cuts/HANDOFF.md"
+      ],
+      "evidenceCommands": [
+        "node scripts/run-lecture-cuts-hook.js pre-handoff"
+      ],
+      "evidenceArtifacts": [
+        "lecture-cuts/slide-spec.json",
+        "docs/harness/lecture-cuts-source-map.json",
+        "docs/harness/lecture-cuts-agent-handoff.md"
+      ],
+      "blocksHandoffWhen": [
+        "Any pre-handoff hook exits non-zero.",
+        "Slide count, order, hash, title, speaker source, or source-sensitive coverage drifts without explanation.",
+        "Handoff omits command and exit-status evidence."
+      ]
+    },
+    {
+      "id": "deck-harness",
+      "description": "Generated deck harness, slide spec, asset pack, source map, glossary, visual polish, or generated deck workflow work.",
+      "verifierProfiles": [
+        {
+          "id": "deck-harness-verification-agent",
+          "agentPath": "deck-harness/agents/verification-agent.md",
+          "role": "deck-harness syntax, source, render, presenter, glossary, and handoff verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "deck-harness/README.md",
+        "deck-harness/workflow.md",
+        "deck-harness/agents/verification-agent.md"
+      ],
+      "evidenceCommands": [
+        "node deck-harness/scripts/verify-deck-quality.js <deck-dir>"
+      ],
+      "evidenceArtifacts": [
+        "<deck-dir>/slide-spec.json",
+        "<deck-dir>/asset-pack.json",
+        "<deck-dir>/claim-source-map.json",
+        "<deck-dir>/browser-render-report.json",
+        "<deck-dir>/review-screenshots/"
+      ],
+      "blocksHandoffWhen": [
+        "Generated deck schema or source map has unresolved references.",
+        "Browser render evidence is missing.",
+        "Glossary, presenter review, or visual quality failures are unowned."
+      ]
+    },
+    {
+      "id": "context-research",
+      "description": "Context research pack, source ledger, claim support, or research-agent workflow work.",
+      "verifierProfiles": [
+        {
+          "id": "context-research-reviewer",
+          "agentPath": ".codex/agents/context-research-reviewer-agent.md",
+          "role": "context research pack and evidence-quality reviewer"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        ".codex/skills/context-research-orchestrator/SKILL.md",
+        ".codex/skills/context-research-orchestrator/references/research-agent-design.md"
+      ],
+      "evidenceCommands": [
+        "node scripts/validate-context-research-pack.js <pack-path>"
+      ],
+      "evidenceArtifacts": [
+        "<pack-path>"
+      ],
+      "blocksHandoffWhen": [
+        "The pack is outside the project root.",
+        "Source ledger or claim support rows are missing.",
+        "A date-sensitive claim lacks checked-date evidence."
+      ]
+    },
+    {
+      "id": "code-change",
+      "description": "Code implementation, refactor, bug fix, CLI, API, or test change that needs executable regression evidence.",
+      "verifierProfiles": [
+        {
+          "id": "code-change-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "task-specific code correctness, regression, and contract verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "changed files",
+        "related tests",
+        "related contracts or schemas",
+        "package or build configuration"
+      ],
+      "evidenceCommands": [
+        "repo-appropriate tests",
+        "syntax/type/lint checks when available",
+        "focused regression fixture for changed behavior"
+      ],
+      "evidenceArtifacts": [
+        "diff",
+        "command output",
+        "test fixture or reproduction case",
+        "risk notes"
+      ],
+      "blocksHandoffWhen": [
+        "A changed behavior lacks a focused regression or clear reason it cannot be automated.",
+        "Syntax/type/lint checks are skipped without justification.",
+        "The verifier cannot explain false-positive or false-negative risk for heuristic findings."
+      ]
+    },
+    {
+      "id": "slide-deck",
+      "description": "HTML, generated, or lecture slide deck output where source/spec, render, asset meaning, presenter separation, and teaching flow matter.",
+      "verifierProfiles": [
+        {
+          "id": "slide-deck-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "slide source-contract, render, presenter, asset, and teaching-flow verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "deck source/spec files",
+        "asset-pack or image manifest",
+        "speaker or presenter notes",
+        "render or screenshot reports"
+      ],
+      "evidenceCommands": [
+        "deck-specific quality gate",
+        "desktop/projector/mobile render check",
+        "source/spec drift check"
+      ],
+      "evidenceArtifacts": [
+        "slide-spec.json or equivalent source",
+        "asset-pack.json or media inventory",
+        "browser render report",
+        "review screenshots",
+        "presenter notes"
+      ],
+      "blocksHandoffWhen": [
+        "Rendered slides are not checked in desktop, projector, and mobile-like viewports.",
+        "Speaker-only or source content leaks into the audience view.",
+        "Slide meaning, asset teaching role, or adjacent-slide job separation is unverified."
+      ]
+    },
+    {
+      "id": "pptx-deck",
+      "description": "PowerPoint or .pptx deck review where file integrity, slide order, visual/text fit, notes, export compatibility, and audience fit matter.",
+      "verifierProfiles": [
+        {
+          "id": "pptx-deck-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "PPTX structure, visual fit, speaker notes, export, and narrative-flow verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        ".pptx file or extracted slide text",
+        "speaker notes when present",
+        "source brief or acceptance criteria"
+      ],
+      "evidenceCommands": [
+        "pptx parse/extract check when available",
+        "slide count and order check",
+        "visual export or screenshot check when available"
+      ],
+      "evidenceArtifacts": [
+        "slide text extraction",
+        "media inventory",
+        "notes extraction",
+        "export screenshots or PDF preview",
+        "compatibility notes"
+      ],
+      "blocksHandoffWhen": [
+        "The .pptx cannot be parsed or opened by the available verifier.",
+        "Slide count, order, notes, or media inventory is unknown.",
+        "Text fit, visual overlap, or export compatibility is not inspected."
+      ]
+    },
+    {
+      "id": "schedule-plan",
+      "description": "Schedule, roadmap, calendar, task plan, meeting plan, or delivery checklist where dependencies, owners, dates, buffers, and conflicts matter.",
+      "verifierProfiles": [
+        {
+          "id": "schedule-plan-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "schedule dependency, owner, deadline, conflict, buffer, and risk verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "schedule or task plan",
+        "constraints, deadlines, owners, and dependencies",
+        "timezone or calendar assumptions when relevant"
+      ],
+      "evidenceCommands": [
+        "structured schedule consistency check when available",
+        "date/dependency conflict scan",
+        "owner and completion-condition scan"
+      ],
+      "evidenceArtifacts": [
+        "task list",
+        "date table",
+        "dependency map",
+        "owner map",
+        "risk and buffer notes"
+      ],
+      "blocksHandoffWhen": [
+        "A task lacks owner, due date, dependency status, or completion condition.",
+        "Date conflicts, impossible ordering, missing buffers, or timezone assumptions are unexamined.",
+        "Critical path or handoff risk is not named."
+      ]
+    },
+    {
+      "id": "document-review",
+      "description": "Written report, policy, PRD, plan, guide, or narrative document where claims, audience fit, contradictions, source support, and actionability matter.",
+      "verifierProfiles": [
+        {
+          "id": "document-review-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "document claim-support, contradiction, audience-fit, and actionability verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "target document",
+        "source materials or acceptance criteria",
+        "date-sensitive references when present"
+      ],
+      "evidenceCommands": [
+        "document structure or schema check when available",
+        "claim-source support scan",
+        "contradiction and missing-decision scan"
+      ],
+      "evidenceArtifacts": [
+        "claim table",
+        "source ledger",
+        "open questions",
+        "audience-fit notes",
+        "decision/action list"
+      ],
+      "blocksHandoffWhen": [
+        "Material claims lack support or currentness evidence.",
+        "Contradictions, undefined terms, or missing decisions remain unowned.",
+        "The document does not match its intended reader or use."
+      ]
+    },
+    {
+      "id": "ops-checklist",
+      "description": "Operational checklist, runbook, launch checklist, incident procedure, or recurring task checklist where idempotency, rollback, ownership, and evidence matter.",
+      "verifierProfiles": [
+        {
+          "id": "ops-checklist-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "runbook precondition, execution evidence, idempotency, rollback, and owner verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "checklist or runbook",
+        "system constraints",
+        "rollback or escalation policy"
+      ],
+      "evidenceCommands": [
+        "dry-run or syntax check when available",
+        "precondition/postcondition scan",
+        "rollback and escalation coverage scan"
+      ],
+      "evidenceArtifacts": [
+        "checklist steps",
+        "owner and approval map",
+        "precondition/postcondition table",
+        "rollback plan",
+        "execution evidence log"
+      ],
+      "blocksHandoffWhen": [
+        "A step lacks precondition, expected evidence, owner, or rollback path.",
+        "Repeated execution is not idempotent or contamination risk is unexamined.",
+        "Escalation and stop conditions are absent."
+      ]
+    },
+    {
+      "id": "security-sensitive",
+      "description": "Authentication, authorization, tool permission, secret, dependency, network, hook, or MCP security-sensitive work.",
+      "verifierProfiles": [
+        {
+          "id": "security-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "task-specific security verifier"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "changed files",
+        "permission and hook configuration"
+      ],
+      "evidenceCommands": [
+        "task-specific tests",
+        "dependency or secret scan when available"
+      ],
+      "evidenceArtifacts": [
+        "diff",
+        "test output",
+        "threat model notes"
+      ],
+      "blocksHandoffWhen": [
+        "A tool or file permission expands without explicit justification.",
+        "Secret material is exposed.",
+        "The report lacks exploitability or impact analysis."
+      ]
+    },
+    {
+      "id": "generic-code-change",
+      "description": "Fallback for code, docs, or workflow changes without a more specific route.",
+      "verifierProfiles": [
+        {
+          "id": "generated-task-verifier",
+          "agentPath": "generated-from-brief",
+          "role": "task-specific verifier generated from changed files and user acceptance criteria"
+        }
+      ],
+      "mandatoryReads": [
+        "AGENTS.md",
+        "changed files",
+        "related tests or docs"
+      ],
+      "evidenceCommands": [
+        "repo-appropriate tests",
+        "syntax or schema checks for changed artifacts"
+      ],
+      "evidenceArtifacts": [
+        "diff",
+        "command output",
+        "risk notes"
+      ],
+      "blocksHandoffWhen": [
+        "No relevant verification command was run or justified as unavailable.",
+        "A known changed contract lacks a matching test or review note.",
+        "The final verdict omits residual risk."
+      ]
+    }
+  ]
+}

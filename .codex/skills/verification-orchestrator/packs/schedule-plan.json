@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "taskType": "schedule-plan",
+  "purpose": "Verify plans and schedules through owner, deadline, dependency, timezone, buffer, conflict, critical-path, and completion-condition checks.",
+  "verificationAxes": [
+    "each task has owner, date, dependency, and completion condition",
+    "dates are feasible with timezone assumptions stated",
+    "dependency order and critical path are consistent",
+    "buffers and handoff risk are named",
+    "overlaps, missing approvals, and blocked decisions are surfaced"
+  ],
+  "blindSpotPatterns": [
+    {
+      "id": "schedule-ownerless-task-pass",
+      "severity": "P1",
+      "description": "Schedule verifier passes a plan with tasks that have no owner, deadline, dependency status, or done condition.",
+      "detector": "Evidence lacks owner/date/dependency/done-condition table."
+    },
+    {
+      "id": "schedule-critical-path-miss",
+      "severity": "P1",
+      "description": "Schedule verifier checks dates but misses impossible dependency order, no buffer, or unowned handoff risk.",
+      "detector": "Verdict lacks critical-path, buffer, and handoff-risk analysis."
+    }
+  ],
+  "repairStrategy": "Repair the plan by adding owners, dates, dependencies, buffers, stop conditions, or scope cuts.",
+  "improveStrategy": "Add schedule consistency table, date parser, dependency scan, or critical-path blind-spot pattern to the verifier harness.",
+  "sampleTasks": [
+    {
+      "id": "sample-schedule-launch-plan",
+      "description": "Verify a launch schedule with cross-team dependencies and a fixed deadline.",
+      "mustSelect": [
+        "date/dependency conflict scan",
+        "owner and completion-condition scan"
+      ],
+      "mustDetect": [
+        "schedule-ownerless-task-pass",
+        "schedule-critical-path-miss"
+      ]
+    }
+  ]
+}

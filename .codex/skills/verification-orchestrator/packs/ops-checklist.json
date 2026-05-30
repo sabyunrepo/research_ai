@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "taskType": "ops-checklist",
+  "purpose": "Verify runbooks and operational checklists through preconditions, evidence, owner, idempotency, rollback, escalation, and stop-condition checks.",
+  "verificationAxes": [
+    "each step has precondition, expected evidence, and owner",
+    "postconditions prove the operation completed",
+    "rollback and escalation paths are available",
+    "idempotency and repeated-run contamination risk are addressed",
+    "dry-run or syntax check exists when executable"
+  ],
+  "blindSpotPatterns": [
+    {
+      "id": "ops-no-rollback-pass",
+      "severity": "P0",
+      "description": "Ops verifier passes a checklist that can change state without rollback, escalation, or stop conditions.",
+      "detector": "Verdict lacks rollback path, escalation owner, and stop-condition evidence."
+    },
+    {
+      "id": "ops-non-idempotent-repeat-miss",
+      "severity": "P1",
+      "description": "Ops verifier misses that repeating the checklist could duplicate work or corrupt state.",
+      "detector": "Evidence lacks idempotency, cleanup, repeated-run, or contamination-risk analysis."
+    }
+  ],
+  "repairStrategy": "Repair the checklist by adding preconditions, evidence, owners, rollback, escalation, stop conditions, or dry-run checks.",
+  "improveStrategy": "Add runbook schema, pre/postcondition check, rollback detector, or idempotency fixture to the verifier harness.",
+  "sampleTasks": [
+    {
+      "id": "sample-ops-release-checklist",
+      "description": "Verify a release checklist that touches production-like state and needs rollback evidence.",
+      "mustSelect": [
+        "precondition/postcondition scan",
+        "rollback and escalation coverage scan"
+      ],
+      "mustDetect": [
+        "ops-no-rollback-pass",
+        "ops-non-idempotent-repeat-miss"
+      ]
+    }
+  ]
+}

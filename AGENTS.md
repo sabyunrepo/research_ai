@@ -5,6 +5,15 @@
 - 전역/사용자 레벨 AGENTS.md는 비워 두고, 이 프로젝트의 지침은 이 파일에서 관리한다.
 - 연구 자료, 강의 덱, lecture-cuts 규칙은 전역 파일이 아니라 이 파일 또는 하위 AGENTS.md에 추가한다.
 
+## Context Research Workflow
+
+- 범용 자료조사, 로컬 컨텍스트 조사, 라이브러리/API 구현 가능성 확인, PPT/deck/report 근거 수집은 `.codex/skills/context-research-orchestrator/SKILL.md`를 우선 사용한다.
+- 모든 조사 산출물, raw source list, skipped-tool note, 설치 추천은 프로젝트 루트 하위에 남긴다. 기본 위치는 `docs/context/`이며, generated deck이 이미 있는 경우에만 해당 deck 디렉터리 아래에 남길 수 있다.
+- 전역/사용자 레벨 skill, agent, memory, config 디렉터리에 이 프로젝트의 작업 기록이나 조사 산출물을 쓰지 않는다.
+- Context7, browser, PPT parser, 별도 MCP 같은 도구가 없으면 작업을 중단하지 않는다. 가능한 대체 경로로 진행하고, 최종 context pack의 `Tool Detection`과 `Install Recommendations`에만 기록한다.
+- 자료조사는 두 단계로 나눈다. 브레인스토밍 전에는 `Context Triage`로 필요한 로컬/도구/최신성 제약만 확인하고, 브레인스토밍 후에는 합의된 방향에 맞춰 `Targeted Research`를 수행한다.
+- context research pack을 완료했다고 보고하기 전에는 `node scripts/validate-context-research-pack.js <pack-path>`로 구조를 검증한다.
+
 ## Lecture Cuts Presentation Rules
 
 - lecture-cuts 슬라이드는 일반인 대상 4시간 강의를 위한 발표 자료다. 개발자나 AI 에이전트 경험자를 전제로 만들지 않는다.

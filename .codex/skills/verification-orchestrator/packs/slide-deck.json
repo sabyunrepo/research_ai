@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "taskType": "slide-deck",
+  "purpose": "Verify slide decks through source/spec contracts, render evidence, asset meaning, presenter/audience separation, and teaching-flow quality.",
+  "verificationAxes": [
+    "slide order, count, registry, and source/spec drift",
+    "desktop, projector, and mobile render evidence",
+    "text fit, overflow, image load, and visual overlap",
+    "presenter-only information is separated from audience view",
+    "one-slide-one-job teaching flow and adjacent-slide role separation",
+    "asset teaching role matches actual image meaning"
+  ],
+  "blindSpotPatterns": [
+    {
+      "id": "slide-render-only-meaning-miss",
+      "severity": "P1",
+      "description": "Slide verifier checks load/render only and misses whether the slide actually teaches the intended point.",
+      "detector": "Verdict lacks source/spec meaning alignment, one-slide-one-job review, or adjacent-slide duplication check."
+    },
+    {
+      "id": "slide-desktop-only-mobile-miss",
+      "severity": "P1",
+      "description": "Slide verifier checks only desktop and misses projector/mobile overflow or presenter leakage.",
+      "detector": "Evidence lacks desktop, projector, and mobile-like viewport coverage."
+    }
+  ],
+  "repairStrategy": "Repair slide source, spec, asset-pack, presenter notes, or deck harness layer according to project ownership.",
+  "improveStrategy": "Add missing render viewport, source/spec, teaching-flow, or asset-meaning detector to the verifier harness.",
+  "sampleTasks": [
+    {
+      "id": "sample-slide-generated-deck",
+      "description": "Verify a generated lecture deck for source/spec drift, visual fit, and teaching-flow quality.",
+      "mustSelect": [
+        "desktop/projector/mobile render check",
+        "source/spec drift check"
+      ],
+      "mustDetect": [
+        "slide-render-only-meaning-miss",
+        "slide-desktop-only-mobile-miss"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Negative and mutation fixtures that verify the blind-spot probe itself can catch missing verifier coverage.",
+  "fixtures": [
+    {
+      "id": "missing-blind-spot-patterns",
+      "taskType": "code-change",
+      "mutation": "removeBlindSpotPatterns",
+      "expectedDetector": "pack must define at least two task-specific blindSpotPatterns",
+      "risk": "A probe that never checks blind-spot pattern count can pass a shallow verifier forever."
+    },
+    {
+      "id": "missing-sample-tasks",
+      "taskType": "slide-deck",
+      "mutation": "removeSampleTasks",
+      "expectedDetector": "pack must define sampleTasks for mutation regression",
+      "risk": "A probe without negative examples cannot prove the verifier catches known bad cases."
+    },
+    {
+      "id": "sample-does-not-target-pattern",
+      "taskType": "pptx-deck",
+      "mutation": "clearSampleMustDetect",
+      "expectedDetector": "must detect at least one declared blind spot pattern",
+      "risk": "A sample task can exist but fail to exercise any actual blind-spot detector."
+    },
+    {
+      "id": "missing-domain-axis",
+      "taskType": "schedule-plan",
+      "mutation": "removeVerificationAxes",
+      "expectedDetector": "pack must define task-specific verificationAxes",
+      "risk": "A generic verifier can route a task type without domain-specific checks."
+    },
+    {
+      "id": "weak-improvement-strategy",
+      "taskType": "document-review",
+      "mutation": "blankImproveStrategy",
+      "expectedDetector": "pack must define improveStrategy",
+      "risk": "The loop can detect a blind spot but lack a verifier-harness improvement path."
+    },
+    {
+      "id": "missing-repair-strategy",
+      "taskType": "ops-checklist",
+      "mutation": "blankRepairStrategy",
+      "expectedDetector": "pack must define repairStrategy",
+      "risk": "The verifier can find target defects but cannot route ownership for repair."
+    }
+  ]
+}

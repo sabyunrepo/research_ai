@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/research-ai/verification-orchestrator/capability-state.schema.json",
+  "title": "Verification Orchestrator Capability State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "currentLevel",
+    "defaultMaxAttempts",
+    "promotedChecks",
+    "knownFailurePatterns",
+    "verifierProfiles",
+    "projectAdapters",
+    "promotionHistory"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "currentLevel": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "defaultMaxAttempts": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+    },
+    "promotedChecks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/promotedCheck"
+      }
+    },
+    "knownFailurePatterns": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/failurePattern"
+      }
+    },
+    "verifierProfiles": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/verifierProfileState"
+      }
+    },
+    "projectAdapters": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/projectAdapterState"
+      }
+    },
+    "promotionHistory": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/promotionRecord"
+      }
+    }
+  },
+  "$defs": {
+    "promotedCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "level",
+        "taskType",
+        "description",
+        "evidence",
+        "validationCommand",
+        "promotedAt"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "level": { "type": "integer", "minimum": 1 },
+        "taskType": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 1 },
+        "validationCommand": { "type": "string", "minLength": 1 },
+        "promotedAt": { "type": "string", "minLength": 1 }
+      }
+    },
+    "failurePattern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "taskType",
+        "description",
+        "detection",
+        "severity"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "taskType": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "detection": { "type": "string", "minLength": 1 },
+        "severity": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] }
+      }
+    },
+    "verifierProfileState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "lastValidatedAt"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 0 },
+        "lastValidatedAt": { "type": "string" }
+      }
+    },
+    "projectAdapterState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "commands"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 0 },
+        "commands": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "promotionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "attemptId",
+        "fromLevel",
+        "toLevel",
+        "changeType",
+        "evidence",
+        "validationCommand",
+        "validatedAt",
+        "decision"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "attemptId": { "type": "string", "minLength": 1 },
+        "fromLevel": { "type": "integer", "minimum": 0 },
+        "toLevel": { "type": "integer", "minimum": 0 },
+        "changeType": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 1 },
+        "validationCommand": { "type": "string", "minLength": 1 },
+        "validatedAt": { "type": "string", "minLength": 1 },
+        "decision": { "type": "string", "enum": ["promoted", "rejected", "blocked"] }
+      }
+    }
+  }
+}

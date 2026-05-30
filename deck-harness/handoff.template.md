@@ -4,6 +4,13 @@
 
 ## Inputs
 
+## Context Research
+
+- Context pack:
+- Validation command:
+- Optional tools skipped:
+- Install recommendations:
+
 ## Evidence Map Status
 
 ## Source Coverage

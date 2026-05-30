@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskType": "code-change",
+  "purpose": "Verify code changes with executable evidence, contract checks, focused regression cases, and explicit risk calibration.",
+  "verificationAxes": [
+    "changed behavior matches acceptance criteria",
+    "focused regression covers the changed path",
+    "syntax/type/lint gates are run or explicitly unavailable",
+    "security, concurrency, async, and resource edge cases are considered",
+    "false-positive and false-negative risk is named"
+  ],
+  "blindSpotPatterns": [
+    {
+      "id": "code-no-focused-regression",
+      "severity": "P1",
+      "description": "Code verifier accepts broad test output without a fixture or reproduction tied to the changed behavior.",
+      "detector": "Verdict lacks a changed-behavior regression, reproduction command, or clear automation-infeasible reason."
+    },
+    {
+      "id": "code-static-only-runtime-miss",
+      "severity": "P1",
+      "description": "Code verifier relies on static reading and skips runtime, async, concurrency, or failure-path execution where available.",
+      "detector": "Evidence includes no executable command and no reason runtime verification is unavailable."
+    }
+  ],
+  "repairStrategy": "Repair the implementation, tests, or contract in the owning code layer; do not weaken verification criteria.",
+  "improveStrategy": "Add missing regression fixture, command requirement, edge-case pattern, or parser/schema validation to the verifier harness.",
+  "sampleTasks": [
+    {
+      "id": "sample-code-api-bugfix",
+      "description": "Verify an API bug fix that changes validation behavior and requires a focused failing-before/passing-after test.",
+      "mustSelect": [
+        "focused regression fixture for changed behavior",
+        "syntax/type/lint checks when available"
+      ],
+      "mustDetect": [
+        "code-no-focused-regression"
+      ]
+    }
+  ]
+}

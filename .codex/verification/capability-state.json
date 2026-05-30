@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "currentLevel": 5,
+  "defaultMaxAttempts": 5,
+  "promotedChecks": [
+    {
+      "id": "mandatory-blind-spot-probe",
+      "level": 2,
+      "taskType": "generic-code-change",
+      "description": "Verification cannot PASS after target checks alone; the default blind-spot probe must run after a target PASS.",
+      "evidence": "node scripts/run-verification-orchestrator-loop.js shows verify target followed by check verifier blind spot.",
+      "validationCommand": "node scripts/test-verification-orchestrator-loop.js",
+      "promotedAt": "2026-05-30"
+    },
+    {
+      "id": "promotion-gated-self-improvement",
+      "level": 3,
+      "taskType": "generic-code-change",
+      "description": "Verifier improvement is separated from target repair and requires root-cause, regression, and promotion evidence before state advancement.",
+      "evidence": "Promotion log, improvement template, and loop fixtures separate target repair from verifier improvement budget.",
+      "validationCommand": "node scripts/validate-verification-orchestrator.js",
+      "promotedAt": "2026-05-30"
+    },
+    {
+      "id": "task-specific-verification-packs",
+      "level": 4,
+      "taskType": "generic-code-change",
+      "description": "Broad task families have reusable verification packs with axes, blind-spot patterns, sample tasks, repair strategy, and improve strategy.",
+      "evidence": "Packs exist for code-change, slide-deck, pptx-deck, schedule-plan, document-review, and ops-checklist.",
+      "validationCommand": "node scripts/test-verification-task-packs.js",
+      "promotedAt": "2026-05-30"
+    },
+    {
+      "id": "task-resolver-sample-regression",
+      "level": 4,
+      "taskType": "generic-code-change",
+      "description": "Task descriptions are resolved to task-specific verifier routes and sample regression fixtures prove pack selection.",
+      "evidence": "Resolver sample cases cover code, slide, pptx, schedule, document, ops, and fallback tasks.",
+      "validationCommand": "node scripts/test-verification-task-packs.js",
+      "promotedAt": "2026-05-30"
+    },
+    {
+      "id": "probe-of-probe-negative-fixtures",
+      "level": 5,
+      "taskType": "generic-code-change",
+      "description": "The blind spot probe is itself validated against negative fixtures that deliberately remove verifier coverage.",
+      "evidence": "probe-of-probe fixtures cover code, slide, pptx, schedule, document, and ops task packs with expected detector failures.",
+      "validationCommand": "node scripts/test-verification-probe-of-probe.js",
+      "promotedAt": "2026-05-30"
+    },
+    {
+      "id": "mutation-tested-blind-spot-packs",
+      "level": 5,
+      "taskType": "generic-code-change",
+      "description": "Task-specific blind-spot packs are mutation-tested for missing patterns, missing samples, weak sample coverage, missing axes, and missing repair/improve strategies.",
+      "evidence": "test-verification-probe-of-probe.js mutates real packs in memory and requires each mutation to fail through the expected detector.",
+      "validationCommand": "node scripts/test-verification-probe-of-probe.js",
+      "promotedAt": "2026-05-30"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "id": "happy-path-only-verification",
+      "taskType": "generic-code-change",
+      "description": "Verifier only checks normal inputs and misses resource, async, malformed, or bypass edge cases.",
+      "detection": "Verdict lacks edge-case, adversarial, resource, async, or idempotency evidence.",
+      "severity": "P1"
+    },
+    {
+      "id": "heuristic-without-risk-cost",
+      "taskType": "generic-code-change",
+      "description": "Verifier gives PASS/WARN/FAIL without separating deterministic evidence from heuristic scoring and false-positive or false-negative risk.",
+      "detection": "Verdict lacks scoring axes or false-positive and false-negative risk notes.",
+      "severity": "P2"
+    },
+    {
+      "id": "coupled-or-contaminated-verification",
+      "taskType": "generic-code-change",
+      "description": "Verifier depends on target runtime state or previous run artifacts, making repeated verification non-idempotent.",
+      "detection": "Report lacks isolation, sandbox, cleanup, or repeated-run evidence for stateful workflows.",
+      "severity": "P1"
+    },
+    {
+      "id": "self-improvement-without-regression-gate",
+      "taskType": "generic-code-change",
+      "description": "Verifier logic is improved without root-cause diagnosis and regression evidence proving existing gates were not weakened.",
+      "detection": "Improvement proposal lacks root cause category, regression gate, negative example, or validation command.",
+      "severity": "P1"
+    },
+    {
+      "id": "task-type-without-pack",
+      "taskType": "generic-code-change",
+      "description": "A broad task category is verified through the generic fallback even though it needs domain-specific evidence and blind-spot patterns.",
+      "detection": "Resolver output lacks a task-specific pack for code, slide, pptx, schedule, document, or ops-checklist work.",
+      "severity": "P1"
+    },
+    {
+      "id": "sample-regression-missing",
+      "taskType": "generic-code-change",
+      "description": "A verifier improvement is promoted without a sample task proving the new route or blind-spot detector works.",
+      "detection": "Task pack lacks sampleTasks, or test-verification-task-packs.js lacks a resolver fixture for the task family.",
+      "severity": "P1"
+    },
+    {
+      "id": "blind-spot-probe-without-negative-fixtures",
+      "taskType": "generic-code-change",
+      "description": "The blind spot probe passes without proving it can fail on deliberately broken verifier packs.",
+      "detection": "Missing probe-of-probe negative fixture suite or mutation test command evidence.",
+      "severity": "P1"
+    },
+    {
+      "id": "mutation-coverage-missing",
+      "taskType": "generic-code-change",
+      "description": "Verifier packs are promoted without mutation cases for missing blind spot patterns, sample tasks, axes, repair strategy, or improve strategy.",
+      "detection": "test-verification-probe-of-probe.js lacks required mutation cases or fixtures do not cover every Level 4 task pack.",
+      "severity": "P1"
+    }
+  ],
+  "verifierProfiles": {
+    "critical-practice-harness-verifier": {
+      "level": 0,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "harness-verification-agent": {
+      "level": 0,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "deck-harness-verification-agent": {
+      "level": 0,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "context-research-reviewer": {
+      "level": 0,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "code-change-verifier": {
+      "level": 5,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "slide-deck-verifier": {
+      "level": 5,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "pptx-deck-verifier": {
+      "level": 5,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "schedule-plan-verifier": {
+      "level": 5,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "document-review-verifier": {
+      "level": 5,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "ops-checklist-verifier": {
+      "level": 5,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "security-verifier": {
+      "level": 0,
+      "lastValidatedAt": "2026-05-30"
+    },
+    "generated-task-verifier": {
+      "level": 0,
+      "lastValidatedAt": "2026-05-30"
+    }
+  },
+  "projectAdapters": {
+    "research_ai": {
+      "level": 5,
+      "commands": [
+        "npm test",
+        "npm run qa:practice",
+        "node scripts/run-lecture-cuts-hook.js pre-handoff",
+        "node scripts/validate-context-research-pack.js <pack-path>",
+        "node scripts/probe-verification-orchestrator-blind-spots.js",
+        "node scripts/test-verification-probe-of-probe.js",
+        "node scripts/resolve-verification-task.js --task \"<description>\"",
+        "node scripts/run-verification-orchestrator-loop.js --max-attempts 10",
+        "node scripts/test-verification-task-packs.js",
+        "node scripts/test-verification-orchestrator-loop.js"
+      ]
+    }
+  },
+  "promotionHistory": [
+    {
+      "id": "promotion-2026-05-30-level-1-task-evidence",
+      "attemptId": "verification-orchestrator-level-4",
+      "fromLevel": 0,
+      "toLevel": 1,
+      "changeType": "task-aware evidence collection",
+      "evidence": "Task matrix defines mandatory reads, evidence commands, artifacts, and handoff blockers for project and generic routes.",
+      "validationCommand": "node scripts/validate-verification-orchestrator.js",
+      "validatedAt": "2026-05-30",
+      "decision": "promoted"
+    },
+    {
+      "id": "promotion-2026-05-30-level-2-blind-spot",
+      "attemptId": "verification-orchestrator-level-4",
+      "fromLevel": 1,
+      "toLevel": 2,
+      "changeType": "known failure patterns and mandatory blind-spot probe",
+      "evidence": "Default loop runs probe-verification-orchestrator-blind-spots.js after target PASS and blocks missing harness detectors.",
+      "validationCommand": "node scripts/test-verification-orchestrator-loop.js",
+      "validatedAt": "2026-05-30",
+      "decision": "promoted"
+    },
+    {
+      "id": "promotion-2026-05-30-level-3-improvement-loop",
+      "attemptId": "verification-orchestrator-level-4",
+      "fromLevel": 2,
+      "toLevel": 3,
+      "changeType": "bounded verifier self-improvement",
+      "evidence": "Loop fixtures prove target repair, verifier improvement, immediate block on failed improve command, and max-attempt exhaustion.",
+      "validationCommand": "node scripts/test-verification-orchestrator-loop.js",
+      "validatedAt": "2026-05-30",
+      "decision": "promoted"
+    },
+    {
+      "id": "promotion-2026-05-30-level-4-task-packs",
+      "attemptId": "verification-orchestrator-level-4",
+      "fromLevel": 3,
+      "toLevel": 4,
+      "changeType": "task-specific verifier packs with sample regression",
+      "evidence": "Task packs and resolver fixtures cover code-change, slide-deck, pptx-deck, schedule-plan, document-review, ops-checklist, and generic fallback.",
+      "validationCommand": "node scripts/test-verification-task-packs.js",
+      "validatedAt": "2026-05-30",
+      "decision": "promoted"
+    },
+    {
+      "id": "promotion-2026-05-30-level-5-probe-of-probe",
+      "attemptId": "verification-orchestrator-level-5",
+      "fromLevel": 4,
+      "toLevel": 5,
+      "changeType": "probe-of-probe and mutation-tested blind-spot packs",
+      "evidence": "Negative fixtures and in-memory mutation tests prove the blind-spot probe fails when task packs lose blindSpotPatterns, sampleTasks, sample detector links, verificationAxes, repairStrategy, or improveStrategy.",
+      "validationCommand": "node scripts/test-verification-probe-of-probe.js",
+      "validatedAt": "2026-05-30",
+      "decision": "promoted"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskType": "pptx-deck",
+  "purpose": "Verify .pptx deliverables through file integrity, extracted slide text, media inventory, speaker notes, export compatibility, and narrative fit.",
+  "verificationAxes": [
+    "pptx parse/open succeeds with slide count and order evidence",
+    "text extraction confirms visible copy and notes are inspectable",
+    "media inventory confirms expected images or charts exist",
+    "export or screenshot evidence checks text fit and visual overlap",
+    "narrative flow matches audience and acceptance criteria"
+  ],
+  "blindSpotPatterns": [
+    {
+      "id": "pptx-unopened-file-pass",
+      "severity": "P0",
+      "description": "PPTX verifier passes based on filename or intent without parsing, opening, or exporting the deck.",
+      "detector": "Verdict lacks parse/open/export evidence, slide count, and media/notes extraction."
+    },
+    {
+      "id": "pptx-notes-or-export-miss",
+      "severity": "P1",
+      "description": "PPTX verifier checks slide text but misses speaker notes leakage, missing notes, or export compatibility.",
+      "detector": "Evidence lacks notes extraction and export/PDF/screenshot compatibility review."
+    }
+  ],
+  "repairStrategy": "Repair the .pptx source deck, extracted source, or export workflow; do not claim compatibility without evidence.",
+  "improveStrategy": "Add parser/export checks, media inventory checks, or note extraction requirements to the verifier harness.",
+  "sampleTasks": [
+    {
+      "id": "sample-pptx-client-deck",
+      "description": "Verify a client .pptx deck for parseability, slide order, speaker notes, and export readability.",
+      "mustSelect": [
+        "pptx parse/extract check when available",
+        "visual export or screenshot check when available"
+      ],
+      "mustDetect": [
+        "pptx-unopened-file-pass"
+      ]
+    }
+  ]
+}
