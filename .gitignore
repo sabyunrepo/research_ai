@@ -1,5 +1,8 @@
 .playwright-mcp/
 .codex/
+!.codex/
+!.codex/hooks.json
+!.codex/stop-hook.js
 .tmp/
 .DS_Store
 .claude/settings.local.json

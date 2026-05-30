@@ -15,10 +15,18 @@ const allowedAssetKeys = new Set([
   "status",
   "sourcePath",
   "sourceAssetId",
+  "sheetLayout",
+  "sheetCellIndex",
   "crop",
+  "cropPolicy",
+  "expectedSubjectBounds",
+  "cropSafety",
+  "cropMasks",
   "teachingRole",
   "generationPrompt",
+  "xmlPrompt",
   "styleConstraints",
+  "characterRefs",
   "explanationAnchors",
   "semanticRequirements",
   "alt",
@@ -26,7 +34,32 @@ const allowedAssetKeys = new Set([
 ]);
 const assetIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const allowedCropKeys = new Set(["x", "y", "width", "height", "unit"]);
+const allowedCropSafetyKeys = new Set([
+  "safeMarginPercent",
+  "edgeBandPercent",
+  "maxEdgeInkRatio",
+  "maxEdgeLineCoverage",
+  "maxAdjacentPanelInkRatio",
+  "reviewerRequired",
+  "forbiddenEdgeArtifacts",
+]);
+const allowedCropMaskKeys = new Set(["kind", "x", "y", "width", "height", "unit"]);
+const allowedSheetLayoutKeys = new Set([
+  "columns",
+  "rows",
+  "insetPercent",
+  "gutterPercent",
+  "safeMarginPercent",
+  "panelCount",
+  "cellOrder",
+  "sourceWidthPx",
+  "sourceHeightPx",
+  "cellWidthPx",
+  "cellHeightPx",
+  "panelAspectRatio",
+]);
 const allowedSemanticRequirementKeys = new Set(["mustShow", "mustNotShow", "teachingQuestions", "minimumPassScore"]);
+const allowedAssetXmlPromptKeys = new Set(["instruction", "assetRequirement", "negativePrompt", "reviewChecklist"]);
 
 function usage() {
   console.error("Usage: node deck-harness/scripts/validate-deck-contract.js [--stage=structure|projector] <deck-dir>");
@@ -71,6 +104,14 @@ function readJson(deckDir, file) {
   return JSON.parse(fs.readFileSync(path.join(deckDir, file), "utf8"));
 }
 
+function resolveAssetPath(deckDir, sourcePath) {
+  if (!sourcePath) return "";
+  if (path.isAbsolute(sourcePath)) return sourcePath;
+  const deckRelative = path.join(deckDir, sourcePath);
+  if (sourcePath.startsWith("assets/") || fs.existsSync(deckRelative)) return deckRelative;
+  return path.join(root, sourcePath);
+}
+
 function readAssetPack(deckDir) {
   const assetPackPath = path.join(deckDir, "asset-pack.json");
   if (!fs.existsSync(assetPackPath)) {
@@ -92,9 +133,18 @@ function readAssetPack(deckDir) {
     assert(["planned", "existing", "generated", "cropped"].includes(asset.status), `${asset.id}.status is invalid`);
     assertNonEmptyString(asset.teachingRole, `${asset.id}.teachingRole`);
     assertNonEmptyString(asset.generationPrompt, `${asset.id}.generationPrompt`);
+    if (asset.xmlPrompt !== undefined) {
+      validateAssetXmlPrompt(asset);
+    }
     assertStringArray(asset.explanationAnchors, `${asset.id}.explanationAnchors`, 1);
     if (asset.styleConstraints !== undefined) {
       assertStringArray(asset.styleConstraints, `${asset.id}.styleConstraints`, 0);
+    }
+    if (asset.characterRefs !== undefined) {
+      assertStringArray(asset.characterRefs, `${asset.id}.characterRefs`, 1);
+      asset.characterRefs.forEach((ref) => {
+        assert(["kimai", "choi-ai", "park-ai", "manager"].includes(ref), `${asset.id}.characterRefs contains unknown character: ${ref}`);
+      });
     }
     if (asset.alt !== undefined) {
       assertNonEmptyString(asset.alt, `${asset.id}.alt`);
@@ -102,11 +152,35 @@ function readAssetPack(deckDir) {
     if (asset.sourcePath !== undefined) {
       assertNonEmptyString(asset.sourcePath, `${asset.id}.sourcePath`);
       if (asset.status !== "planned") {
-        assert(fs.existsSync(path.isAbsolute(asset.sourcePath) ? asset.sourcePath : path.join(root, asset.sourcePath)), `${asset.id}.sourcePath does not exist: ${asset.sourcePath}`);
+        assert(fs.existsSync(resolveAssetPath(deckDir, asset.sourcePath)), `${asset.id}.sourcePath does not exist: ${asset.sourcePath}`);
       }
+    }
+    if (asset.sheetLayout !== undefined) {
+      validateSheetLayout(asset);
+      if (asset.kind === "sprite-sheet") {
+        assert(asset.xmlPrompt?.assetRequirement, `${asset.id}.xmlPrompt.assetRequirement is required for sheet coordinate contract`);
+      }
+      if (asset.status !== "planned" && asset.sourcePath) {
+        validateSheetDimensions(deckDir, asset);
+      }
+    }
+    if (asset.sheetCellIndex !== undefined) {
+      assert(Number.isInteger(asset.sheetCellIndex) && asset.sheetCellIndex >= 1, `${asset.id}.sheetCellIndex must be a positive integer`);
     }
     if (asset.notes !== undefined) {
       assert(typeof asset.notes === "string", `${asset.id}.notes must be a string`);
+    }
+    if (asset.cropPolicy !== undefined) {
+      assert(asset.cropPolicy === "content-safe", `${asset.id}.cropPolicy is invalid`);
+    }
+    if (asset.cropMasks !== undefined) {
+      validateCropMasks(asset);
+    }
+    if (asset.expectedSubjectBounds !== undefined) {
+      validateExpectedSubjectBounds(asset);
+    }
+    if (asset.cropSafety !== undefined) {
+      validateCropSafety(asset);
     }
     if (asset.kind !== "crop-region" && asset.status !== "planned") {
       assert(asset.sourcePath, `${asset.id} requires sourcePath unless it is planned or crop-region`);
@@ -118,6 +192,9 @@ function readAssetPack(deckDir) {
       assert(sourceAsset, `${asset.id} references missing sourceAssetId ${asset.sourceAssetId}`);
       assert(sourceAsset.sourcePath, `${asset.id} source asset ${asset.sourceAssetId} requires sourcePath`);
       validateCrop(asset);
+      if (sourceAsset.sheetLayout) {
+        assert(asset.sheetCellIndex !== undefined || panelNumberFromPrompt(sourceAsset, asset.id) !== null, `${asset.id} crop-region requires sheetCellIndex when source sheet uses sheetLayout`);
+      }
       if (asset.crop.unit === "percent") {
         const coversWholeSource =
           asset.crop.x === 0 &&
@@ -126,10 +203,13 @@ function readAssetPack(deckDir) {
           asset.crop.height >= 95;
         assert(!coversWholeSource, `${asset.id} crop-region must be a real split asset, not a near-full source crop`);
       }
+      assert(asset.cropPolicy === "content-safe" || asset.expectedSubjectBounds, `${asset.id} crop-region requires expectedSubjectBounds unless marked content-safe`);
+      assert(asset.cropSafety, `${asset.id} crop-region requires cropSafety for edge/cutoff QA`);
     }
     if (asset.semanticRequirements !== undefined) {
       validateSemanticRequirements(asset);
     }
+    validateCharacterContract(asset);
   });
   return assetPack;
 }
@@ -141,7 +221,101 @@ function assertNonEmptyString(value, label) {
 function assertStringArray(value, label, minItems = 0) {
   assert(Array.isArray(value), `${label} must be an array`);
   assert(value.length >= minItems, `${label} requires at least ${minItems} items`);
-  value.forEach((item, index) => assertNonEmptyString(item, `${label}[${index}]`));
+  const seen = new Set();
+  value.forEach((item, index) => {
+    assertNonEmptyString(item, `${label}[${index}]`);
+    assert(!seen.has(item), `${label} contains duplicate item: ${item}`);
+    seen.add(item);
+  });
+}
+
+function panelNumberFromPrompt(sourceAsset, assetId) {
+  const pattern = new RegExp(`Panel\\s+(\\d+)\\s*:\\s*${assetId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+  const match = String(sourceAsset.generationPrompt || "").match(pattern);
+  return match ? Number(match[1]) : null;
+}
+
+function validateSheetLayout(asset) {
+  assert(asset.sheetLayout && typeof asset.sheetLayout === "object" && !Array.isArray(asset.sheetLayout), `${asset.id}.sheetLayout must be an object`);
+  Object.keys(asset.sheetLayout).forEach((key) => assert(allowedSheetLayoutKeys.has(key), `${asset.id}.sheetLayout unknown key: ${key}`));
+  assert(Number.isInteger(asset.sheetLayout.columns) && asset.sheetLayout.columns >= 1, `${asset.id}.sheetLayout.columns must be a positive integer`);
+  assert(Number.isInteger(asset.sheetLayout.rows) && asset.sheetLayout.rows >= 1, `${asset.id}.sheetLayout.rows must be a positive integer`);
+  if (asset.sheetLayout.insetPercent !== undefined) {
+    assert(Number.isFinite(asset.sheetLayout.insetPercent) && asset.sheetLayout.insetPercent >= 0, `${asset.id}.sheetLayout.insetPercent must be a non-negative number`);
+  }
+  if (asset.sheetLayout.gutterPercent !== undefined) {
+    assert(Number.isFinite(asset.sheetLayout.gutterPercent) && asset.sheetLayout.gutterPercent >= 0, `${asset.id}.sheetLayout.gutterPercent must be a non-negative number`);
+  }
+  if (asset.sheetLayout.safeMarginPercent !== undefined) {
+    assert(Number.isFinite(asset.sheetLayout.safeMarginPercent) && asset.sheetLayout.safeMarginPercent >= 0, `${asset.id}.sheetLayout.safeMarginPercent must be a non-negative number`);
+  }
+  if (asset.sheetLayout.panelAspectRatio !== undefined) {
+    assert(/^[0-9]+:[0-9]+$/.test(asset.sheetLayout.panelAspectRatio), `${asset.id}.sheetLayout.panelAspectRatio must look like 4:3`);
+  }
+  if (asset.sheetLayout.panelCount !== undefined) {
+    assert(Number.isInteger(asset.sheetLayout.panelCount) && asset.sheetLayout.panelCount === asset.sheetLayout.columns * asset.sheetLayout.rows, `${asset.id}.sheetLayout.panelCount must equal columns * rows`);
+  }
+  if (asset.sheetLayout.cellOrder !== undefined) {
+    assert(asset.sheetLayout.cellOrder === "row-major-left-to-right", `${asset.id}.sheetLayout.cellOrder is invalid`);
+  }
+  ["sourceWidthPx", "sourceHeightPx"].forEach((key) => {
+    if (asset.sheetLayout[key] !== undefined) {
+      assert(Number.isInteger(asset.sheetLayout[key]) && asset.sheetLayout[key] > 0, `${asset.id}.sheetLayout.${key} must be a positive integer`);
+    }
+  });
+  ["cellWidthPx", "cellHeightPx"].forEach((key) => {
+    if (asset.sheetLayout[key] !== undefined) {
+      assert(Number.isFinite(asset.sheetLayout[key]) && asset.sheetLayout[key] > 0, `${asset.id}.sheetLayout.${key} must be a positive number`);
+    }
+  });
+}
+
+function validateSheetDimensions(deckDir, asset) {
+  const sourcePath = resolveAssetPath(deckDir, asset.sourcePath);
+  if (!sourcePath || !fs.existsSync(sourcePath)) return;
+  const dimensions = pngDimensions(sourcePath);
+  const layout = asset.sheetLayout;
+  if (layout.sourceWidthPx !== undefined) {
+    assert(dimensions.width === layout.sourceWidthPx, `${asset.id}.sheetLayout.sourceWidthPx ${layout.sourceWidthPx} does not match PNG width ${dimensions.width}`);
+  }
+  if (layout.sourceHeightPx !== undefined) {
+    assert(dimensions.height === layout.sourceHeightPx, `${asset.id}.sheetLayout.sourceHeightPx ${layout.sourceHeightPx} does not match PNG height ${dimensions.height}`);
+  }
+  if (layout.cellWidthPx !== undefined) {
+    assert(Math.abs(layout.cellWidthPx - dimensions.width / layout.columns) <= 0.01, `${asset.id}.sheetLayout.cellWidthPx does not match sourceWidthPx / columns`);
+  }
+  if (layout.cellHeightPx !== undefined) {
+    assert(Math.abs(layout.cellHeightPx - dimensions.height / layout.rows) <= 0.01, `${asset.id}.sheetLayout.cellHeightPx does not match sourceHeightPx / rows`);
+  }
+}
+
+function pngDimensions(filePath) {
+  const buffer = fs.readFileSync(filePath);
+  if (buffer.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a") {
+    throw new Error(`expected PNG: ${filePath}`);
+  }
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
+
+function validateAssetXmlPrompt(asset) {
+  assert(asset.xmlPrompt && typeof asset.xmlPrompt === "object" && !Array.isArray(asset.xmlPrompt), `${asset.id}.xmlPrompt must be an object`);
+  Object.keys(asset.xmlPrompt).forEach((key) => assert(allowedAssetXmlPromptKeys.has(key), `${asset.id}.xmlPrompt unknown key: ${key}`));
+  allowedAssetXmlPromptKeys.forEach((key) => {
+    assertNonEmptyString(asset.xmlPrompt[key], `${asset.id}.xmlPrompt.${key}`);
+    assert(/^<[^>]+>[\s\S]*<\/[^>]+>$/.test(asset.xmlPrompt[key].trim()), `${asset.id}.xmlPrompt.${key} must be wrapped in XML-style tags`);
+  });
+  if (asset.sheetLayout) {
+    const requirement = asset.xmlPrompt.assetRequirement;
+    [
+      `columns="${asset.sheetLayout.columns}"`,
+      `rows="${asset.sheetLayout.rows}"`,
+      `panelCount="${asset.sheetLayout.columns * asset.sheetLayout.rows}"`,
+      'cellOrder="row-major-left-to-right"',
+    ].forEach((needle) => assert(requirement.includes(needle), `${asset.id}.xmlPrompt.assetRequirement missing ${needle}`));
+  }
 }
 
 function validateCrop(asset) {
@@ -165,6 +339,66 @@ function validateCrop(asset) {
   }
 }
 
+function validateExpectedSubjectBounds(asset) {
+  assert(asset.expectedSubjectBounds && typeof asset.expectedSubjectBounds === "object" && !Array.isArray(asset.expectedSubjectBounds), `${asset.id}.expectedSubjectBounds must be an object`);
+  validatePercentBox(asset.expectedSubjectBounds, `${asset.id}.expectedSubjectBounds`);
+}
+
+function validateCropSafety(asset) {
+  assert(asset.cropSafety && typeof asset.cropSafety === "object" && !Array.isArray(asset.cropSafety), `${asset.id}.cropSafety must be an object`);
+  Object.keys(asset.cropSafety).forEach((key) => assert(allowedCropSafetyKeys.has(key), `${asset.id}.cropSafety unknown key: ${key}`));
+  ["safeMarginPercent", "edgeBandPercent", "maxEdgeInkRatio", "maxEdgeLineCoverage", "maxAdjacentPanelInkRatio"].forEach((key) => {
+    if (asset.cropSafety[key] !== undefined) {
+      assert(Number.isFinite(asset.cropSafety[key]), `${asset.id}.cropSafety.${key} must be a finite number`);
+      assert(asset.cropSafety[key] >= 0, `${asset.id}.cropSafety.${key} must be >= 0`);
+    }
+  });
+  if (asset.cropSafety.edgeBandPercent !== undefined) {
+    assert(asset.cropSafety.edgeBandPercent >= 1 && asset.cropSafety.edgeBandPercent <= 20, `${asset.id}.cropSafety.edgeBandPercent must be 1-20`);
+  }
+  ["maxEdgeInkRatio", "maxEdgeLineCoverage", "maxAdjacentPanelInkRatio"].forEach((key) => {
+    if (asset.cropSafety[key] !== undefined) {
+      assert(asset.cropSafety[key] <= 1, `${asset.id}.cropSafety.${key} must be <= 1`);
+    }
+  });
+  if (asset.cropSafety.reviewerRequired !== undefined) {
+    assert(typeof asset.cropSafety.reviewerRequired === "boolean", `${asset.id}.cropSafety.reviewerRequired must be boolean`);
+  }
+  if (asset.cropSafety.forbiddenEdgeArtifacts !== undefined) {
+    assertStringArray(asset.cropSafety.forbiddenEdgeArtifacts, `${asset.id}.cropSafety.forbiddenEdgeArtifacts`, 1);
+  }
+}
+
+function validatePercentBox(box, label) {
+  ["x", "y", "width", "height"].forEach((field) => {
+    assert(Number.isFinite(box[field]), `${label}.${field} must be a finite number`);
+  });
+  assert(box.unit === "percent", `${label}.unit must be percent`);
+  assert(box.x >= 0 && box.y >= 0, `${label}.x and ${label}.y must be >= 0`);
+  assert(box.width > 0 && box.height > 0, `${label}.width and ${label}.height must be > 0`);
+  assert(box.x + box.width <= 100, `${label} x + width must be <= 100`);
+  assert(box.y + box.height <= 100, `${label} y + height must be <= 100`);
+}
+
+function validateCropMasks(asset) {
+  assert(Array.isArray(asset.cropMasks), `${asset.id}.cropMasks must be an array`);
+  asset.cropMasks.forEach((mask, index) => {
+    assert(mask && typeof mask === "object" && !Array.isArray(mask), `${asset.id}.cropMasks[${index}] must be an object`);
+    Object.keys(mask).forEach((key) => assert(allowedCropMaskKeys.has(key), `${asset.id}.cropMasks[${index}] unknown key: ${key}`));
+    assert(mask.kind === "whiteout", `${asset.id}.cropMasks[${index}].kind must be whiteout`);
+    ["x", "y", "width", "height"].forEach((key) => {
+      assert(typeof mask[key] === "number", `${asset.id}.cropMasks[${index}].${key} must be a number`);
+      assert(mask[key] >= 0, `${asset.id}.cropMasks[${index}].${key} must be >= 0`);
+    });
+    assert(mask.width > 0 && mask.height > 0, `${asset.id}.cropMasks[${index}] must have positive width and height`);
+    assert(["px", "percent"].includes(mask.unit), `${asset.id}.cropMasks[${index}].unit is invalid`);
+    if (mask.unit === "percent") {
+      assert(mask.x + mask.width <= 100, `${asset.id}.cropMasks[${index}] x + width must be <= 100`);
+      assert(mask.y + mask.height <= 100, `${asset.id}.cropMasks[${index}] y + height must be <= 100`);
+    }
+  });
+}
+
 function validateSemanticRequirements(asset) {
   assert(asset.semanticRequirements && typeof asset.semanticRequirements === "object", `${asset.id}.semanticRequirements is required`);
   const requirements = asset.semanticRequirements;
@@ -174,6 +408,24 @@ function validateSemanticRequirements(asset) {
   assertStringArray(requirements.teachingQuestions, `${asset.id}.semanticRequirements.teachingQuestions`, 2);
   assert(Number.isFinite(requirements.minimumPassScore), `${asset.id}.semanticRequirements.minimumPassScore is required`);
   assert(requirements.minimumPassScore >= 0 && requirements.minimumPassScore <= 100, `${asset.id}.semanticRequirements.minimumPassScore must be 0-100`);
+  if (asset.kind === "sprite-sheet" || asset.kind === "crop-region" || /sprite-sheet|sheet|crop/i.test(`${asset.notes || ""} ${asset.generationPrompt || ""}`)) {
+    const forbiddenText = requirements.mustNotShow.join(" ");
+    assert(/번호|number|cell|sheet|시트/i.test(forbiddenText), `${asset.id}.semanticRequirements.mustNotShow must forbid visible sheet/cell numbering`);
+  }
+}
+
+function validateCharacterContract(asset) {
+  const text = `${asset.teachingRole || ""} ${asset.generationPrompt || ""} ${asset.alt || ""} ${(asset.semanticRequirements?.mustShow || []).join(" ")}`;
+  const refs = new Set(asset.characterRefs || []);
+  if (/김아이|Kimai/i.test(text)) {
+    assert(refs.has("kimai"), `${asset.id} mentions 김아이/Kimai but characterRefs lacks kimai`);
+  }
+  if (/최아이|Choi/i.test(text)) {
+    assert(refs.has("choi-ai"), `${asset.id} mentions 최아이/Choi but characterRefs lacks choi-ai`);
+  }
+  if (/박아이|Park/i.test(text)) {
+    assert(refs.has("park-ai"), `${asset.id} mentions 박아이/Park but characterRefs lacks park-ai`);
+  }
 }
 
 function hashFiles(deckDir, files) {
@@ -274,6 +526,7 @@ function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options = {
   const avoidClaimIds = new Set(claimMap.claims.filter((claim) => claim.useLocation === "avoid").map((claim) => claim.id));
   const assetIds = new Set((assetPack.assets || []).map((asset) => asset.id));
   const warnings = [];
+  const blockers = [];
   const slideIds = new Set();
   let minutes = 0;
   spec.slides.forEach((slide, index) => {
@@ -310,11 +563,9 @@ function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options = {
       assert(assetIds.has(slide.visualAssetId), `${slide.id} references missing asset ${slide.visualAssetId}`);
       const asset = assetPack.assets.find((item) => item.id === slide.visualAssetId);
       if (asset.status === "planned") {
-        if (options.stage === "structure") {
-          warnings.push(`${slide.id} references planned asset ${slide.visualAssetId}; projector build remains blocked`);
-        } else {
-          assert(false, `${slide.id} references planned asset ${slide.visualAssetId}; generate or map it before build`);
-        }
+        const message = `${slide.id} references planned asset ${slide.visualAssetId}; generate or map it before build`;
+        if (options.stage === "structure") warnings.push(`${message}; projector build remains blocked`);
+        else blockers.push(message);
       }
       assert(!/prototype/i.test(asset.notes || ""), `${slide.id} references prototype asset ${slide.visualAssetId}; replace it before projector build`);
       assert(
@@ -340,7 +591,18 @@ function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options = {
     }
     checkForbiddenFields(slide, `slide ${slide.id}`);
   });
-  return { slideIds, minutes, warnings };
+  return { slideIds, minutes, warnings, blockers };
+}
+
+function printIssueSummary(label, items, limit = 20) {
+  if (!items.length) {
+    return;
+  }
+  console.log(`${label} - ${items.length}`);
+  items.slice(0, limit).forEach((item) => console.log(`${label.split(" ")[0]} ${item}`));
+  if (items.length > limit) {
+    console.log(`${label.split(" ")[0]} ${items.length - limit} more`);
+  }
 }
 
 function validateManifest(deckDir, manifest) {
@@ -373,7 +635,7 @@ function main() {
 
   validateClaimMap(claimMap);
   const glossaryTerms = validateGlossary(glossary);
-  const { slideIds, minutes, warnings } = validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options);
+  const { slideIds, minutes, warnings, blockers } = validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options);
   validateSectionPlan(sectionPlan, slideIds);
   assert(minutes <= sectionPlan.timeboxMinutes, `slide estimated minutes ${minutes} exceed timebox ${sectionPlan.timeboxMinutes}`);
   validateManifest(deckDir, manifest);
@@ -384,19 +646,17 @@ function main() {
     assert(registry.length === spec.slides.length, `rendered slide count ${registry.length} differs from spec ${spec.slides.length}`);
   }
 
-  console.log(`PASS generated deck contract (${options.stage})`);
   console.log(`PASS source map schema - ${claimMap.claims.length} claims`);
   console.log(`PASS slide spec schema - ${spec.slides.length} slides`);
   console.log("PASS evidence claim resolution");
   console.log("PASS glossary registry");
   console.log(`PASS asset pack - ${assetPack.assets.length} assets`);
-  if (warnings.length) {
-    console.log(`WARN planned visual assets - ${warnings.length}`);
-    warnings.slice(0, 10).forEach((warning) => console.log(`WARN ${warning}`));
-    if (warnings.length > 10) {
-      console.log(`WARN ${warnings.length - 10} more planned visual asset references`);
-    }
+  printIssueSummary("WARN planned visual assets", warnings);
+  printIssueSummary("FAIL planned visual assets", blockers);
+  if (blockers.length) {
+    throw new Error(`projector build blocked by ${blockers.length} planned visual asset references`);
   }
+  console.log(`PASS generated deck contract (${options.stage})`);
 }
 
 try {

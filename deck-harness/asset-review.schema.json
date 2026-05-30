@@ -19,9 +19,52 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["assetId", "status", "score", "summary", "mustShowResults", "forbiddenElementFindings"],
+        "required": [
+          "assetId",
+          "sourcePath",
+          "assetSha256",
+          "semanticRequirementsSha256",
+          "imageDimensions",
+          "reviewerMethod",
+          "status",
+          "score",
+          "summary",
+          "mustShowResults",
+          "forbiddenElementFindings"
+        ],
         "properties": {
           "assetId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourcePath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assetSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "semanticRequirementsSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "imageDimensions": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["width", "height"],
+            "properties": {
+              "width": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "reviewerMethod": {
             "type": "string",
             "minLength": 1
           },
@@ -43,7 +86,7 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["label", "result", "evidence"],
+              "required": ["label", "result", "evidence", "observation", "evidencePath"],
               "properties": {
                 "label": {
                   "type": "string",
@@ -56,6 +99,14 @@
                 "evidence": {
                   "type": "string",
                   "minLength": 1
+                },
+                "observation": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidencePath": {
+                  "type": "string",
+                  "minLength": 1
                 }
               }
             }
@@ -65,7 +116,7 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["label", "observed", "evidence"],
+              "required": ["label", "observed", "evidence", "observation", "evidencePath"],
               "properties": {
                 "label": {
                   "type": "string",
@@ -75,6 +126,14 @@
                   "type": "boolean"
                 },
                 "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "observation": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidencePath": {
                   "type": "string",
                   "minLength": 1
                 }

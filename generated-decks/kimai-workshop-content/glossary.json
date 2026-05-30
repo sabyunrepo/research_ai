@@ -6,7 +6,10 @@
       "match": "whole-word",
       "koreanLabel": "이번 업무 지시",
       "analogy": "상사가 신입사원에게 이번 한 번의 일을 맡기는 지시서",
-      "practiceMeaning": "Act 2에서 수강생이 직접 쓰고 점수를 올리는 입력문"
+      "practiceMeaning": "Act 2에서 수강생이 직접 쓰고 점수를 올리는 입력문",
+      "plainLanguage": "이번 한 번의 일을 AI에게 맡기는 업무 지시.",
+      "firstUseSlideId": "act2-work-handoff",
+      "tooltipText": "이번 업무 지시: 이번 한 번의 일을 AI에게 맡기는 업무 지시. 예를 들면 상사가 신입사원에게 이번 한 번의 일을 맡기는 지시서."
     },
     {
       "term": "Context",
@@ -14,7 +17,10 @@
       "match": "whole-word",
       "koreanLabel": "데스크 위 참고 자료",
       "analogy": "신입사원 책상 위에 올려 둔 현재 업무 자료",
-      "practiceMeaning": "Act 1에서 수강생이 필요한 자료와 방해 자료를 구분하는 대상"
+      "practiceMeaning": "Act 1에서 수강생이 필요한 자료와 방해 자료를 구분하는 대상",
+      "plainLanguage": "현재 작업을 이해하기 위해 AI에게 함께 보여 주는 참고 자료.",
+      "firstUseSlideId": "act0-company-context",
+      "tooltipText": "데스크 위 참고 자료: 현재 작업을 이해하기 위해 AI에게 함께 보여 주는 참고 자료. 예를 들면 신입사원 책상 위에 올려 둔 현재 업무 자료."
     },
     {
       "term": "Session",
@@ -22,7 +28,10 @@
       "match": "whole-word",
       "koreanLabel": "이번 작업 시간",
       "analogy": "회의실에 모여 지금 하고 있는 업무 대화",
-      "practiceMeaning": "지금 작업의 목표와 자료가 섞이는 범위"
+      "practiceMeaning": "지금 작업의 목표와 자료가 섞이는 범위",
+      "plainLanguage": "현재 작업 목표와 자료가 유지되는 한 번의 대화 또는 작업 범위.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "이번 작업 시간: 현재 작업 목표와 자료가 유지되는 한 번의 대화 또는 작업 범위. 예를 들면 회의실에 모여 지금 하고 있는 업무 대화."
     },
     {
       "term": "Memory / CLAUDE.md",
@@ -30,7 +39,10 @@
       "match": "exact-phrase",
       "koreanLabel": "항상 적용되는 회사 내규",
       "analogy": "어떤 업무를 하든 반복해서 지켜야 하는 회사 내규",
-      "practiceMeaning": "Act 3에서 적용 범위를 고르고 과한 내규를 줄이는 대상"
+      "practiceMeaning": "Act 3에서 적용 범위를 고르고 과한 내규를 줄이는 대상",
+      "plainLanguage": "매번 다시 말하지 않아도 항상 적용되는 프로젝트 지침과 회사 내규.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "항상 적용되는 회사 내규: 매번 다시 말하지 않아도 항상 적용되는 프로젝트 지침과 회사 내규. 예를 들면 어떤 업무를 하든 반복해서 지켜야 하는 회사 내규."
     },
     {
       "term": "Skill",
@@ -38,7 +50,10 @@
       "match": "whole-word",
       "koreanLabel": "반복 업무 매뉴얼",
       "analogy": "자주 하는 일을 매번 다시 설명하지 않도록 남긴 업무 매뉴얼",
-      "practiceMeaning": "Act 4에서 작성하는 mini-brainstorming Skill 문서"
+      "practiceMeaning": "Act 4에서 작성하는 mini-brainstorming Skill 문서",
+      "plainLanguage": "반복 업무를 같은 순서로 처리하게 만드는 호출 조건, 절차, 출력 형식이 있는 업무 매뉴얼.",
+      "firstUseSlideId": "act3-to-act4-manual",
+      "tooltipText": "반복 업무 매뉴얼: 반복 업무를 같은 순서로 처리하게 만드는 호출 조건, 절차, 출력 형식이 있는 업무 매뉴얼. 예를 들면 자주 하는 일을 매번 다시 설명하지 않도록 남긴 업무 매뉴얼."
     },
     {
       "term": "Agent / Subagent",
@@ -46,7 +61,10 @@
       "match": "exact-phrase",
       "koreanLabel": "역할이 나뉜 김아이 팀",
       "analogy": "조사 담당, 구현 담당, 검토 담당이 각자 다른 책임 카드로 일하는 구조",
-      "practiceMeaning": "Act 5에서 역할별 목표, context, 도구를 나눠 배정하는 대상"
+      "practiceMeaning": "Act 5에서 역할별 목표, context, 도구를 나눠 배정하는 대상",
+      "plainLanguage": "책임, 볼 자료, Skill, 도구 권한을 나눠 맡기는 AI 작업 역할.",
+      "firstUseSlideId": "act4-to-act5-roles",
+      "tooltipText": "역할이 나뉜 김아이 팀: 책임, 볼 자료, Skill, 도구 권한을 나눠 맡기는 AI 작업 역할. 예를 들면 조사 담당, 구현 담당, 검토 담당이 각자 다른 책임 카드로 일하는 구조."
     },
     {
       "term": "MCP",
@@ -54,7 +72,10 @@
       "match": "whole-word",
       "koreanLabel": "외부 도구 연결 통로",
       "analogy": "회사 시스템에 접근하기 위한 표준 출입구",
-      "practiceMeaning": "Act 5에서 어떤 역할에게 어떤 도구를 열어 줄지 설명할 때만 짧게 등장"
+      "practiceMeaning": "Act 5에서 어떤 역할에게 어떤 도구를 열어 줄지 설명할 때만 짧게 등장",
+      "plainLanguage": "AI 앱과 외부 도구 서버를 연결하는 표준 통로.",
+      "firstUseSlideId": "act5-kimai-does-everything",
+      "tooltipText": "외부 도구 연결 통로: AI 앱과 외부 도구 서버를 연결하는 표준 통로. 예를 들면 회사 시스템에 접근하기 위한 표준 출입구."
     },
     {
       "term": "Hook",
@@ -62,7 +83,10 @@
       "match": "whole-word",
       "koreanLabel": "자동 검문소",
       "analogy": "업무 완료 직전에 자동으로 들러야 하는 확인 창구",
-      "practiceMeaning": "Act 6에서 설계하는 Stop hook 기반 완료 전 체크"
+      "practiceMeaning": "Act 6에서 설계하는 Stop hook 기반 완료 전 체크",
+      "plainLanguage": "특정 작업 순간에 자동으로 실행되는 검증 또는 처리 장치.",
+      "firstUseSlideId": "act5-team-to-act6-checkpoint",
+      "tooltipText": "자동 검문소: 특정 작업 순간에 자동으로 실행되는 검증 또는 처리 장치. 예를 들면 업무 완료 직전에 자동으로 들러야 하는 확인 창구."
     },
     {
       "term": "Evaluation",
@@ -70,7 +94,10 @@
       "match": "whole-word",
       "koreanLabel": "검문소 통과 기준",
       "analogy": "완료라고 말하기 전에 기준표로 증거를 확인하는 방식",
-      "practiceMeaning": "Act 6에서 Stop hook 검문소가 무엇을 통과로 볼지 정하는 기준"
+      "practiceMeaning": "Act 6에서 Stop hook 검문소가 무엇을 통과로 볼지 정하는 기준",
+      "plainLanguage": "산출물이 기준을 만족했는지 확인하는 검문소의 통과 기준.",
+      "firstUseSlideId": "act2-output-done-criteria",
+      "tooltipText": "검문소 통과 기준: 산출물이 기준을 만족했는지 확인하는 검문소의 통과 기준. 예를 들면 완료라고 말하기 전에 기준표로 증거를 확인하는 방식."
     },
     {
       "term": "LLM judge",
@@ -78,7 +105,10 @@
       "match": "exact-phrase",
       "koreanLabel": "AI 판정관",
       "analogy": "기계가 세기 어려운 품질을 기준표에 맞춰 검토하는 두 번째 리뷰어",
-      "practiceMeaning": "Act 4와 Act 6에서 정성 기준을 평가하는 보조 판정"
+      "practiceMeaning": "Act 4와 Act 6에서 정성 기준을 평가하는 보조 판정",
+      "plainLanguage": "정성적 품질을 기준표에 맞춰 검토하는 AI 기반 판정자.",
+      "firstUseSlideId": "act6-evaluation-pass-hold",
+      "tooltipText": "AI 판정관: 정성적 품질을 기준표에 맞춰 검토하는 AI 기반 판정자. 예를 들면 기계가 세기 어려운 품질을 기준표에 맞춰 검토하는 두 번째 리뷰어."
     },
     {
       "term": "Harness Engineering",
@@ -86,7 +116,10 @@
       "match": "exact-phrase",
       "koreanLabel": "AI 업무 시스템 만들기",
       "analogy": "좋은 직원 한 명에게 의존하지 않고 절차, 역할, 도구, 검문소를 갖춘 업무 환경",
-      "practiceMeaning": "Act 1-6의 결과물을 하나로 연결한 최종 구조"
+      "practiceMeaning": "Act 1-6의 결과물을 하나로 연결한 최종 구조",
+      "plainLanguage": "AI가 반복적으로 안정적인 일을 하도록 지시, 자료, 절차, 역할, 도구, 검증을 연결하는 업무 시스템 설계.",
+      "firstUseSlideId": "act0-harness-concept",
+      "tooltipText": "AI 업무 시스템 만들기: AI가 반복적으로 안정적인 일을 하도록 지시, 자료, 절차, 역할, 도구, 검증을 연결하는 업무 시스템 설계. 예를 들면 좋은 직원 한 명에게 의존하지 않고 절차, 역할, 도구, 검문소를 갖춘 업무 환경."
     },
     {
       "term": "Quality Gate",
@@ -94,7 +127,10 @@
       "match": "exact-phrase",
       "koreanLabel": "품질 검문소",
       "analogy": "업무 제출 전에 증거를 보고 통과 또는 보류를 정하는 최종 확인대",
-      "practiceMeaning": "Act 6에서 Stop hook 설계가 통과해야 unlock artifact가 열리는 기준"
+      "practiceMeaning": "Act 6에서 Stop hook 설계가 통과해야 unlock artifact가 열리는 기준",
+      "plainLanguage": "완료로 인정하기 전에 반드시 통과해야 하는 품질 검문소.",
+      "firstUseSlideId": "act6-required-pre-submit-check",
+      "tooltipText": "품질 검문소: 완료로 인정하기 전에 반드시 통과해야 하는 품질 검문소. 예를 들면 업무 제출 전에 증거를 보고 통과 또는 보류를 정하는 최종 확인대."
     },
     {
       "term": "State",
@@ -102,7 +138,219 @@
       "match": "whole-word",
       "koreanLabel": "상태표",
       "analogy": "검문소 옆에 붙은 처리 중, 완료, 시도 횟수 기록판",
-      "practiceMeaning": "Act 6에서 무한 재시도를 막기 위해 설계하는 기록"
+      "practiceMeaning": "Act 6에서 무한 재시도를 막기 위해 설계하는 기록",
+      "plainLanguage": "검문소가 처리 중인지 완료됐는지, 몇 번 시도했는지 남기는 상태 기록.",
+      "firstUseSlideId": "act6-required-pre-submit-check",
+      "tooltipText": "상태표: 검문소가 처리 중인지 완료됐는지, 몇 번 시도했는지 남기는 상태 기록. 예를 들면 검문소 옆에 붙은 처리 중, 완료, 시도 횟수 기록판."
+    },
+    {
+      "term": "Prompt Engineering",
+      "definition": "AI에게 일을 잘 맡기기 위해 목표, 자료, 조건, 완료 기준을 지시문에 담는 방법.",
+      "match": "exact-phrase",
+      "koreanLabel": "좋은 업무 지시 만들기",
+      "analogy": "신입사원에게 빠진 조건 없이 업무 지시서를 쓰는 일",
+      "practiceMeaning": "Act 2에서 제품 리뷰자료 보고서 지시문을 고칠 때 쓰는 관점",
+      "plainLanguage": "AI에게 일을 잘 맡기기 위해 목표, 자료, 조건, 완료 기준을 지시문에 담는 방법.",
+      "firstUseSlideId": "act2-input-output-principle",
+      "tooltipText": "좋은 업무 지시 만들기: AI에게 일을 잘 맡기기 위해 목표, 자료, 조건, 완료 기준을 지시문에 담는 방법. 예를 들면 신입사원에게 빠진 조건 없이 업무 지시서를 쓰는 일."
+    },
+    {
+      "term": "Task Specification",
+      "definition": "무엇을 만들지, 어디에 쓸지, 어떤 형식으로 낼지, 언제 끝난 것으로 볼지 정한 업무 명세.",
+      "match": "exact-phrase",
+      "koreanLabel": "업무 명세",
+      "analogy": "업무 요청서에 목표, 사용처, 자료, 형식, 완료 기준을 적는 일",
+      "practiceMeaning": "Act 2에서 지시문에 빠진 조건을 채우는 기준",
+      "plainLanguage": "무엇을 만들지, 어디에 쓸지, 어떤 형식으로 낼지, 언제 끝난 것으로 볼지 정한 업무 명세.",
+      "firstUseSlideId": "act2-handoff-document",
+      "tooltipText": "업무 명세: 무엇을 만들지, 어디에 쓸지, 어떤 형식으로 낼지, 언제 끝난 것으로 볼지 정한 업무 명세. 예를 들면 업무 요청서에 목표, 사용처, 자료, 형식, 완료 기준을 적는 일."
+    },
+    {
+      "term": "Feedback Loop",
+      "definition": "결과를 보고 빠진 점을 확인한 뒤 다시 고쳐 점점 나아지게 만드는 반복 과정.",
+      "match": "exact-phrase",
+      "koreanLabel": "피드백 반복",
+      "analogy": "초안을 보고 코멘트를 받아 다시 수정하는 업무 왕복",
+      "practiceMeaning": "Act 2 이후 실습에서 점수와 피드백을 보고 재시도하는 흐름",
+      "plainLanguage": "결과를 보고 빠진 점을 확인한 뒤 다시 고쳐 점점 나아지게 만드는 반복 과정.",
+      "firstUseSlideId": "act2-practice-handoff",
+      "tooltipText": "피드백 반복: 결과를 보고 빠진 점을 확인한 뒤 다시 고쳐 점점 나아지게 만드는 반복 과정. 예를 들면 초안을 보고 코멘트를 받아 다시 수정하는 업무 왕복."
+    },
+    {
+      "term": "CLAUDE.md",
+      "definition": "AI가 매번 지켜야 할 프로젝트 또는 폴더 단위의 지속 지침 파일.",
+      "match": "exact-phrase",
+      "koreanLabel": "김아이 회사 내규",
+      "analogy": "회사가 정해 둔 공통 업무 규칙 문서",
+      "practiceMeaning": "Act 3에서 적용 범위를 고르고 짧은 내규를 작성하는 대상",
+      "plainLanguage": "AI가 매번 지켜야 할 프로젝트 또는 폴더 단위의 지속 지침 파일.",
+      "firstUseSlideId": "act3-act1-context-recover",
+      "tooltipText": "김아이 회사 내규: AI가 매번 지켜야 할 프로젝트 또는 폴더 단위의 지속 지침 파일. 예를 들면 회사가 정해 둔 공통 업무 규칙 문서."
+    },
+    {
+      "term": "Stale Context",
+      "definition": "지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태.",
+      "match": "exact-phrase",
+      "koreanLabel": "오래된 책상 자료",
+      "analogy": "끝난 업무 서류가 책상에 남아 새 업무 판단을 흔드는 상황",
+      "practiceMeaning": "Act 3에서 임시 정보와 지속 내규를 구분해야 하는 이유",
+      "plainLanguage": "지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태.",
+      "firstUseSlideId": "act3-claude-md-fit",
+      "tooltipText": "오래된 책상 자료: 지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태. 예를 들면 끝난 업무 서류가 책상에 남아 새 업무 판단을 흔드는 상황."
+    },
+    {
+      "term": "Persistent Instructions",
+      "definition": "한 번의 요청이 끝나도 계속 적용되는 반복 지침.",
+      "match": "exact-phrase",
+      "koreanLabel": "계속 적용되는 지침",
+      "analogy": "매번 새로 말하지 않아도 따라야 하는 회사 규칙",
+      "practiceMeaning": "Act 3에서 CLAUDE.md에 넣을지 말지 판단하는 기준",
+      "plainLanguage": "한 번의 요청이 끝나도 계속 적용되는 반복 지침.",
+      "firstUseSlideId": "act3-too-many-rules",
+      "tooltipText": "계속 적용되는 지침: 한 번의 요청이 끝나도 계속 적용되는 반복 지침. 예를 들면 매번 새로 말하지 않아도 따라야 하는 회사 규칙."
+    },
+    {
+      "term": "Rule Overload",
+      "definition": "규칙이 너무 많거나 서로 충돌해 AI가 중요한 기준을 구분하기 어려운 상태.",
+      "match": "exact-phrase",
+      "koreanLabel": "과한 내규",
+      "analogy": "회사 규정이 너무 많아 신입사원이 무엇을 우선해야 할지 모르는 상황",
+      "practiceMeaning": "Act 3에서 과하거나 충돌하는 내규를 줄이는 대상",
+      "plainLanguage": "규칙이 너무 많거나 서로 충돌해 AI가 중요한 기준을 구분하기 어려운 상태.",
+      "firstUseSlideId": "act3-context-vs-claude-md",
+      "tooltipText": "과한 내규: 규칙이 너무 많거나 서로 충돌해 AI가 중요한 기준을 구분하기 어려운 상태. 예를 들면 회사 규정이 너무 많아 신입사원이 무엇을 우선해야 할지 모르는 상황."
+    },
+    {
+      "term": "Information Selection",
+      "definition": "업무에 필요한 정보와 방해되는 정보를 먼저 가르는 일.",
+      "match": "exact-phrase",
+      "koreanLabel": "정보 선별",
+      "analogy": "책상에 올릴 서류와 치울 서류를 고르는 일",
+      "practiceMeaning": "Act 1에서 김아이 책상에 둘 자료를 고르는 기준",
+      "plainLanguage": "업무에 필요한 정보와 방해되는 정보를 먼저 가르는 일.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "정보 선별: 업무에 필요한 정보와 방해되는 정보를 먼저 가르는 일. 예를 들면 책상에 올릴 서류와 치울 서류를 고르는 일."
+    },
+    {
+      "term": "Context Curation",
+      "definition": "현재 일에 맞는 자료만 골라 AI가 볼 작업 공간을 정리하는 일.",
+      "match": "exact-phrase",
+      "koreanLabel": "데스크 정리",
+      "analogy": "신입사원 책상 위 자료를 오늘 업무에 맞게 정돈하는 일",
+      "practiceMeaning": "Act 1에서 필요한 자료, 옆에 둘 자료, 치울 자료를 나누는 관점",
+      "plainLanguage": "현재 일에 맞는 자료만 골라 AI가 볼 작업 공간을 정리하는 일.",
+      "firstUseSlideId": "act1-desk-cleanup-open",
+      "tooltipText": "데스크 정리: 현재 일에 맞는 자료만 골라 AI가 볼 작업 공간을 정리하는 일. 예를 들면 신입사원 책상 위 자료를 오늘 업무에 맞게 정돈하는 일."
+    },
+    {
+      "term": "Tool Permission",
+      "definition": "역할별로 사용할 수 있는 도구와 접근 범위를 정하는 권한.",
+      "match": "exact-phrase",
+      "koreanLabel": "도구 열쇠",
+      "analogy": "담당자에게 필요한 출입증만 주는 일",
+      "practiceMeaning": "Act 5에서 조사/작성/검토 역할별 권한을 나눌 때 쓰는 기준",
+      "plainLanguage": "역할별로 사용할 수 있는 도구와 접근 범위를 정하는 권한.",
+      "firstUseSlideId": "act5-kimai-does-everything",
+      "tooltipText": "도구 열쇠: 역할별로 사용할 수 있는 도구와 접근 범위를 정하는 권한. 예를 들면 담당자에게 필요한 출입증만 주는 일."
+    },
+    {
+      "term": "Stop Hook",
+      "definition": "완료 직전에 자동으로 멈춰 검증을 실행하게 하는 장치.",
+      "match": "exact-phrase",
+      "koreanLabel": "제출 전 자동 검문소",
+      "analogy": "보고서를 제출하기 전에 반드시 들르는 확인 창구",
+      "practiceMeaning": "Act 6에서 unlock artifact로 설계하는 검문소",
+      "plainLanguage": "완료 직전에 자동으로 멈춰 검증을 실행하게 하는 장치.",
+      "firstUseSlideId": "act6-required-pre-submit-check",
+      "tooltipText": "제출 전 자동 검문소: 완료 직전에 자동으로 멈춰 검증을 실행하게 하는 장치. 예를 들면 보고서를 제출하기 전에 반드시 들르는 확인 창구."
+    },
+    {
+      "term": "Evidence",
+      "definition": "완료라고 말할 때 함께 제시해야 하는 근거 자료나 확인 결과.",
+      "match": "whole-word",
+      "koreanLabel": "증거",
+      "analogy": "보고서 뒤에 붙이는 출처와 확인 기록",
+      "practiceMeaning": "Act 6에서 완료 주장 대신 확인할 대상",
+      "plainLanguage": "완료라고 말할 때 함께 제시해야 하는 근거 자료나 확인 결과.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "증거: 완료라고 말할 때 함께 제시해야 하는 근거 자료나 확인 결과. 예를 들면 보고서 뒤에 붙이는 출처와 확인 기록."
+    },
+    {
+      "term": "Handoff",
+      "definition": "다음 단계나 다른 화면으로 넘기기 위해 남기는 인수인계 정보.",
+      "match": "whole-word",
+      "koreanLabel": "인수인계",
+      "analogy": "다음 담당자가 바로 이어서 일할 수 있게 남기는 메모",
+      "practiceMeaning": "Act별 설명에서 실습 화면으로 넘어갈 때 쓰는 연결",
+      "plainLanguage": "다음 단계나 다른 화면으로 넘기기 위해 남기는 인수인계 정보.",
+      "firstUseSlideId": "act1-practice-handoff",
+      "tooltipText": "인수인계: 다음 단계나 다른 화면으로 넘기기 위해 남기는 인수인계 정보. 예를 들면 다음 담당자가 바로 이어서 일할 수 있게 남기는 메모."
+    },
+    {
+      "term": "Workflow",
+      "definition": "일이 시작되어 완료 검증까지 가는 순서와 통로.",
+      "match": "whole-word",
+      "koreanLabel": "업무 흐름",
+      "analogy": "요청, 작성, 확인, 제출까지 이어지는 사내 처리 순서",
+      "practiceMeaning": "전체 Act를 하나의 하네스 구조로 묶는 흐름",
+      "plainLanguage": "일이 시작되어 완료 검증까지 가는 순서와 통로.",
+      "firstUseSlideId": "act0-journey-map",
+      "tooltipText": "업무 흐름: 일이 시작되어 완료 검증까지 가는 순서와 통로. 예를 들면 요청, 작성, 확인, 제출까지 이어지는 사내 처리 순서."
+    },
+    {
+      "term": "Role Card",
+      "definition": "AI 팀 안에서 각 역할의 책임과 볼 자료를 나눈 카드.",
+      "match": "exact-phrase",
+      "koreanLabel": "역할 카드",
+      "analogy": "조사 담당, 작성 담당, 검토 담당에게 나눠 주는 책임 카드",
+      "practiceMeaning": "Act 5에서 Agent/Subagent를 회사 업무 비유로 설명하는 장치",
+      "plainLanguage": "AI 팀 안에서 각 역할의 책임과 볼 자료를 나눈 카드.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "역할 카드: AI 팀 안에서 각 역할의 책임과 볼 자료를 나눈 카드. 예를 들면 조사 담당, 작성 담당, 검토 담당에게 나눠 주는 책임 카드."
+    },
+    {
+      "term": "Desk",
+      "definition": "AI가 지금 일을 처리하기 위해 올려 둔 자료 공간.",
+      "match": "whole-word",
+      "koreanLabel": "책상",
+      "analogy": "신입사원이 오늘 업무 자료를 펼쳐 둔 자리",
+      "practiceMeaning": "Act 1에서 Context를 쉽게 설명하는 핵심 비유",
+      "plainLanguage": "AI가 지금 일을 처리하기 위해 올려 둔 자료 공간.",
+      "firstUseSlideId": "act0-harness-concept",
+      "tooltipText": "책상: AI가 지금 일을 처리하기 위해 올려 둔 자료 공간. 예를 들면 신입사원이 오늘 업무 자료를 펼쳐 둔 자리."
+    },
+    {
+      "term": "Company Rules",
+      "definition": "매번 지켜야 하는 공통 기준과 지속 지침.",
+      "match": "exact-phrase",
+      "koreanLabel": "회사 내규",
+      "analogy": "업무마다 반복해서 따르는 회사 규칙",
+      "practiceMeaning": "Act 3에서 CLAUDE.md를 설명하는 기본 비유",
+      "plainLanguage": "매번 지켜야 하는 공통 기준과 지속 지침.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "회사 내규: 매번 지켜야 하는 공통 기준과 지속 지침. 예를 들면 업무마다 반복해서 따르는 회사 규칙."
+    },
+    {
+      "term": "Work Manual",
+      "definition": "반복 업무의 시작 조건, 순서, 출력 형식을 정리한 문서.",
+      "match": "exact-phrase",
+      "koreanLabel": "업무 매뉴얼",
+      "analogy": "자주 하는 일을 같은 순서로 처리하게 하는 절차서",
+      "practiceMeaning": "Act 4에서 Skill을 설명하는 기본 비유",
+      "plainLanguage": "반복 업무의 시작 조건, 순서, 출력 형식을 정리한 문서.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "업무 매뉴얼: 반복 업무의 시작 조건, 순서, 출력 형식을 정리한 문서. 예를 들면 자주 하는 일을 같은 순서로 처리하게 하는 절차서."
+    },
+    {
+      "term": "Review Loop",
+      "definition": "결과를 보고 빠진 점을 고친 뒤 다시 확인하는 반복.",
+      "match": "exact-phrase",
+      "koreanLabel": "검토 반복",
+      "analogy": "초안을 보고 피드백을 받아 다시 제출하는 과정",
+      "practiceMeaning": "Act 0과 Act 6에서 품질이 올라가는 방식을 설명할 때 사용",
+      "plainLanguage": "결과를 보고 빠진 점을 고친 뒤 다시 확인하는 반복.",
+      "firstUseSlideId": "act0-kimai-intro",
+      "tooltipText": "검토 반복: 결과를 보고 빠진 점을 고친 뒤 다시 확인하는 반복. 예를 들면 초안을 보고 피드백을 받아 다시 제출하는 과정."
     }
   ]
 }

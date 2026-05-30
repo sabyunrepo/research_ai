@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node /Users/byeonsanghun/goinfre/research_ai/.codex/stop-hook.js",
+            "command": "node .codex/stop-hook.js",
             "timeout": 90
           }
         ]

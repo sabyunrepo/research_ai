@@ -34,6 +34,80 @@
             "type": "string",
             "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
           },
+          "sheetLayout": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["columns", "rows"],
+            "properties": {
+              "columns": { "type": "integer", "minimum": 1 },
+              "rows": { "type": "integer", "minimum": 1 },
+              "insetPercent": { "type": "number", "minimum": 0 },
+              "gutterPercent": { "type": "number", "minimum": 0 },
+              "safeMarginPercent": { "type": "number", "minimum": 0 },
+              "panelCount": { "type": "integer", "minimum": 1 },
+              "cellOrder": { "type": "string", "enum": ["row-major-left-to-right"] },
+              "sourceWidthPx": { "type": "integer", "minimum": 1 },
+              "sourceHeightPx": { "type": "integer", "minimum": 1 },
+              "cellWidthPx": { "type": "number", "exclusiveMinimum": 0 },
+              "cellHeightPx": { "type": "number", "exclusiveMinimum": 0 },
+              "panelAspectRatio": {
+                "type": "string",
+                "pattern": "^[0-9]+:[0-9]+$"
+              }
+            }
+          },
+          "sheetCellIndex": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "cropPolicy": {
+            "type": "string",
+            "enum": ["content-safe"]
+          },
+          "expectedSubjectBounds": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["x", "y", "width", "height", "unit"],
+            "properties": {
+              "x": { "type": "number", "minimum": 0 },
+              "y": { "type": "number", "minimum": 0 },
+              "width": { "type": "number", "exclusiveMinimum": 0 },
+              "height": { "type": "number", "exclusiveMinimum": 0 },
+              "unit": { "type": "string", "enum": ["percent"] }
+            }
+          },
+          "cropSafety": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "safeMarginPercent": { "type": "number", "minimum": 0 },
+              "edgeBandPercent": { "type": "number", "minimum": 1, "maximum": 20 },
+              "maxEdgeInkRatio": { "type": "number", "minimum": 0, "maximum": 1 },
+              "maxEdgeLineCoverage": { "type": "number", "minimum": 0, "maximum": 1 },
+              "maxAdjacentPanelInkRatio": { "type": "number", "minimum": 0, "maximum": 1 },
+              "reviewerRequired": { "type": "boolean" },
+              "forbiddenEdgeArtifacts": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "cropMasks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kind", "x", "y", "width", "height", "unit"],
+              "properties": {
+                "kind": { "type": "string", "enum": ["whiteout"] },
+                "x": { "type": "number", "minimum": 0 },
+                "y": { "type": "number", "minimum": 0 },
+                "width": { "type": "number", "exclusiveMinimum": 0 },
+                "height": { "type": "number", "exclusiveMinimum": 0 },
+                "unit": { "type": "string", "enum": ["px", "percent"] }
+              }
+            }
+          },
           "crop": {
             "type": "object",
             "$comment": "For percent crops, runtime validation in validate-deck-contract.js enforces x + width <= 100 and y + height <= 100.",
@@ -73,11 +147,30 @@
             "type": "string",
             "minLength": 1
           },
+          "xmlPrompt": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["instruction", "assetRequirement", "negativePrompt", "reviewChecklist"],
+            "properties": {
+              "instruction": { "type": "string", "minLength": 1 },
+              "assetRequirement": { "type": "string", "minLength": 1 },
+              "negativePrompt": { "type": "string", "minLength": 1 },
+              "reviewChecklist": { "type": "string", "minLength": 1 }
+            }
+          },
           "styleConstraints": {
             "type": "array",
             "items": {
               "type": "string",
               "minLength": 1
+            }
+          },
+          "characterRefs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": ["kimai", "choi-ai", "park-ai", "manager"]
             }
           },
           "explanationAnchors": {

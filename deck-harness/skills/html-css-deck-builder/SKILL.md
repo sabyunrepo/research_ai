@@ -17,6 +17,8 @@ Do not start slide HTML from research notes, outline text, or visual inspiration
 - `generated-decks/<slug>/claim-source-map.json`
 - `generated-decks/<slug>/glossary.json`
 - `generated-decks/<slug>/asset-pack.json`
+- `generated-decks/<slug>/asset-generation-prompts.md`
+- `generated-decks/<slug>/asset-build-report.md`
 - `generated-decks/<slug>/asset-review.json`
 - `generated-decks/<slug>/job-manifest.json`
 - `deck-harness/templates/deck.html`
@@ -38,15 +40,16 @@ Do not start slide HTML from research notes, outline text, or visual inspiration
 
 ## Procedure
 
-1. Run the default projector contract validator first; do not write HTML until `slide-spec.json` exists, every projector-referenced `visualAssetId` is no longer `planned`, and the source map, section plan, glossary, asset pack, visual review, and manifest validate.
-2. If this is this project harness, read `docs/harness/codex-session-decision-log.md` and apply requirements for browser-rendered HTML/CSS, 1280x720 projector fit, desktop/mobile audit, custom glossary tooltip behavior, presenter review, and reproducible handoff evidence.
-3. Preserve screen/speaker separation: projector slides show concise screen text; presenter review shows `speakerNote` and `evidenceClaimIds`.
-4. Preserve instruction/screen separation: `xmlPrompt.instruction` and `xmlPrompt.assetRequirement` must not appear in projector slide HTML.
-5. Use `asset-pack.json` to copy or map image assets by `visualAssetId`; keep generated-image prompts and crop metadata in the asset pack when possible.
-6. Confirm projector-referenced visual assets have `asset-pack.json` semantic requirements and an `asset-review.json` PASS before treating final quality as passing.
-7. Use `glossary.json` for difficult English or developer terms and avoid native `title` tooltip behavior.
-8. Generate one slide HTML file per slide id plus shared assets.
-9. Run the quality gate before handoff.
+1. Run `node deck-harness/scripts/build-asset-pack.js generated-decks/<slug>` first; do not write HTML while `asset-build-report.md` has pending projector blockers or failed assets.
+2. Run the default projector contract validator; do not write HTML until `slide-spec.json` exists, every projector-referenced `visualAssetId` is no longer `planned`, and the source map, section plan, glossary, asset pack, visual review, and manifest validate.
+3. If this is this project harness, read `docs/harness/codex-session-decision-log.md` and apply requirements for browser-rendered HTML/CSS, 1280x720 projector fit, desktop/mobile audit, custom glossary tooltip behavior, presenter review, and reproducible handoff evidence.
+4. Preserve screen/speaker separation: projector slides show concise screen text; presenter review shows `speakerNote` and `evidenceClaimIds`.
+5. Preserve instruction/screen separation: `xmlPrompt.instruction` and `xmlPrompt.assetRequirement` must not appear in projector slide HTML.
+6. Use `asset-pack.json` to copy or map image assets by `visualAssetId`; keep generated-image prompts and crop metadata in the asset pack when possible.
+7. Confirm projector-referenced visual assets have `asset-pack.json` semantic requirements and an `asset-review.json` PASS before treating final quality as passing.
+8. Use `glossary.json` for difficult English or developer terms and avoid native `title` tooltip behavior.
+9. Generate one slide HTML file per slide id plus shared assets.
+10. Run the quality gate before handoff.
 
 ## Quality Bar
 
@@ -62,6 +65,8 @@ Do not start slide HTML from research notes, outline text, or visual inspiration
 ## Verification
 
 - `node deck-harness/scripts/validate-deck-contract.js generated-decks/<slug>`
+- `node deck-harness/scripts/prepare-asset-generation-prompts.js generated-decks/<slug>`
+- `node deck-harness/scripts/build-asset-pack.js generated-decks/<slug>`
 - `node deck-harness/scripts/verify-deck-quality.js generated-decks/<slug>`
 - Confirm final projector PASS includes `asset-pack.json` semantic requirements, `asset-review.json` PASS, a fresh `build-deck-from-spec` run, `verify-deck-quality`, and visual inspection screenshots.
 - `rg -n "speakerNote|evidenceClaimIds|glossary" generated-decks/<slug>/presenter-review.html generated-decks/<slug>/assets/presenter-review.js generated-decks/<slug>/assets/slides.js`

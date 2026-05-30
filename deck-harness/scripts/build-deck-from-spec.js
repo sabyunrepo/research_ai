@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const crypto = require("node:crypto");
+const { spawnSync } = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
 const zlib = require("node:zlib");
@@ -37,6 +38,14 @@ function readOptionalJson(deckDir, file) {
     return null;
   }
   return readJson(filePath);
+}
+
+function resolveAssetPath(deckDir, sourcePath) {
+  if (!sourcePath) return "";
+  if (path.isAbsolute(sourcePath)) return sourcePath;
+  const deckRelative = path.join(deckDir, sourcePath);
+  if (sourcePath.startsWith("assets/") || fs.existsSync(deckRelative)) return deckRelative;
+  return path.join(root, sourcePath);
 }
 
 function writeText(filePath, text) {
@@ -273,11 +282,13 @@ function crc32(buffer) {
 function copyVisualAsset(deckDir, slide, assetPack) {
   const asset = findAsset(assetPack, slide);
   const sourceAsset = sourceAssetFor(assetPack, asset);
-  const visualAsset = sourceAsset?.sourcePath || slide.visualAsset;
+  const visualAsset = asset?.kind === "crop-region" && asset.sourcePath
+    ? asset.sourcePath
+    : sourceAsset?.sourcePath || slide.visualAsset;
   if (!visualAsset) {
     return "";
   }
-  const sourcePath = path.isAbsolute(visualAsset) ? visualAsset : path.join(root, visualAsset);
+  const sourcePath = resolveAssetPath(deckDir, visualAsset);
   if (!fs.existsSync(sourcePath)) {
     throw new Error(`missing visual asset for ${slide.id}: ${visualAsset}`);
   }
@@ -287,11 +298,7 @@ function copyVisualAsset(deckDir, slide, assetPack) {
   const targetRelative = `assets/visuals/${slide.id}-${safeBase}`;
   const targetPath = path.join(deckDir, targetRelative);
   fs.mkdirSync(path.dirname(targetPath), { recursive: true });
-  if (asset?.kind === "crop-region") {
-    cropImage(sourcePath, targetPath, asset.crop);
-  } else {
-    fs.copyFileSync(sourcePath, targetPath);
-  }
+  fs.copyFileSync(sourcePath, targetPath);
   return `../${targetRelative}`;
 }
 
@@ -301,21 +308,80 @@ function visualHtml(slide) {
         <img src="${escapeHtml(slide.renderedVisualAsset)}" alt="${escapeHtml(slide.visualIntent)}">
       </figure>`;
   }
+  if (slide.layoutVariant === "handoff") {
+    return "";
+  }
   return `<div class="visual-card visual-${escapeHtml(slide.visualType || "minimal-diagram")}">
         <span class="visual-label">${escapeHtml(slide.visualIntent)}</span>
       </div>`;
 }
 
+function isActOpening(slide) {
+  return /(?:^act0-kimai-intro$|cleanup-open|work-handoff|context-recover|repeated-work|kimai-does-everything|required-pre-submit-check)/.test(slide.id || "");
+}
+
+function isPracticeBridge(slide) {
+  return /practice-handoff|별도 실습 화면|실습 화면/i.test(`${slide.id || ""} ${slide.visualIntent || ""} ${slide.message || ""}`);
+}
+
+function layoutVariant(slide, index) {
+  if (!slide.visualAssetId && /handoff|별도 실습 화면|실습 화면/i.test(`${slide.visualIntent || ""} ${slide.message || ""}`)) {
+    return "handoff";
+  }
+  if (isActOpening(slide)) return "focus";
+  if (isPracticeBridge(slide)) return "handoff";
+  if ((slide.bullets || []).length >= 4) return "checklist";
+  if ((slide.bullets || []).length <= 1) return "quote";
+  if (slide.visualAssetId) {
+    return ["standard", "visual-left", "statement", "quote", "checklist"][index % 5];
+  }
+  return ["standard", "statement", "quote"][index % 3];
+}
+
+function shouldRenderVisual(slide) {
+  if (!slide.renderedVisualAsset) return false;
+  if (["focus", "handoff"].includes(slide.layoutVariant)) return false;
+  return true;
+}
+
+function shouldCopyVisualForVariant(variant) {
+  return !["focus", "handoff"].includes(variant);
+}
+
+function bulletListHtml(screen, variant) {
+  if (!Array.isArray(screen.bullets) || !screen.bullets.length) return "";
+  if (variant === "handoff") {
+    return `<div class="handoff-actions">${screen.bullets.map((bullet) => `<span>${escapeHtml(bullet)}</span>`).join("")}</div>`;
+  }
+  if (variant === "checklist") {
+    return `<ol class="bullets bullets--checklist">${screen.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ol>`;
+  }
+  if (variant === "statement") {
+    return `<div class="bullets bullets--chips">${screen.bullets.map((bullet) => `<span>${escapeHtml(bullet)}</span>`).join("")}</div>`;
+  }
+  return `<ul class="bullets">${screen.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>`;
+}
+
 function slideHtml(slide) {
   const screen = screenModel(slide);
-  const bullets = Array.isArray(screen.bullets) && screen.bullets.length
-    ? `<ul class="bullets">${screen.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>`
-    : "";
+  const variant = slide.layoutVariant || "standard";
+  const bullets = bulletListHtml(screen, variant);
   const bridge = screen.bridge ? `<footer class="slide-bridge">${escapeHtml(screen.bridge)}</footer>` : "";
   const evidence = Array.isArray(slide.evidenceClaimIds) ? slide.evidenceClaimIds.join(" ") : "";
   const terms = Array.isArray(slide.glossaryTerms) ? slide.glossaryTerms.join(" ") : "";
   const isWideVisual = slide.assetCrop?.unit === "percent" && slide.assetCrop.width >= 90 && slide.assetCrop.height <= 40;
-  const slideClass = isWideVisual ? "slide slide--wide-visual" : "slide";
+  const renderVisual = shouldRenderVisual(slide);
+  const slideClass = [
+    "slide",
+    isWideVisual ? "slide--wide-visual" : "",
+    variant ? `slide--${variant}` : "",
+    renderVisual ? "" : "slide--no-visual",
+  ].filter(Boolean).join(" ");
+  const media = !renderVisual
+    ? ""
+    : `<section class="slide-media" aria-label="${escapeHtml(slide.visualIntent)}">
+      ${visualHtml(slide)}
+    </section>`;
   return `<!doctype html>
 <html lang="ko">
 <head>
@@ -333,9 +399,7 @@ function slideHtml(slide) {
       ${bullets}
       ${bridge}
     </section>
-    <section class="slide-media" aria-label="${escapeHtml(slide.visualIntent)}">
-      ${visualHtml(slide)}
-    </section>
+    ${media}
   </main>
 </body>
 </html>
@@ -366,8 +430,29 @@ function updateManifest(deckDir, stage) {
   writeText(manifestPath, json(manifest));
 }
 
+function cleanRenderedVisualCopies(deckDir, slides) {
+  const visualsDir = path.join(deckDir, "assets", "visuals");
+  if (!fs.existsSync(visualsDir)) return;
+  const slidePrefixes = new Set(slides.map((slide) => `${slide.id}-`));
+  fs.readdirSync(visualsDir).forEach((file) => {
+    if (!file.endsWith(".png")) return;
+    if ([...slidePrefixes].some((prefix) => file.startsWith(prefix))) {
+      fs.rmSync(path.join(visualsDir, file));
+    }
+  });
+}
+
+function assertProjectorContract(deckDir) {
+  const validator = path.join(__dirname, "validate-deck-contract.js");
+  const result = spawnSync(process.execPath, [validator, deckDir], { stdio: "inherit" });
+  if (result.status !== 0) {
+    throw new Error("projector contract validation failed; deck build stopped before writing output");
+  }
+}
+
 function main() {
   const deckDir = resolveDeckDir(process.argv[2]);
+  assertProjectorContract(deckDir);
   const spec = readJson(path.join(deckDir, "slide-spec.json"));
   const claimMap = readJson(path.join(deckDir, "claim-source-map.json"));
   const glossary = readJson(path.join(deckDir, "glossary.json"));
@@ -376,16 +461,18 @@ function main() {
   const slides = Array.isArray(spec.slides) ? spec.slides : [];
 
   fs.rmSync(path.join(deckDir, "slides"), { recursive: true, force: true });
-  fs.rmSync(path.join(deckDir, "assets", "visuals"), { recursive: true, force: true });
   fs.mkdirSync(path.join(deckDir, "slides"), { recursive: true });
   fs.mkdirSync(path.join(deckDir, "assets"), { recursive: true });
+  cleanRenderedVisualCopies(deckDir, slides);
 
   const registry = slides.map((slide, index) => {
     const file = `${slide.id}.html`;
+    const variant = slide.layoutVariant || layoutVariant(slide, index);
     const builtSlide = {
       ...slide,
+      layoutVariant: variant,
       assetRecord: findAsset(assetPack, slide),
-      renderedVisualAsset: copyVisualAsset(deckDir, slide, assetPack),
+      renderedVisualAsset: shouldCopyVisualForVariant(variant) ? copyVisualAsset(deckDir, slide, assetPack) : "",
     };
     if (builtSlide.assetRecord) {
       builtSlide.assetTeachingRole = builtSlide.assetRecord.teachingRole;
@@ -408,12 +495,13 @@ function main() {
       visualAsset: slide.visualAsset || "",
       visualPrompt: builtSlide.visualPrompt || "",
       visualAssetId: slide.visualAssetId || "",
+      layoutVariant: builtSlide.layoutVariant || "",
+      renderedVisualAsset: shouldRenderVisual(builtSlide) ? builtSlide.renderedVisualAsset : "",
       sourceAssetId: builtSlide.assetRecord?.sourceAssetId || "",
       assetTeachingRole: builtSlide.assetTeachingRole || "",
       assetExplanationAnchors: builtSlide.assetRecord?.explanationAnchors || [],
       assetSemanticRequirements: builtSlide.assetRecord?.semanticRequirements || null,
       assetCrop: builtSlide.assetCrop || null,
-      renderedVisualAsset: builtSlide.renderedVisualAsset || "",
       presenterCues: slide.presenterCues || [],
       bridge: slide.bridge || "",
       interaction: slide.interaction || null,
@@ -495,4 +583,9 @@ PASS
   console.log(`Output hash: ${hashFiles(deckDir, outputs)}`);
 }
 
-main();
+try {
+  main();
+} catch (error) {
+  console.error(`FAIL ${error.message}`);
+  process.exitCode = 1;
+}
