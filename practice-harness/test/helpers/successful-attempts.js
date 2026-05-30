@@ -45,6 +45,13 @@ const act2Attempt = {
 const act3Attempt = {
   learnerSessionId: "verify-act3",
   input: {
+    scope: "project",
+    removedRuleIds: [
+      "remove-skip-tests",
+      "remove-old-purple",
+      "remove-api-key",
+      "remove-direct-output-edit",
+    ],
     document: [
       "# CLAUDE.md",
       "",
@@ -111,16 +118,6 @@ const act4Attempt = {
 const act5Attempt = {
   learnerSessionId: "verify-act5",
   input: {
-    checkedIds: [
-      "coordinator-goal",
-      "coordinator-skill",
-      "researcher-no-implementation",
-      "implementer-no-source-judgment",
-      "reviewer-no-edit",
-      "separated-outputs",
-      "final-risk",
-      "attempt2-change",
-    ],
     record: `
 Attempt 1
 Coordinator:

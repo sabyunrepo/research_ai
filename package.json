@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build:practice-ui": "node scripts/build-practice-react-ui.js",
+    "pretest": "npm run build:practice-ui",
+    "test": "node --test practice-harness/test/*.test.js",
+    "qa:practice": "npm test && node scripts/qa-practice-input-matrix.js && node scripts/qa-practice-ui-flow.js && node scripts/verify-practice-ui-browser.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}

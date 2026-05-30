@@ -6,35 +6,8 @@
     <title>발표 실습 화면</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body class="presentation-shell">
-    <div class="session-box operator-session">
-      <label for="session-id">수강생 세션</label>
-      <input id="session-id" autocomplete="off" />
-    </div>
-
-    <div class="practice-slide-frame">
-      <main id="presentation-layout" class="layout presentation-layout">
-        <nav class="stage-nav" aria-label="실습 목록" hidden inert aria-hidden="true">
-          <ol id="practice-list" class="practice-list"></ol>
-        </nav>
-
-        <section id="practice-slide" class="workbench slide-workbench" aria-live="polite">
-          <div id="practice-heading" class="practice-heading"></div>
-          <form id="practice-form" class="practice-form"></form>
-        </section>
-
-        <aside id="result-panel" class="result-panel result-slide" aria-live="polite" hidden>
-          <h2>검증 결과</h2>
-          <div id="score-meter" class="score-meter">
-            <strong>-</strong>
-            <span>아직 제출하지 않았습니다.</span>
-          </div>
-          <div id="feedback-list" class="feedback-list"></div>
-          <div id="verification-log" class="verification-log"></div>
-        </aside>
-      </main>
-    </div>
-
+  <body>
+    <div id="practice-root"></div>
     <script src="/practice-app.js" defer></script>
   </body>
 </html>

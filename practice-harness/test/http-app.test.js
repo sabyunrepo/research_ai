@@ -166,8 +166,9 @@ test("GET /api/practices/:id returns full practice definition for UI rendering",
     assert.equal(response.body.practice.type, "local-runbook");
     assert.equal(response.body.practice.act, 5);
     assert.ok(Array.isArray(response.body.practice.roles));
-    assert.ok(Array.isArray(response.body.practice.checklist));
-    assert.ok(response.body.practice.checklist.length > 0);
+    assert.equal(Object.prototype.hasOwnProperty.call(response.body.practice, "checklist"), false);
+    assert.equal(typeof response.body.practice.learning.teamPrompt, "string");
+    assert.equal(typeof response.body.practice.learning.runbookTemplate, "string");
   } finally {
     await server.close();
   }
@@ -546,10 +547,13 @@ test("throwing provider degrades to warning without failing learner attempt", as
     assert.equal(response.body.attempt.judgeResult, null);
     assert.equal(response.body.attempt.providerWarnings.length, 1);
     assert.equal(response.body.attempt.providerWarnings[0].provider, "openai-test-provider");
-    assert.match(response.body.attempt.providerWarnings[0].message, /simulated provider outage/);
+    assert.match(
+      response.body.attempt.providerWarnings[0].message,
+      /기본 채점 결과/,
+    );
     assert.doesNotMatch(
       JSON.stringify(response.body.attempt.providerWarnings),
-      /OPEN_AI_API|Bearer|sk-|CLAUDE\.md 기본 기억/,
+      /simulated provider outage|OPEN_AI_API|Bearer|sk-|CLAUDE\.md 기본 기억/,
     );
   } finally {
     await server.close();

@@ -364,12 +364,47 @@ function containsAny(document, patterns) {
 }
 
 function scoreClaudeMemoryPractice({ practice, input }) {
-  if (!isPlainObject(input) || typeof input.document !== "string" || input.document.trim() === "") {
-    throw invalidInput("input.document must be a non-blank string");
+  if (
+    !isPlainObject(input) ||
+    typeof input.scope !== "string" ||
+    input.scope.trim() === "" ||
+    typeof input.document !== "string" ||
+    input.document.trim() === ""
+  ) {
+    throw invalidInput("input.scope and input.document are required");
+  }
+
+  if (
+    Object.prototype.hasOwnProperty.call(input, "removedRuleIds") &&
+    !Array.isArray(input.removedRuleIds)
+  ) {
+    throw invalidInput("input.removedRuleIds must be an array when provided");
   }
 
   const document = input.document.trim();
   const lowerDocument = document.toLocaleLowerCase();
+  const scope = input.scope.trim();
+  const validScopeIds = new Set((practice.learning.scopeOptions || []).map((option) => option.id));
+  if (!validScopeIds.has(scope)) {
+    throw invalidInput("Unknown CLAUDE.md scope", { scope });
+  }
+
+  const removedRuleIds = input.removedRuleIds || [];
+  const removedRuleIdSet = new Set();
+  for (const ruleId of removedRuleIds) {
+    if (removedRuleIdSet.has(ruleId)) {
+      throw invalidInput("Duplicate removed rule id", { ruleId });
+    }
+    removedRuleIdSet.add(ruleId);
+  }
+  const ruleCards = practice.learning.ruleCards || [];
+  const ruleIndex = new Map(ruleCards.map((rule) => [rule.id, rule]));
+  for (const ruleId of removedRuleIdSet) {
+    if (!ruleIndex.has(ruleId)) {
+      throw invalidInput("Unknown removed rule id", { ruleId });
+    }
+  }
+
   const sections = [
     "프로젝트 목표",
     "작업 전 확인",
@@ -387,6 +422,12 @@ function scoreClaudeMemoryPractice({ practice, input }) {
   const safetyRulesPass = hasUserChangeRule && hasDestructiveRule;
   const hasVerificationRule = /검증하지 못|완료.*말하지|테스트|브라우저|빌드/.test(document);
   const hasReferenceSplitRule = /reference|참조|Skill|별도 문서|분리/.test(document);
+  const scopeSelectionPass = scope === "project";
+  const rulesToRemove = ruleCards.filter((rule) => rule.kind === "remove");
+  const rulesToKeep = ruleCards.filter((rule) => rule.kind === "keep");
+  const removedAllRiskyRules = rulesToRemove.every((rule) => removedRuleIdSet.has(rule.id));
+  const removedNoKeepRules = rulesToKeep.every((rule) => !removedRuleIdSet.has(rule.id));
+  const ruleTrimPass = removedAllRiskyRules && removedNoKeepRules;
   const installerNoisePatterns = [
     /최초 적용 모드/,
     /이 파일은 Claude Code를 처음 사용하는/,
@@ -407,6 +448,22 @@ function scoreClaudeMemoryPractice({ practice, input }) {
   const dangerousMemoryPass = !containsAny(document, dangerousPatterns);
 
   const checks = [
+    createCheck(
+      "scope-selection-check",
+      "적용 범위 선택",
+      scopeSelectionPass ? "pass" : "fail",
+      scopeSelectionPass
+        ? "워크숍 프로젝트 규칙을 project 범위에 두기로 선택했습니다."
+        : "이번 실습의 회사 내규는 global/user가 아니라 project 범위에 두어야 합니다.",
+    ),
+    createCheck(
+      "rule-trim-check",
+      "과한 내규 제거",
+      ruleTrimPass ? "pass" : "fail",
+      ruleTrimPass
+        ? "항상 켜두면 위험하거나 충돌하는 후보 내규를 제거했습니다."
+        : "테스트 생략, 오래된 디자인 결정, 민감 정보, 최종 산출물 직접 수정 허용 같은 과한 내규를 제거해야 합니다.",
+    ),
     createCheck(
       "line-limit-check",
       "200줄 제한",
@@ -464,18 +521,22 @@ function scoreClaudeMemoryPractice({ practice, input }) {
   ];
 
   let score = 0;
+  if (scopeSelectionPass) score += 15;
+  if (ruleTrimPass) score += 15;
   if (lineLimitPass) score += 10;
-  score += Math.round((presentSections.length / sections.length) * 20);
-  if (safetyRulesPass) score += 15;
-  if (hasVerificationRule) score += 15;
-  if (hasReferenceSplitRule) score += 15;
-  if (installerNoisePass) score += 15;
+  score += Math.round((presentSections.length / sections.length) * 15);
+  if (safetyRulesPass) score += 12;
+  if (hasVerificationRule) score += 12;
+  if (hasReferenceSplitRule) score += 11;
+  if (installerNoisePass) score += 10;
   if (dangerousMemoryPass) score += 10;
 
   const feedback = [];
   for (const check of checks) {
     if (check.status === "pass") continue;
     const typeByCheckId = {
+      "scope-selection-check": "wrong_scope",
+      "rule-trim-check": "rule_overload",
       "line-limit-check": "line_limit",
       "core-sections-check": "missing_core_sections",
       "safety-rules-check": "missing_safety_rule",
@@ -491,7 +552,10 @@ function scoreClaudeMemoryPractice({ practice, input }) {
     });
   }
 
-  const scoreCap = installerNoisePass && dangerousMemoryPass ? practice.maxScore : practice.unlockThreshold - 1;
+  const scoreCap =
+    scopeSelectionPass && ruleTrimPass && installerNoisePass && dangerousMemoryPass
+      ? practice.maxScore
+      : practice.unlockThreshold - 1;
 
   return {
     practiceId: practice.id,
@@ -499,6 +563,8 @@ function scoreClaudeMemoryPractice({ practice, input }) {
     maxScore: practice.maxScore,
     checks,
     feedback,
+    scope,
+    removedRuleIds: removedRuleIds.slice(),
     document,
     verificationLog: buildVerificationLog(checks),
   };
@@ -728,14 +794,6 @@ function matchesAnyRegex(text, patterns) {
   return patterns.some((pattern) => pattern.test(text));
 }
 
-function buildRunbookChecklistIndex(practice) {
-  return new Map((practice.checklist || []).map((item) => [item.id, item]));
-}
-
-function hasRunbookRoleHeading(record, role) {
-  return new RegExp(`^[ \\t]*(?:#+[ \\t]*)?${role}[ \\t]*:`, "im").test(record);
-}
-
 function parseRunbookSections(record) {
   const sectionNames = [
     "Attempt 1",
@@ -823,7 +881,7 @@ function hasResultEvidence(record) {
   );
 }
 
-function evaluateLocalRunbookRecord(record, checkedIdSet) {
+function evaluateLocalRunbookRecord(record) {
   const lowerRecord = record.toLocaleLowerCase();
   const sections = parseRunbookSections(record);
   const attempt2Block = getRunbookAttemptBlock(record, 2);
@@ -967,31 +1025,7 @@ function scoreLocalRunbookPractice({ practice, input }) {
     throw invalidInput("input.record must be a non-blank string");
   }
 
-  if (
-    Object.prototype.hasOwnProperty.call(input, "checkedIds") &&
-    !Array.isArray(input.checkedIds)
-  ) {
-    throw invalidInput("input.checkedIds must be an array when provided");
-  }
-
-  const checklistIndex = buildRunbookChecklistIndex(practice);
-  const checkedIdSet = new Set();
-  const checkedItems = [];
-
-  for (const checkedId of input.checkedIds || []) {
-    if (checkedIdSet.has(checkedId)) {
-      throw invalidInput("Duplicate checked id", { itemId: checkedId });
-    }
-    checkedIdSet.add(checkedId);
-
-    const item = checklistIndex.get(checkedId);
-    if (!item) {
-      throw invalidInput("Unknown checked id", { itemId: checkedId });
-    }
-    checkedItems.push(item);
-  }
-
-  const recordEvaluation = evaluateLocalRunbookRecord(input.record, checkedIdSet);
+  const recordEvaluation = evaluateLocalRunbookRecord(input.record);
   const checkWeights = new Map([
     ["role-separation-check", 25],
     ["skill-assignment-check", 20],
@@ -1005,24 +1039,13 @@ function scoreLocalRunbookPractice({ practice, input }) {
     if (check.status === "partial") return sum + Math.floor(weight / 2);
     return sum;
   }, 0);
-  const rawScore =
-    checkedItems.length > 0
-      ? Math.max(recordScore, checkedItems.reduce((sum, item) => sum + item.points, 0))
-      : recordScore;
-  const missingChecklistItems = checkedItems.length > 0
-    ? Array.from(checklistIndex.values()).filter((item) => !checkedIdSet.has(item.id))
-    : [];
+  const rawScore = recordScore;
   const scoreCap = Math.min(
     practice.maxScore,
     ...Object.values(recordEvaluation.caps).filter((cap) => cap !== null),
   );
 
   const feedback = [
-    ...missingChecklistItems.map((item) => ({
-      type: "missing_checklist",
-      itemId: item.id,
-      message: `${item.label} 항목이 필요합니다.`,
-    })),
     ...recordEvaluation.checks
       .filter((check) => check.status !== "pass")
       .map((check) => ({
@@ -1038,7 +1061,6 @@ function scoreLocalRunbookPractice({ practice, input }) {
     maxScore: practice.maxScore,
     checks: recordEvaluation.checks,
     feedback,
-    checkedIds: (input.checkedIds || []).slice(),
     record: input.record,
     verificationLog: buildVerificationLog(recordEvaluation.checks),
   };
@@ -1132,7 +1154,9 @@ function scoreSkillDocumentPractice({ practice, input }) {
     document,
   );
   const structureDepthPass = stepsPass && stepItemCount >= 5 && outputFormatPass;
-  const scaffoldPlaceholderPass = !/TODO\s*:/i.test(document);
+  const scaffoldPlaceholderPass =
+    !/(?:TODO|Fill in|채워 넣기)\s*:/i.test(document) &&
+    !/\[(?:여기에|작성|기입)[^\]]*\]/.test(document);
 
   let rawScore = 0;
   const feedback = [];
@@ -1248,7 +1272,7 @@ function scoreSkillDocumentPractice({ practice, input }) {
     feedback.push({
       type: "skill_structure",
       checkId: "skill-placeholder-check",
-      message: "TODO placeholder가 남아 있어 제출용 Skill 문서로 볼 수 없습니다.",
+      message: "작성용 placeholder가 남아 있어 제출용 Skill 문서로 볼 수 없습니다.",
     });
   }
 

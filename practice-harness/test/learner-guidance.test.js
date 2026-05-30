@@ -45,17 +45,25 @@ test("Act 1 exposes information-selection goal, hints, and Act 2 bridge", () => 
   );
 });
 
-test("Act 3 exposes CLAUDE.md compression goal, installer source, and split guidance", () => {
+test("Act 3 exposes the provided CLAUDE.md source and split guidance", () => {
   const practice = loadPractice("act3-context-workbench");
 
   assertLearningBasics(practice);
   assert.equal(practice.type, "claude-memory");
-  assert.match(practice.learning.goal, /CLAUDE\.md|기억/);
+  assert.match(practice.learning.goal, /CLAUDE\.md|회사 내규/);
   assert.equal(typeof practice.learning.sourceTemplate, "string");
   assert.match(practice.learning.sourceTemplate, /Beginner Claude Code Instructions/);
+  assert.match(practice.learning.sourceTemplate, /최초 적용 모드/);
+  assert.equal(typeof practice.learning.defaultDocument, "string");
+  assert.match(practice.learning.defaultDocument, /# CLAUDE\.md/);
+  assert.match(practice.learning.defaultDocument, /사용자 변경 보존/);
+  assert.ok(Array.isArray(practice.learning.scopeOptions));
+  assert.ok(practice.learning.scopeOptions.some((option) => option.id === "project"));
+  assert.ok(Array.isArray(practice.learning.ruleCards));
+  assert.ok(practice.learning.ruleCards.some((rule) => rule.kind === "remove"));
   assert.ok(
-    practice.learning.hints.some((hint) => /200줄|reference|그대로 복사/.test(hint)),
-    "Act 3 explains compression and reference split",
+    practice.learning.hints.some((hint) => /로드 순서|project|reference/.test(hint)),
+    "Act 3 explains scope and reference split",
   );
 });
 
@@ -77,9 +85,8 @@ test("Act 5 exposes local execution templates, tool permissions, and runbook sha
   assert.match(practice.learning.teamPrompt, /Researcher/);
   assert.match(practice.learning.teamPrompt, /Implementer/);
   assert.match(practice.learning.teamPrompt, /Reviewer/);
-  assert.match(practice.learning.teamPrompt, /Superpowers/);
-  assert.match(practice.learning.teamPrompt, /fresh subagent|새 subagent|새 에이전트/i);
-  assert.match(practice.learning.teamPrompt, /spec compliance|스펙 준수/i);
+  assert.match(practice.learning.teamPrompt, /역할 분리|새 담당자/);
+  assert.match(practice.learning.teamPrompt, /요구사항 확인|요구사항 충족/);
   assert.match(practice.learning.teamPrompt, /code quality|코드 품질/i);
   assert.match(practice.learning.teamPrompt, /verification-before-completion|완료 전 검증/i);
 });

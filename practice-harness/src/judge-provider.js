@@ -1,4 +1,6 @@
 const DEFAULT_TIMEOUT_MS = 10_000;
+const LEARNER_SAFE_PROVIDER_WARNING =
+  "AI 보조 검토를 지금 사용할 수 없습니다. 기본 채점 결과를 사용했습니다.";
 
 function providerName(provider) {
   if (typeof provider === "string") return provider;
@@ -19,9 +21,10 @@ function cloneDeterministicResult(deterministicResult) {
 }
 
 function providerWarning(provider, message) {
+  void message;
   return {
     provider: providerName(provider),
-    message,
+    message: LEARNER_SAFE_PROVIDER_WARNING,
   };
 }
 

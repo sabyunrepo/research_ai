@@ -75,8 +75,30 @@ test("throwing provider produces providerWarnings but keeps deterministic score 
   assert.equal(result.judgeResult, null);
   assert.equal(result.providerWarnings.length, 1);
   assert.equal(result.providerWarnings[0].provider, "throwing-judge");
-  assert.match(result.providerWarnings[0].message, /provider unavailable/);
+  assert.match(result.providerWarnings[0].message, /기본 채점 결과/);
+  assert.doesNotMatch(result.providerWarnings[0].message, /provider unavailable/);
 });
+
+test("provider warning message is learner-safe and does not expose sensitive diagnostics", async () => {
+  const result = await evaluateWithJudgeProvider({
+    provider: {
+      name: "sensitive-judge",
+      evaluate() {
+        throw new Error("OPENAI_API_KEY=sk-secret internal stack trace");
+      },
+    },
+    practice,
+    attempt,
+    deterministicResult: deterministicResult(),
+    timeoutMs: 20,
+  });
+
+  assert.equal(result.judgeResult, null);
+  assert.equal(result.providerWarnings.length, 1);
+  assert.match(result.providerWarnings[0].message, /기본 채점 결과/);
+  assert.doesNotMatch(result.providerWarnings[0].message, /OPENAI_API_KEY|sk-secret|stack/i);
+});
+
 
 test("slow provider times out and keeps deterministic score unchanged", async () => {
   const scored = deterministicResult();
@@ -100,7 +122,8 @@ test("slow provider times out and keeps deterministic score unchanged", async ()
   assert.equal(result.judgeResult, null);
   assert.equal(result.providerWarnings.length, 1);
   assert.equal(result.providerWarnings[0].provider, "slow-judge");
-  assert.match(result.providerWarnings[0].message, /timed out/i);
+  assert.match(result.providerWarnings[0].message, /기본 채점 결과/);
+  assert.doesNotMatch(result.providerWarnings[0].message, /timed out/i);
 });
 
 test("synchronous provider result is a contract violation and keeps deterministic score unchanged", async () => {
@@ -123,8 +146,8 @@ test("synchronous provider result is a contract violation and keeps deterministi
   assert.equal(result.judgeResult, null);
   assert.equal(result.providerWarnings.length, 1);
   assert.equal(result.providerWarnings[0].provider, "sync-judge");
-  assert.match(result.providerWarnings[0].message, /contract violation/i);
-  assert.match(result.providerWarnings[0].message, /Promise/i);
+  assert.match(result.providerWarnings[0].message, /기본 채점 결과/);
+  assert.doesNotMatch(result.providerWarnings[0].message, /contract violation|Promise/i);
 });
 
 test("provider that blocks before returning a promise is rejected and keeps deterministic score unchanged", async () => {
@@ -148,7 +171,7 @@ test("provider that blocks before returning a promise is rejected and keeps dete
   assert.equal(result.judgeResult, null);
   assert.equal(result.providerWarnings.length, 1);
   assert.equal(result.providerWarnings[0].provider, "blocking-judge");
-  assert.match(result.providerWarnings[0].message, /contract violation|timed out/i);
+  assert.match(result.providerWarnings[0].message, /기본 채점 결과/);
 });
 
 test("discarded blocking provider promise rejection is observed", async () => {
@@ -180,7 +203,7 @@ test("discarded blocking provider promise rejection is observed", async () => {
     assert.equal(result.judgeResult, null);
     assert.equal(result.providerWarnings.length, 1);
     assert.equal(result.providerWarnings[0].provider, "late-rejecting-judge");
-    assert.match(result.providerWarnings[0].message, /contract violation|timed out/i);
+    assert.match(result.providerWarnings[0].message, /기본 채점 결과/);
 
     await delay(25);
     assert.deepEqual(unhandledRejections, []);

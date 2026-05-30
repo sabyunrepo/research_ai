@@ -28,18 +28,6 @@ function sendStaticError(response, statusCode, message) {
   response.end(message);
 }
 
-function resolvePublicPath(urlPathname) {
-  const decodedPath = decodeURIComponent(urlPathname);
-  const relativePath = decodedPath === "/" ? "index.html" : decodedPath.slice(1);
-  const filePath = path.resolve(PUBLIC_DIR, relativePath);
-
-  if (!filePath.startsWith(PUBLIC_DIR + path.sep) && filePath !== PUBLIC_DIR) {
-    return null;
-  }
-
-  return filePath;
-}
-
 function createPracticeStaticApp({ apiApp, publicDir = PUBLIC_DIR }) {
   if (typeof apiApp !== "function") {
     throw new Error("apiApp is required");
@@ -116,5 +104,4 @@ function createPracticeStaticApp({ apiApp, publicDir = PUBLIC_DIR }) {
 module.exports = {
   createPracticeStaticApp,
   isPracticeClientRoute,
-  resolvePublicPath,
 };

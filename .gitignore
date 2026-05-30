@@ -4,6 +4,7 @@
 !.codex/hooks.json
 !.codex/stop-hook.js
 .tmp/
+node_modules/
 .DS_Store
 .claude/settings.local.json
 .worktrees/
