@@ -1,13 +1,24 @@
 {
   "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -lc 'cd \"${CLAUDE_PROJECT_DIR:-$PWD}\" && node scripts/agent-status-start.js'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "bash -lc 'cd \"$CLAUDE_PROJECT_DIR\" && node lecture-deck/scripts/run-hook.js pre-handoff'",
-            "timeout": 90
+            "command": "bash -lc 'cd \"${CLAUDE_PROJECT_DIR:-$PWD}\" && node scripts/agent-stop-check.js'",
+            "timeout": 30
           }
         ]
       }

@@ -1,0 +1,7 @@
+{
+  "status": "processing",
+  "attempts": 0,
+  "max_block_attempts": 3,
+  "stop_hook_active": false,
+  "started_at": "2026-05-30T00:00:00.000Z"
+}
