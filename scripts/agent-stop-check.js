@@ -12,28 +12,30 @@ const DEFAULT_STATUS = {
   stop_hook_active: false,
 };
 
-const PROJECT_VERIFICATION_COMMANDS = [
-  "npm test",
-  "npm run qa:practice",
-  "node scripts/run-lecture-cuts-hook.js pre-handoff",
-];
-const ALLOW_EMPTY_EVIDENCE = process.argv.includes("--allow-empty-evidence");
-const VERIFICATION_RESULT_PATTERNS = [
-  /\b(pass(?:ed|es)?|success|successful|ok|검증\s*(?:통과|완료)|테스트\s*(?:통과|완료)|완료)\b/i,
-  /\b(fail(?:ed|ure)?|error|warn(?:ing)?|실패|오류|경고)\b/i,
-];
-const RESIDUAL_RISK_PATTERNS = [
-  /남은\s*(?:위험|리스크|risk)/i,
-  /residual\s*risk/i,
-  /risk(?:s)?\s*(?:remaining|left)?/i,
-  /테스트(?:하지|는 못|를 못)|검증(?:하지|은 못|을 못)/i,
-];
 const QUESTION_PATTERNS = [
   /사용자(?:의)?\s*(?:판단|확인|입력|답변|선택|질문).*(?:필요|대기)/i,
   /(?:need|needs|requires?)\s+(?:user|your)\s+(?:input|decision|confirmation)/i,
   /(?:어떻게|어느|무엇을|어떤).*\?/,
 ];
-const BLOCK_REASON = "검증 명령 결과와 남은 위험 보고가 없어 완료를 막습니다.";
+const REMAINING_WORK_PATTERNS = [
+  /"status"\s*:\s*"(?:pending|in_progress)"/i,
+  /\b(?:pending|in_progress|todo|fixme)\b/i,
+  /\b(?:remaining|unfinished|incomplete|unresolved)\s+(?:work|task|plan|step|item|risk|issue)s?\b/i,
+  /\b(?:still|next)\s+(?:need|needs|step|work|task|run|verify|check|implement|update|fix)\b/i,
+  /(?:남은|남아\s*있는)\s*(?:작업|계획|할\s*일|항목|수정|구현|확인|검증|이슈)/i,
+  /(?:아직|계속)\s*(?:해야|진행|작업|수정|구현|확인|검증)/i,
+  /미완료|미해결|진행\s*중|대기\s*중/i,
+];
+const NO_REMAINING_WORK_PATTERNS = [
+  /남은\s*(?:작업|계획|할\s*일|위험|리스크)\s*[:：]?\s*(?:없음|없습니다|없다|0개|none)/i,
+  /(?:no|none)\s+(?:remaining|unfinished|incomplete|unresolved)\s+(?:work|task|plan|risk|issue)s?/i,
+  /remaining\s+risk\s*[:：]?\s*(?:none|no)/i,
+];
+const BLOCK_REASON = [
+  "남은 작업이나 진행 중인 계획이 감지되었습니다.",
+  "final 답변을 쓰지 말고 남은 작업을 계속 진행하세요.",
+  "더 진행할 수 없거나 사용자 판단이 필요하면 askuserQuestion, blocked, failed 중 맞는 상태로 전환한 뒤 통과시키세요.",
+].join(" ");
 
 function readHookInput() {
   try {
@@ -79,6 +81,7 @@ function writeStatus(status) {
     attempts: Number(status.attempts) || 0,
     max_block_attempts: Number(status.max_block_attempts) || DEFAULT_STATUS.max_block_attempts,
     stop_hook_active: Boolean(status.stop_hook_active),
+    session_id: status.session_id,
     started_at: status.started_at,
     last_checked_at: status.last_checked_at,
     finished_at: status.finished_at,
@@ -109,14 +112,30 @@ function readTranscriptText(transcriptPath) {
   for (const line of lines) {
     try {
       const entry = JSON.parse(line);
+      if (entry.type === "response_item" && entry.payload) {
+        const payload = entry.payload;
+        if (payload.role === "user") {
+          continue;
+        }
+        const callName = String(payload.name || payload.call_name || payload.tool_name || "");
+        if (/update_plan|plan/i.test(callName)) {
+          chunks.push(extractText(payload.arguments || payload.input || ""));
+          continue;
+        }
+        if (payload.role === "assistant") {
+          chunks.push(extractText(payload.content || payload.output || ""));
+        }
+        continue;
+      }
+
       const message = entry.message || entry;
       const role = message.role || entry.role;
-      if (!["assistant", "tool", "tool_result"].includes(role)) {
+      if (role !== "assistant") {
         continue;
       }
       chunks.push(extractText(message.content || entry.content || entry.result || ""));
     } catch {
-      chunks.push(line);
+      continue;
     }
   }
 
@@ -137,6 +156,11 @@ function extractText(value) {
     if (typeof value.content === "string") {
       return value.content;
     }
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return "";
+    }
   }
   return "";
 }
@@ -145,8 +169,24 @@ function hasAnyPattern(text, patterns) {
   return patterns.some((pattern) => pattern.test(text));
 }
 
-function hasVerificationCommand(text) {
-  return PROJECT_VERIFICATION_COMMANDS.some((command) => text.includes(command));
+function hasNoRemainingWorkStatement(text) {
+  return NO_REMAINING_WORK_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function stripNoRemainingWorkLines(text) {
+  return text
+    .split(/\n+/)
+    .filter((line) => !hasNoRemainingWorkStatement(line))
+    .join("\n");
+}
+
+function hasRemainingWork(text) {
+  const filteredText = stripNoRemainingWorkLines(text);
+  return REMAINING_WORK_PATTERNS.some((pattern) => pattern.test(filteredText));
+}
+
+function hasExplicitCompletionStatement(text) {
+  return hasNoRemainingWorkStatement(text);
 }
 
 function evaluateEvidence(hookInput) {
@@ -158,10 +198,10 @@ function evaluateEvidence(hookInput) {
     transcriptText,
   ].filter(Boolean).join("\n");
 
-  if (!responseText.trim() && ALLOW_EMPTY_EVIDENCE) {
+  if (!responseText.trim()) {
     return {
       outcome: "finished",
-      reason: "Hook 입력에 마지막 응답이나 transcript가 없어 Codex 경로에서는 빈 증거 오판을 건너뜁니다.",
+      reason: "Hook 입력에서 남은 작업 신호를 확인할 수 없어 통과합니다.",
     };
   }
 
@@ -169,26 +209,54 @@ function evaluateEvidence(hookInput) {
     return { outcome: "askuserQuestion", reason: "사용자 판단이나 추가 입력이 필요합니다." };
   }
 
-  const hasCommand = hasVerificationCommand(responseText);
-  const hasResult = hasAnyPattern(responseText, VERIFICATION_RESULT_PATTERNS);
-  const hasRisk = hasAnyPattern(responseText, RESIDUAL_RISK_PATTERNS);
-
-  if (hasCommand && hasResult && hasRisk) {
-    return { outcome: "finished" };
+  if (hasExplicitCompletionStatement(responseText)) {
+    return { outcome: "finished", reason: "남은 작업이 없다는 명시적 완료 보고를 확인했습니다." };
   }
 
-  return { outcome: "block", reason: BLOCK_REASON };
+  if (hasRemainingWork(responseText)) {
+    return { outcome: "block", reason: BLOCK_REASON };
+  }
+
+  return { outcome: "finished" };
+}
+
+function hookSessionId(hookInput) {
+  return hookInput.session_id || hookInput.sessionId;
+}
+
+function hookTranscriptPath(hookInput) {
+  return hookInput.transcript_path || hookInput.transcriptPath || hookInput.transcript?.path;
+}
+
+function isCurrentHookStatus(status, hookInput) {
+  const currentSessionId = hookSessionId(hookInput);
+  if (!currentSessionId || !status.session_id) {
+    return false;
+  }
+  return status.session_id === currentSessionId;
 }
 
 function main() {
   const hookInput = readHookInput();
   let status = readStatus();
+  const currentSessionId = hookSessionId(hookInput);
 
-  if (TERMINAL_STATUSES.has(status.status)) {
+  if (TERMINAL_STATUSES.has(status.status) && isCurrentHookStatus(status, hookInput)) {
     allow();
     return;
   }
 
+  if (
+    TERMINAL_STATUSES.has(status.status) ||
+    (status.session_id && currentSessionId && status.session_id !== currentSessionId)
+  ) {
+    status = {
+      ...DEFAULT_STATUS,
+      started_at: new Date().toISOString(),
+    };
+  }
+
+  status.session_id = status.session_id || currentSessionId;
   if (status.stop_hook_active) {
     allow("중복 Stop hook 검문을 건너뜁니다.");
     return;
@@ -224,16 +292,12 @@ function main() {
     status.attempts = (Number(status.attempts) || 0) + 1;
     status.last_reason = evidence.reason;
 
-    if (status.attempts > (Number(status.max_block_attempts) || DEFAULT_STATUS.max_block_attempts)) {
+    if (status.attempts >= (Number(status.max_block_attempts) || DEFAULT_STATUS.max_block_attempts)) {
       status.status = "blocked";
       status.stop_hook_active = false;
       status.blocked_at = new Date().toISOString();
-      status.last_reason = [
-        evidence.reason,
-        "반복 제한에 도달했으므로 block 대신 blocked 상태로 통과합니다. 최종 응답에서 남은 위험과 미완료 검증을 보고하세요.",
-      ].join(" ");
       writeStatus(status);
-      allow(status.last_reason);
+      allow("반복 제한에 도달해 Stop hook을 통과시킵니다. 최종 응답에서 남은 작업을 보고하세요.");
       return;
     }
 

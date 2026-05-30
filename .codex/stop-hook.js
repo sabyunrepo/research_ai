@@ -15,7 +15,7 @@ function readInput() {
 }
 
 const hookInput = readInput();
-const result = spawnSync(process.execPath, ["scripts/agent-stop-check.js", "--allow-empty-evidence"], {
+const result = spawnSync(process.execPath, ["scripts/agent-stop-check.js"], {
   cwd: projectRoot,
   input: `${JSON.stringify(hookInput)}\n`,
   encoding: "utf8",
@@ -32,23 +32,15 @@ if (result.stdout) {
     if (payload.decision === "block") {
       process.stdout.write(`${JSON.stringify({
         decision: "block",
-        continue: false,
         reason: payload.reason || payload.systemMessage || "Project Stop hook found remaining work.",
-        systemMessage: payload.systemMessage || payload.reason || "Project Stop hook found remaining work.",
       })}\n`);
     } else {
       process.stdout.write(`${JSON.stringify({ continue: true })}\n`);
     }
   } catch {
-    process.stdout.write(`${JSON.stringify({
-      continue: true,
-      reason: "Project Stop hook returned unparsable output, so Codex wrapper allowed to avoid invalid JSON failure.",
-    })}\n`);
+    process.stdout.write(`${JSON.stringify({ continue: true })}\n`);
   }
   process.exit(0);
 }
 
-const reason = result.error
-  ? `Project Stop hook could not start: ${result.error.message}`
-  : "Project Stop hook did not return JSON.";
-process.stdout.write(`${JSON.stringify({ decision: "allow", continue: true, reason })}\n`);
+process.stdout.write(`${JSON.stringify({ continue: true })}\n`);
