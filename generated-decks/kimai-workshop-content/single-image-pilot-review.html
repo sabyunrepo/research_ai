@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimai Single Image Pilot Review</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --blue: #2563eb;
+      --paper: #ffffff;
+      --soft: #e8eefc;
+      --muted: #5f6673;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 48px));
+      margin: 36px auto 56px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .meta {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .meta strong {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .image-frame {
+      position: relative;
+      padding: 20px;
+      background: #fff;
+      border: 5px solid var(--ink);
+      border-radius: 26px 18px 30px 20px;
+      box-shadow: 16px 14px 0 var(--soft);
+      transform: rotate(-0.7deg);
+    }
+
+    .image-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .stamp {
+      position: absolute;
+      right: 22px;
+      bottom: 18px;
+      padding: 8px 16px;
+      border: 4px solid var(--blue);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 20px;
+      transform: rotate(1.8deg);
+    }
+
+    .panel {
+      border-top: 5px solid var(--ink);
+      padding-top: 22px;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checks li {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: start;
+      min-height: 40px;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .checks span {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 4px solid currentColor;
+      border-radius: 999px;
+      color: var(--blue);
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-left: 6px solid var(--blue);
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .paths {
+      margin-top: 26px;
+      display: grid;
+      gap: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 860px) {
+      header,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        justify-items: start;
+      }
+
+      main {
+        width: min(100vw - 28px, 720px);
+        margin-top: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>개별 이미지 생성 파일럿</h1>
+      <div class="meta">
+        <div><strong>asset</strong> act1-info-baskets</div>
+        <div><strong>mode</strong> single-image-first</div>
+        <div><strong>status</strong> review-only</div>
+      </div>
+    </header>
+
+    <section class="review-grid" aria-label="pilot review">
+      <figure class="image-frame">
+        <img src="assets/visuals/act1-info-baskets-single-pilot.png" alt="김아이와 매니저가 문서 카드를 세 바구니로 분류하는 손그림 파일럿">
+        <figcaption class="stamp">pilot</figcaption>
+      </figure>
+
+      <aside class="panel">
+        <h2>확인 포인트</h2>
+        <ul class="checks">
+          <li><span>1</span><div>sprite sheet crop이 아니라 독립 PNG</div></li>
+          <li><span>2</span><div>하네스가 프레임, 기울기, 배치를 소유</div></li>
+          <li><span>3</span><div>이미지 안 텍스트는 바구니 라벨 중심</div></li>
+          <li><span>4</span><div>생성되면 pending blocker가 줄어드는 구조</div></li>
+        </ul>
+        <p class="note">
+          이 페이지는 파일럿 확인용이다. 현재 원본 slide-spec에는 연결하지 않았고, 본 적용 전에는 나머지 single-image-first 자산 생성과 asset-review 갱신이 필요하다.
+        </p>
+        <div class="paths">
+          <div>preview: assets/visuals/act1-info-baskets-single-pilot.png</div>
+          <div>temp target: .codex/tmp/kimai-single-image-contract-8Voqy4/kimai-workshop-content/assets/visuals/act1-info-baskets-single.png</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

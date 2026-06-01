@@ -1,0 +1,637 @@
+{
+  "status": "PASS",
+  "mode": "write",
+  "sourceDeckDir": "generated-decks/kimai-workshop-content",
+  "workDeckDir": "generated-decks/kimai-workshop-content",
+  "planPath": "generated-decks/kimai-workshop-content/kimai-template-rewrite-plan.json",
+  "slideCount": 76,
+  "appliedCount": 76,
+  "missingPlan": [],
+  "unchangedTemplateCount": 56,
+  "changedTemplateCount": 20,
+  "refreshedManifestStages": [
+    "build-deck"
+  ],
+  "templateDistribution": {
+    "opening-hero": 4,
+    "kimai-structure": 13,
+    "term-bridge": 21,
+    "assertion-scene": 7,
+    "workflow-strip": 11,
+    "brief-window": 5,
+    "decision-gate": 6,
+    "practice-handoff": 6,
+    "single-concept": 1,
+    "recap-map": 2
+  },
+  "applied": [
+    {
+      "id": "act0-kimai-intro",
+      "fromMainTemplate": "opening-hero",
+      "toMainTemplate": "opening-hero",
+      "fromTitle": "신입사원 김아이의 첫 출근날입니다.",
+      "toTitle": "신입사원 김아이의 첫 출근날입니다.",
+      "bulletCount": 1
+    },
+    {
+      "id": "act0-kimai-capable",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "김아이는 뛰어난 신입사원입니다.",
+      "toTitle": "김아이는 뛰어난 신입사원입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act0-company-context",
+      "fromMainTemplate": "decision-gate",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "똑똑하다고 모든 걸 아는 것은 아닙니다.",
+      "toTitle": "똑똑하다고 모든 걸 아는 것은 아닙니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act0-real-work-analogy",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "팀장님의 첫 업무 지시가 도착했습니다.",
+      "toTitle": "팀장님의 첫 업무 지시가 도착했습니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act0-harness-concept",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다.",
+      "toTitle": "하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act0-first-draft-limits",
+      "fromMainTemplate": "decision-gate",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "신입은 한 번에 완벽하게 일을 끝내지 못합니다.",
+      "toTitle": "신입은 한 번에 완벽하게 일을 끝내지 못합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act0-feedback-loop",
+      "fromMainTemplate": "brief-window",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "체크리스트와 피드백이 보고서의 퀄리티를 높입니다.",
+      "toTitle": "체크리스트와 피드백이 보고서의 퀄리티를 높입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act0-journey-map",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
+      "toTitle": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-desk-cleanup-open",
+      "fromMainTemplate": "opening-hero",
+      "toMainTemplate": "opening-hero",
+      "fromTitle": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+      "toTitle": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-desk-principle",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
+      "toTitle": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-missing-materials",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.",
+      "toTitle": "책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-messy-desk",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "책상이 어지러워도 김아이의 판단은 흔들립니다.",
+      "toTitle": "책상이 어지러워도 김아이의 판단은 흔들립니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-info-baskets",
+      "fromMainTemplate": "assertion-scene",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "책상 위 자료는 세 바구니로 나눕니다.",
+      "toTitle": "책상 위 자료는 세 바구니로 나눕니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-report-desk-materials",
+      "fromMainTemplate": "brief-window",
+      "toMainTemplate": "brief-window",
+      "fromTitle": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
+      "toTitle": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act1-context-mapping",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "김아이의 책상이 바로 컨텍스트입니다.",
+      "toTitle": "김아이의 책상이 바로 컨텍스트입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-context-curation-close",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "decision-gate",
+      "fromTitle": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
+      "toTitle": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act1-practice-handoff",
+      "fromMainTemplate": "practice-handoff",
+      "toMainTemplate": "practice-handoff",
+      "fromTitle": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
+      "toTitle": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-work-handoff",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
+      "toTitle": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-vague-outcome-risk",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
+      "toTitle": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-unspoken-imagination",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "말하지 않은 부분은 김아이 혼자 상상합니다.",
+      "toTitle": "말하지 않은 부분은 김아이 혼자 상상합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-input-output-principle",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
+      "toTitle": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-handoff-document",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
+      "toTitle": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-goal-use-context",
+      "fromMainTemplate": "brief-window",
+      "toMainTemplate": "brief-window",
+      "fromTitle": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
+      "toTitle": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act2-materials-conditions",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
+      "toTitle": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-output-done-criteria",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "toTitle": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-prompt-term-mapping",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "AI에게 주는 업무 지시가 프롬프트입니다.",
+      "toTitle": "AI에게 주는 업무 지시가 프롬프트입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act2-prompt-reframing",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "single-concept",
+      "fromTitle": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
+      "toTitle": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
+      "bulletCount": 2
+    },
+    {
+      "id": "act2-practice-handoff",
+      "fromMainTemplate": "practice-handoff",
+      "toMainTemplate": "practice-handoff",
+      "fromTitle": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
+      "toTitle": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-act1-context-recover",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "Prompt는 팀장이 지금 내린 업무 지시입니다.",
+      "toTitle": "Prompt는 팀장이 지금 내린 업무 지시입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-rules-are-different",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
+      "toTitle": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-claude-md-rule-board",
+      "fromMainTemplate": "decision-gate",
+      "toMainTemplate": "decision-gate",
+      "fromTitle": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+      "toTitle": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-claude-md-fit",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
+      "toTitle": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-too-many-rules",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다.",
+      "toTitle": "반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-temporary-info-danger",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "CLAUDE.md에도 적용 범위가 있습니다.",
+      "toTitle": "CLAUDE.md에도 적용 범위가 있습니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act3-good-rule-board-shape",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
+      "toTitle": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-context-vs-claude-md",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
+      "toTitle": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-practice-handoff",
+      "fromMainTemplate": "practice-handoff",
+      "toMainTemplate": "practice-handoff",
+      "fromTitle": "이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.",
+      "toTitle": "이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act3-to-act4-manual",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
+      "toTitle": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "wrap-personal-harness",
+      "fromMainTemplate": "recap-map",
+      "toMainTemplate": "recap-map",
+      "fromTitle": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+      "toTitle": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-repeated-work-instructions",
+      "fromMainTemplate": "opening-hero",
+      "toMainTemplate": "opening-hero",
+      "fromTitle": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
+      "toTitle": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-human-bound-instructions",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
+      "toTitle": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-different-instruction-starts",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "매번 다른 지시는 김아이의 시작점을 흔듭니다.",
+      "toTitle": "매번 다른 지시는 김아이의 시작점을 흔듭니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-task-manual-outside",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "작업별 업무 매뉴얼을 만들어 사용해 봅시다.",
+      "toTitle": "작업별 업무 매뉴얼을 만들어 사용해 봅시다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-manual-candidate-check",
+      "fromMainTemplate": "assertion-scene",
+      "toMainTemplate": "decision-gate",
+      "fromTitle": "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.",
+      "toTitle": "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-not-everything-manual",
+      "fromMainTemplate": "assertion-scene",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.",
+      "toTitle": "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-manual-start-conditions",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.",
+      "toTitle": "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-short-procedure",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.",
+      "toTitle": "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.",
+      "bulletCount": 5
+    },
+    {
+      "id": "act4-manual-supporting-materials",
+      "fromMainTemplate": "brief-window",
+      "toMainTemplate": "brief-window",
+      "fromTitle": "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.",
+      "toTitle": "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act4-skill-term-mapping",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+      "toTitle": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act4-practice-handoff",
+      "fromMainTemplate": "practice-handoff",
+      "toMainTemplate": "practice-handoff",
+      "fromTitle": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
+      "toTitle": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act4-to-act5-roles",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
+      "toTitle": "매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-kimai-does-everything",
+      "fromMainTemplate": "opening-hero",
+      "toMainTemplate": "opening-hero",
+      "fromTitle": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
+      "toTitle": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-company-approval-roles",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
+      "toTitle": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-new-hires-team",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "해야 할 일이 많아지면 다른 신입사원을 데려옵니다.",
+      "toTitle": "해야 할 일이 많아지면 다른 신입사원을 데려옵니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-kimai-research-role",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "김아이는 근거를 찾고 모르는 것을 표시합니다.",
+      "toTitle": "김아이는 근거를 찾고 모르는 것을 표시합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-choi-writing-role",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "최아이는 정해진 지시와 자료로 결과물을 만듭니다.",
+      "toTitle": "최아이는 정해진 지시와 자료로 결과물을 만듭니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-park-review-role",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "decision-gate",
+      "fromTitle": "박아이는 제출 기준에 맞는지 확인합니다.",
+      "toTitle": "박아이는 제출 기준에 맞는지 확인합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-agent-term-mapping",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+      "toTitle": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-new-hire-skill-assignment",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
+      "toTitle": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-security-permissions",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+      "toTitle": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-mcp-partner-window",
+      "fromMainTemplate": "workflow-strip",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
+      "toTitle": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act5-practice-handoff",
+      "fromMainTemplate": "practice-handoff",
+      "toMainTemplate": "practice-handoff",
+      "fromTitle": "실습에서는 에이전트 팀을 구현해 봅니다.",
+      "toTitle": "실습에서는 에이전트 팀을 구현해 봅니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act5-team-to-act6-checkpoint",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
+      "toTitle": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-required-pre-submit-check",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
+      "toTitle": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-completion-claim-no-evidence",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+      "toTitle": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-quality-gate-evidence-over-claim",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "decision-gate",
+      "fromTitle": "품질검문소는 완료 보고 대신 증거를 봅니다.",
+      "toTitle": "품질검문소는 완료 보고 대신 증거를 봅니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-work-log-evidence",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "brief-window",
+      "fromTitle": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+      "toTitle": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act6-goal-rubric-check",
+      "fromMainTemplate": "brief-window",
+      "toMainTemplate": "brief-window",
+      "fromTitle": "검증은 처음 목표와 제출 기준에 맞는지 대조합니다.",
+      "toTitle": "검증은 처음 목표와 제출 기준에 맞는지 대조합니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act6-risk-handoff-note",
+      "fromMainTemplate": "assertion-scene",
+      "toMainTemplate": "assertion-scene",
+      "fromTitle": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
+      "toTitle": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-stop-hook-quality-gate",
+      "fromMainTemplate": "kimai-structure",
+      "toMainTemplate": "kimai-structure",
+      "fromTitle": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
+      "toTitle": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-evaluation-pass-hold",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "통과와 보류를 가르는 기준이 Evaluation입니다.",
+      "toTitle": "통과와 보류를 가르는 기준이 Evaluation입니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-state-status-file",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "term-bridge",
+      "fromTitle": "검문소에는 지금 상태를 적는 상태표가 필요합니다.",
+      "toTitle": "검문소에는 지금 상태를 적는 상태표가 필요합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-loop-control-recheck",
+      "fromMainTemplate": "decision-gate",
+      "toMainTemplate": "decision-gate",
+      "fromTitle": "재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.",
+      "toTitle": "재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-practice-handoff",
+      "fromMainTemplate": "practice-handoff",
+      "toMainTemplate": "practice-handoff",
+      "fromTitle": "실습에서는 제출 전 Stop Hook 검문소를 설계합니다.",
+      "toTitle": "실습에서는 제출 전 Stop Hook 검문소를 설계합니다.",
+      "bulletCount": 3
+    },
+    {
+      "id": "act6-unlock-structure",
+      "fromMainTemplate": "term-bridge",
+      "toMainTemplate": "workflow-strip",
+      "fromTitle": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
+      "toTitle": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
+      "bulletCount": 4
+    },
+    {
+      "id": "act6-final-harness-map",
+      "fromMainTemplate": "decision-gate",
+      "toMainTemplate": "recap-map",
+      "fromTitle": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
+      "toTitle": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
+      "bulletCount": 6
+    }
+  ]
+}

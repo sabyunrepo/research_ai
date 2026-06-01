@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-05-30T00:43:13.925Z",
+  "generatedAt": "2026-05-31T14:11:40.062Z",
   "method": "npx playwright screenshot against local server http://127.0.0.1:8788/deck.html",
-  "coverage": "all-slides-desktop-plus-projector-mobile",
-  "deckOutputHash": "sha256:81aae1dbf4f0a4ef4d625522db8b44ac88d65f202c47b7853aff0866b4e7d476",
-  "summary": "Every slide was captured at desktop projector-review width, with additional projector and mobile viewport checks for the first slide.",
+  "coverage": "representative",
+  "deckOutputHash": "sha256:fde965b2cf3ac713167bfacd169e680a9cc56e1b10e2d02feca2cb26871cc145",
+  "summary": "Representative desktop, projector, and mobile screenshots were captured without unresolved visual blockers recorded in this report.",
   "captures": [
     {
       "slideNumber": 1,
@@ -13,1062 +13,12 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide1.png",
-      "screenshotSha256": "1d9dc12b2fc674c97875ba184a524ed377bd0fc29e84461e6696cd07a7671709",
+      "screenshotSha256": "a94970ac08046f63f7ef894a5c81827364ee24272a5aaca0e8a9f273f019a106",
       "imageDimensions": {
         "width": 1366,
         "height": 768
       },
-      "observation": "Desktop full-deck capture for slide 1."
-    },
-    {
-      "slideNumber": 2,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide2.png",
-      "screenshotSha256": "4d22432cc56bbdcf2e085fc2b12dd6e259aaaa11d2da9868cd536f64150eed63",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 2."
-    },
-    {
-      "slideNumber": 3,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide3.png",
-      "screenshotSha256": "006e97a616c4c8282bba385785701d5d8e49cbec754f8705fbac688a0b1f8e8e",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 3."
-    },
-    {
-      "slideNumber": 4,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide4.png",
-      "screenshotSha256": "aef41d07b44f56f5cec35bc20027f87441b825d83a18af2bd8dd154ed0de1031",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 4."
-    },
-    {
-      "slideNumber": 5,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide5.png",
-      "screenshotSha256": "7a53703a05bb4c02aacc85f212f7fac1f1b04c7c54f179b325587e8c15ebd057",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 5."
-    },
-    {
-      "slideNumber": 6,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide6.png",
-      "screenshotSha256": "8621a7c6d3c6a800b7d9f6ef9308f2dda3040deedd308c04f50e9c2476776b18",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 6."
-    },
-    {
-      "slideNumber": 7,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide7.png",
-      "screenshotSha256": "2dfd9e8a77bf21a8608fddfd0a9afa637f6da0a4dc297b310247ed74c039163e",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 7."
-    },
-    {
-      "slideNumber": 8,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide8.png",
-      "screenshotSha256": "6439fbc304319342c7dde47f02428ce96eba4b9a06bc0925fde4ce2fa1fa9be3",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 8."
-    },
-    {
-      "slideNumber": 9,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide9.png",
-      "screenshotSha256": "437c9335265c2c44acf8a25f52f9a49e785a5f9fd8e5667f5b2658ff42998adc",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 9."
-    },
-    {
-      "slideNumber": 10,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide10.png",
-      "screenshotSha256": "ca7b852024c8a687865ed2d497f2ec9ac15a2dbb3ac312ab21f08e82ed0a7d9c",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 10."
-    },
-    {
-      "slideNumber": 11,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide11.png",
-      "screenshotSha256": "cd6289e29c8b84d12940757438847d3c2543f6316789b196fa95071df6de269f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 11."
-    },
-    {
-      "slideNumber": 12,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide12.png",
-      "screenshotSha256": "a040af37411333c8dbab72a052145a8e6e47f7416e893d652e991c8452b58820",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 12."
-    },
-    {
-      "slideNumber": 13,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide13.png",
-      "screenshotSha256": "b75424aacb2337abe45b0965f0e374b39453b3ed5b65d641ac367efb2ae7c40a",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 13."
-    },
-    {
-      "slideNumber": 14,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide14.png",
-      "screenshotSha256": "cceb2e3931440e87f7339a7ebd0d4242376daa6fe2278d5e524b62177bb08431",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 14."
-    },
-    {
-      "slideNumber": 15,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide15.png",
-      "screenshotSha256": "efccc5841ee702341e78ff1c6561ef4be0d7f4787e2a8626f519c09e4aa52e74",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 15."
-    },
-    {
-      "slideNumber": 16,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide16.png",
-      "screenshotSha256": "9c2705ba01c286ccba13b336ff656c3c8fb023d1e1e3f95e82cd7fb226d133f2",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 16."
-    },
-    {
-      "slideNumber": 17,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide17.png",
-      "screenshotSha256": "40df973f4efed01f122cb605ed49d6a1648b9f7623383cb31d345a42f0c24a9e",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 17."
-    },
-    {
-      "slideNumber": 18,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide18.png",
-      "screenshotSha256": "c49765c51fbf80e03a8f2487c13c54304ec7cae873d8ae2fc608b94fdbd9a7f0",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 18."
-    },
-    {
-      "slideNumber": 19,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide19.png",
-      "screenshotSha256": "f7440a966191bd38491da5b4c8c5062fda04fab05f95ffa93b8f2744e58678db",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 19."
-    },
-    {
-      "slideNumber": 20,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide20.png",
-      "screenshotSha256": "b0e554320d57dc6284e28aaf45c44060c0f183fc0801349708dac515e650d21d",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 20."
-    },
-    {
-      "slideNumber": 21,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide21.png",
-      "screenshotSha256": "8d044c7d8d70f1338c9e29e3df83c4d21d27da775a33975f4e9a7e714504f9c6",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 21."
-    },
-    {
-      "slideNumber": 22,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide22.png",
-      "screenshotSha256": "5e546e696ec485369b4415bd39015f96ed5e58927ca419a1a10d8ddca535fb15",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 22."
-    },
-    {
-      "slideNumber": 23,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide23.png",
-      "screenshotSha256": "6af61355158603e87da87265c004acd6395ea4a025802bae2065bc08f1f74798",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 23."
-    },
-    {
-      "slideNumber": 24,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide24.png",
-      "screenshotSha256": "33185e2ce639e59479ef8294250975fca51e02c13eae6fdcd463d085be1868e3",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 24."
-    },
-    {
-      "slideNumber": 25,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide25.png",
-      "screenshotSha256": "02d073067342c5ef3f943b90ccc5a926dbacf40365dba7280f37760cb4ae205f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 25."
-    },
-    {
-      "slideNumber": 26,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide26.png",
-      "screenshotSha256": "536e1d0b6a6744fb3b953f435e4c6f677ffb1e723c5c5d4787209fa70cf656a5",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 26."
-    },
-    {
-      "slideNumber": 27,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide27.png",
-      "screenshotSha256": "1b317fc9a91b4784c307de02f83ba0ae41f6b60841baecd6b124f8492d371405",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 27."
-    },
-    {
-      "slideNumber": 28,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide28.png",
-      "screenshotSha256": "cf5584aca76335d0f4b61afadf7d0b7d1bea04b6b92967342393c1093e519f66",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 28."
-    },
-    {
-      "slideNumber": 29,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide29.png",
-      "screenshotSha256": "6952e39b6896190c03b4dbe1fb136274348c54c5488f33b5fab4e44732c4ef09",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 29."
-    },
-    {
-      "slideNumber": 30,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide30.png",
-      "screenshotSha256": "cb3139d6db14868fa2b0ff2d3c92b3242e99b0e2f693b31e85efc71ed5054161",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 30."
-    },
-    {
-      "slideNumber": 31,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide31.png",
-      "screenshotSha256": "04a94d6dab9776026d9c2ee68530e635a77177a24dccac9b74608ea8a112dec2",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 31."
-    },
-    {
-      "slideNumber": 32,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide32.png",
-      "screenshotSha256": "428ca777cac124e9839e1861ca20d5967e368de557db4e562c95d15ffd91c9b8",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 32."
-    },
-    {
-      "slideNumber": 33,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide33.png",
-      "screenshotSha256": "0386ddc4b778490f549b88d0a7c4259f23fc36e970e1a44f4f4b110bdfff5a09",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 33."
-    },
-    {
-      "slideNumber": 34,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide34.png",
-      "screenshotSha256": "e1250730f06abb40fe71ffd3f5f3e380671222e39cabb1221e69fd5427070e98",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 34."
-    },
-    {
-      "slideNumber": 35,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide35.png",
-      "screenshotSha256": "9f080393f16886d3e53f2cd4ba702a92c621f1fefda05bfd9745dc0465e39f2d",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 35."
-    },
-    {
-      "slideNumber": 36,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide36.png",
-      "screenshotSha256": "5e2402b2a9d063a278730213b856edcac819deaa70c3d8ff9233f062f5ef4e4f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 36."
-    },
-    {
-      "slideNumber": 37,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide37.png",
-      "screenshotSha256": "22240677e4cf789e584db5bc224e6278404022d6b76e6f399e4ed207157eba99",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 37."
-    },
-    {
-      "slideNumber": 38,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide38.png",
-      "screenshotSha256": "b82bcab892895264c34bc2e94603769e07fe2f78619d6b39194f6cabdfce7591",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 38."
-    },
-    {
-      "slideNumber": 39,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide39.png",
-      "screenshotSha256": "254a40a3ea492af6bdcbbe6223091afc2d0a8242ff22d04b80aa072629f6ecde",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 39."
-    },
-    {
-      "slideNumber": 40,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide40.png",
-      "screenshotSha256": "91ff27ead892f5c91dff5ca9fd6036fcdd5442079013a9343d4c287479851259",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 40."
-    },
-    {
-      "slideNumber": 41,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide41.png",
-      "screenshotSha256": "ee5a2796ed258ec816c35ed6bad59399022b98fb625134cb2aafd98ee948ed3f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 41."
-    },
-    {
-      "slideNumber": 42,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide42.png",
-      "screenshotSha256": "e838d1ede6589bb99f0d03c0ec77fafdb63c0356ad212bfa41b3da9a5af297c0",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 42."
-    },
-    {
-      "slideNumber": 43,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide43.png",
-      "screenshotSha256": "dc244a62f27e90889d02b69b4205c80e68c25ff5a02cd5735f44b912b5fb26a0",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 43."
-    },
-    {
-      "slideNumber": 44,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide44.png",
-      "screenshotSha256": "501caa7941170c540f10ec6d4398a8118f26405fdddbecfcc2a45adc602b5ef0",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 44."
-    },
-    {
-      "slideNumber": 45,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide45.png",
-      "screenshotSha256": "9ab377f0578f127764318f4b49281a9e5ff6465f601ecc9257e70c8a82e5014e",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 45."
-    },
-    {
-      "slideNumber": 46,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide46.png",
-      "screenshotSha256": "49af6d569542015a49dd0539ca369349f0fc4770a6598bbbd77dee3052e4da3a",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 46."
-    },
-    {
-      "slideNumber": 47,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide47.png",
-      "screenshotSha256": "20b8a98056d8f8ed8fd0e292a17dabca8ee4e8d196bc0b3ad9765b04951a9b61",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 47."
-    },
-    {
-      "slideNumber": 48,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide48.png",
-      "screenshotSha256": "08e66cd7f61be4e9fa3495f3938dafd1c9188e1cf09c272a6214a39a5e0f6eeb",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 48."
-    },
-    {
-      "slideNumber": 49,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide49.png",
-      "screenshotSha256": "5088c131cd0b9a205a74b9407023bef731b96cf96b8ea08bf445099690ff6219",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 49."
-    },
-    {
-      "slideNumber": 50,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide50.png",
-      "screenshotSha256": "f3cc4b448126df4be7eafd76ea1df836e4da0a53f3e588e0a784dc1f7802bec1",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 50."
-    },
-    {
-      "slideNumber": 51,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide51.png",
-      "screenshotSha256": "67ba9e0932b4fcdad914ba12a5bdc56ccd12155370426b37770aa4c88b538fc4",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 51."
-    },
-    {
-      "slideNumber": 52,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide52.png",
-      "screenshotSha256": "92b5abd1de392fa6e7167cada6c8a8253377df353b36427d344fd0bf48047cbf",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 52."
-    },
-    {
-      "slideNumber": 53,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide53.png",
-      "screenshotSha256": "38dd7569139e7e61e620f94f68ec0ea200f1d70295f61c03dcdfcdc3522414a8",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 53."
-    },
-    {
-      "slideNumber": 54,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide54.png",
-      "screenshotSha256": "867b20a31e3eede63eec93fbe195c100f5223f6da52559bf0377b7ccdcf1d1f4",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 54."
-    },
-    {
-      "slideNumber": 55,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide55.png",
-      "screenshotSha256": "5c24f6d40647a9e86f752d975a1237568f10493c58905e6ecc44631caa5fa580",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 55."
-    },
-    {
-      "slideNumber": 56,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide56.png",
-      "screenshotSha256": "48f5cfba1317a48cba32b31cce2507a88b7fe6dcc0e9b873a0c3355443bec525",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 56."
-    },
-    {
-      "slideNumber": 57,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide57.png",
-      "screenshotSha256": "c82d9f92ea843ef7e49a5ebd9df232114e2da2c038b529243b2449c9f874c2c1",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 57."
-    },
-    {
-      "slideNumber": 58,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide58.png",
-      "screenshotSha256": "20061808b8dd95d4c8b8347f811ba5bd51013d9c4c4d53a94da4fc8e68fc16e1",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 58."
-    },
-    {
-      "slideNumber": 59,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide59.png",
-      "screenshotSha256": "1de22a36ea619ebc2d5f20822ee05090362736633ef821fbecb4a94f19433405",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 59."
-    },
-    {
-      "slideNumber": 60,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide60.png",
-      "screenshotSha256": "319227c671972a739822a8ecebd3d8cec78a7a1a0ccc48eee6acb3869e9ecfb7",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 60."
-    },
-    {
-      "slideNumber": 61,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide61.png",
-      "screenshotSha256": "f2eb09a5f00e9a8c6708fac1d8a7dbca743dd5b8b2b827b59571a680bfa2d24f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 61."
-    },
-    {
-      "slideNumber": 62,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide62.png",
-      "screenshotSha256": "4fae6d1d299baf62c73b082ddca163021144ada996cc27f35e79dc9820cdc9ed",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 62."
-    },
-    {
-      "slideNumber": 63,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide63.png",
-      "screenshotSha256": "4951a28c3a5c2b34ff9f22f08ed13bd46ca4f1ecd7706b41c63cdad81ed4014c",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 63."
-    },
-    {
-      "slideNumber": 64,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide64.png",
-      "screenshotSha256": "417c10dd96c4b81fde56d38f44cfa607fc89121d0bfc1fd5610fc5d3d3a1aa96",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 64."
-    },
-    {
-      "slideNumber": 65,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide65.png",
-      "screenshotSha256": "3db1d981fdac7d598f9946660e53b6a140150d8867772fc4b4c1ec6442728700",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 65."
-    },
-    {
-      "slideNumber": 66,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide66.png",
-      "screenshotSha256": "f51a07b4e73d4e97f2574be6aab472aebffe58b2122b54f01d6e5869192d0d03",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 66."
-    },
-    {
-      "slideNumber": 67,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide67.png",
-      "screenshotSha256": "6633b568bb63b32f0741f434459ccbfcb86b5cdbb1e68f8ab4b5907b49282ad1",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 67."
-    },
-    {
-      "slideNumber": 68,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide68.png",
-      "screenshotSha256": "edfed1e4d827463359b3c2af227b97f51c275f945c825117435a2d9f90ba7e1f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 68."
-    },
-    {
-      "slideNumber": 69,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide69.png",
-      "screenshotSha256": "755113941e56e86365824bb1a0133e4ae78f4dda8abe4e95d7b8473a57d08dbf",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 69."
-    },
-    {
-      "slideNumber": 70,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide70.png",
-      "screenshotSha256": "28d84309e6849d5dc6fb8b57e68ec7d16e4ae2f275f106ed0f733df258675be4",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 70."
-    },
-    {
-      "slideNumber": 71,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide71.png",
-      "screenshotSha256": "cf3888a5ce6e98ccd9ed0a7cb3ba7d3ff3a5f83afc9d0945d5758c37eb0bd909",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 71."
-    },
-    {
-      "slideNumber": 72,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide72.png",
-      "screenshotSha256": "e441958f668e4f9f2e729a1f8799d7655ffd385ad4903f1397172a33751039df",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 72."
-    },
-    {
-      "slideNumber": 73,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide73.png",
-      "screenshotSha256": "57c9551e42e25012cf0f72edbf590ab03a042d5c00f90ec6a7b41d97b839d9ca",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 73."
-    },
-    {
-      "slideNumber": 74,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide74.png",
-      "screenshotSha256": "986dbf43b61ba7616d12fa9688860fe0e94ec9de9004ee91fa071292afc8ca43",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 74."
-    },
-    {
-      "slideNumber": 75,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide75.png",
-      "screenshotSha256": "7b3ac7e9c35c3dd26a74cf306a4cbf44cc1db3af342d8d8bc91b86f3e75bed7f",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 75."
-    },
-    {
-      "slideNumber": 76,
-      "viewport": {
-        "width": 1366,
-        "height": 768
-      },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide76.png",
-      "screenshotSha256": "dd61e5f33feb7ea34b1ea93605b28456c0d25d39dc82d7f6a79ae7bc2f4cc2a0",
-      "imageDimensions": {
-        "width": 1366,
-        "height": 768
-      },
-      "observation": "Desktop full-deck capture for slide 76."
+      "observation": "Desktop first slide captured with visible title, Kimai image, and navigation outside core content."
     },
     {
       "slideNumber": 1,
@@ -1077,7 +27,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1024x768-slide1.png",
-      "screenshotSha256": "95c1f29eb4eb7bd05a1a48797391d4b34f67b714d94328b1b98b33cabf3226c7",
+      "screenshotSha256": "1226414c0583a6efb61651ae6034ef8b6bf83b9335ded8125abeac478b905af7",
       "imageDimensions": {
         "width": 1024,
         "height": 768
@@ -1091,12 +41,96 @@
         "height": 844
       },
       "screenshotPath": "review-screenshots/deck-390x844-slide1.png",
-      "screenshotSha256": "9f6aeda494fc4757a122f489e2328024e0957dfc5b22f9cb143b19655df0184b",
+      "screenshotSha256": "981f0693f510a17f77b5843e4396ff7e3b884911f2ec5f52c5bea0d547ef60ff",
       "imageDimensions": {
         "width": 390,
         "height": 844
       },
       "observation": "Mobile viewport first slide captured with deck navigation outside the slide frame."
+    },
+    {
+      "slideNumber": 8,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshotPath": "review-screenshots/deck-1366x768-slide8.png",
+      "screenshotSha256": "bc6e0aae417cf549dc927209b9a8aa4acee238a24f6b886730f2c603e0786320",
+      "imageDimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "observation": "Act 0 representative map slide captured with nonblank visual media."
+    },
+    {
+      "slideNumber": 18,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshotPath": "review-screenshots/deck-1366x768-slide18.png",
+      "screenshotSha256": "ea81134940d72136a4fa4cde83563b154746ad3256818a4a0a1990058bc2d97b",
+      "imageDimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "observation": "Act 1 representative slide captured with nonblank visual media."
+    },
+    {
+      "slideNumber": 32,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshotPath": "review-screenshots/deck-1366x768-slide32.png",
+      "screenshotSha256": "5f0c89e3928832ffe78eea064f8fe4994944885fbd8514bb8f19ffc8e950d1ed",
+      "imageDimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "observation": "Act 3 representative slide captured with nonblank visual media."
+    },
+    {
+      "slideNumber": 47,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshotPath": "review-screenshots/deck-1366x768-slide47.png",
+      "screenshotSha256": "6896c921f6c8bbd532071c9db63c00a976251554f528e1d64e085d751d5fe6c7",
+      "imageDimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "observation": "Act 4 representative procedure slide captured after crop-region repair."
+    },
+    {
+      "slideNumber": 61,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshotPath": "review-screenshots/deck-1366x768-slide61.png",
+      "screenshotSha256": "845a343f5205c212ebc437185b4856c3dd206097ba6a47f264d03a7ecb8721f6",
+      "imageDimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "observation": "Act 5 representative slide captured with nonblank visual media."
+    },
+    {
+      "slideNumber": 76,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshotPath": "review-screenshots/deck-1366x768-slide76.png",
+      "screenshotSha256": "31c3073273bd82e28f8ba333e0b26d17c3a973978f4f3855e500439e0134f828",
+      "imageDimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "observation": "Final slide captured with nonblank visual media and closing map."
     }
   ],
   "blockers": []

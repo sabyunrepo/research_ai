@@ -7,18 +7,27 @@
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <main class="slide slide--standard" data-slide-id="act3-claude-md-rule-board" data-evidence-ids="claim-003 claim-005" data-glossary-terms="Prompt Context">
+  <main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act3-claude-md-rule-board" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-003 claim-005" data-glossary-terms="Prompt Context">
     <section class="copy">
       <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
       <h2>김아이 책상에는 지금 할 일에 필요한 것만 올립니다.</h2>
-      <p class="message">김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.</p>
-      <ul class="bullets"><li>작업 지시</li><li>작업에 필요한 자료</li><li>작업 체크리스트</li></ul>
-      <footer class="slide-bridge">작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.</footer>
+      <p class="message">김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.</p>
+      <div class="source-anchor-parity" hidden><span>작업 지시</span><span>작업에 필요한 자료</span><span>작업 체크리스트</span></div>
+      
+      <footer class="slide-bridge"><span class="slide-bridge-label">다음</span><span>작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.</span></footer>
     </section>
     <section class="slide-media" aria-label="김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림">
-      <figure class="visual-figure visual-generated-image">
-        <img src="../assets/visuals/act3-claude-md-rule-board-act3-claude-md-rule-board.png" alt="김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림">
-      </figure>
+      <div class="lc-visual lc-decision-gate-visual" data-template-component="decision-gate" data-visual-component="gate" data-source-component="practice-gate-visual" data-motion-cue="gate-check" aria-hidden="true">
+          <div class="lc-gate-board">
+            <strong>확인?</strong>
+            <span class="gate-line"></span>
+            <em>증거 확인 후 판정</em>
+          </div>
+          <span class="lc-gate-card goal">작업 지시<br><small>맞음</small></span>
+          <span class="lc-gate-card evidence">작업에 필요한 자료<br><small>있음</small></span>
+          <span class="lc-gate-card retry">작업 체크리스트<br><small>필요</small></span>
+          <div class="lc-gate-verdict"><b>HOLD</b><b>PASS</b></div>
+      </div>
     </section>
   </main>
 </body>

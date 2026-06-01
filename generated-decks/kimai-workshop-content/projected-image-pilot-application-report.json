@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-05-31T10:00:25.069Z",
+  "deck": "generated-decks/kimai-workshop-content",
+  "applied": [
+    {
+      "assetId": "act1-desk-principle",
+      "targetPath": "assets/visuals/act1-desk-principle-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act1-desk-principle"
+      ]
+    },
+    {
+      "assetId": "act2-unspoken-imagination",
+      "targetPath": "assets/visuals/act2-unspoken-imagination-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act2-unspoken-imagination"
+      ]
+    },
+    {
+      "assetId": "act4-different-instruction-starts",
+      "targetPath": "assets/visuals/act4-different-instruction-starts-single.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "slides": [
+        "act4-different-instruction-starts"
+      ]
+    },
+    {
+      "assetId": "act5-company-approval-roles",
+      "targetPath": "assets/visuals/act5-company-approval-roles-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act5-company-approval-roles"
+      ]
+    },
+    {
+      "assetId": "act5-new-hires-team",
+      "targetPath": "assets/visuals/act5-new-hires-team-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act5-new-hires-team"
+      ]
+    },
+    {
+      "assetId": "act5-kimai-research-role",
+      "targetPath": "assets/visuals/act5-kimai-research-role-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act5-kimai-research-role"
+      ]
+    },
+    {
+      "assetId": "act5-choi-writing-role",
+      "targetPath": "assets/visuals/act5-choi-writing-role-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act5-choi-writing-role"
+      ]
+    },
+    {
+      "assetId": "act5-new-hire-skill-assignment",
+      "targetPath": "assets/visuals/act5-new-hire-skill-assignment-single.png",
+      "dimensions": {
+        "width": 1566,
+        "height": 1005
+      },
+      "slides": [
+        "act5-new-hire-skill-assignment"
+      ]
+    },
+    {
+      "assetId": "act5-mcp-partner-window",
+      "targetPath": "assets/visuals/act5-mcp-partner-window-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act5-mcp-partner-window"
+      ]
+    },
+    {
+      "assetId": "act6-stop-hook-quality-gate",
+      "targetPath": "assets/visuals/act6-stop-hook-quality-gate-single.png",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "slides": [
+        "act6-stop-hook-quality-gate"
+      ]
+    }
+  ]
+}

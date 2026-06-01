@@ -1,0 +1,241 @@
+{
+  "generatedAt": "2026-05-31T04:08:14.549Z",
+  "deck": "generated-decks/kimai-workshop-content",
+  "dryRun": false,
+  "reviewWarningCount": 23,
+  "convertedCount": 23,
+  "skippedCount": 0,
+  "converted": [
+    {
+      "id": "act1-info-baskets",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act1-info-baskets.png",
+      "nextSourcePath": "assets/visuals/act1-info-baskets-single.png",
+      "sourceAssetId": "act1-visual-sheet",
+      "sheetCellIndex": 5,
+      "warningCount": 1
+    },
+    {
+      "id": "act3-to-act4-manual",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act3-to-act4-manual.png",
+      "nextSourcePath": "assets/visuals/act3-to-act4-manual-single.png",
+      "sourceAssetId": "act3-visual-sheet",
+      "sheetCellIndex": 10,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-final-harness-map",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-final-harness-map.png",
+      "nextSourcePath": "assets/visuals/act6-final-harness-map-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 12,
+      "warningCount": 1
+    },
+    {
+      "id": "act1-context-curation-close",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act1-context-curation-close.png",
+      "nextSourcePath": "assets/visuals/act1-context-curation-close-single.png",
+      "sourceAssetId": "act1-visual-sheet",
+      "sheetCellIndex": 8,
+      "warningCount": 1
+    },
+    {
+      "id": "act2-prompt-term-mapping",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act2-prompt-term-mapping.png",
+      "nextSourcePath": "assets/visuals/act2-prompt-term-mapping-single.png",
+      "sourceAssetId": "act2-visual-sheet",
+      "sheetCellIndex": 9,
+      "warningCount": 1
+    },
+    {
+      "id": "act2-handoff-document",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act2-handoff-document.png",
+      "nextSourcePath": "assets/visuals/act2-handoff-document-single.png",
+      "sourceAssetId": "act2-visual-sheet",
+      "sheetCellIndex": 5,
+      "warningCount": 1
+    },
+    {
+      "id": "act2-output-done-criteria",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act2-output-done-criteria.png",
+      "nextSourcePath": "assets/visuals/act2-output-done-criteria-single.png",
+      "sourceAssetId": "act2-visual-sheet",
+      "sheetCellIndex": 8,
+      "warningCount": 1
+    },
+    {
+      "id": "act3-act1-context-recover",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act3-act1-context-recover.png",
+      "nextSourcePath": "assets/visuals/act3-act1-context-recover-single.png",
+      "sourceAssetId": "act3-visual-sheet",
+      "sheetCellIndex": 1,
+      "warningCount": 1
+    },
+    {
+      "id": "act3-claude-md-rule-board",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act3-claude-md-rule-board.png",
+      "nextSourcePath": "assets/visuals/act3-claude-md-rule-board-single.png",
+      "sourceAssetId": "act3-visual-sheet",
+      "sheetCellIndex": 3,
+      "warningCount": 1
+    },
+    {
+      "id": "act3-good-rule-board-shape",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act3-good-rule-board-shape.png",
+      "nextSourcePath": "assets/visuals/act3-good-rule-board-shape-single.png",
+      "sourceAssetId": "act3-visual-sheet",
+      "sheetCellIndex": 7,
+      "warningCount": 3
+    },
+    {
+      "id": "act3-context-vs-claude-md",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act3-context-vs-claude-md.png",
+      "nextSourcePath": "assets/visuals/act3-context-vs-claude-md-single.png",
+      "sourceAssetId": "act3-visual-sheet",
+      "sheetCellIndex": 8,
+      "warningCount": 1
+    },
+    {
+      "id": "act5-company-approval-roles",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act5-company-approval-roles.png",
+      "nextSourcePath": "assets/visuals/act5-company-approval-roles-single.png",
+      "sourceAssetId": "act5-visual-sheet",
+      "sheetCellIndex": 2,
+      "warningCount": 1
+    },
+    {
+      "id": "act5-choi-writing-role",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act5-choi-writing-role.png",
+      "nextSourcePath": "assets/visuals/act5-choi-writing-role-single.png",
+      "sourceAssetId": "act5-visual-sheet",
+      "sheetCellIndex": 5,
+      "warningCount": 1
+    },
+    {
+      "id": "act5-agent-term-mapping",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act5-agent-term-mapping.png",
+      "nextSourcePath": "assets/visuals/act5-agent-term-mapping-single.png",
+      "sourceAssetId": "act5-visual-sheet",
+      "sheetCellIndex": 7,
+      "warningCount": 1
+    },
+    {
+      "id": "act5-new-hire-skill-assignment",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act5-new-hire-skill-assignment.png",
+      "nextSourcePath": "assets/visuals/act5-new-hire-skill-assignment-single.png",
+      "sourceAssetId": "act5-visual-sheet",
+      "sheetCellIndex": 8,
+      "warningCount": 2
+    },
+    {
+      "id": "act5-mcp-partner-window",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act5-mcp-partner-window.png",
+      "nextSourcePath": "assets/visuals/act5-mcp-partner-window-single.png",
+      "sourceAssetId": "act5-visual-sheet",
+      "sheetCellIndex": 10,
+      "warningCount": 1
+    },
+    {
+      "id": "act5-team-to-act6-checkpoint",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act5-team-to-act6-checkpoint.png",
+      "nextSourcePath": "assets/visuals/act5-team-to-act6-checkpoint-single.png",
+      "sourceAssetId": "act5-visual-sheet",
+      "sheetCellIndex": 11,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-work-log-evidence",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-work-log-evidence.png",
+      "nextSourcePath": "assets/visuals/act6-work-log-evidence-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 4,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-goal-rubric-check",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-goal-rubric-check.png",
+      "nextSourcePath": "assets/visuals/act6-goal-rubric-check-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 5,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-risk-handoff-note",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-risk-handoff-note.png",
+      "nextSourcePath": "assets/visuals/act6-risk-handoff-note-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 6,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-stop-hook-quality-gate",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-stop-hook-quality-gate.png",
+      "nextSourcePath": "assets/visuals/act6-stop-hook-quality-gate-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 7,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-evaluation-pass-hold",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-evaluation-pass-hold.png",
+      "nextSourcePath": "assets/visuals/act6-evaluation-pass-hold-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 8,
+      "warningCount": 1
+    },
+    {
+      "id": "act6-state-status-file",
+      "fromKind": "crop-region",
+      "toKind": "single-image",
+      "previousSourcePath": "assets/visuals/act6-state-status-file.png",
+      "nextSourcePath": "assets/visuals/act6-state-status-file-single.png",
+      "sourceAssetId": "act6-visual-sheet",
+      "sheetCellIndex": 9,
+      "warningCount": 1
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projected Image Pilot Review</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    body {
+      background: #f7f8fb;
+    }
+    .pilot-page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 36px 28px 80px;
+    }
+    .pilot-page h1 {
+      margin: 0 0 8px;
+      font-family: var(--display);
+      font-size: 36px;
+      line-height: 1.1;
+    }
+    .pilot-page > p {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    .pilot-grid {
+      display: grid;
+      gap: 28px;
+    }
+    .pilot-card {
+      display: grid;
+      grid-template-columns: minmax(300px, .58fr) minmax(540px, 1fr);
+      gap: 24px;
+      align-items: start;
+      padding: 22px;
+      border: 2px solid var(--line);
+      background: #fff;
+    }
+    .pilot-meta {
+      display: grid;
+      gap: 12px;
+    }
+    .pilot-meta h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.16;
+    }
+    .pilot-meta dl {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+    }
+    .pilot-meta div {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #dde1e7;
+    }
+    .pilot-meta dt {
+      color: var(--muted);
+      font-family: var(--label);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .pilot-meta dd {
+      min-width: 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    .pilot-frame {
+      display: grid;
+      place-items: center;
+      min-height: 420px;
+      padding: 18px;
+      border: 3px solid var(--line);
+      border-radius: 22px 14px 24px 16px;
+      background: #fff;
+      box-shadow: 9px 10px 0 #e8efff;
+      transform: rotate(-.35deg);
+    }
+    .pilot-frame img {
+      display: block;
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+    }
+    .pilot-verdict {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 10px;
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      font-family: var(--label);
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <main class="pilot-page">
+    <h1>Projected Image Pilot Review</h1>
+    <p>실제 화면에 기존 PNG가 투사되는 13장 중 초반 3장을 single-image-first 방식으로 생성한 파일럿입니다.</p>
+    <section class="pilot-grid">
+      <article class="pilot-card">
+        <div class="pilot-meta">
+          <span class="pilot-verdict">PILOT</span>
+          <h2>김아이 신입사원</h2>
+          <dl>
+            <div><dt>slide</dt><dd>2 · act0-kimai-capable</dd></div>
+            <div><dt>asset</dt><dd>kimai-new-employee</dd></div>
+            <div><dt>target</dt><dd>assets/visuals/kimai-new-employee-single.png</dd></div>
+            <div><dt>check</dt><dd>캐릭터, 명찰, 데스크, 노트북이 한 장에 들어가며 템플릿 프레임은 이미지 안에 없음</dd></div>
+          </dl>
+        </div>
+        <figure class="pilot-frame">
+          <img src="assets/visuals/kimai-new-employee-single.png" alt="김아이 신입사원 파일럿 이미지">
+        </figure>
+      </article>
+      <article class="pilot-card">
+        <div class="pilot-meta">
+          <span class="pilot-verdict">PILOT</span>
+          <h2>회사 맥락 빈칸</h2>
+          <dl>
+            <div><dt>slide</dt><dd>3 · act0-company-context</dd></div>
+            <div><dt>asset</dt><dd>kimai-company-context-blanks</dd></div>
+            <div><dt>target</dt><dd>assets/visuals/kimai-company-context-blanks-single.png</dd></div>
+            <div><dt>check</dt><dd>회사, 부서, 제품, 업무 방식 카드가 크게 읽히며 sprite sheet 흔적 없음</dd></div>
+          </dl>
+        </div>
+        <figure class="pilot-frame">
+          <img src="assets/visuals/kimai-company-context-blanks-single.png" alt="회사 맥락 빈칸 파일럿 이미지">
+        </figure>
+      </article>
+      <article class="pilot-card">
+        <div class="pilot-meta">
+          <span class="pilot-verdict">PILOT</span>
+          <h2>보고서 요청 빈칸</h2>
+          <dl>
+            <div><dt>slide</dt><dd>4 · act0-real-work-analogy</dd></div>
+            <div><dt>asset</dt><dd>kimai-report-request-gap</dd></div>
+            <div><dt>target</dt><dd>assets/visuals/kimai-report-request-gap-single.png</dd></div>
+            <div><dt>check</dt><dd>팀장 말풍선, 보고서 초안, 제품/사용처/제출 형식 빈칸이 구분됨</dd></div>
+          </dl>
+        </div>
+        <figure class="pilot-frame">
+          <img src="assets/visuals/kimai-report-request-gap-single.png" alt="보고서 요청 빈칸 파일럿 이미지">
+        </figure>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

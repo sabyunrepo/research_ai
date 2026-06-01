@@ -29,11 +29,17 @@
   }
 
   function visualBlock(slide) {
+    const render = slide.visualRenderContract || {};
     const rows = [
       slide.visualType ? `Type: ${slide.visualType}` : "",
       slide.visualAssetId ? `Asset ID: ${slide.visualAssetId}` : "",
       slide.visualAsset ? `Asset: ${slide.visualAsset}` : "",
       slide.assetTeachingRole ? `Teaching role: ${slide.assetTeachingRole}` : "",
+      render.renderKind ? `Rendered visual kind: ${render.renderKind}` : "",
+      render.templateComponent ? `Template component: ${render.templateComponent}` : "",
+      render.sourceAction ? `Source image action: ${render.sourceAction}` : "",
+      render.usesExistingImage ? "Image source: existing asset reuse" : "",
+      render.projectedImage === false ? "Projected image: no, CSS component is shown instead" : "",
       slide.visualPrompt ? `Prompt: ${slide.visualPrompt}` : "",
       slide.interaction ? `Interaction: ${slide.interaction.type} - ${slide.interaction.description}` : "",
       slide.bridge ? `Bridge: ${slide.bridge}` : "",
@@ -45,6 +51,18 @@
       slide.renderedVisualAsset ? `renderedVisualAsset: ${slide.renderedVisualAsset}` : "",
     ].filter(Boolean);
     return `${listBlock("Visual / Interaction", rows)}${listBlock("Asset Trace", traceRows)}${listBlock("Asset Explanation Anchors", slide.assetExplanationAnchors || [])}`;
+  }
+
+  function templateBlock(slide) {
+    const rows = [
+      slide.layoutTemplate ? `Layout template: ${slide.layoutTemplate}` : "",
+      slide.layoutVariant ? `Rendered variant: ${slide.layoutVariant}` : "",
+      slide.teachingMove ? `Teaching move: ${slide.teachingMove}` : "",
+      slide.audienceAction ? `Audience action: ${slide.audienceAction}` : "",
+      slide.visualMode ? `Visual mode: ${slide.visualMode}` : "",
+      slide.templateSelectionReason ? `Selection reason: ${slide.templateSelectionReason}` : "",
+    ].filter(Boolean);
+    return listBlock("Template Selection", rows);
   }
 
   function semanticContractBlock(slide) {
@@ -94,6 +112,7 @@
             <strong>Speaker Note</strong>
             <p>${escapeHtml(slide.speakerNote || "")}</p>
             ${listBlock("Presenter Cues", slide.presenterCues || [])}
+            ${templateBlock(slide)}
             ${visualBlock(slide)}
             ${semanticContractBlock(slide)}
             ${xmlBlock(slide)}
