@@ -1505,7 +1505,7 @@
           "sourceScope": "slide"
         }
       ],
-      "contentHash": "sha256:80e329cd0252498730d4a8c89b9f5b90928b285d90deecf7de336bdd7972bbc1",
+      "contentHash": "sha256:cdd586f911d9659ca9d6c8a5b4c9d5e498cd091348f396b3284adc7037a7e1bc",
       "fieldSources": {
         "file": "lecture-cuts/assets/slides.js:file",
         "section": "lecture-cuts/assets/slides.js:section*",

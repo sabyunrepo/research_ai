@@ -2561,6 +2561,20 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   padding: 7.2% 5.1% 5.1%;
 }
 
+.deck-frame [data-slide-id="08-claude-md"] .copy {
+  padding-top: 5.8%;
+  padding-bottom: 4%;
+}
+
+.deck-frame [data-slide-id="08-claude-md"] h2 {
+  font-size: clamp(30px, 4.1vw, 52px);
+  line-height: 1.06;
+}
+
+.deck-frame [data-slide-id="08-claude-md"] .bullets li {
+  margin-bottom: 8px;
+}
+
 .deck-frame .slide-media {
   min-height: 0;
   padding: 4.5%;

@@ -62,7 +62,7 @@ No low-confidence fields. `node scripts/export-lecture-cuts-contract.js --check-
 | 19 | `04-1-prompt-anatomy` | 좋은요청은 여섯개의 섹션으로 나뉩니다 | Spec / Prompt | inline | 1 | `sha256:4e500b866c2c...` |
 | 20 | `07-1-reasoning-output-pattern` | 완료는 선언이 아니라 증거로 판단합니다 | Spec / Prompt | inline | 1 | `sha256:f9a76dc8321a...` |
 | 21 | `07-2-reasoning-avoid-overask` | 작업 성격에 따라 요청 강도를 조절합니다 | Spec / Prompt | inline | 1 | `sha256:ba3606fb9cb4...` |
-| 22 | `08-claude-md` | CLAUDE.md는 항상 적용되는 프로젝트 지침입니다 | Context / Memory | inline | 3 | `sha256:80e329cd0252...` |
+| 22 | `08-claude-md` | CLAUDE.md는 항상 적용되는 프로젝트 지침입니다 | Context / Memory | inline | 3 | `sha256:cdd586f911d9...` |
 | 23 | `08-2-good-claude-md` | 좋은 CLAUDE.md는 짧고 갱신 되어야합니다 | Context / Memory | inline | 2 | `sha256:bd8e9daa34b3...` |
 | 24 | `09-context-engineering` | 컨텍스트는 작업대 위 참고 자료입니다 | Context / Memory | inline | 3 | `sha256:0afdddb92418...` |
 | 25 | `09-3-context-drift-check` | 완료 전 현재 목표와 컨텍스트를 다시 맞춥니다 | Context / Memory | inline | 2 | `sha256:aca061643b6f...` |
