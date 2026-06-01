@@ -70,7 +70,11 @@ function cropFromSheetLayout(sourceAsset, asset) {
   const cellHeight = 100 / rows;
   const col = (panelNumber - 1) % columns;
   const row = Math.floor((panelNumber - 1) / columns);
-  const safeInset = Number(asset.cropSafety?.safeMarginPercent ?? layout.safeMarginPercent ?? inset);
+  const safeInset = Math.max(
+    inset,
+    Number(layout.safeMarginPercent ?? 0),
+    Number(asset.cropSafety?.safeMarginPercent ?? 0),
+  );
   return {
     x: roundPercent(col * cellWidth + safeInset),
     y: roundPercent(row * cellHeight + safeInset),

@@ -7,6 +7,7 @@ const zlib = require("node:zlib");
 
 const root = path.resolve(__dirname, "..", "..");
 const harnessRoot = path.join(root, "deck-harness");
+const templateRegistryPath = path.join(harnessRoot, "templates", "assets", "template-component-registry.json");
 
 function usage() {
   console.error("Usage: node deck-harness/scripts/build-deck-from-spec.js <deck-dir>");
@@ -38,6 +39,21 @@ function readOptionalJson(deckDir, file) {
     return null;
   }
   return readJson(filePath);
+}
+
+function readTemplateComponentRegistry() {
+  const registry = readJson(templateRegistryPath);
+  return Object.fromEntries(
+    (registry.templates || []).map((template) => [
+      template.mainTemplate || template.id,
+      {
+        visual: template.visualComponent,
+        source: template.sourceComponent,
+        cue: template.motionCue,
+        galleryId: template.id,
+      },
+    ]),
+  );
 }
 
 function resolveAssetPath(deckDir, sourcePath) {
@@ -97,6 +113,16 @@ function extractAllTags(xml, tag) {
 }
 
 function screenModel(slide) {
+  if (slide.rewrittenScreen?.headline || slide.templateRewrite?.screenStructure?.headline) {
+    const rewritten = slide.rewrittenScreen || slide.templateRewrite.screenStructure;
+    return {
+      headline: rewritten.headline || rewritten.heroLine || slide.title,
+      message: rewritten.message || slide.message,
+      bullets: bulletsFromRewrittenScreen(slide.mainTemplate || mainTemplateForSlide(slide), rewritten),
+      bridge: rewritten.bridge || slide.bridge || "",
+      rewritten,
+    };
+  }
   const screenXml = slide.xmlPrompt?.screenContent || "";
   const headline = extractFirstTag(screenXml, "headline") || slide.title;
   const message = extractFirstTag(screenXml, "message") || slide.message;
@@ -108,6 +134,21 @@ function screenModel(slide) {
     bullets: anchors.length ? anchors : slide.bullets || [],
     bridge,
   };
+}
+
+function bulletsFromRewrittenScreen(template, screen) {
+  if (!screen) return [];
+  if (template === "opening-hero") return screen.promiseBullets || [];
+  if (template === "kimai-structure") return screen.imageAnchors || [];
+  if (template === "assertion-scene") return screen.evidenceAnchors || [];
+  if (template === "term-bridge") return [screen.metaphorTerm, screen.realTerm, screen.bridgeLine].filter(Boolean);
+  if (template === "workflow-strip") return (screen.steps || []).map((step) => step.label || step.text || step);
+  if (template === "decision-gate") return (screen.criteria || []).map((criterion) => criterion.text || criterion.label || criterion);
+  if (template === "brief-window") return (screen.rows || []).map((row) => `${row.label}: ${row.text}`);
+  if (template === "practice-handoff") return screen.actionList || [];
+  if (template === "recap-map") return screen.mapNodes || [];
+  if (template === "single-concept") return screen.supportingAnchors || [];
+  return screen.anchors || [];
 }
 
 function findAsset(assetPack, slide) {
@@ -324,28 +365,238 @@ function isPracticeBridge(slide) {
   return /practice-handoff|별도 실습 화면|실습 화면/i.test(`${slide.id || ""} ${slide.visualIntent || ""} ${slide.message || ""}`);
 }
 
-function layoutVariant(slide, index) {
-  if (!slide.visualAssetId && /handoff|별도 실습 화면|실습 화면/i.test(`${slide.visualIntent || ""} ${slide.message || ""}`)) {
+function textForTemplate(slide) {
+  return [
+    slide.id,
+    slide.title,
+    slide.message,
+    slide.visualIntent,
+    slide.bridge,
+    ...(slide.bullets || []),
+    ...(slide.glossaryTerms || []),
+  ].filter(Boolean).join(" ");
+}
+
+function sectionIndex(slide) {
+  const match = String(slide.section || slide.id || "").match(/Act\s*(\d+)/i);
+  return match ? Number(match[1]) : null;
+}
+
+function isGlossaryFirstUse(slide, seenGlossaryTerms) {
+  return (slide.glossaryTerms || []).some((term) => !seenGlossaryTerms.has(term));
+}
+
+function hasProcessStructure(text) {
+  return /로드 순서|적용 강도|흐름|구조|지도|분리|연결|단계|창구|계층|영역|검문소 설계|순서|루프|과정|경로|환경|다음 Act|실행 순서|작업 단계/i.test(text);
+}
+
+function resolveSemanticTemplate(slide, context = {}) {
+  const text = textForTemplate(slide);
+  const bulletCount = (slide.bullets || []).length;
+  const act = sectionIndex(slide);
+  const reasons = [];
+  let layoutTemplate = slide.layoutTemplate || "";
+  let teachingMove = slide.teachingMove || "";
+  let audienceAction = slide.audienceAction || "";
+  let visualMode = slide.visualMode || "";
+
+  if (!layoutTemplate) {
+    if (isPracticeBridge(slide)) {
+      layoutTemplate = "practice-handoff";
+      reasons.push("practice handoff wording routes to a no-image transition template");
+    } else if (context.isFirstGlossaryUse) {
+      layoutTemplate = "glossary-bridge";
+      reasons.push(`first glossary use links metaphor to real term: ${(slide.glossaryTerms || []).join(", ")}`);
+    } else if (isActOpening(slide)) {
+      layoutTemplate = "act-opener";
+      reasons.push("act opening slide frames a new section");
+    } else if (/wrap-up|가져가기|최종|마무리/i.test(text)) {
+      layoutTemplate = "wrap-up";
+      reasons.push("wrap-up or transfer wording closes the learning arc");
+    } else if ((slide.glossaryTerms || []).length && /라고 부릅니다|용어|라벨|실제|매핑/i.test(text)) {
+      layoutTemplate = "glossary-bridge";
+      reasons.push(`glossary wording connects metaphor labels to real terms: ${(slide.glossaryTerms || []).join(", ")}`);
+    } else if (hasProcessStructure(text) || slide.visualType === "minimal-diagram") {
+      layoutTemplate = "concept-map";
+      reasons.push("process or relationship wording needs a map-style template");
+    } else if (bulletCount >= 4 || /체크리스트|기준표|조건|항목|목록|매뉴얼 본문/i.test(text)) {
+      layoutTemplate = "checklist";
+      reasons.push("criteria/checklist wording needs ordered inspection");
+    } else if (/김아이|최아이|박아이|신입|팀장|상사/i.test(text)) {
+      layoutTemplate = "story-scene";
+      reasons.push("character-driven scenario uses a narrative scene template");
+    } else if (slide.visualAssetId || slide.visualType === "generated-image") {
+      layoutTemplate = "assertion-evidence";
+      reasons.push("message plus visual asset supports assertion-evidence rendering");
+    } else {
+      layoutTemplate = "story-scene";
+      reasons.push("default narrative teaching scene");
+    }
+  } else {
+    reasons.push(`source layoutTemplate=${layoutTemplate}`);
+  }
+
+  if (!teachingMove) {
+    if (layoutTemplate === "practice-handoff") teachingMove = "practice-bridge";
+    else if (layoutTemplate === "act-opener") teachingMove = act === 0 ? "activate" : "frame";
+    else if (layoutTemplate === "wrap-up") teachingMove = "synthesize";
+    else if (layoutTemplate === "concept-map" || /비교|갈라지는|분리|순서|구조|역할|권한/i.test(text)) teachingMove = "demonstrate";
+    else if (layoutTemplate === "glossary-bridge" || (slide.glossaryTerms || []).length) teachingMove = "connect";
+    else teachingMove = "explain";
+  } else {
+    reasons.push(`source teachingMove=${teachingMove}`);
+  }
+
+  if (!audienceAction) {
+    if (layoutTemplate === "practice-handoff") audienceAction = "transfer-to-practice";
+    else if (layoutTemplate === "act-opener") audienceAction = "orient";
+    else if (layoutTemplate === "wrap-up") audienceAction = "reflect";
+    else if (layoutTemplate === "checklist") audienceAction = "rehearse-checklist";
+    else if (layoutTemplate === "concept-map") audienceAction = "compare";
+    else if (layoutTemplate === "glossary-bridge" || (slide.glossaryTerms || []).length) audienceAction = "connect-metaphor";
+    else audienceAction = "inspect-visual";
+  } else {
+    reasons.push(`source audienceAction=${audienceAction}`);
+  }
+
+  if (!visualMode) {
+    if (layoutTemplate === "practice-handoff") visualMode = "no-image-handoff";
+    else if (layoutTemplate === "checklist") visualMode = "checklist-board";
+    else if (layoutTemplate === "concept-map") visualMode = "process-diagram";
+    else if (layoutTemplate === "glossary-bridge") visualMode = "term-bridge";
+    else if (layoutTemplate === "wrap-up") visualMode = "artifact-map";
+    else if ((slide.glossaryTerms || []).length || /비유|라벨|용어/i.test(text)) visualMode = "metaphor-link";
+    else visualMode = "story-illustration";
+  } else {
+    reasons.push(`source visualMode=${visualMode}`);
+  }
+
+  return {
+    layoutTemplate,
+    teachingMove,
+    audienceAction,
+    visualMode,
+    templateSelectionReason: reasons.join("; "),
+  };
+}
+
+function stableBucket(slide, size) {
+  const digest = crypto.createHash("sha256").update(`${slide.id}\n${slide.title}\n${slide.message}`).digest();
+  return digest[0] % size;
+}
+
+function variantForTemplate(slide) {
+  if (slide.layoutTemplate === "practice-handoff" && slide.visualMode === "practice-transition") {
     return "handoff";
   }
-  if (isActOpening(slide)) return "focus";
-  if (isPracticeBridge(slide)) return "handoff";
-  if ((slide.bullets || []).length >= 4) return "checklist";
-  if ((slide.bullets || []).length <= 1) return "quote";
-  if (slide.visualAssetId) {
-    return ["standard", "visual-left", "statement", "quote", "checklist"][index % 5];
+  if (slide.layoutTemplate === "practice-handoff" || slide.visualMode === "no-image-handoff") {
+    return "handoff";
   }
-  return ["standard", "statement", "quote"][index % 3];
+  if (slide.layoutTemplate === "act-opener") return "focus";
+  if (slide.layoutTemplate === "checklist") return "checklist";
+  if (slide.layoutTemplate === "glossary-bridge") return stableBucket(slide, 2) === 0 ? "statement" : "quote";
+  if (slide.layoutTemplate === "concept-map") return ["visual-left", "statement", "quote"][stableBucket(slide, 3)];
+  if (slide.layoutTemplate === "wrap-up") return stableBucket(slide, 2) === 0 ? "statement" : "quote";
+  if (slide.layoutTemplate === "story-scene") return ["quote", "standard", "visual-left"][stableBucket(slide, 3)];
+  if (slide.layoutTemplate === "assertion-evidence") {
+    return slide.visualAssetId && stableBucket(slide, 2) === 0 ? "visual-left" : "standard";
+  }
+  return slide.visualAssetId ? "standard" : "statement";
+}
+
+function variantAlternates(slide) {
+  if (slide.layoutTemplate === "checklist") return ["checklist", "statement"];
+  if (slide.layoutTemplate === "concept-map") return ["visual-left", "statement", "quote"];
+  if (slide.layoutTemplate === "glossary-bridge") return ["statement", "quote"];
+  if (slide.layoutTemplate === "story-scene") return ["quote", "standard", "visual-left"];
+  if (slide.layoutTemplate === "assertion-evidence") return ["standard", "visual-left", "quote"];
+  return [variantForTemplate(slide)];
+}
+
+function mainTemplateForSlide(slide) {
+  const text = textForTemplate(slide);
+  if (slide.layoutTemplate === "practice-handoff" || slide.visualMode === "no-image-handoff") return "practice-handoff";
+  if (slide.layoutTemplate === "act-opener") return "opening-hero";
+  if (slide.layoutTemplate === "glossary-bridge" || slide.visualMode === "term-bridge") return "term-bridge";
+  if (slide.layoutTemplate === "wrap-up" || slide.visualMode === "artifact-map") return "recap-map";
+  if (slide.layoutTemplate === "checklist") {
+    if (/목표|증상|범위|제한|검증|보고|지시서|업무 매뉴얼|매뉴얼 본문/i.test(text)) return "brief-window";
+    return "decision-gate";
+  }
+  if (slide.layoutTemplate === "concept-map") {
+    if (/PASS|HOLD|검문소|검증 기준|판정|제출 전|승인|보류/i.test(text)) return "decision-gate";
+    return "workflow-strip";
+  }
+  if (slide.layoutTemplate === "assertion-evidence") return "assertion-scene";
+  if (slide.layoutTemplate === "story-scene" && (slide.visualAssetId || slide.visualType === "generated-image")) return "kimai-structure";
+  return "single-concept";
+}
+
+function mainTemplateClass(template) {
+  return template ? `slide-template--${template.replace(/[^a-z0-9-]/gi, "-").toLowerCase()}` : "";
+}
+
+function avoidVariantRun(slide, variant, previousVariant, currentVariantRun) {
+  if (variant !== previousVariant || currentVariantRun < 3) {
+    return variant;
+  }
+  return variantAlternates(slide).find((candidate) => candidate !== variant) || variant;
 }
 
 function shouldRenderVisual(slide) {
   if (!slide.renderedVisualAsset) return false;
+  if (slide.mainTemplate === "practice-handoff") return true;
   if (["focus", "handoff"].includes(slide.layoutVariant)) return false;
   return true;
 }
 
 function shouldCopyVisualForVariant(variant) {
   return !["focus", "handoff"].includes(variant);
+}
+
+function shouldCopyVisualForSlide(slide, variant, mainTemplate) {
+  if (!slide.visualAssetId) return false;
+  if (mainTemplate === "practice-handoff") return false;
+  if (!shouldCopyVisualForVariant(variant)) return false;
+  if (!galleryTemplateComponents[mainTemplate]) return true;
+  return mainTemplate === "kimai-structure" || templatePrefersImageAsset(mainTemplate);
+}
+
+function actualRenderedVisualAsset(slide) {
+  if (!shouldRenderVisual(slide)) return "";
+  if (
+    galleryTemplateComponents[slide.mainTemplate] &&
+    slide.mainTemplate !== "kimai-structure" &&
+    !templatePrefersImageAsset(slide.mainTemplate)
+  ) {
+    return "";
+  }
+  return slide.renderedVisualAsset || "";
+}
+
+function templatePrefersImageAsset(mainTemplate) {
+  return new Set(["assertion-scene", "term-bridge", "workflow-strip"]).has(mainTemplate);
+}
+
+function visualRenderContract(slide) {
+  const requirements = slide.templateRewrite?.visualRequirements || null;
+  const sourceAction = requirements?.action || "";
+  const templateComponent = galleryTemplateComponents[slide.mainTemplate]?.visual || "";
+  const renderedVisualAsset = actualRenderedVisualAsset(slide);
+  const renderKind = renderedVisualAsset
+    ? "image-asset"
+    : templateComponent
+      ? "css-template-component"
+      : "no-visual";
+  return {
+    renderKind,
+    templateComponent,
+    sourceAction,
+    visualAssetId: slide.visualAssetId || "",
+    renderedVisualAsset,
+    usesExistingImage: /^keep-existing/.test(sourceAction),
+    projectedImage: Boolean(renderedVisualAsset),
+  };
 }
 
 function bulletListHtml(screen, variant) {
@@ -362,26 +613,261 @@ function bulletListHtml(screen, variant) {
   return `<ul class="bullets">${screen.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>`;
 }
 
+function shouldShowGenericBullets(mainTemplate) {
+  return !galleryTemplateComponents[mainTemplate];
+}
+
+function sourceAnchorParityHtml(screen, mainTemplate) {
+  if (shouldShowGenericBullets(mainTemplate) || !Array.isArray(screen.bullets) || !screen.bullets.length) {
+    return "";
+  }
+  return `<div class="source-anchor-parity" hidden>${screen.bullets.map((bullet) => `<span>${escapeHtml(bullet)}</span>`).join("")}</div>`;
+}
+
+const galleryTemplateComponents = readTemplateComponentRegistry();
+
+function shortVisualLabel(value, fallback = "") {
+  const text = String(value || fallback).replace(/\s+/g, " ").trim();
+  if (!text) return "";
+  const normalized = text.replace(/[.。]$/g, "");
+  const keywordLabels = [
+    [/완벽|한 번에/, "완벽보다 확인"],
+    [/빠진\s*내용|빠진\s*조건/, "빠진 조건"],
+    [/잘못\s*이해|기준/, "오해한 기준"],
+    [/어색한\s*결과|결과/, "어색한 결과"],
+    [/업무\s*환경|책상|데스크/, "업무 환경"],
+    [/Harness\s*Engineering/i, "Harness Engineering"],
+    [/Context/i, "Context"],
+    [/Prompt/i, "Prompt"],
+    [/Skill/i, "Skill"],
+    [/CLAUDE\.md/i, "CLAUDE.md"],
+    [/Hook|Evaluation|Quality\s*Gate/i, "Quality Gate"],
+  ];
+  const keyword = keywordLabels.find(([pattern]) => pattern.test(normalized));
+  if (keyword) return keyword[1];
+  const firstClause = normalized.split(/[,:;·|/]/)[0].trim();
+  const words = firstClause.split(/\s+/).filter(Boolean);
+  const compact = words.slice(0, 3).join(" ");
+  return compact || normalized;
+}
+
+function visualTermParts(value, fallback = "") {
+  const text = String(value || fallback).replace(/\s+/g, " ").trim();
+  if (!text) return [fallback].filter(Boolean);
+  if (/Harness\s*Engineering/i.test(text)) return ["Harness", "Engineering"];
+  if (/Tool\s*Permission/i.test(text)) return ["Tool", "Permission"];
+  if (/MCP\s*Tool/i.test(text)) return ["MCP", "Tool"];
+  if (/Quality\s*Gate/i.test(text)) return ["Quality", "Gate"];
+  if (/업무\s*환경/.test(text)) return ["업무 환경", "설계"];
+  if (/업무\s*매뉴얼/.test(text)) return ["업무 매뉴얼", "절차"];
+  const label = shortVisualLabel(text, fallback);
+  return label.includes(" ") && /[A-Za-z]/.test(label) ? label.split(/\s+/).slice(0, 2) : [label];
+}
+
+function visualTermHtml(value, fallback = "") {
+  return visualTermParts(value, fallback)
+    .map((part) => `<span>${escapeHtml(part)}</span>`)
+    .join("");
+}
+
+function briefRowsFromBullets(items) {
+  const labels = ["목표", "증상", "범위", "제한", "검증", "보고"];
+  return labels.map((label, index) => {
+    const item = String(items[index] || "").trim();
+    const parts = item.split(":");
+    if (parts.length > 1 && parts[0].length <= 8) {
+      return [parts[0].trim(), parts.slice(1).join(":").trim()];
+    }
+    return [label, item || "확인 필요"];
+  });
+}
+
+function conceptCenterLabel(slide, screen) {
+  const text = textForTemplate(slide);
+  if (/프롬프트|업무 지시|Prompt/i.test(text)) return "업무 지시";
+  if (/Context|컨텍스트|책상|자료/i.test(text)) return "책상";
+  if (/Skill|매뉴얼/i.test(text)) return "매뉴얼";
+  if (/검증|품질|Gate|Hook/i.test(text)) return "검증";
+  return shortVisualLabel((slide.glossaryTerms || [])[0] || screen.eyebrow, "개념");
+}
+
+function galleryVisualComponentHtml(slide, screen, mainTemplate) {
+  const config = galleryTemplateComponents[mainTemplate];
+  if (!config) return "";
+  if (templatePrefersImageAsset(mainTemplate) && slide.renderedVisualAsset) return "";
+  const visual = config.visual;
+  const sourceAttr = escapeHtml(config.source);
+  const cueAttr = escapeHtml(config.cue);
+  const templateAttr = escapeHtml(mainTemplate);
+  const items = Array.isArray(screen.bullets) ? screen.bullets : [];
+  const componentAttrs = `data-template-component="${templateAttr}" data-visual-component="${escapeHtml(visual)}" data-source-component="${sourceAttr}" data-motion-cue="${cueAttr}"`;
+
+  if (visual === "workbench") {
+    return `<div class="lc-visual lc-workbench-visual" ${componentAttrs} aria-hidden="true">
+        <div class="lc-workbench-core">김</div>
+        <span class="lc-workbench-card memory">내규<small>CLAUDE.md</small></span>
+        <span class="lc-workbench-card skill">자료<small>context</small></span>
+        <span class="lc-workbench-card agent">매뉴얼<small>skill</small></span>
+        <span class="lc-workbench-card tool">도구<small>tool</small></span>
+        <span class="lc-workbench-card hook">검문소<small>hook</small></span>
+        <span class="lc-workbench-card eval">증거<small>eval</small></span>
+      </div>`;
+  }
+  if (visual === "harness") {
+    const rails = items.length >= 4 ? items.slice(0, 4).map((item) => shortVisualLabel(item)) : ["자료", "규칙", "예시", "검증"];
+    return `<div class="lc-visual lc-harness-visual" ${componentAttrs} aria-hidden="true">
+        <div class="lc-harness-center">${escapeHtml(conceptCenterLabel(slide, screen))}</div>
+        <span class="lc-harness-rail context">${escapeHtml(rails[0])}</span>
+        <span class="lc-harness-rail rule">${escapeHtml(rails[1])}</span>
+        <span class="lc-harness-rail example">${escapeHtml(rails[2])}</span>
+        <span class="lc-harness-rail verify">${escapeHtml(rails[3])}</span>
+      </div>`;
+  }
+  if (visual === "evidence") {
+    const headlineLabel = /완벽|한 번에/.test(screen.headline || "") ? "완벽보다 확인" : shortVisualLabel(screen.headline, "요청서");
+    return `<div class="lc-visual lc-claim-evidence-visual" ${componentAttrs} aria-hidden="true">
+          <div class="lc-evidence-sheet">
+            <strong>${escapeHtml(headlineLabel)}</strong>
+            <span class="filled"></span>
+            <span class="missing"></span>
+            <span class="filled short"></span>
+          </div>
+          <div class="lc-evidence-tags">
+            <div class="lc-evidence-gap">${escapeHtml(shortVisualLabel(items[0], "빠진 조건"))}</div>
+            <div class="lc-evidence-check">${escapeHtml(shortVisualLabel(items[1], "근거 확인"))}</div>
+            <div class="lc-evidence-verdict">${escapeHtml(shortVisualLabel(items[2], "보완 후 제출"))}</div>
+          </div>
+      </div>`;
+  }
+  if (visual === "kimai-structure") {
+    const src = slide.renderedVisualAsset || "../assets/visuals/act0-kimai-capable-kimai-new-employee.png";
+    return `<div class="lc-visual lc-kimai-structure-visual" ${componentAttrs}>
+        <figure class="lc-kimai-image-frame">
+          <img src="${escapeHtml(src)}" alt="${escapeHtml(slide.visualIntent || screen.headline)}">
+        </figure>
+      </div>`;
+  }
+  if (visual === "bridge") {
+    const rewritten = screen.rewritten || {};
+    const metaphor = rewritten.metaphorTerm || items[0] || "업무 말";
+    const term = rewritten.realTerm || (slide.glossaryTerms || [])[0] || items[1] || "AI 말";
+    const metaphorLabel = shortVisualLabel(metaphor, "업무 말");
+    const termLabel = shortVisualLabel(term, "AI 말");
+    return `<div class="lc-visual lc-handoff-bridge-visual" ${componentAttrs} aria-hidden="true">
+          <section><strong>업무 말</strong>${visualTermHtml(metaphorLabel, "업무 말")}<em>익숙한 말</em></section>
+          <div class="lc-bridge-file">${visualTermHtml(termLabel, "AI 말")}</div>
+          <section><strong>AI 말</strong>${visualTermHtml(termLabel, "AI 말")}<em>실제 용어</em></section>
+      </div>`;
+  }
+  if (visual === "flow") {
+    const steps = items.length ? items.slice(0, 6) : ["목표", "자료", "지시", "실행", "검증", "기록"];
+    return `<div class="lc-visual lc-guardrail-flow-visual" ${componentAttrs} aria-hidden="true">
+          ${steps.map((step, index) => `<span><b>${String(index + 1).padStart(2, "0")}</b>${escapeHtml(shortVisualLabel(step))}</span>`).join("")}
+          <i class="lc-flow-line"></i>
+      </div>`;
+  }
+  if (visual === "gate") {
+    return `<div class="lc-visual lc-decision-gate-visual" ${componentAttrs} aria-hidden="true">
+          <div class="lc-gate-board">
+            <strong>확인?</strong>
+            <span class="gate-line"></span>
+            <em>증거 확인 후 판정</em>
+          </div>
+          <span class="lc-gate-card goal">${escapeHtml(shortVisualLabel(items[0], "목표"))}<br><small>맞음</small></span>
+          <span class="lc-gate-card evidence">${escapeHtml(shortVisualLabel(items[1], "근거"))}<br><small>있음</small></span>
+          <span class="lc-gate-card retry">${escapeHtml(shortVisualLabel(items[2], "재검토"))}<br><small>필요</small></span>
+          <div class="lc-gate-verdict"><b>HOLD</b><b>PASS</b></div>
+      </div>`;
+  }
+  if (visual === "brief") {
+    const rows = briefRowsFromBullets(items);
+    return `<div class="lc-visual lc-brief-window-visual" ${componentAttrs} aria-hidden="true">
+        <div class="lc-brief-window">
+          <div class="lc-window-dots"><i></i><i></i><i></i></div>
+          ${rows.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> <span>${escapeHtml(value)}</span></p>`).join("")}
+        </div>
+      </div>`;
+  }
+  if (visual === "handoff") {
+    const actions = items.length ? items : ["업무 지시서 열기", "빠진 조건 고치기", "검증 로그 확인"];
+    return `<div class="lc-visual lc-practice-handoff-composite" ${componentAttrs} aria-hidden="true">
+        <div class="lc-practice-kimai-ref"></div>
+        <div class="lc-practice-handoff-steps">
+          ${actions.slice(0, 4).map((item, index) => `<span><b>${String(index + 1).padStart(2, "0")}</b>${escapeHtml(item || "실습")}</span>`).join("")}
+        </div>
+      </div>`;
+  }
+  return `<div class="lc-visual lc-loop-visual" ${componentAttrs} aria-hidden="true">
+      <div class="lc-loop-ring">
+        <i class="lc-loop-path"></i>
+        <i class="lc-loop-runner"></i>
+        <span class="write">${escapeHtml(shortVisualLabel(items[0], "목표"))}</span>
+        <span class="run">${escapeHtml(shortVisualLabel(items[1], "실행"))}</span>
+        <span class="check">${escapeHtml(shortVisualLabel(items[2], "검증"))}</span>
+        <span class="keep">${escapeHtml(shortVisualLabel(items[3], "기록"))}</span>
+        <strong>루틴</strong>
+      </div>
+    </div>`;
+}
+
+function templateContentHtml(slide, screen, options) {
+  const { mainTemplate, bullets, bridge, media } = options;
+  const eyebrow = `<div class="eyebrow">${escapeHtml(slide.section || "")}</div>`;
+  const headline = `<h2>${escapeHtml(screen.headline)}</h2>`;
+  const message = `<p class="message">${escapeHtml(screen.message)}</p>`;
+  const visibleBullets = shouldShowGenericBullets(mainTemplate) ? bullets : "";
+  const sourceAnchors = sourceAnchorParityHtml(screen, mainTemplate);
+  if (mainTemplate === "practice-handoff" && !media) {
+    return `<section class="copy">
+      ${eyebrow}
+      ${headline}
+      ${message}
+      ${sourceAnchors}
+      ${galleryVisualComponentHtml(slide, screen, mainTemplate)}
+      ${bridge}
+    </section>`;
+  }
+
+  return `<section class="copy">
+      ${eyebrow}
+      ${headline}
+      ${message}
+      ${sourceAnchors}
+      ${visibleBullets}
+      ${bridge}
+    </section>
+    ${media}`;
+}
+
+function bridgeFooterHtml(bridge) {
+  if (!bridge) return "";
+  return `<footer class="slide-bridge"><span class="slide-bridge-label">다음</span><span>${escapeHtml(bridge)}</span></footer>`;
+}
+
 function slideHtml(slide) {
   const screen = screenModel(slide);
   const variant = slide.layoutVariant || "standard";
+  const mainTemplate = slide.mainTemplate || mainTemplateForSlide(slide);
   const bullets = bulletListHtml(screen, variant);
-  const bridge = screen.bridge ? `<footer class="slide-bridge">${escapeHtml(screen.bridge)}</footer>` : "";
+  const bridge = bridgeFooterHtml(screen.bridge);
   const evidence = Array.isArray(slide.evidenceClaimIds) ? slide.evidenceClaimIds.join(" ") : "";
   const terms = Array.isArray(slide.glossaryTerms) ? slide.glossaryTerms.join(" ") : "";
   const isWideVisual = slide.assetCrop?.unit === "percent" && slide.assetCrop.width >= 90 && slide.assetCrop.height <= 40;
-  const renderVisual = shouldRenderVisual(slide);
+  const templateVisual = mainTemplate === "practice-handoff" ? "" : galleryVisualComponentHtml(slide, screen, mainTemplate);
+  const renderVisual = Boolean(templateVisual) || shouldRenderVisual(slide);
   const slideClass = [
     "slide",
     isWideVisual ? "slide--wide-visual" : "",
     variant ? `slide--${variant}` : "",
+    mainTemplateClass(mainTemplate),
     renderVisual ? "" : "slide--no-visual",
   ].filter(Boolean).join(" ");
   const media = !renderVisual
     ? ""
     : `<section class="slide-media" aria-label="${escapeHtml(slide.visualIntent)}">
-      ${visualHtml(slide)}
+      ${templateVisual || visualHtml(slide)}
     </section>`;
+  const content = templateContentHtml(slide, screen, { mainTemplate, bullets, bridge, media });
   return `<!doctype html>
 <html lang="ko">
 <head>
@@ -391,15 +877,8 @@ function slideHtml(slide) {
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <main class="${slideClass}" data-slide-id="${escapeHtml(slide.id)}" data-evidence-ids="${escapeHtml(evidence)}" data-glossary-terms="${escapeHtml(terms)}">
-    <section class="copy">
-      <div class="eyebrow">${escapeHtml(slide.section || "")}</div>
-      <h2>${escapeHtml(screen.headline)}</h2>
-      <p class="message">${escapeHtml(screen.message)}</p>
-      ${bullets}
-      ${bridge}
-    </section>
-    ${media}
+  <main class="${slideClass}" data-slide-id="${escapeHtml(slide.id)}" data-layout-template="${escapeHtml(slide.layoutTemplate || "")}" data-main-template="${escapeHtml(mainTemplate)}" data-teaching-move="${escapeHtml(slide.teachingMove || "")}" data-audience-action="${escapeHtml(slide.audienceAction || "")}" data-visual-mode="${escapeHtml(slide.visualMode || "")}" data-evidence-ids="${escapeHtml(evidence)}" data-glossary-terms="${escapeHtml(terms)}">
+    ${content}
   </main>
 </body>
 </html>
@@ -430,12 +909,19 @@ function updateManifest(deckDir, stage) {
   writeText(manifestPath, json(manifest));
 }
 
-function cleanRenderedVisualCopies(deckDir, slides) {
+function cleanRenderedVisualCopies(deckDir, slides, assetPack) {
   const visualsDir = path.join(deckDir, "assets", "visuals");
   if (!fs.existsSync(visualsDir)) return;
   const slidePrefixes = new Set(slides.map((slide) => `${slide.id}-`));
+  const declaredSourcePaths = new Set(
+    (assetPack.assets || [])
+      .map((asset) => asset.sourcePath)
+      .filter((sourcePath) => sourcePath && sourcePath.startsWith("assets/visuals/"))
+      .map((sourcePath) => path.basename(sourcePath)),
+  );
   fs.readdirSync(visualsDir).forEach((file) => {
     if (!file.endsWith(".png")) return;
+    if (declaredSourcePaths.has(file)) return;
     if ([...slidePrefixes].some((prefix) => file.startsWith(prefix))) {
       fs.rmSync(path.join(visualsDir, file));
     }
@@ -444,7 +930,7 @@ function cleanRenderedVisualCopies(deckDir, slides) {
 
 function assertProjectorContract(deckDir) {
   const validator = path.join(__dirname, "validate-deck-contract.js");
-  const result = spawnSync(process.execPath, [validator, deckDir], { stdio: "inherit" });
+  const result = spawnSync(process.execPath, [validator, "--stage=structure", deckDir], { stdio: "inherit" });
   if (result.status !== 0) {
     throw new Error("projector contract validation failed; deck build stopped before writing output");
   }
@@ -459,20 +945,36 @@ function main() {
   const assetPack = readAssetPack(deckDir);
   const assetReview = readOptionalJson(deckDir, "asset-review.json");
   const slides = Array.isArray(spec.slides) ? spec.slides : [];
+  const seenGlossaryTerms = new Set();
+  let previousVariant = "";
+  let currentVariantRun = 0;
 
   fs.rmSync(path.join(deckDir, "slides"), { recursive: true, force: true });
   fs.mkdirSync(path.join(deckDir, "slides"), { recursive: true });
   fs.mkdirSync(path.join(deckDir, "assets"), { recursive: true });
-  cleanRenderedVisualCopies(deckDir, slides);
+  cleanRenderedVisualCopies(deckDir, slides, assetPack);
 
   const registry = slides.map((slide, index) => {
     const file = `${slide.id}.html`;
-    const variant = slide.layoutVariant || layoutVariant(slide, index);
+    const semanticTemplate = resolveSemanticTemplate(slide, {
+      isFirstGlossaryUse: isGlossaryFirstUse(slide, seenGlossaryTerms),
+    });
+    (slide.glossaryTerms || []).forEach((term) => seenGlossaryTerms.add(term));
+    const enrichedSlide = { ...slide, ...semanticTemplate };
+    const preferredVariant = slide.layoutVariant || variantForTemplate(enrichedSlide);
+    const variant = slide.layoutVariant
+      ? preferredVariant
+      : avoidVariantRun(enrichedSlide, preferredVariant, previousVariant, currentVariantRun);
+    currentVariantRun = variant === previousVariant ? currentVariantRun + 1 : 1;
+    previousVariant = variant;
     const builtSlide = {
-      ...slide,
+      ...enrichedSlide,
       layoutVariant: variant,
-      assetRecord: findAsset(assetPack, slide),
-      renderedVisualAsset: shouldCopyVisualForVariant(variant) ? copyVisualAsset(deckDir, slide, assetPack) : "",
+      mainTemplate: slide.mainTemplate || mainTemplateForSlide(enrichedSlide),
+      assetRecord: findAsset(assetPack, enrichedSlide),
+      renderedVisualAsset: shouldCopyVisualForSlide(enrichedSlide, variant, slide.mainTemplate || mainTemplateForSlide(enrichedSlide))
+        ? copyVisualAsset(deckDir, enrichedSlide, assetPack)
+        : "",
     };
     if (builtSlide.assetRecord) {
       builtSlide.assetTeachingRole = builtSlide.assetRecord.teachingRole;
@@ -495,8 +997,17 @@ function main() {
       visualAsset: slide.visualAsset || "",
       visualPrompt: builtSlide.visualPrompt || "",
       visualAssetId: slide.visualAssetId || "",
+      layoutTemplate: builtSlide.layoutTemplate || "",
+      teachingMove: builtSlide.teachingMove || "",
+      audienceAction: builtSlide.audienceAction || "",
+      visualMode: builtSlide.visualMode || "",
+      mainTemplate: builtSlide.mainTemplate || "",
+      templateSelectionReason: builtSlide.templateSelectionReason || "",
+      rewrittenScreen: builtSlide.rewrittenScreen || null,
+      templateRewrite: builtSlide.templateRewrite || null,
       layoutVariant: builtSlide.layoutVariant || "",
-      renderedVisualAsset: shouldRenderVisual(builtSlide) ? builtSlide.renderedVisualAsset : "",
+      visualRenderContract: visualRenderContract(builtSlide),
+      renderedVisualAsset: actualRenderedVisualAsset(builtSlide),
       sourceAssetId: builtSlide.assetRecord?.sourceAssetId || "",
       assetTeachingRole: builtSlide.assetTeachingRole || "",
       assetExplanationAnchors: builtSlide.assetRecord?.explanationAnchors || [],
@@ -520,9 +1031,12 @@ function main() {
 
   copyTemplate(deckDir, "deck.html");
   copyTemplate(deckDir, "presenter-review.html");
+  copyTemplate(deckDir, "template-gallery.html");
   copyTemplate(deckDir, "assets/style.css");
   copyTemplate(deckDir, "assets/deck.js");
   copyTemplate(deckDir, "assets/presenter-review.js");
+  copyTemplate(deckDir, "assets/template-gallery.js");
+  copyTemplate(deckDir, "assets/template-component-registry.json");
 
   const inputs = ["slide-spec.json", "claim-source-map.json", "glossary.json", "section-plan.json", "asset-pack.json"];
   if (fs.existsSync(path.join(deckDir, "asset-review.json"))) {
@@ -531,10 +1045,13 @@ function main() {
   const outputs = [
     "deck.html",
     "presenter-review.html",
+    "template-gallery.html",
     "assets/slides.js",
     "assets/style.css",
     "assets/deck.js",
     "assets/presenter-review.js",
+    "assets/template-gallery.js",
+    "assets/template-component-registry.json",
     ...registry.filter((slide) => slide.renderedVisualAsset).map((slide) => slide.renderedVisualAsset.replace(/^\.\.\//, "")),
     ...registry.map((slide) => `slides/${slide.file}`),
   ];

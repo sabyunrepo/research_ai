@@ -522,8 +522,11 @@ function checkResponsiveProjectorRules(deckDir) {
 
 function checkVisualPolishRules(deckDir, registry) {
   const css = readText(path.join(deckDir, "assets", "style.css"));
-  if (!css.includes("Gmarket Sans") || !/h2\s*\{[\s\S]*?font-weight\s*:\s*900/.test(css)) {
-    throw new Error("style.css must use heavy Gmarket Sans title styling");
+  if (!css.includes("--font-display:") || !css.includes("--font-body:") || !css.includes("--font-code:")) {
+    throw new Error("style.css must define 디자인.md font tokens");
+  }
+  if (!/h2\s*\{[\s\S]*?font-family\s*:\s*var\(--display\)[\s\S]*?font-weight\s*:\s*900/.test(css)) {
+    throw new Error("style.css must use the 디자인.md display token for heavy h2 title styling");
   }
   const bridgeBlock = cssBlock(css, ".slide-bridge");
   if (!bridgeBlock) {
@@ -728,6 +731,8 @@ function main() {
   runGate(deckDir, "deck-harness/scripts/verify-deck-design-contract.js");
   runGate(deckDir, "deck-harness/scripts/verify-motion-contract.js");
   runGate(deckDir, "deck-harness/scripts/verify-slide-layout-variety.js");
+  runGate(deckDir, "deck-harness/scripts/verify-template-copy-quality.js");
+  runGate(deckDir, "deck-harness/scripts/verify-template-component-fit.js");
   runGate(deckDir, "deck-harness/scripts/verify-glossary-depth.js");
   const registry = loadRegistry(deckDir);
   checkLocalReferences(deckDir);

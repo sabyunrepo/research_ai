@@ -143,6 +143,55 @@
             "type": "string",
             "enum": ["generated-image", "existing-image", "practice-ui", "artifact", "minimal-diagram"]
           },
+          "layoutTemplate": {
+            "type": "string",
+            "enum": [
+              "act-opener",
+              "story-scene",
+              "assertion-evidence",
+              "concept-map",
+              "checklist",
+              "glossary-bridge",
+              "practice-handoff",
+              "wrap-up"
+            ]
+          },
+          "teachingMove": {
+            "type": "string",
+            "enum": ["activate", "frame", "explain", "demonstrate", "connect", "practice-bridge", "synthesize"]
+          },
+          "audienceAction": {
+            "type": "string",
+            "enum": ["orient", "inspect-visual", "compare", "connect-metaphor", "rehearse-checklist", "transfer-to-practice", "reflect"]
+          },
+          "visualMode": {
+            "type": "string",
+            "enum": [
+              "story-illustration",
+              "metaphor-link",
+              "process-diagram",
+              "checklist-board",
+              "term-bridge",
+              "artifact-map",
+              "practice-transition",
+              "no-image-handoff"
+            ]
+          },
+          "mainTemplate": {
+            "type": "string",
+            "enum": [
+              "opening-hero",
+              "kimai-structure",
+              "assertion-scene",
+              "term-bridge",
+              "workflow-strip",
+              "decision-gate",
+              "brief-window",
+              "practice-handoff",
+              "recap-map",
+              "single-concept"
+            ]
+          },
           "visualAsset": {
             "type": "string",
             "minLength": 1

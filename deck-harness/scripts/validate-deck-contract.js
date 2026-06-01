@@ -9,6 +9,22 @@ const requiredFiles = ["claim-source-map.json", "section-plan.json", "slide-spec
 const forbiddenSlideKeys = new Set(["source", "url", "checkedDate", "sourceType", "confidence", "sourceSummary", "sourceUrl", "sources"]);
 const allowedVisualTypes = new Set(["generated-image", "existing-image", "practice-ui", "artifact", "minimal-diagram"]);
 const allowedInteractionTypes = new Set(["none", "tooltip", "click-reveal", "input-form", "checklist", "preview"]);
+const allowedLayoutTemplates = new Set(["act-opener", "story-scene", "assertion-evidence", "concept-map", "checklist", "glossary-bridge", "practice-handoff", "wrap-up"]);
+const allowedTeachingMoves = new Set(["activate", "frame", "explain", "demonstrate", "connect", "practice-bridge", "synthesize"]);
+const allowedAudienceActions = new Set(["orient", "inspect-visual", "compare", "connect-metaphor", "rehearse-checklist", "transfer-to-practice", "reflect"]);
+const allowedVisualModes = new Set(["story-illustration", "metaphor-link", "process-diagram", "checklist-board", "term-bridge", "artifact-map", "practice-transition", "no-image-handoff"]);
+const allowedMainTemplates = new Set([
+  "opening-hero",
+  "kimai-structure",
+  "assertion-scene",
+  "term-bridge",
+  "workflow-strip",
+  "decision-gate",
+  "brief-window",
+  "practice-handoff",
+  "recap-map",
+  "single-concept",
+]);
 const allowedAssetKeys = new Set([
   "id",
   "kind",
@@ -24,6 +40,7 @@ const allowedAssetKeys = new Set([
   "cropMasks",
   "teachingRole",
   "generationPrompt",
+  "generationMode",
   "xmlPrompt",
   "styleConstraints",
   "characterRefs",
@@ -31,9 +48,24 @@ const allowedAssetKeys = new Set([
   "semanticRequirements",
   "alt",
   "notes",
+  "previousCropRegion",
+  "deterministicComposition",
 ]);
 const assetIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const allowedCropKeys = new Set(["x", "y", "width", "height", "unit"]);
+const allowedPreviousCropRegionKeys = new Set([
+  "sourcePath",
+  "sourceAssetId",
+  "sheetCellIndex",
+  "crop",
+  "cropPolicy",
+  "cropSafety",
+  "reviewStatus",
+  "reviewWarnings",
+  "reviewedCropPath",
+  "reviewedSourcePath",
+]);
+const allowedDeterministicCompositionKeys = new Set(["owner", "slot", "frame", "objectFit", "forbiddenInImage"]);
 const allowedCropSafetyKeys = new Set([
   "safeMarginPercent",
   "edgeBandPercent",
@@ -169,6 +201,16 @@ function readAssetPack(deckDir) {
     }
     if (asset.notes !== undefined) {
       assert(typeof asset.notes === "string", `${asset.id}.notes must be a string`);
+    }
+    if (asset.generationMode !== undefined) {
+      assert(asset.generationMode === "single-image-first", `${asset.id}.generationMode is invalid`);
+      assert(asset.kind === "single-image", `${asset.id}.generationMode requires kind single-image`);
+    }
+    if (asset.previousCropRegion !== undefined) {
+      validatePreviousCropRegion(asset);
+    }
+    if (asset.deterministicComposition !== undefined) {
+      validateDeterministicComposition(asset);
     }
     if (asset.cropPolicy !== undefined) {
       assert(asset.cropPolicy === "content-safe", `${asset.id}.cropPolicy is invalid`);
@@ -342,6 +384,47 @@ function validateCrop(asset) {
 function validateExpectedSubjectBounds(asset) {
   assert(asset.expectedSubjectBounds && typeof asset.expectedSubjectBounds === "object" && !Array.isArray(asset.expectedSubjectBounds), `${asset.id}.expectedSubjectBounds must be an object`);
   validatePercentBox(asset.expectedSubjectBounds, `${asset.id}.expectedSubjectBounds`);
+}
+
+function validatePreviousCropRegion(asset) {
+  const previous = asset.previousCropRegion;
+  assert(previous && typeof previous === "object" && !Array.isArray(previous), `${asset.id}.previousCropRegion must be an object`);
+  Object.keys(previous).forEach((key) => assert(allowedPreviousCropRegionKeys.has(key), `${asset.id}.previousCropRegion unknown key: ${key}`));
+  assertNonEmptyString(previous.sourcePath, `${asset.id}.previousCropRegion.sourcePath`);
+  assertNonEmptyString(previous.sourceAssetId, `${asset.id}.previousCropRegion.sourceAssetId`);
+  assert(assetIdPattern.test(previous.sourceAssetId), `${asset.id}.previousCropRegion.sourceAssetId must match ${assetIdPattern}`);
+  if (previous.sheetCellIndex !== undefined) {
+    assert(Number.isInteger(previous.sheetCellIndex) && previous.sheetCellIndex >= 1, `${asset.id}.previousCropRegion.sheetCellIndex must be a positive integer`);
+  }
+  if (previous.crop !== undefined) {
+    validateCrop({ id: `${asset.id}.previousCropRegion`, crop: previous.crop });
+  }
+  if (previous.cropSafety !== undefined) {
+    validateCropSafety({ id: `${asset.id}.previousCropRegion`, cropSafety: previous.cropSafety });
+  }
+  if (previous.reviewStatus !== undefined) {
+    assert(["PASS", "WARN", "FAIL"].includes(previous.reviewStatus), `${asset.id}.previousCropRegion.reviewStatus is invalid`);
+  }
+  if (previous.reviewWarnings !== undefined) {
+    assertStringArray(previous.reviewWarnings, `${asset.id}.previousCropRegion.reviewWarnings`, 0);
+  }
+  if (previous.reviewedCropPath !== undefined) {
+    assertNonEmptyString(previous.reviewedCropPath, `${asset.id}.previousCropRegion.reviewedCropPath`);
+  }
+  if (previous.reviewedSourcePath !== undefined) {
+    assertNonEmptyString(previous.reviewedSourcePath, `${asset.id}.previousCropRegion.reviewedSourcePath`);
+  }
+}
+
+function validateDeterministicComposition(asset) {
+  const composition = asset.deterministicComposition;
+  assert(composition && typeof composition === "object" && !Array.isArray(composition), `${asset.id}.deterministicComposition must be an object`);
+  Object.keys(composition).forEach((key) => assert(allowedDeterministicCompositionKeys.has(key), `${asset.id}.deterministicComposition unknown key: ${key}`));
+  assert(composition.owner === "deck-harness", `${asset.id}.deterministicComposition.owner must be deck-harness`);
+  assert(composition.slot === "visualAssetId", `${asset.id}.deterministicComposition.slot must be visualAssetId`);
+  assertNonEmptyString(composition.frame, `${asset.id}.deterministicComposition.frame`);
+  assertNonEmptyString(composition.objectFit, `${asset.id}.deterministicComposition.objectFit`);
+  assertStringArray(composition.forbiddenInImage, `${asset.id}.deterministicComposition.forbiddenInImage`, 1);
 }
 
 function validateCropSafety(asset) {
@@ -554,6 +637,21 @@ function validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options = {
     if (slide.visualType !== undefined) {
       assert(allowedVisualTypes.has(slide.visualType), `${slide.id}.visualType is invalid`);
     }
+    if (slide.layoutTemplate !== undefined) {
+      assert(allowedLayoutTemplates.has(slide.layoutTemplate), `${slide.id}.layoutTemplate is invalid`);
+    }
+    if (slide.teachingMove !== undefined) {
+      assert(allowedTeachingMoves.has(slide.teachingMove), `${slide.id}.teachingMove is invalid`);
+    }
+    if (slide.audienceAction !== undefined) {
+      assert(allowedAudienceActions.has(slide.audienceAction), `${slide.id}.audienceAction is invalid`);
+    }
+    if (slide.visualMode !== undefined) {
+      assert(allowedVisualModes.has(slide.visualMode), `${slide.id}.visualMode is invalid`);
+    }
+    if (slide.mainTemplate !== undefined) {
+      assert(allowedMainTemplates.has(slide.mainTemplate), `${slide.id}.mainTemplate is invalid`);
+    }
     if (slide.visualAsset !== undefined) {
       assert(typeof slide.visualAsset === "string" && slide.visualAsset.trim(), `${slide.id}.visualAsset must be a non-empty string`);
       const assetPath = path.isAbsolute(slide.visualAsset) ? slide.visualAsset : path.join(root, slide.visualAsset);
@@ -605,13 +703,16 @@ function printIssueSummary(label, items, limit = 20) {
   }
 }
 
-function validateManifest(deckDir, manifest) {
+function validateManifest(deckDir, manifest, options = {}) {
   assert(manifest.jobId && manifest.topicSlug && manifest.createdAt, "job-manifest requires jobId, topicSlug, and createdAt");
   assert(Array.isArray(manifest.stages), "job-manifest.stages must be an array");
   manifest.stages.forEach((stage) => {
     ["name", "owner", "inputHash", "outputHash", "status", "evidencePath"].forEach((field) => assert(stage[field] !== undefined, `${stage.name || "stage"}.${field} is required`));
     assert(["PASS", "WARN", "FAIL"].includes(stage.status), `${stage.name}.status is invalid`);
     assert(Array.isArray(stage.inputs) && Array.isArray(stage.outputs), `${stage.name}.inputs and outputs are required`);
+    if (options.stage === "structure") {
+      return;
+    }
     const actualInputHash = hashFiles(deckDir, stage.inputs);
     assert(stage.inputHash === actualInputHash || stage.inputs.length === 0, `${stage.name}.inputHash is stale`);
     if (stage.status === "PASS" && stage.outputs.length > 0 && stage.outputHash) {
@@ -638,7 +739,7 @@ function main() {
   const { slideIds, minutes, warnings, blockers } = validateSlideSpec(spec, claimMap, glossaryTerms, assetPack, options);
   validateSectionPlan(sectionPlan, slideIds);
   assert(minutes <= sectionPlan.timeboxMinutes, `slide estimated minutes ${minutes} exceed timebox ${sectionPlan.timeboxMinutes}`);
-  validateManifest(deckDir, manifest);
+  validateManifest(deckDir, manifest, options);
 
   const registry = loadRegistry(deckDir);
   if (registry) {

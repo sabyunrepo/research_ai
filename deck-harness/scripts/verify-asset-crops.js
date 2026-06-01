@@ -145,7 +145,12 @@ function expectedCrop(sourceAsset, asset) {
   const panelNumber = asset.sheetCellIndex;
   const columns = Number(sourceAsset.sheetLayout.columns);
   const rows = Number(sourceAsset.sheetLayout.rows);
-  const inset = Number(asset.cropSafety?.safeMarginPercent ?? sourceAsset.sheetLayout.safeMarginPercent ?? sourceAsset.sheetLayout.insetPercent ?? 0.8);
+  const baseInset = Number(sourceAsset.sheetLayout.insetPercent ?? 0.8);
+  const inset = Math.max(
+    baseInset,
+    Number(sourceAsset.sheetLayout.safeMarginPercent ?? 0),
+    Number(asset.cropSafety?.safeMarginPercent ?? 0),
+  );
   if (!Number.isInteger(panelNumber) || !Number.isInteger(columns) || !Number.isInteger(rows)) {
     throw new Error(`${asset.id} cannot derive expected crop from sheetLayout`);
   }
@@ -251,12 +256,11 @@ function edgeArtifactChecks(image, asset) {
   const safety = asset.cropSafety || {};
   const bandPercent = Number(safety.edgeBandPercent ?? 6);
   const maxEdgeInkRatio = Number(safety.maxEdgeInkRatio ?? 0.18);
-  const maxEdgeLineCoverage = Number(safety.maxEdgeLineCoverage ?? 1);
+  const maxEdgeLineCoverage = Number(safety.maxEdgeLineCoverage ?? 0.5);
   const checks = Object.entries(edgeBoxes(image, bandPercent)).map(([edge, box]) => {
     const measurement = measureInk(image, box);
     const lineCoverage = maxLineCoverage(image, box, edge === "top" || edge === "bottom" ? "horizontal" : "vertical");
-    const lineCoverageApplies = asset.cropSafety?.maxEdgeLineCoverage !== undefined;
-    const lineViolation = lineCoverageApplies && lineCoverage > maxEdgeLineCoverage;
+    const lineViolation = lineCoverage > maxEdgeLineCoverage;
     const status = measurement.ratio <= maxEdgeInkRatio && !lineViolation ? "PASS" : "WARN";
     return {
       edge,
@@ -312,7 +316,14 @@ function cropQaChecks(cropPath, asset) {
   const edgeChecks = edgeArtifactChecks(image, asset);
   const subjectCheck = subjectBoundCheck(image, asset);
   const warnings = [
-    ...edgeChecks.filter((check) => check.status !== "PASS").map((check) => `${check.edge} edge ink ${check.inkRatio} > ${check.maxInkRatio}`),
+    ...edgeChecks.filter((check) => check.status !== "PASS").map((check) => {
+      const issues = [];
+      if (check.inkRatio > check.maxInkRatio) issues.push(`ink ${check.inkRatio} > ${check.maxInkRatio}`);
+      if (check.lineCoverage > check.maxEdgeLineCoverage) {
+        issues.push(`line coverage ${check.lineCoverage} > ${check.maxEdgeLineCoverage}`);
+      }
+      return `${check.edge} edge ${issues.join(", ")}`;
+    }),
     subjectCheck.status !== "PASS" ? subjectCheck.observation : null,
   ].filter(Boolean);
   return {

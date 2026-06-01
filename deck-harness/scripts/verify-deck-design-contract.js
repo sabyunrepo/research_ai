@@ -39,7 +39,10 @@ function main() {
   const h2 = cssBlock(css, "h2");
   const bridge = cssBlock(css, ".slide-bridge");
 
-  if (!/Gmarket Sans|GmarketSans/.test(h2)) fail("h2 must use Gmarket Sans title font stack");
+  if (!css.includes("--font-display:")) fail("style.css must define the 디자인.md display font token");
+  if (!css.includes("--font-body:")) fail("style.css must define the 디자인.md body font token");
+  if (!css.includes("--font-code:")) fail("style.css must define the 디자인.md code font token");
+  if (!/font-family\s*:\s*var\(--display\)/.test(h2)) fail("h2 must use the 디자인.md display font token");
   if ((numericRule(h2, "font-weight") || 0) < 700) fail("h2 font-weight must be at least 700");
 
   if (!bridge) fail(".slide-bridge block is missing");
