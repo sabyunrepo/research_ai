@@ -3,7 +3,14 @@
   const glossary = window.DECK_GLOSSARY || [];
   const deck = document.querySelector("#deck");
   const counter = document.querySelector("[data-counter]");
+  const deckStatus = document.querySelector("#deckStatus");
+  const syncStatus = document.querySelector("#presentationSyncStatus");
+  const presentButton = document.querySelector("#presentDeck");
+  const printButton = document.querySelector("#printDeck");
+  const previousButton = document.querySelector("[data-prev]");
+  const nextButton = document.querySelector("[data-next]");
   let active = 0;
+  let latestRevision = 0;
 
   const glossaryTerms = glossary
     .filter((item) => item.term && item.definition)
@@ -90,7 +97,30 @@
     return match ? Math.max(0, Math.min(slides.length - 1, Number(match[1]) - 1)) : 0;
   }
 
-  async function render() {
+  function setSyncStatus(message, state = "") {
+    if (!syncStatus) return;
+    syncStatus.textContent = message;
+    syncStatus.dataset.state = state;
+  }
+
+  async function publishState(index, source = "deck") {
+    if (window.location.protocol === "file:") return;
+    try {
+      const response = await fetch("/api/presentation/state", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ index, source }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || payload.ok === false) throw new Error(payload.error || `HTTP ${response.status}`);
+      latestRevision = Math.max(latestRevision, payload.revision || 0);
+      setSyncStatus("동기화됨", "online");
+    } catch (error) {
+      setSyncStatus(`동기화 실패: ${error.message}`, "error");
+    }
+  }
+
+  async function render(options = {}) {
     if (!deck) return;
     active = slideIndexFromHash();
     const slide = slides[active];
@@ -118,6 +148,10 @@
     applyGlossary(frame);
     runSlideMotion(frame);
     if (counter) counter.textContent = `${active + 1} / ${slides.length}`;
+    if (deckStatus) deckStatus.textContent = `${String(active + 1).padStart(2, "0")} / ${slides.length} · ${slide.title || slide.id}`;
+    if (previousButton) previousButton.disabled = active === 0;
+    if (nextButton) nextButton.disabled = active === slides.length - 1;
+    if (options.publish !== false) publishState(active, options.source || "deck");
   }
 
   function runSlideMotion(frame) {
@@ -169,15 +203,80 @@
   function go(next) {
     const target = Math.max(0, Math.min(slides.length - 1, active + next));
     location.hash = `#slide-${target + 1}`;
-    render();
+    render({ source: "deck" });
+  }
+
+  function setPresentationMode(isPresenting) {
+    document.body.classList.toggle("is-presenting", isPresenting);
+    if (presentButton) {
+      presentButton.textContent = isPresenting ? "Exit" : "Present";
+      presentButton.setAttribute("aria-pressed", String(isPresenting));
+    }
+  }
+
+  async function togglePresentationMode() {
+    const isFullscreen = Boolean(document.fullscreenElement);
+    if (isFullscreen || document.body.classList.contains("is-presenting")) {
+      if (isFullscreen) await document.exitFullscreen();
+      setPresentationMode(false);
+      return;
+    }
+    setPresentationMode(true);
+    try {
+      await document.documentElement.requestFullscreen();
+    } catch {
+      setPresentationMode(true);
+    }
+  }
+
+  function connectEvents() {
+    if (window.location.protocol === "file:" || !window.EventSource) return;
+    const events = new EventSource("/api/presentation/events");
+    events.addEventListener("state", (event) => {
+      const payload = JSON.parse(event.data);
+      if ((payload.revision || 0) <= latestRevision) return;
+      latestRevision = payload.revision || 0;
+      const index = Math.max(0, Math.min(slides.length - 1, payload.index || 0));
+      history.replaceState(null, "", `${location.pathname}${location.search}#slide-${index + 1}`);
+      render({ publish: false, source: "remote" });
+      setSyncStatus(`원격 이동: ${index + 1}`, "online");
+    });
+    events.addEventListener("open", () => setSyncStatus("동기화 연결됨", "online"));
+    events.addEventListener("error", () => setSyncStatus("동기화 재연결 중", "error"));
   }
 
   document.querySelector("[data-prev]")?.addEventListener("click", () => go(-1));
   document.querySelector("[data-next]")?.addEventListener("click", () => go(1));
-  window.addEventListener("hashchange", render);
+  printButton?.addEventListener("click", () => window.print());
+  presentButton?.addEventListener("click", togglePresentationMode);
+  document.addEventListener("fullscreenchange", () => setPresentationMode(Boolean(document.fullscreenElement)));
+  window.addEventListener("hashchange", () => render({ source: "hash" }));
   window.addEventListener("keydown", (event) => {
+    if (event.target?.closest?.("input, textarea, select, [contenteditable='true']")) return;
     if (event.key === "ArrowLeft") go(-1);
     if (event.key === "ArrowRight") go(1);
+    if (event.key === "PageUp" || event.key === "Backspace") go(-1);
+    if (event.key === "PageDown" || event.key === " ") {
+      event.preventDefault();
+      go(1);
+    }
+    if (event.key.toLowerCase() === "f") {
+      event.preventDefault();
+      togglePresentationMode();
+    }
   });
-  render();
+  fetch("/api/presentation/state", { cache: "no-store" })
+    .then((response) => response.ok ? response.json() : null)
+    .then((state) => {
+      if (state && !location.hash) {
+        latestRevision = state.revision || 0;
+        const index = Math.max(0, Math.min(slides.length - 1, state.index || 0));
+        history.replaceState(null, "", `${location.pathname}${location.search}#slide-${index + 1}`);
+      }
+    })
+    .catch(() => {})
+    .finally(() => {
+      render({ publish: false });
+      connectEvents();
+    });
 })();

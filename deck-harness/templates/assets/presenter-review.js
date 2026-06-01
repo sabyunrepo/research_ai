@@ -1,26 +1,33 @@
 (() => {
   const slides = window.DECK_SLIDES || [];
-  const claims = new Map((window.DECK_CLAIMS || []).map((claim) => [claim.id, claim]));
-  const assetReviews = new Map((window.DECK_ASSET_REVIEWS || []).map((item) => [item.assetId, item]));
   const review = document.querySelector("#review");
+  const saveButton = document.querySelector("#saveReviewChanges");
+  const saveStatus = document.querySelector("#saveReviewStatus");
+  const dirtySlides = new Map();
+  const canUseSaveApi = window.location.protocol !== "file:";
+  const hiddenVerifierFields = ["evidenceClaimIds"];
+  let scriptById = new Map();
 
   function escapeHtml(value) {
-    return String(value)
+    return String(value ?? "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
 
-  function evidenceList(slide) {
-    const ids = slide.evidenceClaimIds || [];
-    if (!ids.length) return "<p class=\"review-evidence\">Evidence: none</p>";
-    return `<ul class="review-evidence">${ids
-      .map((id) => {
-        const claim = claims.get(id);
-        return `<li><strong>${escapeHtml(id)}</strong>: ${escapeHtml(claim?.claim || "missing claim")} ${claim?.source ? `(${escapeHtml(claim.source)})` : ""}</li>`;
-      })
-      .join("")}</ul>`;
+  function setSaveStatus(message, state = "") {
+    if (!saveStatus) return;
+    saveStatus.textContent = message;
+    if (state) saveStatus.dataset.state = state;
+    else delete saveStatus.dataset.state;
+  }
+
+  function updateSaveButton() {
+    if (!saveButton) return;
+    const saving = saveButton.dataset.saving === "true";
+    saveButton.disabled = !canUseSaveApi || saving || dirtySlides.size === 0;
+    saveButton.textContent = saving ? "저장 중" : "저장";
   }
 
   function listBlock(label, items) {
@@ -28,74 +35,65 @@
     return `<strong>${escapeHtml(label)}</strong><ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
   }
 
-  function visualBlock(slide) {
-    const render = slide.visualRenderContract || {};
-    const rows = [
-      slide.visualType ? `Type: ${slide.visualType}` : "",
-      slide.visualAssetId ? `Asset ID: ${slide.visualAssetId}` : "",
-      slide.visualAsset ? `Asset: ${slide.visualAsset}` : "",
-      slide.assetTeachingRole ? `Teaching role: ${slide.assetTeachingRole}` : "",
-      render.renderKind ? `Rendered visual kind: ${render.renderKind}` : "",
-      render.templateComponent ? `Template component: ${render.templateComponent}` : "",
-      render.sourceAction ? `Source image action: ${render.sourceAction}` : "",
-      render.usesExistingImage ? "Image source: existing asset reuse" : "",
-      render.projectedImage === false ? "Projected image: no, CSS component is shown instead" : "",
-      slide.visualPrompt ? `Prompt: ${slide.visualPrompt}` : "",
-      slide.interaction ? `Interaction: ${slide.interaction.type} - ${slide.interaction.description}` : "",
-      slide.bridge ? `Bridge: ${slide.bridge}` : "",
-    ].filter(Boolean);
-    const traceRows = [
-      slide.visualAssetId ? `visualAssetId: ${slide.visualAssetId}` : "",
-      slide.sourceAssetId ? `sourceAssetId: ${slide.sourceAssetId}` : "",
-      slide.assetCrop ? `assetCrop: x=${slide.assetCrop.x}, y=${slide.assetCrop.y}, width=${slide.assetCrop.width}, height=${slide.assetCrop.height}, unit=${slide.assetCrop.unit}` : "",
-      slide.renderedVisualAsset ? `renderedVisualAsset: ${slide.renderedVisualAsset}` : "",
-    ].filter(Boolean);
-    return `${listBlock("Visual / Interaction", rows)}${listBlock("Asset Trace", traceRows)}${listBlock("Asset Explanation Anchors", slide.assetExplanationAnchors || [])}`;
+  function fallbackScript(slide) {
+    return {
+      id: slide.id,
+      script: slide.speakerNote || "",
+      interactionPrompt: "",
+      transition: slide.bridge || "",
+    };
   }
 
-  function templateBlock(slide) {
-    const rows = [
-      slide.layoutTemplate ? `Layout template: ${slide.layoutTemplate}` : "",
-      slide.layoutVariant ? `Rendered variant: ${slide.layoutVariant}` : "",
-      slide.teachingMove ? `Teaching move: ${slide.teachingMove}` : "",
-      slide.audienceAction ? `Audience action: ${slide.audienceAction}` : "",
-      slide.visualMode ? `Visual mode: ${slide.visualMode}` : "",
-      slide.templateSelectionReason ? `Selection reason: ${slide.templateSelectionReason}` : "",
-    ].filter(Boolean);
-    return listBlock("Template Selection", rows);
+  function scriptEntryFor(slide) {
+    return scriptById.get(slide.id) || fallbackScript(slide);
   }
 
-  function semanticContractBlock(slide) {
-    const contract = slide.assetSemanticRequirements;
-    if (!contract) return "";
-    const score = Number.isFinite(contract.minimumPassScore) ? [`Minimum pass score: ${contract.minimumPassScore}`] : [];
-    const assetReview = slide.visualAssetId ? assetReviews.get(slide.visualAssetId) : null;
-    const reviewRows = assetReview
-      ? [
-          `Status: ${assetReview.status}`,
-          `Score: ${assetReview.score}`,
-          assetReview.summary ? `Summary: ${assetReview.summary}` : "",
-        ].filter(Boolean)
-      : ["Status: missing asset-review.json entry"];
-    const forbiddenRows = (assetReview?.forbiddenElementFindings || []).map((finding) => `${finding.observed ? "Observed" : "Not observed"}: ${finding.label} - ${finding.evidence}`);
-    return `<strong>Visual Semantic Contract</strong>
-      ${listBlock("Must Show", contract.mustShow || [])}
-      ${listBlock("Must Not Show", contract.mustNotShow || [])}
-      ${listBlock("Teaching Questions", contract.teachingQuestions || [])}
-      ${listBlock("Review Threshold", score)}
-      ${listBlock("Visual Review Status", reviewRows)}
-      ${listBlock("Forbidden Element Findings", forbiddenRows)}`;
+  function editableField(slide, entry, field, label) {
+    return `<label class="review-field-label">
+      <span>${escapeHtml(label)}</span>
+      <textarea class="review-script-textarea" data-slide-id="${escapeHtml(slide.id)}" data-field="${escapeHtml(field)}">${escapeHtml(entry[field] || "")}</textarea>
+    </label>`;
   }
 
-  function xmlBlock(slide) {
-    if (!slide.xmlPrompt) return "";
-    const blocks = [
-      ["Instruction", slide.xmlPrompt.instruction],
-      ["Screen Content", slide.xmlPrompt.screenContent],
-      ["Speaker Navigation", slide.xmlPrompt.speakerNavigation],
-      ["Asset Requirement", slide.xmlPrompt.assetRequirement],
-    ];
-    return `<strong>XML Prompt Boundaries</strong>${blocks.map(([label, value]) => `<details><summary>${escapeHtml(label)}</summary><pre><code>${escapeHtml(value || "")}</code></pre></details>`).join("")}`;
+  function renderScriptEditor(slide) {
+    const entry = scriptEntryFor(slide);
+    return `<div class="review-script-editor">
+      ${editableField(slide, entry, "script", "발표 스크립트")}
+      ${editableField(slide, entry, "interactionPrompt", "청중 질문/행동")}
+      ${editableField(slide, entry, "transition", "다음 장 연결")}
+    </div>`;
+  }
+
+  function markDirty(target) {
+    const slideId = target.dataset.slideId;
+    const field = target.dataset.field;
+    if (!slideId || !field) return;
+    const current = dirtySlides.get(slideId) || { id: slideId };
+    current[field] = target.value;
+    dirtySlides.set(slideId, current);
+    setSaveStatus(`${dirtySlides.size}개 슬라이드 수정됨`);
+    updateSaveButton();
+  }
+
+  function bindEditors() {
+    review?.querySelectorAll("[data-slide-id][data-field]").forEach((field) => {
+      field.addEventListener("input", () => markDirty(field));
+    });
+  }
+
+  function bindSlidePreviews() {
+    review?.querySelectorAll("[data-slide-file]").forEach((frame) => {
+      const file = frame.dataset.slideFile;
+      if (file) frame.setAttribute("src", `slides/${file}`);
+      scaleSlidePreview(frame);
+    });
+  }
+
+  function scaleSlidePreview(frame) {
+    const wrapper = frame.closest(".review-slide-preview");
+    if (!wrapper) return;
+    const scale = wrapper.clientWidth / 1366;
+    frame.style.transform = `scale(${scale})`;
   }
 
   function render() {
@@ -104,25 +102,82 @@
       .map(
         (slide) => `<section class="review-cut" data-slide-id="${escapeHtml(slide.id)}">
           <div class="review-slide">
-            <div class="eyebrow">${escapeHtml(slide.section || "")}</div>
-            <h2>${escapeHtml(slide.title)}</h2>
-            <p>${escapeHtml(slide.message)}</p>
+            <div class="review-slide-preview">
+              <iframe class="review-slide-frame" data-slide-file="${escapeHtml(slide.file)}" title="${escapeHtml(slide.title)} preview" loading="lazy"></iframe>
+            </div>
+            <div class="review-slide-caption">
+              <span>${escapeHtml(slide.section || "")}</span>
+              <strong>${escapeHtml(slide.title)}</strong>
+            </div>
           </div>
           <div class="review-script">
-            <strong>Speaker Note</strong>
-            <p>${escapeHtml(slide.speakerNote || "")}</p>
-            ${listBlock("Presenter Cues", slide.presenterCues || [])}
-            ${templateBlock(slide)}
-            ${visualBlock(slide)}
-            ${semanticContractBlock(slide)}
-            ${xmlBlock(slide)}
-            <strong>Evidence Claim IDs</strong>
-            ${evidenceList(slide)}
+            <strong>Presentation Script</strong>
+            ${renderScriptEditor(slide)}
+            <details>
+              <summary>원본 speaker note / presenter cues</summary>
+              <p>${escapeHtml(slide.speakerNote || "")}</p>
+              ${listBlock("Presenter Cues", slide.presenterCues || [])}
+            </details>
           </div>
         </section>`
       )
       .join("");
+    bindEditors();
+    bindSlidePreviews();
   }
 
-  render();
+  async function loadPresentationScript() {
+    try {
+      const response = await fetch("presentation-script.json", { cache: "no-store" });
+      if (!response.ok) return;
+      const payload = await response.json();
+      scriptById = new Map((payload.slides || []).map((entry) => [entry.id, entry]));
+    } catch {
+      scriptById = new Map();
+    }
+  }
+
+  async function saveReviewChanges() {
+    if (!canUseSaveApi) {
+      setSaveStatus("읽기 전용: 저장은 로컬 서버에서 가능합니다", "error");
+      updateSaveButton();
+      return;
+    }
+    if (!dirtySlides.size || !saveButton) return;
+    saveButton.dataset.saving = "true";
+    updateSaveButton();
+    setSaveStatus("저장 중...");
+
+    try {
+      const response = await fetch("/api/presenter-review/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slides: [...dirtySlides.values()] }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || `저장 실패 ${response.status}`);
+      }
+      dirtySlides.clear();
+      await loadPresentationScript();
+      setSaveStatus(`저장 완료: ${payload.saved}개 슬라이드`, "saved");
+    } catch (error) {
+      setSaveStatus(`저장 실패: ${error.message}`, "error");
+    } finally {
+      delete saveButton.dataset.saving;
+      updateSaveButton();
+    }
+  }
+
+  saveButton?.addEventListener("click", saveReviewChanges);
+  window.addEventListener("resize", () => {
+    review?.querySelectorAll("[data-slide-file]").forEach(scaleSlidePreview);
+  });
+  loadPresentationScript().finally(() => {
+    render();
+    if (!canUseSaveApi) {
+      setSaveStatus("읽기 전용: 저장은 로컬 서버에서 가능", "error");
+    }
+    updateSaveButton();
+  });
 })();

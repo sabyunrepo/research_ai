@@ -16,6 +16,14 @@
       "contract": "deck-harness",
       "status": "deck-only",
       "notes": "현재는 deck-harness 단독 런타임이다. 기존 발표자 콘솔/청강자 화면 계약으로 변환한 뒤 선택 실행 가능하다."
+    },
+    {
+      "id": "kimai-workshop-content",
+      "title": "김아이 워크숍 전체 덱",
+      "root": "generated-decks/kimai-workshop-content",
+      "contract": "deck-harness",
+      "status": "ready",
+      "notes": "김아이 76장 generated deck. 기존 덱 선택기에서 발표 화면과 presenter-review 스크립트 편집을 지원한다."
     }
   ]
 }

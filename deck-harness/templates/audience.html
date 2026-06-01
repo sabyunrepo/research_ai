@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generated Deck Audience</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/audience.js"></script>
+</head>
+<body class="audience-page">
+  <main class="audience-shell">
+    <section class="audience-stage" aria-label="Audience slide">
+      <div class="audience-frame-canvas">
+        <iframe id="audienceSlideFrame" class="audience-slide-iframe" title="현재 공개 슬라이드" width="1280" height="720"></iframe>
+        <button class="deck-nav-button deck-nav-previous" type="button" id="audiencePrevious" aria-label="이전 슬라이드">‹</button>
+        <button class="deck-nav-button deck-nav-next" type="button" id="audienceNext" aria-label="다음 슬라이드">›</button>
+      </div>
+    </section>
+
+    <aside class="audience-list-panel" aria-label="공개된 슬라이드 목록">
+      <div class="speaker-panel-header">
+        <span id="audienceStatus">공개됨</span>
+        <strong id="audienceProgress">-- / --</strong>
+        <button type="button" id="audienceFollowToggle" aria-pressed="true">따라가기</button>
+        <button type="button" id="audiencePanelToggle" aria-expanded="true" aria-label="공개 목록 숨기기">숨김</button>
+      </div>
+      <div id="audienceSlideList" class="audience-slide-list"></div>
+    </aside>
+    <button type="button" id="audiencePanelRestore" class="audience-panel-restore" hidden>공개 목록</button>
+  </main>
+</body>
+</html>

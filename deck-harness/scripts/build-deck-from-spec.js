@@ -1030,10 +1030,14 @@ function main() {
   );
 
   copyTemplate(deckDir, "deck.html");
+  copyTemplate(deckDir, "speaker.html");
+  copyTemplate(deckDir, "audience.html");
   copyTemplate(deckDir, "presenter-review.html");
   copyTemplate(deckDir, "template-gallery.html");
   copyTemplate(deckDir, "assets/style.css");
   copyTemplate(deckDir, "assets/deck.js");
+  copyTemplate(deckDir, "assets/speaker.js");
+  copyTemplate(deckDir, "assets/audience.js");
   copyTemplate(deckDir, "assets/presenter-review.js");
   copyTemplate(deckDir, "assets/template-gallery.js");
   copyTemplate(deckDir, "assets/template-component-registry.json");
@@ -1044,11 +1048,15 @@ function main() {
   }
   const outputs = [
     "deck.html",
+    "speaker.html",
+    "audience.html",
     "presenter-review.html",
     "template-gallery.html",
     "assets/slides.js",
     "assets/style.css",
     "assets/deck.js",
+    "assets/speaker.js",
+    "assets/audience.js",
     "assets/presenter-review.js",
     "assets/template-gallery.js",
     "assets/template-component-registry.json",

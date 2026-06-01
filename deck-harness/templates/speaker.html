@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generated Deck Speaker Console</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/slides.js"></script>
+  <script defer src="assets/speaker.js"></script>
+</head>
+<body class="speaker-page">
+  <header class="speaker-toolbar">
+    <div>
+      <p class="deck-kicker">Speaker Console</p>
+      <h1>발표자 콘솔</h1>
+      <p class="deck-subtitle" id="speakerStatus">현재 슬라이드와 발표 스크립트를 불러오는 중입니다.</p>
+    </div>
+    <section class="speaker-topbar-status" aria-label="Current slide and timers">
+      <div class="speaker-topbar-current">
+        <p>현재 슬라이드</p>
+        <strong id="currentSlideLabel">-- / --</strong>
+        <h2 id="currentSlideTitle">불러오는 중입니다.</h2>
+      </div>
+      <div class="speaker-topbar-timers" aria-label="Presentation timers">
+        <div class="speaker-topbar-timer">
+          <small>총 강의시간</small>
+          <span id="speakerTotalTimer">00:00</span>
+        </div>
+        <div class="speaker-topbar-timer">
+          <small>슬라이드별 시간</small>
+          <span id="speakerSlideTimer">00:00</span>
+        </div>
+      </div>
+      <small id="speakerSyncStatus">동기화 준비 중</small>
+    </section>
+    <nav class="deck-actions" aria-label="Speaker actions">
+      <a href="/">덱 선택</a>
+      <a href="deck.html" target="_blank" rel="noreferrer">발표 화면</a>
+      <a href="audience.html" target="_blank" rel="noreferrer">청강자 화면</a>
+      <a href="presenter-review.html">검토/수정</a>
+      <button type="button" id="timerToggle">Start</button>
+      <button type="button" id="timerReset">Reset</button>
+    </nav>
+  </header>
+
+  <main class="speaker-console">
+    <section class="speaker-preview-panel speaker-next-panel" aria-label="Next slide">
+      <div class="speaker-panel-header">
+        <span>현재 슬라이드</span>
+        <strong id="currentPreviewLabel">-- / --</strong>
+      </div>
+      <iframe id="currentSlideFrame" class="speaker-slide-frame" title="현재 슬라이드"></iframe>
+    </section>
+
+    <aside class="speaker-notes-panel">
+      <div class="speaker-controls" aria-label="Slide controls">
+        <button type="button" id="speakerPrevious">이전</button>
+        <button type="button" id="speakerNext">다음</button>
+      </div>
+
+      <section class="speaker-prompt" aria-label="Presenter prompt">
+        <p class="review-meta" id="speakerMeta"></p>
+        <h2 id="speakerPromptTitle"></h2>
+        <div id="speakerPromptBody" class="speaker-prompt-body"></div>
+        <div id="speakerCuePanel" class="speaker-cues"></div>
+      </section>
+    </aside>
+  </main>
+</body>
+</html>

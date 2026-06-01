@@ -3,6 +3,7 @@
   "type": "commonjs",
   "scripts": {
     "build:practice-ui": "node scripts/build-practice-react-ui.js",
+    "serve:lecture-cuts-review": "node scripts/serve-lecture-cuts-review.js",
     "validate:context": "node scripts/validate-context-research-pack.js",
     "pretest": "npm run build:practice-ui",
     "test": "node --test practice-harness/test/*.test.js",

@@ -9,12 +9,29 @@
   <script defer src="assets/slides.js"></script>
   <script defer src="assets/deck.js"></script>
 </head>
-<body>
-  <main id="deck" class="deck-shell" aria-live="polite"></main>
-  <nav class="deck-nav" aria-label="slide navigation">
-    <button type="button" data-prev>Prev</button>
-    <span data-counter>0 / 0</span>
-    <button type="button" data-next>Next</button>
-  </nav>
+<body class="deck-page">
+  <header class="deck-toolbar">
+    <div>
+      <p class="deck-kicker">Generated Presentation Deck</p>
+      <h1>김아이 워크숍 전체 덱</h1>
+      <p class="deck-subtitle" id="deckStatus">슬라이드를 불러오는 중입니다.</p>
+    </div>
+    <nav class="deck-actions" aria-label="Deck actions">
+      <a href="/">덱 선택</a>
+      <a href="speaker.html">발표자 콘솔</a>
+      <a href="audience.html">청강자 화면</a>
+      <a href="presenter-review.html">검토/수정</a>
+      <button type="button" id="presentDeck">Present</button>
+      <button type="button" id="printDeck">Print / PDF</button>
+    </nav>
+    <span id="presentationSyncStatus" class="presentation-sync-status" role="status" aria-live="polite">동기화 준비 중</span>
+  </header>
+
+  <div class="deck-stage">
+    <button class="deck-nav-button deck-nav-previous" type="button" id="previousSlide" data-prev aria-label="이전 슬라이드">‹</button>
+    <main id="deck" class="deck-shell deck-strip" aria-live="polite"></main>
+    <button class="deck-nav-button deck-nav-next" type="button" id="nextSlide" data-next aria-label="다음 슬라이드">›</button>
+  </div>
+  <span class="deck-counter" data-counter>0 / 0</span>
 </body>
 </html>
