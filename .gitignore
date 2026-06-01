@@ -3,6 +3,7 @@
 !.codex/
 !.codex/hooks.json
 !.codex/stop-hook.js
+.codex/tmp/
 .agent-status.json
 .tmp/
 node_modules/
