@@ -17,6 +17,42 @@
 - 전략, 산출물 경계, 현재 리스크가 바뀔 때만 `content-redesign-working-plan.md`를 수정한다.
 - 기존 덱 자료를 새 Act에 재배치할 때는 `legacy-slide-to-act-map.md`를 갱신한 뒤 Act content source에 반영한다.
 
+## Kimai Lecture Source Scope
+
+- 김아이 워크숍의 목표 산출물은 일반인 대상 4시간 워크숍의 강의 슬라이드 소스다. 4시간에는 설명 강의와 Act별 실습 시간이 모두 포함된다.
+- 김아이 콘텐츠 재설계의 주 작업은 `act*-content-source.md`, `section-plan.json`, `slide-spec.json`, `asset-pack.json`, `glossary.json`, Act 매핑 문서 같은 주입 소스다.
+- HTML은 최종 덱이 아니라 흐름, 화면 밀도, 이미지 위치, 발표 리듬을 사람이 검토하기 위한 목업이다.
+- 추측으로 새 흐름을 만들지 말고, 이미 작성된 마스터 스펙, Act별 content source, practice plan, slide spec, asset pack을 먼저 확인한 뒤 이어서 작성한다.
+- 설명 슬라이드는 Act별 개념, 김아이 서사, 회사 업무 비유, 다음 실습으로 넘어가는 브릿지만 다룬다.
+- 실습은 설명 슬라이드가 끝난 뒤 별도의 실습 슬라이드 또는 실습 UI에서 진행한다.
+- 설명 소스 안에 실습 UI, 점수판, 입력 폼, 검증 로그를 섞지 않는다. 그런 요소는 실습 소스에서 정의한다.
+
+## Kimai Act Topic Map
+
+- Act 0. 오늘의 약속: 김아이라는 AI 신입사원 서사와 하네스 엔지니어링 관점 소개
+- Act 1. 정보 선별 `(Information Selection / Context Curation)`: 업무에 필요한 자료와 기준을 먼저 고르는 법
+- Act 2. 좋은 업무 지시 `(Prompt Engineering / Task Specification)`: 무엇을 만들지, 어디에 쓸지, 어떤 형식으로 낼지, 언제 끝난 것으로 볼지를 지시로 쓰는 법
+- Act 3. CLAUDE.md 회사 내규 `(CLAUDE.md / Persistent Instructions / Rule Overload)`: Prompt, Context, CLAUDE.md를 구분하고, CLAUDE.md 적용 범위/적용 강도/과한 내규 문제를 이해시키는 법
+- Act 4. 반복 업무 매뉴얼 `(Skills / Reusable Procedures)`: 반복 가능한 절차를 매뉴얼로 고정하는 법
+- Act 5. 역할 분리와 도구 권한 `(Agents / Subagents / Tool Permissions / MCP)`: 역할, 권한, 도구 사용 범위를 나누는 법
+- Act 6. 검증과 하네스 구조 `(Hooks / Evaluation / LLM Judge / Quality Gate)`: 결과물을 검사하고 재시도하게 만드는 구조
+
+## Kimai Metaphor Dictionary
+
+- `김아이`는 AI 신입사원이고, `팀장`은 사용자를 뜻한다.
+- `책상` 또는 `데스크`는 김아이가 지금 일을 하기 위해 올려 둔 작업 자료 공간이며, 실제 하네스 용어로는 `Context`다.
+- `업무 지시`는 팀장이 지금 내린 요청이며, 실제 하네스 용어로는 `Prompt`다.
+- `회사 내규`는 김아이가 매번 지켜야 하는 공통 기준이며, 실제 하네스 용어로는 `CLAUDE.md`다.
+- `업무 매뉴얼`은 반복 업무를 처리하는 순서이며, 실제 하네스 용어로는 `Skill`이다.
+- `역할 카드`는 김아이 팀 안에서 나눈 책임이며, 실제 하네스 용어로는 `Agent` 또는 `Subagent`다.
+- `도구 열쇠`는 역할별로 허용된 도구 권한이며, 실제 하네스 용어로는 `Tool Permission` 또는 `MCP Tool`이다.
+- `검문소`는 완료 전 증거를 확인하는 기준이며, 실제 하네스 용어로는 `Hook`, `Evaluation`, `Quality Gate`다.
+- Act 2에서는 `누가 볼지`나 `대상`보다 `어디에 쓸지`, `무엇을 만들지`, `어떤 형식으로 낼지`, `언제 끝난 것으로 볼지`를 우선 표현한다.
+- Act 3에서 Context는 Act 1의 데스크 비유를 회수하는 보조 개념이다. Act 3의 중심은 `CLAUDE.md 회사 내규` 설정이다.
+- Act 3의 CLAUDE.md 범위 비유는 `global = 연방법`, `user = 주법`, `project = 회사 사규`, `subfolder = 부서 규칙`으로 통일한다.
+- CLAUDE.md 로드 순서는 `global -> user -> project -> subfolder`이고, 적용 강도는 `subfolder -> project -> user -> global`이다. 현재 작업 위치에 가까운 규칙이 더 구체적이고 강하다.
+- Act 3 실습은 자료/규칙 분류가 아니라 `CLAUDE.md 적용 범위 선택 -> 내규 초안 작성 -> 과한 내규 줄이기`로 연결한다.
+
 ## 중복 문서 금지
 
 - `*-mockup.md`, `*-flow-summary.md`, `*-review-summary.md` 같은 임시 요약 파일을 새로 만들지 않는다.

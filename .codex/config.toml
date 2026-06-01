@@ -1,0 +1,8 @@
+[mcp_servers.ouroboros]
+command = "uvx"
+args = ["--from", "ouroboros-ai[mcp]", "ouroboros", "mcp", "serve"]
+startup_timeout_sec = 60
+
+[mcp_servers.ouroboros.env]
+OUROBOROS_AGENT_RUNTIME = "codex"
+OUROBOROS_LLM_BACKEND = "codex"
