@@ -16,7 +16,7 @@ generated-decks/kimai-workshop-content/assets/slides.js
 Not rendered by build step.
 
 ## Checked Date
-2026-05-31
+2026-06-01
 
 ## Unresolved Count
 0

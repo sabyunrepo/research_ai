@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-05-31T14:11:40.062Z",
-  "method": "npx playwright screenshot against local server http://127.0.0.1:8788/deck.html",
+  "generatedAt": "2026-06-01T23:28:21.481Z",
+  "method": "npx playwright screenshot against local server http://127.0.0.1:4177/deck.html",
   "coverage": "representative",
-  "deckOutputHash": "sha256:fde965b2cf3ac713167bfacd169e680a9cc56e1b10e2d02feca2cb26871cc145",
+  "deckOutputHash": "sha256:bd36de951107be0ac9eb54c8cb32a0dccf461b22bbcc89e7b8820b9967dc9738",
   "summary": "Representative desktop, projector, and mobile screenshots were captured without unresolved visual blockers recorded in this report.",
   "captures": [
     {
@@ -13,7 +13,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide1.png",
-      "screenshotSha256": "a94970ac08046f63f7ef894a5c81827364ee24272a5aaca0e8a9f273f019a106",
+      "screenshotSha256": "eb90e93e47b17d6ee61e8c236ccd5cc44cc014029856a5c7b8ec9ddee9703365",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -27,7 +27,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1024x768-slide1.png",
-      "screenshotSha256": "1226414c0583a6efb61651ae6034ef8b6bf83b9335ded8125abeac478b905af7",
+      "screenshotSha256": "152f6d003e3574519ff52fbda828bc35b8085bb90438c1073b79dc122f0154a7",
       "imageDimensions": {
         "width": 1024,
         "height": 768
@@ -41,7 +41,7 @@
         "height": 844
       },
       "screenshotPath": "review-screenshots/deck-390x844-slide1.png",
-      "screenshotSha256": "981f0693f510a17f77b5843e4396ff7e3b884911f2ec5f52c5bea0d547ef60ff",
+      "screenshotSha256": "77a47a63f6e53b2138cebe39b2e009876366e9086c7705cdf15abfcca32d1198",
       "imageDimensions": {
         "width": 390,
         "height": 844
@@ -55,7 +55,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide8.png",
-      "screenshotSha256": "bc6e0aae417cf549dc927209b9a8aa4acee238a24f6b886730f2c603e0786320",
+      "screenshotSha256": "dfab10b00d104a5c5fddbc998095caca7e79285db57e3db5a20a13d3a48ed339",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -69,7 +69,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide18.png",
-      "screenshotSha256": "ea81134940d72136a4fa4cde83563b154746ad3256818a4a0a1990058bc2d97b",
+      "screenshotSha256": "4379d4987809aa9155762809ba12784df347cfea0b78314139602c76cb909e5e",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -83,7 +83,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide32.png",
-      "screenshotSha256": "5f0c89e3928832ffe78eea064f8fe4994944885fbd8514bb8f19ffc8e950d1ed",
+      "screenshotSha256": "c6d60a71b578d9f09032fc46388200648442b320fee622b223ee0e07495edb6c",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -97,7 +97,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide47.png",
-      "screenshotSha256": "6896c921f6c8bbd532071c9db63c00a976251554f528e1d64e085d751d5fe6c7",
+      "screenshotSha256": "2fe92b73d2aa0fa7e2ef5eec7cb5285dd8cfc83958cf5b348a9f811de287bfd3",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -111,7 +111,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide61.png",
-      "screenshotSha256": "845a343f5205c212ebc437185b4856c3dd206097ba6a47f264d03a7ecb8721f6",
+      "screenshotSha256": "50ca2cd31418157765f998d67dcf9e7afc27ffe144cee084cbb5e2d72aa874e1",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -125,7 +125,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide76.png",
-      "screenshotSha256": "31c3073273bd82e28f8ba333e0b26d17c3a973978f4f3855e500439e0134f828",
+      "screenshotSha256": "f7c970ed3d4358a7fd3dc65b8211e052e758d5bc38ef49081ed0c9c2cb5f5834",
       "imageDimensions": {
         "width": 1366,
         "height": 768

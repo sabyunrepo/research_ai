@@ -11,7 +11,17 @@
 </head>
 <body>
   <main class="review-page">
-    <h1>Presenter Review</h1>
+    <header class="review-header">
+      <div>
+        <p class="eyebrow">Presenter Review</p>
+        <h1>발표 스크립트 검토/수정</h1>
+      </div>
+      <nav class="review-actions" aria-label="Presenter review actions">
+        <a class="review-link" href="deck.html">Deck</a>
+        <button class="review-save-button" id="saveReviewChanges" type="button">저장</button>
+        <span class="review-save-status" id="saveReviewStatus" role="status" aria-live="polite"></span>
+      </nav>
+    </header>
     <div id="review"></div>
   </main>
 </body>

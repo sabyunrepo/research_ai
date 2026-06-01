@@ -16,11 +16,15 @@
       ],
       "outputs": [
         "deck.html",
+        "speaker.html",
+        "audience.html",
         "presenter-review.html",
         "template-gallery.html",
         "assets/slides.js",
         "assets/style.css",
         "assets/deck.js",
+        "assets/speaker.js",
+        "assets/audience.js",
         "assets/presenter-review.js",
         "assets/template-gallery.js",
         "assets/template-component-registry.json",
@@ -154,7 +158,7 @@
         "slides/act6-final-harness-map.html"
       ],
       "inputHash": "sha256:9900869f7abf9c79ca8a9a429ae655c1958dcdf76322d01458df0c261ca368cc",
-      "outputHash": "sha256:fde965b2cf3ac713167bfacd169e680a9cc56e1b10e2d02feca2cb26871cc145",
+      "outputHash": "sha256:bd36de951107be0ac9eb54c8cb32a0dccf461b22bbcc89e7b8820b9967dc9738",
       "status": "PASS",
       "evidencePath": "HANDOFF.md#verification"
     }
