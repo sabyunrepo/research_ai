@@ -816,15 +816,34 @@ function galleryVisualComponentHtml(slide, screen, mainTemplate) {
         </div>
       </div>`;
   }
+  const loopLabels = items.length >= 6
+    ? [
+        ["write", items[0], "정보", "Context"],
+        ["run", items[1], "지시", "Prompt"],
+        ["check", items[2], "내규", "CLAUDE.md"],
+        ["keep", items[3], "매뉴얼", "Skill"],
+        ["role", items[4], "권한", "Agent"],
+        ["gate", items[5], "검문소", "Stop Hook"],
+      ]
+    : [
+        ["write", items[0], "목표"],
+        ["run", items[1], "실행"],
+        ["check", items[2], "검증"],
+        ["keep", items[3], "기록"],
+      ];
+  const loopCenterLabel = items.length >= 6 ? "하네스" : "루틴";
+  const loopRingClass = items.length >= 6 ? "lc-loop-ring lc-loop-ring--six" : "lc-loop-ring";
   return `<div class="lc-visual lc-loop-visual" ${componentAttrs} aria-hidden="true">
-      <div class="lc-loop-ring">
+      <div class="${loopRingClass}">
         <i class="lc-loop-path"></i>
         <i class="lc-loop-runner"></i>
-        <span class="write">${escapeHtml(shortVisualLabel(items[0], "목표"))}</span>
-        <span class="run">${escapeHtml(shortVisualLabel(items[1], "실행"))}</span>
-        <span class="check">${escapeHtml(shortVisualLabel(items[2], "검증"))}</span>
-        <span class="keep">${escapeHtml(shortVisualLabel(items[3], "기록"))}</span>
-        <strong>루틴</strong>
+        ${loopLabels.map(([className, label, fallback, realTerm]) => {
+          const visibleLabel = escapeHtml(shortVisualLabel(label, fallback));
+          return realTerm
+            ? `<span class="${className}"><b>${visibleLabel}</b><small>${escapeHtml(realTerm)}</small></span>`
+            : `<span class="${className}">${visibleLabel}</span>`;
+        }).join("\n        ")}
+        <strong>${loopCenterLabel}</strong>
       </div>
     </div>`;
 }
@@ -859,8 +878,7 @@ function templateContentHtml(slide, screen, options) {
 }
 
 function bridgeFooterHtml(bridge) {
-  if (!bridge) return "";
-  return `<footer class="slide-bridge"><span class="slide-bridge-label">다음</span><span>${escapeHtml(bridge)}</span></footer>`;
+  return "";
 }
 
 function slideHtml(slide) {
@@ -892,8 +910,11 @@ function slideHtml(slide) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
   <title>${escapeHtml(slide.title)}</title>
   <link rel="stylesheet" href="../assets/style.css">
+  <script defer src="../assets/slides.js"></script>
+  <script defer src="../assets/glossary-tooltips.js"></script>
 </head>
 <body>
   <main class="${slideClass}" data-slide-id="${escapeHtml(slide.id)}" data-layout-template="${escapeHtml(slide.layoutTemplate || "")}" data-main-template="${escapeHtml(mainTemplate)}" data-teaching-move="${escapeHtml(slide.teachingMove || "")}" data-audience-action="${escapeHtml(slide.audienceAction || "")}" data-visual-mode="${escapeHtml(slide.visualMode || "")}" data-evidence-ids="${escapeHtml(evidence)}" data-glossary-terms="${escapeHtml(terms)}">
@@ -1057,6 +1078,7 @@ function main() {
   copyTemplate(deckDir, "assets/deck.js");
   copyTemplate(deckDir, "assets/speaker.js");
   copyTemplate(deckDir, "assets/audience.js");
+  copyTemplate(deckDir, "assets/glossary-tooltips.js");
   copyTemplate(deckDir, "assets/presenter-review.js");
   copyTemplate(deckDir, "assets/template-gallery.js");
   copyTemplate(deckDir, "assets/template-component-registry.json");

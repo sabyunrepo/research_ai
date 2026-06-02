@@ -7,6 +7,7 @@
   const canUseSaveApi = window.location.protocol !== "file:";
   const hiddenVerifierFields = ["evidenceClaimIds"];
   let scriptById = new Map();
+  let scriptUpdatedAt = "";
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -48,11 +49,30 @@
     return scriptById.get(slide.id) || fallbackScript(slide);
   }
 
-  function editableField(slide, entry, field, label) {
+  function editableField(slide, entry, field, label, options = {}) {
+    const className = options.className || "review-script-textarea";
+    const value = options.value ?? entry[field] ?? "";
     return `<label class="review-field-label">
       <span>${escapeHtml(label)}</span>
-      <textarea class="review-script-textarea" data-slide-id="${escapeHtml(slide.id)}" data-field="${escapeHtml(field)}">${escapeHtml(entry[field] || "")}</textarea>
+      <textarea class="${escapeHtml(className)}" data-slide-id="${escapeHtml(slide.id)}" data-field="${escapeHtml(field)}">${escapeHtml(value)}</textarea>
     </label>`;
+  }
+
+  function slideBulletsText(slide) {
+    return Array.isArray(slide.bullets) ? slide.bullets.join("\n") : "";
+  }
+
+  function renderSlideTextEditor(slide) {
+    return `<div class="review-slide-text-editor">
+      <strong>Slide Text</strong>
+      ${editableField(slide, slide, "title", "제목", { className: "review-slide-textarea review-slide-textarea--title" })}
+      ${editableField(slide, slide, "message", "본문 메시지", { className: "review-slide-textarea" })}
+      ${editableField(slide, slide, "bullets", "화면 앵커/불릿", {
+        className: "review-slide-textarea",
+        value: slideBulletsText(slide),
+      })}
+      ${editableField(slide, slide, "bridge", "다음 장 연결", { className: "review-slide-textarea" })}
+    </div>`;
   }
 
   function renderScriptEditor(slide) {
@@ -81,10 +101,32 @@
     });
   }
 
+  function updateRenderedScriptFields() {
+    review?.querySelectorAll(".review-script-editor [data-slide-id][data-field]").forEach((field) => {
+      const slideId = field.dataset.slideId;
+      const fieldName = field.dataset.field;
+      const dirty = dirtySlides.get(slideId);
+      if (dirty && Object.prototype.hasOwnProperty.call(dirty, fieldName)) return;
+      const entry = scriptById.get(slideId);
+      if (!entry || !Object.prototype.hasOwnProperty.call(entry, fieldName)) return;
+      const nextValue = entry[fieldName] ?? "";
+      if (field.value !== nextValue) field.value = nextValue;
+    });
+  }
+
   function bindSlidePreviews() {
     review?.querySelectorAll("[data-slide-file]").forEach((frame) => {
       const file = frame.dataset.slideFile;
       if (file) frame.setAttribute("src", `slides/${file}`);
+      scaleSlidePreview(frame);
+    });
+  }
+
+  function refreshSlidePreviews() {
+    const cacheKey = Date.now();
+    review?.querySelectorAll("[data-slide-file]").forEach((frame) => {
+      const file = frame.dataset.slideFile;
+      if (file) frame.setAttribute("src", `slides/${file}?v=${cacheKey}`);
       scaleSlidePreview(frame);
     });
   }
@@ -103,14 +145,16 @@
         (slide) => `<section class="review-cut" data-slide-id="${escapeHtml(slide.id)}">
           <div class="review-slide">
             <div class="review-slide-preview">
+              <span class="review-slide-number" aria-label="Slide ${slide.index} of ${slides.length}">${String(slide.index).padStart(2, "0")} / ${slides.length}</span>
               <iframe class="review-slide-frame" data-slide-file="${escapeHtml(slide.file)}" title="${escapeHtml(slide.title)} preview" loading="lazy"></iframe>
             </div>
             <div class="review-slide-caption">
-              <span>${escapeHtml(slide.section || "")}</span>
+              <span>Slide ${String(slide.index).padStart(2, "0")} · ${escapeHtml(slide.section || "")}</span>
               <strong>${escapeHtml(slide.title)}</strong>
             </div>
           </div>
           <div class="review-script">
+            ${renderSlideTextEditor(slide)}
             <strong>Presentation Script</strong>
             ${renderScriptEditor(slide)}
             <details>
@@ -132,9 +176,20 @@
       if (!response.ok) return;
       const payload = await response.json();
       scriptById = new Map((payload.slides || []).map((entry) => [entry.id, entry]));
+      scriptUpdatedAt = payload.updatedAt || "";
+      return payload;
     } catch {
       scriptById = new Map();
+      return null;
     }
+  }
+
+  async function refreshPresentationScriptIfChanged() {
+    const previousUpdatedAt = scriptUpdatedAt;
+    const payload = await loadPresentationScript();
+    if (!payload || payload.updatedAt === previousUpdatedAt) return;
+    updateRenderedScriptFields();
+    setSaveStatus(dirtySlides.size ? `${dirtySlides.size}개 슬라이드 수정됨` : "외부 스크립트 갱신됨", dirtySlides.size ? "" : "saved");
   }
 
   async function saveReviewChanges() {
@@ -160,6 +215,7 @@
       }
       dirtySlides.clear();
       await loadPresentationScript();
+      refreshSlidePreviews();
       setSaveStatus(`저장 완료: ${payload.saved}개 슬라이드`, "saved");
     } catch (error) {
       setSaveStatus(`저장 실패: ${error.message}`, "error");
@@ -180,4 +236,5 @@
     }
     updateSaveButton();
   });
+  window.setInterval(refreshPresentationScriptIfChanged, 10000);
 })();

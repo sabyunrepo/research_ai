@@ -122,6 +122,25 @@ function getSlidesPath() {
   return path.join(getDeckRoot(), "assets", "slides.js");
 }
 
+function runDeckHarnessBuild(deckRoot) {
+  const builder = path.join(root, "deck-harness", "scripts", "build-deck-from-spec.js");
+  const result = spawnSync(process.execPath, [builder, deckRoot], {
+    cwd: root,
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 8,
+  });
+  if (result.status !== 0) {
+    throw new Error(
+      [
+        "덱 재생성에 실패했습니다.",
+        result.stdout ? `STDOUT:\n${result.stdout}` : "",
+        result.stderr ? `STDERR:\n${result.stderr}` : "",
+      ].filter(Boolean).join("\n"),
+    );
+  }
+  return `${result.stdout || ""}${result.stderr || ""}`.trim();
+}
+
 function validateDeckRoot() {
   const requiredFiles = deckSelection.contract === "deck-harness"
     ? [
@@ -332,11 +351,15 @@ function sendDeckHarnessAudienceSlide(response, slide, index, slides) {
       font: 800 14px/1 var(--font-body, ui-sans-serif, system-ui, sans-serif);
     }
   </style>`;
+  const glossaryRuntime = [
+    '<script defer src="/assets/slides.js"></script>',
+    '<script defer src="/assets/glossary-tooltips.js"></script>',
+  ].join("\n");
   const safeHtml = rawHtml
     .replace(/<script\b[\s\S]*?<\/script>/gi, "")
     .replace(/href=["']\.\.\/assets\//g, 'href="/assets/')
     .replace(/src=["']\.\.\/assets\//g, 'src="/assets/')
-    .replace(/<\/head>/i, `${audienceStyle}\n</head>`);
+    .replace(/<\/head>/i, `${audienceStyle}\n${glossaryRuntime}\n</head>`);
   response.writeHead(200, {
     "Content-Type": "text/html; charset=utf-8",
     "Cache-Control": "no-store",
@@ -522,6 +545,104 @@ function normalizeKeywordFlow(value) {
     .filter((item) => item.label && item.cue && item.say);
 }
 
+function normalizeLines(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item || "").trim()).filter(Boolean);
+  }
+  return String(value || "")
+    .split(/\r?\n/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function setScreenArray(screen, key, values) {
+  if (!screen || !key) return;
+  const current = screen[key];
+  if (Array.isArray(current) && current.some((item) => item && typeof item === "object")) {
+    screen[key] = values.map((value, index) => {
+      const previous = current[index] && typeof current[index] === "object" ? current[index] : {};
+      if (Object.prototype.hasOwnProperty.call(previous, "label")) {
+        return { ...previous, label: value };
+      }
+      if (Object.prototype.hasOwnProperty.call(previous, "text")) {
+        return { ...previous, text: value };
+      }
+      return { ...previous, text: value };
+    });
+    return;
+  }
+  screen[key] = values;
+}
+
+function setScreenBullets(slide, screen, bullets) {
+  if (!screen) return;
+  const template = slide.mainTemplate || slide.templateRewrite?.selectedTemplate || "";
+  const preferredKeyByTemplate = {
+    "opening-hero": "promiseBullets",
+    "kimai-structure": "imageAnchors",
+    "assertion-scene": "evidenceAnchors",
+    "workflow-strip": "steps",
+    "decision-gate": "criteria",
+    "brief-window": "rows",
+    "practice-handoff": "actionList",
+    "recap-map": "mapNodes",
+    "single-concept": "supportingAnchors",
+  };
+  const preferredKey = preferredKeyByTemplate[template];
+  if (preferredKey) {
+    setScreenArray(screen, preferredKey, bullets);
+    return;
+  }
+  for (const key of ["anchors", "imageAnchors", "evidenceAnchors", "steps", "criteria", "actionList", "mapNodes", "supportingAnchors"]) {
+    if (Array.isArray(screen[key])) {
+      setScreenArray(screen, key, bullets);
+      return;
+    }
+  }
+  screen.anchors = bullets;
+}
+
+function applySlideTextChange(slide, change) {
+  let changed = false;
+  const setText = (field) => {
+    if (!Object.prototype.hasOwnProperty.call(change, field)) return;
+    slide[field] = String(change[field] || "").trim();
+    changed = true;
+  };
+
+  setText("title");
+  setText("message");
+  setText("bridge");
+
+  if (Object.prototype.hasOwnProperty.call(change, "bullets")) {
+    slide.bullets = normalizeLines(change.bullets);
+    changed = true;
+  }
+
+  if (!changed) return false;
+
+  for (const screen of [slide.rewrittenScreen, slide.templateRewrite?.screenStructure]) {
+    if (!screen) continue;
+    if (Object.prototype.hasOwnProperty.call(change, "title")) {
+      screen.headline = slide.title;
+      if (Object.prototype.hasOwnProperty.call(screen, "heroLine")) {
+        screen.heroLine = slide.title;
+      }
+    }
+    if (Object.prototype.hasOwnProperty.call(change, "message")) {
+      screen.message = slide.message;
+    }
+    if (Object.prototype.hasOwnProperty.call(change, "bridge")) {
+      screen.bridge = slide.bridge;
+    }
+    if (Object.prototype.hasOwnProperty.call(change, "bullets")) {
+      setScreenBullets(slide, screen, slide.bullets || []);
+    }
+  }
+
+  return true;
+}
+
 function markdownKeywordFlow(flow = []) {
   const normalized = normalizeKeywordFlow(flow);
   if (!normalized.length) return ["- 없음"];
@@ -582,38 +703,76 @@ async function handleDeckHarnessSave(request, response) {
       throw new Error("presentation-script.json을 찾지 못했습니다.");
     }
     const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
-    const slideIds = new Set((spec.slides || []).map((slide) => slide.id));
+    const specSlides = Array.isArray(spec.slides) ? spec.slides : [];
+    const slideIds = new Set(specSlides.map((slide) => slide.id));
+    const specById = new Map(specSlides.map((slide) => [slide.id, slide]));
     const script = JSON.parse(fs.readFileSync(scriptPath, "utf8"));
     const entries = Array.isArray(script.slides) ? script.slides : [];
     const byId = new Map(entries.map((entry) => [entry.id, entry]));
     let saved = 0;
+    let savedScripts = 0;
+    let savedSlides = 0;
     for (const change of payload.slides) {
       const id = String(change?.id || "").trim();
       if (!slideIds.has(id)) {
         throw new Error(`알 수 없는 슬라이드 id입니다: ${id || "(missing)"}`);
       }
+      const specSlide = specById.get(id);
       const entry = byId.get(id);
-      if (!entry) {
-        throw new Error(`발표 스크립트 항목을 찾지 못했습니다: ${id}`);
-      }
+      let changedScript = false;
       for (const field of ["script", "interactionPrompt", "transition"]) {
         if (Object.prototype.hasOwnProperty.call(change, field)) {
+          if (!entry) {
+            throw new Error(`발표 스크립트 항목을 찾지 못했습니다: ${id}`);
+          }
           entry[field] = String(change[field] || "").trim();
+          changedScript = true;
         }
       }
       if (Object.prototype.hasOwnProperty.call(change, "keywordFlow")) {
+        if (!entry) {
+          throw new Error(`발표 스크립트 항목을 찾지 못했습니다: ${id}`);
+        }
         entry.keywordFlow = normalizeKeywordFlow(change.keywordFlow);
+        changedScript = true;
+      }
+
+      const changedSlide = applySlideTextChange(specSlide, change);
+      if (changedSlide && entry) {
+        entry.title = specSlide.title;
+        entry.transition = specSlide.bridge || entry.transition || "";
+        entry.screenAnchors = specSlide.bullets || [];
+      }
+      if (changedScript) {
+        savedScripts += 1;
+      }
+      if (changedSlide) {
+        savedSlides += 1;
       }
       saved += 1;
     }
-    script.updatedAt = new Date().toISOString();
-    writeJson(scriptPath, script);
-    fs.writeFileSync(
-      path.join(deckRoot, "presentation-script.md"),
-      generatedScriptMarkdown(script.deckSlug || deckSelection.id, script.updatedAt, entries),
-      "utf8",
-    );
-    sendJson(response, 200, { ok: true, saved, savedScripts: saved, savedCues: 0, savedSlides: 0, contractOutput: "" });
+    let contractOutput = "";
+    if (savedSlides > 0) {
+      writeJson(specPath, spec);
+      contractOutput = runDeckHarnessBuild(deckRoot);
+    }
+    if (savedScripts > 0 || savedSlides > 0) {
+      script.updatedAt = new Date().toISOString();
+      writeJson(scriptPath, script);
+      fs.writeFileSync(
+        path.join(deckRoot, "presentation-script.md"),
+        generatedScriptMarkdown(script.deckSlug || deckSelection.id, script.updatedAt, entries),
+        "utf8",
+      );
+    }
+    sendJson(response, 200, {
+      ok: true,
+      saved,
+      savedScripts,
+      savedCues: 0,
+      savedSlides,
+      contractOutput,
+    });
   } catch (error) {
     sendJson(response, 400, { ok: false, error: error.message });
   }

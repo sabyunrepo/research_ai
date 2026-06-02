@@ -450,21 +450,25 @@ body {
 
 .audience-frame-canvas .deck-nav-button {
   position: absolute;
-  top: 0;
-  z-index: 5;
-  width: 50%;
-  height: 100%;
+  top: 50%;
+  z-index: 2;
+  width: 28px;
+  height: 64px;
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: rgba(17, 17, 17, .26);
+  color: rgba(17, 17, 17, .22);
   opacity: 1;
+  transform: translateY(-50%);
+  box-shadow: none;
+  font-size: 56px;
+  line-height: 1;
 }
 
 .audience-frame-canvas .deck-nav-button:hover,
 .audience-frame-canvas .deck-nav-button:focus-visible {
-  background: rgba(17, 17, 17, .035);
-  color: rgba(17, 17, 17, .66);
+  background: transparent;
+  color: rgba(17, 17, 17, .56);
 }
 
 .audience-frame-canvas .deck-nav-button:focus-visible {
@@ -475,18 +479,17 @@ body {
 .audience-frame-canvas .deck-nav-button:disabled {
   color: rgba(17, 17, 17, .12);
   opacity: 1;
+  pointer-events: none;
 }
 
 .audience-frame-canvas .deck-nav-previous {
-  left: 0;
+  left: 10px;
   justify-items: start;
-  padding-left: 22px;
 }
 
 .audience-frame-canvas .deck-nav-next {
-  right: 0;
+  right: 10px;
   justify-items: end;
-  padding-right: 22px;
 }
 
 .audience-list-panel {
@@ -1373,11 +1376,18 @@ h2 {
 }
 
 .review-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: 24px;
+  margin: -34px -28px 24px;
+  padding: 34px 28px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
 }
 
 .review-header h1 {
@@ -1464,6 +1474,24 @@ h2 {
   background: var(--muted-surface);
 }
 
+.review-slide-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid rgba(23, 30, 46, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 950;
+  box-shadow: 0 8px 18px rgba(23, 30, 46, 0.12);
+}
+
 .review-slide-frame {
   position: absolute;
   top: 0;
@@ -1502,6 +1530,14 @@ h2 {
   padding: 18px;
 }
 
+.review-slide-text-editor {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
 .review-script-editor {
   display: grid;
   gap: 12px;
@@ -1530,11 +1566,31 @@ h2 {
   line-height: 1.62;
 }
 
+.review-slide-textarea {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.review-slide-textarea--title {
+  min-height: 52px;
+  font-weight: 900;
+}
+
 .review-script-textarea[data-field="script"] {
   min-height: 300px;
 }
 
-.review-script-textarea:focus {
+.review-script-textarea:focus,
+.review-slide-textarea:focus {
   outline: 3px solid rgba(50, 91, 255, 0.18);
   border-color: var(--blue);
 }
@@ -2696,7 +2752,7 @@ h2 {
 
 .lc-loop-ring {
   position: relative;
-  width: min(100%, 320px);
+  width: min(100%, 360px);
   aspect-ratio: 1;
   border-radius: 50%;
 }
@@ -2707,6 +2763,7 @@ h2 {
   border: var(--lc-bold-stroke) dashed var(--blue);
   border-radius: 50%;
   animation: slow-spin 18s linear infinite;
+  z-index: 1;
 }
 
 .lc-loop-runner {
@@ -2720,6 +2777,7 @@ h2 {
   background: #fff;
   transform-origin: 0 0;
   animation: orbit-dot 5.2s linear infinite;
+  z-index: 2;
 }
 
 .lc-loop-ring span {
@@ -2739,12 +2797,47 @@ h2 {
   overflow-wrap: anywhere;
   box-shadow: 5px 6px 0 #e8efff;
   transform: var(--label-transform);
+  z-index: 4;
 }
 
 .lc-loop-ring .write { top: -18px; left: 50%; --label-transform: translateX(-50%) rotate(-2deg); }
 .lc-loop-ring .run { right: -76px; top: 50%; --label-transform: translateY(-50%) rotate(2deg); }
 .lc-loop-ring .check { bottom: -18px; left: 50%; --label-transform: translateX(-50%) rotate(-1deg); color: var(--blue); }
 .lc-loop-ring .keep { left: -76px; top: 50%; --label-transform: translateY(-50%) rotate(1.5deg); }
+
+.lc-loop-ring .role,
+.lc-loop-ring .gate {
+  color: var(--blue);
+}
+
+.lc-loop-ring--six span {
+  width: 128px;
+  min-height: 58px;
+  padding: 7px 10px 8px;
+  font-size: 15px;
+  gap: 2px;
+}
+
+.lc-loop-ring--six span b,
+.lc-loop-ring--six span small {
+  display: block;
+}
+
+.lc-loop-ring--six span small {
+  color: var(--blue);
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lc-loop-ring--six .write { top: -22px; right: auto; bottom: auto; left: 50%; --label-transform: translateX(-50%) rotate(-2deg); }
+.lc-loop-ring--six .run { top: 24%; right: -66px; bottom: auto; left: auto; --label-transform: translateY(-50%) rotate(2deg); }
+.lc-loop-ring--six .check { top: auto; right: -66px; bottom: 24%; left: auto; --label-transform: translateY(50%) rotate(-1deg); color: inherit; }
+.lc-loop-ring--six .keep { top: auto; right: auto; bottom: -22px; left: 50%; --label-transform: translateX(-50%) rotate(1.4deg); }
+.lc-loop-ring--six .role { top: auto; right: auto; bottom: 24%; left: -66px; --label-transform: translateY(50%) rotate(-2deg); }
+.lc-loop-ring--six .gate { top: 24%; right: auto; bottom: auto; left: -66px; --label-transform: translateY(-50%) rotate(1.5deg); }
 
 .lc-loop-ring strong {
   position: absolute;
@@ -2758,6 +2851,12 @@ h2 {
   font-family: var(--display);
   font-size: 27px;
   box-shadow: 6px 7px 0 #e8efff;
+  z-index: 3;
+}
+
+.lc-loop-ring--six strong {
+  inset: 104px;
+  font-size: 25px;
 }
 
 @keyframes layer-pop {
@@ -3112,8 +3211,10 @@ h2 {
 .slide .lc-workbench-card:nth-of-type(4),
 .slide .lc-harness-rail:nth-of-type(4),
 .slide .lc-loop-ring span:nth-child(4) { animation-delay: .38s; }
-.slide .lc-workbench-card:nth-of-type(5) { animation-delay: .48s; }
-.slide .lc-workbench-card:nth-of-type(6) { animation-delay: .58s; }
+.slide .lc-workbench-card:nth-of-type(5),
+.slide .lc-loop-ring span:nth-of-type(5) { animation-delay: .48s; }
+.slide .lc-workbench-card:nth-of-type(6),
+.slide .lc-loop-ring span:nth-of-type(6) { animation-delay: .58s; }
 
 @media (prefers-reduced-motion: reduce) {
   .candidate-card *,
