@@ -67,7 +67,7 @@
     {
       "id": "act-2",
       "title": "좋은 업무 지시",
-      "learningObjective": "수강생이 프롬프트를 멋진 문장이 아니라 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해한다.",
+      "learningObjective": "수강생이 프롬프트를 멋진 문장이 아니라 김아이가 혼자 일할 수 있게 만드는 작업지시서로 이해하고, 낡은 역할 흉내와 현대적 페르소나 필터를 구분한다.",
       "estimatedMinutes": 42,
       "practiceMode": "prompt-iteration",
       "practiceId": "act2-prompt-iteration",
@@ -79,11 +79,11 @@
         "act2-unspoken-imagination",
         "act2-input-output-principle",
         "act2-handoff-document",
-        "act2-goal-use-context",
         "act2-materials-conditions",
         "act2-output-done-criteria",
         "act2-prompt-term-mapping",
         "act2-prompt-reframing",
+        "act2-persona-priority-filter",
         "act2-practice-handoff"
       ],
       "slides": [
@@ -92,11 +92,11 @@
         "act2-unspoken-imagination",
         "act2-input-output-principle",
         "act2-handoff-document",
-        "act2-goal-use-context",
         "act2-materials-conditions",
         "act2-output-done-criteria",
         "act2-prompt-term-mapping",
         "act2-prompt-reframing",
+        "act2-persona-priority-filter",
         "act2-practice-handoff"
       ]
     },
@@ -108,12 +108,10 @@
       "practiceMode": "claude-md-setting",
       "practiceId": "act3-claude-md-setting",
       "learnerOutput": "CLAUDE.md 적용 범위 선택, CLAUDE.md 내규 초안, 과한 내규 제거 목록",
-      "targetSlideCount": 10,
+      "targetSlideCount": 8,
       "plannedSlideIds": [
         "act3-act1-context-recover",
         "act3-rules-are-different",
-        "act3-claude-md-rule-board",
-        "act3-claude-md-fit",
         "act3-too-many-rules",
         "act3-temporary-info-danger",
         "act3-good-rule-board-shape",
@@ -124,8 +122,6 @@
       "slides": [
         "act3-act1-context-recover",
         "act3-rules-are-different",
-        "act3-claude-md-rule-board",
-        "act3-claude-md-fit",
         "act3-too-many-rules",
         "act3-temporary-info-danger",
         "act3-good-rule-board-shape",
@@ -225,14 +221,13 @@
       "id": "act-6",
       "title": "검증과 하네스 구조",
       "learningObjective": "완료 선언을 믿지 않고 완료 전 자동 검문소와 평가 기준으로 확인한다.",
-      "estimatedMinutes": 32,
+      "estimatedMinutes": 31,
       "practiceMode": "verification-gate-design",
       "practiceId": "act6-stop-hook-checkpoint",
       "learnerOutput": "Stop hook 검문소 설계와 unlock prompt",
-      "targetSlideCount": 13,
+      "targetSlideCount": 12,
       "plannedSlideIds": [
         "act6-required-pre-submit-check",
-        "act6-completion-claim-no-evidence",
         "act6-quality-gate-evidence-over-claim",
         "act6-work-log-evidence",
         "act6-goal-rubric-check",
@@ -247,7 +242,6 @@
       ],
       "slides": [
         "act6-required-pre-submit-check",
-        "act6-completion-claim-no-evidence",
         "act6-quality-gate-evidence-over-claim",
         "act6-work-log-evidence",
         "act6-goal-rubric-check",

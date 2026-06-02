@@ -693,8 +693,9 @@
       "id": "act3-to-act4-manual",
       "kind": "single-image",
       "status": "generated",
-      "teachingRole": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
-      "generationPrompt": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+      "sourcePath": "assets/visuals/act3-to-act4-manual-boundary-path.png",
+      "teachingRole": "내규는 넘지 말아야 할 선이고 매뉴얼은 따라가야 할 작업 순서라는 Act 3 to Act 4 전환을 설명한다.",
+      "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 36, landscape 16:9 composition\nPrimary request: Explain the transition from CLAUDE.md rules to Manual/Skill workflow: rules are a boundary line, manuals are a path.\nComposition: Left side boundary labeled 내규 = 선 with cards 금지 조건 and 제외 기준. Right side path labeled 매뉴얼 = 길 with steps 1 시장 조사, 2 장단점 분석, 3 보고서 작성. Kimai steps toward the path. Add label 순서대로 실행.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -703,42 +704,53 @@
         "large readable Korean labels",
         "no gradient",
         "no glow",
-        "no glossy treatment"
+        "no character drift"
       ],
       "explanationAnchors": [
-        "반복 질문",
-        "반복 기준",
-        "반복 출력"
+        "내규 = 선",
+        "매뉴얼 = 길",
+        "금지 조건",
+        "제외 기준",
+        "시장 조사",
+        "장단점 분석",
+        "보고서 작성",
+        "순서대로 실행",
+        "김아이"
       ],
       "semanticRequirements": {
         "mustShow": [
-          "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
-          "김아이 AI 신입사원",
-          "CLAUDE.md 설정 실습 흐름",
-          "제품 리뷰 보고서 맥락"
+          "김아이",
+          "내규 = 선",
+          "매뉴얼 = 길",
+          "금지 조건",
+          "제외 기준",
+          "시장 조사",
+          "장단점 분석",
+          "보고서 작성",
+          "순서대로 실행"
         ],
         "mustNotShow": [
-          "장식용 추상 이미지",
-          "긴 파일 경로",
-          "복잡한 UI",
-          "영문 프로젝트 규칙 라벨",
-          "이전 실패 사례",
+          "실습 입력폼",
+          "점수판",
+          "검증 로그",
+          "추상 장식",
+          "작은 글씨",
           "보이는 패널 번호",
           "동그라미 숫자",
           "Cell 번호",
           "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터"
+          "잘린 글자 또는 잘린 캐릭터",
+          "검은색으로 채운 머리",
+          "로봇 헬멧형 머리"
         ],
         "teachingQuestions": [
-          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "Context와 CLAUDE.md의 차이가 보이는가?",
-          "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
+          "그림만 보고 내규와 매뉴얼의 차이를 설명할 수 있는가?",
+          "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
         ],
-        "minimumPassScore": 85
+        "minimumPassScore": 90
       },
-      "alt": "Act 3 반복 질문, 반복 기준, 반복 출력를 설명하는 김아이 손그림",
-      "sourcePath": "assets/visuals/act3-to-act4-manual-single.png",
-      "notes": "Converted to act3 sprite-sheet crop for batch generation. Exploded from sprite-sheet crop after asset-crop-review WARN; regenerate as a standalone single-image asset.",
+      "alt": "내규는 선이고 매뉴얼은 길이라는 대비를 보여 주는 김아이 손그림",
+      "notes": "Generated as a slide-specific single image using the canonical Kimai character reference and checked for character consistency.",
       "characterRefs": [
         "kimai"
       ],
@@ -757,58 +769,22 @@
         "reviewerRequired": true,
         "forbiddenEdgeArtifacts": [
           "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
+          "adjacent panel text or shape",
+          "cropped character face or hands",
+          "cropped Korean label"
         ]
       },
       "generationMode": "single-image-first",
-      "previousCropRegion": {
-        "sourcePath": "assets/visuals/act3-to-act4-manual.png",
-        "sourceAssetId": "act3-visual-sheet",
-        "sheetCellIndex": 10,
-        "crop": {
-          "x": 2.2,
-          "y": 77.2,
-          "width": 28.933,
-          "height": 20.6,
-          "unit": "percent"
-        },
-        "cropPolicy": "declared-cell",
-        "cropSafety": {
-          "safeMarginPercent": 0.8,
-          "edgeBandPercent": 6,
-          "maxEdgeInkRatio": 0.5,
-          "maxAdjacentPanelInkRatio": 0.4,
-          "reviewerRequired": true,
-          "forbiddenEdgeArtifacts": [
-            "visible panel number or circled number",
-            "adjacent panel text or sheet label",
-            "clipped Korean label",
-            "clipped Kimai or coworker character",
-            "crop boundary mark or hard sheet edge"
-          ]
-        },
-        "reviewStatus": "WARN",
-        "reviewWarnings": [
-          "left edge line coverage 0.62559 > 0.5"
-        ],
-        "reviewedCropPath": "assets/visuals/act3-to-act4-manual.png",
-        "reviewedSourcePath": "assets/visuals/act3-visual-sheet.png"
-      },
       "deterministicComposition": {
         "owner": "deck-harness",
         "slot": "visualAssetId",
-        "frame": "template-owned",
+        "frame": "template-owned drawn card frame",
         "objectFit": "contain",
         "forbiddenInImage": [
-          "sprite sheet",
-          "multi-panel grid",
-          "panel border",
-          "crop mark",
           "slide frame",
-          "page chrome"
+          "crop mark",
+          "sprite sheet grid",
+          "final card tilt or shadow"
         ]
       }
     },
@@ -2744,9 +2720,9 @@
       "id": "act2-prompt-term-mapping",
       "kind": "single-image",
       "status": "generated",
-      "sourcePath": "assets/visuals/act2-prompt-term-mapping-single.png",
-      "teachingRole": "AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다. Include large readable Korean labels for: 업무 지시, 인수인계서, Prompt, Task Specification. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+      "sourcePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png",
+      "teachingRole": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.",
+      "generationPrompt": "Use the canonical Kimai reference image kimai-new-employee-single.png as strict character reference. Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show a completed work instruction document becoming the prompt when handed to Kimai, an AI new employee. On the left, show a document labeled 작업지시서 with large checklist labels 목표, 자료, 조건, 출력, 완료 기준. In the center, show a blue arrow labeled 전달. On the right, show Kimai receiving the document at a laptop with a large Prompt label. Kimai must keep the canonical identity: white outlined hair with three simple bang shapes, no black filled hair, round friendly face, over-ear headset with AI label, thin antenna, white shirt, blue tie, readable 김아이 badge. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -2758,18 +2734,28 @@
         "no glossy treatment"
       ],
       "explanationAnchors": [
-        "업무 지시",
-        "인수인계서",
+        "작업지시서",
+        "목표",
+        "자료",
+        "조건",
+        "출력",
+        "완료 기준",
+        "전달",
         "Prompt",
-        "Task Specification"
+        "김아이"
       ],
       "semanticRequirements": {
         "mustShow": [
           "김아이",
-          "업무 지시",
-          "인수인계서",
+          "작업지시서",
+          "목표",
+          "자료",
+          "조건",
+          "출력",
+          "완료 기준",
+          "전달",
           "Prompt",
-          "Task Specification"
+          "노트북"
         ],
         "mustNotShow": [
           "실습 입력폼",
@@ -2778,6 +2764,8 @@
           "검증 로그",
           "추상 장식",
           "작은 글씨",
+          "검은색으로 채운 머리",
+          "로봇 헬멧형 머리",
           "보이는 패널 번호",
           "동그라미 숫자",
           "Cell 번호",
@@ -2786,12 +2774,12 @@
         ],
         "teachingQuestions": [
           "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
+          "작업지시서가 김아이에게 전달되며 Prompt가 된다는 흐름이 보이는가?"
         ],
         "minimumPassScore": 85
       },
-      "alt": "Act 2 업무 지시, 인수인계서, Prompt, Task Specification를 설명하는 김아이 손그림",
-      "notes": "Converted to act2 sprite-sheet crop for batch generation. Exploded from sprite-sheet crop after asset-crop-review WARN; regenerate as a standalone single-image asset.",
+      "alt": "Act 2 작업지시서가 김아이에게 전달되어 Prompt가 되는 흐름을 설명하는 손그림",
+      "notes": "Regenerated as a standalone single-image asset for the revised work-instruction-to-prompt transition slide.",
       "characterRefs": [
         "kimai"
       ],
@@ -2867,11 +2855,11 @@
     },
     {
       "id": "act2-prompt-reframing",
-      "kind": "crop-region",
-      "status": "cropped",
-      "sourcePath": "assets/visuals/act2-prompt-reframing.png",
-      "teachingRole": "프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다. Include large readable Korean labels for: 해야 할 일, 참고할 것, 끝난 기준. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background.",
+      "kind": "single-image",
+      "status": "generated",
+      "sourcePath": "assets/visuals/act2-prompt-reframing-persona-myth.png",
+      "teachingRole": "낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.",
+      "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 26, contrasting old persona prompt myths with clear work instructions.\nComposition: Left side shows caution/crossed-out cards labeled \"50년 경력처럼\" and \"전문가 빙의\". Right side shows Kimai pointing to a checklist titled \"명확한 지시\" with large labels \"로직 검증\", \"예외 처리\", \"완료 기준\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -2880,19 +2868,27 @@
         "large readable Korean labels",
         "no gradient",
         "no glow",
-        "no glossy treatment"
+        "no glossy treatment",
+        "no character drift"
       ],
       "explanationAnchors": [
-        "해야 할 일",
-        "참고할 것",
-        "끝난 기준"
+        "50년 경력처럼",
+        "전문가 빙의",
+        "명확한 지시",
+        "로직 검증",
+        "예외 처리",
+        "완료 기준",
+        "김아이"
       ],
       "semanticRequirements": {
         "mustShow": [
           "김아이",
-          "해야 할 일",
-          "참고할 것",
-          "끝난 기준"
+          "50년 경력처럼",
+          "전문가 빙의",
+          "명확한 지시",
+          "로직 검증",
+          "예외 처리",
+          "완료 기준"
         ],
         "mustNotShow": [
           "실습 입력폼",
@@ -2905,16 +2901,18 @@
           "동그라미 숫자",
           "Cell 번호",
           "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터"
+          "잘린 글자 또는 잘린 캐릭터",
+          "검은색으로 채운 머리",
+          "로봇 헬멧형 머리"
         ],
         "teachingQuestions": [
           "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
+          "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
         ],
-        "minimumPassScore": 85
+        "minimumPassScore": 90
       },
-      "alt": "Act 2 해야 할 일, 참고할 것, 끝난 기준를 설명하는 김아이 손그림",
-      "notes": "Converted to act2 sprite-sheet crop for batch generation.",
+      "alt": "낡은 역할 흉내 프롬프트와 명확한 업무 지시를 대비하는 김아이 손그림",
+      "notes": "Generated as a slide-specific single image using the canonical Kimai character reference and checked for character consistency.",
       "characterRefs": [
         "kimai"
       ],
@@ -2933,20 +2931,120 @@
         "reviewerRequired": true,
         "forbiddenEdgeArtifacts": [
           "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
+          "adjacent panel text or shape",
+          "cropped character face or hands",
+          "cropped Korean label"
         ]
       },
-      "sourceAssetId": "act2-visual-sheet",
-      "sheetCellIndex": 10,
-      "crop": {
-        "x": 2.2,
-        "y": 77.2,
-        "width": 28.933,
-        "height": 20.6,
+      "generationMode": "single-image-first",
+      "deterministicComposition": {
+        "owner": "deck-harness",
+        "slot": "visualAssetId",
+        "frame": "template-owned drawn card frame",
+        "objectFit": "contain",
+        "forbiddenInImage": [
+          "slide frame",
+          "crop mark",
+          "sprite sheet grid",
+          "final card tilt or shadow"
+        ]
+      }
+    },
+    {
+      "id": "act2-persona-priority-filter",
+      "kind": "single-image",
+      "status": "generated",
+      "sourcePath": "assets/visuals/act2-persona-priority-filter.png",
+      "teachingRole": "현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.",
+      "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 27 explaining that persona is a priority filter, not role possession.\nComposition: Center shows a funnel labeled \"우선순위 필터\". Three cards flow into it: \"보안 우선\", \"속도 우선\", \"확장성 우선\". Output goes to Kimai holding a checklist labeled \"작업 기준\". Add a small crossed-out mask labeled \"빙의 X\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment",
+        "no character drift"
+      ],
+      "explanationAnchors": [
+        "우선순위 필터",
+        "보안 우선",
+        "속도 우선",
+        "확장성 우선",
+        "작업 기준",
+        "빙의 X",
+        "김아이"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "우선순위 필터",
+          "보안 우선",
+          "속도 우선",
+          "확장성 우선",
+          "작업 기준",
+          "빙의 X"
+        ],
+        "mustNotShow": [
+          "실습 입력폼",
+          "보고서 초안 미리보기 UI",
+          "점수판",
+          "검증 로그",
+          "추상 장식",
+          "작은 글씨",
+          "보이는 패널 번호",
+          "동그라미 숫자",
+          "Cell 번호",
+          "sprite sheet 라벨",
+          "잘린 글자 또는 잘린 캐릭터",
+          "검은색으로 채운 머리",
+          "로봇 헬멧형 머리"
+        ],
+        "teachingQuestions": [
+          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
+          "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
+        ],
+        "minimumPassScore": 90
+      },
+      "alt": "페르소나가 우선순위 필터로 작동하는 모습을 설명하는 김아이 손그림",
+      "notes": "Generated as a slide-specific single image using the canonical Kimai character reference and checked for character consistency.",
+      "characterRefs": [
+        "kimai"
+      ],
+      "expectedSubjectBounds": {
+        "x": 1,
+        "y": 1,
+        "width": 98,
+        "height": 98,
         "unit": "percent"
+      },
+      "cropSafety": {
+        "safeMarginPercent": 0.8,
+        "edgeBandPercent": 6,
+        "maxEdgeInkRatio": 0.5,
+        "maxAdjacentPanelInkRatio": 0.4,
+        "reviewerRequired": true,
+        "forbiddenEdgeArtifacts": [
+          "visible panel number or circled number",
+          "adjacent panel text or shape",
+          "cropped character face or hands",
+          "cropped Korean label"
+        ]
+      },
+      "generationMode": "single-image-first",
+      "deterministicComposition": {
+        "owner": "deck-harness",
+        "slot": "visualAssetId",
+        "frame": "template-owned drawn card frame",
+        "objectFit": "contain",
+        "forbiddenInImage": [
+          "slide frame",
+          "crop mark",
+          "sprite sheet grid",
+          "final card tilt or shadow"
+        ]
       }
     },
     {
@@ -3243,30 +3341,33 @@
       "id": "act2-input-output-principle",
       "kind": "single-image",
       "status": "generated",
-      "sourcePath": "assets/visuals/act2-input-output-principle-single.png",
-      "teachingRole": "들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다. Include large readable Korean labels for: 좋은 입력, 좋은 판단, 좋은 결과. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background.",
+      "sourcePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png",
+      "teachingRole": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 협업 절차를 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, asking a team lead clarifying questions, then organizing answers into a work plan. Include only large simple Korean labels if needed: 자료, 조건, 답변, 플랜. Use black linework and one blue accent #2563eb only. No gradients, no glow, no glossy effects, no decorative abstract background, no tiny text.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
         "one blue accent",
         "hand-drawn lecture illustration",
-        "large readable Korean labels",
+        "large readable Korean labels only",
         "no gradient",
         "no glow",
         "no glossy treatment"
       ],
       "explanationAnchors": [
-        "좋은 입력",
-        "좋은 판단",
-        "좋은 결과"
+        "필요 자료",
+        "빠진 조건",
+        "팀장 답변",
+        "작업 플랜"
       ],
       "semanticRequirements": {
         "mustShow": [
           "김아이",
-          "좋은 입력",
-          "좋은 판단",
-          "좋은 결과"
+          "팀장",
+          "자료",
+          "조건",
+          "답변",
+          "플랜"
         ],
         "mustNotShow": [
           "실습 입력폼",
@@ -3284,13 +3385,13 @@
           "partial cropped objects"
         ],
         "teachingQuestions": [
-          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
+          "그림만 보고 김아이와 팀장이 함께 작업지시를 구체화한다는 메시지를 설명할 수 있는가?",
+          "필요 자료, 빠진 조건, 팀장 답변, 작업 플랜의 흐름이 보이는가?"
         ],
         "minimumPassScore": 85
       },
-      "alt": "Act 2 좋은 입력, 좋은 판단, 좋은 결과를 설명하는 김아이 손그림",
-      "notes": "Converted from sprite-sheet crop or legacy single image to a standalone slide-specific Kimai image. Do not render this slide from crop metadata.",
+      "alt": "김아이가 팀장에게 질문하며 필요한 자료와 조건을 확인하고 작업 플랜을 정리하는 손그림",
+      "notes": "Updated for slide 21 rewrite from input/output principle to Kimai-assisted task instruction planning.",
       "characterRefs": [
         "kimai"
       ],
@@ -3436,124 +3537,6 @@
           "page chrome"
         ]
       }
-    },
-    {
-      "id": "act2-goal-use-context",
-      "kind": "crop-region",
-      "status": "cropped",
-      "sourcePath": "assets/visuals/act2-goal-use-context.png",
-      "teachingRole": "좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다. Include large readable Korean labels for: 무엇을 만들지, 어디에 쓸지, 무엇을 결정할지. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background.",
-      "styleConstraints": [
-        "white background",
-        "minimal black linework",
-        "one blue accent",
-        "hand-drawn lecture illustration",
-        "large readable Korean labels",
-        "no gradient",
-        "no glow",
-        "no glossy treatment"
-      ],
-      "explanationAnchors": [
-        "무엇을 만들지",
-        "어디에 쓸지",
-        "무엇을 결정할지"
-      ],
-      "semanticRequirements": {
-        "mustShow": [
-          "김아이",
-          "무엇을 만들지",
-          "어디에 쓸지",
-          "무엇을 결정할지"
-        ],
-        "mustNotShow": [
-          "실습 입력폼",
-          "보고서 초안 미리보기 UI",
-          "점수판",
-          "검증 로그",
-          "추상 장식",
-          "작은 글씨",
-          "보이는 패널 번호",
-          "동그라미 숫자",
-          "Cell 번호",
-          "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터"
-        ],
-        "teachingQuestions": [
-          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
-        ],
-        "minimumPassScore": 85
-      },
-      "alt": "Act 2 무엇을 만들지, 어디에 쓸지, 무엇을 결정할지를 설명하는 김아이 손그림",
-      "sourceAssetId": "act2-visual-sheet",
-      "crop": {
-        "x": 68.867,
-        "y": 27.2,
-        "width": 28.933,
-        "height": 20.6,
-        "unit": "percent"
-      },
-      "notes": "Converted to act2 sprite-sheet crop for batch generation.",
-      "characterRefs": [
-        "kimai"
-      ],
-      "sheetCellIndex": 6,
-      "expectedSubjectBounds": {
-        "x": 1,
-        "y": 1,
-        "width": 98,
-        "height": 98,
-        "unit": "percent"
-      },
-      "cropSafety": {
-        "safeMarginPercent": 0.8,
-        "edgeBandPercent": 6,
-        "maxEdgeInkRatio": 0.5,
-        "maxAdjacentPanelInkRatio": 0.4,
-        "reviewerRequired": true,
-        "forbiddenEdgeArtifacts": [
-          "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
-        ]
-      },
-      "cropMasks": [
-        {
-          "kind": "whiteout",
-          "x": 0,
-          "y": 0,
-          "width": 100,
-          "height": 1.1,
-          "unit": "percent"
-        },
-        {
-          "kind": "whiteout",
-          "x": 98.9,
-          "y": 0,
-          "width": 1.1,
-          "height": 100,
-          "unit": "percent"
-        },
-        {
-          "kind": "whiteout",
-          "x": 0,
-          "y": 98.9,
-          "width": 100,
-          "height": 1.1,
-          "unit": "percent"
-        },
-        {
-          "kind": "whiteout",
-          "x": 0,
-          "y": 0,
-          "width": 1.1,
-          "height": 100,
-          "unit": "percent"
-        }
-      ]
     },
     {
       "id": "act2-materials-conditions",
@@ -4039,205 +4022,6 @@
       }
     },
     {
-      "id": "act3-claude-md-rule-board",
-      "kind": "single-image",
-      "status": "generated",
-      "sourcePath": "assets/visuals/act3-claude-md-rule-board-single.png",
-      "teachingRole": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-      "generationPrompt": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
-      "styleConstraints": [
-        "white background",
-        "minimal black linework",
-        "one blue accent",
-        "hand-drawn lecture illustration",
-        "large readable Korean labels",
-        "no gradient",
-        "no glow",
-        "no glossy treatment"
-      ],
-      "explanationAnchors": [
-        "회사 내규",
-        "CLAUDE.md",
-        "항상 적용"
-      ],
-      "semanticRequirements": {
-        "mustShow": [
-          "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-          "김아이 AI 신입사원",
-          "CLAUDE.md 설정 실습 흐름",
-          "제품 리뷰 보고서 맥락"
-        ],
-        "mustNotShow": [
-          "장식용 추상 이미지",
-          "긴 파일 경로",
-          "복잡한 UI",
-          "영문 프로젝트 규칙 라벨",
-          "이전 실패 사례",
-          "보이는 패널 번호",
-          "동그라미 숫자",
-          "Cell 번호",
-          "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터"
-        ],
-        "teachingQuestions": [
-          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "Context와 CLAUDE.md의 차이가 보이는가?",
-          "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
-        ],
-        "minimumPassScore": 85
-      },
-      "alt": "Act 3 회사 내규, CLAUDE.md, 항상 적용를 설명하는 김아이 손그림",
-      "notes": "Converted to act3 sprite-sheet crop for batch generation. Exploded from sprite-sheet crop after asset-crop-review WARN; regenerate as a standalone single-image asset.",
-      "characterRefs": [
-        "kimai"
-      ],
-      "expectedSubjectBounds": {
-        "x": 1,
-        "y": 1,
-        "width": 98,
-        "height": 98,
-        "unit": "percent"
-      },
-      "cropSafety": {
-        "safeMarginPercent": 0.8,
-        "edgeBandPercent": 6,
-        "maxEdgeInkRatio": 0.5,
-        "maxAdjacentPanelInkRatio": 0.4,
-        "reviewerRequired": true,
-        "forbiddenEdgeArtifacts": [
-          "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
-        ]
-      },
-      "generationMode": "single-image-first",
-      "previousCropRegion": {
-        "sourcePath": "assets/visuals/act3-claude-md-rule-board.png",
-        "sourceAssetId": "act3-visual-sheet",
-        "sheetCellIndex": 3,
-        "crop": {
-          "x": 68.867,
-          "y": 2.2,
-          "width": 28.933,
-          "height": 20.6,
-          "unit": "percent"
-        },
-        "cropPolicy": "declared-cell",
-        "cropSafety": {
-          "safeMarginPercent": 0.8,
-          "edgeBandPercent": 6,
-          "maxEdgeInkRatio": 0.5,
-          "maxAdjacentPanelInkRatio": 0.4,
-          "reviewerRequired": true,
-          "forbiddenEdgeArtifacts": [
-            "visible panel number or circled number",
-            "adjacent panel text or sheet label",
-            "clipped Korean label",
-            "clipped Kimai or coworker character",
-            "crop boundary mark or hard sheet edge"
-          ]
-        },
-        "reviewStatus": "WARN",
-        "reviewWarnings": [
-          "left edge line coverage 0.73934 > 0.5"
-        ],
-        "reviewedCropPath": "assets/visuals/act3-claude-md-rule-board.png",
-        "reviewedSourcePath": "assets/visuals/act3-visual-sheet.png"
-      },
-      "deterministicComposition": {
-        "owner": "deck-harness",
-        "slot": "visualAssetId",
-        "frame": "template-owned",
-        "objectFit": "contain",
-        "forbiddenInImage": [
-          "sprite sheet",
-          "multi-panel grid",
-          "panel border",
-          "crop mark",
-          "slide frame",
-          "page chrome"
-        ]
-      }
-    },
-    {
-      "id": "act3-claude-md-fit",
-      "kind": "single-image",
-      "status": "generated",
-      "sourcePath": "assets/visuals/act3-claude-md-fit-single.png",
-      "teachingRole": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration on white background. Kimai separates old work materials from the current task. Use only two large labels inside the image: 오래된 자료 and 현재 업무. No English text, no Stale Context label, no tiny text, no pseudo letters, no decorative writing. Black linework, one blue accent, crop-free standalone composition.",
-      "styleConstraints": [
-        "white background",
-        "minimal black linework",
-        "one blue accent",
-        "hand-drawn lecture illustration",
-        "large readable Korean labels",
-        "no gradient",
-        "no glow",
-        "no glossy treatment"
-      ],
-      "explanationAnchors": [
-        "오래된 자료",
-        "현재 업무",
-        "섞이면 판단 흔들림"
-      ],
-      "semanticRequirements": {
-        "mustShow": [
-          "오래된 자료",
-          "현재 업무",
-          "김아이 또는 AI 신입사원",
-          "이전 자료와 현재 업무가 분리되는 장면"
-        ],
-        "mustNotShow": [
-          "장식용 추상 이미지",
-          "긴 파일 경로",
-          "복잡한 UI",
-          "영문 프로젝트 규칙 라벨",
-          "이전 실패 사례",
-          "보이는 패널 번호",
-          "동그라미 숫자",
-          "Cell 번호",
-          "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터",
-          "crop marks",
-          "partial cropped objects",
-          "broken text",
-          "pseudo letters",
-          "tiny unreadable text",
-          "English Stale Context label"
-        ],
-        "teachingQuestions": [
-          "오래된 자료와 현재 업무가 섞이면 판단이 흔들린다는 점이 보이는가?",
-          "이미지 안 글자가 깨지지 않고 읽히는가?"
-        ],
-        "minimumPassScore": 85
-      },
-      "alt": "Act 3 말투 기준, 금지사항, 검증 기준를 설명하는 김아이 손그림",
-      "notes": "Converted from sprite-sheet crop or legacy single image to a standalone slide-specific Kimai image. Do not render this slide from crop metadata.",
-      "characterRefs": [
-        "kimai"
-      ],
-      "generationMode": "single-image-first",
-      "previousCropRegion": {
-        "sourcePath": "assets/visuals/act3-claude-md-fit.png",
-        "sourceAssetId": "act3-visual-sheet"
-      },
-      "deterministicComposition": {
-        "owner": "deck-harness",
-        "slot": "visualAssetId",
-        "frame": "template-owned drawn card frame",
-        "objectFit": "contain",
-        "forbiddenInImage": [
-          "slide frame",
-          "crop mark",
-          "sprite sheet grid",
-          "final card tilt or shadow"
-        ]
-      }
-    },
-    {
       "id": "act3-too-many-rules",
       "kind": "single-image",
       "status": "generated",
@@ -4314,9 +4098,9 @@
       "id": "act3-temporary-info-danger",
       "kind": "single-image",
       "status": "generated",
-      "sourcePath": "assets/visuals/act3-temporary-info-danger-single.png",
-      "teachingRole": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
-      "generationPrompt": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients.",
+      "sourcePath": "assets/visuals/act3-scope-company-guidelines.png",
+      "teachingRole": "CLAUDE.md의 적용 범위를 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침으로 설명한다.",
+      "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 32, landscape 16:9 composition\nPrimary request: Explain that CLAUDE.md rules have different application scopes.\nComposition: Four large readable boxes connected by arrows: 회장님 지침 -> 본사 공통 지침 -> 부서 사규 -> 팀장님 현장 지침. Kimai points at the final box. Add label: 가까울수록 구체적.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, no law/court imagery, no secretary imagery.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -4325,114 +4109,54 @@
         "large readable Korean labels",
         "no gradient",
         "no glow",
-        "no glossy treatment"
+        "no law/court imagery",
+        "no secretary imagery",
+        "no character drift"
       ],
       "explanationAnchors": [
-        "이번 보고서 자료",
-        "오래된 결정",
-        "다음 작업 오염"
+        "회장님 지침",
+        "본사 공통 지침",
+        "부서 사규",
+        "팀장님 현장 지침",
+        "가까울수록 구체적",
+        "김아이"
       ],
       "semanticRequirements": {
         "mustShow": [
-          "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
-          "김아이 AI 신입사원",
-          "CLAUDE.md 설정 실습 흐름",
-          "제품 리뷰 보고서 맥락"
+          "김아이",
+          "회장님 지침",
+          "본사 공통 지침",
+          "부서 사규",
+          "팀장님 현장 지침",
+          "가까울수록 구체적"
         ],
         "mustNotShow": [
-          "장식용 추상 이미지",
-          "긴 파일 경로",
-          "복잡한 UI",
-          "영문 프로젝트 규칙 라벨",
-          "이전 실패 사례",
+          "법원",
+          "법전",
+          "연방법",
+          "주법",
+          "비서",
+          "실습 입력폼",
+          "점수판",
+          "검증 로그",
+          "추상 장식",
+          "작은 글씨",
           "보이는 패널 번호",
           "동그라미 숫자",
           "Cell 번호",
           "sprite sheet 라벨",
           "잘린 글자 또는 잘린 캐릭터",
-          "crop marks",
-          "partial cropped objects"
+          "검은색으로 채운 머리",
+          "로봇 헬멧형 머리"
         ],
         "teachingQuestions": [
-          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "Context와 CLAUDE.md의 차이가 보이는가?",
-          "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
+          "그림만 보고 회사 지침 비유를 설명할 수 있는가?",
+          "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
         ],
-        "minimumPassScore": 85
+        "minimumPassScore": 90
       },
-      "alt": "Act 3 이번 보고서 자료, 오래된 결정, 다음 작업 오염를 설명하는 김아이 손그림",
-      "notes": "Converted from sprite-sheet crop or legacy single image to a standalone slide-specific Kimai image. Do not render this slide from crop metadata.",
-      "characterRefs": [
-        "kimai"
-      ],
-      "generationMode": "single-image-first",
-      "previousCropRegion": {
-        "sourcePath": "assets/visuals/act3-temporary-info-danger.png",
-        "sourceAssetId": "act3-visual-sheet"
-      },
-      "deterministicComposition": {
-        "owner": "deck-harness",
-        "slot": "visualAssetId",
-        "frame": "template-owned drawn card frame",
-        "objectFit": "contain",
-        "forbiddenInImage": [
-          "slide frame",
-          "crop mark",
-          "sprite sheet grid",
-          "final card tilt or shadow"
-        ]
-      }
-    },
-    {
-      "id": "act3-good-rule-board-shape",
-      "kind": "single-image",
-      "status": "generated",
-      "sourcePath": "assets/visuals/act3-good-rule-board-shape-single.png",
-      "teachingRole": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
-      "generationPrompt": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
-      "styleConstraints": [
-        "white background",
-        "minimal black linework",
-        "one blue accent",
-        "hand-drawn lecture illustration",
-        "large readable Korean labels",
-        "no gradient",
-        "no glow",
-        "no glossy treatment"
-      ],
-      "explanationAnchors": [
-        "역할",
-        "기준",
-        "확인 방법"
-      ],
-      "semanticRequirements": {
-        "mustShow": [
-          "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
-          "김아이 AI 신입사원",
-          "CLAUDE.md 설정 실습 흐름",
-          "제품 리뷰 보고서 맥락"
-        ],
-        "mustNotShow": [
-          "장식용 추상 이미지",
-          "긴 파일 경로",
-          "복잡한 UI",
-          "영문 프로젝트 규칙 라벨",
-          "이전 실패 사례",
-          "보이는 패널 번호",
-          "동그라미 숫자",
-          "Cell 번호",
-          "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터"
-        ],
-        "teachingQuestions": [
-          "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-          "Context와 CLAUDE.md의 차이가 보이는가?",
-          "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
-        ],
-        "minimumPassScore": 85
-      },
-      "alt": "Act 3 역할, 기준, 확인 방법를 설명하는 김아이 손그림",
-      "notes": "Converted to act3 sprite-sheet crop for batch generation. Exploded from sprite-sheet crop after asset-crop-review WARN; regenerate as a standalone single-image asset.",
+      "alt": "CLAUDE.md 적용 범위를 회사 지침 계층으로 보여 주는 김아이 손그림",
+      "notes": "Generated as a slide-specific single image using the canonical Kimai character reference and checked for character consistency.",
       "characterRefs": [
         "kimai"
       ],
@@ -4451,60 +4175,119 @@
         "reviewerRequired": true,
         "forbiddenEdgeArtifacts": [
           "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
+          "adjacent panel text or shape",
+          "cropped character face or hands",
+          "cropped Korean label"
         ]
       },
       "generationMode": "single-image-first",
-      "previousCropRegion": {
-        "sourcePath": "assets/visuals/act3-good-rule-board-shape.png",
-        "sourceAssetId": "act3-visual-sheet",
-        "sheetCellIndex": 7,
-        "crop": {
-          "x": 2.2,
-          "y": 52.2,
-          "width": 28.933,
-          "height": 20.6,
-          "unit": "percent"
-        },
-        "cropPolicy": "declared-cell",
-        "cropSafety": {
-          "safeMarginPercent": 0.8,
-          "edgeBandPercent": 6,
-          "maxEdgeInkRatio": 0.5,
-          "maxAdjacentPanelInkRatio": 0.4,
-          "reviewerRequired": true,
-          "forbiddenEdgeArtifacts": [
-            "visible panel number or circled number",
-            "adjacent panel text or sheet label",
-            "clipped Korean label",
-            "clipped Kimai or coworker character",
-            "crop boundary mark or hard sheet edge"
-          ]
-        },
-        "reviewStatus": "WARN",
-        "reviewWarnings": [
-          "top edge line coverage 0.97748 > 0.5",
-          "bottom edge line coverage 0.57432 > 0.5",
-          "left edge line coverage 0.75355 > 0.5"
-        ],
-        "reviewedCropPath": "assets/visuals/act3-good-rule-board-shape.png",
-        "reviewedSourcePath": "assets/visuals/act3-visual-sheet.png"
-      },
       "deterministicComposition": {
         "owner": "deck-harness",
         "slot": "visualAssetId",
-        "frame": "template-owned",
+        "frame": "template-owned drawn card frame",
         "objectFit": "contain",
         "forbiddenInImage": [
-          "sprite sheet",
-          "multi-panel grid",
-          "panel border",
-          "crop mark",
           "slide frame",
-          "page chrome"
+          "crop mark",
+          "sprite sheet grid",
+          "final card tilt or shadow"
+        ]
+      }
+    },
+    {
+      "id": "act3-good-rule-board-shape",
+      "kind": "single-image",
+      "status": "generated",
+      "sourcePath": "assets/visuals/act3-nearest-team-lead-priority.png",
+      "teachingRole": "가까운 팀장님 현장 지침이 멀리 있는 회장님 지침보다 지금 작업에 더 직접적으로 적용됨을 설명한다.",
+      "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 33\nPrimary request: Explain that the closest team lead field instruction is applied more strongly than distant executive guidance.\nComposition: Distant 회장님 지침 appears small in the background; near Kimai, a large blue-accent clipboard labeled 팀장님 현장 지침 is emphasized. Add label: 가까운 지침 우선.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, professional tone, no law/court imagery, no secretary imagery.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no law/court imagery",
+        "no secretary imagery",
+        "no character drift"
+      ],
+      "explanationAnchors": [
+        "회장님 지침",
+        "팀장님 현장 지침",
+        "가까운 지침 우선",
+        "현장 기준",
+        "김아이"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "김아이",
+          "회장님 지침",
+          "팀장님 현장 지침",
+          "가까운 지침 우선"
+        ],
+        "mustNotShow": [
+          "법원",
+          "법전",
+          "연방법",
+          "주법",
+          "비서",
+          "실습 입력폼",
+          "점수판",
+          "검증 로그",
+          "추상 장식",
+          "작은 글씨",
+          "보이는 패널 번호",
+          "동그라미 숫자",
+          "Cell 번호",
+          "sprite sheet 라벨",
+          "잘린 글자 또는 잘린 캐릭터",
+          "검은색으로 채운 머리",
+          "로봇 헬멧형 머리"
+        ],
+        "teachingQuestions": [
+          "그림만 보고 회사 지침 비유를 설명할 수 있는가?",
+          "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
+        ],
+        "minimumPassScore": 90
+      },
+      "alt": "가까운 팀장님 현장 지침이 우선 적용되는 모습을 보여 주는 김아이 손그림",
+      "notes": "Generated as a slide-specific single image using the canonical Kimai character reference and checked for character consistency.",
+      "characterRefs": [
+        "kimai"
+      ],
+      "expectedSubjectBounds": {
+        "x": 1,
+        "y": 1,
+        "width": 98,
+        "height": 98,
+        "unit": "percent"
+      },
+      "cropSafety": {
+        "safeMarginPercent": 0.8,
+        "edgeBandPercent": 6,
+        "maxEdgeInkRatio": 0.5,
+        "maxAdjacentPanelInkRatio": 0.4,
+        "reviewerRequired": true,
+        "forbiddenEdgeArtifacts": [
+          "visible panel number or circled number",
+          "adjacent panel text or shape",
+          "cropped character face or hands",
+          "cropped Korean label"
+        ]
+      },
+      "generationMode": "single-image-first",
+      "deterministicComposition": {
+        "owner": "deck-harness",
+        "slot": "visualAssetId",
+        "frame": "template-owned drawn card frame",
+        "objectFit": "contain",
+        "forbiddenInImage": [
+          "slide frame",
+          "crop mark",
+          "sprite sheet grid",
+          "final card tilt or shadow"
         ]
       }
     },
@@ -6623,9 +6406,9 @@
       "id": "act5-security-permissions",
       "kind": "single-image",
       "status": "generated",
-      "sourcePath": "assets/visuals/act5-security-permissions-single.png",
-      "teachingRole": "보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. New hires receive different security badges and access zones: 자료 열람, 문서 작성, 실행/검증.",
+      "sourcePath": "assets/visuals/act5-security-permissions-role-permissions.png",
+      "teachingRole": "권한 카드를 통해 읽기, 쓰기, 실행 권한을 역할별로 나누는 최소 권한 원칙을 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai gives only role-needed permission cards, not a master key. Three access zones are labeled 읽기, 쓰기, 실행. The image explains internal permission scope and least privilege, not MCP.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -6637,17 +6420,19 @@
         "no glossy treatment"
       ],
       "explanationAnchors": [
-        "자료 열람 권한",
-        "문서 작성 권한",
-        "실행/검증 권한",
-        "접근 가능한 구역"
+        "읽기 권한",
+        "쓰기 권한",
+        "실행 권한",
+        "마스터키 금지",
+        "권한 범위"
       ],
       "semanticRequirements": {
         "mustShow": [
-          "자료 열람 권한",
-          "문서 작성 권한",
-          "실행/검증 권한",
-          "접근 가능한 구역"
+          "읽기",
+          "쓰기",
+          "실행",
+          "마스터키 금지",
+          "김아이"
         ],
         "mustNotShow": [
           "실습 입력폼",
@@ -6670,8 +6455,8 @@
         ],
         "minimumPassScore": 85
       },
-      "alt": "보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다.",
-      "notes": "Converted from sprite-sheet crop or legacy single image to a standalone slide-specific Kimai image. Do not render this slide from crop metadata.",
+      "alt": "권한 카드를 통해 읽기, 쓰기, 실행 권한을 역할별로 나누는 최소 권한 원칙을 설명한다.",
+      "notes": "Regenerated as a standalone Kimai-consistent single-image asset for the revised Slide 57/58 concept split.",
       "generationMode": "single-image-first",
       "previousCropRegion": {
         "sourcePath": "assets/visuals/act5-security-permissions.png",
@@ -6688,15 +6473,18 @@
           "sprite sheet grid",
           "final card tilt or shadow"
         ]
-      }
+      },
+      "characterRefs": [
+        "kimai"
+      ]
     },
     {
       "id": "act5-mcp-partner-window",
       "kind": "single-image",
       "status": "generated",
-      "sourcePath": "assets/visuals/act5-mcp-partner-window-single.png",
-      "teachingRole": "MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. A company official partner request window labeled MCP sends 외부 자료 요청 and 외부 도구 요청 with request log. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+      "sourcePath": "assets/visuals/act5-mcp-official-phone-window.png",
+      "teachingRole": "MCP를 외부 시스템과 협력사에 연결하는 공식 전화 창구와 요청 기록 통로로 설명한다.",
+      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai uses an official company telephone/switchboard labeled MCP to contact an external system through an official window. Request slips 자료 요청 and 도구 요청 pass through the phone line, and 요청 기록 is logged.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -6708,19 +6496,20 @@
         "no glossy treatment"
       ],
       "explanationAnchors": [
-        "협력사 공식 창구",
-        "외부 자료 요청",
-        "외부 도구 요청",
-        "허가된 통로",
+        "공식 창구",
+        "MCP",
+        "자료 요청",
+        "도구 요청",
         "요청 기록"
       ],
       "semanticRequirements": {
         "mustShow": [
-          "협력사 공식 창구",
-          "외부 자료 요청",
-          "외부 도구 요청",
-          "허가된 통로",
-          "요청 기록"
+          "공식 창구",
+          "MCP",
+          "자료 요청",
+          "도구 요청",
+          "요청 기록",
+          "김아이"
         ],
         "mustNotShow": [
           "실습 입력폼",
@@ -6741,8 +6530,8 @@
         ],
         "minimumPassScore": 85
       },
-      "alt": "MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-      "notes": "Teaching asset only; not a practice UI screenshot. Converted to act5 sprite-sheet crop for batch generation. Exploded from sprite-sheet crop after asset-crop-review WARN; regenerate as a standalone single-image asset.",
+      "alt": "MCP를 외부 시스템과 협력사에 연결하는 공식 전화 창구와 요청 기록 통로로 설명한다.",
+      "notes": "Regenerated as a standalone Kimai-consistent single-image asset for the revised Slide 57/58 concept split.",
       "generationMode": "single-image-first",
       "previousCropRegion": {
         "sourcePath": "assets/visuals/act5-mcp-partner-window-single.png",
@@ -6773,7 +6562,10 @@
           "sprite sheet grid",
           "final card tilt or shadow"
         ]
-      }
+      },
+      "characterRefs": [
+        "kimai"
+      ]
     },
     {
       "id": "act5-team-to-act6-checkpoint",
@@ -6959,80 +6751,6 @@
       "generationMode": "single-image-first",
       "previousCropRegion": {
         "sourcePath": "assets/visuals/act6-required-pre-submit-check.png",
-        "sourceAssetId": "act6-visual-sheet"
-      },
-      "deterministicComposition": {
-        "owner": "deck-harness",
-        "slot": "visualAssetId",
-        "frame": "template-owned drawn card frame",
-        "objectFit": "contain",
-        "forbiddenInImage": [
-          "slide frame",
-          "crop mark",
-          "sprite sheet grid",
-          "final card tilt or shadow"
-        ]
-      }
-    },
-    {
-      "id": "act6-completion-claim-no-evidence",
-      "kind": "single-image",
-      "status": "generated",
-      "sourcePath": "assets/visuals/act6-completion-claim-no-evidence-single.png",
-      "teachingRole": "검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다.",
-      "generationPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai says 끝냈습니다, but there is no checker and evidence boxes are empty.",
-      "styleConstraints": [
-        "white background",
-        "minimal black linework",
-        "one blue accent",
-        "hand-drawn lecture illustration",
-        "large readable Korean labels",
-        "no gradient",
-        "no glow",
-        "no glossy treatment"
-      ],
-      "explanationAnchors": [
-        "완료 보고",
-        "확인 없음",
-        "빈 증거",
-        "김아이"
-      ],
-      "semanticRequirements": {
-        "mustShow": [
-          "완료 보고",
-          "확인 없음",
-          "빈 증거",
-          "김아이"
-        ],
-        "mustNotShow": [
-          "실습 입력폼",
-          "점수판 중심",
-          "코드 화면",
-          "복잡한 UI",
-          "그라데이션",
-          "작은 글씨",
-          "보이는 패널 번호",
-          "동그라미 숫자",
-          "Cell 번호",
-          "sprite sheet 라벨",
-          "잘린 글자 또는 잘린 캐릭터",
-          "crop marks",
-          "partial cropped objects"
-        ],
-        "teachingQuestions": [
-          "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
-          "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
-        ],
-        "minimumPassScore": 85
-      },
-      "alt": "검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다.",
-      "notes": "Converted from sprite-sheet crop or legacy single image to a standalone slide-specific Kimai image. Do not render this slide from crop metadata.",
-      "characterRefs": [
-        "kimai"
-      ],
-      "generationMode": "single-image-first",
-      "previousCropRegion": {
-        "sourcePath": "assets/visuals/act6-completion-claim-no-evidence.png",
         "sourceAssetId": "act6-visual-sheet"
       },
       "deterministicComposition": {
@@ -8086,7 +7804,7 @@
       "status": "generated",
       "sourcePath": "assets/visuals/act3-visual-sheet.png",
       "teachingRole": "ACT3 김아이 강의 이미지들을 한 번에 생성하고 crop하기 위한 source sprite sheet",
-      "generationPrompt": "Create a clean 3 columns x 4 rows sprite sheet for a Korean beginner lecture deck. Each panel is a separate hand-drawn minimal teaching illustration for Kimai, an AI new employee. White background, black linework, one blue accent #2563eb only, no gradients, no decorative shadows, no 3D, no photorealism. Keep each cell readable after crop.\nPanel 1: act3-act1-context-recover - 김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림\nPanel 2: act3-rules-are-different - 공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림\nPanel 3: act3-claude-md-rule-board - 김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\nPanel 4: act3-claude-md-fit - 김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림\nPanel 5: act3-too-many-rules - 타부서 협업 과정에서 요청 양식, 보고 라인, 책임 소재가 정리되어 회사 내규로 올라가는 손그림\nPanel 6: act3-temporary-info-danger - 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림\nPanel 7: act3-good-rule-board-shape - CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\nPanel 8: act3-context-vs-claude-md - 너무 많은 회사 내규 앞에서 김아이가 읽지 못하고, 설정 충돌과 실행 지연을 겪는 손그림\nPanel 9: act3-practice-handoff - 수강생이 김아이의 CLAUDE.md 설정 화면에서 적용 범위를 고르고 내규 초안을 짧게 정리하는 손그림\nPanel 10: act3-to-act4-manual - 회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림 Do not draw visible cell numbers, panel numbers, crop labels, sheet borders inside final cells, or circled numbering.",
+      "generationPrompt": "Create a clean 3 columns x 3 rows sprite sheet for a Korean beginner lecture deck. Each panel is a separate hand-drawn minimal teaching illustration for Kimai, an AI new employee. White background, black linework, one blue accent #2563eb only, no gradients, no decorative shadows, no 3D, no photorealism. Keep each cell readable after crop.\nPanel 1: act3-act1-context-recover - 김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림\nPanel 2: act3-rules-are-different - 공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림\nPanel 3: act3-too-many-rules - 타부서 협업 과정에서 요청 양식, 보고 라인, 책임 소재가 정리되어 회사 내규로 올라가는 손그림\nPanel 4: act3-temporary-info-danger - 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림\nPanel 5: act3-good-rule-board-shape - CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\nPanel 6: act3-context-vs-claude-md - 너무 많은 회사 내규 앞에서 김아이가 읽지 못하고, 설정 충돌과 실행 지연을 겪는 손그림\nPanel 7: act3-practice-handoff - 수강생이 김아이의 CLAUDE.md 설정 화면에서 적용 범위를 고르고 내규 초안을 짧게 정리하는 손그림\nPanel 8: act3-to-act4-manual - 회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림 Do not draw visible cell numbers, panel numbers, crop labels, sheet borders inside final cells, or circled numbering.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -8250,7 +7968,7 @@
       "status": "generated",
       "sourcePath": "assets/visuals/act6-visual-sheet.png",
       "teachingRole": "ACT6 김아이 강의 이미지들을 한 번에 생성하고 crop하기 위한 source sprite sheet",
-      "generationPrompt": "Create a clean 3 columns x 4 rows sprite sheet for a Korean beginner lecture deck. Each panel is a separate hand-drawn minimal teaching illustration for Kimai, an AI new employee. White background, black linework, one blue accent #2563eb only, no gradients, no decorative shadows, no 3D, no photorealism. Keep each cell readable after crop.\nPanel 1: act6-required-pre-submit-check - 팀장에게 결과물을 제출하기 전 필수검증을 거치는 장면을 설명한다.\nPanel 2: act6-completion-claim-no-evidence - 검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다.\nPanel 3: act6-quality-gate-evidence-over-claim - 품질검문소가 완료 보고 대신 작업 기록, 기준 대조, 남은 위험을 본다는 점을 설명한다.\nPanel 4: act6-work-log-evidence - 검증을 위해 김아이가 작업 기록을 남겨야 함을 설명한다.\nPanel 5: act6-goal-rubric-check - 처음 목표와 제출 기준에 맞는지 대조하는 Evaluation Criteria를 설명한다.\nPanel 6: act6-risk-handoff-note - 남은 위험과 다음 조치를 인수인계 기록으로 남겨야 함을 설명한다.\nPanel 7: act6-stop-hook-quality-gate - 완료 직전에 품질검문소를 켜는 Stop Hook을 설명한다.\nPanel 8: act6-evaluation-pass-hold - Evaluation이 통과와 보류를 가르는 기준임을 설명한다.\nPanel 9: act6-state-status-file - 검문소에 처리 상태를 적는 상태표가 필요함을 설명한다.\nPanel 10: act6-loop-control-recheck - 재검토 규칙과 재시도 제한으로 무한 반복을 막는 구조를 설명한다.\nPanel 11: act6-unlock-structure - 검문소 설계 통과 후 Stop Hook 생성 프롬프트와 예제 구조가 열림을 설명한다.\nPanel 12: act6-final-harness-map - Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다. Do not draw visible cell numbers, panel numbers, crop labels, sheet borders inside final cells, or circled numbering.",
+      "generationPrompt": "Create a clean 3 columns x 4 rows sprite sheet for a Korean beginner lecture deck. Each panel is a separate hand-drawn minimal teaching illustration for Kimai, an AI new employee. White background, black linework, one blue accent #2563eb only, no gradients, no decorative shadows, no 3D, no photorealism. Keep each cell readable after crop.\nPanel 1: act6-required-pre-submit-check - 팀장에게 결과물을 제출하기 전 필수검증을 거치는 장면을 설명한다.\nPanel 2: act6-quality-gate-evidence-over-claim - 품질검문소가 완료 보고 대신 작업 기록, 기준 대조, 남은 위험을 본다는 점을 설명한다.\nPanel 3: act6-work-log-evidence - 검증을 위해 김아이가 작업 기록을 남겨야 함을 설명한다.\nPanel 4: act6-goal-rubric-check - 처음 목표와 제출 기준에 맞는지 대조하는 Evaluation Criteria를 설명한다.\nPanel 5: act6-risk-handoff-note - 남은 위험과 다음 조치를 인수인계 기록으로 남겨야 함을 설명한다.\nPanel 6: act6-stop-hook-quality-gate - 완료 직전에 품질검문소를 켜는 Stop Hook을 설명한다.\nPanel 7: act6-evaluation-pass-hold - Evaluation이 통과와 보류를 가르는 기준임을 설명한다.\nPanel 8: act6-state-status-file - 검문소에 처리 상태를 적는 상태표가 필요함을 설명한다.\nPanel 9: act6-loop-control-recheck - 재검토 규칙과 재시도 제한으로 무한 반복을 막는 구조를 설명한다.\nPanel 10: act6-unlock-structure - 검문소 설계 통과 후 Stop Hook 생성 프롬프트와 예제 구조가 열림을 설명한다.\nPanel 11: act6-final-harness-map - Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다. Do not draw visible cell numbers, panel numbers, crop labels, sheet borders inside final cells, or circled numbering.",
       "styleConstraints": [
         "white background",
         "minimal black linework",
@@ -8468,6 +8186,90 @@
         "kimai"
       ],
       "notes": "Practice handoff slides use a deterministic harness composite: existing Kimai reference image plus action cards rendered from slide-spec. Do not generate a new Kimai character PNG for this template."
+    },
+    {
+      "id": "wrap-personal-harness-funnel",
+      "kind": "single-image",
+      "status": "generated",
+      "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
+      "teachingRole": "6가지 하네스 장치 중 내 업무에 먼저 붙일 3가지를 고르는 최종 필터를 설명한다.",
+      "generationPrompt": "Use assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as strict Kimai character reference. Create a hand-drawn minimal Korean lecture illustration for the final wrap-up slide. Preserve Kimai exactly: friendly human-like AI new employee, round face, white unfilled hair outlined in black with one top curl and three simple bang shapes, over-ear headset with blue AI label, thin antenna, white collared shirt, blue necktie, readable 김아이 name badge. Composition: six top cards labeled 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소 flow into a central funnel with 자주 반복, 실패 위험, 검증 증거, then output to three bottom cards 반복 업무, 위험 업무, 검증 가능 and callout 3개부터. White background, black linework, #2563eb accent, large Korean labels only. No robot helmet, black filled hair, metal body, different mascot, circled numbers, panel numbers, UI, code, score, slide frame, crop marks, or clipped text/character.",
+      "styleConstraints": [
+        "white background",
+        "minimal black linework",
+        "one blue accent",
+        "hand-drawn lecture illustration",
+        "large readable Korean labels",
+        "no gradient",
+        "no glow",
+        "no glossy treatment"
+      ],
+      "explanationAnchors": [
+        "자주 반복",
+        "실패 위험",
+        "검증 증거",
+        "3개부터"
+      ],
+      "semanticRequirements": {
+        "mustShow": [
+          "act0 기준 김아이",
+          "6가지 하네스 장치",
+          "자주 반복 필터",
+          "실패 위험 필터",
+          "검증 증거 필터",
+          "3개부터"
+        ],
+        "mustNotShow": [
+          "다른 마스코트",
+          "검은색으로 꽉 찬 머리",
+          "로봇 헬멧",
+          "금속 로봇 몸체",
+          "실습 입력폼",
+          "점수판",
+          "코드 화면",
+          "복잡한 UI",
+          "그라데이션",
+          "작은 글씨",
+          "보이는 패널 번호",
+          "동그라미 숫자",
+          "Cell 번호",
+          "sprite sheet 라벨",
+          "잘린 글자 또는 잘린 캐릭터"
+        ],
+        "teachingQuestions": [
+          "김아이가 act0-kimai-capable 기준 이미지와 같은 캐릭터로 보이는가?",
+          "6개를 모두 적용하는 것이 아니라 3개부터 고른다는 점이 보이는가?",
+          "마지막 슬라이드에서 수강생이 내 업무 우선순위를 고르는 행동으로 끝나는가?"
+        ],
+        "minimumPassScore": 85
+      },
+      "alt": "김아이가 6가지 하네스 장치를 반복, 위험, 검증 증거 필터로 좁혀 내 업무에 먼저 붙일 3개 안전장치를 고르는 깔때기 그림.",
+      "notes": "Standalone final wrap-up image regenerated using assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as the strict Kimai visual reference.",
+      "characterRefs": [
+        "kimai"
+      ],
+      "expectedSubjectBounds": {
+        "x": 1,
+        "y": 1,
+        "width": 98,
+        "height": 98,
+        "unit": "percent"
+      },
+      "generationMode": "single-image-first",
+      "deterministicComposition": {
+        "owner": "deck-harness",
+        "slot": "visualAssetId",
+        "frame": "template-owned",
+        "objectFit": "contain",
+        "forbiddenInImage": [
+          "sprite sheet",
+          "multi-panel grid",
+          "panel border",
+          "crop mark",
+          "slide frame",
+          "page chrome"
+        ]
+      }
     }
   ]
 }

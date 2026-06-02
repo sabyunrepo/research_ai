@@ -2995,23 +2995,24 @@
       "section": "Act 2 · 좋은 업무 지시",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-      "message": "좋은 결과를 원하면 김아이에게 들어가는 지시와 자료부터 선명해야 합니다.",
+      "title": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+      "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
       "bullets": [
-        "빠진 곳 없는 업무 지시",
-        "Prompt Engineering",
-        "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다."
+        "필요 자료 파악",
+        "빠진 조건 질문",
+        "팀장 답변 반영",
+        "작업 플랜 정리"
       ],
-      "visualIntent": "입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림",
+      "visualIntent": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act2-input-output-principle",
       "presenterCues": [
-        "AI 결과물은 갑자기 좋아지지 않는다.",
-        "김아이에게 들어가는 정보가 좋아야 판단도 좋아진다.",
-        "좋은 프롬프트는 결국 좋은 업무 입력을 만드는 일이다."
+        "좋은 지시는 김아이와 질문하며 구체화합니다.",
+        "필요 자료와 빠진 조건을 김아이에게 먼저 묻게 한다.",
+        "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다."
       ],
-      "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-      "speakerNote": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
+      "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+      "speakerNote": "팀장님이 처음부터 완벽한 질문을 다 만들 필요는 없습니다. 김아이에게 이 일을 하려면 어떤 자료가 필요한지, 어떤 조건을 확인해야 하는지 묻게 만들면 됩니다. 김아이는 필요한 자료와 빠진 조건을 질문으로 정리하고, 팀장님은 그 질문에 답하면서 지시를 구체화합니다. 이 과정을 거치면 막연한 요청이 실행 가능한 작업 플랜으로 바뀝니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -3019,131 +3020,184 @@
         "Prompt Engineering"
       ],
       "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
-        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+        "Prompt Engineering 용어 소개보다 김아이와 함께 지시를 구체화하는 절차가 먼저 보인다.",
+        "필요 자료 파악, 빠진 조건 질문, 팀장 답변 반영, 작업 플랜 정리가 화면에 드러난다.",
+        "다음 슬라이드의 작업지시서/spec 개념으로 자연스럽게 넘어간다."
       ],
       "practiceId": null,
-      "layoutTemplate": "glossary-bridge",
-      "teachingMove": "connect",
-      "audienceAction": "connect-metaphor",
-      "visualMode": "term-bridge",
-      "mainTemplate": "term-bridge",
+      "layoutTemplate": "concept-map",
+      "teachingMove": "demonstrate",
+      "audienceAction": "compare",
+      "visualMode": "process-diagram",
+      "mainTemplate": "workflow-strip",
       "rewrittenScreen": {
-        "headline": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-        "message": "좋은 결과를 원하면 김아이에게 들어가는 지시와 자료부터 선명해야 합니다.",
-        "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-        "metaphorTerm": "빠진 곳 없는 업무 지시",
-        "realTerm": "Prompt Engineering",
-        "bridgeLine": "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다.",
-        "supportingLine": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다."
+        "headline": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+        "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
+        "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+        "steps": [
+          {
+            "step": "01",
+            "label": "필요 자료 파악"
+          },
+          {
+            "step": "02",
+            "label": "빠진 조건 질문"
+          },
+          {
+            "step": "03",
+            "label": "팀장 답변 반영"
+          },
+          {
+            "step": "04",
+            "label": "작업 플랜 정리"
+          }
+        ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-          "message": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
+          "title": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+          "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
           "bullets": [
-            "좋은 입력",
-            "좋은 판단",
-            "좋은 결과"
+            "필요 자료 파악",
+            "빠진 조건 질문",
+            "팀장 답변 반영",
+            "작업 플랜 정리"
           ],
-          "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-          "visualIntent": "입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림",
+          "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+          "visualIntent": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 작업 플랜으로 정리하는 절차형 손그림",
           "glossaryTerms": [
             "Prompt Engineering"
           ]
         },
-        "selectedTemplate": "term-bridge",
+        "selectedTemplate": "workflow-strip",
         "screenStructure": {
-          "headline": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-          "message": "좋은 결과를 원하면 김아이에게 들어가는 지시와 자료부터 선명해야 합니다.",
-          "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-          "metaphorTerm": "빠진 곳 없는 업무 지시",
-          "realTerm": "Prompt Engineering",
-          "bridgeLine": "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다.",
-          "supportingLine": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다."
-        },
-        "componentData": {
-          "metaphorTerm": "빠진 곳 없는 업무 지시",
-          "realTerm": "Prompt Engineering",
-          "bridgeLine": "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다."
-        },
-        "presenterCues": [
-          "한 문장 결론: 들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-          "회사말을 먼저 말하고 실제 용어 Prompt Engineering로 연결",
-          "다음 연결: 그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다."
-        ],
-        "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act2-input-output-principle",
-          "sourcePath": "assets/visuals/act2-input-output-principle.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 들어가는 정보가 좋아야 나오는 결과도 좋아집니다.\n장면: 입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 좋은 입력 / 좋은 판단 / 좋은 결과",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "headline": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+          "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
+          "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+          "steps": [
+            {
+              "step": "01",
+              "label": "필요 자료 파악"
+            },
+            {
+              "step": "02",
+              "label": "빠진 조건 질문"
+            },
+            {
+              "step": "03",
+              "label": "팀장 답변 반영"
+            },
+            {
+              "step": "04",
+              "label": "작업 플랜 정리"
+            }
           ]
         },
-        "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+        "componentData": {
+          "steps": [
+            {
+              "step": "01",
+              "label": "필요 자료 파악"
+            },
+            {
+              "step": "02",
+              "label": "빠진 조건 질문"
+            },
+            {
+              "step": "03",
+              "label": "팀장 답변 반영"
+            },
+            {
+              "step": "04",
+              "label": "작업 플랜 정리"
+            }
+          ]
+        },
+        "presenterCues": [
+          "한 문장 결론: 좋은 지시는 김아이와 질문하며 구체화합니다.",
+          "절차: 필요 자료 파악 → 빠진 조건 질문 → 팀장 답변 반영 → 작업 플랜 정리",
+          "다음 연결: 이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다."
+        ],
+        "visualRequirements": {
+          "action": "use-generated-slide-asset",
+          "visualAssetId": "act2-input-output-principle",
+          "sourcePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png",
+          "characterConsistencyRef": "kimai-character-contract-v1",
+          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 좋은 지시는 김아이와 질문하며 구체화합니다. 김아이가 팀장에게 필요한 자료와 빠진 조건을 질문하고, 답변을 받아 작업 플랜 카드로 정리하는 장면. 동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\". 스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나. 금지: 사진풍, 3D, 그라데이션, glow, blur, 복잡한 배경, 작은 한국어 문장.",
+          "reviewChecks": [
+            "김아이가 팀장에게 질문하며 지시를 구체화하는 흐름이 보인다.",
+            "캐릭터가 기존 김아이의 헤드셋/명찰/파란 포인트 톤과 일관된다.",
+            "긴 설명은 이미지 안에 넣지 않고 슬라이드 텍스트와 발표 스크립트에 둔다."
+          ]
+        },
+        "rationale": "용어 명명보다 김아이와 질문하며 작업지시를 구체화하는 협업 절차를 보여 주는 장면이다.",
         "changes": [
           {
             "from": "title",
             "to": "headline",
             "original": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-            "changed": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
-            "changed": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
+            "changed": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+            "reason": "입력 품질 원칙을 김아이와 함께 작업지시를 구체화하는 행동으로 바꾼다."
           },
           {
             "from": "bullets",
-            "to": "metaphorTerm/realTerm/bridgeLine",
+            "to": "steps",
             "original": [
-              "좋은 입력",
-              "좋은 판단",
-              "좋은 결과"
+              "빠진 곳 없는 업무 지시",
+              "Prompt Engineering"
             ],
-            "changed": [],
-            "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
+            "changed": [
+              {
+                "step": "01",
+                "label": "필요 자료 파악"
+              },
+              {
+                "step": "02",
+                "label": "빠진 조건 질문"
+              },
+              {
+                "step": "03",
+                "label": "팀장 답변 반영"
+              },
+              {
+                "step": "04",
+                "label": "작업 플랜 정리"
+              }
+            ],
+            "reason": "workflow-strip 구조에서 발표자가 따라 말할 수 있는 절차형 앵커로 재배치한다."
           }
         ],
         "copyPolish": {
           "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
+          "appliedAt": "2026-06-02",
+          "rule": "prompt-collaboration-workflow-rewrite"
         }
-      }
+      },
+      "renderedVisualAsset": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
     },
     {
       "id": "act2-handoff-document",
       "section": "Act 2 · 좋은 업무 지시",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-      "message": "인수인계서는 목표, 자료, 조건, 끝나는 기준을 한 번에 묶어 주는 업무 문서입니다.",
+      "title": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+      "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
       "bullets": [
-        "인수인계서",
-        "Task Specification",
-        "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다."
+        "작업지시서",
+        "Spec",
+        "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
       ],
-      "visualIntent": "팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림",
+      "visualIntent": "팀장이 김아이에게 목표와 조건이 정리된 작업지시서 spec 한 장을 건네는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act2-handoff-document",
       "presenterCues": [
-        "인수인계서는 김아이가 혼자 움직일 수 있게 만드는 문서라고 설명한다.",
-        "Act 2의 인수인계서는 반복 매뉴얼이 아니라 이번 일을 맡기기 위한 조건 묶음이다.",
-        "이제 그 안에 무엇이 들어가야 하는지 세 부분으로 나눠 본다."
+        "작업지시서는 김아이가 혼자 움직일 수 있게 만드는 spec이라고 설명한다.",
+        "대화로 정리한 내용을 목표, 자료, 조건, 출력, 완료 기준으로 남긴다.",
+        "이제 spec 안에 무엇이 들어가야 하는지 나눠 본다."
       ],
-      "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-      "speakerNote": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
+      "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+      "speakerNote": "방금 김아이와 질문하며 정리한 내용을 그냥 대화로 흘려보내지 말고 문서처럼 남긴다고 생각하면 됩니다. 이걸 작업지시서라고 부르겠습니다. 개발 쪽에서는 이런 것을 spec, 더 정확히는 Task Specification이라고 부릅니다. 중요한 건 이름이 아니라 안에 무엇이 들어가느냐입니다. 목표, 자료, 조건, 출력 형식, 완료 기준이 들어가야 김아이가 혼자 일할 수 있습니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -3151,9 +3205,9 @@
         "Task Specification"
       ],
       "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
-        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+        "인수인계서 표현을 작업지시서/spec 표현으로 바꾼다.",
+        "Spec보다 작업지시서 의미가 먼저 이해되도록 설명한다.",
+        "다음 23~25번의 spec 구성 요소 설명으로 자연스럽게 이어진다."
       ],
       "practiceId": null,
       "layoutTemplate": "glossary-bridge",
@@ -3162,290 +3216,90 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-        "message": "인수인계서는 목표, 자료, 조건, 끝나는 기준을 한 번에 묶어 주는 업무 문서입니다.",
-        "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "metaphorTerm": "인수인계서",
-        "realTerm": "Task Specification",
-        "bridgeLine": "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다.",
-        "supportingLine": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다."
+        "headline": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+        "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
+        "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+        "metaphorTerm": "작업지시서",
+        "realTerm": "Spec",
+        "bridgeLine": "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다.",
+        "supportingLine": "작업지시서는 목표, 자료, 조건, 출력, 완료 기준을 묶어 김아이가 혼자 일할 수 있게 만드는 명세입니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-          "message": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
+          "title": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+          "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
           "bullets": [
-            "목표",
-            "자료",
-            "조건",
-            "완료 기준"
+            "작업지시서",
+            "Spec",
+            "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
           ],
-          "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "visualIntent": "팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림",
+          "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+          "visualIntent": "팀장이 김아이에게 목표와 조건이 정리된 작업지시서 spec 한 장을 건네는 손그림",
           "glossaryTerms": [
             "Task Specification"
           ]
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-          "message": "인수인계서는 목표, 자료, 조건, 끝나는 기준을 한 번에 묶어 주는 업무 문서입니다.",
-          "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "metaphorTerm": "인수인계서",
-          "realTerm": "Task Specification",
-          "bridgeLine": "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다.",
-          "supportingLine": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다."
+          "headline": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+          "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
+          "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+          "metaphorTerm": "작업지시서",
+          "realTerm": "Spec",
+          "bridgeLine": "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다.",
+          "supportingLine": "작업지시서는 목표, 자료, 조건, 출력, 완료 기준을 묶어 김아이가 혼자 일할 수 있게 만드는 명세입니다."
         },
         "componentData": {
-          "metaphorTerm": "인수인계서",
-          "realTerm": "Task Specification",
-          "bridgeLine": "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다."
+          "metaphorTerm": "작업지시서",
+          "realTerm": "Spec",
+          "bridgeLine": "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
         },
         "presenterCues": [
-          "한 문장 결론: 인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-          "회사말을 먼저 말하고 실제 용어 Task Specification로 연결",
-          "다음 연결: 좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다."
+          "한 문장 결론: 작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+          "용어 연결: 작업지시서 → Spec → Task Specification",
+          "다음 연결: 이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
           "visualAssetId": "act2-handoff-document",
           "sourcePath": "assets/visuals/act2-handoff-document.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.\n장면: 팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 목표 / 자료 / 조건",
+          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다. 팀장이 김아이에게 목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서 한 장을 건네는 장면. 동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\". 스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나. 금지: 사진풍, 3D, 그라데이션, glow, blur, 복잡한 배경, 작은 한국어 문장.",
           "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
+            "작업지시서/spec이 이번 작업의 명세라는 의미가 보인다.",
             "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다."
           ]
         },
-        "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+        "rationale": "김아이와 질문하며 정리한 작업 내용을 작업지시서/spec으로 남기는 명명 장면이다.",
         "changes": [
           {
             "from": "title",
             "to": "headline",
             "original": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-            "changed": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
-            "changed": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
+            "changed": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+            "reason": "인수인계서 표현을 작업지시서/spec 표현으로 전환한다."
           },
           {
             "from": "bullets",
-            "to": "metaphorTerm/realTerm/bridgeLine",
+            "to": "termBridge",
             "original": [
-              "목표",
-              "자료",
-              "조건",
-              "완료 기준"
-            ],
-            "changed": [],
-            "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
-          }
-        ],
-        "copyPolish": {
-          "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
-        }
-      }
-    },
-    {
-      "id": "act2-goal-use-context",
-      "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
-      "estimatedMinutes": 1,
-      "title": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-      "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정합니다.",
-      "bullets": [
-        "목표: 무엇을 만들지",
-        "용도: 어디에 쓸지",
-        "판단: 무엇을 결정할지",
-        "형식: 어떻게 남길지"
-      ],
-      "visualIntent": "인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act2-goal-use-context",
-      "presenterCues": [
-        "좋은 지시의 첫 부분은 일의 목표와 사용 상황이다.",
-        "보고서인지 표인지, 어디에 쓸지, 무엇을 결정할지가 먼저 정해져야 한다.",
-        "이 세 가지가 없으면 김아이가 결과 방향을 혼자 잡는다."
-      ],
-      "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-      "speakerNote": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-      "evidenceClaimIds": [
-        "claim-003"
-      ],
-      "glossaryTerms": [
-        "Prompt"
-      ],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
-        "제품 리뷰자료 보고서 업무 예시와 연결된다."
-      ],
-      "practiceId": null,
-      "layoutTemplate": "checklist",
-      "teachingMove": "explain",
-      "audienceAction": "rehearse-checklist",
-      "visualMode": "checklist-board",
-      "mainTemplate": "brief-window",
-      "rewrittenScreen": {
-        "headline": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정합니다.",
-        "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "rows": [
-          {
-            "label": "목표",
-            "text": "무엇을 만들지"
-          },
-          {
-            "label": "용도",
-            "text": "어디에 쓸지"
-          },
-          {
-            "label": "판단",
-            "text": "무엇을 결정할지"
-          },
-          {
-            "label": "형식",
-            "text": "어떻게 남길지"
-          }
-        ]
-      },
-      "templateRewrite": {
-        "sourceContractVersion": 1,
-        "originalSource": {
-          "title": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-          "bullets": [
-            "무엇을 만들지",
-            "어디에 쓸지",
-            "무엇을 결정할지"
-          ],
-          "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-          "visualIntent": "인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림",
-          "glossaryTerms": [
-            "Prompt"
-          ]
-        },
-        "selectedTemplate": "brief-window",
-        "screenStructure": {
-          "headline": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정합니다.",
-          "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-          "rows": [
-            {
-              "label": "목표",
-              "text": "무엇을 만들지"
-            },
-            {
-              "label": "용도",
-              "text": "어디에 쓸지"
-            },
-            {
-              "label": "판단",
-              "text": "무엇을 결정할지"
-            },
-            {
-              "label": "형식",
-              "text": "어떻게 남길지"
-            }
-          ]
-        },
-        "componentData": {
-          "rows": [
-            {
-              "label": "목표",
-              "text": "무엇을 만들지"
-            },
-            {
-              "label": "용도",
-              "text": "어디에 쓸지"
-            },
-            {
-              "label": "판단",
-              "text": "무엇을 결정할지"
-            },
-            {
-              "label": "형식",
-              "text": "어떻게 남길지"
-            }
-          ]
-        },
-        "presenterCues": [
-          "한 문장 결론: 좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "업무 지시서 행: 목표, 자료, 지시, 출력",
-          "다음 연결: 좋은 지시서는 자료와 조건을 따로 지정합니다."
-        ],
-        "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act2-goal-use-context",
-          "sourcePath": "assets/visuals/act2-goal-use-context.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.\n장면: 인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 무엇을 만들지 / 어디에 쓸지 / 무엇을 결정할지",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
-        },
-        "rationale": "목표/자료/지시/출력/검증처럼 업무 문서 행 구조가 맞다.",
-        "changes": [
-          {
-            "from": "title",
-            "to": "headline",
-            "original": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-            "changed": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-            "changed": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "rows",
-            "original": [
-              "무엇을 만들지",
-              "어디에 쓸지",
-              "무엇을 결정할지"
+              "인수인계서",
+              "Task Specification"
             ],
             "changed": [
-              {
-                "label": "목표",
-                "text": "무엇을 만들지"
-              },
-              {
-                "label": "자료",
-                "text": "어디에 쓸지"
-              },
-              {
-                "label": "지시",
-                "text": "무엇을 결정할지"
-              },
-              {
-                "label": "출력",
-                "text": "화면에 남길 결과 형식"
-              }
+              "작업지시서",
+              "Spec",
+              "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
             ],
-            "reason": "brief-window 구조에서 필요한 슬롯으로 재배치한다."
+            "reason": "일반인에게는 작업지시서를 먼저 보여 주고 Spec을 보조 용어로 연결한다."
           }
         ],
         "copyPolish": {
           "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
+          "appliedAt": "2026-06-02",
+          "rule": "task-specification-term-rewrite"
         }
       }
     },
@@ -3454,8 +3308,8 @@
       "section": "Act 2 · 좋은 업무 지시",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-      "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
+      "title": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
+      "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
       "bullets": [
         "참고 자료",
         "비교 기준",
@@ -3469,8 +3323,8 @@
         "자료는 무엇을 보고 일할지이고, 조건은 어떤 선을 지킬지다.",
         "둘을 따로 지정해야 김아이가 자료와 규칙을 섞지 않는다."
       ],
-      "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-      "speakerNote": "참고할 자료와 지켜야 할 조건을 섞지 않고 따로 말해야 김아이의 판단이 흔들리지 않는다.",
+      "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
+      "speakerNote": "spec에는 참고할 자료와 지켜야 할 조건을 섞지 않고 따로 적어야 김아이의 판단이 흔들리지 않는다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -3490,9 +3344,9 @@
       "visualMode": "process-diagram",
       "mainTemplate": "workflow-strip",
       "rewrittenScreen": {
-        "headline": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
-        "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+        "headline": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
+        "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+        "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
         "steps": [
           {
             "step": "01",
@@ -3511,14 +3365,14 @@
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-          "message": "참고할 자료와 지켜야 할 조건을 섞지 않고 따로 말해야 김아이의 판단이 흔들리지 않는다.",
+          "title": "spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+          "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
           "bullets": [
             "제품 자료",
             "비교 기준",
             "분량·톤·제외 조건"
           ],
-          "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+          "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
           "visualIntent": "인수인계서 가운데에 참고 자료 묶음과 작업 조건 묶음이 분리되어 있는 손그림",
           "glossaryTerms": [
             "Context",
@@ -3527,9 +3381,9 @@
         },
         "selectedTemplate": "workflow-strip",
         "screenStructure": {
-          "headline": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-          "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
-          "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+          "headline": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
+          "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+          "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
           "steps": [
             {
               "step": "01",
@@ -3562,9 +3416,9 @@
           ]
         },
         "presenterCues": [
-          "한 문장 결론: 좋은 지시서는 자료와 조건을 따로 지정합니다.",
-          "순서대로 짚기: 제품 자료 -> 비교 기준 -> 분량·톤·제외 조건",
-          "다음 연결: 좋은 지시서는 출력 형식과 완료 기준을 정합니다."
+          "한 문장 결론: spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+          "확인 항목: 참고 자료, 비교 기준, 제외 조건",
+          "다음 연결: spec에는 출력 형식과 완료 기준도 들어갑니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -3632,7 +3486,7 @@
       "section": "Act 2 · 좋은 업무 지시",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "title": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
       "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
       "bullets": [
         "판정 기준",
@@ -3645,10 +3499,10 @@
       "presenterCues": [
         "업무는 시작 조건만큼 끝나는 조건도 중요하다.",
         "보고서 형식, 마감, 확인 기준이 있어야 김아이가 완료를 혼자 판단하지 않는다.",
-        "여기까지가 AI에게 주는 업무 지시의 기본 구조다."
+        "여기까지 정리한 작업지시가 AI에게 주는 프롬프트다."
       ],
-      "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
-      "speakerNote": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
+      "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
+      "speakerNote": "spec에는 보고서 형식, 마감, 확인 기준처럼 끝나는 조건도 들어가야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -3667,9 +3521,9 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+        "headline": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
         "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
-        "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+        "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
         "metaphorTerm": "판정 기준",
         "realTerm": "Evaluation",
         "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
@@ -3678,14 +3532,14 @@
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-          "message": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
+          "title": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
+          "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
           "bullets": [
             "보고서 형식",
             "마감",
             "확인 기준"
           ],
-          "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+          "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
           "visualIntent": "인수인계서 마지막 부분에 형식, 마감, 확인 기준 체크가 있는 손그림",
           "glossaryTerms": [
             "Evaluation"
@@ -3693,9 +3547,9 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+          "headline": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
           "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
-          "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+          "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
           "metaphorTerm": "판정 기준",
           "realTerm": "Evaluation",
           "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
@@ -3707,9 +3561,9 @@
           "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다."
         },
         "presenterCues": [
-          "한 문장 결론: 좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-          "회사말을 먼저 말하고 실제 용어 Evaluation로 연결",
-          "다음 연결: AI에게 주는 업무 지시가 프롬프트입니다."
+          "한 문장 결론: spec에는 출력 형식과 완료 기준도 들어갑니다.",
+          "확인 항목: 형식, 마감, 확인 기준",
+          "다음 연결: 이 작업지시가 AI에게 주는 프롬프트입니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -3764,23 +3618,24 @@
       "section": "Act 2 · 좋은 업무 지시",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "AI에게 주는 업무 지시가 프롬프트입니다.",
-      "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시입니다.",
+      "title": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+      "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
       "bullets": [
-        "업무 지시",
+        "작업지시서",
+        "전달",
         "Prompt",
-        "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다."
+        "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다."
       ],
-      "visualIntent": "한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림",
+      "visualIntent": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act2-prompt-term-mapping",
       "presenterCues": [
-        "여기서 실제 용어를 붙인다.",
-        "AI에게 주는 업무 지시를 프롬프트라고 부른다.",
-        "더 정확히 말하면 이번 일을 어떤 조건으로 수행할지 적은 작업 명세에 가깝다."
+        "지금까지 목표, 자료, 조건, 출력, 완료 기준을 정리했다.",
+        "이 문서를 김아이에게 전달하는 순간, 이게 바로 프롬프트가 된다.",
+        "프롬프트는 특별한 주문이 아니라 김아이가 일을 시작할 수 있게 만든 작업지시서다."
       ],
-      "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-      "speakerNote": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다.",
+      "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+      "speakerNote": "지금까지 목표, 자료, 조건, 출력, 완료 기준을 정리했습니다. 이 문서를 김아이에게 전달하는 순간, 이게 바로 프롬프트가 됩니다. 프롬프트는 특별한 주문이나 예쁜 문장이 아니라, 김아이가 일을 시작할 수 있게 만든 작업지시서입니다. 그래서 좋은 프롬프트를 쓰려면 문장을 꾸미는 것보다, 빠진 항목이 없게 구조화하는 게 더 중요합니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -3800,27 +3655,26 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "AI에게 주는 업무 지시가 프롬프트입니다.",
-        "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시입니다.",
-        "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "metaphorTerm": "업무 지시",
+        "headline": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+        "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+        "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+        "metaphorTerm": "작업지시서",
         "realTerm": "Prompt",
-        "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.",
-        "supportingLine": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다."
+        "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.",
+        "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "AI에게 주는 업무 지시가 프롬프트입니다.",
-          "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다.",
+          "title": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+          "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
           "bullets": [
-            "업무 지시",
-            "인수인계서",
-            "Prompt",
-            "Task Specification"
+            "작업지시서",
+            "전달",
+            "Prompt"
           ],
-          "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "visualIntent": "한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림",
+          "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+          "visualIntent": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림",
           "glossaryTerms": [
             "Prompt",
             "Task Specification"
@@ -3828,38 +3682,39 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "AI에게 주는 업무 지시가 프롬프트입니다.",
-          "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시입니다.",
-          "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "metaphorTerm": "업무 지시",
+          "headline": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+          "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+          "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+          "metaphorTerm": "작업지시서",
           "realTerm": "Prompt",
-          "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.",
-          "supportingLine": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다."
+          "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.",
+          "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
         },
         "componentData": {
-          "metaphorTerm": "업무 지시",
+          "metaphorTerm": "작업지시서",
           "realTerm": "Prompt",
-          "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다."
+          "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다."
         },
         "presenterCues": [
-          "한 문장 결론: AI에게 주는 업무 지시가 프롬프트입니다.",
-          "회사말을 먼저 말하고 실제 용어 Prompt로 연결",
-          "다음 연결: 프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다."
+          "한 문장 결론: 여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+          "작업지시서가 김아이에게 전달되는 순간 Prompt가 된다고 연결",
+          "다음 연결: 그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
+          "action": "use-new-single-image",
           "visualAssetId": "act2-prompt-term-mapping",
-          "sourcePath": "assets/visuals/act2-prompt-term-mapping.png",
+          "sourcePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: AI에게 주는 업무 지시가 프롬프트입니다.\n장면: 한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 업무 지시 / 인수인계서 / Prompt",
+          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 여러분이 만든 작업지시서가 프롬프트가 됩니다.\n장면: 왼쪽에는 목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 있고, 가운데 파란 화살표 전달을 지나 오른쪽 김아이에게 전달되며 Prompt가 되는 장면.\n동일 캐릭터: assets/visuals/kimai-new-employee-single.png의 기준 김아이를 엄격히 따른다. 흰 바탕에 검은 윤곽선으로만 표현된 머리카락, 단순한 앞머리 3갈래, 둥근 얼굴, AI 라벨이 있는 헤드셋, 얇은 안테나, 파란 넥타이, 명찰 텍스트 \"김아이\"를 유지한다. 검은색으로 꽉 찬 머리, 로봇 헬멧형 머리, 금속 로봇 몸체는 금지한다.\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 작업지시서 / 목표 / 자료 / 조건 / 출력 / 완료 기준 / 전달 / Prompt",
           "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
+            "김아이 캐릭터가 기준 이미지의 흰 윤곽 머리, AI 헤드셋, 안테나, 파란 넥타이, 김아이 명찰과 일치한다.",
+            "검은색으로 채운 머리나 로봇 헬멧형 머리가 아니다.",
             "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
             "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
             "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
           ]
         },
-        "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+        "rationale": "좋은 작업지시서가 실제 프롬프트로 전달되는 전환 장면이다.",
         "changes": [
           {
             "from": "title",
@@ -3898,24 +3753,25 @@
     {
       "id": "act2-prompt-reframing",
       "section": "Act 2 · 좋은 업무 지시",
-      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 작업지시서로 이해시키고, 낡은 역할 흉내와 현대적 페르소나 사용을 구분한다.",
       "estimatedMinutes": 1,
-      "title": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-      "message": "좋은 프롬프트는 문장력보다 일, 자료, 완료 기준이 빠지지 않는 구조입니다.",
+      "title": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+      "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
       "bullets": [
-        "해야 할 일",
-        "참고할 것"
+        "겉멋 역할",
+        "모호한 수식어",
+        "명확한 지시"
       ],
-      "visualIntent": "화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림",
+      "visualIntent": "50년 경력처럼, 전문가 빙의 같은 낡은 역할 흉내 카드와 명확한 지시 체크리스트를 대비하는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act2-prompt-reframing",
       "presenterCues": [
-        "좋은 프롬프트를 글쓰기 기술로 보지 않게 한다.",
-        "핵심은 문장을 멋지게 쓰는 것이 아니라 빠진 조건을 줄이는 것이다.",
-        "해야 할 일, 참고할 것, 끝난 기준이 들어가야 김아이가 덜 추측한다."
+        "인터넷식 “50년 경력처럼”은 역할 흉내에 가깝다.",
+        "지금 모델에는 모호한 수식어보다 검토할 행동을 정확히 적는 편이 낫다.",
+        "코드라면 로직 검증, 예외 처리, 완료 기준처럼 확인할 일을 직접 적어야 한다."
       ],
-      "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-      "speakerNote": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
+      "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+      "speakerNote": "인터넷에서 자주 보이는 “50년 경력 개발자처럼 행동해 줘”, “하버드 마케팅 전문가처럼 빙의해 줘” 같은 말은 이제 역할 흉내에 가깝습니다. 김아이에게 필요한 것은 권위 있는 말투가 아니라 무엇을 검토해야 하는지에 대한 명확한 작업지시입니다. 코드라면 “코드 로직의 정합성을 검증하고 예외 처리를 누락 없이 확인하라”처럼 행동을 직접 적어야 합니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -3931,106 +3787,213 @@
       "layoutTemplate": "story-scene",
       "teachingMove": "explain",
       "audienceAction": "inspect-visual",
-      "visualMode": "metaphor-link",
-      "mainTemplate": "single-concept",
+      "visualMode": "story-illustration",
+      "mainTemplate": "kimai-structure",
       "rewrittenScreen": {
-        "headline": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "message": "좋은 프롬프트는 문장력보다 일, 자료, 완료 기준이 빠지지 않는 구조입니다.",
-        "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-        "keySentence": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "supportingAnchors": [
-          "해야 할 일",
-          "참고할 것"
+        "headline": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+        "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
+        "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+        "keySentence": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+        "imageAnchors": [
+          "겉멋 역할",
+          "모호한 수식어",
+          "명확한 지시"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "message": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
+          "title": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+          "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
           "bullets": [
-            "해야 할 일",
-            "참고할 것",
-            "끝난 기준"
+            "겉멋 역할",
+            "모호한 수식어",
+            "명확한 지시"
           ],
-          "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-          "visualIntent": "화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림",
+          "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+          "visualIntent": "50년 경력처럼, 전문가 빙의 같은 낡은 역할 흉내 카드와 명확한 지시 체크리스트를 대비하는 손그림",
           "glossaryTerms": [
             "Prompt Engineering"
           ]
         },
-        "selectedTemplate": "single-concept",
+        "selectedTemplate": "kimai-structure",
         "screenStructure": {
-          "headline": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "message": "좋은 프롬프트는 문장력보다 일, 자료, 완료 기준이 빠지지 않는 구조입니다.",
-          "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-          "keySentence": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "supportingAnchors": [
-            "해야 할 일",
-            "참고할 것"
+          "headline": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+          "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
+          "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+          "keySentence": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+          "imageAnchors": [
+            "겉멋 역할",
+            "모호한 수식어",
+            "명확한 지시"
           ]
         },
         "componentData": {
-          "keySentence": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "supportingAnchors": [
-            "해야 할 일",
-            "참고할 것"
-          ]
+          "imageAnchors": [
+            "겉멋 역할",
+            "모호한 수식어",
+            "명확한 지시"
+          ],
+          "visualAssetId": "act2-prompt-reframing"
         },
         "presenterCues": [
-          "한 문장 결론: 프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "다음 연결: 첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다."
+          "한 문장 결론: 낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+          "낡은 역할 흉내 프롬프트를 먼저 경계한다.",
+          "다음 연결: 그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
+          "action": "use-generated-single-image",
           "visualAssetId": "act2-prompt-reframing",
-          "sourcePath": "assets/visuals/act2-prompt-reframing.png",
+          "sourcePath": "assets/visuals/act2-prompt-reframing-persona-myth.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.\n장면: 화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 해야 할 일 / 참고할 것 / 끝난 기준",
+          "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 26, contrasting old persona prompt myths with clear work instructions.\nComposition: Left side shows caution/crossed-out cards labeled \"50년 경력처럼\" and \"전문가 빙의\". Right side shows Kimai pointing to a checklist titled \"명확한 지시\" with large labels \"로직 검증\", \"예외 처리\", \"완료 기준\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
           "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+            "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+            "50년 경력처럼/전문가 빙의는 경계 대상으로 보이고 명확한 지시는 권장 대상으로 보인다.",
+            "체크리스트 라벨이 로직 검증, 예외 처리, 완료 기준으로 읽힌다.",
+            "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
           ]
         },
-        "rationale": "한 문장 정의를 크게 남기는 것이 이미지보다 중요하다.",
+        "rationale": "25번에서 프롬프트를 작업지시서로 정의한 뒤, 흔한 역할 흉내 팁을 바로 경계해야 페르소나 설명이 낡은 기법으로 오해되지 않는다. 이미지 생성 자산을 화면에 직접 배치하기 위해 kimai-structure 템플릿을 사용한다.",
         "changes": [
           {
-            "from": "title",
-            "to": "headline",
+            "from": "prompt-as-work-instruction",
+            "to": "persona-myth-warning",
             "original": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-            "changed": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
-            "changed": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "supportingAnchors",
-            "original": [
-              "해야 할 일",
-              "참고할 것",
-              "끝난 기준"
-            ],
-            "changed": [
-              "해야 할 일",
-              "참고할 것"
-            ],
-            "reason": "single-concept 구조에서 필요한 슬롯으로 재배치한다."
+            "changed": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+            "reason": "25번과 중복되는 정의 슬라이드를 낡은 프롬프트 팁 비판으로 바꾼다."
           }
         ],
         "copyPolish": {
           "version": 1,
-          "appliedAt": "2026-05-31",
+          "appliedAt": "2026-06-02",
           "rule": "template-slot-copy-polish"
         }
       }
+    },
+    {
+      "id": "act2-persona-priority-filter",
+      "section": "Act 2 · 좋은 업무 지시",
+      "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+      "estimatedMinutes": 1,
+      "title": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+      "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+      "bullets": [
+        "보안 우선",
+        "속도 우선",
+        "확장성 우선"
+      ],
+      "visualIntent": "보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림",
+      "visualType": "generated-image",
+      "visualAssetId": "act2-persona-priority-filter",
+      "presenterCues": [
+        "페르소나는 말투를 바꾸는 주문이 아니다.",
+        "현대적으로 쓰면 어떤 기준을 먼저 볼지 정하는 필터다.",
+        "보안 전문가라면 보안 취약점 검토를 성능보다 먼저 보라는 뜻이다."
+      ],
+      "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+      "speakerNote": "그렇다고 페르소나가 완전히 쓸모없어진 것은 아닙니다. 현대의 페르소나는 “빙의”가 아니라 우선순위 필터입니다. 보안 전문가라고 쓰는 목적은 권위적인 말투가 아니라 보안 취약점 검토를 최우선으로 보라는 뜻입니다. 스타트업 1인 개발자라면 빠른 구현과 가독성을 더 중시하라는 뜻입니다. 결국 메인은 작업지시서 spec이고, 페르소나는 그 지시가 어느 방향을 향해야 하는지 잡아 주는 보조 장치입니다.",
+      "evidenceClaimIds": [
+        "claim-003"
+      ],
+      "glossaryTerms": [
+        "Role Card",
+        "Prompt Engineering"
+      ],
+      "qualityChecks": [
+        "화면 메시지가 한 가지다.",
+        "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+        "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      ],
+      "practiceId": null,
+      "layoutTemplate": "story-scene",
+      "teachingMove": "explain",
+      "audienceAction": "inspect-visual",
+      "visualMode": "story-illustration",
+      "mainTemplate": "kimai-structure",
+      "rewrittenScreen": {
+        "headline": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+        "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+        "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+        "keySentence": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+        "imageAnchors": [
+          "보안 우선",
+          "속도 우선",
+          "확장성 우선"
+        ]
+      },
+      "templateRewrite": {
+        "sourceContractVersion": 1,
+        "originalSource": {
+          "title": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+          "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+          "bullets": [
+            "보안 우선",
+            "속도 우선",
+            "확장성 우선"
+          ],
+          "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+          "visualIntent": "보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림",
+          "glossaryTerms": [
+            "Role Card",
+            "Prompt Engineering"
+          ]
+        },
+        "selectedTemplate": "kimai-structure",
+        "screenStructure": {
+          "headline": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+          "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+          "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+          "keySentence": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+          "imageAnchors": [
+            "보안 우선",
+            "속도 우선",
+            "확장성 우선"
+          ]
+        },
+        "componentData": {
+          "imageAnchors": [
+            "보안 우선",
+            "속도 우선",
+            "확장성 우선"
+          ],
+          "visualAssetId": "act2-persona-priority-filter"
+        },
+        "presenterCues": [
+          "한 문장 결론: 페르소나는 말투가 아니라 우선순위 필터입니다.",
+          "페르소나는 빙의가 아니라 우선순위 필터라는 점을 분리해서 설명한다.",
+          "다음 연결: 이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다."
+        ],
+        "visualRequirements": {
+          "action": "use-generated-single-image",
+          "visualAssetId": "act2-persona-priority-filter",
+          "sourcePath": "assets/visuals/act2-persona-priority-filter.png",
+          "characterConsistencyRef": "kimai-character-contract-v1",
+          "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 27 explaining that persona is a priority filter, not role possession.\nComposition: Center shows a funnel labeled \"우선순위 필터\". Three cards flow into it: \"보안 우선\", \"속도 우선\", \"확장성 우선\". Output goes to Kimai holding a checklist labeled \"작업 기준\". Add a small crossed-out mask labeled \"빙의 X\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
+          "reviewChecks": [
+            "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
+            "빙의 X와 우선순위 필터가 한 화면에서 대비된다.",
+            "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
+          ]
+        },
+        "rationale": "페르소나의 폐기가 아니라 역할 변화라는 핵심만 한 장에서 설명한다. 이미지 생성 자산을 화면에 직접 배치하기 위해 kimai-structure 템플릿을 사용한다.",
+        "changes": [
+          {
+            "from": "new-slide",
+            "to": "single-concept",
+            "original": null,
+            "changed": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+            "reason": "26번의 비판 뒤에 현대적 사용법을 별도 단계로 이어 붙인다."
+          }
+        ],
+        "copyPolish": {
+          "version": 1,
+          "appliedAt": "2026-06-02",
+          "rule": "template-slot-copy-polish"
+        }
+      },
+      "templateSelectionReason": "single-concept slide isolates the modern meaning of persona before practice handoff"
     },
     {
       "id": "act2-practice-handoff",
@@ -4336,7 +4299,7 @@
         "출퇴근 시간, 업무 보고 체계, 징계 기준처럼 어떤 업무를 하든 기본으로 지켜야 하는 기준이다.",
         "뒤에서 이 회사 내규 문서가 CLAUDE.md라고 연결한다."
       ],
-      "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+      "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
       "speakerNote": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준이다.",
       "evidenceClaimIds": [
         "claim-003"
@@ -4359,7 +4322,7 @@
       "rewrittenScreen": {
         "headline": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
         "message": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준입니다.",
-        "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+        "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
         "metaphorTerm": "회사 내규",
         "realTerm": "CLAUDE.md",
         "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
@@ -4375,7 +4338,7 @@
             "업무 보고 체계",
             "징계 기준"
           ],
-          "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+          "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
           "visualIntent": "공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림",
           "glossaryTerms": [
             "CLAUDE.md"
@@ -4385,7 +4348,7 @@
         "screenStructure": {
           "headline": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
           "message": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준입니다.",
-          "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+          "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
           "metaphorTerm": "회사 내규",
           "realTerm": "CLAUDE.md",
           "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
@@ -4399,7 +4362,7 @@
         "presenterCues": [
           "한 문장 결론: 회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
           "회사말을 먼저 말하고 실제 용어 CLAUDE.md로 연결",
-          "다음 연결: 반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다."
+          "다음 연결: 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -4440,331 +4403,6 @@
             ],
             "changed": [],
             "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
-          }
-        ],
-        "copyPolish": {
-          "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
-        }
-      }
-    },
-    {
-      "id": "act3-claude-md-rule-board",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
-      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
-      "estimatedMinutes": 1,
-      "title": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-      "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.",
-      "bullets": [
-        "작업 지시",
-        "작업에 필요한 자료",
-        "작업 체크리스트"
-      ],
-      "visualIntent": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act3-claude-md-rule-board",
-      "presenterCues": [
-        "이 슬라이드는 Context를 회사 책상 비유로 다시 연결한다.",
-        "작업 지시는 지금 무엇을 하라는 말이고, 작업에 필요한 자료와 체크리스트는 이번 일을 완성하기 위한 자료다.",
-        "책상 위 자료는 이번 작업을 돕기 위한 것이지 회사 내규가 아니다."
-      ],
-      "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-      "speakerNote": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-      "evidenceClaimIds": [
-        "claim-003",
-        "claim-005"
-      ],
-      "glossaryTerms": [
-        "Prompt",
-        "Context"
-      ],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "Context와 CLAUDE.md의 위치가 분리된다.",
-        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
-        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
-      ],
-      "practiceId": null,
-      "layoutTemplate": "checklist",
-      "teachingMove": "demonstrate",
-      "audienceAction": "rehearse-checklist",
-      "visualMode": "checklist-board",
-      "mainTemplate": "decision-gate",
-      "rewrittenScreen": {
-        "headline": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-        "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.",
-        "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "criteria": [
-          {
-            "key": "기준 1",
-            "text": "작업 지시"
-          },
-          {
-            "key": "기준 2",
-            "text": "작업에 필요한 자료"
-          },
-          {
-            "key": "판정",
-            "text": "작업 체크리스트"
-          }
-        ],
-        "passLabel": "PASS",
-        "holdLabel": "HOLD"
-      },
-      "templateRewrite": {
-        "sourceContractVersion": 1,
-        "originalSource": {
-          "title": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-          "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-          "bullets": [
-            "작업 지시",
-            "작업에 필요한 자료",
-            "작업 체크리스트"
-          ],
-          "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "visualIntent": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-          "glossaryTerms": [
-            "Prompt",
-            "Context"
-          ]
-        },
-        "selectedTemplate": "decision-gate",
-        "screenStructure": {
-          "headline": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-          "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.",
-          "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "criteria": [
-            {
-              "key": "기준 1",
-              "text": "작업 지시"
-            },
-            {
-              "key": "기준 2",
-              "text": "작업에 필요한 자료"
-            },
-            {
-              "key": "판정",
-              "text": "작업 체크리스트"
-            }
-          ],
-          "passLabel": "PASS",
-          "holdLabel": "HOLD"
-        },
-        "componentData": {
-          "criteria": [
-            {
-              "key": "기준 1",
-              "text": "작업 지시"
-            },
-            {
-              "key": "기준 2",
-              "text": "작업에 필요한 자료"
-            },
-            {
-              "key": "판정",
-              "text": "작업 체크리스트"
-            }
-          ],
-          "passLabel": "PASS",
-          "holdLabel": "HOLD"
-        },
-        "presenterCues": [
-          "한 문장 결론: 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-          "판정 기준: 작업 지시, 작업에 필요한 자료, 작업 체크리스트",
-          "다음 연결: 작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다."
-        ],
-        "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act3-claude-md-rule-board",
-          "sourcePath": "assets/visuals/act3-claude-md-rule-board.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.\n장면: 김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 작업 지시 / 작업에 필요한 자료 / 작업 체크리스트",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
-        },
-        "rationale": "PASS/HOLD 또는 선택 기준을 확인해야 하는 장면이다.",
-        "changes": [
-          {
-            "from": "title",
-            "to": "headline",
-            "original": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-            "changed": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-            "changed": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "criteria",
-            "original": [
-              "작업 지시",
-              "작업에 필요한 자료",
-              "작업 체크리스트"
-            ],
-            "changed": [
-              {
-                "key": "기준 1",
-                "text": "작업 지시"
-              },
-              {
-                "key": "기준 2",
-                "text": "작업에 필요한 자료"
-              },
-              {
-                "key": "판정",
-                "text": "작업 체크리스트"
-              }
-            ],
-            "reason": "decision-gate 구조에서 필요한 슬롯으로 재배치한다."
-          }
-        ],
-        "copyPolish": {
-          "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
-        }
-      }
-    },
-    {
-      "id": "act3-claude-md-fit",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
-      "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
-      "estimatedMinutes": 1,
-      "title": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-      "message": "이전 작업 자료와 현재 업무가 한 책상에 섞이면 김아이는 기준을 잃습니다.",
-      "bullets": [
-        "오래된 책상 자료",
-        "Stale Context",
-        "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다."
-      ],
-      "visualIntent": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
-      "visualType": "generated-image",
-      "visualAssetId": "act3-claude-md-fit",
-      "presenterCues": [
-        "Context가 많다는 것보다 섞이는 것이 문제다.",
-        "중간에 바뀐 내용이 정리되지 않거나 이전 작업 자료가 남으면 현재 작업의 기준이 흐려진다.",
-        "같은 업무환경에서 두 가지 일을 동시에 열어 두면 김아이는 어느 쪽을 기준으로 해야 할지 헷갈린다."
-      ],
-      "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-      "speakerNote": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
-      "evidenceClaimIds": [
-        "claim-003"
-      ],
-      "glossaryTerms": [
-        "Context",
-        "Stale Context"
-      ],
-      "qualityChecks": [
-        "화면 메시지가 한 가지다.",
-        "Context와 CLAUDE.md의 위치가 분리된다.",
-        "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
-        "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
-      ],
-      "practiceId": null,
-      "layoutTemplate": "glossary-bridge",
-      "teachingMove": "connect",
-      "audienceAction": "connect-metaphor",
-      "visualMode": "term-bridge",
-      "mainTemplate": "term-bridge",
-      "rewrittenScreen": {
-        "headline": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "message": "이전 작업 자료와 현재 업무가 한 책상에 섞이면 김아이는 기준을 잃습니다.",
-        "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-        "metaphorTerm": "오래된 책상 자료",
-        "realTerm": "Stale Context",
-        "bridgeLine": "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다.",
-        "supportingLine": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지."
-      },
-      "templateRewrite": {
-        "sourceContractVersion": 1,
-        "originalSource": {
-          "title": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "message": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
-          "bullets": [
-            "중간에 바뀐 내용",
-            "이전 작업 자료",
-            "동시에 열린 두 업무"
-          ],
-          "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-          "visualIntent": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
-          "glossaryTerms": [
-            "Context",
-            "Stale Context"
-          ]
-        },
-        "selectedTemplate": "term-bridge",
-        "screenStructure": {
-          "headline": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "message": "이전 작업 자료와 현재 업무가 한 책상에 섞이면 김아이는 기준을 잃습니다.",
-          "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-          "metaphorTerm": "오래된 책상 자료",
-          "realTerm": "Stale Context",
-          "bridgeLine": "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다.",
-          "supportingLine": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지."
-        },
-        "componentData": {
-          "metaphorTerm": "오래된 책상 자료",
-          "realTerm": "Stale Context",
-          "bridgeLine": "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다."
-        },
-        "presenterCues": [
-          "한 문장 결론: 작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "회사말을 먼저 말하고 실제 용어 Stale Context로 연결",
-          "다음 연결: 하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다."
-        ],
-        "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act3-claude-md-fit",
-          "sourcePath": "assets/visuals/act3-claude-md-fit.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.\n장면: 김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 중간에 바뀐 내용 / 이전 작업 자료 / 동시에 열린 두 업무",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
-        },
-        "rationale": "새 glossary term 첫 등장이므로 회사말 비유와 실제 하네스 용어를 먼저 연결한다.",
-        "changes": [
-          {
-            "from": "title",
-            "to": "headline",
-            "original": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-            "changed": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
-            "changed": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "metaphorTerm/realTerm/bridgeLine",
-            "original": [
-              "중간에 바뀐 내용",
-              "이전 작업 자료",
-              "동시에 열린 두 업무"
-            ],
-            "changed": [
-              "오래된 책상 자료",
-              "Stale Context",
-              "오래된 책상 자료는 실제 하네스 용어로 Stale Context에 연결합니다."
-            ],
-            "reason": "term-bridge 구조에서 첫 등장 glossary term을 회사말 비유와 실제 용어로 연결한다."
           }
         ],
         "copyPolish": {
@@ -4914,24 +4552,24 @@
       "section": "Act 3 · CLAUDE.md 회사 내규",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "CLAUDE.md에도 적용 범위가 있습니다.",
-      "message": "CLAUDE.md는 적용 범위에 따라 global, user, project, subfolder로 나뉩니다.",
+      "title": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+      "message": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.",
       "bullets": [
-        "연방법",
-        "주법",
-        "회사 사규",
-        "부서 규칙"
+        "회장님 지침",
+        "본사 공통 지침",
+        "부서 사규",
+        "팀장님 현장 지침"
       ],
-      "visualIntent": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+      "visualIntent": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침이 계층으로 내려오고 김아이가 현장 지침 가까이에 서 있는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act3-temporary-info-danger",
       "presenterCues": [
-        "global CLAUDE.md는 연방법처럼 가장 넓게 깔리는 기본 규칙이다.",
-        "user CLAUDE.md는 주법처럼 특정 사용자에게 항상 적용되는 기본 업무 방식이다.",
-        "project CLAUDE.md는 회사 사규, subfolder CLAUDE.md는 부서 규칙처럼 범위가 좁아질수록 구체화된다."
+        "CLAUDE.md는 모두 같은 지침이지만 적용 범위가 다르다고 설명한다.",
+        "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 순서로 범위가 좁아진다.",
+        "가까울수록 지금 일에 맞는 구체적인 지침이 된다."
       ],
-      "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-      "speakerNote": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
+      "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+      "speakerNote": "CLAUDE.md는 종류가 완전히 다른 문서들이 여러 개 있는 것이 아니라 모두 지침입니다. 다만 어디까지 적용되느냐가 다릅니다. 가장 넓게는 회장님 지침처럼 전체에 깔리는 규칙이 있고, 그 아래에는 본사 공통 지침, 특정 프로젝트나 부서에서 지키는 부서 사규, 그리고 지금 작업하는 현장의 팀장님 지침이 있습니다. 넓은 지침은 기본값으로 깔리고, 가까운 지침은 지금 작업 상황에 맞게 더 구체적으로 덧씌워집니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -4945,162 +4583,98 @@
         "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
       ],
       "practiceId": null,
-      "layoutTemplate": "concept-map",
-      "teachingMove": "demonstrate",
-      "audienceAction": "compare",
-      "visualMode": "process-diagram",
-      "mainTemplate": "workflow-strip",
+      "layoutTemplate": "story-scene",
+      "teachingMove": "explain",
+      "audienceAction": "inspect-visual",
+      "visualMode": "story-illustration",
+      "mainTemplate": "kimai-structure",
       "rewrittenScreen": {
-        "headline": "CLAUDE.md에도 적용 범위가 있습니다.",
-        "message": "CLAUDE.md는 적용 범위에 따라 global, user, project, subfolder로 나뉩니다.",
-        "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "steps": [
-          {
-            "step": "01",
-            "label": "연방법"
-          },
-          {
-            "step": "02",
-            "label": "주법"
-          },
-          {
-            "step": "03",
-            "label": "회사 사규"
-          },
-          {
-            "step": "04",
-            "label": "부서 규칙"
-          }
+        "headline": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+        "message": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.",
+        "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+        "imageAnchors": [
+          "회장님 지침",
+          "본사 공통 지침",
+          "부서 사규",
+          "팀장님 현장 지침"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "CLAUDE.md에도 적용 범위가 있습니다.",
-          "message": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
+          "title": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+          "message": "CLAUDE.md는 종류가 완전히 다른 문서들이 여러 개 있는 것이 아니라 모두 지침입니다. 다만 어디까지 적용되느냐가 다릅니다. 가장 넓게는 회장님 지침처럼 전체에 깔리는 규칙이 있고, 그 아래에는 본사 공통 지침, 특정 프로젝트나 부서에서 지키는 부서 사규, 그리고 지금 작업하는 현장의 팀장님 지침이 있습니다. 넓은 지침은 기본값으로 깔리고, 가까운 지침은 지금 작업 상황에 맞게 더 구체적으로 덧씌워집니다.",
           "bullets": [
-            "global = 연방법",
-            "user = 주법",
-            "project = 회사 사규",
-            "subfolder = 부서 규칙"
+            "회장님 지침",
+            "본사 공통 지침",
+            "부서 사규",
+            "팀장님 현장 지침"
           ],
-          "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "visualIntent": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+          "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+          "visualIntent": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침이 계층으로 내려오고 김아이가 현장 지침 가까이에 서 있는 손그림",
           "glossaryTerms": [
             "CLAUDE.md"
           ]
         },
-        "selectedTemplate": "workflow-strip",
+        "selectedTemplate": "kimai-structure",
         "screenStructure": {
-          "headline": "CLAUDE.md에도 적용 범위가 있습니다.",
-          "message": "CLAUDE.md는 적용 범위에 따라 global, user, project, subfolder로 나뉩니다.",
-          "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "steps": [
-            {
-              "step": "01",
-              "label": "연방법"
-            },
-            {
-              "step": "02",
-              "label": "주법"
-            },
-            {
-              "step": "03",
-              "label": "회사 사규"
-            },
-            {
-              "step": "04",
-              "label": "부서 규칙"
-            }
+          "headline": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+          "message": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.",
+          "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+          "imageAnchors": [
+            "회장님 지침",
+            "본사 공통 지침",
+            "부서 사규",
+            "팀장님 현장 지침"
           ]
         },
         "componentData": {
-          "steps": [
-            {
-              "step": "01",
-              "label": "연방법"
-            },
-            {
-              "step": "02",
-              "label": "주법"
-            },
-            {
-              "step": "03",
-              "label": "회사 사규"
-            },
-            {
-              "step": "04",
-              "label": "부서 규칙"
-            }
-          ]
+          "imageAnchors": [
+            "회장님 지침",
+            "본사 공통 지침",
+            "부서 사규",
+            "팀장님 현장 지침"
+          ],
+          "visualAssetId": "act3-temporary-info-danger"
         },
         "presenterCues": [
-          "한 문장 결론: CLAUDE.md에도 적용 범위가 있습니다.",
-          "순서대로 짚기: global = 연방법 -> user = 주법 -> project = 회사 사규 -> subfolder = 부서 규칙",
-          "다음 연결: CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다."
+          "한 문장 결론: CLAUDE.md는 적용 범위가 다른 지침입니다.",
+          "CLAUDE.md는 모두 같은 지침이지만 적용 범위가 다르다고 설명한다.",
+          "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 순서로 범위가 좁아진다.",
+          "가까울수록 지금 일에 맞는 구체적인 지침이 된다.",
+          "다음 연결: 가까운 지침일수록 지금 작업에 더 강하게 적용됩니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
+          "action": "use-generated-single-image",
           "visualAssetId": "act3-temporary-info-danger",
-          "sourcePath": "assets/visuals/act3-temporary-info-danger.png",
+          "sourcePath": "assets/visuals/act3-scope-company-guidelines.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: CLAUDE.md에도 적용 범위가 있습니다.\n장면: 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: global = 연방법 / user = 주법 / project = 회사 사규",
+          "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 32\nPrimary request: Explain that CLAUDE.md rules are the same kind of instruction but have different application scopes.\nComposition: Vertical company hierarchy chart with four labels: 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침. Kimai stands near the bottom. Add label: 가까울수록 구체적.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, no law/court imagery, no secretary imagery.",
           "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+            "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+            "이미지 안의 한국어는 큰 라벨만 사용한다.",
+            "법체계나 비서 비유가 보이지 않는다.",
+            "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
           ]
         },
-        "rationale": "단계, 루프, 순서가 학습 포인트라 카드 흐름으로 쪼갠다.",
+        "rationale": "Act 3의 CLAUDE.md 적용 범위와 우선순위를 회사 지침 비유로 통일한다.",
         "changes": [
           {
-            "from": "title",
-            "to": "headline",
-            "original": "CLAUDE.md에도 적용 범위가 있습니다.",
-            "changed": "CLAUDE.md에도 적용 범위가 있습니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
-            "changed": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "steps",
-            "original": [
-              "global = 연방법",
-              "user = 주법",
-              "project = 회사 사규",
-              "subfolder = 부서 규칙"
-            ],
+            "from": "law-system-metaphor",
+            "to": "company-guideline-metaphor",
+            "original": "연방법 / 주법 / 회사 사규 / 부서 규칙",
             "changed": [
-              {
-                "step": "01",
-                "label": "global = 연방법"
-              },
-              {
-                "step": "02",
-                "label": "user = 주법"
-              },
-              {
-                "step": "03",
-                "label": "project = 회사 사규"
-              },
-              {
-                "step": "04",
-                "label": "subfolder = 부서 규칙"
-              }
+              "회장님 지침",
+              "본사 공통 지침",
+              "부서 사규",
+              "팀장님 현장 지침"
             ],
-            "reason": "workflow-strip 구조에서 필요한 슬롯으로 재배치한다."
+            "reason": "사용자가 정한 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 비유로 맞춘다."
           }
         ],
         "copyPolish": {
           "version": 1,
-          "appliedAt": "2026-05-31",
+          "appliedAt": "2026-06-02",
           "rule": "template-slot-copy-polish"
         }
       }
@@ -5110,23 +4684,23 @@
       "section": "Act 3 · CLAUDE.md 회사 내규",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-      "message": "규칙은 넓은 곳에서 먼저 로드되고, 가까운 폴더 규칙이 더 강하게 적용됩니다.",
+      "title": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+      "message": "넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.",
       "bullets": [
-        "넓은 규칙",
-        "회사 규칙",
-        "부서 규칙"
+        "가까운 지침 우선",
+        "구체적인 지시",
+        "덮어쓰기"
       ],
-      "visualIntent": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+      "visualIntent": "멀리 있는 회장님 지침보다 김아이 눈앞의 팀장님 현장 지침이 크게 강조되어 가까운 지침 우선을 보여 주는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act3-good-rule-board-shape",
       "presenterCues": [
-        "로드는 넓은 범위에서 좁은 범위로 진행된다: global, user, project, subfolder 순서다.",
-        "하지만 적용 강도는 반대로 이해하면 쉽다. 지금 작업 위치에 가까운 subfolder 규칙이 가장 구체적이고 강하다.",
-        "그래서 충돌이 있을 때는 현재 작업 위치에 더 가까운 CLAUDE.md를 실행 전 확인한다."
+        "넓은 지침은 먼저 깔리지만 현장에 가까운 지침이 더 직접적으로 적용된다.",
+        "충돌이 있으면 지금 작업 위치에 더 가까운 CLAUDE.md가 더 구체적인 기준이 된다.",
+        "내 눈앞에 가장 가까운 팀장님의 지시가 회장님 훈화 말씀보다 더 직접적으로 적용된다는 문장으로 기억시킨다."
       ],
       "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-      "speakerNote": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
+      "speakerNote": "앞서 지침의 적용 범위를 봤다면, 이제 적용 강도를 이해하면 됩니다. 넓은 지침은 먼저 깔립니다. 하지만 실제 작업에서는 지금 작업 위치에 가까운 지침이 더 구체적으로 적용됩니다. 회사로 비유하면 회장님 지침이 전체 방향을 잡아 주지만, 지금 현장에서 일하는 김아이에게는 눈앞의 팀장님 현장 지침이 더 직접적입니다. 그래서 한 문장으로 기억하시면 됩니다. 내 눈앞에 가장 가까운 팀장님의 지시가 대기업 회장님 훈화 말씀보다 더 직접적으로 적용됩니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -5140,144 +4714,93 @@
         "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
       ],
       "practiceId": null,
-      "layoutTemplate": "concept-map",
-      "teachingMove": "demonstrate",
-      "audienceAction": "compare",
-      "visualMode": "process-diagram",
-      "mainTemplate": "workflow-strip",
+      "layoutTemplate": "story-scene",
+      "teachingMove": "explain",
+      "audienceAction": "inspect-visual",
+      "visualMode": "story-illustration",
+      "mainTemplate": "kimai-structure",
       "rewrittenScreen": {
-        "headline": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "message": "규칙은 넓은 곳에서 먼저 로드되고, 가까운 폴더 규칙이 더 강하게 적용됩니다.",
+        "headline": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+        "message": "넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.",
         "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-        "steps": [
-          {
-            "step": "01",
-            "label": "넓은 규칙"
-          },
-          {
-            "step": "02",
-            "label": "회사 규칙"
-          },
-          {
-            "step": "03",
-            "label": "부서 규칙"
-          }
+        "imageAnchors": [
+          "가까운 지침 우선",
+          "구체적인 지시",
+          "덮어쓰기"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "message": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
+          "title": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+          "message": "앞서 지침의 적용 범위를 봤다면, 이제 적용 강도를 이해하면 됩니다. 넓은 지침은 먼저 깔립니다. 하지만 실제 작업에서는 지금 작업 위치에 가까운 지침이 더 구체적으로 적용됩니다. 회사로 비유하면 회장님 지침이 전체 방향을 잡아 주지만, 지금 현장에서 일하는 김아이에게는 눈앞의 팀장님 현장 지침이 더 직접적입니다. 그래서 한 문장으로 기억하시면 됩니다. 내 눈앞에 가장 가까운 팀장님의 지시가 대기업 회장님 훈화 말씀보다 더 직접적으로 적용됩니다.",
           "bullets": [
-            "로드 순서: global → user → project → subfolder",
-            "적용 강도: subfolder → project → user → global",
-            "가까운 규칙 우선"
+            "가까운 지침 우선",
+            "구체적인 지시",
+            "덮어쓰기"
           ],
           "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-          "visualIntent": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+          "visualIntent": "멀리 있는 회장님 지침보다 김아이 눈앞의 팀장님 현장 지침이 크게 강조되어 가까운 지침 우선을 보여 주는 손그림",
           "glossaryTerms": [
             "CLAUDE.md"
           ]
         },
-        "selectedTemplate": "workflow-strip",
+        "selectedTemplate": "kimai-structure",
         "screenStructure": {
-          "headline": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "message": "규칙은 넓은 곳에서 먼저 로드되고, 가까운 폴더 규칙이 더 강하게 적용됩니다.",
+          "headline": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+          "message": "넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.",
           "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-          "steps": [
-            {
-              "step": "01",
-              "label": "넓은 규칙"
-            },
-            {
-              "step": "02",
-              "label": "회사 규칙"
-            },
-            {
-              "step": "03",
-              "label": "부서 규칙"
-            }
+          "imageAnchors": [
+            "가까운 지침 우선",
+            "구체적인 지시",
+            "덮어쓰기"
           ]
         },
         "componentData": {
-          "steps": [
-            {
-              "step": "01",
-              "label": "넓은 규칙"
-            },
-            {
-              "step": "02",
-              "label": "회사 규칙"
-            },
-            {
-              "step": "03",
-              "label": "부서 규칙"
-            }
-          ]
+          "imageAnchors": [
+            "가까운 지침 우선",
+            "구체적인 지시",
+            "덮어쓰기"
+          ],
+          "visualAssetId": "act3-good-rule-board-shape"
         },
         "presenterCues": [
-          "한 문장 결론: CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "순서대로 짚기: 로드 순서: global → us. -> 적용 강도: subfolder →. -> 가까운 규칙 우선",
+          "한 문장 결론: 가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+          "넓은 지침은 먼저 깔리지만 현장에 가까운 지침이 더 직접적으로 적용된다.",
+          "충돌이 있으면 지금 작업 위치에 더 가까운 CLAUDE.md가 더 구체적인 기준이 된다.",
+          "내 눈앞에 가장 가까운 팀장님의 지시가 회장님 훈화 말씀보다 더 직접적으로 적용된다는 문장으로 기억시킨다.",
           "다음 연결: 내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
+          "action": "use-generated-single-image",
           "visualAssetId": "act3-good-rule-board-shape",
-          "sourcePath": "assets/visuals/act3-good-rule-board-shape.png",
+          "sourcePath": "assets/visuals/act3-nearest-team-lead-priority.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.\n장면: CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 로드 순서: global → user → project → subfolder / 적용 강도: subfolder → project → user → global / 가까운 규칙 우선",
+          "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 33\nPrimary request: Explain that the closest team lead field instruction is applied more strongly than distant executive guidance.\nComposition: Distant 회장님 지침 appears small in the background; near Kimai, a large blue-accent clipboard labeled 팀장님 현장 지침 is emphasized. Add label: 가까운 지침 우선.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, professional tone, no law/court imagery, no secretary imagery.",
           "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+            "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+            "이미지 안의 한국어는 큰 라벨만 사용한다.",
+            "법체계나 비서 비유가 보이지 않는다.",
+            "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
           ]
         },
-        "rationale": "단계, 루프, 순서가 학습 포인트라 카드 흐름으로 쪼갠다.",
+        "rationale": "Act 3의 CLAUDE.md 적용 범위와 우선순위를 회사 지침 비유로 통일한다.",
         "changes": [
           {
-            "from": "title",
-            "to": "headline",
-            "original": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-            "changed": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
-            "changed": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "steps",
-            "original": [
-              "로드 순서: global → user → project → subfolder",
-              "적용 강도: subfolder → project → user → global",
-              "가까운 규칙 우선"
-            ],
+            "from": "law-system-metaphor",
+            "to": "company-guideline-metaphor",
+            "original": "연방법 / 주법 / 회사 사규 / 부서 규칙",
             "changed": [
-              {
-                "step": "01",
-                "label": "로드 순서: global → us."
-              },
-              {
-                "step": "02",
-                "label": "적용 강도: subfolder →."
-              },
-              {
-                "step": "03",
-                "label": "가까운 규칙 우선"
-              }
+              "가까운 지침 우선",
+              "구체적인 지시",
+              "덮어쓰기"
             ],
-            "reason": "workflow-strip 구조에서 필요한 슬롯으로 재배치한다."
+            "reason": "사용자가 정한 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 비유로 맞춘다."
           }
         ],
         "copyPolish": {
           "version": 1,
-          "appliedAt": "2026-05-31",
+          "appliedAt": "2026-06-02",
           "rule": "template-slot-copy-polish"
         }
       }
@@ -5575,23 +5098,23 @@
       "section": "Act 3 · CLAUDE.md 회사 내규",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-      "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담습니다.",
+      "title": "내규가 선이라면, 매뉴얼은 길입니다.",
+      "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
       "bullets": [
-        "회사 내규",
-        "CLAUDE.md",
-        "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다."
+        "지켜야 할 기준",
+        "따라 할 순서",
+        "단계별 실행"
       ],
-      "visualIntent": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
+      "visualIntent": "내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act3-to-act4-manual",
       "presenterCues": [
-        "Act 3를 닫고 Act 4 문제를 연다.",
-        "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 실행 순서다.",
-        "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만든다."
+        "Act 3의 CLAUDE.md를 지켜야 할 기준, 즉 선으로 정리한다.",
+        "Act 4의 매뉴얼과 Skill은 김아이가 따라가야 할 작업 순서, 즉 길로 연결한다.",
+        "복잡한 일을 통으로 던지지 않고 단계별로 실행하게 만들면 성공 확률이 올라간다."
       ],
       "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-      "speakerNote": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
+      "speakerNote": "앞에서 배운 내규, CLAUDE.md는 김아이가 넘지 말아야 할 선입니다. 노란색 쓰지 마라, 해외 사례는 빼라 같은 기준이죠. 그런데 매뉴얼은 다릅니다. 매뉴얼은 김아이가 밟고 가야 할 길입니다. 김아이가 멍청해서 매뉴얼이 필요한 게 아닙니다. 오히려 너무 똑똑해서 필요합니다. 시장 조사, 경쟁사 분석, 보고서 작성을 한 번에 던지면 김아이는 세 단계를 머릿속에서 섞어 처리할 수 있습니다. 그러면 조사 전에 결론을 내거나 분석 과정을 건너뛸 수 있습니다. 그래서 매뉴얼은 단계별 브레이크입니다. 1단계 시장 조사, 2단계 장단점 분석, 3단계 보고서 작성처럼 순서를 깔아주면 김아이는 샛길로 새지 않고 결과물을 안정적으로 만듭니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -5606,239 +5129,89 @@
         "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
       ],
       "practiceId": null,
-      "layoutTemplate": "glossary-bridge",
+      "layoutTemplate": "story-scene",
       "teachingMove": "connect",
-      "audienceAction": "connect-metaphor",
-      "visualMode": "term-bridge",
-      "mainTemplate": "term-bridge",
+      "audienceAction": "inspect-visual",
+      "visualMode": "story-illustration",
+      "mainTemplate": "kimai-structure",
       "rewrittenScreen": {
-        "headline": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-        "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담습니다.",
+        "headline": "내규가 선이라면, 매뉴얼은 길입니다.",
+        "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
         "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-        "metaphorTerm": "회사 내규",
-        "realTerm": "CLAUDE.md",
-        "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
-        "supportingLine": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다."
-      },
-      "templateRewrite": {
-        "sourceContractVersion": 1,
-        "originalSource": {
-          "title": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-          "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
-          "bullets": [
-            "내규 = 기준",
-            "매뉴얼 = 순서",
-            "다음 Act = 반복 실행"
-          ],
-          "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-          "visualIntent": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
-          "glossaryTerms": [
-            "CLAUDE.md",
-            "Skill"
-          ]
-        },
-        "selectedTemplate": "term-bridge",
-        "screenStructure": {
-          "headline": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-          "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담습니다.",
-          "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-          "metaphorTerm": "회사 내규",
-          "realTerm": "CLAUDE.md",
-          "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
-          "supportingLine": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다."
-        },
-        "componentData": {
-          "metaphorTerm": "회사 내규",
-          "realTerm": "CLAUDE.md",
-          "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다."
-        },
-        "presenterCues": [
-          "한 문장 결론: 내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-          "회사말을 먼저 말하고 실제 용어 CLAUDE.md로 연결",
-          "다음 연결: 다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다."
-        ],
-        "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act3-to-act4-manual",
-          "sourcePath": "assets/visuals/act3-to-act4-manual.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.\n장면: 회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 내규 = 기준 / 매뉴얼 = 순서 / 다음 Act = 반복 실행",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
-        },
-        "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
-        "changes": [
-          {
-            "from": "title",
-            "to": "headline",
-            "original": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-            "changed": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
-            "changed": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "metaphorTerm/realTerm/bridgeLine",
-            "original": [
-              "내규 = 기준",
-              "매뉴얼 = 순서",
-              "다음 Act = 반복 실행"
-            ],
-            "changed": [],
-            "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
-          }
-        ],
-        "copyPolish": {
-          "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
-        }
-      }
-    },
-    {
-      "id": "wrap-personal-harness",
-      "section": "Wrap-up · 내 업무에 가져가기",
-      "sectionObjective": "수강생이 자신의 업무에 적용할 하네스 장치 3개를 고른다.",
-      "estimatedMinutes": 5,
-      "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-      "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-      "bullets": [
-        "자주 반복되는가",
-        "실패하면 위험한가",
-        "검증할 증거가 있는가"
-      ],
-      "visualIntent": "오늘 만든 지시문, 컨텍스트, Skill, 역할, 검증 장치를 내 업무에 가져가는 최종 하네스 지도 손그림",
-      "visualType": "generated-image",
-      "presenterCues": [
-        "모든 것을 한 번에 도입하지 않게 한다",
-        "빈도와 위험도 기준을 준다",
-        "오늘의 최종 산출물를 저장하게 한다"
-      ],
-      "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-      "speakerNote": "마지막 활동은 개인 적용이다. 수강생이 오늘 만든 가장 나은 지시문, 컨텍스트 선택, Skill, role/tool plan, checkpoint 중 자기 업무에 가져갈 세 가지를 고른다.",
-      "evidenceClaimIds": [
-        "claim-010"
-      ],
-      "glossaryTerms": [
-        "Harness Engineering"
-      ],
-      "qualityChecks": [
-        "개인 행동으로 끝난다.",
-        "세 가지 선택 기준이 보인다.",
-        "과도한 도입을 권하지 않는다."
-      ],
-      "visualAssetId": "act6-final-harness-map",
-      "layoutTemplate": "wrap-up",
-      "teachingMove": "synthesize",
-      "audienceAction": "reflect",
-      "visualMode": "artifact-map",
-      "mainTemplate": "recap-map",
-      "rewrittenScreen": {
-        "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-        "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-        "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-        "mapNodes": [
-          "자주 반복되는가",
-          "실패하면 위험한가",
-          "검증할 증거가 있는가"
+        "imageAnchors": [
+          "지켜야 할 기준",
+          "따라 할 순서",
+          "단계별 실행"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-          "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
+          "title": "내규가 선이라면, 매뉴얼은 길입니다.",
+          "message": "앞에서 배운 내규, CLAUDE.md는 김아이가 넘지 말아야 할 선입니다. 노란색 쓰지 마라, 해외 사례는 빼라 같은 기준이죠. 그런데 매뉴얼은 다릅니다. 매뉴얼은 김아이가 밟고 가야 할 길입니다. 김아이가 멍청해서 매뉴얼이 필요한 게 아닙니다. 오히려 너무 똑똑해서 필요합니다. 시장 조사, 경쟁사 분석, 보고서 작성을 한 번에 던지면 김아이는 세 단계를 머릿속에서 섞어 처리할 수 있습니다. 그러면 조사 전에 결론을 내거나 분석 과정을 건너뛸 수 있습니다. 그래서 매뉴얼은 단계별 브레이크입니다. 1단계 시장 조사, 2단계 장단점 분석, 3단계 보고서 작성처럼 순서를 깔아주면 김아이는 샛길로 새지 않고 결과물을 안정적으로 만듭니다.",
           "bullets": [
-            "자주 반복되는가",
-            "실패하면 위험한가",
-            "검증할 증거가 있는가"
+            "지켜야 할 기준",
+            "따라 할 순서",
+            "단계별 실행"
           ],
-          "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-          "visualIntent": "오늘 만든 지시문, 컨텍스트, Skill, 역할, 검증 장치를 내 업무에 가져가는 최종 하네스 지도 손그림",
+          "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
+          "visualIntent": "내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림",
           "glossaryTerms": [
-            "Harness Engineering"
+            "CLAUDE.md",
+            "Skill"
           ]
         },
-        "selectedTemplate": "recap-map",
+        "selectedTemplate": "kimai-structure",
         "screenStructure": {
-          "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-          "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-          "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-          "mapNodes": [
-            "자주 반복되는가",
-            "실패하면 위험한가",
-            "검증할 증거가 있는가"
+          "headline": "내규가 선이라면, 매뉴얼은 길입니다.",
+          "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
+          "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
+          "imageAnchors": [
+            "지켜야 할 기준",
+            "따라 할 순서",
+            "단계별 실행"
           ]
         },
         "componentData": {
-          "mapNodes": [
-            "자주 반복되는가",
-            "실패하면 위험한가",
-            "검증할 증거가 있는가"
-          ]
+          "imageAnchors": [
+            "지켜야 할 기준",
+            "따라 할 순서",
+            "단계별 실행"
+          ],
+          "visualAssetId": "act3-to-act4-manual"
         },
         "presenterCues": [
-          "한 문장 결론: 내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-          "다음 연결: 오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다."
+          "한 문장 결론: 내규가 선이라면, 매뉴얼은 길입니다.",
+          "내규는 기준이고 매뉴얼은 순서라는 대비를 먼저 잡는다.",
+          "복잡한 작업은 단계별 실행으로 안정화된다고 설명한다.",
+          "다음 연결: 다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act6-final-harness-map",
-          "sourcePath": "assets/visuals/act6-final-harness-map.png",
+          "action": "use-generated-single-image",
+          "visualAssetId": "act3-to-act4-manual",
+          "sourcePath": "assets/visuals/act3-to-act4-manual-boundary-path.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.\n장면: 오늘 만든 지시문, 컨텍스트, Skill, 역할, 검증 장치를 내 업무에 가져가는 최종 하네스 지도 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 자주 반복되는가 / 실패하면 위험한가 / 검증할 증거가 있는가",
+          "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 36, landscape 16:9 composition\nPrimary request: Explain the transition from CLAUDE.md rules to Manual/Skill workflow: rules are a boundary line, manuals are a path.\nComposition: Left side boundary labeled 내규 = 선 with cards 금지 조건 and 제외 기준. Right side path labeled 매뉴얼 = 길 with steps 1 시장 조사, 2 장단점 분석, 3 보고서 작성. Kimai steps toward the path. Add label 순서대로 실행.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels.",
           "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+            "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+            "내규=선, 매뉴얼=길, 순서대로 실행이 읽힌다.",
+            "금지 조건과 제외 기준은 왼쪽 경계선에 머문다.",
+            "시장 조사, 장단점 분석, 보고서 작성이 순서대로 보인다."
           ]
         },
-        "rationale": "여정 전체를 회수하고 현업 적용 위치를 고른다.",
+        "rationale": "Act 3에서 Act 4로 넘어가는 전환 슬라이드이므로 용어 설명보다 선과 길의 대비 이미지를 중심에 둔다.",
         "changes": [
           {
-            "from": "title",
-            "to": "headline",
-            "original": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-            "changed": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-            "changed": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "mapNodes",
-            "original": [
-              "자주 반복되는가",
-              "실패하면 위험한가",
-              "검증할 증거가 있는가"
-            ],
-            "changed": [
-              "자주 반복되는가",
-              "실패하면 위험한가",
-              "검증할 증거가 있는가"
-            ],
-            "reason": "recap-map 구조에서 필요한 슬롯으로 재배치한다."
+            "from": "term-bridge",
+            "to": "kimai-structure",
+            "original": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
+            "changed": "내규가 선이라면, 매뉴얼은 길입니다.",
+            "reason": "매뉴얼/Skill 도입부의 핵심 비유를 한 장면으로 전달한다."
           }
         ],
         "copyPolish": {
           "version": 1,
-          "appliedAt": "2026-05-31",
+          "appliedAt": "2026-06-02",
           "rule": "template-slot-copy-polish"
         }
       }
@@ -8984,30 +8357,28 @@
       "section": "Act 5 · 역할 분리와 도구 권한",
       "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
-      "title": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-      "message": "모든 열쇠를 주지 않고 맡은 일에 필요한 권한과 접근 구역만 줍니다.",
+      "title": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+      "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
       "bullets": [
-        "도구 열쇠",
-        "MCP",
-        "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다."
+        "읽기 권한",
+        "쓰기 권한",
+        "실행 권한"
       ],
-      "visualIntent": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualIntent": "권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
       "visualType": "generated-image",
       "visualAssetId": "act5-security-permissions",
       "presenterCues": [
-        "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-        "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
-        "MCP는 협력사에 요청을 보내는 공식 창구입니다."
+        "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 줍니다.",
+        "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다."
       ],
-      "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-      "speakerNote": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
+      "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+      "speakerNote": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-008"
       ],
-      "glossaryTerms": [
-        "MCP"
-      ],
+      "glossaryTerms": [],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
         "한 슬라이드에 한 메시지만 담긴다.",
@@ -9020,57 +8391,54 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-        "message": "모든 열쇠를 주지 않고 맡은 일에 필요한 권한과 접근 구역만 줍니다.",
-        "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "metaphorTerm": "도구 열쇠",
-        "realTerm": "MCP",
-        "bridgeLine": "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다.",
-        "supportingLine": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다."
+        "headline": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
+        "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+        "metaphorTerm": "권한 카드",
+        "realTerm": "권한 범위",
+        "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다.",
+        "supportingLine": "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 보안 사고를 막습니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-          "message": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
+          "title": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+          "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
           "bullets": [
-            "자료 열람 권한",
-            "문서 작성 권한",
-            "실행/검증 권한",
-            "접근 가능한 구역"
+            "읽기 권한",
+            "쓰기 권한",
+            "실행 권한"
           ],
-          "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-          "visualIntent": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-          "glossaryTerms": [
-            "MCP"
-          ]
+          "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+          "visualIntent": "권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
+          "glossaryTerms": []
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-          "message": "모든 열쇠를 주지 않고 맡은 일에 필요한 권한과 접근 구역만 줍니다.",
-          "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-          "metaphorTerm": "도구 열쇠",
-          "realTerm": "MCP",
-          "bridgeLine": "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다.",
-          "supportingLine": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다."
+          "headline": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+          "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
+          "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+          "metaphorTerm": "권한 카드",
+          "realTerm": "권한 범위",
+          "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다.",
+          "supportingLine": "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 보안 사고를 막습니다."
         },
         "componentData": {
-          "metaphorTerm": "도구 열쇠",
-          "realTerm": "MCP",
-          "bridgeLine": "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다."
+          "metaphorTerm": "권한 카드",
+          "realTerm": "권한 범위",
+          "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다."
         },
         "presenterCues": [
-          "한 문장 결론: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-          "회사말을 먼저 말하고 실제 용어 MCP로 연결",
-          "다음 연결: MCP는 협력사에 요청을 보내는 공식 창구입니다."
+          "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+          "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 줍니다.",
+          "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
+          "action": "single-image-regenerated",
           "visualAssetId": "act5-security-permissions",
-          "sourcePath": "assets/visuals/act5-security-permissions.png",
+          "sourcePath": "assets/visuals/act5-security-permissions-role-permissions.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.\n장면: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 자료 열람 권한 / 문서 작성 권한 / 실행/검증 권한",
+          "generationPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai gives only role-needed permission cards, not a master key. Three access zones are labeled 읽기, 쓰기, 실행. The image explains internal permission scope and least privilege, not MCP.",
           "reviewChecks": [
             "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
             "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
@@ -9112,30 +8480,33 @@
           "appliedAt": "2026-05-31",
           "rule": "template-slot-copy-polish"
         }
-      }
+      },
+      "characterRefs": [
+        "kimai"
+      ]
     },
     {
       "id": "act5-mcp-partner-window",
       "section": "Act 5 · 역할 분리와 도구 권한",
       "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
-      "title": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-      "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+      "title": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+      "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
       "bullets": [
-        "외부 자료 요청",
-        "외부 도구 요청",
-        "허가된 통로"
+        "자료 요청",
+        "도구 요청",
+        "요청 기록"
       ],
-      "visualIntent": "MCP는 협력사에 요청을 보내는 공식 창구입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualIntent": "MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.",
       "visualType": "generated-image",
       "visualAssetId": "act5-mcp-partner-window",
       "presenterCues": [
-        "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+        "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+        "자료 요청과 도구 요청을 허가된 전화 창구로 보내고 기록을 남깁니다.",
         "실습에서는 에이전트 팀을 구현해 봅니다."
       ],
       "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
-      "speakerNote": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+      "speakerNote": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-008"
@@ -9155,63 +8526,63 @@
       "visualMode": "story-illustration",
       "mainTemplate": "kimai-structure",
       "rewrittenScreen": {
-        "headline": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+        "headline": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+        "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
         "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
         "imageAnchors": [
-          "외부 자료 요청",
-          "외부 도구 요청",
-          "허가된 통로"
+          "자료 요청",
+          "도구 요청",
+          "요청 기록"
         ],
-        "callout": "외부 자료 요청"
+        "callout": "공식 전화 창구"
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-          "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+          "title": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+          "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
           "bullets": [
-            "외부 자료 요청",
-            "외부 도구 요청",
-            "허가된 통로",
+            "자료 요청",
+            "도구 요청",
             "요청 기록"
           ],
           "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
-          "visualIntent": "MCP는 협력사에 요청을 보내는 공식 창구입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+          "visualIntent": "MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.",
           "glossaryTerms": [
             "MCP"
           ]
         },
         "selectedTemplate": "kimai-structure",
         "screenStructure": {
-          "headline": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-          "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+          "headline": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+          "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
           "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
           "imageAnchors": [
-            "외부 자료 요청",
-            "외부 도구 요청",
-            "허가된 통로"
+            "자료 요청",
+            "도구 요청",
+            "요청 기록"
           ],
-          "callout": "외부 자료 요청"
+          "callout": "공식 전화 창구"
         },
         "componentData": {
           "imageAnchors": [
-            "외부 자료 요청",
-            "외부 도구 요청",
-            "허가된 통로"
+            "자료 요청",
+            "도구 요청",
+            "요청 기록"
           ],
           "visualAssetId": "act5-mcp-partner-window"
         },
         "presenterCues": [
-          "한 문장 결론: MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-          "다음 연결: 실습에서는 에이전트 팀을 구현해 봅니다."
+          "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+          "자료 요청과 도구 요청을 허가된 전화 창구로 보내고 기록을 남깁니다.",
+          "실습에서는 에이전트 팀을 구현해 봅니다."
         ],
         "visualRequirements": {
-          "action": "single-image-first-generated-pilot",
+          "action": "single-image-regenerated",
           "visualAssetId": "act5-mcp-partner-window",
-          "sourcePath": "assets/visuals/act5-mcp-partner-window-single.png",
+          "sourcePath": "assets/visuals/act5-mcp-official-phone-window.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: MCP는 협력사에 요청을 보내는 공식 창구입니다.\n장면: MCP는 협력사에 요청을 보내는 공식 창구입니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 외부 자료 요청 / 외부 도구 요청 / 허가된 통로",
+          "generationPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai uses an official company telephone/switchboard labeled MCP to contact an external system through an official window. Request slips 자료 요청 and 도구 요청 pass through the phone line, and 요청 기록 is logged.",
           "reviewChecks": [
             "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
             "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
@@ -9257,7 +8628,10 @@
           "appliedAt": "2026-05-31",
           "rule": "template-slot-copy-polish"
         }
-      }
+      },
+      "characterRefs": [
+        "kimai"
+      ]
     },
     {
       "id": "act5-practice-handoff",
@@ -9420,7 +8794,7 @@
       "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-      "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+      "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
       "bullets": [
         "검문소 스위치",
         "Hook",
@@ -9431,11 +8805,11 @@
       "visualAssetId": "act5-team-to-act6-checkpoint",
       "presenterCues": [
         "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-        "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-        "다음 Act에서는 완료 전 검문소를 세웁니다."
+        "역할 분리는 끝이 아니라 제출 전 검문소로 이어진다.",
+        "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다."
       ],
-      "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
-      "speakerNote": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+      "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
+      "speakerNote": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
@@ -9456,25 +8830,25 @@
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
         "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-        "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-        "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+        "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+        "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
         "metaphorTerm": "검문소 스위치",
         "realTerm": "Hook",
         "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-        "supportingLine": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다."
+        "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
           "title": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-          "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+          "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
           "bullets": [
             "역할별 결과",
             "완료 보고",
             "제출 전 증거",
             "다음 Act: 검문소"
           ],
-          "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+          "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
           "visualIntent": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
             "Hook",
@@ -9484,22 +8858,23 @@
         "selectedTemplate": "term-bridge",
         "screenStructure": {
           "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-          "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-          "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+          "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+          "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
           "metaphorTerm": "검문소 스위치",
           "realTerm": "Hook",
           "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-          "supportingLine": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다."
+          "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
         },
         "componentData": {
           "metaphorTerm": "검문소 스위치",
           "realTerm": "Hook",
-          "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다."
+          "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
+          "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
         },
         "presenterCues": [
           "한 문장 결론: 팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
           "회사말을 먼저 말하고 실제 용어 Hook로 연결",
-          "다음 연결: 다음 Act에서는 완료 전 검문소를 세웁니다."
+          "다음 연결: 이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -9526,8 +8901,8 @@
           {
             "from": "message",
             "to": "supportingMessage",
-            "original": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-            "changed": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+            "original": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+            "changed": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
             "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
           },
           {
@@ -9556,7 +8931,7 @@
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-      "message": "결과물을 제출하기 전에는 빠진 항목과 기준 충족 여부를 먼저 확인합니다.",
+      "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
       "bullets": [
         "품질검문소",
         "Quality Gate",
@@ -9567,11 +8942,11 @@
       "visualAssetId": "act6-required-pre-submit-check",
       "presenterCues": [
         "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-        "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
-        "검증이 없으면 “끝냈습니다”라는 말만 남습니다."
+        "품질검문소는 완료 보고를 그대로 믿지 않는 장치입니다.",
+        "그 검문소는 완료 보고 대신 증거를 봅니다."
       ],
-      "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-      "speakerNote": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
+      "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
+      "speakerNote": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-009"
@@ -9592,24 +8967,24 @@
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
         "headline": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-        "message": "결과물을 제출하기 전에는 빠진 항목과 기준 충족 여부를 먼저 확인합니다.",
-        "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+        "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+        "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
         "metaphorTerm": "품질검문소",
         "realTerm": "Quality Gate",
         "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
-        "supportingLine": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증."
+        "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
           "title": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-          "message": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
+          "message": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
           "bullets": [
             "제출 전 확인",
             "빠진 항목 확인",
             "통과 또는 보류"
           ],
-          "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+          "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
           "visualIntent": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
             "Quality Gate"
@@ -9618,22 +8993,23 @@
         "selectedTemplate": "term-bridge",
         "screenStructure": {
           "headline": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-          "message": "결과물을 제출하기 전에는 빠진 항목과 기준 충족 여부를 먼저 확인합니다.",
-          "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+          "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+          "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
           "metaphorTerm": "품질검문소",
           "realTerm": "Quality Gate",
           "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
-          "supportingLine": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증."
+          "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
         },
         "componentData": {
           "metaphorTerm": "품질검문소",
           "realTerm": "Quality Gate",
-          "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다."
+          "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
+          "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
         },
         "presenterCues": [
           "한 문장 결론: 팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
           "회사말을 먼저 말하고 실제 용어 Quality Gate로 연결",
-          "다음 연결: 검증이 없으면 “끝냈습니다”라는 말만 남습니다."
+          "다음 연결: 그 검문소는 완료 보고 대신 증거를 봅니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -9660,7 +9036,7 @@
           {
             "from": "message",
             "to": "supportingMessage",
-            "original": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
+            "original": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
             "changed": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증.",
             "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
           },
@@ -9684,156 +9060,12 @@
       }
     },
     {
-      "id": "act6-completion-claim-no-evidence",
-      "section": "Act 6 · 검증과 하네스 구조",
-      "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
-      "estimatedMinutes": 1,
-      "title": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-      "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-      "bullets": [
-        "완료 보고",
-        "확인 없음",
-        "빈 증거"
-      ],
-      "visualIntent": "검증이 없으면 “끝냈습니다”라는 말만 남습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-completion-claim-no-evidence",
-      "presenterCues": [
-        "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-        "품질검문소는 완료 보고 대신 증거를 봅니다."
-      ],
-      "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-      "speakerNote": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-      "evidenceClaimIds": [
-        "claim-001"
-      ],
-      "glossaryTerms": [
-        "Quality Gate"
-      ],
-      "qualityChecks": [
-        "회사 업무 비유가 먼저 보인다.",
-        "한 슬라이드에 한 메시지만 담긴다.",
-        "실습 UI와 설명 슬라이드가 섞이지 않는다.",
-        "다음 슬라이드 브릿지가 자연스럽다."
-      ],
-      "layoutTemplate": "assertion-evidence",
-      "teachingMove": "explain",
-      "audienceAction": "inspect-visual",
-      "visualMode": "story-illustration",
-      "mainTemplate": "assertion-scene",
-      "rewrittenScreen": {
-        "headline": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-        "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "claim": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "evidenceAnchors": [
-          "완료 보고",
-          "확인 없음",
-          "빈 증거"
-        ],
-        "contrastLabel": "추측 대신 증거"
-      },
-      "templateRewrite": {
-        "sourceContractVersion": 1,
-        "originalSource": {
-          "title": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-          "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-          "bullets": [
-            "완료 보고",
-            "확인 없음",
-            "빈 증거"
-          ],
-          "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-          "visualIntent": "검증이 없으면 “끝냈습니다”라는 말만 남습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-          "glossaryTerms": [
-            "Quality Gate"
-          ]
-        },
-        "selectedTemplate": "assertion-scene",
-        "screenStructure": {
-          "headline": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-          "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-          "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-          "claim": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-          "evidenceAnchors": [
-            "완료 보고",
-            "확인 없음",
-            "빈 증거"
-          ],
-          "contrastLabel": "추측 대신 증거"
-        },
-        "componentData": {
-          "sheetTitle": "요청서",
-          "evidenceAnchors": [
-            "완료 보고",
-            "확인 없음",
-            "빈 증거"
-          ]
-        },
-        "presenterCues": [
-          "한 문장 결론: 검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-          "다음 연결: 품질검문소는 완료 보고 대신 증거를 봅니다."
-        ],
-        "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act6-completion-claim-no-evidence",
-          "sourcePath": "assets/visuals/act6-completion-claim-no-evidence.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 검증이 없으면 “끝냈습니다”라는 말만 남습니다.\n장면: 검증이 없으면 “끝냈습니다”라는 말만 남습니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 완료 보고 / 확인 없음 / 빈 증거",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
-        },
-        "rationale": "실패/위험/원칙을 한 문장 주장과 장면 대비로 보여 준다.",
-        "changes": [
-          {
-            "from": "title",
-            "to": "headline",
-            "original": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-            "changed": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-            "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-          },
-          {
-            "from": "message",
-            "to": "supportingMessage",
-            "original": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-            "changed": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-            "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-          },
-          {
-            "from": "bullets",
-            "to": "evidenceAnchors",
-            "original": [
-              "완료 보고",
-              "확인 없음",
-              "빈 증거"
-            ],
-            "changed": [
-              "완료 보고",
-              "확인 없음",
-              "빈 증거"
-            ],
-            "reason": "assertion-scene 구조에서 필요한 슬롯으로 재배치한다."
-          }
-        ],
-        "copyPolish": {
-          "version": 1,
-          "appliedAt": "2026-05-31",
-          "rule": "template-slot-copy-polish"
-        }
-      }
-    },
-    {
       "id": "act6-quality-gate-evidence-over-claim",
       "section": "Act 6 · 검증과 하네스 구조",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-      "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+      "message": "품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.",
       "bullets": [
         "작업 기록",
         "기준 대조",
@@ -9844,11 +9076,11 @@
       "visualAssetId": "act6-quality-gate-evidence-over-claim",
       "presenterCues": [
         "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-        "검증하려면 김아이가 작업 기록을 남겨야 합니다."
+        "작업 기록, 기준 대조, 남은 위험을 목차처럼 제시한다.",
+        "먼저 작업 기록부터 보겠습니다."
       ],
-      "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
-      "speakerNote": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+      "bridge": "먼저 작업 기록부터 보겠습니다.",
+      "speakerNote": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
@@ -9868,8 +9100,8 @@
       "mainTemplate": "decision-gate",
       "rewrittenScreen": {
         "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-        "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+        "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+        "bridge": "먼저 작업 기록부터 보겠습니다.",
         "criteria": [
           {
             "key": "기준 1",
@@ -9891,13 +9123,13 @@
         "sourceContractVersion": 1,
         "originalSource": {
           "title": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-          "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+          "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
           "bullets": [
             "작업 기록",
             "기준 대조",
             "남은 위험"
           ],
-          "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+          "bridge": "먼저 작업 기록부터 보겠습니다.",
           "visualIntent": "품질검문소는 완료 보고 대신 증거를 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
             "Quality Gate"
@@ -9906,8 +9138,8 @@
         "selectedTemplate": "decision-gate",
         "screenStructure": {
           "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-          "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-          "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+          "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+          "bridge": "먼저 작업 기록부터 보겠습니다.",
           "criteria": [
             {
               "key": "기준 1",
@@ -9946,7 +9178,7 @@
         "presenterCues": [
           "한 문장 결론: 품질검문소는 완료 보고 대신 증거를 봅니다.",
           "판정 기준: 작업 기록, 기준 대조, 남은 위험",
-          "다음 연결: 검증하려면 김아이가 작업 기록을 남겨야 합니다."
+          "다음 연결: 먼저 작업 기록부터 보겠습니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -9973,8 +9205,8 @@
           {
             "from": "message",
             "to": "supportingMessage",
-            "original": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-            "changed": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+            "original": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+            "changed": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
             "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
           },
           {
@@ -11482,8 +10714,8 @@
       "section": "Act 6 · 검증과 하네스 구조",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
-      "title": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-      "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
+      "title": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
+      "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
       "bullets": [
         "정보 선별",
         "업무 지시",
@@ -11496,11 +10728,11 @@
       "visualType": "generated-image",
       "visualAssetId": "act6-final-harness-map",
       "presenterCues": [
-        "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-        "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
-        "이제 내 업무에 가져갈 장치부터 고르면 됩니다."
+        "6가지 하네스 장치가 하나의 업무 환경으로 연결된다는 점을 정리한다.",
+        "좋은 프롬프트 하나가 아니라 정보, 지시, 내규, 매뉴얼, 역할, 검문소의 묶음이라는 점을 말한다.",
+        "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다."
       ],
-      "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+      "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
       "speakerNote": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
       "evidenceClaimIds": [
         "claim-001"
@@ -11520,9 +10752,9 @@
       "visualMode": "artifact-map",
       "mainTemplate": "recap-map",
       "rewrittenScreen": {
-        "headline": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-        "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
-        "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+        "headline": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
+        "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
+        "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
         "mapNodes": [
           "정보 선별",
           "업무 지시",
@@ -11545,7 +10777,7 @@
             "역할과 권한",
             "완료 검문소"
           ],
-          "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+          "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
           "visualIntent": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
             "Harness Engineering"
@@ -11553,9 +10785,9 @@
         },
         "selectedTemplate": "recap-map",
         "screenStructure": {
-          "headline": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-          "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
-          "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+          "headline": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
+          "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
+          "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
           "mapNodes": [
             "정보 선별",
             "업무 지시",
@@ -11576,8 +10808,8 @@
           ]
         },
         "presenterCues": [
-          "한 문장 결론: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-          "다음 연결: 이제 내 업무에 가져갈 장치부터 고르면 됩니다."
+          "한 문장 결론: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 전체 업무 환경입니다.",
+          "다음 연결: 6개를 모두 적용할 필요가 없다는 질문으로 마지막 필터 슬라이드에 넘긴다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -11592,7 +10824,7 @@
             "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
           ]
         },
-        "rationale": "여정 전체를 회수하고 현업 적용 위치를 고른다.",
+        "rationale": "6가지 하네스 장치를 전체 지도로 정리한 뒤, 마지막 슬라이드에서 현업 우선순위 필터로 좁힌다.",
         "changes": [
           {
             "from": "title",
@@ -11636,6 +10868,152 @@
           "rule": "template-slot-copy-polish"
         }
       }
+    },
+    {
+      "id": "wrap-personal-harness",
+      "section": "Wrap-up · 내 업무에 가져가기",
+      "sectionObjective": "수강생이 자신의 업무에 적용할 하네스 장치 3개를 고른다.",
+      "estimatedMinutes": 5,
+      "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+      "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+      "bullets": [
+        "자주 반복되는가",
+        "실패하면 위험한가",
+        "검증할 증거가 있는가"
+      ],
+      "visualIntent": "Act 1~6의 6가지 하네스 장치가 반복, 위험, 검증 세 필터를 지나 내 업무의 핵심 안전장치 3가지로 좁혀지는 김아이 깔때기 손그림",
+      "visualType": "generated-image",
+      "presenterCues": [
+        "방금 본 6가지 장치를 전부 한 번에 적용할 필요는 없다고 정리한다.",
+        "반복, 위험, 검증 증거라는 세 필터로 내 업무의 우선순위를 고르게 한다.",
+        "오늘 만든 것은 일회성 프롬프트가 아니라 다시 쓸 수 있는 업무 방식이라고 마무리한다."
+      ],
+      "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+      "speakerNote": "마지막 활동은 개인 적용이다. 6가지 하네스 장치를 전부 적용하려 하지 말고 반복, 실패 위험, 검증 증거 기준을 통과한 세 곳부터 고르게 한다.",
+      "evidenceClaimIds": [
+        "claim-010"
+      ],
+      "glossaryTerms": [
+        "Harness Engineering"
+      ],
+      "qualityChecks": [
+        "개인 행동으로 끝난다.",
+        "세 가지 선택 기준이 보인다.",
+        "과도한 도입을 권하지 않는다."
+      ],
+      "visualAssetId": "wrap-personal-harness-funnel",
+      "layoutTemplate": "assertion-evidence",
+      "teachingMove": "synthesize",
+      "audienceAction": "reflect",
+      "visualMode": "story-illustration",
+      "mainTemplate": "assertion-scene",
+      "rewrittenScreen": {
+        "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+        "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+        "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+        "imageAnchors": [
+          "자주 반복되는가",
+          "실패하면 위험한가",
+          "검증할 증거가 있는가"
+        ],
+        "callout": "완벽함보다 3개의 안전장치가 먼저입니다.",
+        "evidenceAnchors": [
+          "자주 반복되는가",
+          "실패하면 위험한가",
+          "검증할 증거가 있는가"
+        ]
+      },
+      "templateRewrite": {
+        "sourceContractVersion": 1,
+        "originalSource": {
+          "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+          "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+          "bullets": [
+            "자주 반복되는가",
+            "실패하면 위험한가",
+            "검증할 증거가 있는가"
+          ],
+          "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+          "visualIntent": "Act 1~6의 6가지 하네스 장치가 반복, 위험, 검증 세 필터를 지나 내 업무의 핵심 안전장치 3가지로 좁혀지는 김아이 깔때기 손그림",
+          "glossaryTerms": [
+            "Harness Engineering"
+          ]
+        },
+        "selectedTemplate": "assertion-scene",
+        "screenStructure": {
+          "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+          "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+          "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+          "imageAnchors": [
+            "자주 반복되는가",
+            "실패하면 위험한가",
+            "검증할 증거가 있는가"
+          ],
+          "callout": "완벽함보다 3개의 안전장치가 먼저입니다.",
+          "evidenceAnchors": [
+            "자주 반복되는가",
+            "실패하면 위험한가",
+            "검증할 증거가 있는가"
+          ]
+        },
+        "componentData": {
+          "imageAnchors": [
+            "자주 반복되는가",
+            "실패하면 위험한가",
+            "검증할 증거가 있는가"
+          ],
+          "callout": "완벽함보다 3개의 안전장치가 먼저입니다."
+        },
+        "presenterCues": [
+          "한 문장 결론: 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+          "이미지 설명: 6개 장치가 반복, 위험, 검증 필터를 지나 3개 우선순위로 좁혀집니다.",
+          "마무리: 문장이 아니라 내일도 다시 쓰는 업무 방식으로 끝냅니다."
+        ],
+        "visualRequirements": {
+          "action": "single-image-first-generated-pilot",
+          "visualAssetId": "wrap-personal-harness-funnel",
+          "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
+          "characterConsistencyRef": "kimai-character-contract-v1",
+          "generationPrompt": "Use assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as strict Kimai character reference. Create a hand-drawn minimal Korean lecture illustration for the final wrap-up slide. Preserve Kimai exactly: friendly human-like AI new employee, round face, white unfilled hair outlined in black with one top curl and three simple bang shapes, over-ear headset with blue AI label, thin antenna, white collared shirt, blue necktie, readable 김아이 name badge. Composition: six top cards labeled 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소 flow into a central funnel with 자주 반복, 실패 위험, 검증 증거, then output to three bottom cards 반복 업무, 위험 업무, 검증 가능 and callout 3개부터. White background, black linework, #2563eb accent, large Korean labels only. No robot helmet, black filled hair, metal body, different mascot, circled numbers, panel numbers, UI, code, score, slide frame, crop marks, or clipped text/character.",
+          "reviewChecks": [
+            "김아이가 act0-kimai-capable 기준 이미지의 흰 머리, 세 갈래 앞머리, AI 헤드셋, 안테나, 파란 넥타이, 김아이 명찰을 유지한다.",
+            "6가지 장치에서 3가지 필터로 좁혀지는 흐름이 한눈에 보인다.",
+            "동그라미 숫자, 패널 번호, UI/코드/점수판이 없다.",
+            "이미지 안의 한국어는 큰 라벨만 사용하고 긴 문장은 slide text로 뺀다.",
+            "캐릭터와 핵심 라벨이 잘리지 않는다."
+          ]
+        },
+        "rationale": "전체 하네스 지도 뒤에 개인 적용 우선순위 필터를 이미지 중심으로 제시해 마지막 행동을 분명히 만든다.",
+        "changes": [
+          {
+            "from": "position",
+            "to": "final slide",
+            "original": "slide 37",
+            "changed": "last slide after act6-final-harness-map",
+            "reason": "전체 6가지 장치 요약 뒤에 개인 적용 기준을 제시해야 흐름이 자연스럽다."
+          },
+          {
+            "from": "visualAssetId",
+            "to": "wrap-personal-harness-funnel",
+            "original": "act6-final-harness-map",
+            "changed": "wrap-personal-harness-funnel",
+            "reason": "마지막 슬라이드가 전체 지도 반복이 아니라 3개 필터 이미지로 보이게 한다."
+          },
+          {
+            "from": "mainTemplate",
+            "to": "assertion-scene",
+            "original": "recap-map",
+            "changed": "assertion-scene",
+            "reason": "CSS 중심 요약 맵 대신 생성 이미지가 주 시각자료가 되게 한다."
+          }
+        ],
+        "copyPolish": {
+          "version": 2,
+          "appliedAt": "2026-06-02",
+          "rule": "final-wrap-up-image-template"
+        }
+      },
+      "layoutVariant": "standard"
     }
   ]
 }

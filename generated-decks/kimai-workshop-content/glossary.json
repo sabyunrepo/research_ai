@@ -188,17 +188,6 @@
       "tooltipText": "김아이 회사 내규: AI가 매번 지켜야 할 프로젝트 또는 폴더 단위의 지속 지침 파일. 예를 들면 회사가 정해 둔 공통 업무 규칙 문서."
     },
     {
-      "term": "Stale Context",
-      "definition": "지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태.",
-      "match": "exact-phrase",
-      "koreanLabel": "오래된 책상 자료",
-      "analogy": "끝난 업무 서류가 책상에 남아 새 업무 판단을 흔드는 상황",
-      "practiceMeaning": "Act 3에서 임시 정보와 지속 내규를 구분해야 하는 이유",
-      "plainLanguage": "지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태.",
-      "firstUseSlideId": "act3-claude-md-fit",
-      "tooltipText": "오래된 책상 자료: 지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태. 예를 들면 끝난 업무 서류가 책상에 남아 새 업무 판단을 흔드는 상황."
-    },
-    {
       "term": "Persistent Instructions",
       "definition": "한 번의 요청이 끝나도 계속 적용되는 반복 지침.",
       "match": "exact-phrase",

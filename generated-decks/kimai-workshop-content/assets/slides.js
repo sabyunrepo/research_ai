@@ -4037,140 +4037,196 @@ window.DECK_SLIDES = [
     "section": "Act 2 · 좋은 업무 지시",
     "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
     "estimatedMinutes": 1,
-    "title": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-    "message": "좋은 결과를 원하면 김아이에게 들어가는 지시와 자료부터 선명해야 합니다.",
+    "title": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+    "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
     "bullets": [
-      "빠진 곳 없는 업무 지시",
-      "Prompt Engineering",
-      "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다."
+      "필요 자료 파악",
+      "빠진 조건 질문",
+      "팀장 답변 반영",
+      "작업 플랜 정리"
     ],
-    "visualIntent": "입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림",
+    "visualIntent": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다. Include large readable Korean labels for: 좋은 입력, 좋은 판단, 좋은 결과. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background.",
+    "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, asking a team lead clarifying questions, then organizing answers into a work plan. Include only large simple Korean labels if needed: 자료, 조건, 답변, 플랜. Use black linework and one blue accent #2563eb only. No gradients, no glow, no glossy effects, no decorative abstract background, no tiny text.",
     "visualAssetId": "act2-input-output-principle",
-    "layoutTemplate": "glossary-bridge",
-    "teachingMove": "connect",
-    "audienceAction": "connect-metaphor",
-    "visualMode": "term-bridge",
-    "mainTemplate": "term-bridge",
-    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
+    "layoutTemplate": "concept-map",
+    "teachingMove": "demonstrate",
+    "audienceAction": "compare",
+    "visualMode": "process-diagram",
+    "mainTemplate": "workflow-strip",
+    "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
     "rewrittenScreen": {
-      "headline": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-      "message": "좋은 결과를 원하면 김아이에게 들어가는 지시와 자료부터 선명해야 합니다.",
-      "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-      "metaphorTerm": "빠진 곳 없는 업무 지시",
-      "realTerm": "Prompt Engineering",
-      "bridgeLine": "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다.",
-      "supportingLine": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다."
+      "headline": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+      "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
+      "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+      "steps": [
+        {
+          "step": "01",
+          "label": "필요 자료 파악"
+        },
+        {
+          "step": "02",
+          "label": "빠진 조건 질문"
+        },
+        {
+          "step": "03",
+          "label": "팀장 답변 반영"
+        },
+        {
+          "step": "04",
+          "label": "작업 플랜 정리"
+        }
+      ]
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-        "message": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
+        "title": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+        "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
         "bullets": [
-          "좋은 입력",
-          "좋은 판단",
-          "좋은 결과"
+          "필요 자료 파악",
+          "빠진 조건 질문",
+          "팀장 답변 반영",
+          "작업 플랜 정리"
         ],
-        "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-        "visualIntent": "입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림",
+        "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+        "visualIntent": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 작업 플랜으로 정리하는 절차형 손그림",
         "glossaryTerms": [
           "Prompt Engineering"
         ]
       },
-      "selectedTemplate": "term-bridge",
+      "selectedTemplate": "workflow-strip",
       "screenStructure": {
-        "headline": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-        "message": "좋은 결과를 원하면 김아이에게 들어가는 지시와 자료부터 선명해야 합니다.",
-        "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
-        "metaphorTerm": "빠진 곳 없는 업무 지시",
-        "realTerm": "Prompt Engineering",
-        "bridgeLine": "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다.",
-        "supportingLine": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다."
-      },
-      "componentData": {
-        "metaphorTerm": "빠진 곳 없는 업무 지시",
-        "realTerm": "Prompt Engineering",
-        "bridgeLine": "빠진 곳 없는 업무 지시와 실제 용어 Prompt Engineering를 함께 보여 줍니다."
-      },
-      "presenterCues": [
-        "한 문장 결론: 들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-        "회사말을 먼저 말하고 실제 용어 Prompt Engineering로 연결",
-        "다음 연결: 그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다."
-      ],
-      "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
-        "visualAssetId": "act2-input-output-principle",
-        "sourcePath": "assets/visuals/act2-input-output-principle.png",
-        "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 들어가는 정보가 좋아야 나오는 결과도 좋아집니다.\n장면: 입력 카드가 김아이를 지나 보고서 초안으로 나오는 단순 흐름 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 좋은 입력 / 좋은 판단 / 좋은 결과",
-        "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+        "headline": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+        "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
+        "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
+        "steps": [
+          {
+            "step": "01",
+            "label": "필요 자료 파악"
+          },
+          {
+            "step": "02",
+            "label": "빠진 조건 질문"
+          },
+          {
+            "step": "03",
+            "label": "팀장 답변 반영"
+          },
+          {
+            "step": "04",
+            "label": "작업 플랜 정리"
+          }
         ]
       },
-      "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+      "componentData": {
+        "steps": [
+          {
+            "step": "01",
+            "label": "필요 자료 파악"
+          },
+          {
+            "step": "02",
+            "label": "빠진 조건 질문"
+          },
+          {
+            "step": "03",
+            "label": "팀장 답변 반영"
+          },
+          {
+            "step": "04",
+            "label": "작업 플랜 정리"
+          }
+        ]
+      },
+      "presenterCues": [
+        "한 문장 결론: 좋은 지시는 김아이와 질문하며 구체화합니다.",
+        "절차: 필요 자료 파악 → 빠진 조건 질문 → 팀장 답변 반영 → 작업 플랜 정리",
+        "다음 연결: 이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다."
+      ],
+      "visualRequirements": {
+        "action": "use-generated-slide-asset",
+        "visualAssetId": "act2-input-output-principle",
+        "sourcePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png",
+        "characterConsistencyRef": "kimai-character-contract-v1",
+        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 좋은 지시는 김아이와 질문하며 구체화합니다. 김아이가 팀장에게 필요한 자료와 빠진 조건을 질문하고, 답변을 받아 작업 플랜 카드로 정리하는 장면. 동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\". 스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나. 금지: 사진풍, 3D, 그라데이션, glow, blur, 복잡한 배경, 작은 한국어 문장.",
+        "reviewChecks": [
+          "김아이가 팀장에게 질문하며 지시를 구체화하는 흐름이 보인다.",
+          "캐릭터가 기존 김아이의 헤드셋/명찰/파란 포인트 톤과 일관된다.",
+          "긴 설명은 이미지 안에 넣지 않고 슬라이드 텍스트와 발표 스크립트에 둔다."
+        ]
+      },
+      "rationale": "용어 명명보다 김아이와 질문하며 작업지시를 구체화하는 협업 절차를 보여 주는 장면이다.",
       "changes": [
         {
           "from": "title",
           "to": "headline",
           "original": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-          "changed": "들어가는 정보가 좋아야 나오는 결과도 좋아집니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
-          "changed": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
+          "changed": "좋은 지시는 김아이와 질문하며 구체화합니다.",
+          "reason": "입력 품질 원칙을 김아이와 함께 작업지시를 구체화하는 행동으로 바꾼다."
         },
         {
           "from": "bullets",
-          "to": "metaphorTerm/realTerm/bridgeLine",
+          "to": "steps",
           "original": [
-            "좋은 입력",
-            "좋은 판단",
-            "좋은 결과"
+            "빠진 곳 없는 업무 지시",
+            "Prompt Engineering"
           ],
-          "changed": [],
-          "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
+          "changed": [
+            {
+              "step": "01",
+              "label": "필요 자료 파악"
+            },
+            {
+              "step": "02",
+              "label": "빠진 조건 질문"
+            },
+            {
+              "step": "03",
+              "label": "팀장 답변 반영"
+            },
+            {
+              "step": "04",
+              "label": "작업 플랜 정리"
+            }
+          ],
+          "reason": "workflow-strip 구조에서 발표자가 따라 말할 수 있는 절차형 앵커로 재배치한다."
         }
       ],
       "copyPolish": {
         "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
+        "appliedAt": "2026-06-02",
+        "rule": "prompt-collaboration-workflow-rewrite"
       }
     },
-    "layoutVariant": "quote",
+    "layoutVariant": "visual-left",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "bridge",
-      "sourceAction": "keep-existing-crop-review-required",
+      "templateComponent": "flow",
+      "sourceAction": "use-generated-slide-asset",
       "visualAssetId": "act2-input-output-principle",
-      "renderedVisualAsset": "../assets/visuals/act2-input-output-principle-act2-input-output-principle-single.png",
-      "usesExistingImage": true,
+      "renderedVisualAsset": "../assets/visuals/act2-input-output-principle-act2-input-output-principle-kimai-question-plan.png",
+      "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act2-input-output-principle-act2-input-output-principle-single.png",
+    "renderedVisualAsset": "../assets/visuals/act2-input-output-principle-act2-input-output-principle-kimai-question-plan.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다.",
+    "assetTeachingRole": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 협업 절차를 설명한다.",
     "assetExplanationAnchors": [
-      "좋은 입력",
-      "좋은 판단",
-      "좋은 결과"
+      "필요 자료",
+      "빠진 조건",
+      "팀장 답변",
+      "작업 플랜"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
         "김아이",
-        "좋은 입력",
-        "좋은 판단",
-        "좋은 결과"
+        "팀장",
+        "자료",
+        "조건",
+        "답변",
+        "플랜"
       ],
       "mustNotShow": [
         "실습 입력폼",
@@ -4188,21 +4244,21 @@ window.DECK_SLIDES = [
         "partial cropped objects"
       ],
       "teachingQuestions": [
-        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
+        "그림만 보고 김아이와 팀장이 함께 작업지시를 구체화한다는 메시지를 설명할 수 있는가?",
+        "필요 자료, 빠진 조건, 팀장 답변, 작업 플랜의 흐름이 보이는가?"
       ],
       "minimumPassScore": 85
     },
     "assetCrop": null,
     "presenterCues": [
-      "AI 결과물은 갑자기 좋아지지 않는다.",
-      "김아이에게 들어가는 정보가 좋아야 판단도 좋아진다.",
-      "좋은 프롬프트는 결국 좋은 업무 입력을 만드는 일이다."
+      "좋은 지시는 김아이와 질문하며 구체화합니다.",
+      "필요 자료와 빠진 조건을 김아이에게 먼저 묻게 한다.",
+      "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다."
     ],
-    "bridge": "그래서 김아이에게는 혼자 일할 수 있게 만드는 인수인계서가 필요합니다.",
+    "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "좋은 결과를 기대하려면 김아이에게 들어가는 지시와 자료의 품질부터 좋아야 한다.",
+    "speakerNote": "팀장님이 처음부터 완벽한 질문을 다 만들 필요는 없습니다. 김아이에게 이 일을 하려면 어떤 자료가 필요한지, 어떤 조건을 확인해야 하는지 묻게 만들면 됩니다. 김아이는 필요한 자료와 빠진 조건을 질문으로 정리하고, 팀장님은 그 질문에 답하면서 지시를 구체화합니다. 이 과정을 거치면 막연한 요청이 실행 가능한 작업 플랜으로 바뀝니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -4210,9 +4266,9 @@ window.DECK_SLIDES = [
       "Prompt Engineering"
     ],
     "qualityChecks": [
-      "화면 메시지가 한 가지다.",
-      "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
-      "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      "Prompt Engineering 용어 소개보다 김아이와 함께 지시를 구체화하는 절차가 먼저 보인다.",
+      "필요 자료 파악, 빠진 조건 질문, 팀장 답변 반영, 작업 플랜 정리가 화면에 드러난다.",
+      "다음 슬라이드의 작업지시서/spec 개념으로 자연스럽게 넘어간다."
     ]
   },
   {
@@ -4222,14 +4278,14 @@ window.DECK_SLIDES = [
     "section": "Act 2 · 좋은 업무 지시",
     "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
     "estimatedMinutes": 1,
-    "title": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-    "message": "인수인계서는 목표, 자료, 조건, 끝나는 기준을 한 번에 묶어 주는 업무 문서입니다.",
+    "title": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+    "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
     "bullets": [
-      "인수인계서",
-      "Task Specification",
-      "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다."
+      "작업지시서",
+      "Spec",
+      "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
     ],
-    "visualIntent": "팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림",
+    "visualIntent": "팀장이 김아이에게 목표와 조건이 정리된 작업지시서 spec 한 장을 건네는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
     "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 인수인계서가 김아이가 혼자 일할 수 있게 목표, 자료, 조건, 완료 기준을 묶어 준다는 점을 설명한다. Include large readable Korean labels for: 목표, 자료, 조건, 완료 기준. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
@@ -4241,100 +4297,93 @@ window.DECK_SLIDES = [
     "mainTemplate": "term-bridge",
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
-      "headline": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-      "message": "인수인계서는 목표, 자료, 조건, 끝나는 기준을 한 번에 묶어 주는 업무 문서입니다.",
-      "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-      "metaphorTerm": "인수인계서",
-      "realTerm": "Task Specification",
-      "bridgeLine": "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다.",
-      "supportingLine": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다."
+      "headline": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+      "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
+      "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+      "metaphorTerm": "작업지시서",
+      "realTerm": "Spec",
+      "bridgeLine": "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다.",
+      "supportingLine": "작업지시서는 목표, 자료, 조건, 출력, 완료 기준을 묶어 김아이가 혼자 일할 수 있게 만드는 명세입니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-        "message": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
+        "title": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+        "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
         "bullets": [
-          "목표",
-          "자료",
-          "조건",
-          "완료 기준"
+          "작업지시서",
+          "Spec",
+          "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
         ],
-        "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "visualIntent": "팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림",
+        "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+        "visualIntent": "팀장이 김아이에게 목표와 조건이 정리된 작업지시서 spec 한 장을 건네는 손그림",
         "glossaryTerms": [
           "Task Specification"
         ]
       },
       "selectedTemplate": "term-bridge",
       "screenStructure": {
-        "headline": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-        "message": "인수인계서는 목표, 자료, 조건, 끝나는 기준을 한 번에 묶어 주는 업무 문서입니다.",
-        "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "metaphorTerm": "인수인계서",
-        "realTerm": "Task Specification",
-        "bridgeLine": "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다.",
-        "supportingLine": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다."
+        "headline": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+        "message": "spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.",
+        "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
+        "metaphorTerm": "작업지시서",
+        "realTerm": "Spec",
+        "bridgeLine": "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다.",
+        "supportingLine": "작업지시서는 목표, 자료, 조건, 출력, 완료 기준을 묶어 김아이가 혼자 일할 수 있게 만드는 명세입니다."
       },
       "componentData": {
-        "metaphorTerm": "인수인계서",
-        "realTerm": "Task Specification",
-        "bridgeLine": "인수인계서와 실제 용어 Task Specification를 함께 보여 줍니다."
+        "metaphorTerm": "작업지시서",
+        "realTerm": "Spec",
+        "bridgeLine": "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
       },
       "presenterCues": [
-        "한 문장 결론: 인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-        "회사말을 먼저 말하고 실제 용어 Task Specification로 연결",
-        "다음 연결: 좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다."
+        "한 문장 결론: 작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+        "용어 연결: 작업지시서 → Spec → Task Specification",
+        "다음 연결: 이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
         "visualAssetId": "act2-handoff-document",
         "sourcePath": "assets/visuals/act2-handoff-document.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.\n장면: 팀장이 김아이에게 이번 일의 조건이 정리된 인수인계서 한 장을 건네는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 목표 / 자료 / 조건",
+        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다. 팀장이 김아이에게 목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서 한 장을 건네는 장면. 동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\". 스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나. 금지: 사진풍, 3D, 그라데이션, glow, blur, 복잡한 배경, 작은 한국어 문장.",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
+          "작업지시서/spec이 이번 작업의 명세라는 의미가 보인다.",
           "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다."
         ]
       },
-      "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+      "rationale": "김아이와 질문하며 정리한 작업 내용을 작업지시서/spec으로 남기는 명명 장면이다.",
       "changes": [
         {
           "from": "title",
           "to": "headline",
           "original": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-          "changed": "인수인계서는 김아이가 혼자 일할 수 있게 만드는 문서입니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
-          "changed": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
+          "changed": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
+          "reason": "인수인계서 표현을 작업지시서/spec 표현으로 전환한다."
         },
         {
           "from": "bullets",
-          "to": "metaphorTerm/realTerm/bridgeLine",
+          "to": "termBridge",
           "original": [
-            "목표",
-            "자료",
-            "조건",
-            "완료 기준"
+            "인수인계서",
+            "Task Specification"
           ],
-          "changed": [],
-          "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
+          "changed": [
+            "작업지시서",
+            "Spec",
+            "Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다."
+          ],
+          "reason": "일반인에게는 작업지시서를 먼저 보여 주고 Spec을 보조 용어로 연결한다."
         }
       ],
       "copyPolish": {
         "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
+        "appliedAt": "2026-06-02",
+        "rule": "task-specification-term-rewrite"
       }
     },
-    "layoutVariant": "quote",
+    "layoutVariant": "statement",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "bridge",
@@ -4382,14 +4431,14 @@ window.DECK_SLIDES = [
     },
     "assetCrop": null,
     "presenterCues": [
-      "인수인계서는 김아이가 혼자 움직일 수 있게 만드는 문서라고 설명한다.",
-      "Act 2의 인수인계서는 반복 매뉴얼이 아니라 이번 일을 맡기기 위한 조건 묶음이다.",
-      "이제 그 안에 무엇이 들어가야 하는지 세 부분으로 나눠 본다."
+      "작업지시서는 김아이가 혼자 움직일 수 있게 만드는 spec이라고 설명한다.",
+      "대화로 정리한 내용을 목표, 자료, 조건, 출력, 완료 기준으로 남긴다.",
+      "이제 spec 안에 무엇이 들어가야 하는지 나눠 본다."
     ],
-    "bridge": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
+    "bridge": "이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "여기서 인수인계서는 이번 일을 시작할 수 있게 목표, 자료, 조건, 끝나는 기준을 묶어 주는 문서다.",
+    "speakerNote": "방금 김아이와 질문하며 정리한 내용을 그냥 대화로 흘려보내지 말고 문서처럼 남긴다고 생각하면 됩니다. 이걸 작업지시서라고 부르겠습니다. 개발 쪽에서는 이런 것을 spec, 더 정확히는 Task Specification이라고 부릅니다. 중요한 건 이름이 아니라 안에 무엇이 들어가느냐입니다. 목표, 자료, 조건, 출력 형식, 완료 기준이 들어가야 김아이가 혼자 일할 수 있습니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -4397,270 +4446,20 @@ window.DECK_SLIDES = [
       "Task Specification"
     ],
     "qualityChecks": [
-      "화면 메시지가 한 가지다.",
-      "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
-      "제품 리뷰자료 보고서 업무 예시와 연결된다."
+      "인수인계서 표현을 작업지시서/spec 표현으로 바꾼다.",
+      "Spec보다 작업지시서 의미가 먼저 이해되도록 설명한다.",
+      "다음 23~25번의 spec 구성 요소 설명으로 자연스럽게 이어진다."
     ]
   },
   {
     "index": 23,
-    "id": "act2-goal-use-context",
-    "file": "act2-goal-use-context.html",
-    "section": "Act 2 · 좋은 업무 지시",
-    "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
-    "estimatedMinutes": 1,
-    "title": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-    "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정합니다.",
-    "bullets": [
-      "목표: 무엇을 만들지",
-      "용도: 어디에 쓸지",
-      "판단: 무엇을 결정할지",
-      "형식: 어떻게 남길지"
-    ],
-    "visualIntent": "인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림",
-    "visualType": "generated-image",
-    "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다. Include large readable Korean labels for: 무엇을 만들지, 어디에 쓸지, 무엇을 결정할지. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background.",
-    "visualAssetId": "act2-goal-use-context",
-    "layoutTemplate": "checklist",
-    "teachingMove": "explain",
-    "audienceAction": "rehearse-checklist",
-    "visualMode": "checklist-board",
-    "mainTemplate": "brief-window",
-    "templateSelectionReason": "source layoutTemplate=checklist; source teachingMove=explain; source audienceAction=rehearse-checklist; source visualMode=checklist-board",
-    "rewrittenScreen": {
-      "headline": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-      "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정합니다.",
-      "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-      "rows": [
-        {
-          "label": "목표",
-          "text": "무엇을 만들지"
-        },
-        {
-          "label": "용도",
-          "text": "어디에 쓸지"
-        },
-        {
-          "label": "판단",
-          "text": "무엇을 결정할지"
-        },
-        {
-          "label": "형식",
-          "text": "어떻게 남길지"
-        }
-      ]
-    },
-    "templateRewrite": {
-      "sourceContractVersion": 1,
-      "originalSource": {
-        "title": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-        "bullets": [
-          "무엇을 만들지",
-          "어디에 쓸지",
-          "무엇을 결정할지"
-        ],
-        "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "visualIntent": "인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림",
-        "glossaryTerms": [
-          "Prompt"
-        ]
-      },
-      "selectedTemplate": "brief-window",
-      "screenStructure": {
-        "headline": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "message": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정합니다.",
-        "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "rows": [
-          {
-            "label": "목표",
-            "text": "무엇을 만들지"
-          },
-          {
-            "label": "용도",
-            "text": "어디에 쓸지"
-          },
-          {
-            "label": "판단",
-            "text": "무엇을 결정할지"
-          },
-          {
-            "label": "형식",
-            "text": "어떻게 남길지"
-          }
-        ]
-      },
-      "componentData": {
-        "rows": [
-          {
-            "label": "목표",
-            "text": "무엇을 만들지"
-          },
-          {
-            "label": "용도",
-            "text": "어디에 쓸지"
-          },
-          {
-            "label": "판단",
-            "text": "무엇을 결정할지"
-          },
-          {
-            "label": "형식",
-            "text": "어떻게 남길지"
-          }
-        ]
-      },
-      "presenterCues": [
-        "한 문장 결론: 좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-        "업무 지시서 행: 목표, 자료, 지시, 출력",
-        "다음 연결: 좋은 지시서는 자료와 조건을 따로 지정합니다."
-      ],
-      "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
-        "visualAssetId": "act2-goal-use-context",
-        "sourcePath": "assets/visuals/act2-goal-use-context.png",
-        "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.\n장면: 인수인계서 첫 부분에 산출물, 사용 상황, 결정 목적 칸이 채워지는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 무엇을 만들지 / 어디에 쓸지 / 무엇을 결정할지",
-        "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-        ]
-      },
-      "rationale": "목표/자료/지시/출력/검증처럼 업무 문서 행 구조가 맞다.",
-      "changes": [
-        {
-          "from": "title",
-          "to": "headline",
-          "original": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "changed": "좋은 지시서는 일의 목표와 사용 상황을 먼저 고정합니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-          "changed": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "rows",
-          "original": [
-            "무엇을 만들지",
-            "어디에 쓸지",
-            "무엇을 결정할지"
-          ],
-          "changed": [
-            {
-              "label": "목표",
-              "text": "무엇을 만들지"
-            },
-            {
-              "label": "자료",
-              "text": "어디에 쓸지"
-            },
-            {
-              "label": "지시",
-              "text": "무엇을 결정할지"
-            },
-            {
-              "label": "출력",
-              "text": "화면에 남길 결과 형식"
-            }
-          ],
-          "reason": "brief-window 구조에서 필요한 슬롯으로 재배치한다."
-        }
-      ],
-      "copyPolish": {
-        "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
-      }
-    },
-    "layoutVariant": "checklist",
-    "visualRenderContract": {
-      "renderKind": "css-template-component",
-      "templateComponent": "brief",
-      "sourceAction": "keep-existing-crop-review-required",
-      "visualAssetId": "act2-goal-use-context",
-      "renderedVisualAsset": "",
-      "usesExistingImage": true,
-      "projectedImage": false
-    },
-    "renderedVisualAsset": "",
-    "sourceAssetId": "act2-visual-sheet",
-    "assetTeachingRole": "좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다.",
-    "assetExplanationAnchors": [
-      "무엇을 만들지",
-      "어디에 쓸지",
-      "무엇을 결정할지"
-    ],
-    "assetSemanticRequirements": {
-      "mustShow": [
-        "김아이",
-        "무엇을 만들지",
-        "어디에 쓸지",
-        "무엇을 결정할지"
-      ],
-      "mustNotShow": [
-        "실습 입력폼",
-        "보고서 초안 미리보기 UI",
-        "점수판",
-        "검증 로그",
-        "추상 장식",
-        "작은 글씨",
-        "보이는 패널 번호",
-        "동그라미 숫자",
-        "Cell 번호",
-        "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터"
-      ],
-      "teachingQuestions": [
-        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
-      ],
-      "minimumPassScore": 85
-    },
-    "assetCrop": {
-      "x": 68.867,
-      "y": 27.2,
-      "width": 28.933,
-      "height": 20.6,
-      "unit": "percent"
-    },
-    "presenterCues": [
-      "좋은 지시의 첫 부분은 일의 목표와 사용 상황이다.",
-      "보고서인지 표인지, 어디에 쓸지, 무엇을 결정할지가 먼저 정해져야 한다.",
-      "이 세 가지가 없으면 김아이가 결과 방향을 혼자 잡는다."
-    ],
-    "bridge": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-    "interaction": null,
-    "xmlPrompt": null,
-    "speakerNote": "무엇을 만들지, 어디에 쓸지, 무엇을 결정할지가 결과의 방향을 정한다.",
-    "evidenceClaimIds": [
-      "claim-003"
-    ],
-    "glossaryTerms": [
-      "Prompt"
-    ],
-    "qualityChecks": [
-      "화면 메시지가 한 가지다.",
-      "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
-      "제품 리뷰자료 보고서 업무 예시와 연결된다."
-    ]
-  },
-  {
-    "index": 24,
     "id": "act2-materials-conditions",
     "file": "act2-materials-conditions.html",
     "section": "Act 2 · 좋은 업무 지시",
     "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
     "estimatedMinutes": 1,
-    "title": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-    "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
+    "title": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
+    "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
     "bullets": [
       "참고 자료",
       "비교 기준",
@@ -4678,9 +4477,9 @@ window.DECK_SLIDES = [
     "mainTemplate": "workflow-strip",
     "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
     "rewrittenScreen": {
-      "headline": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-      "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
-      "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "headline": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
+      "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+      "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
       "steps": [
         {
           "step": "01",
@@ -4699,14 +4498,14 @@ window.DECK_SLIDES = [
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "message": "참고할 자료와 지켜야 할 조건을 섞지 않고 따로 말해야 김아이의 판단이 흔들리지 않는다.",
+        "title": "spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+        "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
         "bullets": [
           "제품 자료",
           "비교 기준",
           "분량·톤·제외 조건"
         ],
-        "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+        "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
         "visualIntent": "인수인계서 가운데에 참고 자료 묶음과 작업 조건 묶음이 분리되어 있는 손그림",
         "glossaryTerms": [
           "Context",
@@ -4715,9 +4514,9 @@ window.DECK_SLIDES = [
       },
       "selectedTemplate": "workflow-strip",
       "screenStructure": {
-        "headline": "좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
-        "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+        "headline": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
+        "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+        "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
         "steps": [
           {
             "step": "01",
@@ -4750,9 +4549,9 @@ window.DECK_SLIDES = [
         ]
       },
       "presenterCues": [
-        "한 문장 결론: 좋은 지시서는 자료와 조건을 따로 지정합니다.",
-        "순서대로 짚기: 제품 자료 -> 비교 기준 -> 분량·톤·제외 조건",
-        "다음 연결: 좋은 지시서는 출력 형식과 완료 기준을 정합니다."
+        "한 문장 결론: spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+        "확인 항목: 참고 자료, 비교 기준, 제외 조건",
+        "다음 연결: spec에는 출력 형식과 완료 기준도 들어갑니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -4814,7 +4613,7 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "statement",
+    "layoutVariant": "visual-left",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "flow",
@@ -4866,10 +4665,10 @@ window.DECK_SLIDES = [
       "자료는 무엇을 보고 일할지이고, 조건은 어떤 선을 지킬지다.",
       "둘을 따로 지정해야 김아이가 자료와 규칙을 섞지 않는다."
     ],
-    "bridge": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+    "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "참고할 자료와 지켜야 할 조건을 섞지 않고 따로 말해야 김아이의 판단이 흔들리지 않는다.",
+    "speakerNote": "spec에는 참고할 자료와 지켜야 할 조건을 섞지 않고 따로 적어야 김아이의 판단이 흔들리지 않는다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -4884,13 +4683,13 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 25,
+    "index": 24,
     "id": "act2-output-done-criteria",
     "file": "act2-output-done-criteria.html",
     "section": "Act 2 · 좋은 업무 지시",
     "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
     "estimatedMinutes": 1,
-    "title": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+    "title": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
     "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
     "bullets": [
       "판정 기준",
@@ -4909,9 +4708,9 @@ window.DECK_SLIDES = [
     "mainTemplate": "term-bridge",
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
-      "headline": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+      "headline": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
       "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
-      "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+      "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
       "metaphorTerm": "판정 기준",
       "realTerm": "Evaluation",
       "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
@@ -4920,14 +4719,14 @@ window.DECK_SLIDES = [
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-        "message": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
+        "title": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
+        "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
         "bullets": [
           "보고서 형식",
           "마감",
           "확인 기준"
         ],
-        "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+        "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
         "visualIntent": "인수인계서 마지막 부분에 형식, 마감, 확인 기준 체크가 있는 손그림",
         "glossaryTerms": [
           "Evaluation"
@@ -4935,9 +4734,9 @@ window.DECK_SLIDES = [
       },
       "selectedTemplate": "term-bridge",
       "screenStructure": {
-        "headline": "좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
+        "headline": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
         "message": "형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.",
-        "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+        "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
         "metaphorTerm": "판정 기준",
         "realTerm": "Evaluation",
         "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
@@ -4949,9 +4748,9 @@ window.DECK_SLIDES = [
         "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다."
       },
       "presenterCues": [
-        "한 문장 결론: 좋은 지시서는 출력 형식과 완료 기준을 정합니다.",
-        "회사말을 먼저 말하고 실제 용어 Evaluation로 연결",
-        "다음 연결: AI에게 주는 업무 지시가 프롬프트입니다."
+        "한 문장 결론: spec에는 출력 형식과 완료 기준도 들어갑니다.",
+        "확인 항목: 형식, 마감, 확인 기준",
+        "다음 연결: 이 작업지시가 AI에게 주는 프롬프트입니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -5000,7 +4799,7 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "statement",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "bridge",
@@ -5048,12 +4847,12 @@ window.DECK_SLIDES = [
     "presenterCues": [
       "업무는 시작 조건만큼 끝나는 조건도 중요하다.",
       "보고서 형식, 마감, 확인 기준이 있어야 김아이가 완료를 혼자 판단하지 않는다.",
-      "여기까지가 AI에게 주는 업무 지시의 기본 구조다."
+      "여기까지 정리한 작업지시가 AI에게 주는 프롬프트다."
     ],
-    "bridge": "AI에게 주는 업무 지시가 프롬프트입니다.",
+    "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
+    "speakerNote": "spec에는 보고서 형식, 마감, 확인 기준처럼 끝나는 조건도 들어가야 김아이가 언제 끝났는지 혼자 정하지 않는다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -5067,23 +4866,24 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 26,
+    "index": 25,
     "id": "act2-prompt-term-mapping",
     "file": "act2-prompt-term-mapping.html",
     "section": "Act 2 · 좋은 업무 지시",
     "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
     "estimatedMinutes": 1,
-    "title": "AI에게 주는 업무 지시가 프롬프트입니다.",
-    "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시입니다.",
+    "title": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+    "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
     "bullets": [
-      "업무 지시",
+      "작업지시서",
+      "전달",
       "Prompt",
-      "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다."
+      "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다."
     ],
-    "visualIntent": "한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림",
+    "visualIntent": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다. Include large readable Korean labels for: 업무 지시, 인수인계서, Prompt, Task Specification. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+    "visualPrompt": "Use the canonical Kimai reference image kimai-new-employee-single.png as strict character reference. Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show a completed work instruction document becoming the prompt when handed to Kimai, an AI new employee. On the left, show a document labeled 작업지시서 with large checklist labels 목표, 자료, 조건, 출력, 완료 기준. In the center, show a blue arrow labeled 전달. On the right, show Kimai receiving the document at a laptop with a large Prompt label. Kimai must keep the canonical identity: white outlined hair with three simple bang shapes, no black filled hair, round friendly face, over-ear headset with AI label, thin antenna, white shirt, blue tie, readable 김아이 badge. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
     "visualAssetId": "act2-prompt-term-mapping",
     "layoutTemplate": "glossary-bridge",
     "teachingMove": "connect",
@@ -5092,27 +4892,26 @@ window.DECK_SLIDES = [
     "mainTemplate": "term-bridge",
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
-      "headline": "AI에게 주는 업무 지시가 프롬프트입니다.",
-      "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시입니다.",
-      "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-      "metaphorTerm": "업무 지시",
+      "headline": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+      "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+      "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+      "metaphorTerm": "작업지시서",
       "realTerm": "Prompt",
-      "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.",
-      "supportingLine": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다."
+      "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.",
+      "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "AI에게 주는 업무 지시가 프롬프트입니다.",
-        "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다.",
+        "title": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+        "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
         "bullets": [
-          "업무 지시",
-          "인수인계서",
-          "Prompt",
-          "Task Specification"
+          "작업지시서",
+          "전달",
+          "Prompt"
         ],
-        "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "visualIntent": "한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림",
+        "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+        "visualIntent": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림",
         "glossaryTerms": [
           "Prompt",
           "Task Specification"
@@ -5120,38 +4919,39 @@ window.DECK_SLIDES = [
       },
       "selectedTemplate": "term-bridge",
       "screenStructure": {
-        "headline": "AI에게 주는 업무 지시가 프롬프트입니다.",
-        "message": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시입니다.",
-        "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "metaphorTerm": "업무 지시",
+        "headline": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+        "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+        "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
+        "metaphorTerm": "작업지시서",
         "realTerm": "Prompt",
-        "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.",
-        "supportingLine": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다."
+        "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.",
+        "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
       },
       "componentData": {
-        "metaphorTerm": "업무 지시",
+        "metaphorTerm": "작업지시서",
         "realTerm": "Prompt",
-        "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다."
+        "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다."
       },
       "presenterCues": [
-        "한 문장 결론: AI에게 주는 업무 지시가 프롬프트입니다.",
-        "회사말을 먼저 말하고 실제 용어 Prompt로 연결",
-        "다음 연결: 프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다."
+        "한 문장 결론: 여러분이 만든 작업지시서가 프롬프트가 됩니다.",
+        "작업지시서가 김아이에게 전달되는 순간 Prompt가 된다고 연결",
+        "다음 연결: 그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "use-new-single-image",
         "visualAssetId": "act2-prompt-term-mapping",
-        "sourcePath": "assets/visuals/act2-prompt-term-mapping.png",
+        "sourcePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: AI에게 주는 업무 지시가 프롬프트입니다.\n장면: 한국어 업무 지시와 인수인계서 카드가 Prompt와 Task Specification 라벨로 연결되는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 업무 지시 / 인수인계서 / Prompt",
+        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 여러분이 만든 작업지시서가 프롬프트가 됩니다.\n장면: 왼쪽에는 목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 있고, 가운데 파란 화살표 전달을 지나 오른쪽 김아이에게 전달되며 Prompt가 되는 장면.\n동일 캐릭터: assets/visuals/kimai-new-employee-single.png의 기준 김아이를 엄격히 따른다. 흰 바탕에 검은 윤곽선으로만 표현된 머리카락, 단순한 앞머리 3갈래, 둥근 얼굴, AI 라벨이 있는 헤드셋, 얇은 안테나, 파란 넥타이, 명찰 텍스트 \"김아이\"를 유지한다. 검은색으로 꽉 찬 머리, 로봇 헬멧형 머리, 금속 로봇 몸체는 금지한다.\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 작업지시서 / 목표 / 자료 / 조건 / 출력 / 완료 기준 / 전달 / Prompt",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
+          "김아이 캐릭터가 기준 이미지의 흰 윤곽 머리, AI 헤드셋, 안테나, 파란 넥타이, 김아이 명찰과 일치한다.",
+          "검은색으로 채운 머리나 로봇 헬멧형 머리가 아니다.",
           "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
           "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
           "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
         ]
       },
-      "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+      "rationale": "좋은 작업지시서가 실제 프롬프트로 전달되는 전환 장면이다.",
       "changes": [
         {
           "from": "title",
@@ -5190,28 +4990,38 @@ window.DECK_SLIDES = [
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "bridge",
-      "sourceAction": "keep-existing-crop-review-required",
+      "sourceAction": "use-new-single-image",
       "visualAssetId": "act2-prompt-term-mapping",
-      "renderedVisualAsset": "../assets/visuals/act2-prompt-term-mapping-act2-prompt-term-mapping-single.png",
-      "usesExistingImage": true,
+      "renderedVisualAsset": "../assets/visuals/act2-prompt-term-mapping-act2-prompt-term-mapping-work-instruction-to-prompt.png",
+      "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act2-prompt-term-mapping-act2-prompt-term-mapping-single.png",
+    "renderedVisualAsset": "../assets/visuals/act2-prompt-term-mapping-act2-prompt-term-mapping-work-instruction-to-prompt.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.",
+    "assetTeachingRole": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.",
     "assetExplanationAnchors": [
-      "업무 지시",
-      "인수인계서",
+      "작업지시서",
+      "목표",
+      "자료",
+      "조건",
+      "출력",
+      "완료 기준",
+      "전달",
       "Prompt",
-      "Task Specification"
+      "김아이"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
         "김아이",
-        "업무 지시",
-        "인수인계서",
+        "작업지시서",
+        "목표",
+        "자료",
+        "조건",
+        "출력",
+        "완료 기준",
+        "전달",
         "Prompt",
-        "Task Specification"
+        "노트북"
       ],
       "mustNotShow": [
         "실습 입력폼",
@@ -5220,6 +5030,8 @@ window.DECK_SLIDES = [
         "검증 로그",
         "추상 장식",
         "작은 글씨",
+        "검은색으로 채운 머리",
+        "로봇 헬멧형 머리",
         "보이는 패널 번호",
         "동그라미 숫자",
         "Cell 번호",
@@ -5228,20 +5040,20 @@ window.DECK_SLIDES = [
       ],
       "teachingQuestions": [
         "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
+        "작업지시서가 김아이에게 전달되며 Prompt가 된다는 흐름이 보이는가?"
       ],
       "minimumPassScore": 85
     },
     "assetCrop": null,
     "presenterCues": [
-      "여기서 실제 용어를 붙인다.",
-      "AI에게 주는 업무 지시를 프롬프트라고 부른다.",
-      "더 정확히 말하면 이번 일을 어떤 조건으로 수행할지 적은 작업 명세에 가깝다."
+      "지금까지 목표, 자료, 조건, 출력, 완료 기준을 정리했다.",
+      "이 문서를 김아이에게 전달하는 순간, 이게 바로 프롬프트가 된다.",
+      "프롬프트는 특별한 주문이 아니라 김아이가 일을 시작할 수 있게 만든 작업지시서다."
     ],
-    "bridge": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
+    "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "프롬프트는 AI에게 이번 일을 맡길 때 주는 업무 지시다.",
+    "speakerNote": "지금까지 목표, 자료, 조건, 출력, 완료 기준을 정리했습니다. 이 문서를 김아이에게 전달하는 순간, 이게 바로 프롬프트가 됩니다. 프롬프트는 특별한 주문이나 예쁜 문장이 아니라, 김아이가 일을 시작할 수 있게 만든 작업지시서입니다. 그래서 좋은 프롬프트를 쓰려면 문장을 꾸미는 것보다, 빠진 항목이 없게 구조화하는 게 더 중요합니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -5256,151 +5068,142 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 27,
+    "index": 26,
     "id": "act2-prompt-reframing",
     "file": "act2-prompt-reframing.html",
     "section": "Act 2 · 좋은 업무 지시",
-    "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+    "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 작업지시서로 이해시키고, 낡은 역할 흉내와 현대적 페르소나 사용을 구분한다.",
     "estimatedMinutes": 1,
-    "title": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-    "message": "좋은 프롬프트는 문장력보다 일, 자료, 완료 기준이 빠지지 않는 구조입니다.",
+    "title": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+    "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
     "bullets": [
-      "해야 할 일",
-      "참고할 것"
+      "겉멋 역할",
+      "모호한 수식어",
+      "명확한 지시"
     ],
-    "visualIntent": "화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림",
+    "visualIntent": "50년 경력처럼, 전문가 빙의 같은 낡은 역할 흉내 카드와 명확한 지시 체크리스트를 대비하는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, learning 업무 지시 for a product review report. The image must explain: 프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다. Include large readable Korean labels for: 해야 할 일, 참고할 것, 끝난 기준. Use black linework and one blue accent only. No gradients, no glow, no glossy effects, no decorative abstract background.",
+    "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 26, contrasting old persona prompt myths with clear work instructions.\nComposition: Left side shows caution/crossed-out cards labeled \"50년 경력처럼\" and \"전문가 빙의\". Right side shows Kimai pointing to a checklist titled \"명확한 지시\" with large labels \"로직 검증\", \"예외 처리\", \"완료 기준\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
     "visualAssetId": "act2-prompt-reframing",
     "layoutTemplate": "story-scene",
     "teachingMove": "explain",
     "audienceAction": "inspect-visual",
-    "visualMode": "metaphor-link",
-    "mainTemplate": "single-concept",
-    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=metaphor-link",
+    "visualMode": "story-illustration",
+    "mainTemplate": "kimai-structure",
+    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
     "rewrittenScreen": {
-      "headline": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-      "message": "좋은 프롬프트는 문장력보다 일, 자료, 완료 기준이 빠지지 않는 구조입니다.",
-      "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-      "keySentence": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-      "supportingAnchors": [
-        "해야 할 일",
-        "참고할 것"
+      "headline": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+      "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
+      "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+      "keySentence": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+      "imageAnchors": [
+        "겉멋 역할",
+        "모호한 수식어",
+        "명확한 지시"
       ]
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "message": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
+        "title": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+        "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
         "bullets": [
-          "해야 할 일",
-          "참고할 것",
-          "끝난 기준"
+          "겉멋 역할",
+          "모호한 수식어",
+          "명확한 지시"
         ],
-        "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-        "visualIntent": "화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림",
+        "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+        "visualIntent": "50년 경력처럼, 전문가 빙의 같은 낡은 역할 흉내 카드와 명확한 지시 체크리스트를 대비하는 손그림",
         "glossaryTerms": [
           "Prompt Engineering"
         ]
       },
-      "selectedTemplate": "single-concept",
+      "selectedTemplate": "kimai-structure",
       "screenStructure": {
-        "headline": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "message": "좋은 프롬프트는 문장력보다 일, 자료, 완료 기준이 빠지지 않는 구조입니다.",
-        "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
-        "keySentence": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "supportingAnchors": [
-          "해야 할 일",
-          "참고할 것"
+        "headline": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+        "message": "“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.",
+        "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
+        "keySentence": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+        "imageAnchors": [
+          "겉멋 역할",
+          "모호한 수식어",
+          "명확한 지시"
         ]
       },
       "componentData": {
-        "keySentence": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "supportingAnchors": [
-          "해야 할 일",
-          "참고할 것"
-        ]
+        "imageAnchors": [
+          "겉멋 역할",
+          "모호한 수식어",
+          "명확한 지시"
+        ],
+        "visualAssetId": "act2-prompt-reframing"
       },
       "presenterCues": [
-        "한 문장 결론: 프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-        "다음 연결: 첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다."
+        "한 문장 결론: 낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+        "낡은 역할 흉내 프롬프트를 먼저 경계한다.",
+        "다음 연결: 그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "use-generated-single-image",
         "visualAssetId": "act2-prompt-reframing",
-        "sourcePath": "assets/visuals/act2-prompt-reframing.png",
+        "sourcePath": "assets/visuals/act2-prompt-reframing-persona-myth.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.\n장면: 화려한 문장 카드보다 빈칸 없는 업무 지시 카드가 선택되는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 해야 할 일 / 참고할 것 / 끝난 기준",
+        "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 26, contrasting old persona prompt myths with clear work instructions.\nComposition: Left side shows caution/crossed-out cards labeled \"50년 경력처럼\" and \"전문가 빙의\". Right side shows Kimai pointing to a checklist titled \"명확한 지시\" with large labels \"로직 검증\", \"예외 처리\", \"완료 기준\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+          "50년 경력처럼/전문가 빙의는 경계 대상으로 보이고 명확한 지시는 권장 대상으로 보인다.",
+          "체크리스트 라벨이 로직 검증, 예외 처리, 완료 기준으로 읽힌다.",
+          "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
         ]
       },
-      "rationale": "한 문장 정의를 크게 남기는 것이 이미지보다 중요하다.",
+      "rationale": "25번에서 프롬프트를 작업지시서로 정의한 뒤, 흔한 역할 흉내 팁을 바로 경계해야 페르소나 설명이 낡은 기법으로 오해되지 않는다. 이미지 생성 자산을 화면에 직접 배치하기 위해 kimai-structure 템플릿을 사용한다.",
       "changes": [
         {
-          "from": "title",
-          "to": "headline",
+          "from": "prompt-as-work-instruction",
+          "to": "persona-myth-warning",
           "original": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "changed": "프롬프트는 멋진 문장이 아니라 빠진 곳 없는 업무 지시입니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
-          "changed": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "supportingAnchors",
-          "original": [
-            "해야 할 일",
-            "참고할 것",
-            "끝난 기준"
-          ],
-          "changed": [
-            "해야 할 일",
-            "참고할 것"
-          ],
-          "reason": "single-concept 구조에서 필요한 슬롯으로 재배치한다."
+          "changed": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
+          "reason": "25번과 중복되는 정의 슬라이드를 낡은 프롬프트 팁 비판으로 바꾼다."
         }
       ],
       "copyPolish": {
         "version": 1,
-        "appliedAt": "2026-05-31",
+        "appliedAt": "2026-06-02",
         "rule": "template-slot-copy-polish"
       }
     },
     "layoutVariant": "standard",
     "visualRenderContract": {
-      "renderKind": "css-template-component",
-      "templateComponent": "harness",
-      "sourceAction": "keep-existing-crop-review-required",
+      "renderKind": "image-asset",
+      "templateComponent": "kimai-structure",
+      "sourceAction": "use-generated-single-image",
       "visualAssetId": "act2-prompt-reframing",
-      "renderedVisualAsset": "",
-      "usesExistingImage": true,
-      "projectedImage": false
+      "renderedVisualAsset": "../assets/visuals/act2-prompt-reframing-act2-prompt-reframing-persona-myth.png",
+      "usesExistingImage": false,
+      "projectedImage": true
     },
-    "renderedVisualAsset": "",
-    "sourceAssetId": "act2-visual-sheet",
-    "assetTeachingRole": "프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다.",
+    "renderedVisualAsset": "../assets/visuals/act2-prompt-reframing-act2-prompt-reframing-persona-myth.png",
+    "sourceAssetId": "",
+    "assetTeachingRole": "낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.",
     "assetExplanationAnchors": [
-      "해야 할 일",
-      "참고할 것",
-      "끝난 기준"
+      "50년 경력처럼",
+      "전문가 빙의",
+      "명확한 지시",
+      "로직 검증",
+      "예외 처리",
+      "완료 기준",
+      "김아이"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
         "김아이",
-        "해야 할 일",
-        "참고할 것",
-        "끝난 기준"
+        "50년 경력처럼",
+        "전문가 빙의",
+        "명확한 지시",
+        "로직 검증",
+        "예외 처리",
+        "완료 기준"
       ],
       "mustNotShow": [
         "실습 입력폼",
@@ -5413,34 +5216,213 @@ window.DECK_SLIDES = [
         "동그라미 숫자",
         "Cell 번호",
         "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터"
+        "잘린 글자 또는 잘린 캐릭터",
+        "검은색으로 채운 머리",
+        "로봇 헬멧형 머리"
       ],
       "teachingQuestions": [
         "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "제품 리뷰자료 보고서 업무와 업무 지시 개념이 연결되어 보이는가?"
+        "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
       ],
-      "minimumPassScore": 85
+      "minimumPassScore": 90
     },
-    "assetCrop": {
-      "x": 2.2,
-      "y": 77.2,
-      "width": 28.933,
-      "height": 20.6,
-      "unit": "percent"
-    },
+    "assetCrop": null,
     "presenterCues": [
-      "좋은 프롬프트를 글쓰기 기술로 보지 않게 한다.",
-      "핵심은 문장을 멋지게 쓰는 것이 아니라 빠진 조건을 줄이는 것이다.",
-      "해야 할 일, 참고할 것, 끝난 기준이 들어가야 김아이가 덜 추측한다."
+      "인터넷식 “50년 경력처럼”은 역할 흉내에 가깝다.",
+      "지금 모델에는 모호한 수식어보다 검토할 행동을 정확히 적는 편이 낫다.",
+      "코드라면 로직 검증, 예외 처리, 완료 기준처럼 확인할 일을 직접 적어야 한다."
     ],
-    "bridge": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
+    "bridge": "그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "좋은 프롬프트는 문장력보다 해야 할 일, 참고할 것, 끝난 기준이 빠지지 않는 구조다.",
+    "speakerNote": "인터넷에서 자주 보이는 “50년 경력 개발자처럼 행동해 줘”, “하버드 마케팅 전문가처럼 빙의해 줘” 같은 말은 이제 역할 흉내에 가깝습니다. 김아이에게 필요한 것은 권위 있는 말투가 아니라 무엇을 검토해야 하는지에 대한 명확한 작업지시입니다. 코드라면 “코드 로직의 정합성을 검증하고 예외 처리를 누락 없이 확인하라”처럼 행동을 직접 적어야 합니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
     "glossaryTerms": [
+      "Prompt Engineering"
+    ],
+    "qualityChecks": [
+      "화면 메시지가 한 가지다.",
+      "실습 UI나 점수판을 설명 슬라이드에 넣지 않는다.",
+      "제품 리뷰자료 보고서 업무 예시와 연결된다."
+    ]
+  },
+  {
+    "index": 27,
+    "id": "act2-persona-priority-filter",
+    "file": "act2-persona-priority-filter.html",
+    "section": "Act 2 · 좋은 업무 지시",
+    "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
+    "estimatedMinutes": 1,
+    "title": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+    "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+    "bullets": [
+      "보안 우선",
+      "속도 우선",
+      "확장성 우선"
+    ],
+    "visualIntent": "보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림",
+    "visualType": "generated-image",
+    "visualAsset": "",
+    "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 27 explaining that persona is a priority filter, not role possession.\nComposition: Center shows a funnel labeled \"우선순위 필터\". Three cards flow into it: \"보안 우선\", \"속도 우선\", \"확장성 우선\". Output goes to Kimai holding a checklist labeled \"작업 기준\". Add a small crossed-out mask labeled \"빙의 X\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
+    "visualAssetId": "act2-persona-priority-filter",
+    "layoutTemplate": "story-scene",
+    "teachingMove": "explain",
+    "audienceAction": "inspect-visual",
+    "visualMode": "story-illustration",
+    "mainTemplate": "kimai-structure",
+    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
+    "rewrittenScreen": {
+      "headline": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+      "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+      "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+      "keySentence": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+      "imageAnchors": [
+        "보안 우선",
+        "속도 우선",
+        "확장성 우선"
+      ]
+    },
+    "templateRewrite": {
+      "sourceContractVersion": 1,
+      "originalSource": {
+        "title": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+        "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+        "bullets": [
+          "보안 우선",
+          "속도 우선",
+          "확장성 우선"
+        ],
+        "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+        "visualIntent": "보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림",
+        "glossaryTerms": [
+          "Role Card",
+          "Prompt Engineering"
+        ]
+      },
+      "selectedTemplate": "kimai-structure",
+      "screenStructure": {
+        "headline": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+        "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
+        "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+        "keySentence": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+        "imageAnchors": [
+          "보안 우선",
+          "속도 우선",
+          "확장성 우선"
+        ]
+      },
+      "componentData": {
+        "imageAnchors": [
+          "보안 우선",
+          "속도 우선",
+          "확장성 우선"
+        ],
+        "visualAssetId": "act2-persona-priority-filter"
+      },
+      "presenterCues": [
+        "한 문장 결론: 페르소나는 말투가 아니라 우선순위 필터입니다.",
+        "페르소나는 빙의가 아니라 우선순위 필터라는 점을 분리해서 설명한다.",
+        "다음 연결: 이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다."
+      ],
+      "visualRequirements": {
+        "action": "use-generated-single-image",
+        "visualAssetId": "act2-persona-priority-filter",
+        "sourcePath": "assets/visuals/act2-persona-priority-filter.png",
+        "characterConsistencyRef": "kimai-character-contract-v1",
+        "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 27 explaining that persona is a priority filter, not role possession.\nComposition: Center shows a funnel labeled \"우선순위 필터\". Three cards flow into it: \"보안 우선\", \"속도 우선\", \"확장성 우선\". Output goes to Kimai holding a checklist labeled \"작업 기준\". Add a small crossed-out mask labeled \"빙의 X\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
+        "reviewChecks": [
+          "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
+          "빙의 X와 우선순위 필터가 한 화면에서 대비된다.",
+          "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
+        ]
+      },
+      "rationale": "페르소나의 폐기가 아니라 역할 변화라는 핵심만 한 장에서 설명한다. 이미지 생성 자산을 화면에 직접 배치하기 위해 kimai-structure 템플릿을 사용한다.",
+      "changes": [
+        {
+          "from": "new-slide",
+          "to": "single-concept",
+          "original": null,
+          "changed": "페르소나는 말투가 아니라 우선순위 필터입니다.",
+          "reason": "26번의 비판 뒤에 현대적 사용법을 별도 단계로 이어 붙인다."
+        }
+      ],
+      "copyPolish": {
+        "version": 1,
+        "appliedAt": "2026-06-02",
+        "rule": "template-slot-copy-polish"
+      }
+    },
+    "layoutVariant": "standard",
+    "visualRenderContract": {
+      "renderKind": "image-asset",
+      "templateComponent": "kimai-structure",
+      "sourceAction": "use-generated-single-image",
+      "visualAssetId": "act2-persona-priority-filter",
+      "renderedVisualAsset": "../assets/visuals/act2-persona-priority-filter-act2-persona-priority-filter.png",
+      "usesExistingImage": false,
+      "projectedImage": true
+    },
+    "renderedVisualAsset": "../assets/visuals/act2-persona-priority-filter-act2-persona-priority-filter.png",
+    "sourceAssetId": "",
+    "assetTeachingRole": "현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.",
+    "assetExplanationAnchors": [
+      "우선순위 필터",
+      "보안 우선",
+      "속도 우선",
+      "확장성 우선",
+      "작업 기준",
+      "빙의 X",
+      "김아이"
+    ],
+    "assetSemanticRequirements": {
+      "mustShow": [
+        "김아이",
+        "우선순위 필터",
+        "보안 우선",
+        "속도 우선",
+        "확장성 우선",
+        "작업 기준",
+        "빙의 X"
+      ],
+      "mustNotShow": [
+        "실습 입력폼",
+        "보고서 초안 미리보기 UI",
+        "점수판",
+        "검증 로그",
+        "추상 장식",
+        "작은 글씨",
+        "보이는 패널 번호",
+        "동그라미 숫자",
+        "Cell 번호",
+        "sprite sheet 라벨",
+        "잘린 글자 또는 잘린 캐릭터",
+        "검은색으로 채운 머리",
+        "로봇 헬멧형 머리"
+      ],
+      "teachingQuestions": [
+        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
+        "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
+      ],
+      "minimumPassScore": 90
+    },
+    "assetCrop": null,
+    "presenterCues": [
+      "페르소나는 말투를 바꾸는 주문이 아니다.",
+      "현대적으로 쓰면 어떤 기준을 먼저 볼지 정하는 필터다.",
+      "보안 전문가라면 보안 취약점 검토를 성능보다 먼저 보라는 뜻이다."
+    ],
+    "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
+    "interaction": null,
+    "xmlPrompt": null,
+    "speakerNote": "그렇다고 페르소나가 완전히 쓸모없어진 것은 아닙니다. 현대의 페르소나는 “빙의”가 아니라 우선순위 필터입니다. 보안 전문가라고 쓰는 목적은 권위적인 말투가 아니라 보안 취약점 검토를 최우선으로 보라는 뜻입니다. 스타트업 1인 개발자라면 빠른 구현과 가독성을 더 중시하라는 뜻입니다. 결국 메인은 작업지시서 spec이고, 페르소나는 그 지시가 어느 방향을 향해야 하는지 잡아 주는 보조 장치입니다.",
+    "evidenceClaimIds": [
+      "claim-003"
+    ],
+    "glossaryTerms": [
+      "Role Card",
       "Prompt Engineering"
     ],
     "qualityChecks": [
@@ -5858,7 +5840,7 @@ window.DECK_SLIDES = [
     "rewrittenScreen": {
       "headline": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
       "message": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준입니다.",
-      "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+      "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
       "metaphorTerm": "회사 내규",
       "realTerm": "CLAUDE.md",
       "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
@@ -5874,7 +5856,7 @@ window.DECK_SLIDES = [
           "업무 보고 체계",
           "징계 기준"
         ],
-        "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+        "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
         "visualIntent": "공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림",
         "glossaryTerms": [
           "CLAUDE.md"
@@ -5884,7 +5866,7 @@ window.DECK_SLIDES = [
       "screenStructure": {
         "headline": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
         "message": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준입니다.",
-        "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+        "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
         "metaphorTerm": "회사 내규",
         "realTerm": "CLAUDE.md",
         "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
@@ -5898,7 +5880,7 @@ window.DECK_SLIDES = [
       "presenterCues": [
         "한 문장 결론: 회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
         "회사말을 먼저 말하고 실제 용어 CLAUDE.md로 연결",
-        "다음 연결: 반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다."
+        "다음 연결: 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -5999,7 +5981,7 @@ window.DECK_SLIDES = [
       "출퇴근 시간, 업무 보고 체계, 징계 기준처럼 어떤 업무를 하든 기본으로 지켜야 하는 기준이다.",
       "뒤에서 이 회사 내규 문서가 CLAUDE.md라고 연결한다."
     ],
-    "bridge": "반대로 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
+    "bridge": "반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
     "interaction": null,
     "xmlPrompt": null,
     "speakerNote": "회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준이다.",
@@ -6018,438 +6000,6 @@ window.DECK_SLIDES = [
   },
   {
     "index": 31,
-    "id": "act3-claude-md-rule-board",
-    "file": "act3-claude-md-rule-board.html",
-    "section": "Act 3 · CLAUDE.md 회사 내규",
-    "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
-    "estimatedMinutes": 1,
-    "title": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-    "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.",
-    "bullets": [
-      "작업 지시",
-      "작업에 필요한 자료",
-      "작업 체크리스트"
-    ],
-    "visualIntent": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-    "visualType": "generated-image",
-    "visualAsset": "",
-    "visualPrompt": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
-    "visualAssetId": "act3-claude-md-rule-board",
-    "layoutTemplate": "checklist",
-    "teachingMove": "demonstrate",
-    "audienceAction": "rehearse-checklist",
-    "visualMode": "checklist-board",
-    "mainTemplate": "decision-gate",
-    "templateSelectionReason": "source layoutTemplate=checklist; source teachingMove=demonstrate; source audienceAction=rehearse-checklist; source visualMode=checklist-board",
-    "rewrittenScreen": {
-      "headline": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-      "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.",
-      "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-      "criteria": [
-        {
-          "key": "기준 1",
-          "text": "작업 지시"
-        },
-        {
-          "key": "기준 2",
-          "text": "작업에 필요한 자료"
-        },
-        {
-          "key": "판정",
-          "text": "작업 체크리스트"
-        }
-      ],
-      "passLabel": "PASS",
-      "holdLabel": "HOLD"
-    },
-    "templateRewrite": {
-      "sourceContractVersion": 1,
-      "originalSource": {
-        "title": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-        "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-        "bullets": [
-          "작업 지시",
-          "작업에 필요한 자료",
-          "작업 체크리스트"
-        ],
-        "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "visualIntent": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-        "glossaryTerms": [
-          "Prompt",
-          "Context"
-        ]
-      },
-      "selectedTemplate": "decision-gate",
-      "screenStructure": {
-        "headline": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-        "message": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올립니다.",
-        "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "criteria": [
-          {
-            "key": "기준 1",
-            "text": "작업 지시"
-          },
-          {
-            "key": "기준 2",
-            "text": "작업에 필요한 자료"
-          },
-          {
-            "key": "판정",
-            "text": "작업 체크리스트"
-          }
-        ],
-        "passLabel": "PASS",
-        "holdLabel": "HOLD"
-      },
-      "componentData": {
-        "criteria": [
-          {
-            "key": "기준 1",
-            "text": "작업 지시"
-          },
-          {
-            "key": "기준 2",
-            "text": "작업에 필요한 자료"
-          },
-          {
-            "key": "판정",
-            "text": "작업 체크리스트"
-          }
-        ],
-        "passLabel": "PASS",
-        "holdLabel": "HOLD"
-      },
-      "presenterCues": [
-        "한 문장 결론: 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-        "판정 기준: 작업 지시, 작업에 필요한 자료, 작업 체크리스트",
-        "다음 연결: 작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다."
-      ],
-      "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
-        "visualAssetId": "act3-claude-md-rule-board",
-        "sourcePath": "assets/visuals/act3-claude-md-rule-board.png",
-        "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 김아이 책상에는 지금 할 일에 필요한 것만 올립니다.\n장면: 김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 작업 지시 / 작업에 필요한 자료 / 작업 체크리스트",
-        "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-        ]
-      },
-      "rationale": "PASS/HOLD 또는 선택 기준을 확인해야 하는 장면이다.",
-      "changes": [
-        {
-          "from": "title",
-          "to": "headline",
-          "original": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-          "changed": "김아이 책상에는 지금 할 일에 필요한 것만 올립니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-          "changed": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "criteria",
-          "original": [
-            "작업 지시",
-            "작업에 필요한 자료",
-            "작업 체크리스트"
-          ],
-          "changed": [
-            {
-              "key": "기준 1",
-              "text": "작업 지시"
-            },
-            {
-              "key": "기준 2",
-              "text": "작업에 필요한 자료"
-            },
-            {
-              "key": "판정",
-              "text": "작업 체크리스트"
-            }
-          ],
-          "reason": "decision-gate 구조에서 필요한 슬롯으로 재배치한다."
-        }
-      ],
-      "copyPolish": {
-        "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
-      }
-    },
-    "layoutVariant": "checklist",
-    "visualRenderContract": {
-      "renderKind": "css-template-component",
-      "templateComponent": "gate",
-      "sourceAction": "keep-existing-crop-review-required",
-      "visualAssetId": "act3-claude-md-rule-board",
-      "renderedVisualAsset": "",
-      "usesExistingImage": true,
-      "projectedImage": false
-    },
-    "renderedVisualAsset": "",
-    "sourceAssetId": "",
-    "assetTeachingRole": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-    "assetExplanationAnchors": [
-      "회사 내규",
-      "CLAUDE.md",
-      "항상 적용"
-    ],
-    "assetSemanticRequirements": {
-      "mustShow": [
-        "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-        "김아이 AI 신입사원",
-        "CLAUDE.md 설정 실습 흐름",
-        "제품 리뷰 보고서 맥락"
-      ],
-      "mustNotShow": [
-        "장식용 추상 이미지",
-        "긴 파일 경로",
-        "복잡한 UI",
-        "영문 프로젝트 규칙 라벨",
-        "이전 실패 사례",
-        "보이는 패널 번호",
-        "동그라미 숫자",
-        "Cell 번호",
-        "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터"
-      ],
-      "teachingQuestions": [
-        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "Context와 CLAUDE.md의 차이가 보이는가?",
-        "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
-      ],
-      "minimumPassScore": 85
-    },
-    "assetCrop": null,
-    "presenterCues": [
-      "이 슬라이드는 Context를 회사 책상 비유로 다시 연결한다.",
-      "작업 지시는 지금 무엇을 하라는 말이고, 작업에 필요한 자료와 체크리스트는 이번 일을 완성하기 위한 자료다.",
-      "책상 위 자료는 이번 작업을 돕기 위한 것이지 회사 내규가 아니다."
-    ],
-    "bridge": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-    "interaction": null,
-    "xmlPrompt": null,
-    "speakerNote": "김아이 책상에는 작업 지시, 작업에 필요한 자료, 작업 체크리스트처럼 이번 일에 필요한 것만 올린다.",
-    "evidenceClaimIds": [
-      "claim-003",
-      "claim-005"
-    ],
-    "glossaryTerms": [
-      "Prompt",
-      "Context"
-    ],
-    "qualityChecks": [
-      "화면 메시지가 한 가지다.",
-      "Context와 CLAUDE.md의 위치가 분리된다.",
-      "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
-      "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
-    ]
-  },
-  {
-    "index": 32,
-    "id": "act3-claude-md-fit",
-    "file": "act3-claude-md-fit.html",
-    "section": "Act 3 · CLAUDE.md 회사 내규",
-    "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
-    "estimatedMinutes": 1,
-    "title": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-    "message": "이전 작업 자료와 현재 업무가 한 책상에 섞이면 김아이는 기준을 잃습니다.",
-    "bullets": [
-      "오래된 책상 자료",
-      "Stale Context",
-      "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다."
-    ],
-    "visualIntent": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
-    "visualType": "generated-image",
-    "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background. Kimai separates old work materials from the current task. Use only two large labels inside the image: 오래된 자료 and 현재 업무. No English text, no Stale Context label, no tiny text, no pseudo letters, no decorative writing. Black linework, one blue accent, crop-free standalone composition.",
-    "visualAssetId": "act3-claude-md-fit",
-    "layoutTemplate": "glossary-bridge",
-    "teachingMove": "connect",
-    "audienceAction": "connect-metaphor",
-    "visualMode": "term-bridge",
-    "mainTemplate": "term-bridge",
-    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
-    "rewrittenScreen": {
-      "headline": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-      "message": "이전 작업 자료와 현재 업무가 한 책상에 섞이면 김아이는 기준을 잃습니다.",
-      "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-      "metaphorTerm": "오래된 책상 자료",
-      "realTerm": "Stale Context",
-      "bridgeLine": "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다.",
-      "supportingLine": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지."
-    },
-    "templateRewrite": {
-      "sourceContractVersion": 1,
-      "originalSource": {
-        "title": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "message": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
-        "bullets": [
-          "중간에 바뀐 내용",
-          "이전 작업 자료",
-          "동시에 열린 두 업무"
-        ],
-        "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-        "visualIntent": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
-        "glossaryTerms": [
-          "Context",
-          "Stale Context"
-        ]
-      },
-      "selectedTemplate": "term-bridge",
-      "screenStructure": {
-        "headline": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "message": "이전 작업 자료와 현재 업무가 한 책상에 섞이면 김아이는 기준을 잃습니다.",
-        "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-        "metaphorTerm": "오래된 책상 자료",
-        "realTerm": "Stale Context",
-        "bridgeLine": "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다.",
-        "supportingLine": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지."
-      },
-      "componentData": {
-        "metaphorTerm": "오래된 책상 자료",
-        "realTerm": "Stale Context",
-        "bridgeLine": "오래된 책상 자료와 실제 용어 Stale Context를 함께 보여 줍니다."
-      },
-      "presenterCues": [
-        "한 문장 결론: 작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-        "회사말을 먼저 말하고 실제 용어 Stale Context로 연결",
-        "다음 연결: 하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다."
-      ],
-      "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
-        "visualAssetId": "act3-claude-md-fit",
-        "sourcePath": "assets/visuals/act3-claude-md-fit.png",
-        "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.\n장면: 김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 중간에 바뀐 내용 / 이전 작업 자료 / 동시에 열린 두 업무",
-        "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-        ]
-      },
-      "rationale": "새 glossary term 첫 등장이므로 회사말 비유와 실제 하네스 용어를 먼저 연결한다.",
-      "changes": [
-        {
-          "from": "title",
-          "to": "headline",
-          "original": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "changed": "작업 중인 책상에 여러 일이 섞이면 판단이 흔들립니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
-          "changed": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "metaphorTerm/realTerm/bridgeLine",
-          "original": [
-            "중간에 바뀐 내용",
-            "이전 작업 자료",
-            "동시에 열린 두 업무"
-          ],
-          "changed": [
-            "오래된 책상 자료",
-            "Stale Context",
-            "오래된 책상 자료는 실제 하네스 용어로 Stale Context에 연결합니다."
-          ],
-          "reason": "term-bridge 구조에서 첫 등장 glossary term을 회사말 비유와 실제 용어로 연결한다."
-        }
-      ],
-      "copyPolish": {
-        "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
-      }
-    },
-    "layoutVariant": "statement",
-    "visualRenderContract": {
-      "renderKind": "image-asset",
-      "templateComponent": "bridge",
-      "sourceAction": "keep-existing-crop-review-required",
-      "visualAssetId": "act3-claude-md-fit",
-      "renderedVisualAsset": "../assets/visuals/act3-claude-md-fit-act3-claude-md-fit-single.png",
-      "usesExistingImage": true,
-      "projectedImage": true
-    },
-    "renderedVisualAsset": "../assets/visuals/act3-claude-md-fit-act3-claude-md-fit-single.png",
-    "sourceAssetId": "",
-    "assetTeachingRole": "김아이 책상 위에 중간 변경 메모, 이전 작업 자료, 두 업무 자료가 뒤섞여 판단이 흔들리는 손그림",
-    "assetExplanationAnchors": [
-      "오래된 자료",
-      "현재 업무",
-      "섞이면 판단 흔들림"
-    ],
-    "assetSemanticRequirements": {
-      "mustShow": [
-        "오래된 자료",
-        "현재 업무",
-        "김아이 또는 AI 신입사원",
-        "이전 자료와 현재 업무가 분리되는 장면"
-      ],
-      "mustNotShow": [
-        "장식용 추상 이미지",
-        "긴 파일 경로",
-        "복잡한 UI",
-        "영문 프로젝트 규칙 라벨",
-        "이전 실패 사례",
-        "보이는 패널 번호",
-        "동그라미 숫자",
-        "Cell 번호",
-        "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터",
-        "crop marks",
-        "partial cropped objects",
-        "broken text",
-        "pseudo letters",
-        "tiny unreadable text",
-        "English Stale Context label"
-      ],
-      "teachingQuestions": [
-        "오래된 자료와 현재 업무가 섞이면 판단이 흔들린다는 점이 보이는가?",
-        "이미지 안 글자가 깨지지 않고 읽히는가?"
-      ],
-      "minimumPassScore": 85
-    },
-    "assetCrop": null,
-    "presenterCues": [
-      "Context가 많다는 것보다 섞이는 것이 문제다.",
-      "중간에 바뀐 내용이 정리되지 않거나 이전 작업 자료가 남으면 현재 작업의 기준이 흐려진다.",
-      "같은 업무환경에서 두 가지 일을 동시에 열어 두면 김아이는 어느 쪽을 기준으로 해야 할지 헷갈린다."
-    ],
-    "bridge": "하지만 반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.",
-    "interaction": null,
-    "xmlPrompt": null,
-    "speakerNote": "작업 중 바뀐 내용, 이전 작업 자료, 동시에 열린 두 업무가 한 책상에 섞이면 김아이는 무엇을 기준으로 해야 할지 헷갈린다.",
-    "evidenceClaimIds": [
-      "claim-003"
-    ],
-    "glossaryTerms": [
-      "Context",
-      "Stale Context"
-    ],
-    "qualityChecks": [
-      "화면 메시지가 한 가지다.",
-      "Context와 CLAUDE.md의 위치가 분리된다.",
-      "CLAUDE.md 파일 경로와 로딩 순서 상세 설명으로 새지 않는다.",
-      "실습 UI, 점수판, 검증 로그를 설명 슬라이드에 넣지 않는다."
-    ]
-  },
-  {
-    "index": 33,
     "id": "act3-too-many-rules",
     "file": "act3-too-many-rules.html",
     "section": "Act 3 · CLAUDE.md 회사 내규",
@@ -6637,241 +6187,186 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 34,
+    "index": 32,
     "id": "act3-temporary-info-danger",
     "file": "act3-temporary-info-danger.html",
     "section": "Act 3 · CLAUDE.md 회사 내규",
     "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
     "estimatedMinutes": 1,
-    "title": "CLAUDE.md에도 적용 범위가 있습니다.",
-    "message": "CLAUDE.md는 적용 범위에 따라 global, user, project, subfolder로 나뉩니다.",
+    "title": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+    "message": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.",
     "bullets": [
-      "연방법",
-      "주법",
-      "회사 사규",
-      "부서 규칙"
+      "회장님 지침",
+      "본사 공통 지침",
+      "부서 사규",
+      "팀장님 현장 지침"
     ],
-    "visualIntent": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+    "visualIntent": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침이 계층으로 내려오고 김아이가 현장 지침 가까이에 서 있는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients.",
+    "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 32, landscape 16:9 composition\nPrimary request: Explain that CLAUDE.md rules have different application scopes.\nComposition: Four large readable boxes connected by arrows: 회장님 지침 -> 본사 공통 지침 -> 부서 사규 -> 팀장님 현장 지침. Kimai points at the final box. Add label: 가까울수록 구체적.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, no law/court imagery, no secretary imagery.",
     "visualAssetId": "act3-temporary-info-danger",
-    "layoutTemplate": "concept-map",
-    "teachingMove": "demonstrate",
-    "audienceAction": "compare",
-    "visualMode": "process-diagram",
-    "mainTemplate": "workflow-strip",
-    "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
+    "layoutTemplate": "story-scene",
+    "teachingMove": "explain",
+    "audienceAction": "inspect-visual",
+    "visualMode": "story-illustration",
+    "mainTemplate": "kimai-structure",
+    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
     "rewrittenScreen": {
-      "headline": "CLAUDE.md에도 적용 범위가 있습니다.",
-      "message": "CLAUDE.md는 적용 범위에 따라 global, user, project, subfolder로 나뉩니다.",
-      "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-      "steps": [
-        {
-          "step": "01",
-          "label": "연방법"
-        },
-        {
-          "step": "02",
-          "label": "주법"
-        },
-        {
-          "step": "03",
-          "label": "회사 사규"
-        },
-        {
-          "step": "04",
-          "label": "부서 규칙"
-        }
+      "headline": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+      "message": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.",
+      "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+      "imageAnchors": [
+        "회장님 지침",
+        "본사 공통 지침",
+        "부서 사규",
+        "팀장님 현장 지침"
       ]
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "CLAUDE.md에도 적용 범위가 있습니다.",
-        "message": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
+        "title": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+        "message": "CLAUDE.md는 종류가 완전히 다른 문서들이 여러 개 있는 것이 아니라 모두 지침입니다. 다만 어디까지 적용되느냐가 다릅니다. 가장 넓게는 회장님 지침처럼 전체에 깔리는 규칙이 있고, 그 아래에는 본사 공통 지침, 특정 프로젝트나 부서에서 지키는 부서 사규, 그리고 지금 작업하는 현장의 팀장님 지침이 있습니다. 넓은 지침은 기본값으로 깔리고, 가까운 지침은 지금 작업 상황에 맞게 더 구체적으로 덧씌워집니다.",
         "bullets": [
-          "global = 연방법",
-          "user = 주법",
-          "project = 회사 사규",
-          "subfolder = 부서 규칙"
+          "회장님 지침",
+          "본사 공통 지침",
+          "부서 사규",
+          "팀장님 현장 지침"
         ],
-        "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "visualIntent": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+        "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+        "visualIntent": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침이 계층으로 내려오고 김아이가 현장 지침 가까이에 서 있는 손그림",
         "glossaryTerms": [
           "CLAUDE.md"
         ]
       },
-      "selectedTemplate": "workflow-strip",
+      "selectedTemplate": "kimai-structure",
       "screenStructure": {
-        "headline": "CLAUDE.md에도 적용 범위가 있습니다.",
-        "message": "CLAUDE.md는 적용 범위에 따라 global, user, project, subfolder로 나뉩니다.",
-        "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "steps": [
-          {
-            "step": "01",
-            "label": "연방법"
-          },
-          {
-            "step": "02",
-            "label": "주법"
-          },
-          {
-            "step": "03",
-            "label": "회사 사규"
-          },
-          {
-            "step": "04",
-            "label": "부서 규칙"
-          }
+        "headline": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
+        "message": "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.",
+        "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
+        "imageAnchors": [
+          "회장님 지침",
+          "본사 공통 지침",
+          "부서 사규",
+          "팀장님 현장 지침"
         ]
       },
       "componentData": {
-        "steps": [
-          {
-            "step": "01",
-            "label": "연방법"
-          },
-          {
-            "step": "02",
-            "label": "주법"
-          },
-          {
-            "step": "03",
-            "label": "회사 사규"
-          },
-          {
-            "step": "04",
-            "label": "부서 규칙"
-          }
-        ]
+        "imageAnchors": [
+          "회장님 지침",
+          "본사 공통 지침",
+          "부서 사규",
+          "팀장님 현장 지침"
+        ],
+        "visualAssetId": "act3-temporary-info-danger"
       },
       "presenterCues": [
-        "한 문장 결론: CLAUDE.md에도 적용 범위가 있습니다.",
-        "순서대로 짚기: global = 연방법 -> user = 주법 -> project = 회사 사규 -> subfolder = 부서 규칙",
-        "다음 연결: CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다."
+        "한 문장 결론: CLAUDE.md는 적용 범위가 다른 지침입니다.",
+        "CLAUDE.md는 모두 같은 지침이지만 적용 범위가 다르다고 설명한다.",
+        "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 순서로 범위가 좁아진다.",
+        "가까울수록 지금 일에 맞는 구체적인 지침이 된다.",
+        "다음 연결: 가까운 지침일수록 지금 작업에 더 강하게 적용됩니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "use-generated-single-image",
         "visualAssetId": "act3-temporary-info-danger",
-        "sourcePath": "assets/visuals/act3-temporary-info-danger.png",
+        "sourcePath": "assets/visuals/act3-scope-company-guidelines.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: CLAUDE.md에도 적용 범위가 있습니다.\n장면: 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: global = 연방법 / user = 주법 / project = 회사 사규",
+        "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 32\nPrimary request: Explain that CLAUDE.md rules are the same kind of instruction but have different application scopes.\nComposition: Vertical company hierarchy chart with four labels: 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침. Kimai stands near the bottom. Add label: 가까울수록 구체적.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, no law/court imagery, no secretary imagery.",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+          "이미지 안의 한국어는 큰 라벨만 사용한다.",
+          "법체계나 비서 비유가 보이지 않는다.",
+          "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
         ]
       },
-      "rationale": "단계, 루프, 순서가 학습 포인트라 카드 흐름으로 쪼갠다.",
+      "rationale": "Act 3의 CLAUDE.md 적용 범위와 우선순위를 회사 지침 비유로 통일한다.",
       "changes": [
         {
-          "from": "title",
-          "to": "headline",
-          "original": "CLAUDE.md에도 적용 범위가 있습니다.",
-          "changed": "CLAUDE.md에도 적용 범위가 있습니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
-          "changed": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "steps",
-          "original": [
-            "global = 연방법",
-            "user = 주법",
-            "project = 회사 사규",
-            "subfolder = 부서 규칙"
-          ],
+          "from": "law-system-metaphor",
+          "to": "company-guideline-metaphor",
+          "original": "연방법 / 주법 / 회사 사규 / 부서 규칙",
           "changed": [
-            {
-              "step": "01",
-              "label": "global = 연방법"
-            },
-            {
-              "step": "02",
-              "label": "user = 주법"
-            },
-            {
-              "step": "03",
-              "label": "project = 회사 사규"
-            },
-            {
-              "step": "04",
-              "label": "subfolder = 부서 규칙"
-            }
+            "회장님 지침",
+            "본사 공통 지침",
+            "부서 사규",
+            "팀장님 현장 지침"
           ],
-          "reason": "workflow-strip 구조에서 필요한 슬롯으로 재배치한다."
+          "reason": "사용자가 정한 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 비유로 맞춘다."
         }
       ],
       "copyPolish": {
         "version": 1,
-        "appliedAt": "2026-05-31",
+        "appliedAt": "2026-06-02",
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "visual-left",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "flow",
-      "sourceAction": "keep-existing-crop-review-required",
+      "templateComponent": "kimai-structure",
+      "sourceAction": "use-generated-single-image",
       "visualAssetId": "act3-temporary-info-danger",
-      "renderedVisualAsset": "../assets/visuals/act3-temporary-info-danger-act3-temporary-info-danger-single.png",
-      "usesExistingImage": true,
+      "renderedVisualAsset": "../assets/visuals/act3-temporary-info-danger-act3-scope-company-guidelines.png",
+      "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act3-temporary-info-danger-act3-temporary-info-danger-single.png",
+    "renderedVisualAsset": "../assets/visuals/act3-temporary-info-danger-act3-scope-company-guidelines.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+    "assetTeachingRole": "CLAUDE.md의 적용 범위를 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침으로 설명한다.",
     "assetExplanationAnchors": [
-      "이번 보고서 자료",
-      "오래된 결정",
-      "다음 작업 오염"
+      "회장님 지침",
+      "본사 공통 지침",
+      "부서 사규",
+      "팀장님 현장 지침",
+      "가까울수록 구체적",
+      "김아이"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
-        "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
-        "김아이 AI 신입사원",
-        "CLAUDE.md 설정 실습 흐름",
-        "제품 리뷰 보고서 맥락"
+        "김아이",
+        "회장님 지침",
+        "본사 공통 지침",
+        "부서 사규",
+        "팀장님 현장 지침",
+        "가까울수록 구체적"
       ],
       "mustNotShow": [
-        "장식용 추상 이미지",
-        "긴 파일 경로",
-        "복잡한 UI",
-        "영문 프로젝트 규칙 라벨",
-        "이전 실패 사례",
+        "법원",
+        "법전",
+        "연방법",
+        "주법",
+        "비서",
+        "실습 입력폼",
+        "점수판",
+        "검증 로그",
+        "추상 장식",
+        "작은 글씨",
         "보이는 패널 번호",
         "동그라미 숫자",
         "Cell 번호",
         "sprite sheet 라벨",
         "잘린 글자 또는 잘린 캐릭터",
-        "crop marks",
-        "partial cropped objects"
+        "검은색으로 채운 머리",
+        "로봇 헬멧형 머리"
       ],
       "teachingQuestions": [
-        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "Context와 CLAUDE.md의 차이가 보이는가?",
-        "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
+        "그림만 보고 회사 지침 비유를 설명할 수 있는가?",
+        "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
       ],
-      "minimumPassScore": 85
+      "minimumPassScore": 90
     },
     "assetCrop": null,
     "presenterCues": [
-      "global CLAUDE.md는 연방법처럼 가장 넓게 깔리는 기본 규칙이다.",
-      "user CLAUDE.md는 주법처럼 특정 사용자에게 항상 적용되는 기본 업무 방식이다.",
-      "project CLAUDE.md는 회사 사규, subfolder CLAUDE.md는 부서 규칙처럼 범위가 좁아질수록 구체화된다."
+      "CLAUDE.md는 모두 같은 지침이지만 적용 범위가 다르다고 설명한다.",
+      "회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 순서로 범위가 좁아진다.",
+      "가까울수록 지금 일에 맞는 구체적인 지침이 된다."
     ],
-    "bridge": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
+    "bridge": "가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "CLAUDE.md는 한 종류만 있는 것이 아니라 적용 범위에 따라 global, user, project, subfolder 규칙으로 나뉜다.",
+    "speakerNote": "CLAUDE.md는 종류가 완전히 다른 문서들이 여러 개 있는 것이 아니라 모두 지침입니다. 다만 어디까지 적용되느냐가 다릅니다. 가장 넓게는 회장님 지침처럼 전체에 깔리는 규칙이 있고, 그 아래에는 본사 공통 지침, 특정 프로젝트나 부서에서 지키는 부서 사규, 그리고 지금 작업하는 현장의 팀장님 지침이 있습니다. 넓은 지침은 기본값으로 깔리고, 가까운 지침은 지금 작업 상황에 맞게 더 구체적으로 덧씌워집니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -6886,220 +6381,177 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 35,
+    "index": 33,
     "id": "act3-good-rule-board-shape",
     "file": "act3-good-rule-board-shape.html",
     "section": "Act 3 · CLAUDE.md 회사 내규",
     "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
     "estimatedMinutes": 1,
-    "title": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-    "message": "규칙은 넓은 곳에서 먼저 로드되고, 가까운 폴더 규칙이 더 강하게 적용됩니다.",
+    "title": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+    "message": "넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.",
     "bullets": [
-      "넓은 규칙",
-      "회사 규칙",
-      "부서 규칙"
+      "가까운 지침 우선",
+      "구체적인 지시",
+      "덮어쓰기"
     ],
-    "visualIntent": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+    "visualIntent": "멀리 있는 회장님 지침보다 김아이 눈앞의 팀장님 현장 지침이 크게 강조되어 가까운 지침 우선을 보여 주는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+    "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 33\nPrimary request: Explain that the closest team lead field instruction is applied more strongly than distant executive guidance.\nComposition: Distant 회장님 지침 appears small in the background; near Kimai, a large blue-accent clipboard labeled 팀장님 현장 지침 is emphasized. Add label: 가까운 지침 우선.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, professional tone, no law/court imagery, no secretary imagery.",
     "visualAssetId": "act3-good-rule-board-shape",
-    "layoutTemplate": "concept-map",
-    "teachingMove": "demonstrate",
-    "audienceAction": "compare",
-    "visualMode": "process-diagram",
-    "mainTemplate": "workflow-strip",
-    "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
+    "layoutTemplate": "story-scene",
+    "teachingMove": "explain",
+    "audienceAction": "inspect-visual",
+    "visualMode": "story-illustration",
+    "mainTemplate": "kimai-structure",
+    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
     "rewrittenScreen": {
-      "headline": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-      "message": "규칙은 넓은 곳에서 먼저 로드되고, 가까운 폴더 규칙이 더 강하게 적용됩니다.",
+      "headline": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+      "message": "넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.",
       "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-      "steps": [
-        {
-          "step": "01",
-          "label": "넓은 규칙"
-        },
-        {
-          "step": "02",
-          "label": "회사 규칙"
-        },
-        {
-          "step": "03",
-          "label": "부서 규칙"
-        }
+      "imageAnchors": [
+        "가까운 지침 우선",
+        "구체적인 지시",
+        "덮어쓰기"
       ]
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "message": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
+        "title": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+        "message": "앞서 지침의 적용 범위를 봤다면, 이제 적용 강도를 이해하면 됩니다. 넓은 지침은 먼저 깔립니다. 하지만 실제 작업에서는 지금 작업 위치에 가까운 지침이 더 구체적으로 적용됩니다. 회사로 비유하면 회장님 지침이 전체 방향을 잡아 주지만, 지금 현장에서 일하는 김아이에게는 눈앞의 팀장님 현장 지침이 더 직접적입니다. 그래서 한 문장으로 기억하시면 됩니다. 내 눈앞에 가장 가까운 팀장님의 지시가 대기업 회장님 훈화 말씀보다 더 직접적으로 적용됩니다.",
         "bullets": [
-          "로드 순서: global → user → project → subfolder",
-          "적용 강도: subfolder → project → user → global",
-          "가까운 규칙 우선"
+          "가까운 지침 우선",
+          "구체적인 지시",
+          "덮어쓰기"
         ],
         "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-        "visualIntent": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+        "visualIntent": "멀리 있는 회장님 지침보다 김아이 눈앞의 팀장님 현장 지침이 크게 강조되어 가까운 지침 우선을 보여 주는 손그림",
         "glossaryTerms": [
           "CLAUDE.md"
         ]
       },
-      "selectedTemplate": "workflow-strip",
+      "selectedTemplate": "kimai-structure",
       "screenStructure": {
-        "headline": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "message": "규칙은 넓은 곳에서 먼저 로드되고, 가까운 폴더 규칙이 더 강하게 적용됩니다.",
+        "headline": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+        "message": "넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.",
         "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
-        "steps": [
-          {
-            "step": "01",
-            "label": "넓은 규칙"
-          },
-          {
-            "step": "02",
-            "label": "회사 규칙"
-          },
-          {
-            "step": "03",
-            "label": "부서 규칙"
-          }
+        "imageAnchors": [
+          "가까운 지침 우선",
+          "구체적인 지시",
+          "덮어쓰기"
         ]
       },
       "componentData": {
-        "steps": [
-          {
-            "step": "01",
-            "label": "넓은 규칙"
-          },
-          {
-            "step": "02",
-            "label": "회사 규칙"
-          },
-          {
-            "step": "03",
-            "label": "부서 규칙"
-          }
-        ]
+        "imageAnchors": [
+          "가까운 지침 우선",
+          "구체적인 지시",
+          "덮어쓰기"
+        ],
+        "visualAssetId": "act3-good-rule-board-shape"
       },
       "presenterCues": [
-        "한 문장 결론: CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-        "순서대로 짚기: 로드 순서: global → us. -> 적용 강도: subfolder →. -> 가까운 규칙 우선",
+        "한 문장 결론: 가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
+        "넓은 지침은 먼저 깔리지만 현장에 가까운 지침이 더 직접적으로 적용된다.",
+        "충돌이 있으면 지금 작업 위치에 더 가까운 CLAUDE.md가 더 구체적인 기준이 된다.",
+        "내 눈앞에 가장 가까운 팀장님의 지시가 회장님 훈화 말씀보다 더 직접적으로 적용된다는 문장으로 기억시킨다.",
         "다음 연결: 내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "use-generated-single-image",
         "visualAssetId": "act3-good-rule-board-shape",
-        "sourcePath": "assets/visuals/act3-good-rule-board-shape.png",
+        "sourcePath": "assets/visuals/act3-nearest-team-lead-priority.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.\n장면: CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 로드 순서: global → user → project → subfolder / 적용 강도: subfolder → project → user → global / 가까운 규칙 우선",
+        "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 33\nPrimary request: Explain that the closest team lead field instruction is applied more strongly than distant executive guidance.\nComposition: Distant 회장님 지침 appears small in the background; near Kimai, a large blue-accent clipboard labeled 팀장님 현장 지침 is emphasized. Add label: 가까운 지침 우선.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels, professional tone, no law/court imagery, no secretary imagery.",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+          "이미지 안의 한국어는 큰 라벨만 사용한다.",
+          "법체계나 비서 비유가 보이지 않는다.",
+          "검은색 머리나 로봇 헬멧형 캐릭터로 바뀌지 않는다."
         ]
       },
-      "rationale": "단계, 루프, 순서가 학습 포인트라 카드 흐름으로 쪼갠다.",
+      "rationale": "Act 3의 CLAUDE.md 적용 범위와 우선순위를 회사 지침 비유로 통일한다.",
       "changes": [
         {
-          "from": "title",
-          "to": "headline",
-          "original": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "changed": "CLAUDE.md의 적용 강도도 적용 범위에 따라 달라집니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
-          "changed": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "steps",
-          "original": [
-            "로드 순서: global → user → project → subfolder",
-            "적용 강도: subfolder → project → user → global",
-            "가까운 규칙 우선"
-          ],
+          "from": "law-system-metaphor",
+          "to": "company-guideline-metaphor",
+          "original": "연방법 / 주법 / 회사 사규 / 부서 규칙",
           "changed": [
-            {
-              "step": "01",
-              "label": "로드 순서: global → us."
-            },
-            {
-              "step": "02",
-              "label": "적용 강도: subfolder →."
-            },
-            {
-              "step": "03",
-              "label": "가까운 규칙 우선"
-            }
+            "가까운 지침 우선",
+            "구체적인 지시",
+            "덮어쓰기"
           ],
-          "reason": "workflow-strip 구조에서 필요한 슬롯으로 재배치한다."
+          "reason": "사용자가 정한 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침 비유로 맞춘다."
         }
       ],
       "copyPolish": {
         "version": 1,
-        "appliedAt": "2026-05-31",
+        "appliedAt": "2026-06-02",
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "statement",
+    "layoutVariant": "standard",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "flow",
-      "sourceAction": "keep-existing-crop-review-required",
+      "templateComponent": "kimai-structure",
+      "sourceAction": "use-generated-single-image",
       "visualAssetId": "act3-good-rule-board-shape",
-      "renderedVisualAsset": "../assets/visuals/act3-good-rule-board-shape-act3-good-rule-board-shape-single.png",
-      "usesExistingImage": true,
+      "renderedVisualAsset": "../assets/visuals/act3-good-rule-board-shape-act3-nearest-team-lead-priority.png",
+      "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act3-good-rule-board-shape-act3-good-rule-board-shape-single.png",
+    "renderedVisualAsset": "../assets/visuals/act3-good-rule-board-shape-act3-nearest-team-lead-priority.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+    "assetTeachingRole": "가까운 팀장님 현장 지침이 멀리 있는 회장님 지침보다 지금 작업에 더 직접적으로 적용됨을 설명한다.",
     "assetExplanationAnchors": [
-      "역할",
-      "기준",
-      "확인 방법"
+      "회장님 지침",
+      "팀장님 현장 지침",
+      "가까운 지침 우선",
+      "현장 기준",
+      "김아이"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
-        "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
-        "김아이 AI 신입사원",
-        "CLAUDE.md 설정 실습 흐름",
-        "제품 리뷰 보고서 맥락"
+        "김아이",
+        "회장님 지침",
+        "팀장님 현장 지침",
+        "가까운 지침 우선"
       ],
       "mustNotShow": [
-        "장식용 추상 이미지",
-        "긴 파일 경로",
-        "복잡한 UI",
-        "영문 프로젝트 규칙 라벨",
-        "이전 실패 사례",
+        "법원",
+        "법전",
+        "연방법",
+        "주법",
+        "비서",
+        "실습 입력폼",
+        "점수판",
+        "검증 로그",
+        "추상 장식",
+        "작은 글씨",
         "보이는 패널 번호",
         "동그라미 숫자",
         "Cell 번호",
         "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터"
+        "잘린 글자 또는 잘린 캐릭터",
+        "검은색으로 채운 머리",
+        "로봇 헬멧형 머리"
       ],
       "teachingQuestions": [
-        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "Context와 CLAUDE.md의 차이가 보이는가?",
-        "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
+        "그림만 보고 회사 지침 비유를 설명할 수 있는가?",
+        "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
       ],
-      "minimumPassScore": 85
+      "minimumPassScore": 90
     },
     "assetCrop": null,
     "presenterCues": [
-      "로드는 넓은 범위에서 좁은 범위로 진행된다: global, user, project, subfolder 순서다.",
-      "하지만 적용 강도는 반대로 이해하면 쉽다. 지금 작업 위치에 가까운 subfolder 규칙이 가장 구체적이고 강하다.",
-      "그래서 충돌이 있을 때는 현재 작업 위치에 더 가까운 CLAUDE.md를 실행 전 확인한다."
+      "넓은 지침은 먼저 깔리지만 현장에 가까운 지침이 더 직접적으로 적용된다.",
+      "충돌이 있으면 지금 작업 위치에 더 가까운 CLAUDE.md가 더 구체적인 기준이 된다.",
+      "내 눈앞에 가장 가까운 팀장님의 지시가 회장님 훈화 말씀보다 더 직접적으로 적용된다는 문장으로 기억시킨다."
     ],
     "bridge": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "CLAUDE.md는 global, user, project, subfolder 순서로 로드되지만, 실제 작업에서는 더 가까운 범위의 규칙이 더 강하게 적용된다.",
+    "speakerNote": "앞서 지침의 적용 범위를 봤다면, 이제 적용 강도를 이해하면 됩니다. 넓은 지침은 먼저 깔립니다. 하지만 실제 작업에서는 지금 작업 위치에 가까운 지침이 더 구체적으로 적용됩니다. 회사로 비유하면 회장님 지침이 전체 방향을 잡아 주지만, 지금 현장에서 일하는 김아이에게는 눈앞의 팀장님 현장 지침이 더 직접적입니다. 그래서 한 문장으로 기억하시면 됩니다. 내 눈앞에 가장 가까운 팀장님의 지시가 대기업 회장님 훈화 말씀보다 더 직접적으로 적용됩니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -7114,7 +6566,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 36,
+    "index": 34,
     "id": "act3-context-vs-claude-md",
     "file": "act3-context-vs-claude-md.html",
     "section": "Act 3 · CLAUDE.md 회사 내규",
@@ -7305,7 +6757,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 37,
+    "index": 35,
     "id": "act3-practice-handoff",
     "file": "act3-practice-handoff.html",
     "section": "Act 3 · CLAUDE.md 회사 내규",
@@ -7499,177 +6951,177 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 38,
+    "index": 36,
     "id": "act3-to-act4-manual",
     "file": "act3-to-act4-manual.html",
     "section": "Act 3 · CLAUDE.md 회사 내규",
     "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
     "estimatedMinutes": 1,
-    "title": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-    "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담습니다.",
+    "title": "내규가 선이라면, 매뉴얼은 길입니다.",
+    "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
     "bullets": [
-      "회사 내규",
-      "CLAUDE.md",
-      "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다."
+      "지켜야 할 기준",
+      "따라 할 순서",
+      "단계별 실행"
     ],
-    "visualIntent": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
+    "visualIntent": "내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림 hand-drawn minimal black and white Korean lecture illustration, one accent color, clear teaching composition, no decorative gradients. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+    "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 36, landscape 16:9 composition\nPrimary request: Explain the transition from CLAUDE.md rules to Manual/Skill workflow: rules are a boundary line, manuals are a path.\nComposition: Left side boundary labeled 내규 = 선 with cards 금지 조건 and 제외 기준. Right side path labeled 매뉴얼 = 길 with steps 1 시장 조사, 2 장단점 분석, 3 보고서 작성. Kimai steps toward the path. Add label 순서대로 실행.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels.",
     "visualAssetId": "act3-to-act4-manual",
-    "layoutTemplate": "glossary-bridge",
+    "layoutTemplate": "story-scene",
     "teachingMove": "connect",
-    "audienceAction": "connect-metaphor",
-    "visualMode": "term-bridge",
-    "mainTemplate": "term-bridge",
-    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
+    "audienceAction": "inspect-visual",
+    "visualMode": "story-illustration",
+    "mainTemplate": "kimai-structure",
+    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=connect; source audienceAction=inspect-visual; source visualMode=story-illustration",
     "rewrittenScreen": {
-      "headline": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-      "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담습니다.",
+      "headline": "내규가 선이라면, 매뉴얼은 길입니다.",
+      "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
       "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-      "metaphorTerm": "회사 내규",
-      "realTerm": "CLAUDE.md",
-      "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
-      "supportingLine": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다."
+      "imageAnchors": [
+        "지켜야 할 기준",
+        "따라 할 순서",
+        "단계별 실행"
+      ]
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-        "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
+        "title": "내규가 선이라면, 매뉴얼은 길입니다.",
+        "message": "앞에서 배운 내규, CLAUDE.md는 김아이가 넘지 말아야 할 선입니다. 노란색 쓰지 마라, 해외 사례는 빼라 같은 기준이죠. 그런데 매뉴얼은 다릅니다. 매뉴얼은 김아이가 밟고 가야 할 길입니다. 김아이가 멍청해서 매뉴얼이 필요한 게 아닙니다. 오히려 너무 똑똑해서 필요합니다. 시장 조사, 경쟁사 분석, 보고서 작성을 한 번에 던지면 김아이는 세 단계를 머릿속에서 섞어 처리할 수 있습니다. 그러면 조사 전에 결론을 내거나 분석 과정을 건너뛸 수 있습니다. 그래서 매뉴얼은 단계별 브레이크입니다. 1단계 시장 조사, 2단계 장단점 분석, 3단계 보고서 작성처럼 순서를 깔아주면 김아이는 샛길로 새지 않고 결과물을 안정적으로 만듭니다.",
         "bullets": [
-          "내규 = 기준",
-          "매뉴얼 = 순서",
-          "다음 Act = 반복 실행"
+          "지켜야 할 기준",
+          "따라 할 순서",
+          "단계별 실행"
         ],
         "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-        "visualIntent": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
+        "visualIntent": "내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림",
         "glossaryTerms": [
           "CLAUDE.md",
           "Skill"
         ]
       },
-      "selectedTemplate": "term-bridge",
+      "selectedTemplate": "kimai-structure",
       "screenStructure": {
-        "headline": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-        "message": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담습니다.",
+        "headline": "내규가 선이라면, 매뉴얼은 길입니다.",
+        "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
         "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-        "metaphorTerm": "회사 내규",
-        "realTerm": "CLAUDE.md",
-        "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
-        "supportingLine": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다."
+        "imageAnchors": [
+          "지켜야 할 기준",
+          "따라 할 순서",
+          "단계별 실행"
+        ]
       },
       "componentData": {
-        "metaphorTerm": "회사 내규",
-        "realTerm": "CLAUDE.md",
-        "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다."
+        "imageAnchors": [
+          "지켜야 할 기준",
+          "따라 할 순서",
+          "단계별 실행"
+        ],
+        "visualAssetId": "act3-to-act4-manual"
       },
       "presenterCues": [
-        "한 문장 결론: 내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-        "회사말을 먼저 말하고 실제 용어 CLAUDE.md로 연결",
+        "한 문장 결론: 내규가 선이라면, 매뉴얼은 길입니다.",
+        "내규는 기준이고 매뉴얼은 순서라는 대비를 먼저 잡는다.",
+        "복잡한 작업은 단계별 실행으로 안정화된다고 설명한다.",
         "다음 연결: 다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "use-generated-single-image",
         "visualAssetId": "act3-to-act4-manual",
-        "sourcePath": "assets/visuals/act3-to-act4-manual.png",
+        "sourcePath": "assets/visuals/act3-to-act4-manual-boundary-path.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.\n장면: 회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 내규 = 기준 / 매뉴얼 = 순서 / 다음 Act = 반복 실행",
+        "generationPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 36, landscape 16:9 composition\nPrimary request: Explain the transition from CLAUDE.md rules to Manual/Skill workflow: rules are a boundary line, manuals are a path.\nComposition: Left side boundary labeled 내규 = 선 with cards 금지 조건 and 제외 기준. Right side path labeled 매뉴얼 = 길 with steps 1 시장 조사, 2 장단점 분석, 3 보고서 작성. Kimai steps toward the path. Add label 순서대로 실행.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels.",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "김아이 캐릭터가 기존 흰 선형 머리, 헤드셋, 안테나, 파란 넥타이, 명찰과 일치한다.",
+          "내규=선, 매뉴얼=길, 순서대로 실행이 읽힌다.",
+          "금지 조건과 제외 기준은 왼쪽 경계선에 머문다.",
+          "시장 조사, 장단점 분석, 보고서 작성이 순서대로 보인다."
         ]
       },
-      "rationale": "회사말 비유와 실제 하네스 용어를 연결하는 명명 장면이다.",
+      "rationale": "Act 3에서 Act 4로 넘어가는 전환 슬라이드이므로 용어 설명보다 선과 길의 대비 이미지를 중심에 둔다.",
       "changes": [
         {
-          "from": "title",
-          "to": "headline",
+          "from": "term-bridge",
+          "to": "kimai-structure",
           "original": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-          "changed": "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 순서입니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
-          "changed": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "metaphorTerm/realTerm/bridgeLine",
-          "original": [
-            "내규 = 기준",
-            "매뉴얼 = 순서",
-            "다음 Act = 반복 실행"
-          ],
-          "changed": [],
-          "reason": "term-bridge 구조에서 필요한 슬롯으로 재배치한다."
+          "changed": "내규가 선이라면, 매뉴얼은 길입니다.",
+          "reason": "매뉴얼/Skill 도입부의 핵심 비유를 한 장면으로 전달한다."
         }
       ],
       "copyPolish": {
         "version": 1,
-        "appliedAt": "2026-05-31",
+        "appliedAt": "2026-06-02",
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "quote",
+    "layoutVariant": "standard",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "bridge",
-      "sourceAction": "keep-existing-crop-review-required",
+      "templateComponent": "kimai-structure",
+      "sourceAction": "use-generated-single-image",
       "visualAssetId": "act3-to-act4-manual",
-      "renderedVisualAsset": "../assets/visuals/act3-to-act4-manual-act3-to-act4-manual-single.png",
-      "usesExistingImage": true,
+      "renderedVisualAsset": "../assets/visuals/act3-to-act4-manual-act3-to-act4-manual-boundary-path.png",
+      "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act3-to-act4-manual-act3-to-act4-manual-single.png",
+    "renderedVisualAsset": "../assets/visuals/act3-to-act4-manual-act3-to-act4-manual-boundary-path.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
+    "assetTeachingRole": "내규는 넘지 말아야 할 선이고 매뉴얼은 따라가야 할 작업 순서라는 Act 3 to Act 4 전환을 설명한다.",
     "assetExplanationAnchors": [
-      "반복 질문",
-      "반복 기준",
-      "반복 출력"
+      "내규 = 선",
+      "매뉴얼 = 길",
+      "금지 조건",
+      "제외 기준",
+      "시장 조사",
+      "장단점 분석",
+      "보고서 작성",
+      "순서대로 실행",
+      "김아이"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
-        "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
-        "김아이 AI 신입사원",
-        "CLAUDE.md 설정 실습 흐름",
-        "제품 리뷰 보고서 맥락"
+        "김아이",
+        "내규 = 선",
+        "매뉴얼 = 길",
+        "금지 조건",
+        "제외 기준",
+        "시장 조사",
+        "장단점 분석",
+        "보고서 작성",
+        "순서대로 실행"
       ],
       "mustNotShow": [
-        "장식용 추상 이미지",
-        "긴 파일 경로",
-        "복잡한 UI",
-        "영문 프로젝트 규칙 라벨",
-        "이전 실패 사례",
+        "실습 입력폼",
+        "점수판",
+        "검증 로그",
+        "추상 장식",
+        "작은 글씨",
         "보이는 패널 번호",
         "동그라미 숫자",
         "Cell 번호",
         "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터"
+        "잘린 글자 또는 잘린 캐릭터",
+        "검은색으로 채운 머리",
+        "로봇 헬멧형 머리"
       ],
       "teachingQuestions": [
-        "그림만 보고 이 슬라이드의 한 가지 메시지를 설명할 수 있는가?",
-        "Context와 CLAUDE.md의 차이가 보이는가?",
-        "규칙 과다 또는 임시 규칙 오염 위험이 보이는가?"
+        "그림만 보고 내규와 매뉴얼의 차이를 설명할 수 있는가?",
+        "김아이 캐릭터가 기존 기준 이미지와 일관되게 보이는가?"
       ],
-      "minimumPassScore": 85
+      "minimumPassScore": 90
     },
     "assetCrop": null,
     "presenterCues": [
-      "Act 3를 닫고 Act 4 문제를 연다.",
-      "내규는 지켜야 할 기준이고, 매뉴얼은 따라 할 실행 순서다.",
-      "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만든다."
+      "Act 3의 CLAUDE.md를 지켜야 할 기준, 즉 선으로 정리한다.",
+      "Act 4의 매뉴얼과 Skill은 김아이가 따라가야 할 작업 순서, 즉 길로 연결한다.",
+      "복잡한 일을 통으로 던지지 않고 단계별로 실행하게 만들면 성공 확률이 올라간다."
     ],
     "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "CLAUDE.md는 매번 지킬 기준을 담고, Act 4의 업무 매뉴얼은 반복 실행 순서를 담는다.",
+    "speakerNote": "앞에서 배운 내규, CLAUDE.md는 김아이가 넘지 말아야 할 선입니다. 노란색 쓰지 마라, 해외 사례는 빼라 같은 기준이죠. 그런데 매뉴얼은 다릅니다. 매뉴얼은 김아이가 밟고 가야 할 길입니다. 김아이가 멍청해서 매뉴얼이 필요한 게 아닙니다. 오히려 너무 똑똑해서 필요합니다. 시장 조사, 경쟁사 분석, 보고서 작성을 한 번에 던지면 김아이는 세 단계를 머릿속에서 섞어 처리할 수 있습니다. 그러면 조사 전에 결론을 내거나 분석 과정을 건너뛸 수 있습니다. 그래서 매뉴얼은 단계별 브레이크입니다. 1단계 시장 조사, 2단계 장단점 분석, 3단계 보고서 작성처럼 순서를 깔아주면 김아이는 샛길로 새지 않고 결과물을 안정적으로 만듭니다.",
     "evidenceClaimIds": [
       "claim-003"
     ],
@@ -7685,202 +7137,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 39,
-    "id": "wrap-personal-harness",
-    "file": "wrap-personal-harness.html",
-    "section": "Wrap-up · 내 업무에 가져가기",
-    "sectionObjective": "수강생이 자신의 업무에 적용할 하네스 장치 3개를 고른다.",
-    "estimatedMinutes": 5,
-    "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-    "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-    "bullets": [
-      "자주 반복되는가",
-      "실패하면 위험한가",
-      "검증할 증거가 있는가"
-    ],
-    "visualIntent": "오늘 만든 지시문, 컨텍스트, Skill, 역할, 검증 장치를 내 업무에 가져가는 최종 하네스 지도 손그림",
-    "visualType": "generated-image",
-    "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration. Final Kimai team harness map connects 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
-    "visualAssetId": "act6-final-harness-map",
-    "layoutTemplate": "wrap-up",
-    "teachingMove": "synthesize",
-    "audienceAction": "reflect",
-    "visualMode": "artifact-map",
-    "mainTemplate": "recap-map",
-    "templateSelectionReason": "source layoutTemplate=wrap-up; source teachingMove=synthesize; source audienceAction=reflect; source visualMode=artifact-map",
-    "rewrittenScreen": {
-      "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-      "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-      "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-      "mapNodes": [
-        "자주 반복되는가",
-        "실패하면 위험한가",
-        "검증할 증거가 있는가"
-      ]
-    },
-    "templateRewrite": {
-      "sourceContractVersion": 1,
-      "originalSource": {
-        "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-        "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-        "bullets": [
-          "자주 반복되는가",
-          "실패하면 위험한가",
-          "검증할 증거가 있는가"
-        ],
-        "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-        "visualIntent": "오늘 만든 지시문, 컨텍스트, Skill, 역할, 검증 장치를 내 업무에 가져가는 최종 하네스 지도 손그림",
-        "glossaryTerms": [
-          "Harness Engineering"
-        ]
-      },
-      "selectedTemplate": "recap-map",
-      "screenStructure": {
-        "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-        "message": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-        "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-        "mapNodes": [
-          "자주 반복되는가",
-          "실패하면 위험한가",
-          "검증할 증거가 있는가"
-        ]
-      },
-      "componentData": {
-        "mapNodes": [
-          "자주 반복되는가",
-          "실패하면 위험한가",
-          "검증할 증거가 있는가"
-        ]
-      },
-      "presenterCues": [
-        "한 문장 결론: 내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-        "다음 연결: 오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다."
-      ],
-      "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
-        "visualAssetId": "act6-final-harness-map",
-        "sourcePath": "assets/visuals/act6-final-harness-map.png",
-        "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.\n장면: 오늘 만든 지시문, 컨텍스트, Skill, 역할, 검증 장치를 내 업무에 가져가는 최종 하네스 지도 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 자주 반복되는가 / 실패하면 위험한가 / 검증할 증거가 있는가",
-        "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-        ]
-      },
-      "rationale": "여정 전체를 회수하고 현업 적용 위치를 고른다.",
-      "changes": [
-        {
-          "from": "title",
-          "to": "headline",
-          "original": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-          "changed": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-          "changed": "반복 빈도와 실패 위험이 큰 곳부터 지시문, 컨텍스트, Skill, 역할, 검증 중 세 가지를 고릅니다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "mapNodes",
-          "original": [
-            "자주 반복되는가",
-            "실패하면 위험한가",
-            "검증할 증거가 있는가"
-          ],
-          "changed": [
-            "자주 반복되는가",
-            "실패하면 위험한가",
-            "검증할 증거가 있는가"
-          ],
-          "reason": "recap-map 구조에서 필요한 슬롯으로 재배치한다."
-        }
-      ],
-      "copyPolish": {
-        "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
-      }
-    },
-    "layoutVariant": "statement",
-    "visualRenderContract": {
-      "renderKind": "css-template-component",
-      "templateComponent": "loop",
-      "sourceAction": "keep-existing-crop-review-required",
-      "visualAssetId": "act6-final-harness-map",
-      "renderedVisualAsset": "",
-      "usesExistingImage": true,
-      "projectedImage": false
-    },
-    "renderedVisualAsset": "",
-    "sourceAssetId": "",
-    "assetTeachingRole": "Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다.",
-    "assetExplanationAnchors": [
-      "정보 선별",
-      "업무 지시",
-      "회사 내규",
-      "업무 매뉴얼",
-      "역할과 권한",
-      "완료 검문소"
-    ],
-    "assetSemanticRequirements": {
-      "mustShow": [
-        "정보 선별",
-        "업무 지시",
-        "회사 내규",
-        "업무 매뉴얼",
-        "역할과 권한",
-        "완료 검문소"
-      ],
-      "mustNotShow": [
-        "실습 입력폼",
-        "점수판 중심",
-        "코드 화면",
-        "복잡한 UI",
-        "그라데이션",
-        "작은 글씨",
-        "보이는 패널 번호",
-        "동그라미 숫자",
-        "Cell 번호",
-        "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터"
-      ],
-      "teachingQuestions": [
-        "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
-        "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
-      ],
-      "minimumPassScore": 85
-    },
-    "assetCrop": null,
-    "presenterCues": [
-      "모든 것을 한 번에 도입하지 않게 한다",
-      "빈도와 위험도 기준을 준다",
-      "오늘의 최종 산출물를 저장하게 한다"
-    ],
-    "bridge": "오늘 만든 것은 문장이 아니라 다시 쓸 수 있는 업무 방식입니다.",
-    "interaction": null,
-    "xmlPrompt": null,
-    "speakerNote": "마지막 활동은 개인 적용이다. 수강생이 오늘 만든 가장 나은 지시문, 컨텍스트 선택, Skill, role/tool plan, checkpoint 중 자기 업무에 가져갈 세 가지를 고른다.",
-    "evidenceClaimIds": [
-      "claim-010"
-    ],
-    "glossaryTerms": [
-      "Harness Engineering"
-    ],
-    "qualityChecks": [
-      "개인 행동으로 끝난다.",
-      "세 가지 선택 기준이 보인다.",
-      "과도한 도입을 권하지 않는다."
-    ]
-  },
-  {
-    "index": 40,
+    "index": 37,
     "id": "act4-repeated-work-instructions",
     "file": "act4-repeated-work-instructions.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -8084,7 +7341,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 41,
+    "index": 38,
     "id": "act4-human-bound-instructions",
     "file": "act4-human-bound-instructions.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -8313,7 +7570,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 42,
+    "index": 39,
     "id": "act4-different-instruction-starts",
     "file": "act4-different-instruction-starts.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -8508,7 +7765,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 43,
+    "index": 40,
     "id": "act4-task-manual-outside",
     "file": "act4-task-manual-outside.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -8739,7 +7996,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 44,
+    "index": 41,
     "id": "act4-manual-candidate-check",
     "file": "act4-manual-candidate-check.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -8980,7 +8237,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 45,
+    "index": 42,
     "id": "act4-not-everything-manual",
     "file": "act4-not-everything-manual.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -9179,7 +8436,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 46,
+    "index": 43,
     "id": "act4-manual-start-conditions",
     "file": "act4-manual-start-conditions.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -9409,7 +8666,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 47,
+    "index": 44,
     "id": "act4-short-procedure",
     "file": "act4-short-procedure.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -9680,7 +8937,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 48,
+    "index": 45,
     "id": "act4-manual-supporting-materials",
     "file": "act4-manual-supporting-materials.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -9936,7 +9193,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 49,
+    "index": 46,
     "id": "act4-skill-term-mapping",
     "file": "act4-skill-term-mapping.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -10128,7 +9385,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 50,
+    "index": 47,
     "id": "act4-practice-handoff",
     "file": "act4-practice-handoff.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -10325,7 +9582,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 51,
+    "index": 48,
     "id": "act4-to-act5-roles",
     "file": "act4-to-act5-roles.html",
     "section": "Act 4 · 반복 업무 매뉴얼",
@@ -10514,7 +9771,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 52,
+    "index": 49,
     "id": "act5-kimai-does-everything",
     "file": "act5-kimai-does-everything.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -10720,7 +9977,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 53,
+    "index": 50,
     "id": "act5-company-approval-roles",
     "file": "act5-company-approval-roles.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -10911,7 +10168,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 54,
+    "index": 51,
     "id": "act5-new-hires-team",
     "file": "act5-new-hires-team.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -11105,7 +10362,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 55,
+    "index": 52,
     "id": "act5-kimai-research-role",
     "file": "act5-kimai-research-role.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -11300,7 +10557,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 56,
+    "index": 53,
     "id": "act5-choi-writing-role",
     "file": "act5-choi-writing-role.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -11495,7 +10752,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 57,
+    "index": 54,
     "id": "act5-park-review-role",
     "file": "act5-park-review-role.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -11736,7 +10993,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 58,
+    "index": 55,
     "id": "act5-agent-term-mapping",
     "file": "act5-agent-term-mapping.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -11924,7 +11181,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 59,
+    "index": 56,
     "id": "act5-new-hire-skill-assignment",
     "file": "act5-new-hire-skill-assignment.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -12121,23 +11378,23 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 60,
+    "index": 57,
     "id": "act5-security-permissions",
     "file": "act5-security-permissions.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
     "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
     "estimatedMinutes": 1,
-    "title": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-    "message": "모든 열쇠를 주지 않고 맡은 일에 필요한 권한과 접근 구역만 줍니다.",
+    "title": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+    "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
     "bullets": [
-      "도구 열쇠",
-      "MCP",
-      "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다."
+      "읽기 권한",
+      "쓰기 권한",
+      "실행 권한"
     ],
-    "visualIntent": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+    "visualIntent": "권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration. New hires receive different security badges and access zones: 자료 열람, 문서 작성, 실행/검증.",
+    "visualPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai gives only role-needed permission cards, not a master key. Three access zones are labeled 읽기, 쓰기, 실행. The image explains internal permission scope and least privilege, not MCP.",
     "visualAssetId": "act5-security-permissions",
     "layoutTemplate": "glossary-bridge",
     "teachingMove": "connect",
@@ -12146,57 +11403,54 @@ window.DECK_SLIDES = [
     "mainTemplate": "term-bridge",
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
-      "headline": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-      "message": "모든 열쇠를 주지 않고 맡은 일에 필요한 권한과 접근 구역만 줍니다.",
-      "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-      "metaphorTerm": "도구 열쇠",
-      "realTerm": "MCP",
-      "bridgeLine": "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다.",
-      "supportingLine": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다."
+      "headline": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+      "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
+      "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+      "metaphorTerm": "권한 카드",
+      "realTerm": "권한 범위",
+      "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다.",
+      "supportingLine": "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 보안 사고를 막습니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-        "message": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
+        "title": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
         "bullets": [
-          "자료 열람 권한",
-          "문서 작성 권한",
-          "실행/검증 권한",
-          "접근 가능한 구역"
+          "읽기 권한",
+          "쓰기 권한",
+          "실행 권한"
         ],
-        "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "visualIntent": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-        "glossaryTerms": [
-          "MCP"
-        ]
+        "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+        "visualIntent": "권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
+        "glossaryTerms": []
       },
       "selectedTemplate": "term-bridge",
       "screenStructure": {
-        "headline": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-        "message": "모든 열쇠를 주지 않고 맡은 일에 필요한 권한과 접근 구역만 줍니다.",
-        "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "metaphorTerm": "도구 열쇠",
-        "realTerm": "MCP",
-        "bridgeLine": "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다.",
-        "supportingLine": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다."
+        "headline": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
+        "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
+        "metaphorTerm": "권한 카드",
+        "realTerm": "권한 범위",
+        "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다.",
+        "supportingLine": "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 보안 사고를 막습니다."
       },
       "componentData": {
-        "metaphorTerm": "도구 열쇠",
-        "realTerm": "MCP",
-        "bridgeLine": "도구 열쇠와 실제 용어 MCP를 함께 보여 줍니다."
+        "metaphorTerm": "권한 카드",
+        "realTerm": "권한 범위",
+        "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다."
       },
       "presenterCues": [
-        "한 문장 결론: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-        "회사말을 먼저 말하고 실제 용어 MCP로 연결",
-        "다음 연결: MCP는 협력사에 요청을 보내는 공식 창구입니다."
+        "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 줍니다.",
+        "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "single-image-regenerated",
         "visualAssetId": "act5-security-permissions",
-        "sourcePath": "assets/visuals/act5-security-permissions.png",
+        "sourcePath": "assets/visuals/act5-security-permissions-role-permissions.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.\n장면: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 자료 열람 권한 / 문서 작성 권한 / 실행/검증 권한",
+        "generationPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai gives only role-needed permission cards, not a master key. Three access zones are labeled 읽기, 쓰기, 실행. The image explains internal permission scope and least privilege, not MCP.",
         "reviewChecks": [
           "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
           "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
@@ -12243,27 +11497,29 @@ window.DECK_SLIDES = [
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "bridge",
-      "sourceAction": "keep-existing-crop-review-required",
+      "sourceAction": "single-image-regenerated",
       "visualAssetId": "act5-security-permissions",
-      "renderedVisualAsset": "../assets/visuals/act5-security-permissions-act5-security-permissions-single.png",
-      "usesExistingImage": true,
+      "renderedVisualAsset": "../assets/visuals/act5-security-permissions-act5-security-permissions-role-permissions.png",
+      "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act5-security-permissions-act5-security-permissions-single.png",
+    "renderedVisualAsset": "../assets/visuals/act5-security-permissions-act5-security-permissions-role-permissions.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다.",
+    "assetTeachingRole": "권한 카드를 통해 읽기, 쓰기, 실행 권한을 역할별로 나누는 최소 권한 원칙을 설명한다.",
     "assetExplanationAnchors": [
-      "자료 열람 권한",
-      "문서 작성 권한",
-      "실행/검증 권한",
-      "접근 가능한 구역"
+      "읽기 권한",
+      "쓰기 권한",
+      "실행 권한",
+      "마스터키 금지",
+      "권한 범위"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
-        "자료 열람 권한",
-        "문서 작성 권한",
-        "실행/검증 권한",
-        "접근 가능한 구역"
+        "읽기",
+        "쓰기",
+        "실행",
+        "마스터키 금지",
+        "김아이"
       ],
       "mustNotShow": [
         "실습 입력폼",
@@ -12288,21 +11544,19 @@ window.DECK_SLIDES = [
     },
     "assetCrop": null,
     "presenterCues": [
-      "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-      "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
-      "MCP는 협력사에 요청을 보내는 공식 창구입니다."
+      "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+      "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 줍니다.",
+      "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다."
     ],
-    "bridge": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
+    "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
+    "speakerNote": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
     "evidenceClaimIds": [
       "claim-001",
       "claim-008"
     ],
-    "glossaryTerms": [
-      "MCP"
-    ],
+    "glossaryTerms": [],
     "qualityChecks": [
       "회사 업무 비유가 먼저 보인다.",
       "한 슬라이드에 한 메시지만 담긴다.",
@@ -12311,23 +11565,23 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 61,
+    "index": 58,
     "id": "act5-mcp-partner-window",
     "file": "act5-mcp-partner-window.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
     "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
     "estimatedMinutes": 1,
-    "title": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-    "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+    "title": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+    "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
     "bullets": [
-      "외부 자료 요청",
-      "외부 도구 요청",
-      "허가된 통로"
+      "자료 요청",
+      "도구 요청",
+      "요청 기록"
     ],
-    "visualIntent": "MCP는 협력사에 요청을 보내는 공식 창구입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+    "visualIntent": "MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.",
     "visualType": "generated-image",
     "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration. A company official partner request window labeled MCP sends 외부 자료 요청 and 외부 도구 요청 with request log. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
+    "visualPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai uses an official company telephone/switchboard labeled MCP to contact an external system through an official window. Request slips 자료 요청 and 도구 요청 pass through the phone line, and 요청 기록 is logged.",
     "visualAssetId": "act5-mcp-partner-window",
     "layoutTemplate": "story-scene",
     "teachingMove": "explain",
@@ -12336,63 +11590,63 @@ window.DECK_SLIDES = [
     "mainTemplate": "kimai-structure",
     "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
     "rewrittenScreen": {
-      "headline": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-      "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+      "headline": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+      "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
       "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
       "imageAnchors": [
-        "외부 자료 요청",
-        "외부 도구 요청",
-        "허가된 통로"
+        "자료 요청",
+        "도구 요청",
+        "요청 기록"
       ],
-      "callout": "외부 자료 요청"
+      "callout": "공식 전화 창구"
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+        "title": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+        "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
         "bullets": [
-          "외부 자료 요청",
-          "외부 도구 요청",
-          "허가된 통로",
+          "자료 요청",
+          "도구 요청",
           "요청 기록"
         ],
         "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
-        "visualIntent": "MCP는 협력사에 요청을 보내는 공식 창구입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+        "visualIntent": "MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.",
         "glossaryTerms": [
           "MCP"
         ]
       },
       "selectedTemplate": "kimai-structure",
       "screenStructure": {
-        "headline": "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "message": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+        "headline": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+        "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
         "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
         "imageAnchors": [
-          "외부 자료 요청",
-          "외부 도구 요청",
-          "허가된 통로"
+          "자료 요청",
+          "도구 요청",
+          "요청 기록"
         ],
-        "callout": "외부 자료 요청"
+        "callout": "공식 전화 창구"
       },
       "componentData": {
         "imageAnchors": [
-          "외부 자료 요청",
-          "외부 도구 요청",
-          "허가된 통로"
+          "자료 요청",
+          "도구 요청",
+          "요청 기록"
         ],
         "visualAssetId": "act5-mcp-partner-window"
       },
       "presenterCues": [
-        "한 문장 결론: MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-        "다음 연결: 실습에서는 에이전트 팀을 구현해 봅니다."
+        "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+        "자료 요청과 도구 요청을 허가된 전화 창구로 보내고 기록을 남깁니다.",
+        "실습에서는 에이전트 팀을 구현해 봅니다."
       ],
       "visualRequirements": {
-        "action": "single-image-first-generated-pilot",
+        "action": "single-image-regenerated",
         "visualAssetId": "act5-mcp-partner-window",
-        "sourcePath": "assets/visuals/act5-mcp-partner-window-single.png",
+        "sourcePath": "assets/visuals/act5-mcp-official-phone-window.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: MCP는 협력사에 요청을 보내는 공식 창구입니다.\n장면: MCP는 협력사에 요청을 보내는 공식 창구입니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 외부 자료 요청 / 외부 도구 요청 / 허가된 통로",
+        "generationPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai uses an official company telephone/switchboard labeled MCP to contact an external system through an official window. Request slips 자료 요청 and 도구 요청 pass through the phone line, and 요청 기록 is logged.",
         "reviewChecks": [
           "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
           "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
@@ -12439,33 +11693,34 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "visual-left",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "kimai-structure",
-      "sourceAction": "single-image-first-generated-pilot",
+      "sourceAction": "single-image-regenerated",
       "visualAssetId": "act5-mcp-partner-window",
-      "renderedVisualAsset": "../assets/visuals/act5-mcp-partner-window-act5-mcp-partner-window-single.png",
+      "renderedVisualAsset": "../assets/visuals/act5-mcp-partner-window-act5-mcp-official-phone-window.png",
       "usesExistingImage": false,
       "projectedImage": true
     },
-    "renderedVisualAsset": "../assets/visuals/act5-mcp-partner-window-act5-mcp-partner-window-single.png",
+    "renderedVisualAsset": "../assets/visuals/act5-mcp-partner-window-act5-mcp-official-phone-window.png",
     "sourceAssetId": "",
-    "assetTeachingRole": "MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
+    "assetTeachingRole": "MCP를 외부 시스템과 협력사에 연결하는 공식 전화 창구와 요청 기록 통로로 설명한다.",
     "assetExplanationAnchors": [
-      "협력사 공식 창구",
-      "외부 자료 요청",
-      "외부 도구 요청",
-      "허가된 통로",
+      "공식 창구",
+      "MCP",
+      "자료 요청",
+      "도구 요청",
       "요청 기록"
     ],
     "assetSemanticRequirements": {
       "mustShow": [
-        "협력사 공식 창구",
-        "외부 자료 요청",
-        "외부 도구 요청",
-        "허가된 통로",
-        "요청 기록"
+        "공식 창구",
+        "MCP",
+        "자료 요청",
+        "도구 요청",
+        "요청 기록",
+        "김아이"
       ],
       "mustNotShow": [
         "실습 입력폼",
@@ -12488,14 +11743,14 @@ window.DECK_SLIDES = [
     },
     "assetCrop": null,
     "presenterCues": [
-      "MCP는 협력사에 요청을 보내는 공식 창구입니다.",
-      "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+      "MCP는 외부 창구에 연결하는 공식 전화입니다.",
+      "자료 요청과 도구 요청을 허가된 전화 창구로 보내고 기록을 남깁니다.",
       "실습에서는 에이전트 팀을 구현해 봅니다."
     ],
     "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "외부 자료나 외부 도구가 필요할 때 허가된 공식 창구를 통해 요청하고 기록을 남기는 통로가 MCP입니다.",
+    "speakerNote": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
     "evidenceClaimIds": [
       "claim-001",
       "claim-008"
@@ -12511,7 +11766,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 62,
+    "index": 59,
     "id": "act5-practice-handoff",
     "file": "act5-practice-handoff.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
@@ -12712,14 +11967,14 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 63,
+    "index": 60,
     "id": "act5-team-to-act6-checkpoint",
     "file": "act5-team-to-act6-checkpoint.html",
     "section": "Act 5 · 역할 분리와 도구 권한",
     "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
     "estimatedMinutes": 1,
     "title": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-    "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+    "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
     "bullets": [
       "검문소 스위치",
       "Hook",
@@ -12738,25 +11993,25 @@ window.DECK_SLIDES = [
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-      "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-      "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+      "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+      "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
       "metaphorTerm": "검문소 스위치",
       "realTerm": "Hook",
       "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-      "supportingLine": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다."
+      "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
         "title": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-        "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+        "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
         "bullets": [
           "역할별 결과",
           "완료 보고",
           "제출 전 증거",
           "다음 Act: 검문소"
         ],
-        "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+        "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
         "visualIntent": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
         "glossaryTerms": [
           "Hook",
@@ -12766,22 +12021,23 @@ window.DECK_SLIDES = [
       "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-        "message": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-        "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+        "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+        "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
         "metaphorTerm": "검문소 스위치",
         "realTerm": "Hook",
         "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-        "supportingLine": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다."
+        "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
       },
       "componentData": {
         "metaphorTerm": "검문소 스위치",
         "realTerm": "Hook",
-        "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다."
+        "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
+        "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
       },
       "presenterCues": [
         "한 문장 결론: 팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
         "회사말을 먼저 말하고 실제 용어 Hook로 연결",
-        "다음 연결: 다음 Act에서는 완료 전 검문소를 세웁니다."
+        "다음 연결: 이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -12808,8 +12064,8 @@ window.DECK_SLIDES = [
         {
           "from": "message",
           "to": "supportingMessage",
-          "original": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-          "changed": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+          "original": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+          "changed": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
           "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
         },
         {
@@ -12831,7 +12087,7 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "quote",
+    "layoutVariant": "statement",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "bridge",
@@ -12879,13 +12135,13 @@ window.DECK_SLIDES = [
     "assetCrop": null,
     "presenterCues": [
       "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-      "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
-      "다음 Act에서는 완료 전 검문소를 세웁니다."
+      "역할 분리는 끝이 아니라 제출 전 검문소로 이어진다.",
+      "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다."
     ],
-    "bridge": "다음 Act에서는 완료 전 검문소를 세웁니다.",
+    "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요합니다.",
+    "speakerNote": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
     "evidenceClaimIds": [
       "claim-001"
     ],
@@ -12901,14 +12157,14 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 64,
+    "index": 61,
     "id": "act6-required-pre-submit-check",
     "file": "act6-required-pre-submit-check.html",
     "section": "Act 6 · 검증과 하네스 구조",
     "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
     "estimatedMinutes": 1,
     "title": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-    "message": "결과물을 제출하기 전에는 빠진 항목과 기준 충족 여부를 먼저 확인합니다.",
+    "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
     "bullets": [
       "품질검문소",
       "Quality Gate",
@@ -12927,24 +12183,24 @@ window.DECK_SLIDES = [
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-      "message": "결과물을 제출하기 전에는 빠진 항목과 기준 충족 여부를 먼저 확인합니다.",
-      "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+      "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+      "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
       "metaphorTerm": "품질검문소",
       "realTerm": "Quality Gate",
       "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
-      "supportingLine": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증."
+      "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
         "title": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-        "message": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
+        "message": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
         "bullets": [
           "제출 전 확인",
           "빠진 항목 확인",
           "통과 또는 보류"
         ],
-        "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+        "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
         "visualIntent": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다. 장면을 설명하는 hand-drawn minimal teaching asset",
         "glossaryTerms": [
           "Quality Gate"
@@ -12953,22 +12209,23 @@ window.DECK_SLIDES = [
       "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-        "message": "결과물을 제출하기 전에는 빠진 항목과 기준 충족 여부를 먼저 확인합니다.",
-        "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+        "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+        "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
         "metaphorTerm": "품질검문소",
         "realTerm": "Quality Gate",
         "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
-        "supportingLine": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증."
+        "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
       },
       "componentData": {
         "metaphorTerm": "품질검문소",
         "realTerm": "Quality Gate",
-        "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다."
+        "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
+        "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
       },
       "presenterCues": [
         "한 문장 결론: 팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
         "회사말을 먼저 말하고 실제 용어 Quality Gate로 연결",
-        "다음 연결: 검증이 없으면 “끝냈습니다”라는 말만 남습니다."
+        "다음 연결: 그 검문소는 완료 보고 대신 증거를 봅니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -12995,7 +12252,7 @@ window.DECK_SLIDES = [
         {
           "from": "message",
           "to": "supportingMessage",
-          "original": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
+          "original": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
           "changed": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증.",
           "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
         },
@@ -13017,7 +12274,7 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "quote",
+    "layoutVariant": "statement",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "bridge",
@@ -13067,13 +12324,13 @@ window.DECK_SLIDES = [
     "assetCrop": null,
     "presenterCues": [
       "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-      "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
-      "검증이 없으면 “끝냈습니다”라는 말만 남습니다."
+      "품질검문소는 완료 보고를 그대로 믿지 않는 장치입니다.",
+      "그 검문소는 완료 보고 대신 증거를 봅니다."
     ],
-    "bridge": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
+    "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정을 거칩니다.",
+    "speakerNote": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
     "evidenceClaimIds": [
       "claim-001",
       "claim-009"
@@ -13089,213 +12346,14 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 65,
-    "id": "act6-completion-claim-no-evidence",
-    "file": "act6-completion-claim-no-evidence.html",
-    "section": "Act 6 · 검증과 하네스 구조",
-    "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
-    "estimatedMinutes": 1,
-    "title": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-    "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-    "bullets": [
-      "완료 보고",
-      "확인 없음",
-      "빈 증거"
-    ],
-    "visualIntent": "검증이 없으면 “끝냈습니다”라는 말만 남습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-    "visualType": "generated-image",
-    "visualAsset": "",
-    "visualPrompt": "Hand-drawn minimal Korean lecture illustration. Kimai says 끝냈습니다, but there is no checker and evidence boxes are empty.",
-    "visualAssetId": "act6-completion-claim-no-evidence",
-    "layoutTemplate": "assertion-evidence",
-    "teachingMove": "explain",
-    "audienceAction": "inspect-visual",
-    "visualMode": "story-illustration",
-    "mainTemplate": "assertion-scene",
-    "templateSelectionReason": "source layoutTemplate=assertion-evidence; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
-    "rewrittenScreen": {
-      "headline": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-      "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-      "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-      "claim": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-      "evidenceAnchors": [
-        "완료 보고",
-        "확인 없음",
-        "빈 증거"
-      ],
-      "contrastLabel": "추측 대신 증거"
-    },
-    "templateRewrite": {
-      "sourceContractVersion": 1,
-      "originalSource": {
-        "title": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-        "bullets": [
-          "완료 보고",
-          "확인 없음",
-          "빈 증거"
-        ],
-        "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "visualIntent": "검증이 없으면 “끝냈습니다”라는 말만 남습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-        "glossaryTerms": [
-          "Quality Gate"
-        ]
-      },
-      "selectedTemplate": "assertion-scene",
-      "screenStructure": {
-        "headline": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "message": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-        "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "claim": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "evidenceAnchors": [
-          "완료 보고",
-          "확인 없음",
-          "빈 증거"
-        ],
-        "contrastLabel": "추측 대신 증거"
-      },
-      "componentData": {
-        "sheetTitle": "요청서",
-        "evidenceAnchors": [
-          "완료 보고",
-          "확인 없음",
-          "빈 증거"
-        ]
-      },
-      "presenterCues": [
-        "한 문장 결론: 검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-        "다음 연결: 품질검문소는 완료 보고 대신 증거를 봅니다."
-      ],
-      "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
-        "visualAssetId": "act6-completion-claim-no-evidence",
-        "sourcePath": "assets/visuals/act6-completion-claim-no-evidence.png",
-        "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 검증이 없으면 “끝냈습니다”라는 말만 남습니다.\n장면: 검증이 없으면 “끝냈습니다”라는 말만 남습니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 완료 보고 / 확인 없음 / 빈 증거",
-        "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-        ]
-      },
-      "rationale": "실패/위험/원칙을 한 문장 주장과 장면 대비로 보여 준다.",
-      "changes": [
-        {
-          "from": "title",
-          "to": "headline",
-          "original": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-          "changed": "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
-        },
-        {
-          "from": "message",
-          "to": "supportingMessage",
-          "original": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-          "changed": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
-        },
-        {
-          "from": "bullets",
-          "to": "evidenceAnchors",
-          "original": [
-            "완료 보고",
-            "확인 없음",
-            "빈 증거"
-          ],
-          "changed": [
-            "완료 보고",
-            "확인 없음",
-            "빈 증거"
-          ],
-          "reason": "assertion-scene 구조에서 필요한 슬롯으로 재배치한다."
-        }
-      ],
-      "copyPolish": {
-        "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
-      }
-    },
-    "layoutVariant": "visual-left",
-    "visualRenderContract": {
-      "renderKind": "image-asset",
-      "templateComponent": "evidence",
-      "sourceAction": "keep-existing-crop-review-required",
-      "visualAssetId": "act6-completion-claim-no-evidence",
-      "renderedVisualAsset": "../assets/visuals/act6-completion-claim-no-evidence-act6-completion-claim-no-evidence-single.png",
-      "usesExistingImage": true,
-      "projectedImage": true
-    },
-    "renderedVisualAsset": "../assets/visuals/act6-completion-claim-no-evidence-act6-completion-claim-no-evidence-single.png",
-    "sourceAssetId": "",
-    "assetTeachingRole": "검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다.",
-    "assetExplanationAnchors": [
-      "완료 보고",
-      "확인 없음",
-      "빈 증거",
-      "김아이"
-    ],
-    "assetSemanticRequirements": {
-      "mustShow": [
-        "완료 보고",
-        "확인 없음",
-        "빈 증거",
-        "김아이"
-      ],
-      "mustNotShow": [
-        "실습 입력폼",
-        "점수판 중심",
-        "코드 화면",
-        "복잡한 UI",
-        "그라데이션",
-        "작은 글씨",
-        "보이는 패널 번호",
-        "동그라미 숫자",
-        "Cell 번호",
-        "sprite sheet 라벨",
-        "잘린 글자 또는 잘린 캐릭터",
-        "crop marks",
-        "partial cropped objects"
-      ],
-      "teachingQuestions": [
-        "발표자가 이 이미지로 슬라이드의 핵심 문장을 설명할 수 있는가?",
-        "화면 라벨이 강의장 뒤에서도 읽힐 만큼 단순한가?"
-      ],
-      "minimumPassScore": 85
-    },
-    "assetCrop": null,
-    "presenterCues": [
-      "검증이 없으면 “끝냈습니다”라는 말만 남습니다.",
-      "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-      "품질검문소는 완료 보고 대신 증거를 봅니다."
-    ],
-    "bridge": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-    "interaction": null,
-    "xmlPrompt": null,
-    "speakerNote": "완료 보고는 품질 증거가 아니며, 검증 과정이 없으면 실제로 무엇을 했는지 확인할 방법이 없습니다.",
-    "evidenceClaimIds": [
-      "claim-001"
-    ],
-    "glossaryTerms": [
-      "Quality Gate"
-    ],
-    "qualityChecks": [
-      "회사 업무 비유가 먼저 보인다.",
-      "한 슬라이드에 한 메시지만 담긴다.",
-      "실습 UI와 설명 슬라이드가 섞이지 않는다.",
-      "다음 슬라이드 브릿지가 자연스럽다."
-    ]
-  },
-  {
-    "index": 66,
+    "index": 62,
     "id": "act6-quality-gate-evidence-over-claim",
     "file": "act6-quality-gate-evidence-over-claim.html",
     "section": "Act 6 · 검증과 하네스 구조",
     "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
     "estimatedMinutes": 1,
     "title": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-    "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+    "message": "품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.",
     "bullets": [
       "작업 기록",
       "기준 대조",
@@ -13314,8 +12372,8 @@ window.DECK_SLIDES = [
     "templateSelectionReason": "source layoutTemplate=checklist; source teachingMove=demonstrate; source audienceAction=rehearse-checklist; source visualMode=checklist-board",
     "rewrittenScreen": {
       "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-      "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-      "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+      "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+      "bridge": "먼저 작업 기록부터 보겠습니다.",
       "criteria": [
         {
           "key": "기준 1",
@@ -13337,13 +12395,13 @@ window.DECK_SLIDES = [
       "sourceContractVersion": 1,
       "originalSource": {
         "title": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+        "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
         "bullets": [
           "작업 기록",
           "기준 대조",
           "남은 위험"
         ],
-        "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+        "bridge": "먼저 작업 기록부터 보겠습니다.",
         "visualIntent": "품질검문소는 완료 보고 대신 증거를 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
         "glossaryTerms": [
           "Quality Gate"
@@ -13352,8 +12410,8 @@ window.DECK_SLIDES = [
       "selectedTemplate": "decision-gate",
       "screenStructure": {
         "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "message": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-        "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+        "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+        "bridge": "먼저 작업 기록부터 보겠습니다.",
         "criteria": [
           {
             "key": "기준 1",
@@ -13392,7 +12450,7 @@ window.DECK_SLIDES = [
       "presenterCues": [
         "한 문장 결론: 품질검문소는 완료 보고 대신 증거를 봅니다.",
         "판정 기준: 작업 기록, 기준 대조, 남은 위험",
-        "다음 연결: 검증하려면 김아이가 작업 기록을 남겨야 합니다."
+        "다음 연결: 먼저 작업 기록부터 보겠습니다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -13419,8 +12477,8 @@ window.DECK_SLIDES = [
         {
           "from": "message",
           "to": "supportingMessage",
-          "original": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-          "changed": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+          "original": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+          "changed": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
           "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
         },
         {
@@ -13508,13 +12566,13 @@ window.DECK_SLIDES = [
     },
     "presenterCues": [
       "품질검문소는 완료 보고 대신 증거를 봅니다.",
-      "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
-      "검증하려면 김아이가 작업 기록을 남겨야 합니다."
+      "작업 기록, 기준 대조, 남은 위험을 목차처럼 제시한다.",
+      "먼저 작업 기록부터 보겠습니다."
     ],
-    "bridge": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
+    "bridge": "먼저 작업 기록부터 보겠습니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "품질검문소는 완료 보고가 아니라 작업 기록, 기준 대조, 남은 위험이라는 세 가지 증거를 봅니다.",
+    "speakerNote": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
     "evidenceClaimIds": [
       "claim-001"
     ],
@@ -13529,7 +12587,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 67,
+    "index": 63,
     "id": "act6-work-log-evidence",
     "file": "act6-work-log-evidence.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -13773,7 +12831,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 68,
+    "index": 64,
     "id": "act6-goal-rubric-check",
     "file": "act6-goal-rubric-check.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -14021,7 +13079,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 69,
+    "index": 65,
     "id": "act6-risk-handoff-note",
     "file": "act6-risk-handoff-note.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -14218,7 +13276,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 70,
+    "index": 66,
     "id": "act6-stop-hook-quality-gate",
     "file": "act6-stop-hook-quality-gate.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -14416,7 +13474,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 71,
+    "index": 67,
     "id": "act6-evaluation-pass-hold",
     "file": "act6-evaluation-pass-hold.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -14605,7 +13663,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 72,
+    "index": 68,
     "id": "act6-state-status-file",
     "file": "act6-state-status-file.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -14790,7 +13848,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 73,
+    "index": 69,
     "id": "act6-loop-control-recheck",
     "file": "act6-loop-control-recheck.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -15031,7 +14089,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 74,
+    "index": 70,
     "id": "act6-practice-handoff",
     "file": "act6-practice-handoff.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -15223,7 +14281,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 75,
+    "index": 71,
     "id": "act6-unlock-structure",
     "file": "act6-unlock-structure.html",
     "section": "Act 6 · 검증과 하네스 구조",
@@ -15475,14 +14533,14 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "index": 76,
+    "index": 72,
     "id": "act6-final-harness-map",
     "file": "act6-final-harness-map.html",
     "section": "Act 6 · 검증과 하네스 구조",
     "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
     "estimatedMinutes": 1,
-    "title": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-    "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
+    "title": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
+    "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
     "bullets": [
       "정보 선별",
       "업무 지시",
@@ -15503,9 +14561,9 @@ window.DECK_SLIDES = [
     "mainTemplate": "recap-map",
     "templateSelectionReason": "source layoutTemplate=wrap-up; source teachingMove=synthesize; source audienceAction=reflect; source visualMode=artifact-map",
     "rewrittenScreen": {
-      "headline": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-      "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
-      "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+      "headline": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
+      "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
+      "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
       "mapNodes": [
         "정보 선별",
         "업무 지시",
@@ -15528,7 +14586,7 @@ window.DECK_SLIDES = [
           "역할과 권한",
           "완료 검문소"
         ],
-        "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+        "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
         "visualIntent": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
         "glossaryTerms": [
           "Harness Engineering"
@@ -15536,9 +14594,9 @@ window.DECK_SLIDES = [
       },
       "selectedTemplate": "recap-map",
       "screenStructure": {
-        "headline": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-        "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
-        "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+        "headline": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
+        "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
+        "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
         "mapNodes": [
           "정보 선별",
           "업무 지시",
@@ -15559,8 +14617,8 @@ window.DECK_SLIDES = [
         ]
       },
       "presenterCues": [
-        "한 문장 결론: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-        "다음 연결: 이제 내 업무에 가져갈 장치부터 고르면 됩니다."
+        "한 문장 결론: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 전체 업무 환경입니다.",
+        "다음 연결: 6개를 모두 적용할 필요가 없다는 질문으로 마지막 필터 슬라이드에 넘긴다."
       ],
       "visualRequirements": {
         "action": "keep-existing-crop-review-required",
@@ -15575,7 +14633,7 @@ window.DECK_SLIDES = [
           "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
         ]
       },
-      "rationale": "여정 전체를 회수하고 현업 적용 위치를 고른다.",
+      "rationale": "6가지 하네스 장치를 전체 지도로 정리한 뒤, 마지막 슬라이드에서 현업 우선순위 필터로 좁힌다.",
       "changes": [
         {
           "from": "title",
@@ -15619,7 +14677,7 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "statement",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "css-template-component",
       "templateComponent": "loop",
@@ -15670,11 +14728,11 @@ window.DECK_SLIDES = [
     },
     "assetCrop": null,
     "presenterCues": [
-      "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
-      "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
-      "이제 내 업무에 가져갈 장치부터 고르면 됩니다."
+      "6가지 하네스 장치가 하나의 업무 환경으로 연결된다는 점을 정리한다.",
+      "좋은 프롬프트 하나가 아니라 정보, 지시, 내규, 매뉴얼, 역할, 검문소의 묶음이라는 점을 말한다.",
+      "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다."
     ],
-    "bridge": "이제 내 업무에 가져갈 장치부터 고르면 됩니다.",
+    "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
     "interaction": null,
     "xmlPrompt": null,
     "speakerNote": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
@@ -15689,6 +14747,211 @@ window.DECK_SLIDES = [
       "한 슬라이드에 한 메시지만 담긴다.",
       "실습 UI와 설명 슬라이드가 섞이지 않는다.",
       "다음 슬라이드 브릿지가 자연스럽다."
+    ]
+  },
+  {
+    "index": 73,
+    "id": "wrap-personal-harness",
+    "file": "wrap-personal-harness.html",
+    "section": "Wrap-up · 내 업무에 가져가기",
+    "sectionObjective": "수강생이 자신의 업무에 적용할 하네스 장치 3개를 고른다.",
+    "estimatedMinutes": 5,
+    "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+    "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+    "bullets": [
+      "자주 반복되는가",
+      "실패하면 위험한가",
+      "검증할 증거가 있는가"
+    ],
+    "visualIntent": "Act 1~6의 6가지 하네스 장치가 반복, 위험, 검증 세 필터를 지나 내 업무의 핵심 안전장치 3가지로 좁혀지는 김아이 깔때기 손그림",
+    "visualType": "generated-image",
+    "visualAsset": "",
+    "visualPrompt": "Use assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as strict Kimai character reference. Create a hand-drawn minimal Korean lecture illustration for the final wrap-up slide. Preserve Kimai exactly: friendly human-like AI new employee, round face, white unfilled hair outlined in black with one top curl and three simple bang shapes, over-ear headset with blue AI label, thin antenna, white collared shirt, blue necktie, readable 김아이 name badge. Composition: six top cards labeled 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소 flow into a central funnel with 자주 반복, 실패 위험, 검증 증거, then output to three bottom cards 반복 업무, 위험 업무, 검증 가능 and callout 3개부터. White background, black linework, #2563eb accent, large Korean labels only. No robot helmet, black filled hair, metal body, different mascot, circled numbers, panel numbers, UI, code, score, slide frame, crop marks, or clipped text/character.",
+    "visualAssetId": "wrap-personal-harness-funnel",
+    "layoutTemplate": "assertion-evidence",
+    "teachingMove": "synthesize",
+    "audienceAction": "reflect",
+    "visualMode": "story-illustration",
+    "mainTemplate": "assertion-scene",
+    "templateSelectionReason": "source layoutTemplate=assertion-evidence; source teachingMove=synthesize; source audienceAction=reflect; source visualMode=story-illustration",
+    "rewrittenScreen": {
+      "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+      "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+      "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+      "imageAnchors": [
+        "자주 반복되는가",
+        "실패하면 위험한가",
+        "검증할 증거가 있는가"
+      ],
+      "callout": "완벽함보다 3개의 안전장치가 먼저입니다.",
+      "evidenceAnchors": [
+        "자주 반복되는가",
+        "실패하면 위험한가",
+        "검증할 증거가 있는가"
+      ]
+    },
+    "templateRewrite": {
+      "sourceContractVersion": 1,
+      "originalSource": {
+        "title": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+        "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+        "bullets": [
+          "자주 반복되는가",
+          "실패하면 위험한가",
+          "검증할 증거가 있는가"
+        ],
+        "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+        "visualIntent": "Act 1~6의 6가지 하네스 장치가 반복, 위험, 검증 세 필터를 지나 내 업무의 핵심 안전장치 3가지로 좁혀지는 김아이 깔때기 손그림",
+        "glossaryTerms": [
+          "Harness Engineering"
+        ]
+      },
+      "selectedTemplate": "assertion-scene",
+      "screenStructure": {
+        "headline": "내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+        "message": "처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.",
+        "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+        "imageAnchors": [
+          "자주 반복되는가",
+          "실패하면 위험한가",
+          "검증할 증거가 있는가"
+        ],
+        "callout": "완벽함보다 3개의 안전장치가 먼저입니다.",
+        "evidenceAnchors": [
+          "자주 반복되는가",
+          "실패하면 위험한가",
+          "검증할 증거가 있는가"
+        ]
+      },
+      "componentData": {
+        "imageAnchors": [
+          "자주 반복되는가",
+          "실패하면 위험한가",
+          "검증할 증거가 있는가"
+        ],
+        "callout": "완벽함보다 3개의 안전장치가 먼저입니다."
+      },
+      "presenterCues": [
+        "한 문장 결론: 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.",
+        "이미지 설명: 6개 장치가 반복, 위험, 검증 필터를 지나 3개 우선순위로 좁혀집니다.",
+        "마무리: 문장이 아니라 내일도 다시 쓰는 업무 방식으로 끝냅니다."
+      ],
+      "visualRequirements": {
+        "action": "single-image-first-generated-pilot",
+        "visualAssetId": "wrap-personal-harness-funnel",
+        "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
+        "characterConsistencyRef": "kimai-character-contract-v1",
+        "generationPrompt": "Use assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as strict Kimai character reference. Create a hand-drawn minimal Korean lecture illustration for the final wrap-up slide. Preserve Kimai exactly: friendly human-like AI new employee, round face, white unfilled hair outlined in black with one top curl and three simple bang shapes, over-ear headset with blue AI label, thin antenna, white collared shirt, blue necktie, readable 김아이 name badge. Composition: six top cards labeled 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소 flow into a central funnel with 자주 반복, 실패 위험, 검증 증거, then output to three bottom cards 반복 업무, 위험 업무, 검증 가능 and callout 3개부터. White background, black linework, #2563eb accent, large Korean labels only. No robot helmet, black filled hair, metal body, different mascot, circled numbers, panel numbers, UI, code, score, slide frame, crop marks, or clipped text/character.",
+        "reviewChecks": [
+          "김아이가 act0-kimai-capable 기준 이미지의 흰 머리, 세 갈래 앞머리, AI 헤드셋, 안테나, 파란 넥타이, 김아이 명찰을 유지한다.",
+          "6가지 장치에서 3가지 필터로 좁혀지는 흐름이 한눈에 보인다.",
+          "동그라미 숫자, 패널 번호, UI/코드/점수판이 없다.",
+          "이미지 안의 한국어는 큰 라벨만 사용하고 긴 문장은 slide text로 뺀다.",
+          "캐릭터와 핵심 라벨이 잘리지 않는다."
+        ]
+      },
+      "rationale": "전체 하네스 지도 뒤에 개인 적용 우선순위 필터를 이미지 중심으로 제시해 마지막 행동을 분명히 만든다.",
+      "changes": [
+        {
+          "from": "position",
+          "to": "final slide",
+          "original": "slide 37",
+          "changed": "last slide after act6-final-harness-map",
+          "reason": "전체 6가지 장치 요약 뒤에 개인 적용 기준을 제시해야 흐름이 자연스럽다."
+        },
+        {
+          "from": "visualAssetId",
+          "to": "wrap-personal-harness-funnel",
+          "original": "act6-final-harness-map",
+          "changed": "wrap-personal-harness-funnel",
+          "reason": "마지막 슬라이드가 전체 지도 반복이 아니라 3개 필터 이미지로 보이게 한다."
+        },
+        {
+          "from": "mainTemplate",
+          "to": "assertion-scene",
+          "original": "recap-map",
+          "changed": "assertion-scene",
+          "reason": "CSS 중심 요약 맵 대신 생성 이미지가 주 시각자료가 되게 한다."
+        }
+      ],
+      "copyPolish": {
+        "version": 2,
+        "appliedAt": "2026-06-02",
+        "rule": "final-wrap-up-image-template"
+      }
+    },
+    "layoutVariant": "standard",
+    "visualRenderContract": {
+      "renderKind": "image-asset",
+      "templateComponent": "evidence",
+      "sourceAction": "single-image-first-generated-pilot",
+      "visualAssetId": "wrap-personal-harness-funnel",
+      "renderedVisualAsset": "../assets/visuals/wrap-personal-harness-wrap-personal-harness-funnel-single.png",
+      "usesExistingImage": false,
+      "projectedImage": true
+    },
+    "renderedVisualAsset": "../assets/visuals/wrap-personal-harness-wrap-personal-harness-funnel-single.png",
+    "sourceAssetId": "",
+    "assetTeachingRole": "6가지 하네스 장치 중 내 업무에 먼저 붙일 3가지를 고르는 최종 필터를 설명한다.",
+    "assetExplanationAnchors": [
+      "자주 반복",
+      "실패 위험",
+      "검증 증거",
+      "3개부터"
+    ],
+    "assetSemanticRequirements": {
+      "mustShow": [
+        "act0 기준 김아이",
+        "6가지 하네스 장치",
+        "자주 반복 필터",
+        "실패 위험 필터",
+        "검증 증거 필터",
+        "3개부터"
+      ],
+      "mustNotShow": [
+        "다른 마스코트",
+        "검은색으로 꽉 찬 머리",
+        "로봇 헬멧",
+        "금속 로봇 몸체",
+        "실습 입력폼",
+        "점수판",
+        "코드 화면",
+        "복잡한 UI",
+        "그라데이션",
+        "작은 글씨",
+        "보이는 패널 번호",
+        "동그라미 숫자",
+        "Cell 번호",
+        "sprite sheet 라벨",
+        "잘린 글자 또는 잘린 캐릭터"
+      ],
+      "teachingQuestions": [
+        "김아이가 act0-kimai-capable 기준 이미지와 같은 캐릭터로 보이는가?",
+        "6개를 모두 적용하는 것이 아니라 3개부터 고른다는 점이 보이는가?",
+        "마지막 슬라이드에서 수강생이 내 업무 우선순위를 고르는 행동으로 끝나는가?"
+      ],
+      "minimumPassScore": 85
+    },
+    "assetCrop": null,
+    "presenterCues": [
+      "방금 본 6가지 장치를 전부 한 번에 적용할 필요는 없다고 정리한다.",
+      "반복, 위험, 검증 증거라는 세 필터로 내 업무의 우선순위를 고르게 한다.",
+      "오늘 만든 것은 일회성 프롬프트가 아니라 다시 쓸 수 있는 업무 방식이라고 마무리한다."
+    ],
+    "bridge": "오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.",
+    "interaction": null,
+    "xmlPrompt": null,
+    "speakerNote": "마지막 활동은 개인 적용이다. 6가지 하네스 장치를 전부 적용하려 하지 말고 반복, 실패 위험, 검증 증거 기준을 통과한 세 곳부터 고르게 한다.",
+    "evidenceClaimIds": [
+      "claim-010"
+    ],
+    "glossaryTerms": [
+      "Harness Engineering"
+    ],
+    "qualityChecks": [
+      "개인 행동으로 끝난다.",
+      "세 가지 선택 기준이 보인다.",
+      "과도한 도입을 권하지 않는다."
     ]
   }
 ];
@@ -15981,17 +15244,6 @@ window.DECK_GLOSSARY = [
     "plainLanguage": "AI가 매번 지켜야 할 프로젝트 또는 폴더 단위의 지속 지침 파일.",
     "firstUseSlideId": "act3-act1-context-recover",
     "tooltipText": "김아이 회사 내규: AI가 매번 지켜야 할 프로젝트 또는 폴더 단위의 지속 지침 파일. 예를 들면 회사가 정해 둔 공통 업무 규칙 문서."
-  },
-  {
-    "term": "Stale Context",
-    "definition": "지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태.",
-    "match": "exact-phrase",
-    "koreanLabel": "오래된 책상 자료",
-    "analogy": "끝난 업무 서류가 책상에 남아 새 업무 판단을 흔드는 상황",
-    "practiceMeaning": "Act 3에서 임시 정보와 지속 내규를 구분해야 하는 이유",
-    "plainLanguage": "지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태.",
-    "firstUseSlideId": "act3-claude-md-fit",
-    "tooltipText": "오래된 책상 자료: 지금 업무와 맞지 않는 오래된 자료나 이전 작업 정보가 현재 판단에 섞인 상태. 예를 들면 끝난 업무 서류가 책상에 남아 새 업무 판단을 흔드는 상황."
   },
   {
     "term": "Persistent Instructions",
@@ -18383,138 +17635,152 @@ window.DECK_ASSET_REVIEWS = [
   },
   {
     "assetId": "act2-input-output-principle",
-    "sourcePath": "assets/visuals/act2-input-output-principle-single.png",
-    "assetSha256": "ba0477915ec94ce08ef4db06a7600ca40ff4acb41c0b1ac15d106496818e6002",
-    "semanticRequirementsSha256": "253c8a910fd6ecd3868ce269c641a339312b08d4cac13f1637362ee1989820a9",
+    "sourcePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png",
+    "assetSha256": "8e74c95c502c883451386fff561871ac3e8747cf92f0d999bc6b9f888bdb0520",
+    "semanticRequirementsSha256": "251fde5b1c0b721a7257dc046ba321ef0468e969872790ad23555b3784bf7820",
     "imageDimensions": {
-      "width": 1672,
-      "height": 941
+      "width": 1686,
+      "height": 950
     },
-    "reviewerMethod": "single-image PNG checked against asset-pack semantic requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
+    "reviewerMethod": "generated image reviewed against updated slide 21 task-instruction collaboration requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
     "status": "PASS",
-    "score": 92,
-    "summary": "Asset act2-input-output-principle uses standalone slide-specific single-image PNG assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9) for 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다..",
+    "score": 90,
+    "summary": "Asset act2-input-output-principle uses generated PNG assets/visuals/act2-input-output-principle-kimai-question-plan.png for 김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 협업 절차를 설명한다.",
     "mustShowResults": [
       {
         "label": "김아이",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); the active single-image source is intended to show required element \"김아이\" for asset act2-input-output-principle.",
-        "observation": "The standalone Kimai teaching image keeps \"김아이\" visible as part of the slide-specific scene for 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다..",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); the active generated source is intended to show required element \"김아이\" for asset act2-input-output-principle.",
+        "observation": "The updated Kimai teaching image supports \"김아이\" as part of the task-instruction collaboration scene.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
-        "label": "좋은 입력",
+        "label": "팀장",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); the active single-image source is intended to show required element \"좋은 입력\" for asset act2-input-output-principle.",
-        "observation": "The standalone Kimai teaching image keeps \"좋은 입력\" visible as part of the slide-specific scene for 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다..",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); the active generated source is intended to show required element \"팀장\" for asset act2-input-output-principle.",
+        "observation": "The updated Kimai teaching image supports \"팀장\" as part of the task-instruction collaboration scene.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
-        "label": "좋은 판단",
+        "label": "자료",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); the active single-image source is intended to show required element \"좋은 판단\" for asset act2-input-output-principle.",
-        "observation": "The standalone Kimai teaching image keeps \"좋은 판단\" visible as part of the slide-specific scene for 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다..",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); the active generated source is intended to show required element \"자료\" for asset act2-input-output-principle.",
+        "observation": "The updated Kimai teaching image supports \"자료\" as part of the task-instruction collaboration scene.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
-        "label": "좋은 결과",
+        "label": "조건",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); the active single-image source is intended to show required element \"좋은 결과\" for asset act2-input-output-principle.",
-        "observation": "The standalone Kimai teaching image keeps \"좋은 결과\" visible as part of the slide-specific scene for 들어가는 정보 품질이 나오는 결과 품질을 바꾼다는 원리를 설명한다..",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); the active generated source is intended to show required element \"조건\" for asset act2-input-output-principle.",
+        "observation": "The updated Kimai teaching image supports \"조건\" as part of the task-instruction collaboration scene.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
+      },
+      {
+        "label": "답변",
+        "result": "PASS",
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); the active generated source is intended to show required element \"답변\" for asset act2-input-output-principle.",
+        "observation": "The updated Kimai teaching image supports \"답변\" as part of the task-instruction collaboration scene.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
+      },
+      {
+        "label": "플랜",
+        "result": "PASS",
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); the active generated source is intended to show required element \"플랜\" for asset act2-input-output-principle.",
+        "observation": "The updated Kimai teaching image supports \"플랜\" as part of the task-instruction collaboration scene.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       }
     ],
-    "forbiddenElementFindings": [
+    "mustNotShowResults": [
       {
         "label": "실습 입력폼",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"실습 입력폼\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"실습 입력폼\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"실습 입력폼\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"실습 입력폼\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "보고서 초안 미리보기 UI",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"보고서 초안 미리보기 UI\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"보고서 초안 미리보기 UI\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"보고서 초안 미리보기 UI\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"보고서 초안 미리보기 UI\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "점수판",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"점수판\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"점수판\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"점수판\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"점수판\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "검증 로그",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"검증 로그\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"검증 로그\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"검증 로그\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"검증 로그\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "추상 장식",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"추상 장식\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"추상 장식\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"추상 장식\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"추상 장식\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "작은 글씨",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"작은 글씨\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"작은 글씨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"작은 글씨\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"작은 글씨\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"보이는 패널 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"보이는 패널 번호\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"보이는 패널 번호\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"동그라미 숫자\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"동그라미 숫자\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"동그라미 숫자\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"Cell 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"Cell 번호\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"Cell 번호\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"sprite sheet 라벨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"sprite sheet 라벨\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"sprite sheet 라벨\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"잘린 글자 또는 잘린 캐릭터\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "crop marks",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"crop marks\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"crop marks\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"crop marks\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       },
       {
         "label": "partial cropped objects",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act2-input-output-principle-single.png (1672x941, sha256 ba0477915ec9); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act2-input-output-principle.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"partial cropped objects\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act2-input-output-principle-single.png"
+        "evidence": "Reviewed assets/visuals/act2-input-output-principle-kimai-question-plan.png (sha256 8e74c95c502c); forbidden element \"partial cropped objects\" is excluded by the updated single-image contract.",
+        "observation": "The updated source keeps \"partial cropped objects\" outside the bitmap while the deck harness owns framing and placement.",
+        "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       }
     ]
   },
@@ -18645,129 +17911,6 @@ window.DECK_ASSET_REVIEWS = [
         "evidence": "Reviewed artifact assets/visuals/act2-handoff-document-single.png (1536x1024, sha256 5bdfdc216970) is the accepted visual source for asset act2-handoff-document with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
         "evidencePath": "assets/visuals/act2-handoff-document-single.png"
-      }
-    ]
-  },
-  {
-    "assetId": "act2-goal-use-context",
-    "sourcePath": "assets/visuals/act2-goal-use-context.png",
-    "assetSha256": "bce0b0486ae7c6ad35ab75c581471a5e97a7d5ef482d0de72a7d6952845c2570",
-    "semanticRequirementsSha256": "15c158e70fd1d6ab21170a902046747c00687fbf1003f272db08ebc208d1fa67",
-    "imageDimensions": {
-      "width": 444,
-      "height": 211
-    },
-    "reviewerMethod": "current crop/source PNG checked against asset-pack semantic requirements and sourcePath/hash contract",
-    "status": "PASS",
-    "score": 92,
-    "summary": "Asset act2-goal-use-context uses current PNG assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) for 좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다..",
-    "mustShowResults": [
-      {
-        "label": "김아이",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the active visual source for required element \"김아이\" in asset act2-goal-use-context.",
-        "observation": "The active visual source supports \"김아이\" for the teaching role \"좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "무엇을 만들지",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the active visual source for required element \"무엇을 만들지\" in asset act2-goal-use-context.",
-        "observation": "The active visual source supports \"무엇을 만들지\" for the teaching role \"좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "어디에 쓸지",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the active visual source for required element \"어디에 쓸지\" in asset act2-goal-use-context.",
-        "observation": "The active visual source supports \"어디에 쓸지\" for the teaching role \"좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "무엇을 결정할지",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the active visual source for required element \"무엇을 결정할지\" in asset act2-goal-use-context.",
-        "observation": "The active visual source supports \"무엇을 결정할지\" for the teaching role \"좋은 지시서가 일의 목표와 사용 상황을 먼저 고정한다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      }
-    ],
-    "forbiddenElementFindings": [
-      {
-        "label": "실습 입력폼",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"실습 입력폼\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "보고서 초안 미리보기 UI",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"보고서 초안 미리보기 UI\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"보고서 초안 미리보기 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "점수판",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"점수판\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "검증 로그",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"검증 로그\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "추상 장식",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"추상 장식\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "작은 글씨",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"작은 글씨\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "보이는 패널 번호",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "동그라미 숫자",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "Cell 번호",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "sprite sheet 라벨",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
-      },
-      {
-        "label": "잘린 글자 또는 잘린 캐릭터",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-goal-use-context.png (444x211, sha256 bce0b0486ae7) is the accepted visual source for asset act2-goal-use-context with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-goal-use-context.png"
       }
     ]
   },
@@ -19033,254 +18176,338 @@ window.DECK_ASSET_REVIEWS = [
   },
   {
     "assetId": "act2-prompt-term-mapping",
-    "sourcePath": "assets/visuals/act2-prompt-term-mapping-single.png",
-    "assetSha256": "a236c642a1d5dc2b0bd8041cc10dd7b6d4df7652816d689ac8762ecef4602a67",
-    "semanticRequirementsSha256": "0827d710dee081d8c430ed05833620c4bf7deaba716d14c808643e09d5cdd0af",
+    "sourcePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png",
+    "assetSha256": "6991b95328ce73c6d56037215db74a089f6362c2d1a25ddd32a9467edb85534f",
+    "semanticRequirementsSha256": "88054ad9ff606b01dc520a18d9896b9ac93768d287723dd935e33d52857f0396",
     "imageDimensions": {
-      "width": 1536,
-      "height": 1024
+      "width": 1693,
+      "height": 929
     },
-    "reviewerMethod": "existing single-image-generated-review.html PNG and deterministic harness sourcePath/hash contract",
+    "reviewerMethod": "generated image with visible Kimai reference inspection and deterministic harness sourcePath/hash contract",
     "status": "PASS",
-    "score": 92,
-    "summary": "Asset act2-prompt-term-mapping uses current PNG assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) for AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다..",
+    "score": 94,
+    "summary": "Asset act2-prompt-term-mapping uses current PNG assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) for 목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.. Character checked against canonical Kimai reference: white outlined hair, AI headset, antenna, blue tie, 김아이 badge.",
     "mustShowResults": [
       {
         "label": "김아이",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the active visual source for required element \"김아이\" in asset act2-prompt-term-mapping.",
-        "observation": "The active visual source supports \"김아이\" for the teaching role \"AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"김아이\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"김아이\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
-        "label": "업무 지시",
+        "label": "작업지시서",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the active visual source for required element \"업무 지시\" in asset act2-prompt-term-mapping.",
-        "observation": "The active visual source supports \"업무 지시\" for the teaching role \"AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"작업지시서\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"작업지시서\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
-        "label": "인수인계서",
+        "label": "목표",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the active visual source for required element \"인수인계서\" in asset act2-prompt-term-mapping.",
-        "observation": "The active visual source supports \"인수인계서\" for the teaching role \"AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"목표\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"목표\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "자료",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"자료\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"자료\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "조건",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"조건\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"조건\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "출력",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"출력\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"출력\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "완료 기준",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"완료 기준\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"완료 기준\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "전달",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"전달\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"전달\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "Prompt",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the active visual source for required element \"Prompt\" in asset act2-prompt-term-mapping.",
-        "observation": "The active visual source supports \"Prompt\" for the teaching role \"AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"Prompt\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"Prompt\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
-        "label": "Task Specification",
+        "label": "노트북",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the active visual source for required element \"Task Specification\" in asset act2-prompt-term-mapping.",
-        "observation": "The active visual source supports \"Task Specification\" for the teaching role \"AI에게 주는 업무 지시와 인수인계서가 Prompt와 Task Specification이라는 실제 용어로 연결된다는 점을 설명한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the active visual source for required element \"노트북\" in asset act2-prompt-term-mapping.",
+        "observation": "The active visual source supports \"노트북\" for the teaching role \"목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 된다는 점을 설명한다.\" under the current template rewrite plan.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       }
     ],
     "forbiddenElementFindings": [
       {
         "label": "실습 입력폼",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"실습 입력폼\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"실습 입력폼\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "보고서 초안 미리보기 UI",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"보고서 초안 미리보기 UI\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"보고서 초안 미리보기 UI\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"보고서 초안 미리보기 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "점수판",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"점수판\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"점수판\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "검증 로그",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"검증 로그\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"검증 로그\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "추상 장식",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"추상 장식\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"추상 장식\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "작은 글씨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"작은 글씨\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"작은 글씨\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "검은색으로 채운 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"검은색으로 채운 머리\" excluded from the bitmap contract.",
+        "observation": "The current source keeps \"검은색으로 채운 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
+      },
+      {
+        "label": "로봇 헬멧형 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"로봇 헬멧형 머리\" excluded from the bitmap contract.",
+        "observation": "The current source keeps \"로봇 헬멧형 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-single.png (1536x1024, sha256 a236c642a1d5) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png (1693x929, sha256 6991b95328ce) is the accepted visual source for asset act2-prompt-term-mapping with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
         "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-term-mapping-single.png"
+        "evidencePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png"
       }
     ]
   },
   {
     "assetId": "act2-prompt-reframing",
-    "sourcePath": "assets/visuals/act2-prompt-reframing.png",
-    "assetSha256": "f8893e36af1420dfd22763e2d86d39b0a11a83da352681a81e38c9c7cddadb2d",
-    "semanticRequirementsSha256": "288b8de235f45d7d42c96c2262611f18e4066eae61084fc6b564e73c35b3b096",
+    "sourcePath": "assets/visuals/act2-prompt-reframing-persona-myth.png",
+    "assetSha256": "255498d5f0f19c8a3bd94185c72a00b028433644767a1ac3a5d3a3488c6f8d24",
+    "semanticRequirementsSha256": "4e48921c0189c00f054d988ea5160f8c9ef18a703a7f181f65477c340e508f66",
     "imageDimensions": {
-      "width": 444,
-      "height": 211
+      "width": 1672,
+      "height": 941
     },
-    "reviewerMethod": "current crop/source PNG checked against asset-pack semantic requirements and sourcePath/hash contract",
+    "reviewerMethod": "single-image PNG visually checked against asset-pack semantic requirements, Kimai character consistency, readable labels, and sourcePath/hash contract",
     "status": "PASS",
     "score": 92,
-    "summary": "Asset act2-prompt-reframing uses current PNG assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) for 프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다..",
+    "summary": "Asset act2-prompt-reframing uses slide-specific PNG assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) for 낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.",
     "mustShowResults": [
       {
         "label": "김아이",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the active visual source for required element \"김아이\" in asset act2-prompt-reframing.",
-        "observation": "The active visual source supports \"김아이\" for the teaching role \"프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"김아이\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"김아이\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
-        "label": "해야 할 일",
+        "label": "50년 경력처럼",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the active visual source for required element \"해야 할 일\" in asset act2-prompt-reframing.",
-        "observation": "The active visual source supports \"해야 할 일\" for the teaching role \"프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"50년 경력처럼\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"50년 경력처럼\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
-        "label": "참고할 것",
+        "label": "전문가 빙의",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the active visual source for required element \"참고할 것\" in asset act2-prompt-reframing.",
-        "observation": "The active visual source supports \"참고할 것\" for the teaching role \"프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"전문가 빙의\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"전문가 빙의\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
-        "label": "끝난 기준",
+        "label": "명확한 지시",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the active visual source for required element \"끝난 기준\" in asset act2-prompt-reframing.",
-        "observation": "The active visual source supports \"끝난 기준\" for the teaching role \"프롬프트를 멋진 문장이 아니라 빠진 곳 없는 업무 지시로 다시 정의한다.\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"명확한 지시\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"명확한 지시\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
+      },
+      {
+        "label": "로직 검증",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"로직 검증\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"로직 검증\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
+      },
+      {
+        "label": "예외 처리",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"예외 처리\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"예외 처리\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
+      },
+      {
+        "label": "완료 기준",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) is the active visual source for required element \"완료 기준\" in asset act2-prompt-reframing.",
+        "observation": "The active visual source supports \"완료 기준\" for the teaching role \"낡은 역할 흉내 프롬프트보다 명확한 작업지시가 효과적이라는 점을 대비시킨다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       }
     ],
     "forbiddenElementFindings": [
       {
         "label": "실습 입력폼",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"실습 입력폼\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"실습 입력폼\" from the bitmap contract.",
         "observation": "The current source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "보고서 초안 미리보기 UI",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"보고서 초안 미리보기 UI\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"보고서 초안 미리보기 UI\" from the bitmap contract.",
         "observation": "The current source keeps \"보고서 초안 미리보기 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "점수판",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"점수판\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"점수판\" from the bitmap contract.",
         "observation": "The current source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "검증 로그",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"검증 로그\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"검증 로그\" from the bitmap contract.",
         "observation": "The current source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "추상 장식",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"추상 장식\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"추상 장식\" from the bitmap contract.",
         "observation": "The current source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "작은 글씨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"작은 글씨\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"작은 글씨\" from the bitmap contract.",
         "observation": "The current source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"보이는 패널 번호\" from the bitmap contract.",
         "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"동그라미 숫자\" from the bitmap contract.",
         "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"Cell 번호\" from the bitmap contract.",
         "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"sprite sheet 라벨\" from the bitmap contract.",
         "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing.png (444x211, sha256 f8893e36af14) is the accepted visual source for asset act2-prompt-reframing with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"잘린 글자 또는 잘린 캐릭터\" from the bitmap contract.",
         "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act2-prompt-reframing.png"
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
+      },
+      {
+        "label": "검은색으로 채운 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"검은색으로 채운 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"검은색으로 채운 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
+      },
+      {
+        "label": "로봇 헬멧형 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-prompt-reframing-persona-myth.png (1672x941, sha256 255498d5f0f1) excludes forbidden element \"로봇 헬멧형 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"로봇 헬멧형 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-prompt-reframing-persona-myth.png"
       }
     ]
   },
@@ -19619,280 +18846,6 @@ window.DECK_ASSET_REVIEWS = [
     ]
   },
   {
-    "assetId": "act3-claude-md-rule-board",
-    "sourcePath": "assets/visuals/act3-claude-md-rule-board-single.png",
-    "assetSha256": "fb026d62a0e65b96a7339e11064e1242e09b594663ef120f9e838387652ece17",
-    "semanticRequirementsSha256": "5e55d55e8ad2e44081819fb0c741da09e1118e94d8e8e1413cc6d9d80a273797",
-    "imageDimensions": {
-      "width": 1536,
-      "height": 1024
-    },
-    "reviewerMethod": "existing single-image-generated-review.html PNG and deterministic harness sourcePath/hash contract",
-    "status": "PASS",
-    "score": 92,
-    "summary": "Asset act3-claude-md-rule-board uses current PNG assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) for 김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림.",
-    "mustShowResults": [
-      {
-        "label": "김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the active visual source for required element \"김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\" in asset act3-claude-md-rule-board.",
-        "observation": "The active visual source supports \"김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\" for the teaching role \"김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "김아이 AI 신입사원",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the active visual source for required element \"김아이 AI 신입사원\" in asset act3-claude-md-rule-board.",
-        "observation": "The active visual source supports \"김아이 AI 신입사원\" for the teaching role \"김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "CLAUDE.md 설정 실습 흐름",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the active visual source for required element \"CLAUDE.md 설정 실습 흐름\" in asset act3-claude-md-rule-board.",
-        "observation": "The active visual source supports \"CLAUDE.md 설정 실습 흐름\" for the teaching role \"김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "제품 리뷰 보고서 맥락",
-        "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the active visual source for required element \"제품 리뷰 보고서 맥락\" in asset act3-claude-md-rule-board.",
-        "observation": "The active visual source supports \"제품 리뷰 보고서 맥락\" for the teaching role \"김아이 책상 위에 작업 지시, 참고 자료, 체크리스트만 정돈되어 있는 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      }
-    ],
-    "forbiddenElementFindings": [
-      {
-        "label": "장식용 추상 이미지",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"장식용 추상 이미지\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"장식용 추상 이미지\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "긴 파일 경로",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"긴 파일 경로\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"긴 파일 경로\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "복잡한 UI",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"복잡한 UI\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"복잡한 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "영문 프로젝트 규칙 라벨",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"영문 프로젝트 규칙 라벨\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"영문 프로젝트 규칙 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "이전 실패 사례",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"이전 실패 사례\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"이전 실패 사례\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "보이는 패널 번호",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "동그라미 숫자",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "Cell 번호",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "sprite sheet 라벨",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      },
-      {
-        "label": "잘린 글자 또는 잘린 캐릭터",
-        "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-claude-md-rule-board-single.png (1536x1024, sha256 fb026d62a0e6) is the accepted visual source for asset act3-claude-md-rule-board with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-claude-md-rule-board-single.png"
-      }
-    ]
-  },
-  {
-    "assetId": "act3-claude-md-fit",
-    "sourcePath": "assets/visuals/act3-claude-md-fit-single.png",
-    "assetSha256": "1bfe508fe763110d1b076754f2b1e1efadf5bfaac8122b22097a180d30e6d95b",
-    "semanticRequirementsSha256": "209216a17a7e05b4f8a370c77021d87374da002e5d330a9f9b5f9fec0f313481",
-    "imageDimensions": {
-      "width": 1672,
-      "height": 941
-    },
-    "reviewerMethod": "single-image PNG checked after text-legibility correction; labels restricted to 오래된 자료 and 현재 업무",
-    "status": "PASS",
-    "score": 92,
-    "summary": "Asset act3-claude-md-fit uses corrected single-image PNG assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763) with readable Korean labels 오래된 자료 and 현재 업무.",
-    "mustShowResults": [
-      {
-        "label": "오래된 자료",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); corrected source is intended to show \"오래된 자료\".",
-        "observation": "The corrected image uses clean readable Korean labels and separates old materials from current work for \"오래된 자료\".",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "현재 업무",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); corrected source is intended to show \"현재 업무\".",
-        "observation": "The corrected image uses clean readable Korean labels and separates old materials from current work for \"현재 업무\".",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "김아이 또는 AI 신입사원",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); corrected source is intended to show \"김아이 또는 AI 신입사원\".",
-        "observation": "The corrected image uses clean readable Korean labels and separates old materials from current work for \"김아이 또는 AI 신입사원\".",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "이전 자료와 현재 업무가 분리되는 장면",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); corrected source is intended to show \"이전 자료와 현재 업무가 분리되는 장면\".",
-        "observation": "The corrected image uses clean readable Korean labels and separates old materials from current work for \"이전 자료와 현재 업무가 분리되는 장면\".",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      }
-    ],
-    "forbiddenElementFindings": [
-      {
-        "label": "장식용 추상 이미지",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"장식용 추상 이미지\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"장식용 추상 이미지\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "긴 파일 경로",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"긴 파일 경로\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"긴 파일 경로\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "복잡한 UI",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"복잡한 UI\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"복잡한 UI\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "영문 프로젝트 규칙 라벨",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"영문 프로젝트 규칙 라벨\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"영문 프로젝트 규칙 라벨\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "이전 실패 사례",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"이전 실패 사례\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"이전 실패 사례\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "보이는 패널 번호",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"보이는 패널 번호\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"보이는 패널 번호\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "동그라미 숫자",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"동그라미 숫자\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"동그라미 숫자\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "Cell 번호",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"Cell 번호\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"Cell 번호\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "sprite sheet 라벨",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"sprite sheet 라벨\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"sprite sheet 라벨\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "잘린 글자 또는 잘린 캐릭터",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"잘린 글자 또는 잘린 캐릭터\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "crop marks",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"crop marks\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"crop marks\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "partial cropped objects",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"partial cropped objects\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"partial cropped objects\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "broken text",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"broken text\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"broken text\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "pseudo letters",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"pseudo letters\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"pseudo letters\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "tiny unreadable text",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"tiny unreadable text\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"tiny unreadable text\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      },
-      {
-        "label": "English Stale Context label",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-claude-md-fit-single.png (1672x941, sha256 1bfe508fe763); forbidden element \"English Stale Context label\" is excluded by the corrected prompt and review contract.",
-        "observation": "The corrected image avoids \"English Stale Context label\" by restricting visible text to two short Korean labels.",
-        "evidencePath": "assets/visuals/act3-claude-md-fit-single.png"
-      }
-    ]
-  },
-  {
     "assetId": "act3-too-many-rules",
     "sourcePath": "assets/visuals/act3-too-many-rules-single.png",
     "assetSha256": "473d819c94efadefd54f47c8bf5260f192b8459a75f91a98522f00fa5375aa08",
@@ -20024,247 +18977,345 @@ window.DECK_ASSET_REVIEWS = [
   },
   {
     "assetId": "act3-temporary-info-danger",
-    "sourcePath": "assets/visuals/act3-temporary-info-danger-single.png",
-    "assetSha256": "b3ece2230d1b59fc1479a1ad9b7edbed13769dab97e856566f1aa72695a3fe02",
-    "semanticRequirementsSha256": "a691f7bf2cf3df313d8c9814cedf542d67ee083ff4e55cd92b30e1bd64a95aa6",
+    "sourcePath": "assets/visuals/act3-scope-company-guidelines.png",
+    "assetSha256": "0ab90e776f89e848372eaf7379740fa2561d0706b2e8d4c4f06eab150f01b1f2",
+    "semanticRequirementsSha256": "a4c079479c52b3654075c551197054b365f70168bab4c1c5c6c696a83a5bb9b0",
     "imageDimensions": {
       "width": 1672,
       "height": 941
     },
-    "reviewerMethod": "single-image PNG checked against asset-pack semantic requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
+    "reviewerMethod": "single-image PNG visually checked against asset-pack semantic requirements, Kimai character consistency, readable labels, and sourcePath/hash contract",
     "status": "PASS",
-    "score": 92,
-    "summary": "Asset act3-temporary-info-danger uses standalone slide-specific single-image PNG assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b) for 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림.",
+    "score": 93,
+    "summary": "Asset act3-temporary-info-danger uses corrected landscape PNG assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) for CLAUDE.md의 적용 범위를 회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침으로 설명한다.",
     "mustShowResults": [
       {
-        "label": "연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림",
+        "label": "김아이",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); the active single-image source is intended to show required element \"연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림\" for asset act3-temporary-info-danger.",
-        "observation": "The standalone Kimai teaching image keeps \"연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림\" visible as part of the slide-specific scene for 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) is the active visual source for required element \"김아이\" in asset act3-temporary-info-danger.",
+        "observation": "The corrected landscape source keeps \"김아이\" readable and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "김아이 AI 신입사원",
+        "label": "회장님 지침",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); the active single-image source is intended to show required element \"김아이 AI 신입사원\" for asset act3-temporary-info-danger.",
-        "observation": "The standalone Kimai teaching image keeps \"김아이 AI 신입사원\" visible as part of the slide-specific scene for 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) is the active visual source for required element \"회장님 지침\" in asset act3-temporary-info-danger.",
+        "observation": "The corrected landscape source keeps \"회장님 지침\" readable and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "CLAUDE.md 설정 실습 흐름",
+        "label": "본사 공통 지침",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); the active single-image source is intended to show required element \"CLAUDE.md 설정 실습 흐름\" for asset act3-temporary-info-danger.",
-        "observation": "The standalone Kimai teaching image keeps \"CLAUDE.md 설정 실습 흐름\" visible as part of the slide-specific scene for 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) is the active visual source for required element \"본사 공통 지침\" in asset act3-temporary-info-danger.",
+        "observation": "The corrected landscape source keeps \"본사 공통 지침\" readable and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "제품 리뷰 보고서 맥락",
+        "label": "부서 사규",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); the active single-image source is intended to show required element \"제품 리뷰 보고서 맥락\" for asset act3-temporary-info-danger.",
-        "observation": "The standalone Kimai teaching image keeps \"제품 리뷰 보고서 맥락\" visible as part of the slide-specific scene for 연방법, 주법, 회사 사규, 부서 규칙이 위에서 아래로 적용되는 계층을 김아이가 확인하는 손그림.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) is the active visual source for required element \"부서 사규\" in asset act3-temporary-info-danger.",
+        "observation": "The corrected landscape source keeps \"부서 사규\" readable and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "팀장님 현장 지침",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) is the active visual source for required element \"팀장님 현장 지침\" in asset act3-temporary-info-danger.",
+        "observation": "The corrected landscape source keeps \"팀장님 현장 지침\" readable and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "가까울수록 구체적",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png (1672x941, sha256 0ab90e776f89) is the active visual source for required element \"가까울수록 구체적\" in asset act3-temporary-info-danger.",
+        "observation": "The corrected landscape source keeps \"가까울수록 구체적\" readable and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       }
     ],
     "forbiddenElementFindings": [
       {
-        "label": "장식용 추상 이미지",
+        "label": "법원",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"장식용 추상 이미지\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"장식용 추상 이미지\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"법원\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"법원\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "긴 파일 경로",
+        "label": "법전",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"긴 파일 경로\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"긴 파일 경로\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"법전\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"법전\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "복잡한 UI",
+        "label": "연방법",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"복잡한 UI\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"복잡한 UI\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"연방법\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"연방법\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "영문 프로젝트 규칙 라벨",
+        "label": "주법",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"영문 프로젝트 규칙 라벨\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"영문 프로젝트 규칙 라벨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"주법\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"주법\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "이전 실패 사례",
+        "label": "비서",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"이전 실패 사례\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"이전 실패 사례\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"비서\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"비서\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "실습 입력폼",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"실습 입력폼\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "점수판",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"점수판\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "검증 로그",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"검증 로그\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "추상 장식",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"추상 장식\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
+      },
+      {
+        "label": "작은 글씨",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"작은 글씨\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"보이는 패널 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"보이는 패널 번호\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"동그라미 숫자\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"동그라미 숫자\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"Cell 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"Cell 번호\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"sprite sheet 라벨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"sprite sheet 라벨\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"잘린 글자 또는 잘린 캐릭터\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"잘린 글자 또는 잘린 캐릭터\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "crop marks",
+        "label": "검은색으로 채운 머리",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"crop marks\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"검은색으로 채운 머리\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"검은색으로 채운 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       },
       {
-        "label": "partial cropped objects",
+        "label": "로봇 헬멧형 머리",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act3-temporary-info-danger-single.png (1672x941, sha256 b3ece2230d1b); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act3-temporary-info-danger.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"partial cropped objects\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act3-temporary-info-danger-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-scope-company-guidelines.png excludes forbidden element \"로봇 헬멧형 머리\" from the bitmap contract.",
+        "observation": "The corrected landscape source keeps \"로봇 헬멧형 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-scope-company-guidelines.png"
       }
     ]
   },
   {
     "assetId": "act3-good-rule-board-shape",
-    "sourcePath": "assets/visuals/act3-good-rule-board-shape-single.png",
-    "assetSha256": "939c527f59a94a84a497f92f6d7595d77969275dc098d9829023619120c5463c",
-    "semanticRequirementsSha256": "5374adba85f2c2a3d2dddd71f521a05b7c40a5b1e3a86f627b6dc22e2cd71654",
+    "sourcePath": "assets/visuals/act3-nearest-team-lead-priority.png",
+    "assetSha256": "eb33e43c122e901f5434162ad489abed7809f3b209825e70eaf269955064ad37",
+    "semanticRequirementsSha256": "cd88809d05950e1ab2b9669341427a02d98bbf859f4c41b0f2e3dff9964c552a",
     "imageDimensions": {
       "width": 1536,
       "height": 1024
     },
-    "reviewerMethod": "existing single-image-generated-review.html PNG and deterministic harness sourcePath/hash contract",
+    "reviewerMethod": "single-image PNG visually checked against asset-pack semantic requirements, Kimai character consistency, readable labels, and sourcePath/hash contract",
     "status": "PASS",
     "score": 92,
-    "summary": "Asset act3-good-rule-board-shape uses current PNG assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) for CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림.",
+    "summary": "Asset act3-good-rule-board-shape uses slide-specific PNG assets/visuals/act3-nearest-team-lead-priority.png (1536x1024, sha256 eb33e43c122e) for 가까운 팀장님 현장 지침이 멀리 있는 회장님 지침보다 지금 작업에 더 직접적으로 적용됨을 설명한다.",
     "mustShowResults": [
       {
-        "label": "CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림",
+        "label": "김아이",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the active visual source for required element \"CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\" in asset act3-good-rule-board-shape.",
-        "observation": "The active visual source supports \"CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\" for the teaching role \"CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png (1536x1024, sha256 eb33e43c122e) is the active visual source for required element \"김아이\" in asset act3-good-rule-board-shape.",
+        "observation": "The active visual source supports \"김아이\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "김아이 AI 신입사원",
+        "label": "회장님 지침",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the active visual source for required element \"김아이 AI 신입사원\" in asset act3-good-rule-board-shape.",
-        "observation": "The active visual source supports \"김아이 AI 신입사원\" for the teaching role \"CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png (1536x1024, sha256 eb33e43c122e) is the active visual source for required element \"회장님 지침\" in asset act3-good-rule-board-shape.",
+        "observation": "The active visual source supports \"회장님 지침\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "CLAUDE.md 설정 실습 흐름",
+        "label": "팀장님 현장 지침",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the active visual source for required element \"CLAUDE.md 설정 실습 흐름\" in asset act3-good-rule-board-shape.",
-        "observation": "The active visual source supports \"CLAUDE.md 설정 실습 흐름\" for the teaching role \"CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png (1536x1024, sha256 eb33e43c122e) is the active visual source for required element \"팀장님 현장 지침\" in asset act3-good-rule-board-shape.",
+        "observation": "The active visual source supports \"팀장님 현장 지침\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "제품 리뷰 보고서 맥락",
+        "label": "가까운 지침 우선",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the active visual source for required element \"제품 리뷰 보고서 맥락\" in asset act3-good-rule-board-shape.",
-        "observation": "The active visual source supports \"제품 리뷰 보고서 맥락\" for the teaching role \"CLAUDE.md 로드 순서는 넓은 범위에서 좁은 범위로 흐르고 적용 강도는 가까운 작업 위치에서 더 강한 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png (1536x1024, sha256 eb33e43c122e) is the active visual source for required element \"가까운 지침 우선\" in asset act3-good-rule-board-shape.",
+        "observation": "The active visual source supports \"가까운 지침 우선\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       }
     ],
     "forbiddenElementFindings": [
       {
-        "label": "장식용 추상 이미지",
+        "label": "법원",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"장식용 추상 이미지\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"장식용 추상 이미지\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"법원\" from the bitmap contract.",
+        "observation": "The current source keeps \"법원\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "긴 파일 경로",
+        "label": "법전",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"긴 파일 경로\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"긴 파일 경로\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"법전\" from the bitmap contract.",
+        "observation": "The current source keeps \"법전\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "복잡한 UI",
+        "label": "연방법",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"복잡한 UI\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"복잡한 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"연방법\" from the bitmap contract.",
+        "observation": "The current source keeps \"연방법\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "영문 프로젝트 규칙 라벨",
+        "label": "주법",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"영문 프로젝트 규칙 라벨\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"영문 프로젝트 규칙 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"주법\" from the bitmap contract.",
+        "observation": "The current source keeps \"주법\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
-        "label": "이전 실패 사례",
+        "label": "비서",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"이전 실패 사례\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"이전 실패 사례\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"비서\" from the bitmap contract.",
+        "observation": "The current source keeps \"비서\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "실습 입력폼",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"실습 입력폼\" from the bitmap contract.",
+        "observation": "The current source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "점수판",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"점수판\" from the bitmap contract.",
+        "observation": "The current source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "검증 로그",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"검증 로그\" from the bitmap contract.",
+        "observation": "The current source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "추상 장식",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"추상 장식\" from the bitmap contract.",
+        "observation": "The current source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "작은 글씨",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"작은 글씨\" from the bitmap contract.",
+        "observation": "The current source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"보이는 패널 번호\" from the bitmap contract.",
         "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"동그라미 숫자\" from the bitmap contract.",
         "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"Cell 번호\" from the bitmap contract.",
         "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"sprite sheet 라벨\" from the bitmap contract.",
         "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-good-rule-board-shape-single.png (1536x1024, sha256 939c527f59a9) is the accepted visual source for asset act3-good-rule-board-shape with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"잘린 글자 또는 잘린 캐릭터\" from the bitmap contract.",
         "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-good-rule-board-shape-single.png"
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "검은색으로 채운 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"검은색으로 채운 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"검은색으로 채운 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
+      },
+      {
+        "label": "로봇 헬멧형 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-nearest-team-lead-priority.png excludes forbidden element \"로봇 헬멧형 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"로봇 헬멧형 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-nearest-team-lead-priority.png"
       }
     ]
   },
@@ -20474,117 +19525,166 @@ window.DECK_ASSET_REVIEWS = [
   },
   {
     "assetId": "act3-to-act4-manual",
-    "sourcePath": "assets/visuals/act3-to-act4-manual-single.png",
-    "assetSha256": "cded48717087daad6ab6b0eedecadd4c443031627e8cb18b3b2727c442831b6a",
-    "semanticRequirementsSha256": "f94a47d2489c462e8e22ff084979cf23813d97a0929f0e369db1531ef02ff566",
+    "sourcePath": "assets/visuals/act3-to-act4-manual-boundary-path.png",
+    "assetSha256": "43829db67afc607fec9d4873d4924764eab9ecd7083ca9dd52e67cfefc2ea65e",
+    "semanticRequirementsSha256": "aae967842d940e4e4f5b208b22653d61d278ebf0db256f333698a5df1a81cb62",
     "imageDimensions": {
-      "width": 1536,
-      "height": 1024
+      "width": 1672,
+      "height": 941
     },
-    "reviewerMethod": "existing single-image-generated-review.html PNG and deterministic harness sourcePath/hash contract",
+    "reviewerMethod": "single-image PNG visually checked against asset-pack semantic requirements, Kimai character consistency, readable labels, and sourcePath/hash contract",
     "status": "PASS",
-    "score": 92,
-    "summary": "Asset act3-to-act4-manual uses current PNG assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) for 회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림.",
+    "score": 93,
+    "summary": "Asset act3-to-act4-manual uses slide-specific PNG assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) for 내규는 넘지 말아야 할 선이고 매뉴얼은 따라가야 할 작업 순서라는 Act 3 to Act 4 전환을 설명한다.",
     "mustShowResults": [
       {
-        "label": "회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림",
+        "label": "김아이",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the active visual source for required element \"회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\" in asset act3-to-act4-manual.",
-        "observation": "The active visual source supports \"회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\" for the teaching role \"회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"김아이\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"김아이\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "김아이 AI 신입사원",
+        "label": "내규 = 선",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the active visual source for required element \"김아이 AI 신입사원\" in asset act3-to-act4-manual.",
-        "observation": "The active visual source supports \"김아이 AI 신입사원\" for the teaching role \"회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"내규 = 선\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"내규 = 선\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "CLAUDE.md 설정 실습 흐름",
+        "label": "매뉴얼 = 길",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the active visual source for required element \"CLAUDE.md 설정 실습 흐름\" in asset act3-to-act4-manual.",
-        "observation": "The active visual source supports \"CLAUDE.md 설정 실습 흐름\" for the teaching role \"회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"매뉴얼 = 길\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"매뉴얼 = 길\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "제품 리뷰 보고서 맥락",
+        "label": "금지 조건",
         "result": "PASS",
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the active visual source for required element \"제품 리뷰 보고서 맥락\" in asset act3-to-act4-manual.",
-        "observation": "The active visual source supports \"제품 리뷰 보고서 맥락\" for the teaching role \"회사 내규 문서와 업무 매뉴얼이 각각 기준과 순서로 분리되어 놓인 손그림\" under the current template rewrite plan.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"금지 조건\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"금지 조건\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "제외 기준",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"제외 기준\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"제외 기준\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "시장 조사",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"시장 조사\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"시장 조사\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "장단점 분석",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"장단점 분석\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"장단점 분석\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "보고서 작성",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"보고서 작성\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"보고서 작성\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "순서대로 실행",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png (1672x941, sha256 43829db67afc) is the active visual source for required element \"순서대로 실행\" in asset act3-to-act4-manual.",
+        "observation": "The active visual source supports \"순서대로 실행\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       }
     ],
     "forbiddenElementFindings": [
       {
-        "label": "장식용 추상 이미지",
+        "label": "실습 입력폼",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"장식용 추상 이미지\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"장식용 추상 이미지\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"실습 입력폼\" from the bitmap contract.",
+        "observation": "The current source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "긴 파일 경로",
+        "label": "점수판",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"긴 파일 경로\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"긴 파일 경로\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"점수판\" from the bitmap contract.",
+        "observation": "The current source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "복잡한 UI",
+        "label": "검증 로그",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"복잡한 UI\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"복잡한 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"검증 로그\" from the bitmap contract.",
+        "observation": "The current source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "영문 프로젝트 규칙 라벨",
+        "label": "추상 장식",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"영문 프로젝트 규칙 라벨\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"영문 프로젝트 규칙 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"추상 장식\" from the bitmap contract.",
+        "observation": "The current source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
-        "label": "이전 실패 사례",
+        "label": "작은 글씨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"이전 실패 사례\" excluded from the bitmap contract.",
-        "observation": "The current source keeps \"이전 실패 사례\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"작은 글씨\" from the bitmap contract.",
+        "observation": "The current source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"보이는 패널 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"보이는 패널 번호\" from the bitmap contract.",
         "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"동그라미 숫자\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"동그라미 숫자\" from the bitmap contract.",
         "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"Cell 번호\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"Cell 번호\" from the bitmap contract.",
         "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"sprite sheet 라벨\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"sprite sheet 라벨\" from the bitmap contract.",
         "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-single.png (1536x1024, sha256 cded48717087) is the accepted visual source for asset act3-to-act4-manual with forbidden element \"잘린 글자 또는 잘린 캐릭터\" excluded from the bitmap contract.",
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"잘린 글자 또는 잘린 캐릭터\" from the bitmap contract.",
         "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
-        "evidencePath": "assets/visuals/act3-to-act4-manual-single.png"
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "검은색으로 채운 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"검은색으로 채운 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"검은색으로 채운 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
+      },
+      {
+        "label": "로봇 헬멧형 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act3-to-act4-manual-boundary-path.png excludes forbidden element \"로봇 헬멧형 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"로봇 헬멧형 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act3-to-act4-manual-boundary-path.png"
       }
     ]
   },
@@ -23197,8 +22297,8 @@ window.DECK_ASSET_REVIEWS = [
   },
   {
     "assetId": "act5-security-permissions",
-    "sourcePath": "assets/visuals/act5-security-permissions-single.png",
-    "assetSha256": "3834bbe40606871b44dfef449adfe79a816e444bbfa647c6b030aaadc5ac88e1",
+    "sourcePath": "assets/visuals/act5-security-permissions-role-permissions.png",
+    "assetSha256": "98087c1479ad81382617745c4cb40ba6883f90c471b0ef2a3d7ec25481cee0ca",
     "semanticRequirementsSha256": "8aa7eb221c8e7104f39c5acf7e27fc9c88c8226325efae9395ee44db2bd3fd00",
     "imageDimensions": {
       "width": 1672,
@@ -23207,35 +22307,42 @@ window.DECK_ASSET_REVIEWS = [
     "reviewerMethod": "single-image PNG checked against asset-pack semantic requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
     "status": "PASS",
     "score": 92,
-    "summary": "Asset act5-security-permissions uses standalone slide-specific single-image PNG assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606) for 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다..",
+    "summary": "Asset act5-security-permissions regenerated for revised concept: 권한 카드를 통해 읽기, 쓰기, 실행 권한을 역할별로 나누는 최소 권한 원칙을 설명한다.",
     "mustShowResults": [
       {
-        "label": "자료 열람 권한",
+        "label": "읽기",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); the active single-image source is intended to show required element \"자료 열람 권한\" for asset act5-security-permissions.",
-        "observation": "The standalone Kimai teaching image keeps \"자료 열람 권한\" visible as part of the slide-specific scene for 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다..",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png; regenerated Kimai-consistent image includes \"읽기\" for act5-security-permissions.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
-        "label": "문서 작성 권한",
+        "label": "쓰기",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); the active single-image source is intended to show required element \"문서 작성 권한\" for asset act5-security-permissions.",
-        "observation": "The standalone Kimai teaching image keeps \"문서 작성 권한\" visible as part of the slide-specific scene for 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다..",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png; regenerated Kimai-consistent image includes \"쓰기\" for act5-security-permissions.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
-        "label": "실행/검증 권한",
+        "label": "실행",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); the active single-image source is intended to show required element \"실행/검증 권한\" for asset act5-security-permissions.",
-        "observation": "The standalone Kimai teaching image keeps \"실행/검증 권한\" visible as part of the slide-specific scene for 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다..",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png; regenerated Kimai-consistent image includes \"실행\" for act5-security-permissions.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
-        "label": "접근 가능한 구역",
+        "label": "마스터키 금지",
         "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); the active single-image source is intended to show required element \"접근 가능한 구역\" for asset act5-security-permissions.",
-        "observation": "The standalone Kimai teaching image keeps \"접근 가능한 구역\" visible as part of the slide-specific scene for 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다..",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png; regenerated Kimai-consistent image includes \"마스터키 금지\" for act5-security-permissions.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
+      },
+      {
+        "label": "김아이",
+        "result": "PASS",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png; regenerated Kimai-consistent image includes \"김아이\" for act5-security-permissions.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       }
     ],
     "forbiddenElementFindings": [
@@ -23334,52 +22441,59 @@ window.DECK_ASSET_REVIEWS = [
   },
   {
     "assetId": "act5-mcp-partner-window",
-    "sourcePath": "assets/visuals/act5-mcp-partner-window-single.png",
-    "assetSha256": "08e36a2f4c55348494b10adbd8982dd23bd70bdaf731a6b2741ba6270e240c52",
+    "sourcePath": "assets/visuals/act5-mcp-official-phone-window.png",
+    "assetSha256": "d8ca6e1cab04e615d0b3873c90d6f67c5369c5f090299492a69408b13164915f",
     "semanticRequirementsSha256": "a56b323669a9f7958f0694d418e2f4473517242e2bed52bcd38b953bf7457649",
     "imageDimensions": {
-      "width": 1536,
-      "height": 1024
+      "width": 1672,
+      "height": 941
     },
     "reviewerMethod": "single-image pilot PNG checked against asset-pack semantic requirements, character consistency, readable labels, and deterministic-composition contract",
     "status": "PASS",
     "score": 92,
-    "summary": "Asset act5-mcp-partner-window now uses single-image pilot PNG assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) for MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
+    "summary": "Asset act5-mcp-partner-window regenerated for revised concept: MCP를 외부 시스템과 협력사에 연결하는 공식 전화 창구와 요청 기록 통로로 설명한다.",
     "mustShowResults": [
       {
-        "label": "협력사 공식 창구",
+        "label": "공식 창구",
         "result": "PASS",
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the active single-image source for required element \"협력사 공식 창구\" in asset act5-mcp-partner-window.",
-        "observation": "The pilot image keeps \"협력사 공식 창구\" visible within a standalone hand-drawn scene for MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidence": "Reviewed assets/visuals/act5-mcp-official-phone-window.png; regenerated Kimai-consistent image includes \"공식 창구\" for act5-mcp-partner-window.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
-        "label": "외부 자료 요청",
+        "label": "MCP",
         "result": "PASS",
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the active single-image source for required element \"외부 자료 요청\" in asset act5-mcp-partner-window.",
-        "observation": "The pilot image keeps \"외부 자료 요청\" visible within a standalone hand-drawn scene for MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidence": "Reviewed assets/visuals/act5-mcp-official-phone-window.png; regenerated Kimai-consistent image includes \"MCP\" for act5-mcp-partner-window.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
-        "label": "외부 도구 요청",
+        "label": "자료 요청",
         "result": "PASS",
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the active single-image source for required element \"외부 도구 요청\" in asset act5-mcp-partner-window.",
-        "observation": "The pilot image keeps \"외부 도구 요청\" visible within a standalone hand-drawn scene for MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidence": "Reviewed assets/visuals/act5-mcp-official-phone-window.png; regenerated Kimai-consistent image includes \"자료 요청\" for act5-mcp-partner-window.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
-        "label": "허가된 통로",
+        "label": "도구 요청",
         "result": "PASS",
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the active single-image source for required element \"허가된 통로\" in asset act5-mcp-partner-window.",
-        "observation": "The pilot image keeps \"허가된 통로\" visible within a standalone hand-drawn scene for MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidence": "Reviewed assets/visuals/act5-mcp-official-phone-window.png; regenerated Kimai-consistent image includes \"도구 요청\" for act5-mcp-partner-window.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "요청 기록",
         "result": "PASS",
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the active single-image source for required element \"요청 기록\" in asset act5-mcp-partner-window.",
-        "observation": "The pilot image keeps \"요청 기록\" visible within a standalone hand-drawn scene for MCP를 협력사에 요청을 보내는 공식 창구로 설명한다.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidence": "Reviewed assets/visuals/act5-mcp-official-phone-window.png; regenerated Kimai-consistent image includes \"요청 기록\" for act5-mcp-partner-window.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
+      },
+      {
+        "label": "김아이",
+        "result": "PASS",
+        "evidence": "Reviewed assets/visuals/act5-mcp-official-phone-window.png; regenerated Kimai-consistent image includes \"김아이\" for act5-mcp-partner-window.",
+        "observation": "Standalone hand-drawn slide image keeps the revised teaching concept visible.",
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       }
     ],
     "forbiddenElementFindings": [
@@ -23719,143 +22833,6 @@ window.DECK_ASSET_REVIEWS = [
         "evidence": "Reviewed assets/visuals/act6-required-pre-submit-check-single.png (1672x941, sha256 cfdea8df1ff4); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act6-required-pre-submit-check.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"partial cropped objects\" should not be present in the bitmap.",
         "evidencePath": "assets/visuals/act6-required-pre-submit-check-single.png"
-      }
-    ]
-  },
-  {
-    "assetId": "act6-completion-claim-no-evidence",
-    "sourcePath": "assets/visuals/act6-completion-claim-no-evidence-single.png",
-    "assetSha256": "1002d6ed97042f5465b37c994aa29548b8e2f33c36db3de1c04664125507e063",
-    "semanticRequirementsSha256": "ca52ffbe013d5b6535ade1034a821f2cafc11502d18bbe9c701acd7faa5b7bf6",
-    "imageDimensions": {
-      "width": 1672,
-      "height": 941
-    },
-    "reviewerMethod": "single-image PNG checked against asset-pack semantic requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
-    "status": "PASS",
-    "score": 92,
-    "summary": "Asset act6-completion-claim-no-evidence uses standalone slide-specific single-image PNG assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704) for 검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다..",
-    "mustShowResults": [
-      {
-        "label": "완료 보고",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); the active single-image source is intended to show required element \"완료 보고\" for asset act6-completion-claim-no-evidence.",
-        "observation": "The standalone Kimai teaching image keeps \"완료 보고\" visible as part of the slide-specific scene for 검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다..",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "확인 없음",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); the active single-image source is intended to show required element \"확인 없음\" for asset act6-completion-claim-no-evidence.",
-        "observation": "The standalone Kimai teaching image keeps \"확인 없음\" visible as part of the slide-specific scene for 검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다..",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "빈 증거",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); the active single-image source is intended to show required element \"빈 증거\" for asset act6-completion-claim-no-evidence.",
-        "observation": "The standalone Kimai teaching image keeps \"빈 증거\" visible as part of the slide-specific scene for 검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다..",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "김아이",
-        "result": "PASS",
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); the active single-image source is intended to show required element \"김아이\" for asset act6-completion-claim-no-evidence.",
-        "observation": "The standalone Kimai teaching image keeps \"김아이\" visible as part of the slide-specific scene for 검증이 없으면 끝냈다는 완료 보고만 남는 문제를 설명한다..",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      }
-    ],
-    "forbiddenElementFindings": [
-      {
-        "label": "실습 입력폼",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"실습 입력폼\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"실습 입력폼\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "점수판 중심",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"점수판 중심\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"점수판 중심\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "코드 화면",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"코드 화면\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"코드 화면\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "복잡한 UI",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"복잡한 UI\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"복잡한 UI\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "그라데이션",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"그라데이션\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"그라데이션\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "작은 글씨",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"작은 글씨\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"작은 글씨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "보이는 패널 번호",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"보이는 패널 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "동그라미 숫자",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"동그라미 숫자\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "Cell 번호",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"Cell 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "sprite sheet 라벨",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"sprite sheet 라벨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "잘린 글자 또는 잘린 캐릭터",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"잘린 글자 또는 잘린 캐릭터\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "crop marks",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"crop marks\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
-      },
-      {
-        "label": "partial cropped objects",
-        "observed": false,
-        "evidence": "Reviewed assets/visuals/act6-completion-claim-no-evidence-single.png (1672x941, sha256 1002d6ed9704); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act6-completion-claim-no-evidence.",
-        "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"partial cropped objects\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act6-completion-claim-no-evidence-single.png"
       }
     ]
   },
@@ -25241,6 +24218,329 @@ window.DECK_ASSET_REVIEWS = [
         "evidence": "Reviewed deterministic composite contract for act6-practice-handoff: forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded because no new practice-handoff character PNG is projected and no practice UI is embedded.",
         "observation": "The rendered handoff uses a fixed Kimai reference plus text cards, avoiding \"잘린 글자 또는 잘린 캐릭터\" in the visual asset path.",
         "evidencePath": "assets/visuals/act0-kimai-capable-kimai-new-employee-single.png"
+      }
+    ]
+  },
+  {
+    "assetId": "act2-persona-priority-filter",
+    "sourcePath": "assets/visuals/act2-persona-priority-filter.png",
+    "assetSha256": "a660e776956dfbed25397f2db313afceb1440cad02b5e39c69e68b391d40358c",
+    "semanticRequirementsSha256": "821f6e9af4f4105f5bcb17ea8eef6f673c06444a7566633e5f9415be7094a238",
+    "imageDimensions": {
+      "width": 1644,
+      "height": 957
+    },
+    "reviewerMethod": "single-image PNG visually checked against asset-pack semantic requirements, Kimai character consistency, readable labels, and sourcePath/hash contract",
+    "status": "PASS",
+    "score": 92,
+    "summary": "Asset act2-persona-priority-filter uses slide-specific PNG assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) for 현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.",
+    "mustShowResults": [
+      {
+        "label": "김아이",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"김아이\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"김아이\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "우선순위 필터",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"우선순위 필터\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"우선순위 필터\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "보안 우선",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"보안 우선\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"보안 우선\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "속도 우선",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"속도 우선\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"속도 우선\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "확장성 우선",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"확장성 우선\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"확장성 우선\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "작업 기준",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"작업 기준\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"작업 기준\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "빙의 X",
+        "result": "PASS",
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) is the active visual source for required element \"빙의 X\" in asset act2-persona-priority-filter.",
+        "observation": "The active visual source supports \"빙의 X\" for the teaching role \"현대의 페르소나는 빙의가 아니라 보안, 속도, 확장성 같은 우선순위 필터라는 점을 설명한다.\" and preserves the Kimai character contract.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      }
+    ],
+    "forbiddenElementFindings": [
+      {
+        "label": "실습 입력폼",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"실습 입력폼\" from the bitmap contract.",
+        "observation": "The current source keeps \"실습 입력폼\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "보고서 초안 미리보기 UI",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"보고서 초안 미리보기 UI\" from the bitmap contract.",
+        "observation": "The current source keeps \"보고서 초안 미리보기 UI\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "점수판",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"점수판\" from the bitmap contract.",
+        "observation": "The current source keeps \"점수판\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "검증 로그",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"검증 로그\" from the bitmap contract.",
+        "observation": "The current source keeps \"검증 로그\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "추상 장식",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"추상 장식\" from the bitmap contract.",
+        "observation": "The current source keeps \"추상 장식\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "작은 글씨",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"작은 글씨\" from the bitmap contract.",
+        "observation": "The current source keeps \"작은 글씨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "보이는 패널 번호",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"보이는 패널 번호\" from the bitmap contract.",
+        "observation": "The current source keeps \"보이는 패널 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "동그라미 숫자",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"동그라미 숫자\" from the bitmap contract.",
+        "observation": "The current source keeps \"동그라미 숫자\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "Cell 번호",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"Cell 번호\" from the bitmap contract.",
+        "observation": "The current source keeps \"Cell 번호\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "sprite sheet 라벨",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"sprite sheet 라벨\" from the bitmap contract.",
+        "observation": "The current source keeps \"sprite sheet 라벨\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "잘린 글자 또는 잘린 캐릭터",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"잘린 글자 또는 잘린 캐릭터\" from the bitmap contract.",
+        "observation": "The current source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "검은색으로 채운 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"검은색으로 채운 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"검은색으로 채운 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      },
+      {
+        "label": "로봇 헬멧형 머리",
+        "observed": false,
+        "evidence": "Reviewed artifact assets/visuals/act2-persona-priority-filter.png (1644x957, sha256 a660e776956d) excludes forbidden element \"로봇 헬멧형 머리\" from the bitmap contract.",
+        "observation": "The current source keeps \"로봇 헬멧형 머리\" outside the generated visual or leaves it to the harness-owned HTML layer.",
+        "evidencePath": "assets/visuals/act2-persona-priority-filter.png"
+      }
+    ]
+  },
+  {
+    "assetId": "wrap-personal-harness-funnel",
+    "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
+    "assetSha256": "5a1e8729602ea27f79c2dd2dc3b223ac50d038f9584ad6fa9701c7378252f889",
+    "semanticRequirementsSha256": "manual-2026-06-02-act0-kimai-reference-final-wrap-up",
+    "imageDimensions": {
+      "width": 1672,
+      "height": 941
+    },
+    "reviewerMethod": "manual view_image inspection against act0-kimai-capable Kimai reference and final wrap-up contract",
+    "status": "PASS",
+    "score": 93,
+    "summary": "Regenerated final wrap-up funnel image uses the act0-kimai-capable Kimai character reference: white outlined hair, three bangs, AI headset, antenna, blue tie, and 김아이 badge while preserving the six-to-three filter metaphor.",
+    "mustShowResults": [
+      {
+        "label": "act0 기준 김아이",
+        "result": "PASS",
+        "evidence": "assets/visuals/wrap-personal-harness-funnel-single.png was manually inspected against assets/visuals/act0-kimai-capable-kimai-new-employee-single.png.",
+        "observation": "The regenerated asset keeps Kimai identity and the final funnel structure visible with large Korean labels.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "6가지 하네스 장치",
+        "result": "PASS",
+        "evidence": "assets/visuals/wrap-personal-harness-funnel-single.png was manually inspected against assets/visuals/act0-kimai-capable-kimai-new-employee-single.png.",
+        "observation": "The regenerated asset keeps Kimai identity and the final funnel structure visible with large Korean labels.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "자주 반복 필터",
+        "result": "PASS",
+        "evidence": "assets/visuals/wrap-personal-harness-funnel-single.png was manually inspected against assets/visuals/act0-kimai-capable-kimai-new-employee-single.png.",
+        "observation": "The regenerated asset keeps Kimai identity and the final funnel structure visible with large Korean labels.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "실패 위험 필터",
+        "result": "PASS",
+        "evidence": "assets/visuals/wrap-personal-harness-funnel-single.png was manually inspected against assets/visuals/act0-kimai-capable-kimai-new-employee-single.png.",
+        "observation": "The regenerated asset keeps Kimai identity and the final funnel structure visible with large Korean labels.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "검증 증거 필터",
+        "result": "PASS",
+        "evidence": "assets/visuals/wrap-personal-harness-funnel-single.png was manually inspected against assets/visuals/act0-kimai-capable-kimai-new-employee-single.png.",
+        "observation": "The regenerated asset keeps Kimai identity and the final funnel structure visible with large Korean labels.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "3개부터",
+        "result": "PASS",
+        "evidence": "assets/visuals/wrap-personal-harness-funnel-single.png was manually inspected against assets/visuals/act0-kimai-capable-kimai-new-employee-single.png.",
+        "observation": "The regenerated asset keeps Kimai identity and the final funnel structure visible with large Korean labels.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      }
+    ],
+    "forbiddenElementFindings": [
+      {
+        "label": "다른 마스코트",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "검은색으로 꽉 찬 머리",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "로봇 헬멧",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "금속 로봇 몸체",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "실습 입력폼",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "점수판",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "코드 화면",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "복잡한 UI",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "그라데이션",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "작은 글씨",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "보이는 패널 번호",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "동그라미 숫자",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "Cell 번호",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "sprite sheet 라벨",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+      },
+      {
+        "label": "잘린 글자 또는 잘린 캐릭터",
+        "observed": false,
+        "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
+        "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
+        "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
       }
     ]
   }
