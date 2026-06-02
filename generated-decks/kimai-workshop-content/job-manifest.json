@@ -155,8 +155,8 @@
         "slides/act6-final-harness-map.html",
         "slides/wrap-personal-harness.html"
       ],
-      "inputHash": "sha256:539d0b81b2358ba428053a13be608d86f972bbaab9194b8313f1dcec6573163a",
-      "outputHash": "sha256:e66f3cf6577ac32f1188cc3f8f66aafb1a3ed75cd635f61b85431be005a8a466",
+      "inputHash": "sha256:5c6da78e30cd6791ce4fb247c5249f701fccb2e376b0da1ed5e2c2778ffa7fbe",
+      "outputHash": "sha256:abb6f2dbca24300df0f374736a54137d18774d9401624e7a41e4958049a3dcf3",
       "status": "PASS",
       "evidencePath": "HANDOFF.md#verification"
     }

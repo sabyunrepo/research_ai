@@ -35,8 +35,68 @@
     speakerSyncStatus.dataset.state = state;
   }
 
+  function normalizeText(value) {
+    return String(value || "")
+      .replace(/\u00a0/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function collectKeywordTerms(script = {}) {
+    const stopWords = new Set(["도입", "전개", "소개", "질문", "문제", "결과", "정리", "전환", "확장", "역할"]);
+    const terms = [];
+    const add = (value) => {
+      const term = normalizeText(value);
+      if (term.length >= 2 && !stopWords.has(term)) terms.push(term);
+    };
+
+    (script.keywordFlow || []).forEach((item) => {
+      add(item?.cue);
+      normalizeText(item?.cue)
+        .split(/\s+/)
+        .forEach(add);
+    });
+
+    return Array.from(new Set(terms)).sort((a, b) => b.length - a.length);
+  }
+
+  function renderHighlightedText(target, text, terms) {
+    target.replaceChildren();
+    const source = String(text || "").replace(/\u00a0/g, " ");
+    const activeTerms = terms.filter((term) => source.includes(term));
+    if (!source || !activeTerms.length) {
+      target.textContent = source;
+      return;
+    }
+
+    const matcher = new RegExp(activeTerms.map(escapeRegExp).join("|"), "g");
+    let cursor = 0;
+    source.replace(matcher, (match, offset) => {
+      if (offset > cursor) target.append(document.createTextNode(source.slice(cursor, offset)));
+      const mark = document.createElement("mark");
+      mark.className = "speaker-keyword-highlight";
+      mark.textContent = match;
+      target.append(mark);
+      cursor = offset + match.length;
+      return match;
+    });
+    if (cursor < source.length) target.append(document.createTextNode(source.slice(cursor)));
+  }
+
+  function getScriptBackedInteraction(script = {}) {
+    const scriptText = normalizeText(script.script);
+    const interactionPrompt = normalizeText(script.interactionPrompt);
+    if (!scriptText || !interactionPrompt) return "";
+    return scriptText.includes(interactionPrompt) ? interactionPrompt : "";
+  }
+
   function renderCueList(script = {}) {
     speakerCuePanel.replaceChildren();
+    const keywordTerms = collectKeywordTerms(script);
     if (Array.isArray(script.keywordFlow) && script.keywordFlow.length) {
       script.keywordFlow.forEach((item) => {
         if (!item?.label || !item?.cue) return;
@@ -45,21 +105,21 @@
         const span = document.createElement("span");
         const small = document.createElement("small");
         strong.textContent = item.label;
-        span.textContent = item.cue;
-        small.textContent = item.say || "";
+        renderHighlightedText(span, item.cue, keywordTerms);
+        renderHighlightedText(small, item.say || "", keywordTerms);
         row.append(strong, span, small);
         speakerCuePanel.append(row);
       });
     }
     [
-      ["청중 질문/행동", script.interactionPrompt],
+      ["청중 질문/행동", getScriptBackedInteraction(script)],
       ["다음 장 연결", script.transition],
     ].filter(([, value]) => value).forEach(([label, value]) => {
       const row = document.createElement("p");
       const strong = document.createElement("strong");
       const span = document.createElement("span");
       strong.textContent = label;
-      span.textContent = value;
+      renderHighlightedText(span, value, keywordTerms);
       row.append(strong, span);
       speakerCuePanel.append(row);
     });
@@ -81,7 +141,7 @@
     currentSlideTitle.textContent = title;
     speakerMeta.textContent = `${slide.section || "Slide"} · ${title}`;
     speakerPromptTitle.textContent = title;
-    speakerPromptBody.textContent = script.script || slide.speakerNote || "";
+    renderHighlightedText(speakerPromptBody, script.script || slide.speakerNote || "", collectKeywordTerms(script));
     renderCueList(script);
     previousButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex === slides.length - 1;
