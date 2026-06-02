@@ -1,4 +1,5 @@
 .playwright-mcp/
+test-results/
 .codex/
 !.codex/
 !.codex/hooks.json
