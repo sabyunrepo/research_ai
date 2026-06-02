@@ -14,6 +14,14 @@
 - 자료조사는 두 단계로 나눈다. 브레인스토밍 전에는 `Context Triage`로 필요한 로컬/도구/최신성 제약만 확인하고, 브레인스토밍 후에는 합의된 방향에 맞춰 `Targeted Research`를 수행한다.
 - context research pack을 완료했다고 보고하기 전에는 `node scripts/validate-context-research-pack.js <pack-path>`로 구조를 검증한다.
 
+## NotebookLM Workflow
+
+- NotebookLM 노트북 생성, 소스 주입, NotebookLM 질의/재작성, NotebookLM 산출물 다운로드 작업은 `.codex/skills/notebooklm-project/SKILL.md`를 우선 사용한다.
+- 긴 실행 지침과 명령 예시는 AGENTS.md나 CLAUDE.md에 넣지 말고 `.codex/skills/notebooklm-project/references/` 아래 레퍼런스로 관리한다.
+- NotebookLM에 넣을 deck/report 소스는 프로젝트 루트 하위에 먼저 생성한다. 기본 위치는 `docs/harness/notebooklm-sources/`이며, generated deck 전용 산출물은 필요할 때 해당 deck 디렉터리 아래에 둘 수 있다.
+- NotebookLM 소스 주입용 문서는 목적을 명시한다. 예: 슬라이드 화면 문구만 주입할 때는 발표 스크립트, presenter cues, speaker notes, review metadata를 제외한다고 문서 첫머리에 적는다.
+- `/Users/sabyun/goinfre/notebooklm-py`는 이 프로젝트의 NotebookLM CLI 실행 기준 프로젝트다. 인증 확인과 CLI 실행 방식은 NotebookLM 로컬 스킬의 레퍼런스를 따른다.
+
 ## Verification Orchestrator Workflow
 
 - 코드, 슬라이드/deck/PPT, 일정/로드맵, 문서/보고서, 운영 체크리스트, 자료조사팩, 보안 민감 작업의 완료 여부를 판단해야 할 때는 `.codex/skills/verification-orchestrator/SKILL.md`를 우선 사용한다.

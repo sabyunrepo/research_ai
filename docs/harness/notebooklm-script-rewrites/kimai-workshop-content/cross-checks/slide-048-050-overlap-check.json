@@ -1,0 +1,5 @@
+{
+  "error": true,
+  "code": "NOTEBOOKLM_ERROR",
+  "message": "Error: No parseable chunks in streaming chat response (6 lines scanned). The response was empty or the API wire format may have changed."
+}
