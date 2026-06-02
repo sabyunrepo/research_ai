@@ -37,6 +37,20 @@
 
   function renderCueList(script = {}) {
     speakerCuePanel.replaceChildren();
+    if (Array.isArray(script.keywordFlow) && script.keywordFlow.length) {
+      script.keywordFlow.forEach((item) => {
+        if (!item?.label || !item?.cue) return;
+        const row = document.createElement("p");
+        const strong = document.createElement("strong");
+        const span = document.createElement("span");
+        const small = document.createElement("small");
+        strong.textContent = item.label;
+        span.textContent = item.cue;
+        small.textContent = item.say || "";
+        row.append(strong, span, small);
+        speakerCuePanel.append(row);
+      });
+    }
     [
       ["청중 질문/행동", script.interactionPrompt],
       ["다음 장 연결", script.transition],

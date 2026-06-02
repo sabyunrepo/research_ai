@@ -157,8 +157,8 @@
         "slides/act6-unlock-structure.html",
         "slides/act6-final-harness-map.html"
       ],
-      "inputHash": "sha256:9900869f7abf9c79ca8a9a429ae655c1958dcdf76322d01458df0c261ca368cc",
-      "outputHash": "sha256:bd36de951107be0ac9eb54c8cb32a0dccf461b22bbcc89e7b8820b9967dc9738",
+      "inputHash": "sha256:2bf2fd6b208cbbc7cbbf8a3551d1920149077f1d7d7bb9d78c809cc7bb7094e8",
+      "outputHash": "sha256:cf5661a5b48c9ef676c8b4ce4996905a775057c8ef2ed70a9487eaba650620fd",
       "status": "PASS",
       "evidencePath": "HANDOFF.md#verification"
     }

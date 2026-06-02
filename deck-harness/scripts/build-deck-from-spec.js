@@ -545,6 +545,7 @@ function avoidVariantRun(slide, variant, previousVariant, currentVariantRun) {
 
 function shouldRenderVisual(slide) {
   if (!slide.renderedVisualAsset) return false;
+  if (slide.templateRewrite?.visualRequirements?.action === "use-css-workflow-strip") return false;
   if (slide.mainTemplate === "practice-handoff") return true;
   if (["focus", "handoff"].includes(slide.layoutVariant)) return false;
   return true;
@@ -671,6 +672,19 @@ function visualTermHtml(value, fallback = "") {
 }
 
 function briefRowsFromBullets(items) {
+  const explicitRows = items
+    .map((item) => String(item || "").trim())
+    .filter(Boolean)
+    .map((item) => {
+      const parts = item.split(":");
+      if (parts.length > 1 && parts[0].length <= 8) {
+        return [parts[0].trim(), parts.slice(1).join(":").trim()];
+      }
+      return null;
+    });
+  if (explicitRows.length && explicitRows.every(Boolean)) {
+    return explicitRows;
+  }
   const labels = ["목표", "증상", "범위", "제한", "검증", "보고"];
   return labels.map((label, index) => {
     const item = String(items[index] || "").trim();
@@ -694,7 +708,11 @@ function conceptCenterLabel(slide, screen) {
 function galleryVisualComponentHtml(slide, screen, mainTemplate) {
   const config = galleryTemplateComponents[mainTemplate];
   if (!config) return "";
-  if (templatePrefersImageAsset(mainTemplate) && slide.renderedVisualAsset) return "";
+  if (
+    templatePrefersImageAsset(mainTemplate) &&
+    slide.renderedVisualAsset &&
+    slide.templateRewrite?.visualRequirements?.action !== "use-css-workflow-strip"
+  ) return "";
   const visual = config.visual;
   const sourceAttr = escapeHtml(config.source);
   const cueAttr = escapeHtml(config.cue);
@@ -761,8 +779,9 @@ function galleryVisualComponentHtml(slide, screen, mainTemplate) {
   }
   if (visual === "flow") {
     const steps = items.length ? items.slice(0, 6) : ["목표", "자료", "지시", "실행", "검증", "기록"];
+    const preserveLabels = slide.templateRewrite?.visualRequirements?.action === "use-css-workflow-strip";
     return `<div class="lc-visual lc-guardrail-flow-visual" ${componentAttrs} aria-hidden="true">
-          ${steps.map((step, index) => `<span><b>${String(index + 1).padStart(2, "0")}</b>${escapeHtml(shortVisualLabel(step))}</span>`).join("")}
+          ${steps.map((step, index) => `<span><b>${String(index + 1).padStart(2, "0")}</b>${escapeHtml(preserveLabels ? String(step || "").trim() : shortVisualLabel(step))}</span>`).join("")}
           <i class="lc-flow-line"></i>
       </div>`;
   }

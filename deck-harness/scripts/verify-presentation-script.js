@@ -35,6 +35,50 @@ function countKoreanChars(text) {
   return (String(text || "").match(/[가-힣]/g) || []).length;
 }
 
+function tooManyTemplatePhrases(text) {
+  const value = String(text || "");
+  const patterns = [
+    /이\s*슬라이드에서는/g,
+    /화면에\s*보이는/g,
+    /순서대로\s*가리키면서\s*설명/g,
+    /세\s*가지(?:를)?\s*순서대로\s*짚겠습니다/g,
+  ];
+  return patterns.reduce((count, pattern) => count + (value.match(pattern) || []).length, 0);
+}
+
+function verifyKeywordFlow(entry) {
+  if (!Array.isArray(entry.keywordFlow)) {
+    fail(`missing keywordFlow for ${entry.id}`);
+  }
+  if (entry.keywordFlow.length < 5 || entry.keywordFlow.length > 7) {
+    fail(`keywordFlow for ${entry.id} must contain 5-7 cues`);
+  }
+  const labels = new Set();
+  entry.keywordFlow.forEach((item, cueIndex) => {
+    if (!item || typeof item !== "object") {
+      fail(`keywordFlow ${entry.id} #${cueIndex + 1} must be an object`);
+    }
+    for (const field of ["label", "cue", "say"]) {
+      if (typeof item[field] !== "string" || !item[field].trim()) {
+        fail(`keywordFlow ${entry.id} #${cueIndex + 1} missing ${field}`);
+      }
+      if (hasPlaceholder(item[field])) {
+        fail(`keywordFlow ${entry.id} #${cueIndex + 1} contains placeholder in ${field}`);
+      }
+    }
+    if (item.cue.length > 40) {
+      fail(`keywordFlow cue too long for ${entry.id} #${cueIndex + 1}: ${item.cue}`);
+    }
+    if (item.say.length > 90) {
+      fail(`keywordFlow say too long for ${entry.id} #${cueIndex + 1}: ${item.say}`);
+    }
+    labels.add(item.label);
+  });
+  for (const expected of ["도입", "화면앵커", "업무비유", "청중질문", "다음연결"]) {
+    if (!labels.has(expected)) fail(`keywordFlow for ${entry.id} missing ${expected}`);
+  }
+}
+
 function main() {
   const deckDir = resolveDeckDir(process.argv[2]);
   const specPath = path.join(deckDir, "slide-spec.json");
@@ -59,6 +103,7 @@ function main() {
   let shortCount = 0;
   let missingQuestionCount = 0;
   let missingTransitionCount = 0;
+  let templatePhraseCount = 0;
 
   scriptSlides.forEach((entry, index) => {
     const match = specById.get(entry.id);
@@ -69,9 +114,11 @@ function main() {
     if (hasPlaceholder(entry.script) || hasPlaceholder(entry.interactionPrompt) || hasPlaceholder(entry.transition)) {
       fail(`placeholder text remains in ${entry.id}`);
     }
-    if (countKoreanChars(entry.script) < 120) shortCount += 1;
+    if (countKoreanChars(entry.script) < 220) shortCount += 1;
     if (!/[?？]|질문|생각|대입|확인|멈추고|짚/.test(entry.interactionPrompt || "")) missingQuestionCount += 1;
     if (countKoreanChars(entry.transition) < 10) missingTransitionCount += 1;
+    templatePhraseCount += tooManyTemplatePhrases(entry.script);
+    verifyKeywordFlow(entry);
     if (!Array.isArray(entry.deliveryTips) || entry.deliveryTips.length === 0) {
       fail(`missing delivery tips for ${entry.id}`);
     }
@@ -82,9 +129,10 @@ function main() {
     fail(`${missingQuestionCount} slides lack audience-oriented prompts`);
   }
   if (missingTransitionCount > 0) fail(`${missingTransitionCount} slides have weak transitions`);
+  if (templatePhraseCount > 0) fail(`template slide-description phrasing remains ${templatePhraseCount} times`);
 
   const markdown = fs.readFileSync(markdownPath, "utf8");
-  if (!markdown.includes("## 1.") || !markdown.includes("### 발표 스크립트")) {
+  if (!markdown.includes("## 1.") || !markdown.includes("### 발표 원고") || !markdown.includes("### 키워드 진행 큐")) {
     fail("presentation-script.md does not expose per-slide script sections");
   }
   if (markdown.length < scriptSlides.length * 250) {

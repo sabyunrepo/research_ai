@@ -400,6 +400,13 @@ body {
   font-weight: 800;
 }
 
+.speaker-cues small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .audience-page {
   min-height: 100vh;
   overflow: hidden;
@@ -2329,6 +2336,35 @@ h2 {
   border-top: var(--lc-bold-stroke) solid var(--line);
   transform: scaleX(0);
   transform-origin: left center;
+}
+
+.slide[data-slide-id="act1-context-curation-close"] .lc-guardrail-flow-visual {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(118px, auto));
+  gap: 24px 28px;
+  width: min(100%, 610px);
+}
+
+.slide[data-slide-id="act1-context-curation-close"] .lc-guardrail-flow-visual span {
+  min-height: 122px;
+  padding: 16px 20px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  font-size: 27px;
+  line-height: 1.12;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-text-stroke: .22px currentColor;
+}
+
+.slide[data-slide-id="act1-context-curation-close"] .lc-guardrail-flow-visual span b {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.slide[data-slide-id="act1-context-curation-close"] .lc-guardrail-flow-visual span::after {
+  display: none;
 }
 
 .lc-flow-line {

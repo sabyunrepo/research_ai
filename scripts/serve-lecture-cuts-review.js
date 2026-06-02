@@ -511,13 +511,30 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+function normalizeKeywordFlow(value) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => ({
+      label: String(item?.label || "").trim(),
+      cue: String(item?.cue || "").trim(),
+      say: String(item?.say || "").trim(),
+    }))
+    .filter((item) => item.label && item.cue && item.say);
+}
+
+function markdownKeywordFlow(flow = []) {
+  const normalized = normalizeKeywordFlow(flow);
+  if (!normalized.length) return ["- 없음"];
+  return normalized.map((item) => `- **${item.label}**: ${item.cue} - ${item.say}`);
+}
+
 function generatedScriptMarkdown(deckSlug, generatedAt, entries) {
   const lines = [
     `# ${deckSlug} 발표 스크립트`,
     "",
-    "목적: 일반인 대상 강의에서 발표자가 슬라이드별로 말할 내용을 원고형으로 확인하고 수정하기 위한 문서.",
+    "목적: 일반인 대상 강의에서 발표자가 슬라이드별로 말할 내용을 실제 원고와 키워드 진행 큐로 확인하고 수정하기 위한 문서.",
     "원천 문서: slide-spec.json",
-    "관련 산출물: presentation-script.json, presenter-review.html, deck.html",
+    "관련 산출물: presentation-script.json, presenter-review.html, deck.html, speaker.html",
     "",
     `Generated: ${generatedAt}`,
     "",
@@ -529,9 +546,13 @@ function generatedScriptMarkdown(deckSlug, generatedAt, entries) {
     lines.push(`- Section: ${entry.section}`);
     lines.push(`- Estimated minutes: ${entry.estimatedMinutes}`);
     lines.push("");
-    lines.push("### 발표 스크립트");
+    lines.push("### 발표 원고");
     lines.push("");
     lines.push(entry.script || "");
+    lines.push("");
+    lines.push("### 키워드 진행 큐");
+    lines.push("");
+    lines.push(...markdownKeywordFlow(entry.keywordFlow));
     lines.push("");
     lines.push("### 청중에게 던질 질문/행동");
     lines.push("");
@@ -579,6 +600,9 @@ async function handleDeckHarnessSave(request, response) {
         if (Object.prototype.hasOwnProperty.call(change, field)) {
           entry[field] = String(change[field] || "").trim();
         }
+      }
+      if (Object.prototype.hasOwnProperty.call(change, "keywordFlow")) {
+        entry.keywordFlow = normalizeKeywordFlow(change.keywordFlow);
       }
       saved += 1;
     }
@@ -954,6 +978,12 @@ function sendDeckHarnessSpeaker(response) {
     .cue { display: grid; gap: 6px; }
     .cue strong { font-size: 14px; }
     .cue p { margin: 0; border: 1px solid #171717; border-radius: 8px; background: #fff; padding: 12px; font-weight: 800; line-height: 1.5; }
+    .keyword-flow { display: grid; gap: 8px; }
+    .keyword-flow ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .keyword-flow li { border: 1px solid #171717; border-radius: 8px; background: #fff; padding: 10px 12px; display: grid; gap: 4px; }
+    .keyword-flow b { font-size: 13px; }
+    .keyword-flow span { font-weight: 900; }
+    .keyword-flow small { color: #59524a; font-weight: 800; line-height: 1.35; }
   </style>
 </head>
 <body>
@@ -982,6 +1012,10 @@ function sendDeckHarnessSpeaker(response) {
         <p class="meta" id="counter">-- / --</p>
         <h2 id="title">불러오는 중입니다.</h2>
         <div class="script-box" id="scriptBox"></div>
+        <div class="keyword-flow">
+          <strong>키워드 진행 큐</strong>
+          <ul id="keywordFlow"></ul>
+        </div>
         <div class="cue">
           <strong>청중 질문/행동</strong>
           <p id="interaction"></p>
@@ -1002,6 +1036,7 @@ function sendDeckHarnessSpeaker(response) {
     const counter = document.querySelector("#counter");
     const title = document.querySelector("#title");
     const scriptBox = document.querySelector("#scriptBox");
+    const keywordFlow = document.querySelector("#keywordFlow");
     const interaction = document.querySelector("#interaction");
     const transition = document.querySelector("#transition");
     const previous = document.querySelector("#previous");
@@ -1024,6 +1059,22 @@ function sendDeckHarnessSpeaker(response) {
       latestRevision = Math.max(latestRevision, payload.revision || 0);
     }
 
+    function renderKeywordFlow(items = []) {
+      keywordFlow.replaceChildren();
+      for (const item of items) {
+        if (!item || !item.label || !item.cue) continue;
+        const row = document.createElement("li");
+        const label = document.createElement("b");
+        const cue = document.createElement("span");
+        const say = document.createElement("small");
+        label.textContent = item.label;
+        cue.textContent = item.cue;
+        say.textContent = item.say || "";
+        row.append(label, cue, say);
+        keywordFlow.append(row);
+      }
+    }
+
     function render(index, options = {}) {
       if (!slides.length) return;
       active = Math.max(0, Math.min(slides.length - 1, index));
@@ -1033,6 +1084,7 @@ function sendDeckHarnessSpeaker(response) {
       counter.textContent = String(active + 1).padStart(2, "0") + " / " + slides.length;
       title.textContent = slide.title || script.title || slide.id;
       scriptBox.textContent = script.script || slide.speakerNote || "";
+      renderKeywordFlow(script.keywordFlow || []);
       interaction.textContent = script.interactionPrompt || "";
       transition.textContent = script.transition || slide.bridge || "";
       previous.disabled = active === 0;

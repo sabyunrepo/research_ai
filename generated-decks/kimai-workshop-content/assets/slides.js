@@ -2609,11 +2609,11 @@ window.DECK_SLIDES = [
     "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
     "estimatedMinutes": 1,
     "title": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
-    "message": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+    "message": "목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.",
     "bullets": [
-      "목표: 제품 자료",
-      "자료: 사용 상황",
-      "지시: 비교 기준",
+      "목표: 제품 비교 분석",
+      "자료: 제품 상세 자료",
+      "지시: 사용 상황 및 비교 기준 반영",
       "출력: 보고서 형식"
     ],
     "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
@@ -2629,20 +2629,20 @@ window.DECK_SLIDES = [
     "templateSelectionReason": "source layoutTemplate=checklist; source teachingMove=explain; source audienceAction=rehearse-checklist; source visualMode=checklist-board",
     "rewrittenScreen": {
       "headline": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
-      "message": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+      "message": "목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.",
       "bridge": "김아이의 책상이 바로 컨텍스트입니다.",
       "rows": [
         {
           "label": "목표",
-          "text": "제품 자료"
+          "text": "제품 비교 분석"
         },
         {
           "label": "자료",
-          "text": "사용 상황"
+          "text": "제품 상세 자료"
         },
         {
           "label": "지시",
-          "text": "비교 기준"
+          "text": "사용 상황 및 비교 기준 반영"
         },
         {
           "label": "출력",
@@ -2654,12 +2654,12 @@ window.DECK_SLIDES = [
       "sourceContractVersion": 1,
       "originalSource": {
         "title": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
-        "message": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+        "message": "목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.",
         "bullets": [
-          "제품 자료",
-          "사용 상황",
-          "비교 기준",
-          "보고서 형식"
+          "목표: 제품 비교 분석",
+          "자료: 제품 상세 자료",
+          "지시: 사용 상황 및 비교 기준 반영",
+          "출력: 보고서 형식"
         ],
         "bridge": "김아이의 책상이 바로 컨텍스트입니다.",
         "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
@@ -2668,20 +2668,20 @@ window.DECK_SLIDES = [
       "selectedTemplate": "brief-window",
       "screenStructure": {
         "headline": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
-        "message": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+        "message": "목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.",
         "bridge": "김아이의 책상이 바로 컨텍스트입니다.",
         "rows": [
           {
             "label": "목표",
-            "text": "제품 자료"
+            "text": "제품 비교 분석"
           },
           {
             "label": "자료",
-            "text": "사용 상황"
+            "text": "제품 상세 자료"
           },
           {
             "label": "지시",
-            "text": "비교 기준"
+            "text": "사용 상황 및 비교 기준 반영"
           },
           {
             "label": "출력",
@@ -2693,15 +2693,15 @@ window.DECK_SLIDES = [
         "rows": [
           {
             "label": "목표",
-            "text": "제품 자료"
+            "text": "제품 비교 분석"
           },
           {
             "label": "자료",
-            "text": "사용 상황"
+            "text": "제품 상세 자료"
           },
           {
             "label": "지시",
-            "text": "비교 기준"
+            "text": "사용 상황 및 비교 기준 반영"
           },
           {
             "label": "출력",
@@ -2727,7 +2727,7 @@ window.DECK_SLIDES = [
           "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
         ]
       },
-      "rationale": "목표/자료/지시/출력/검증처럼 업무 문서 행 구조가 맞다.",
+      "rationale": "목표는 최종 목적, 자료는 원시 데이터, 지시는 분석 조건, 출력은 최종 아웃풋 형태로 구분한다.",
       "changes": [
         {
           "from": "title",
@@ -2755,22 +2755,22 @@ window.DECK_SLIDES = [
           "changed": [
             {
               "label": "목표",
-              "text": "제품 자료"
+              "text": "제품 비교 분석"
             },
             {
               "label": "자료",
-              "text": "사용 상황"
+              "text": "제품 상세 자료"
             },
             {
               "label": "지시",
-              "text": "비교 기준"
+              "text": "사용 상황 및 비교 기준 반영"
             },
             {
               "label": "출력",
               "text": "보고서 형식"
             }
           ],
-          "reason": "brief-window 구조에서 필요한 슬롯으로 재배치한다."
+          "reason": "brief-window 구조에서 목표, 자료, 지시, 출력의 역할을 정확히 분리한다."
         }
       ],
       "copyPolish": {
@@ -2831,13 +2831,13 @@ window.DECK_SLIDES = [
     },
     "presenterCues": [
       "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
-      "책상 정리 비유를 유지한다",
+      "목표, 자료, 지시, 출력의 역할을 구분한다",
       "김아이의 책상이 바로 컨텍스트입니다."
     ],
     "bridge": "김아이의 책상이 바로 컨텍스트입니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "제품 자료, 사용 상황, 비교 기준, 보고서 형식처럼 이번 보고서에 필요한 자료만 올립니다.",
+    "speakerNote": "목표는 제품 비교 분석, 자료는 제품 상세 자료, 지시는 사용 상황 및 비교 기준 반영, 출력은 보고서 형식입니다. 네 항목을 구분해야 김아이가 자료와 조건을 섞지 않고 보고서를 준비합니다.",
     "evidenceClaimIds": [
       "claim-002"
     ],
@@ -3041,174 +3041,184 @@ window.DECK_SLIDES = [
     "section": "Act 1 · 책상 정리",
     "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
     "estimatedMinutes": 1,
-    "title": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-    "message": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
+    "title": "새 작업은 새 책상에서 시작합니다.",
+    "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
     "bullets": [
-      "바로 쓸 자료",
-      "옆에 둘 자료",
-      "치울 자료"
+      "/clear 또는 새 대화",
+      "필요 자료 읽기",
+      "웹 검색으로 보충",
+      "새 기준으로 시작"
     ],
-    "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
+    "visualIntent": "이전 자료를 치우고 새 작업 자료를 올리는 책상 정리 절차를 보여 주는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
     "visualPrompt": "Hand-drawn minimal Korean lecture illustration on a white background. A desk organization scene with three zones: 올릴 자료, 옆에 둘 자료, 치울 자료. Cards move into the zones. Use black linework and one blue accent only. Large readable Korean labels. No gradients, no glossy effects, no app UI, no tiny text. Generate this as one standalone illustration, not as a crop from a sprite sheet. Leave generous white padding around all characters, Korean labels, arrows, and blue accents. Do not draw slide frames, card frames, panel borders, crop marks, or page chrome; the deck harness owns those deterministic composition details.",
     "visualAssetId": "act1-context-curation-close",
-    "layoutTemplate": "checklist",
+    "layoutTemplate": "concept-map",
     "teachingMove": "demonstrate",
-    "audienceAction": "rehearse-checklist",
-    "visualMode": "checklist-board",
-    "mainTemplate": "decision-gate",
-    "templateSelectionReason": "source layoutTemplate=checklist; source teachingMove=demonstrate; source audienceAction=rehearse-checklist; source visualMode=checklist-board",
+    "audienceAction": "compare",
+    "visualMode": "process-diagram",
+    "mainTemplate": "workflow-strip",
+    "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
     "rewrittenScreen": {
-      "headline": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-      "message": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
+      "headline": "새 작업은 새 책상에서 시작합니다.",
+      "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
       "bridge": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
-      "criteria": [
+      "steps": [
         {
-          "label": "01",
-          "text": "바로 쓸 자료"
+          "step": "01",
+          "label": "/clear 또는 새 대화"
         },
         {
-          "label": "02",
-          "text": "옆에 둘 자료"
+          "step": "02",
+          "label": "필요 자료 읽기"
         },
         {
-          "label": "03",
-          "text": "치울 자료"
+          "step": "03",
+          "label": "웹 검색으로 보충"
+        },
+        {
+          "step": "04",
+          "label": "새 기준으로 시작"
         }
-      ],
-      "passLabel": "PASS",
-      "holdLabel": "HOLD"
+      ]
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
       "originalSource": {
-        "title": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-        "message": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
+        "title": "새 작업은 새 책상에서 시작합니다.",
+        "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
         "bullets": [
-          "올릴 자료",
-          "옆에 둘 자료",
-          "치울 자료"
+          "/clear 또는 새 대화",
+          "필요 자료 읽기",
+          "웹 검색으로 보충",
+          "새 기준으로 시작"
         ],
         "bridge": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
-        "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
+        "visualIntent": "이전 자료를 치우고 새 작업 자료를 올리는 책상 정리 절차를 보여 주는 손그림",
         "glossaryTerms": [
           "Context"
         ]
       },
-      "selectedTemplate": "decision-gate",
+      "selectedTemplate": "workflow-strip",
       "screenStructure": {
-        "headline": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-        "message": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
+        "headline": "새 작업은 새 책상에서 시작합니다.",
+        "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
         "bridge": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
-        "criteria": [
+        "steps": [
           {
-            "label": "01",
-            "text": "바로 쓸 자료"
+            "step": "01",
+            "label": "/clear 또는 새 대화"
           },
           {
-            "label": "02",
-            "text": "옆에 둘 자료"
+            "step": "02",
+            "label": "필요 자료 읽기"
           },
           {
-            "label": "03",
-            "text": "치울 자료"
+            "step": "03",
+            "label": "웹 검색으로 보충"
+          },
+          {
+            "step": "04",
+            "label": "새 기준으로 시작"
           }
-        ],
-        "passLabel": "PASS",
-        "holdLabel": "HOLD"
+        ]
       },
       "componentData": {
-        "criteria": [
+        "steps": [
           {
-            "label": "01",
-            "text": "바로 쓸 자료"
+            "step": "01",
+            "label": "/clear 또는 새 대화"
           },
           {
-            "label": "02",
-            "text": "옆에 둘 자료"
+            "step": "02",
+            "label": "필요 자료 읽기"
           },
           {
-            "label": "03",
-            "text": "치울 자료"
+            "step": "03",
+            "label": "웹 검색으로 보충"
+          },
+          {
+            "step": "04",
+            "label": "새 기준으로 시작"
           }
-        ],
-        "passLabel": "PASS",
-        "holdLabel": "HOLD"
+        ]
       },
       "presenterCues": [
-        "한 문장 결론: 컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-        "판정 기준: 올릴 자료, 옆에 둘 자료, 치울 자료",
+        "한 문장 결론: 새 작업은 새 책상에서 시작합니다.",
+        "절차: /clear 또는 새 대화 → 필요 자료 읽기 → 웹 검색 보충 → 새 기준으로 시작",
         "다음 연결: 첫 실습은 김아이 책상을 직접 정리하는 일입니다."
       ],
       "visualRequirements": {
-        "action": "keep-existing-crop-review-required",
+        "action": "use-css-workflow-strip",
         "visualAssetId": "act1-context-curation-close",
-        "sourcePath": "assets/visuals/act1-context-curation-close.png",
         "characterConsistencyRef": "kimai-character-contract-v1",
-        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.\n장면: Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 올릴 자료 / 옆에 둘 자료 / 치울 자료",
+        "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 새 작업은 새 책상에서 시작합니다. 이전 종이를 치우고 새 자료 카드와 웹 검색 카드를 책상 위에 올리는 흐름. 동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\". 스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나. 금지: 사진풍, 3D, 그라데이션, glow, blur, 복잡한 배경, 작은 한국어 문장.",
         "reviewChecks": [
-          "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-          "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-          "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-          "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
+          "이전 대화 치우기와 새 자료 올리기가 한 흐름으로 보인다.",
+          "/clear, 자료 읽기, 웹 검색 보충, 새 기준 시작의 순서가 화면 텍스트와 일치한다.",
+          "긴 설명은 이미지 안에 넣지 않고 슬라이드 텍스트와 발표 스크립트에 둔다."
         ]
       },
-      "rationale": "PASS/HOLD 또는 선택 기준을 확인해야 하는 장면이다.",
+      "rationale": "정의 반복이 아니라 새 업무를 시작할 때 컨텍스트를 초기화하고 필요한 자료를 올리는 절차를 보여 주는 장면이다.",
       "changes": [
         {
           "from": "title",
           "to": "headline",
           "original": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-          "changed": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-          "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
+          "changed": "새 작업은 새 책상에서 시작합니다.",
+          "reason": "앞 슬라이드와 중복되는 정의 문장을 새 작업 시작 루틴으로 전환한다."
         },
         {
           "from": "message",
           "to": "supportingMessage",
           "original": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
-          "changed": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
-          "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
+          "changed": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
+          "reason": "이전 대화가 새 작업을 방해할 수 있다는 실제 문제를 먼저 보여 준다."
         },
         {
           "from": "bullets",
-          "to": "criteria",
+          "to": "steps",
           "original": [
-            "올릴 자료",
+            "바로 쓸 자료",
             "옆에 둘 자료",
             "치울 자료"
           ],
           "changed": [
             {
-              "key": "기준 1",
-              "text": "올릴 자료"
+              "step": "01",
+              "label": "/clear 또는 새 대화"
             },
             {
-              "key": "기준 2",
-              "text": "옆에 둘 자료"
+              "step": "02",
+              "label": "필요 자료 읽기"
             },
             {
-              "key": "판정",
-              "text": "치울 자료"
+              "step": "03",
+              "label": "웹 검색으로 보충"
+            },
+            {
+              "step": "04",
+              "label": "새 기준으로 시작"
             }
           ],
-          "reason": "decision-gate 구조에서 필요한 슬롯으로 재배치한다."
+          "reason": "workflow-strip 구조에서 발표자가 따라 말할 수 있는 순서형 행동으로 재배치한다."
         }
       ],
       "copyPolish": {
-        "version": 1,
-        "appliedAt": "2026-05-31",
-        "rule": "template-slot-copy-polish"
+        "version": 2,
+        "appliedAt": "2026-06-02",
+        "rule": "context-reset-workflow-rewrite"
       }
     },
-    "layoutVariant": "checklist",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "css-template-component",
-      "templateComponent": "gate",
-      "sourceAction": "keep-existing-crop-review-required",
+      "templateComponent": "flow",
+      "sourceAction": "use-css-workflow-strip",
       "visualAssetId": "act1-context-curation-close",
       "renderedVisualAsset": "",
-      "usesExistingImage": true,
+      "usesExistingImage": false,
       "projectedImage": false
     },
     "renderedVisualAsset": "",
@@ -3244,14 +3254,14 @@ window.DECK_SLIDES = [
     },
     "assetCrop": null,
     "presenterCues": [
-      "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-      "책상 정리 비유를 유지한다",
+      "새 작업은 새 책상에서 시작합니다.",
+      "/clear 또는 새 대화 후 필요한 자료를 읽히고 웹 검색으로 보충한다",
       "첫 실습은 김아이 책상을 직접 정리하는 일입니다."
     ],
     "bridge": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
     "interaction": null,
     "xmlPrompt": null,
-    "speakerNote": "Context Curation은 이번 작업에 바로 쓸 자료, 옆에 둘 자료, 치울 자료를 정하는 일입니다.",
+    "speakerNote": "새 업무를 시작할 때 책상을 먼저 정리하듯이, AI에게도 이전 작업 내용을 치워 주는 과정이 필요합니다. 대화가 길게 남아 있으면 김아이는 새 요청을 예전 업무의 연장으로 오해할 수 있습니다. 그래서 /clear를 하거나 새 대화를 열고, 이번 작업에 필요한 자료만 다시 올려야 합니다. 파일을 읽으라고 시키고, 모르는 자료는 웹으로 검색하라고 지시하는 습관이 컨텍스트 정리의 실제 행동입니다.",
     "evidenceClaimIds": [
       "claim-002",
       "claim-004"
@@ -3260,9 +3270,9 @@ window.DECK_SLIDES = [
       "Context"
     ],
     "qualityChecks": [
-      "보고서 작성법으로 깊게 들어가지 않는다.",
-      "책상 정리 비유와 연결된다.",
-      "실습 UI를 설명 슬라이드 안에 넣지 않는다."
+      "컨텍스트 정의를 반복하지 않고 새 작업 시작 절차를 설명한다.",
+      "/clear 또는 새 대화, 자료 읽기, 웹 검색 보충이 화면에 드러난다.",
+      "첫 실습으로 넘어가는 브릿지를 유지한다."
     ]
   },
   {
