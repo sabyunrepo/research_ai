@@ -45,27 +45,36 @@
   </header>
 
   <main class="speaker-console">
-    <section class="speaker-preview-panel speaker-next-panel" aria-label="Next slide">
-      <div class="speaker-panel-header">
-        <span>현재 슬라이드</span>
-        <strong id="currentPreviewLabel">-- / --</strong>
-      </div>
-      <iframe id="currentSlideFrame" class="speaker-slide-frame" title="현재 슬라이드"></iframe>
+    <section class="speaker-reference-column" aria-label="Slide and script reference">
+      <section class="speaker-preview-panel speaker-next-panel" aria-label="Current slide">
+        <div class="speaker-panel-header">
+          <span>현재 슬라이드</span>
+          <strong id="currentPreviewLabel">-- / --</strong>
+        </div>
+        <iframe id="currentSlideFrame" class="speaker-slide-frame" title="현재 슬라이드"></iframe>
+      </section>
+
+      <aside class="speaker-notes-panel">
+        <div class="speaker-controls" aria-label="Slide controls">
+          <button type="button" id="speakerPrevious">이전</button>
+          <button type="button" id="speakerNext">다음</button>
+        </div>
+
+        <section class="speaker-prompt" aria-label="Presenter prompt">
+          <p class="review-meta" id="speakerMeta"></p>
+          <h2 id="speakerPromptTitle"></h2>
+          <div id="speakerPromptBody" class="speaker-prompt-body"></div>
+        </section>
+      </aside>
     </section>
 
-    <aside class="speaker-notes-panel">
-      <div class="speaker-controls" aria-label="Slide controls">
-        <button type="button" id="speakerPrevious">이전</button>
-        <button type="button" id="speakerNext">다음</button>
+    <section class="speaker-outline-panel" aria-label="Keyword outline">
+      <div class="speaker-panel-header">
+        <span>키워드 아웃라인</span>
+        <strong>원고 없이 말하기</strong>
       </div>
-
-      <section class="speaker-prompt" aria-label="Presenter prompt">
-        <p class="review-meta" id="speakerMeta"></p>
-        <h2 id="speakerPromptTitle"></h2>
-        <div id="speakerPromptBody" class="speaker-prompt-body"></div>
-        <div id="speakerCuePanel" class="speaker-cues"></div>
-      </section>
-    </aside>
+      <div id="speakerCuePanel" class="speaker-cues"></div>
+    </section>
   </main>
 </body>
 </html>

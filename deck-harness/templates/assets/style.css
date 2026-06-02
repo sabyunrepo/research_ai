@@ -302,15 +302,16 @@ body {
 
 .speaker-console {
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
+  grid-template-columns: minmax(340px, 420px) minmax(0, 1fr);
   gap: 18px;
-  height: calc(100vh - 114px);
-  min-height: 660px;
+  height: calc(100vh - 146px);
+  min-height: 560px;
   padding: 18px;
 }
 
 .speaker-preview-panel,
-.speaker-notes-panel {
+.speaker-notes-panel,
+.speaker-outline-panel {
   min-width: 0;
   min-height: 0;
   border: 2px solid var(--line);
@@ -319,9 +320,17 @@ body {
   overflow: hidden;
 }
 
+.speaker-reference-column {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+}
+
 .speaker-preview-panel {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
+  aspect-ratio: 16 / 9;
 }
 
 .speaker-panel-header {
@@ -363,7 +372,7 @@ body {
 
 .speaker-prompt h2 {
   margin: 8px 0 14px;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1.14;
 }
 
@@ -377,7 +386,15 @@ body {
 .speaker-cues {
   display: grid;
   gap: 8px;
-  margin-top: 16px;
+  align-content: start;
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+}
+
+.speaker-outline-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
 }
 
 .speaker-cues p {
@@ -396,15 +413,36 @@ body {
 }
 
 .speaker-cues span {
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 800;
 }
 
 .speaker-cues small {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.35;
+}
+
+@media (max-width: 980px) {
+  .speaker-console {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .speaker-outline-panel {
+    order: 1;
+    min-height: 520px;
+  }
+
+  .speaker-reference-column {
+    order: 2;
+  }
+
+  .speaker-preview-panel {
+    min-height: 220px;
+  }
 }
 
 .audience-page {
