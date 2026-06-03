@@ -50,6 +50,8 @@ function main() {
     : path.join(deckDir, "kimai-workshop-content-slides.pdf");
   const specPath = path.join(deckDir, "slide-spec.json");
   const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
+  const deckCssPath = path.join(deckDir, "assets", "style.css");
+  const deckCss = fs.readFileSync(deckCssPath, "utf8");
   const slides = spec.slides || [];
   if (!slides.length) throw new Error("slide-spec.json has no slides");
 
@@ -66,11 +68,21 @@ function main() {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(spec.title || "Generated Deck")} PDF Export</title>
-  <link rel="stylesheet" href="assets/style.css">
   <style>
+${deckCss}
     @page { size: 16in 9in; margin: 0; }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: #fff; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
     .print-page {
       width: 16in;
       height: 9in;
