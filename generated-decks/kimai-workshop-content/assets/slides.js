@@ -5777,7 +5777,7 @@ window.DECK_SLIDES = [
     "message": "실습 화면에서 제품 리뷰자료 보고서 지시를 고치고 피드백을 확인합니다.",
     "bullets": [
       "대충 지시 보기",
-      "업무 지시 고치기",
+      "업무지시 고치기",
       "피드백 보고 다시 쓰기"
     ],
     "visualIntent": "Act 2 설명을 닫고 업무 지시 재작성 실습으로 넘어가는 전환 장면",
@@ -5797,7 +5797,7 @@ window.DECK_SLIDES = [
       "bridge": "첫 지시는 완벽하지 않아도 됩니다. 피드백을 보고 다시 지시하면 됩니다.",
       "actionList": [
         "대충 지시 보기",
-        "업무 지시 고치기",
+        "업무지시 고치기",
         "피드백 보고 다시 쓰기"
       ],
       "imagePolicy": "deterministic-kimai-reference-composite-no-generated-character"
@@ -5825,7 +5825,7 @@ window.DECK_SLIDES = [
         "bridge": "첫 지시는 완벽하지 않아도 됩니다. 피드백을 보고 다시 지시하면 됩니다.",
         "actionList": [
           "대충 지시 보기",
-          "업무 지시 고치기",
+          "업무지시 고치기",
           "피드백 보고 다시 쓰기"
         ],
         "imagePolicy": "deterministic-kimai-reference-composite-no-generated-character"
