@@ -23,24 +23,68 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-function findChrome() {
-  const candidates = [
-    process.env.CHROME_BIN,
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    "/Applications/Chromium.app/Contents/MacOS/Chromium",
-    "/usr/bin/google-chrome",
-    "/usr/bin/chromium",
-    "/usr/bin/chromium-browser",
-  ].filter(Boolean);
-  return candidates.find((candidate) => fs.existsSync(candidate));
-}
-
 function extractMain(html, file) {
   const match = html.match(/<main\b[\s\S]*?<\/main>/);
   if (!match) throw new Error(`missing slide main in ${file}`);
   return match[0]
     .replaceAll('src="../assets/', 'src="assets/')
     .replaceAll('href="../assets/', 'href="assets/');
+}
+
+function createPdfWithPlaywright({ printHtmlPath, outputPath }) {
+  const exporterCode = `
+const { chromium } = require("playwright");
+
+(async () => {
+  const [url, outputPath] = process.argv.slice(1);
+  let browser;
+  try {
+    browser = await chromium.launch({ channel: "chrome", headless: true });
+  } catch {
+    browser = await chromium.launch({ headless: true });
+  }
+  const page = await browser.newPage({ viewport: { width: 1600, height: 900 } });
+  await page.goto(url, { waitUntil: "networkidle" });
+  await page.emulateMedia({ media: "screen" });
+  await page.evaluate(() => document.fonts ? document.fonts.ready : undefined);
+  await page.pdf({
+    path: outputPath,
+    width: "16in",
+    height: "9in",
+    margin: { top: "0", right: "0", bottom: "0", left: "0" },
+    displayHeaderFooter: false,
+    preferCSSPageSize: true,
+    printBackground: true,
+  });
+  await browser.close();
+})().catch(async (error) => {
+  console.error(error && error.stack ? error.stack : error);
+  process.exit(1);
+});
+`;
+  const result = spawnSync("npm", [
+    "exec",
+    "--yes",
+    "--package=playwright",
+    "--",
+    "sh",
+    "-c",
+    "NODE_PATH=$(dirname $(dirname $(which playwright))) node -e \"$PDF_EXPORT_CODE\" \"$1\" \"$2\"",
+    "playwright-pdf-export",
+    `file://${printHtmlPath}`,
+    outputPath,
+  ], {
+    cwd: root,
+    encoding: "utf8",
+    env: {
+      ...process.env,
+      PDF_EXPORT_CODE: exporterCode,
+    },
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  if (result.status !== 0) {
+    throw new Error(`Playwright PDF export failed\n${result.stdout}${result.stderr}`);
+  }
 }
 
 function main() {
@@ -111,23 +155,8 @@ ${pages.join("\n")}
 `;
   fs.writeFileSync(printHtmlPath, html);
 
-  const chrome = findChrome();
-  if (!chrome) throw new Error("Chrome/Chromium binary not found. Set CHROME_BIN.");
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  const result = spawnSync(chrome, [
-    "--headless=new",
-    "--disable-gpu",
-    "--no-pdf-header-footer",
-    `--print-to-pdf=${outputPath}`,
-    `file://${printHtmlPath}`,
-  ], {
-    cwd: root,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-  });
-  if (result.status !== 0) {
-    throw new Error(`Chrome PDF export failed\n${result.stdout}${result.stderr}`);
-  }
+  createPdfWithPlaywright({ printHtmlPath, outputPath });
   console.log(`Print HTML: ${path.relative(root, printHtmlPath)}`);
   console.log(`PDF: ${path.relative(root, outputPath)}`);
   console.log(`Slides: ${slides.length}`);
