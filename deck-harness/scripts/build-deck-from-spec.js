@@ -896,6 +896,10 @@ function bridgeFooterHtml(bridge) {
   return `<div class="source-bridge-parity" hidden>${escapeHtml(bridge)}</div>`;
 }
 
+function slideAttributionFooterHtml() {
+  return `<div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>`;
+}
+
 function slideHtml(slide) {
   const screen = screenModel(slide);
   const variant = slide.layoutVariant || "standard";
@@ -934,6 +938,7 @@ function slideHtml(slide) {
 <body>
   <main class="${slideClass}" data-slide-id="${escapeHtml(slide.id)}" data-layout-template="${escapeHtml(slide.layoutTemplate || "")}" data-main-template="${escapeHtml(mainTemplate)}" data-teaching-move="${escapeHtml(slide.teachingMove || "")}" data-audience-action="${escapeHtml(slide.audienceAction || "")}" data-visual-mode="${escapeHtml(slide.visualMode || "")}" data-evidence-ids="${escapeHtml(evidence)}" data-glossary-terms="${escapeHtml(terms)}">
     ${content}
+    ${slideAttributionFooterHtml()}
   </main>
 </body>
 </html>

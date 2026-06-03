@@ -156,7 +156,7 @@
         "slides/wrap-personal-harness.html"
       ],
       "inputHash": "sha256:8c108b5733acf24ea88ceff3beaae566d8d91c00eb846e331f397bbc47081992",
-      "outputHash": "sha256:3fbdb46ba980e4d5c0feaca6501056d84bde05421606a782d5d245e523d170f6",
+      "outputHash": "sha256:bbfc15347096425e8b38b28cff4a2afec8a958ddb64bc23abdc4739dda225311",
       "status": "PASS",
       "evidencePath": "HANDOFF.md#verification"
     }
