@@ -160,7 +160,7 @@ ${pages.join("\n")}
 </body>
 </html>
 `;
-  fs.writeFileSync(printHtmlPath, html);
+  fs.writeFileSync(printHtmlPath, html.replace(/[ \t]+$/gm, ""));
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   createPdfWithPlaywright({ printHtmlPath, outputPath });

@@ -2,6 +2,218 @@
   "timeboxMinutes": 240,
   "slides": [
     {
+      "id": "act0-course-outline-term-map",
+      "section": "Act 0 · 오늘의 약속",
+      "sectionObjective": "수강생이 자신을 김아이를 이끄는 팀장으로 이해하고, 하네스 엔지니어링을 우수한 신입의 업무 능력을 끌어내는 환경과 피드백 루프로 받아들인다.",
+      "estimatedMinutes": 1,
+      "title": "오늘의 강의 목차는 쉬운 이름과 실제 용어를 함께 기억합니다.",
+      "message": "쉬운 이름 옆에 실제 용어를 계속 같이 보면서 각 Act를 진행합니다.",
+      "bullets": [
+        "책상 위 자료(Context)",
+        "업무 지시(Prompt)",
+        "회사 내규(CLAUDE.md)",
+        "업무 매뉴얼(Skill)",
+        "역할 카드(Agent)",
+        "완료 검문소(Hook)"
+      ],
+      "visualIntent": "김아이 캐릭터 옆에 여섯 강의 목차를 쉬운 이름과 실제 용어 병기로 보여 주는 이미지형 목차",
+      "visualType": "generated-image",
+      "presenterCues": [
+        "오늘의 강의 목차를 이미지로 먼저 보여 준다.",
+        "책상 위 자료(Context)부터 완료 검문소(Hook)까지 쉬운 이름과 실제 용어를 한 쌍으로 읽게 한다.",
+        "업무 매뉴얼(Skill)은 같은 개념임을 강조한다."
+      ],
+      "bridge": "이제 오늘의 주인공 김아이를 만나보겠습니다.",
+      "speakerNote": "강의 시작과 동시에 오늘 다룰 여섯 장치를 쉬운 이름과 실제 용어로 먼저 보여 줍니다. 수강생은 이후 각 Act에서 같은 병기를 반복해서 보게 됩니다.",
+      "evidenceClaimIds": [
+        "claim-010"
+      ],
+      "glossaryTerms": [
+        "Context",
+        "Prompt",
+        "CLAUDE.md",
+        "Skill",
+        "Agent",
+        "Hook"
+      ],
+      "qualityChecks": [
+        "Act 0에 점수화되는 실습이 들어가지 않는다.",
+        "쉬운 이름이 먼저 보이고 실제 용어가 괄호로 병기된다.",
+        "책상 위 자료(Context)와 업무 매뉴얼(Skill) 병기가 화면에 명확히 보인다.",
+        "김아이 캐릭터는 기존 기준 이미지와 같은 헤드셋, 파란 포인트, 명찰 톤을 유지한다."
+      ],
+      "layoutTemplate": "glossary-bridge",
+      "teachingMove": "connect",
+      "audienceAction": "connect-metaphor",
+      "visualMode": "artifact-map",
+      "mainTemplate": "kimai-structure",
+      "rewrittenScreen": {
+        "headline": "오늘의 장치는 쉬운 이름과 실제 용어를 함께 기억합니다.",
+        "message": "쉬운 이름과 실제 용어를 한 쌍으로 먼저 보고, 각 Act에서 다시 반복합니다.",
+        "metaphorTerm": "쉬운 이름",
+        "realTerm": "실제 용어",
+        "bridgeLine": "쉬운 이름과 실제 용어를 함께 먼저 보여 줍니다.",
+        "supportingLine": "각 Act는 쉬운 이름으로 시작하고 괄호 안 실제 용어를 반복해 기억하게 합니다.",
+        "bridge": "이제 오늘의 주인공 김아이를 만나보겠습니다.",
+        "forceVisibleBullets": false,
+        "mapNodes": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "anchors": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "supportingAnchors": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "termAnchors": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "imageAnchors": []
+      },
+      "templateRewrite": {
+        "sourceContractVersion": 1,
+        "originalSource": {
+          "title": "오늘의 강의 목차는 쉬운 이름과 실제 용어를 함께 기억합니다.",
+          "message": "쉬운 이름 옆에 실제 용어를 계속 같이 보면서 각 Act를 진행합니다.",
+          "bullets": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "bridge": "이제 오늘의 주인공 김아이를 만나보겠습니다.",
+          "visualIntent": "김아이 캐릭터 옆에 여섯 강의 목차를 쉬운 이름과 실제 용어 병기로 보여 주는 이미지형 목차",
+          "glossaryTerms": [
+            "Context",
+            "Prompt",
+            "CLAUDE.md",
+            "Skill",
+            "Agent",
+            "Hook"
+          ]
+        },
+        "selectedTemplate": "recap-map",
+        "screenStructure": {
+          "headline": "오늘의 강의 목차는 쉬운 이름과 실제 용어를 함께 기억합니다.",
+          "message": "쉬운 이름 옆에 실제 용어를 계속 같이 보면서 각 Act를 진행합니다.",
+          "bridge": "이제 오늘의 주인공 김아이를 만나보겠습니다.",
+          "mapNodes": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "forceVisibleBullets": false,
+          "anchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "supportingAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "imageAnchors": [],
+          "termAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ]
+        },
+        "componentData": {
+          "mapNodes": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "imageAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "termAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ]
+        },
+        "presenterCues": [
+          "오늘의 강의 목차를 제일 먼저 보여 준다.",
+          "쉬운 이름과 실제 용어를 한 쌍으로 읽게 한다.",
+          "다음 연결: 오늘의 주인공 김아이를 소개한다."
+        ],
+        "visualRequirements": {
+          "action": "use-kimai-reference-imagegen-outline-single-png-with-local-label-composite",
+          "visualAssetId": "kimai-course-outline-map",
+          "sourcePath": "assets/visuals/kimai-course-outline-map-single.png",
+          "characterConsistencyRef": "kimai-character-contract-v1",
+          "note": "Use the project-local KimAI character reference. Generate a blank-card raster base with imagegen, then composite exact bilingual labels locally. Keep left glossary anchors as separate DOM hover targets.",
+          "mustBeSinglePng": true,
+          "glossaryHoverTarget": "left-side DOM termAnchors only"
+        },
+        "rationale": "Act 0 끝에서 강의 목차와 용어 병기를 먼저 고정한다.",
+        "changes": [
+          {
+            "from": "new-slide",
+            "to": "outline-map",
+            "original": "",
+            "changed": "오늘의 장치는 쉬운 이름과 실제 용어를 함께 기억합니다.",
+            "reason": "용어를 뒤에서 공개하지 않고 초반 목차에서 병기하기 위해 추가한다."
+          }
+        ],
+        "copyPolish": {
+          "version": 1,
+          "appliedAt": "2026-06-03",
+          "rule": "terminology-frontload-outline"
+        }
+      },
+      "layoutVariant": "standard",
+      "visualAssetId": "kimai-course-outline-map"
+    },
+    {
       "id": "act0-kimai-intro",
       "section": "Act 0 · 오늘의 약속",
       "sectionObjective": "수강생이 자신을 김아이를 이끄는 팀장으로 이해하고, 하네스 엔지니어링을 우수한 신입의 업무 능력을 끌어내는 환경과 피드백 루프로 받아들인다.",
@@ -993,14 +1205,14 @@
       "title": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
       "message": "오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.",
       "bullets": [
-        "자료",
-        "지시",
-        "내규",
-        "매뉴얼",
-        "역할",
-        "검증"
+        "책상 위 자료(Context)",
+        "업무 지시(Prompt)",
+        "회사 내규(CLAUDE.md)",
+        "업무 매뉴얼(Skill)",
+        "역할 카드(Agent)",
+        "완료 검문소(Hook)"
       ],
-      "visualIntent": "상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면",
+      "visualIntent": "김아이 우수사원 프로젝트의 여섯 장치를 책상 위 자료(Context)부터 완료 검문소(Hook)까지 병기형 카드 흐름으로 보여 주는 지도",
       "visualType": "generated-image",
       "visualAssetId": "kimai-workflow-map",
       "presenterCues": [
@@ -1008,12 +1220,19 @@
         "김아이 신입사원 서사를 유지한다",
         "우수사원 프로젝트의 첫 단계는 책상 정리입니다."
       ],
-      "bridge": "없음",
-      "speakerNote": "4시간 동안 책상 정리, 업무 지시, 데스크 자료, 반복 매뉴얼, 역할과 도구, 체크리스트를 하나씩 갖춰 갑니다.",
+      "bridge": "이제 첫 단계인 책상 정리(Context), 즉 김아이 책상 위 자료로 들어갑니다.",
+      "speakerNote": "4시간 동안 여섯 장치를 차례로 붙여 갑니다. 다음 장에서는 쉬운 이름과 실제 용어를 함께 보여 주어, 각 Act가 어떤 하네스 장치와 연결되는지 먼저 기억하게 합니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
-      "glossaryTerms": [],
+      "glossaryTerms": [
+        "Context",
+        "Prompt",
+        "CLAUDE.md",
+        "Skill",
+        "Agent",
+        "Hook"
+      ],
       "qualityChecks": [
         "일반인 대상 회사 업무 비유가 먼저 보인다.",
         "한 슬라이드에 한 메시지만 담긴다.",
@@ -1027,7 +1246,7 @@
       "rewrittenScreen": {
         "headline": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
         "message": "오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.",
-        "bridge": "없음",
+        "bridge": "이제 첫 단계인 책상 정리(Context), 즉 책상 정리로 들어갑니다.",
         "steps": [
           {
             "step": "01",
@@ -1053,99 +1272,171 @@
             "step": "06",
             "label": "검증"
           }
+        ],
+        "termAnchors": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "forceVisibleBullets": false,
+        "imageAnchors": [],
+        "mapNodes": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "anchors": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
+        ],
+        "supportingAnchors": [
+          "책상 위 자료(Context)",
+          "업무 지시(Prompt)",
+          "회사 내규(CLAUDE.md)",
+          "업무 매뉴얼(Skill)",
+          "역할 카드(Agent)",
+          "완료 검문소(Hook)"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
           "title": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
-          "message": "4시간 동안 책상 정리, 업무 지시, 데스크 자료, 반복 매뉴얼, 역할과 도구, 체크리스트를 하나씩 갖춰 갑니다.",
+          "message": "오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.",
           "bullets": [
-            "책상 정리",
-            "업무 지시",
-            "체크리스트"
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
           ],
-          "bridge": "우수사원 프로젝트의 첫 단계는 책상 정리입니다.",
+          "bridge": "이제 첫 단계인 책상 정리(Context), 즉 김아이 책상 위 자료로 들어갑니다.",
           "visualIntent": "상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면",
-          "glossaryTerms": []
+          "glossaryTerms": [
+            "Context",
+            "Prompt",
+            "CLAUDE.md",
+            "Skill",
+            "Agent",
+            "Hook"
+          ]
         },
         "selectedTemplate": "workflow-strip",
         "screenStructure": {
           "headline": "오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
           "message": "오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.",
-          "bridge": "없음",
+          "bridge": "이제 첫 단계인 책상 정리(Context), 즉 김아이 책상 위 자료로 들어갑니다.",
           "steps": [
             {
               "step": "01",
-              "label": "자료"
+              "label": "책상 위 자료(Context)"
             },
             {
               "step": "02",
-              "label": "지시"
+              "label": "업무 지시(Prompt)"
             },
             {
               "step": "03",
-              "label": "내규"
+              "label": "회사 내규(CLAUDE.md)"
             },
             {
               "step": "04",
-              "label": "매뉴얼"
+              "label": "업무 매뉴얼(Skill)"
             },
             {
               "step": "05",
-              "label": "역할"
+              "label": "역할 카드(Agent)"
             },
             {
               "step": "06",
-              "label": "검증"
+              "label": "완료 검문소(Hook)"
             }
-          ]
+          ],
+          "imageAnchors": [],
+          "termAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "forceVisibleBullets": false
         },
         "componentData": {
           "steps": [
             {
               "step": "01",
-              "label": "자료"
+              "label": "책상 위 자료(Context)"
             },
             {
               "step": "02",
-              "label": "지시"
+              "label": "업무 지시(Prompt)"
             },
             {
               "step": "03",
-              "label": "내규"
+              "label": "회사 내규(CLAUDE.md)"
             },
             {
               "step": "04",
-              "label": "매뉴얼"
+              "label": "업무 매뉴얼(Skill)"
             },
             {
               "step": "05",
-              "label": "역할"
+              "label": "역할 카드(Agent)"
             },
             {
               "step": "06",
-              "label": "검증"
+              "label": "완료 검문소(Hook)"
             }
+          ],
+          "imageAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
+          ],
+          "termAnchors": [
+            "책상 위 자료(Context)",
+            "업무 지시(Prompt)",
+            "회사 내규(CLAUDE.md)",
+            "업무 매뉴얼(Skill)",
+            "역할 카드(Agent)",
+            "완료 검문소(Hook)"
           ]
         },
         "presenterCues": [
           "한 문장 결론: 오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.",
           "순서대로 짚기: 책상 정리 -> 업무 지시 -> 체크리스트",
-          "다음 연결: 우수사원 프로젝트의 첫 단계는 책상 정리입니다."
+          "다음 연결: 이제 첫 단계인 책상 정리(Context), 즉 책상 정리로 들어갑니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
+          "action": "use-kimai-reference-imagegen-workflow-single-png-with-local-label-composite",
           "visualAssetId": "kimai-workflow-map",
-          "sourcePath": "assets/visuals/kimai-workflow-map.png",
+          "sourcePath": "assets/visuals/kimai-workflow-map-single.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.\n장면: 상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 책상 정리 / 업무 지시 / 체크리스트",
+          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 지도. 기존 김아이 캐릭터 특징(둥근 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이, 김아이 명찰)을 유지하고, 여섯 카드 라벨을 정확히 병기한다: 책상 위 자료(Context), 업무 지시(Prompt), 회사 내규(CLAUDE.md), 업무 매뉴얼(Skill), 역할 카드(Agent), 완료 검문소(Hook). 흰 배경, 검은 선화, #2563eb 포인트만 사용한다.",
           "reviewChecks": [
+            "여섯 라벨이 모두 쉬운 이름과 괄호 속 실제 용어로 읽힌다.",
             "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
+            "잘린 글자나 잘린 캐릭터가 없다."
+          ],
+          "note": "Use the project-local KimAI character reference. Generate a blank-card raster base with imagegen, then composite exact bilingual labels locally. Keep left glossary anchors as separate DOM hover targets.",
+          "mustBeSinglePng": true,
+          "glossaryHoverTarget": "left-side DOM termAnchors only"
         },
         "rationale": "단계, 루프, 순서가 학습 포인트라 카드 흐름으로 쪼갠다.",
         "changes": [
@@ -1197,30 +1488,32 @@
     },
     {
       "id": "act1-desk-cleanup-open",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
-      "title": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+      "title": "책상 정리(Context)는 김아이 책상 위 자료부터 시작합니다.",
       "message": "프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.",
       "bullets": [
-        "책상 정리",
-        "보고서 자료",
+        "책상 정리(Context)",
+        "책상 위 자료",
         "추측 줄이기"
       ],
       "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act1-desk-cleanup-open",
       "presenterCues": [
-        "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
-        "책상 정리 비유를 유지한다",
-        "김아이는 책상 위에 올라온 자료를 보고 일합니다."
+        "책상 정리(Context)을 첫 단계로 회수한다.",
+        "문장 쓰기보다 자료 고르기임을 강조한다.",
+        "책상 비유로 다음 장을 연다."
       ],
-      "bridge": "지시를 받기전에 김아이는 책상을 정리해서 다음 지시를 받고 일할 준비가 되어있어야 합니다.\n왜냐?",
-      "speakerNote": "프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.",
+      "bridge": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
+      "speakerNote": "Act 0의 목차를 회수합니다. 첫 실습은 문장을 잘 쓰는 일이 아니라, 김아이 책상에 올릴 자료를 고르는 책상 정리(Context)이라고 말합니다.",
       "qualityChecks": [
         "보고서 작성법으로 깊게 들어가지 않는다.",
         "책상 정리 비유와 연결된다.",
@@ -1232,24 +1525,24 @@
       "visualMode": "story-illustration",
       "mainTemplate": "opening-hero",
       "rewrittenScreen": {
-        "headline": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+        "headline": "책상 정리(Context)은 김아이 책상 정리부터 시작합니다.",
         "message": "프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.",
-        "bridge": "지시를 받기전에 김아이는 책상을 정리해서 다음 지시를 받고 일할 준비가 되어있어야 합니다.\n왜냐?",
-        "heroLine": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+        "bridge": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
+        "heroLine": "책상 정리(Context)은 김아이 책상 정리부터 시작합니다.",
         "promiseBullets": [
-          "책상 정리",
-          "보고서 자료",
+          "책상 정리(Context)",
+          "김아이 책상 정리",
           "추측 줄이기"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+          "title": "책상 정리(Context)은 김아이 책상 정리부터 시작합니다.",
           "message": "프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.",
           "bullets": [
-            "책상 정리",
-            "보고서 자료",
+            "책상 정리(Context)",
+            "김아이 책상 정리",
             "추측 줄이기"
           ],
           "bridge": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
@@ -1258,13 +1551,13 @@
         },
         "selectedTemplate": "opening-hero",
         "screenStructure": {
-          "headline": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+          "headline": "책상 정리(Context)은 김아이 책상 정리부터 시작합니다.",
           "message": "프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.",
-          "bridge": "지시를 받기전에 김아이는 책상을 정리해서 다음 지시를 받고 일할 준비가 되어있어야 합니다.\n왜냐?",
-          "heroLine": "우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.",
+          "bridge": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
+          "heroLine": "책상 정리(Context)은 김아이 책상 정리부터 시작합니다.",
           "promiseBullets": [
-            "책상 정리",
-            "보고서 자료",
+            "책상 정리(Context)",
+            "김아이 책상 정리",
             "추측 줄이기"
           ]
         },
@@ -1337,12 +1630,14 @@
     },
     {
       "id": "act1-desk-principle",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
       "message": "김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.",
@@ -1359,7 +1654,7 @@
         "책상 정리 비유를 유지한다",
         "책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다."
       ],
-      "bridge": "제대로 일을 할까요?",
+      "bridge": "이제 책상 위 자료(Context)가 김아이의 판단을 어떻게 바꾸는지 보겠습니다.",
       "speakerNote": "김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.",
       "qualityChecks": [
         "보고서 작성법으로 깊게 들어가지 않는다.",
@@ -1374,7 +1669,7 @@
       "rewrittenScreen": {
         "headline": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
         "message": "김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.",
-        "bridge": "제대로 일을 할까요?",
+        "bridge": "이제 책상 위 자료(Context)가 김아이의 판단을 어떻게 바꾸는지 보겠습니다.",
         "imageAnchors": [
           "보고 있는 자료",
           "같이 놓인 기준",
@@ -1400,7 +1695,7 @@
         "screenStructure": {
           "headline": "김아이는 책상 위에 올라온 자료를 보고 일합니다.",
           "message": "김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.",
-          "bridge": "제대로 일을 할까요?",
+          "bridge": "이제 책상 위 자료(Context)가 김아이의 판단을 어떻게 바꾸는지 보겠습니다.",
           "imageAnchors": [
             "보고 있는 자료",
             "같이 놓인 기준",
@@ -1474,12 +1769,14 @@
     },
     {
       "id": "act1-missing-materials",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.",
       "message": "제품 리뷰자료 보고서에서 필요한 제품, 사용 상황, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.",
@@ -1613,13 +1910,15 @@
     },
     {
       "id": "act1-messy-desk",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002",
         "claim-004"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "책상이 어지러워도 김아이의 판단은 흔들립니다.",
       "message": "자료가 너무 많거나, 관련 없거나, 오래되면 김아이의 판단 기준이 흐려집니다.",
@@ -1753,12 +2052,14 @@
     },
     {
       "id": "act1-info-baskets",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "책상 위 자료는 세 바구니로 나눕니다.",
       "message": "꼭 필요한 자료, 있으면 도움이 되는 자료, 지금은 치워야 할 자료로 나누어 판단을 단순하게 만듭니다.",
@@ -1924,12 +2225,14 @@
     },
     {
       "id": "act1-report-desk-materials",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "오늘 보고서에 필요한 자료만 책상 위에 올립니다.",
       "message": "목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.",
@@ -2114,7 +2417,7 @@
     },
     {
       "id": "act1-context-mapping",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002",
         "claim-004"
@@ -2122,25 +2425,25 @@
       "glossaryTerms": [
         "Context"
       ],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
-      "title": "김아이의 책상이 바로 컨텍스트입니다.",
-      "message": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.",
+      "title": "책상 정리(Context)는 책상 위 판단 재료를 정리하는 일입니다.",
+      "message": "Context는 김아이가 이번 작업에서 볼 책상 위 자료이고, 책상 정리는 올릴 자료와 치울 자료를 나누는 기준입니다.",
       "bullets": [
-        "책상 위 자료",
+        "책상 위 판단 재료",
         "Context",
-        "책상 위 자료와 실제 용어 Context를 함께 보여 줍니다."
+        "책상 정리(Context)를 정리 기준으로 다시 묶습니다."
       ],
       "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act1-context-mapping",
       "presenterCues": [
-        "김아이의 책상이 바로 컨텍스트입니다.",
-        "책상 정리 비유를 유지한다",
-        "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다."
+        "책상 정리(Context)을 다시 회수한다.",
+        "책상 위 자료가 판단 재료임을 정리한다.",
+        "Context Curation을 정리 기준으로 연결한다."
       ],
       "bridge": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-      "speakerNote": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.",
+      "speakerNote": "Act 0과 Act 1 첫 장에서 이미 본 책상 정리(Context)을 다시 회수합니다. 책상 위 자료가 결과에 영향을 준다는 작동 원리를 정리하고, Context Curation을 올릴 것과 치울 것을 고르는 기준으로 연결합니다.",
       "qualityChecks": [
         "보고서 작성법으로 깊게 들어가지 않는다.",
         "책상 정리 비유와 연결된다.",
@@ -2152,24 +2455,23 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "김아이의 책상이 바로 컨텍스트입니다.",
-        "message": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.",
+        "headline": "책상 정리(Context)은 책상 위 판단 재료를 정리하는 일입니다.",
+        "message": "컨텍스트 정리는 김아이가 이번 작업에서 볼 자료와 치울 자료를 나누는 기준입니다.",
         "bridge": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-        "metaphorTerm": "책상 위 자료",
+        "metaphorTerm": "책상 위 판단 재료",
         "realTerm": "Context",
-        "bridgeLine": "책상 위 자료와 실제 용어 Context를 함께 보여 줍니다.",
-        "supportingLine": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다."
+        "bridgeLine": "이미 본 책상 정리(Context)을 정리 기준으로 다시 묶습니다.",
+        "supportingLine": "컨텍스트 정리는 김아이가 이번 작업에서 볼 자료와 치울 자료를 나누는 기준입니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "김아이의 책상이 바로 컨텍스트입니다.",
-          "message": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.",
+          "title": "책상 정리(Context)은 책상 위 판단 재료를 정리하는 일입니다.",
+          "message": "컨텍스트 정리는 김아이가 이번 작업에서 볼 자료와 치울 자료를 나누는 기준입니다.",
           "bullets": [
-            "책상",
-            "판단 재료",
+            "책상 위 판단 재료",
             "Context",
-            "Context Curation"
+            "이미 본 책상 정리(Context)을 정리 기준으로 다시 묶습니다."
           ],
           "bridge": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
           "visualIntent": "Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림",
@@ -2179,13 +2481,13 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "김아이의 책상이 바로 컨텍스트입니다.",
-          "message": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.",
+          "headline": "책상 정리(Context)은 책상 위 판단 재료를 정리하는 일입니다.",
+          "message": "컨텍스트 정리는 김아이가 이번 작업에서 볼 자료와 치울 자료를 나누는 기준입니다.",
           "bridge": "컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.",
-          "metaphorTerm": "책상 위 자료",
+          "metaphorTerm": "책상 위 판단 재료",
           "realTerm": "Context",
-          "bridgeLine": "책상 위 자료와 실제 용어 Context를 함께 보여 줍니다.",
-          "supportingLine": "AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다."
+          "bridgeLine": "이미 본 책상 정리(Context)을 정리 기준으로 다시 묶습니다.",
+          "supportingLine": "컨텍스트 정리는 김아이가 이번 작업에서 볼 자료와 치울 자료를 나누는 기준입니다."
         },
         "componentData": {
           "metaphorTerm": "책상 위 자료",
@@ -2248,7 +2550,7 @@
     },
     {
       "id": "act1-context-curation-close",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002",
         "claim-004"
@@ -2256,7 +2558,7 @@
       "glossaryTerms": [
         "Context"
       ],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "새 작업은 새 책상에서 시작합니다.",
       "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
@@ -2440,12 +2742,14 @@
     },
     {
       "id": "act1-practice-handoff",
-      "section": "Act 1 · 책상 정리",
+      "section": "Act 1 · 책상 정리(Context)",
       "evidenceClaimIds": [
         "claim-002"
       ],
-      "glossaryTerms": [],
-      "sectionObjective": "수강생이 정보 선별을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
+      "glossaryTerms": [
+        "Context"
+      ],
+      "sectionObjective": "수강생이 책상 정리을 김아이 책상에 올릴 자료와 치울 자료를 정하는 Context Curation으로 이해한다.",
       "estimatedMinutes": 1,
       "title": "첫 실습은 김아이 책상을 직접 정리하는 일입니다.",
       "message": "수강생은 보고서 목표를 읽고, 자료를 세 바구니로 나누고, 김아이가 무엇을 추측할지 확인합니다.",
@@ -2578,26 +2882,26 @@
     },
     {
       "id": "act2-work-handoff",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
-      "message": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+      "title": "업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다.",
+      "message": "정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다.",
       "bullets": [
-        "업무 지시",
-        "Prompt",
-        "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다."
+        "업무 지시(Prompt)",
+        "정리된 자료",
+        "자료를 일로 바꾸는 작업지시서입니다."
       ],
       "visualIntent": "정리된 책상 앞에서 팀장이 김아이에게 다음 일을 맡기려는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act2-work-handoff",
       "presenterCues": [
-        "Act 1에서 책상에 올릴 자료를 골랐다고 회수한다.",
-        "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
-        "이제 문제는 어떻게 일을 시킬 것인가다."
+        "정리된 Context를 회수한다.",
+        "업무 지시(Prompt)를 먼저 병기한다.",
+        "모호한 지시 위험으로 넘긴다."
       ],
       "bridge": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
-      "speakerNote": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+      "speakerNote": "Act 1에서 김아이 책상에 올릴 자료를 골랐다고 회수합니다. 일할 준비가 되었으면 업무 지시(Prompt)로 김아이에게 일을 맡긴다고 말합니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
@@ -2616,21 +2920,23 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
-        "message": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+        "headline": "업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다.",
+        "message": "정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다.",
         "bridge": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
         "metaphorTerm": "업무 지시",
         "realTerm": "Prompt",
-        "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.",
-        "supportingLine": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다."
+        "bridgeLine": "업무 지시는 Prompt 구조입니다.",
+        "supportingLine": "정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
-          "message": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+          "title": "업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다.",
+          "message": "정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다.",
           "bullets": [
-            "정리된 책상"
+            "업무 지시",
+            "Prompt",
+            "정리된 자료를 일로 바꾸는 작업지시서입니다."
           ],
           "bridge": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
           "visualIntent": "정리된 책상 앞에서 팀장이 김아이에게 다음 일을 맡기려는 손그림",
@@ -2640,13 +2946,13 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "책상을 정리했으면 이제 일을 맡길 차례입니다.",
-          "message": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.",
+          "headline": "업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다.",
+          "message": "정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다.",
           "bridge": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
           "metaphorTerm": "업무 지시",
           "realTerm": "Prompt",
-          "bridgeLine": "업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.",
-          "supportingLine": "일할 준비가 되었으면 김아이에게 일을 시켜야 합니다."
+          "bridgeLine": "업무 지시는 Prompt 구조입니다.",
+          "supportingLine": "정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다."
         },
         "componentData": {
           "metaphorTerm": "업무 지시",
@@ -2706,7 +3012,7 @@
     },
     {
       "id": "act2-vague-outcome-risk",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.",
@@ -2850,7 +3156,7 @@
     },
     {
       "id": "act2-unspoken-imagination",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "말하지 않은 부분은 김아이 혼자 상상합니다.",
@@ -2992,7 +3298,7 @@
     },
     {
       "id": "act2-input-output-principle",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "좋은 지시는 김아이와 질문하며 구체화합니다.",
@@ -3016,7 +3322,8 @@
         "claim-003"
       ],
       "glossaryTerms": [
-        "Prompt Engineering"
+        "Prompt Engineering",
+        "Prompt"
       ],
       "qualityChecks": [
         "Prompt Engineering 용어 소개보다 김아이와 함께 지시를 구체화하는 절차가 먼저 보인다.",
@@ -3149,7 +3456,7 @@
     },
     {
       "id": "act2-handoff-document",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.",
@@ -3173,7 +3480,8 @@
         "claim-003"
       ],
       "glossaryTerms": [
-        "Task Specification"
+        "Task Specification",
+        "Prompt"
       ],
       "qualityChecks": [
         "인수인계서 표현을 작업지시서/spec 표현으로 바꾼다.",
@@ -3276,7 +3584,7 @@
     },
     {
       "id": "act2-materials-conditions",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
@@ -3454,7 +3762,7 @@
     },
     {
       "id": "act2-output-done-criteria",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
@@ -3462,7 +3770,7 @@
       "bullets": [
         "판정 기준",
         "Evaluation",
-        "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다."
+        "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다."
       ],
       "visualIntent": "인수인계서 마지막 부분에 형식, 마감, 확인 기준 체크가 있는 손그림",
       "visualType": "generated-image",
@@ -3478,7 +3786,8 @@
         "claim-003"
       ],
       "glossaryTerms": [
-        "Evaluation"
+        "Evaluation",
+        "Prompt"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
@@ -3497,7 +3806,7 @@
         "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
         "metaphorTerm": "판정 기준",
         "realTerm": "Evaluation",
-        "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
+        "bridgeLine": "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.",
         "supportingLine": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다."
       },
       "templateRewrite": {
@@ -3523,13 +3832,13 @@
           "bridge": "이 작업지시가 AI에게 주는 프롬프트입니다.",
           "metaphorTerm": "판정 기준",
           "realTerm": "Evaluation",
-          "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
+          "bridgeLine": "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.",
           "supportingLine": "보고서 형식, 마감, 확인 기준이 있어야 김아이가 언제 끝났는지 혼자 정하지 않는다."
         },
         "componentData": {
           "metaphorTerm": "판정 기준",
           "realTerm": "Evaluation",
-          "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다."
+          "bridgeLine": "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다."
         },
         "presenterCues": [
           "한 문장 결론: spec에는 출력 형식과 완료 기준도 들어갑니다.",
@@ -3586,33 +3895,31 @@
     },
     {
       "id": "act2-prompt-term-mapping",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
-      "title": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
-      "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+      "title": "업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다.",
+      "message": "프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다.",
       "bullets": [
-        "작업지시서",
-        "전달",
-        "Prompt",
-        "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다."
+        "업무 지시(Prompt)",
+        "목표, 자료, 조건",
+        "출력과 완료 기준을 고정합니다."
       ],
       "visualIntent": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act2-prompt-term-mapping",
       "presenterCues": [
-        "지금까지 목표, 자료, 조건, 출력, 완료 기준을 정리했다.",
-        "이 문서를 김아이에게 전달하는 순간, 이게 바로 프롬프트가 된다.",
-        "프롬프트는 특별한 주문이 아니라 김아이가 일을 시작할 수 있게 만든 작업지시서다."
+        "업무 지시(Prompt)를 다시 회수한다.",
+        "목표와 자료와 기준을 고정한다고 정리한다.",
+        "문장력보다 구조로 넘긴다."
       ],
       "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
-      "speakerNote": "지금까지 목표, 자료, 조건, 출력, 완료 기준을 정리했습니다. 이 문서를 김아이에게 전달하는 순간, 이게 바로 프롬프트가 됩니다. 프롬프트는 특별한 주문이나 예쁜 문장이 아니라, 김아이가 일을 시작할 수 있게 만든 작업지시서입니다. 그래서 좋은 프롬프트를 쓰려면 문장을 꾸미는 것보다, 빠진 항목이 없게 구조화하는 게 더 중요합니다.",
+      "speakerNote": "Act 0과 Act 2 첫 장에서 이미 본 업무 지시(Prompt)를 다시 회수합니다. 프롬프트는 이번 일을 맡기는 업무 지시이자 조건을 고정하는 작업 명세라고 정리합니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
       "glossaryTerms": [
-        "Prompt",
-        "Task Specification"
+        "Prompt"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
@@ -3626,23 +3933,23 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
-        "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+        "headline": "업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다.",
+        "message": "프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다.",
         "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
         "metaphorTerm": "작업지시서",
         "realTerm": "Prompt",
-        "bridgeLine": "작업지시서와 Prompt를 함께 보여 줍니다.",
-        "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
+        "bridgeLine": "빠진 항목 없는 업무 지시가 Prompt 구조입니다.",
+        "supportingLine": "프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
-          "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+          "title": "업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다.",
+          "message": "프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다.",
           "bullets": [
             "작업지시서",
-            "전달",
-            "Prompt"
+            "Prompt",
+            "목표, 자료, 조건, 출력, 완료 기준을 고정합니다."
           ],
           "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
           "visualIntent": "목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림",
@@ -3653,13 +3960,13 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "여러분이 만든 작업지시서가 프롬프트가 됩니다.",
-          "message": "프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.",
+          "headline": "업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다.",
+          "message": "프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다.",
           "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
           "metaphorTerm": "작업지시서",
           "realTerm": "Prompt",
-          "bridgeLine": "작업지시서와 Prompt를 함께 보여 줍니다.",
-          "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
+          "bridgeLine": "빠진 항목 없는 업무 지시가 Prompt 구조입니다.",
+          "supportingLine": "프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다."
         },
         "componentData": {
           "metaphorTerm": "작업지시서",
@@ -3723,7 +4030,7 @@
     },
     {
       "id": "act2-prompt-reframing",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 작업지시서로 이해시키고, 낡은 역할 흉내와 현대적 페르소나 사용을 구분한다.",
       "estimatedMinutes": 1,
       "title": "낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.",
@@ -3747,7 +4054,8 @@
         "claim-003"
       ],
       "glossaryTerms": [
-        "Prompt Engineering"
+        "Prompt Engineering",
+        "Prompt"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
@@ -3844,7 +4152,7 @@
     },
     {
       "id": "act2-persona-priority-filter",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "페르소나는 말투가 아니라 우선순위 필터입니다.",
@@ -3869,7 +4177,8 @@
       ],
       "glossaryTerms": [
         "Role Card",
-        "Prompt Engineering"
+        "Prompt Engineering",
+        "Prompt"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
@@ -3964,7 +4273,7 @@
     },
     {
       "id": "act2-practice-handoff",
-      "section": "Act 2 · 좋은 업무 지시",
+      "section": "Act 2 · 업무 지시(Prompt)",
       "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
       "estimatedMinutes": 1,
       "title": "첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.",
@@ -3988,7 +4297,8 @@
         "claim-003"
       ],
       "glossaryTerms": [
-        "Feedback Loop"
+        "Feedback Loop",
+        "Prompt"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
@@ -4107,33 +4417,34 @@
     },
     {
       "id": "act3-act1-context-recover",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
-      "title": "Prompt, Context, CLAUDE.md는 서로 다른 자리입니다.",
+      "title": "회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.",
       "message": "Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.",
       "bullets": [
-        "회사 내규",
-        "CLAUDE.md",
-        "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다."
+        "회사 내규(CLAUDE.md)",
+        "업무 지시(Prompt)",
+        "책상 위 자료(Context)"
       ],
       "visualIntent": "김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림",
       "visualType": "generated-image",
       "visualAssetId": "act3-act1-context-recover",
       "presenterCues": [
-        "Act 3의 기준표를 먼저 세운다.",
-        "Prompt는 팀장이 지금 내린 업무 지시다.",
-        "Context는 책상 위 작업 자료이고, CLAUDE.md는 김아이가 항상 따라야 하는 회사 내규다."
+        "회사 내규(CLAUDE.md)를 먼저 병기한다.",
+        "Prompt와 Context와 자리를 나눈다.",
+        "매번 지킬 기준으로 연결한다."
       ],
       "bridge": "회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.",
-      "speakerNote": "Act 3의 첫 기준은 Prompt, Context, CLAUDE.md의 자리를 나누는 것이다. Prompt는 팀장이 지금 내린 업무 지시다.",
+      "speakerNote": "Act 0 목차에서 본 회사 내규(CLAUDE.md)를 다시 회수합니다. Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 회사 내규라고 자리를 나눕니다.",
       "evidenceClaimIds": [
         "claim-003"
       ],
       "glossaryTerms": [
         "Prompt",
         "Context",
-        "CLAUDE.md"
+        "CLAUDE.md",
+        "Memory / CLAUDE.md"
       ],
       "qualityChecks": [
         "화면 메시지가 한 가지다.",
@@ -4148,23 +4459,23 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "Prompt, Context, CLAUDE.md는 서로 다른 자리입니다.",
+        "headline": "회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.",
         "message": "Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.",
         "bridge": "회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.",
         "metaphorTerm": "회사 내규",
         "realTerm": "CLAUDE.md",
-        "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
-        "supportingLine": "Act 3의 첫 기준은 Prompt, Context, CLAUDE.md의 자리를 나누는 것이다. Prompt는."
+        "bridgeLine": "회사 내규는 CLAUDE.md 기준입니다.",
+        "supportingLine": "Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "Prompt는 팀장이 지금 내린 업무 지시입니다.",
-          "message": "Act 3의 첫 기준은 Prompt, Context, CLAUDE.md의 자리를 나누는 것이다. Prompt는 팀장이 지금 내린 업무 지시다.",
+          "title": "회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.",
+          "message": "Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.",
           "bullets": [
-            "Prompt = 업무 지시",
-            "Context = 작업 자료",
-            "CLAUDE.md = 회사 내규"
+            "회사 내규",
+            "CLAUDE.md",
+            "지금 지시와 지금 자료와 매번 지킬 기준을 나눕니다."
           ],
           "bridge": "회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.",
           "visualIntent": "김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림",
@@ -4176,13 +4487,13 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "Prompt, Context, CLAUDE.md는 서로 다른 자리입니다.",
+          "headline": "회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.",
           "message": "Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.",
           "bridge": "회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.",
           "metaphorTerm": "회사 내규",
           "realTerm": "CLAUDE.md",
-          "bridgeLine": "회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.",
-          "supportingLine": "Act 3의 첫 기준은 Prompt, Context, CLAUDE.md의 자리를 나누는 것이다. Prompt는."
+          "bridgeLine": "회사 내규는 CLAUDE.md 기준입니다.",
+          "supportingLine": "Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다."
         },
         "componentData": {
           "metaphorTerm": "회사 내규",
@@ -4248,7 +4559,7 @@
     },
     {
       "id": "act3-rules-are-different",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.",
@@ -4381,7 +4692,7 @@
     },
     {
       "id": "act3-too-many-rules",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다.",
@@ -4516,7 +4827,7 @@
     },
     {
       "id": "act3-temporary-info-danger",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "CLAUDE.md는 적용 범위가 다른 지침입니다.",
@@ -4648,7 +4959,7 @@
     },
     {
       "id": "act3-good-rule-board-shape",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "가장 가까운 팀장님 지침이 더 강하게 적용됩니다.",
@@ -4774,7 +5085,7 @@
     },
     {
       "id": "act3-context-vs-claude-md",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.",
@@ -4914,7 +5225,7 @@
     },
     {
       "id": "act3-practice-handoff",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.",
@@ -5062,7 +5373,7 @@
     },
     {
       "id": "act3-to-act4-manual",
-      "section": "Act 3 · CLAUDE.md 회사 내규",
+      "section": "Act 3 · 회사 내규(CLAUDE.md)",
       "sectionObjective": "업무 지시(Prompt), 작업 자료(Context), 회사 내규(CLAUDE.md)를 구분하고 CLAUDE.md의 적용 범위와 과다 내규 위험을 이해시킨다.",
       "estimatedMinutes": 1,
       "title": "내규가 선이라면, 매뉴얼은 길입니다.",
@@ -5070,7 +5381,7 @@
       "bullets": [
         "업무 매뉴얼",
         "Skill",
-        "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다."
+        "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다."
       ],
       "visualIntent": "내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림",
       "visualType": "generated-image",
@@ -5107,7 +5418,7 @@
         "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
         "metaphorTerm": "업무 매뉴얼",
         "realTerm": "Skill",
-        "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+        "bridgeLine": "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.",
         "supportingLine": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다."
       },
       "templateRewrite": {
@@ -5134,7 +5445,7 @@
           "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
           "metaphorTerm": "업무 매뉴얼",
           "realTerm": "Skill",
-          "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+          "bridgeLine": "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.",
           "supportingLine": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다."
         },
         "componentData": {
@@ -5183,26 +5494,26 @@
     },
     {
       "id": "act4-repeated-work-instructions",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
-      "title": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
-      "message": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
+      "title": "업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.",
+      "message": "반복되는 작업은 매번 다시 말하지 않도록 실행 순서를 업무 매뉴얼(Skill)로 고정합니다.",
       "bullets": [
-        "매주 쓰는 회의 요약",
-        "매번 하는 자료 정리",
-        "자주 반복되는 리뷰 요청"
+        "반복 업무",
+        "실행 순서",
+        "업무 매뉴얼(Skill)"
       ],
       "visualIntent": "반복되는 작업에는 반복되는 지시가 따라옵니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
       "visualAssetId": "act4-repeated-work-instructions",
       "presenterCues": [
-        "반복되는 작업에는 반복되는 지시가 따라옵니다.",
-        "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
-        "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다."
+        "업무 매뉴얼(Skill)을 먼저 병기한다.",
+        "반복 업무의 실행 순서로 설명한다.",
+        "반복 지시 문제로 넘긴다."
       ],
       "bridge": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
-      "speakerNote": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
+      "speakerNote": "Act 0 목차에서 본 업무 매뉴얼(Skill)을 다시 회수합니다. 반복 작업은 자연스럽게 반복 지시를 만들고, 그 실행 순서를 매번 다시 말하지 않기 위해 업무 매뉴얼(Skill)로 고정한다고 말합니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
@@ -5221,25 +5532,25 @@
       "visualMode": "story-illustration",
       "mainTemplate": "opening-hero",
       "rewrittenScreen": {
-        "headline": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
-        "message": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
+        "headline": "업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.",
+        "message": "반복되는 작업은 매번 다시 말하지 않도록 실행 순서를 업무 매뉴얼(Skill)로 고정합니다.",
         "bridge": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
-        "heroLine": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
+        "heroLine": "업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.",
         "promiseBullets": [
-          "매주 쓰는 회의 요약",
-          "매번 하는 자료 정리",
-          "자주 반복되는 리뷰 요청"
+          "반복 업무",
+          "실행 순서",
+          "업무 매뉴얼(Skill)"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
-          "message": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
+          "title": "업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.",
+          "message": "반복되는 작업은 매번 다시 말하지 않도록 실행 순서를 업무 매뉴얼(Skill)로 고정합니다.",
           "bullets": [
-            "매주 쓰는 회의 요약",
-            "매번 하는 자료 정리",
-            "자주 반복되는 리뷰 요청"
+            "반복 업무",
+            "실행 순서",
+            "업무 매뉴얼(Skill)"
           ],
           "bridge": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
           "visualIntent": "반복되는 작업에는 반복되는 지시가 따라옵니다. 장면을 설명하는 hand-drawn minimal teaching asset",
@@ -5249,14 +5560,14 @@
         },
         "selectedTemplate": "opening-hero",
         "screenStructure": {
-          "headline": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
-          "message": "매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.",
+          "headline": "업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.",
+          "message": "반복되는 작업은 매번 다시 말하지 않도록 실행 순서를 업무 매뉴얼(Skill)로 고정합니다.",
           "bridge": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
-          "heroLine": "반복되는 작업에는 반복되는 지시가 따라옵니다.",
+          "heroLine": "업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.",
           "promiseBullets": [
-            "매주 쓰는 회의 요약",
-            "매번 하는 자료 정리",
-            "자주 반복되는 리뷰 요청"
+            "반복 업무",
+            "실행 순서",
+            "업무 매뉴얼(Skill)"
           ]
         },
         "componentData": {
@@ -5328,7 +5639,7 @@
     },
     {
       "id": "act4-human-bound-instructions",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.",
@@ -5504,7 +5815,7 @@
     },
     {
       "id": "act4-different-instruction-starts",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "매번 다른 지시는 김아이의 시작점을 흔듭니다.",
@@ -5646,7 +5957,7 @@
     },
     {
       "id": "act4-task-manual-outside",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "작업별 업무 매뉴얼을 만들어 사용해 봅시다.",
@@ -5822,7 +6133,7 @@
     },
     {
       "id": "act4-manual-candidate-check",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.",
@@ -6004,7 +6315,7 @@
     },
     {
       "id": "act4-not-everything-manual",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.",
@@ -6148,7 +6459,7 @@
     },
     {
       "id": "act4-manual-start-conditions",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.",
@@ -6325,7 +6636,7 @@
     },
     {
       "id": "act4-short-procedure",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.",
@@ -6539,7 +6850,7 @@
     },
     {
       "id": "act4-manual-supporting-materials",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.",
@@ -6734,26 +7045,26 @@
     },
     {
       "id": "act4-skill-term-mapping",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
-      "title": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+      "title": "업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.",
       "message": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
       "bullets": [
-        "업무 매뉴얼",
-        "Skill",
-        "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다."
+        "업무 매뉴얼(Skill)",
+        "호출 조건",
+        "절차, 참고자료, 출력 형식으로 나눕니다."
       ],
       "visualIntent": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
       "visualAssetId": "act4-skill-term-mapping",
       "presenterCues": [
-        "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
-        "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
-        "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다."
+        "업무 매뉴얼(Skill)을 다시 회수한다.",
+        "호출 조건과 절차 분리를 강조한다.",
+        "미니 브레인스토밍 Skill 실습으로 넘긴다."
       ],
       "bridge": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
-      "speakerNote": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
+      "speakerNote": "Act 0과 Act 4 첫 장에서 이미 본 업무 매뉴얼(Skill)을 다시 회수합니다. Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차라고 정리합니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-006"
@@ -6773,24 +7084,23 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+        "headline": "업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.",
         "message": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
         "bridge": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
         "metaphorTerm": "업무 매뉴얼",
         "realTerm": "Skill",
-        "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+        "bridgeLine": "업무 매뉴얼은 Skill 구조입니다.",
         "supportingLine": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+          "title": "업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.",
           "message": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
           "bullets": [
-            "호출 조건",
-            "짧은 절차",
-            "참고자료",
-            "출력 형식"
+            "업무 매뉴얼",
+            "Skill",
+            "호출 조건, 절차, 참고자료, 출력 형식으로 나눕니다."
           ],
           "bridge": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
           "visualIntent": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
@@ -6800,18 +7110,18 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
+          "headline": "업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.",
           "message": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.",
           "bridge": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
           "metaphorTerm": "업무 매뉴얼",
           "realTerm": "Skill",
-          "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+          "bridgeLine": "업무 매뉴얼은 Skill 구조입니다.",
           "supportingLine": "Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다."
         },
         "componentData": {
           "metaphorTerm": "업무 매뉴얼",
           "realTerm": "Skill",
-          "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다."
+          "bridgeLine": "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다."
         },
         "presenterCues": [
           "한 문장 결론: AI가 읽는 반복 업무 매뉴얼이 Skill입니다.",
@@ -6869,7 +7179,7 @@
     },
     {
       "id": "act4-practice-handoff",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.",
@@ -7020,7 +7330,7 @@
     },
     {
       "id": "act4-to-act5-roles",
-      "section": "Act 4 · 반복 업무 매뉴얼",
+      "section": "Act 4 · 업무 매뉴얼(Skill)",
       "sectionObjective": "반복되는 작업을 매번 다시 지시하지 않도록 작업별 업무 매뉴얼을 만들고, 이것이 Skill 구조로 이어짐을 이해한다.",
       "estimatedMinutes": 1,
       "title": "매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
@@ -7028,7 +7338,7 @@
       "bullets": [
         "업무 매뉴얼",
         "Skill",
-        "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다."
+        "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다."
       ],
       "visualIntent": "매뉴얼이 있어도 역할 판단은 분리해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
@@ -7045,7 +7355,7 @@
       ],
       "glossaryTerms": [
         "Skill",
-        "Agent / Subagent"
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -7064,7 +7374,7 @@
         "bridge": "다음 Act에서는 역할과 도구 권한을 나눕니다.",
         "metaphorTerm": "업무 매뉴얼",
         "realTerm": "Skill",
-        "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+        "bridgeLine": "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.",
         "supportingLine": "Skill은 반복 절차를 안정시키지만, 조사 판단과 구현 판단과 검토 판단을 한 역할이 모두 맡으면 여전히 섞일 수."
       },
       "templateRewrite": {
@@ -7081,7 +7391,7 @@
           "visualIntent": "매뉴얼이 있어도 역할 판단은 분리해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
             "Skill",
-            "Agent / Subagent"
+            "Agent"
           ]
         },
         "selectedTemplate": "term-bridge",
@@ -7091,13 +7401,13 @@
           "bridge": "다음 Act에서는 역할과 도구 권한을 나눕니다.",
           "metaphorTerm": "업무 매뉴얼",
           "realTerm": "Skill",
-          "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+          "bridgeLine": "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.",
           "supportingLine": "Skill은 반복 절차를 안정시키지만, 조사 판단과 구현 판단과 검토 판단을 한 역할이 모두 맡으면 여전히 섞일 수."
         },
         "componentData": {
           "metaphorTerm": "업무 매뉴얼",
           "realTerm": "Skill",
-          "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다."
+          "bridgeLine": "업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다."
         },
         "presenterCues": [
           "한 문장 결론: 매뉴얼이 있어도 역할 판단은 분리해야 합니다.",
@@ -7154,31 +7464,32 @@
     },
     {
       "id": "act5-kimai-does-everything",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
-      "title": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
-      "message": "매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.",
+      "title": "역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.",
+      "message": "업무 매뉴얼(Skill)이 있어도 조사, 작성, 검토를 한 명에게 모두 맡기면 판단이 섞입니다.",
       "bullets": [
-        "자료 찾기",
-        "결과물 만들기",
-        "제출 전 확인"
+        "조사 역할",
+        "작성 역할",
+        "검토 역할"
       ],
       "visualIntent": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
       "visualAssetId": "act5-kimai-does-everything",
       "presenterCues": [
-        "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
-        "매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.",
-        "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다."
+        "역할 카드(Agent)를 먼저 병기한다.",
+        "업무 매뉴얼(Skill)을 회수한다.",
+        "책임 분리 필요로 넘긴다."
       ],
       "bridge": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
-      "speakerNote": "매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.",
+      "speakerNote": "Act 0 목차에서 본 역할 카드(Agent)를 다시 회수합니다. 업무 매뉴얼(Skill)이 있어도 한 명에게 조사, 작성, 검토를 모두 맡기면 판단이 섞이므로 책임을 나눈 김아이 팀이 필요하다고 설명합니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
       "glossaryTerms": [
-        "Skill"
+        "Skill",
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -7192,25 +7503,25 @@
       "visualMode": "story-illustration",
       "mainTemplate": "opening-hero",
       "rewrittenScreen": {
-        "headline": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
-        "message": "매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.",
+        "headline": "역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.",
+        "message": "업무 매뉴얼(Skill)이 있어도 조사, 작성, 검토를 한 명에게 모두 맡기면 판단이 섞입니다.",
         "bridge": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
-        "heroLine": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
+        "heroLine": "역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.",
         "promiseBullets": [
-          "자료 찾기",
-          "결과물 만들기",
-          "제출 전 확인"
+          "조사 역할",
+          "작성 역할",
+          "검토 역할"
         ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
-          "message": "매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.",
+          "title": "역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.",
+          "message": "업무 매뉴얼(Skill)이 있어도 조사, 작성, 검토를 한 명에게 모두 맡기면 판단이 섞입니다.",
           "bullets": [
-            "자료 찾기",
-            "결과물 만들기",
-            "제출 전 확인"
+            "조사 역할",
+            "작성 역할",
+            "검토 역할"
           ],
           "bridge": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
           "visualIntent": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다. 장면을 설명하는 hand-drawn minimal teaching asset",
@@ -7220,14 +7531,14 @@
         },
         "selectedTemplate": "opening-hero",
         "screenStructure": {
-          "headline": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
-          "message": "매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.",
+          "headline": "역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.",
+          "message": "업무 매뉴얼(Skill)이 있어도 조사, 작성, 검토를 한 명에게 모두 맡기면 판단이 섞입니다.",
           "bridge": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
-          "heroLine": "김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.",
+          "heroLine": "역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.",
           "promiseBullets": [
-            "자료 찾기",
-            "결과물 만들기",
-            "제출 전 확인"
+            "조사 역할",
+            "작성 역할",
+            "검토 역할"
           ]
         },
         "componentData": {
@@ -7299,8 +7610,8 @@
     },
     {
       "id": "act5-company-approval-roles",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.",
       "message": "회사에서는 일을 맡은 담당자, 검토자, 승인자가 나뉘고 AI 업무도 같은 방식으로 책임을 나눌 수 있습니다.",
@@ -7322,7 +7633,9 @@
       "evidenceClaimIds": [
         "claim-001"
       ],
-      "glossaryTerms": [],
+      "glossaryTerms": [
+        "Agent"
+      ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
         "한 슬라이드에 한 메시지만 담긴다.",
@@ -7437,8 +7750,8 @@
     },
     {
       "id": "act5-new-hires-team",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "해야 할 일이 많아지면 다른 신입사원을 데려옵니다.",
       "message": "핵심은 사람 수가 아니라 조사, 작성, 검토의 책임 자리를 나누는 것입니다.",
@@ -7461,7 +7774,9 @@
         "claim-001",
         "claim-007"
       ],
-      "glossaryTerms": [],
+      "glossaryTerms": [
+        "Agent"
+      ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
         "한 슬라이드에 한 메시지만 담긴다.",
@@ -7576,8 +7891,8 @@
     },
     {
       "id": "act5-kimai-research-role",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "김아이는 근거를 찾고 모르는 것을 표시합니다.",
       "message": "김아이는 조사 역할을 맡아 자료를 찾고, 출처를 남기고, 모르는 것은 모른다고 표시합니다.",
@@ -7600,7 +7915,7 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Agent / Subagent"
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -7637,7 +7952,7 @@
           "bridge": "최아이는 정해진 지시와 자료로 결과물을 만듭니다.",
           "visualIntent": "김아이는 근거를 찾고 모르는 것을 표시합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
-            "Agent / Subagent"
+            "Agent"
           ]
         },
         "selectedTemplate": "kimai-structure",
@@ -7718,8 +8033,8 @@
     },
     {
       "id": "act5-choi-writing-role",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "최아이는 정해진 지시와 자료로 결과물을 만듭니다.",
       "message": "최아이는 작성 역할을 맡아 정해진 지시와 자료 안에서 보고서 초안을 만듭니다.",
@@ -7742,7 +8057,7 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Agent / Subagent"
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -7779,7 +8094,7 @@
           "bridge": "박아이는 제출 기준에 맞는지 확인합니다.",
           "visualIntent": "최아이는 정해진 지시와 자료로 결과물을 만듭니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
-            "Agent / Subagent"
+            "Agent"
           ]
         },
         "selectedTemplate": "kimai-structure",
@@ -7860,8 +8175,8 @@
     },
     {
       "id": "act5-park-review-role",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "박아이는 제출 기준에 맞는지 확인합니다.",
       "message": "박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.",
@@ -7876,15 +8191,15 @@
       "presenterCues": [
         "박아이는 제출 기준에 맞는지 확인합니다.",
         "박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.",
-        "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다."
+        "이런 역할 김아이를 Agent라고 부릅니다."
       ],
-      "bridge": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+      "bridge": "이런 역할 김아이를 Agent라고 부릅니다.",
       "speakerNote": "박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
       "glossaryTerms": [
-        "Agent / Subagent"
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -7900,7 +8215,7 @@
       "rewrittenScreen": {
         "headline": "박아이는 제출 기준에 맞는지 확인합니다.",
         "message": "박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.",
-        "bridge": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+        "bridge": "이런 역할 김아이를 Agent라고 부릅니다.",
         "criteria": [
           {
             "key": "기준 1",
@@ -7928,17 +8243,17 @@
             "빠진 항목 찾기",
             "보류 또는 통과 표시"
           ],
-          "bridge": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+          "bridge": "이런 역할 김아이를 Agent라고 부릅니다.",
           "visualIntent": "박아이는 제출 기준에 맞는지 확인합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
-            "Agent / Subagent"
+            "Agent"
           ]
         },
         "selectedTemplate": "decision-gate",
         "screenStructure": {
           "headline": "박아이는 제출 기준에 맞는지 확인합니다.",
           "message": "박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.",
-          "bridge": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+          "bridge": "이런 역할 김아이를 Agent라고 부릅니다.",
           "criteria": [
             {
               "key": "기준 1",
@@ -7977,7 +8292,7 @@
         "presenterCues": [
           "한 문장 결론: 박아이는 제출 기준에 맞는지 확인합니다.",
           "판정 기준: 기준표 대조, 빠진 항목 찾기, 보류 또는 통과 표시",
-          "다음 연결: 이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다."
+          "다음 연결: 이런 역할 김아이를 Agent라고 부릅니다."
         ],
         "visualRequirements": {
           "action": "keep-existing-crop-review-required",
@@ -8042,32 +8357,33 @@
     },
     {
       "id": "act5-agent-term-mapping",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
-      "title": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-      "message": "역할을 나눠 맡은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
+      "title": "역할 카드(Agent)는 지시문과 자료도 따로 가집니다.",
+      "message": "역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다.",
       "bullets": [
-        "역할 카드",
-        "Agent / Subagent",
-        "역할 카드와 실제 용어 Agent / Subagent를 함께 보여 줍니다."
+        "역할 카드(Agent)",
+        "Agent",
+        "지시문, 자료, 책임을 역할별로 나눕니다."
       ],
-      "visualIntent": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualIntent": "이런 역할 김아이를 Agent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
       "visualAssetId": "act5-agent-term-mapping",
       "presenterCues": [
-        "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-        "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
-        "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다."
+        "역할 카드(Agent)를 다시 회수한다.",
+        "지시문과 자료와 책임이 분리됨을 말한다.",
+        "역할별 매뉴얼(Skill)로 넘긴다."
       ],
       "bridge": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
-      "speakerNote": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
+      "speakerNote": "Act 0과 Act 5 첫 장에서 이미 본 역할 카드(Agent)를 다시 회수합니다. 각 역할은 지시문, 보는 자료, 맡은 책임이 다를 수 있다고 구조를 정리합니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-007"
       ],
       "glossaryTerms": [
-        "Agent / Subagent"
+        "Agent",
+        "Skill"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -8081,48 +8397,48 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-        "message": "역할을 나눠 맡은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
+        "headline": "역할 카드(Agent)는 지시문과 자료도 따로 가집니다.",
+        "message": "역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다.",
         "bridge": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
         "metaphorTerm": "역할 카드",
-        "realTerm": "Agent / Subagent",
-        "bridgeLine": "역할 카드와 실제 용어 Agent / Subagent를 함께 보여 줍니다.",
-        "supportingLine": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다."
+        "realTerm": "Agent",
+        "bridgeLine": "역할 카드는 Agent 구조입니다.",
+        "supportingLine": "역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-          "message": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
+          "title": "역할 카드(Agent)는 지시문과 자료도 따로 가집니다.",
+          "message": "역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다.",
           "bullets": [
-            "역할 지시문",
-            "따로 보는 자료",
-            "따로 맡은 책임"
+            "역할 카드",
+            "Agent",
+            "지시문, 자료, 책임을 역할별로 나눕니다."
           ],
           "bridge": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
-          "visualIntent": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+          "visualIntent": "이런 역할 김아이를 Agent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
-            "Agent / Subagent"
+            "Agent"
           ]
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-          "message": "역할을 나눠 맡은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
+          "headline": "역할 카드(Agent)는 지시문과 자료도 따로 가집니다.",
+          "message": "역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다.",
           "bridge": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
           "metaphorTerm": "역할 카드",
-          "realTerm": "Agent / Subagent",
-          "bridgeLine": "역할 카드와 실제 용어 Agent / Subagent를 함께 보여 줍니다.",
-          "supportingLine": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다."
+          "realTerm": "Agent",
+          "bridgeLine": "역할 카드는 Agent 구조입니다.",
+          "supportingLine": "역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다."
         },
         "componentData": {
           "metaphorTerm": "역할 카드",
-          "realTerm": "Agent / Subagent",
-          "bridgeLine": "역할 카드와 실제 용어 Agent / Subagent를 함께 보여 줍니다."
+          "realTerm": "Agent",
+          "bridgeLine": "역할 카드와 실제 용어 Agent를 함께 보여 줍니다."
         },
         "presenterCues": [
-          "한 문장 결론: 이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-          "회사말을 먼저 말하고 실제 용어 Agent / Subagent로 연결",
+          "한 문장 결론: 이런 역할 김아이를 Agent라고 부릅니다.",
+          "회사말을 먼저 말하고 실제 용어 Agent로 연결",
           "다음 연결: 각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다."
         ],
         "visualRequirements": {
@@ -8130,7 +8446,7 @@
           "visualAssetId": "act5-agent-term-mapping",
           "sourcePath": "assets/visuals/act5-agent-term-mapping.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.\n장면: 이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 역할 지시문 / 따로 보는 자료 / 따로 맡은 책임",
+          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 이런 역할 김아이를 Agent라고 부릅니다.\n장면: 이런 역할 김아이를 Agent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 역할 지시문 / 따로 보는 자료 / 따로 맡은 책임",
           "reviewChecks": [
             "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
             "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
@@ -8143,15 +8459,15 @@
           {
             "from": "title",
             "to": "headline",
-            "original": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
-            "changed": "이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.",
+            "original": "이런 역할 김아이를 Agent라고 부릅니다.",
+            "changed": "이런 역할 김아이를 Agent라고 부릅니다.",
             "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
           },
           {
             "from": "message",
             "to": "supportingMessage",
-            "original": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
-            "changed": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부릅니다.",
+            "original": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent라고 부릅니다.",
+            "changed": "역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent라고 부릅니다.",
             "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
           },
           {
@@ -8175,8 +8491,8 @@
     },
     {
       "id": "act5-new-hire-skill-assignment",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
       "message": "모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.",
@@ -8191,16 +8507,16 @@
       "presenterCues": [
         "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
         "모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.",
-        "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다."
+        "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다."
       ],
-      "bridge": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+      "bridge": "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
       "speakerNote": "모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
       "glossaryTerms": [
         "Skill",
-        "Agent / Subagent"
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -8216,7 +8532,7 @@
       "rewrittenScreen": {
         "headline": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
         "message": "모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.",
-        "bridge": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+        "bridge": "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
         "imageAnchors": [
           "조사 매뉴얼(Skill)",
           "작성 매뉴얼(Skill)",
@@ -8234,18 +8550,18 @@
             "작성 매뉴얼(Skill)",
             "검토 매뉴얼(Skill)"
           ],
-          "bridge": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+          "bridge": "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
           "visualIntent": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
           "glossaryTerms": [
             "Skill",
-            "Agent / Subagent"
+            "Agent"
           ]
         },
         "selectedTemplate": "kimai-structure",
         "screenStructure": {
           "headline": "각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
           "message": "모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.",
-          "bridge": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+          "bridge": "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
           "imageAnchors": [
             "조사 매뉴얼(Skill)",
             "작성 매뉴얼(Skill)",
@@ -8263,7 +8579,7 @@
         },
         "presenterCues": [
           "한 문장 결론: 각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.",
-          "다음 연결: 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다."
+          "다음 연결: 보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다."
         ],
         "visualRequirements": {
           "action": "single-image-first-generated-pilot",
@@ -8319,21 +8635,21 @@
     },
     {
       "id": "act5-security-permissions",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
-      "title": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+      "title": "도구 권한과 접근 구역은 맡은 일만큼만 줍니다.",
       "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
       "bullets": [
         "읽기 권한",
         "쓰기 권한",
         "실행 권한"
       ],
-      "visualIntent": "권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
+      "visualIntent": "도구 권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
       "visualType": "generated-image",
       "visualAssetId": "act5-security-permissions",
       "presenterCues": [
-        "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "도구 권한과 접근 구역은 맡은 일만큼만 줍니다.",
         "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 줍니다.",
         "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다."
       ],
@@ -8343,7 +8659,9 @@
         "claim-001",
         "claim-008"
       ],
-      "glossaryTerms": [],
+      "glossaryTerms": [
+        "Agent"
+      ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
         "한 슬라이드에 한 메시지만 담긴다.",
@@ -8356,7 +8674,7 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+        "headline": "도구 권한과 접근 구역은 맡은 일만큼만 줍니다.",
         "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
         "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
         "metaphorTerm": "권한 카드",
@@ -8367,7 +8685,7 @@
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+          "title": "도구 권한과 접근 구역은 맡은 일만큼만 줍니다.",
           "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
           "bullets": [
             "읽기 권한",
@@ -8375,12 +8693,12 @@
             "실행 권한"
           ],
           "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
-          "visualIntent": "권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
+          "visualIntent": "도구 권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.",
           "glossaryTerms": []
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+          "headline": "도구 권한과 접근 구역은 맡은 일만큼만 줍니다.",
           "message": "김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.",
           "bridge": "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.",
           "metaphorTerm": "권한 카드",
@@ -8394,7 +8712,7 @@
           "bridgeLine": "권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다."
         },
         "presenterCues": [
-          "권한과 접근 구역은 맡은 일만큼만 줍니다.",
+          "도구 권한과 접근 구역은 맡은 일만큼만 줍니다.",
           "읽기, 쓰기, 실행 권한을 역할에 맞게 나누어 줍니다.",
           "외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다."
         ],
@@ -8416,15 +8734,15 @@
           {
             "from": "title",
             "to": "headline",
-            "original": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
-            "changed": "보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+            "original": "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
+            "changed": "보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.",
             "reason": "템플릿 상단의 큰 결론 문장으로 사용한다."
           },
           {
             "from": "message",
             "to": "supportingMessage",
-            "original": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
-            "changed": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 줍니다.",
+            "original": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 도구 권한과 접근 구역만 줍니다.",
+            "changed": "모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 도구 권한과 접근 구역만 줍니다.",
             "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
           },
           {
@@ -8452,8 +8770,8 @@
     },
     {
       "id": "act5-mcp-partner-window",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
       "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
@@ -8477,7 +8795,8 @@
         "claim-008"
       ],
       "glossaryTerms": [
-        "MCP"
+        "MCP",
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -8596,8 +8915,8 @@
     },
     {
       "id": "act5-practice-handoff",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "실습에서는 에이전트 팀을 구현해 봅니다.",
       "message": "로컬 실행형 실습에서 역할 지시문, 매뉴얼(Skill), 권한, 실행 기록을 연결해 에이전트 팀을 구현해 봅니다.",
@@ -8622,7 +8941,7 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Agent / Subagent",
+        "Agent",
         "Skill",
         "MCP"
       ],
@@ -8663,7 +8982,7 @@
           "bridge": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
           "visualIntent": "별도 실습 화면으로 넘기는 handoff slide",
           "glossaryTerms": [
-            "Agent / Subagent",
+            "Agent",
             "Skill",
             "MCP"
           ]
@@ -8751,15 +9070,15 @@
     },
     {
       "id": "act5-team-to-act6-checkpoint",
-      "section": "Act 5 · 역할 분리와 도구 권한",
-      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent/Subagent, Skill 배정, Tool Permission, MCP를 이해한다.",
+      "section": "Act 5 · 역할 카드(Agent)",
+      "sectionObjective": "김아이, 최아이, 박아이 같은 역할 신입사원 비유로 Agent, Skill 배정, Tool Permission, MCP를 이해한다.",
       "estimatedMinutes": 1,
       "title": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-      "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
+      "message": "역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
       "bullets": [
         "검문소 스위치",
         "Hook",
-        "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다."
+        "검문소 스위치와 실제 용어 Hook을 함께 보여 줍니다."
       ],
       "visualIntent": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
@@ -8770,13 +9089,14 @@
         "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다."
       ],
       "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
-      "speakerNote": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+      "speakerNote": "역할 카드 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
       "evidenceClaimIds": [
         "claim-001"
       ],
       "glossaryTerms": [
         "Hook",
-        "Evaluation"
+        "Evaluation",
+        "Agent"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -8791,18 +9111,18 @@
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
         "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-        "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
+        "message": "역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
         "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
         "metaphorTerm": "검문소 스위치",
         "realTerm": "Hook",
-        "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-        "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
+        "bridgeLine": "검문소 스위치와 실제 용어 Hook을 함께 보여 줍니다.",
+        "supportingLine": "역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
           "title": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-          "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+          "message": "역할 카드 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
           "bullets": [
             "역할별 결과",
             "완료 보고",
@@ -8819,18 +9139,18 @@
         "selectedTemplate": "term-bridge",
         "screenStructure": {
           "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-          "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
+          "message": "역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
           "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
           "metaphorTerm": "검문소 스위치",
           "realTerm": "Hook",
-          "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-          "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
+          "bridgeLine": "검문소 스위치와 실제 용어 Hook을 함께 보여 줍니다.",
+          "supportingLine": "역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
         },
         "componentData": {
           "metaphorTerm": "검문소 스위치",
           "realTerm": "Hook",
-          "bridgeLine": "검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.",
-          "supportingLine": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
+          "bridgeLine": "검문소 스위치와 실제 용어 Hook을 함께 보여 줍니다.",
+          "supportingLine": "역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다."
         },
         "presenterCues": [
           "한 문장 결론: 팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
@@ -8862,8 +9182,8 @@
           {
             "from": "message",
             "to": "supportingMessage",
-            "original": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
-            "changed": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+            "original": "역할 카드 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+            "changed": "역할 카드 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
             "reason": "발표자 설명문이 아니라 화면에서 읽히는 짧은 보조문으로 압축한다."
           },
           {
@@ -8888,32 +9208,32 @@
     },
     {
       "id": "act6-required-pre-submit-check",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
-      "title": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-      "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+      "title": "완료 검문소(Hook)는 제출 직전 자동 확인입니다.",
+      "message": "결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다.",
       "bullets": [
-        "품질검문소",
-        "Quality Gate",
-        "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다."
+        "완료 검문소(Hook)",
+        "증거와 기준",
+        "제출 직전에 자동으로 확인합니다."
       ],
       "visualIntent": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
       "visualAssetId": "act6-required-pre-submit-check",
       "presenterCues": [
-        "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-        "품질검문소는 완료 보고를 그대로 믿지 않는 장치입니다.",
-        "그 검문소는 완료 보고 대신 증거를 봅니다."
+        "완료 검문소(Hook)를 먼저 병기한다.",
+        "제출 직전 자동 확인으로 설명한다.",
+        "증거 확인으로 넘긴다."
       ],
       "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
-      "speakerNote": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
+      "speakerNote": "Act 0 목차에서 본 완료 검문소(Hook)를 다시 회수합니다. 김아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 제출 직전에 자동 확인으로 빠진 항목과 기준 충족 여부를 본다고 말합니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-009"
       ],
       "glossaryTerms": [
-        "Quality Gate"
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -8927,23 +9247,23 @@
       "visualMode": "term-bridge",
       "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-        "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+        "headline": "완료 검문소(Hook)는 제출 직전 자동 확인입니다.",
+        "message": "결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다.",
         "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
-        "metaphorTerm": "품질검문소",
-        "realTerm": "Quality Gate",
-        "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
-        "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
+        "metaphorTerm": "완료 검문소",
+        "realTerm": "Hook",
+        "bridgeLine": "완료 검문소는 Hook 구조입니다.",
+        "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-          "message": "Quality Gate의 필요성만 소개하고, 기준 대조와 판정 세부 내용은 뒤 슬라이드에 맡깁니다.",
+          "title": "완료 검문소(Hook)는 제출 직전 자동 확인입니다.",
+          "message": "결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다.",
           "bullets": [
-            "제출 전 확인",
-            "빠진 항목 확인",
-            "통과 또는 보류"
+            "완료 검문소",
+            "Hook",
+            "제출 직전에 자동으로 증거와 기준을 확인합니다."
           ],
           "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
           "visualIntent": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다. 장면을 설명하는 hand-drawn minimal teaching asset",
@@ -8953,13 +9273,13 @@
         },
         "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.",
-          "message": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.",
+          "headline": "완료 검문소(Hook)는 제출 직전 자동 확인입니다.",
+          "message": "결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다.",
           "bridge": "그 검문소는 완료 보고 대신 증거를 봅니다.",
-          "metaphorTerm": "품질검문소",
-          "realTerm": "Quality Gate",
-          "bridgeLine": "품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.",
-          "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다."
+          "metaphorTerm": "완료 검문소",
+          "realTerm": "Hook",
+          "bridgeLine": "완료 검문소는 Hook 구조입니다.",
+          "supportingLine": "결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다."
         },
         "componentData": {
           "metaphorTerm": "품질검문소",
@@ -9022,7 +9342,7 @@
     },
     {
       "id": "act6-quality-gate-evidence-over-claim",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "품질검문소는 완료 보고 대신 증거를 봅니다.",
@@ -9032,9 +9352,6 @@
         "기준 대조",
         "남은 위험"
       ],
-      "visualIntent": "품질검문소는 완료 보고 대신 증거를 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset",
-      "visualType": "generated-image",
-      "visualAssetId": "act6-quality-gate-evidence-over-claim",
       "presenterCues": [
         "품질검문소는 완료 보고 대신 증거를 봅니다.",
         "작업 기록, 기준 대조, 남은 위험을 목차처럼 제시한다.",
@@ -9046,7 +9363,8 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Quality Gate"
+        "Quality Gate",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -9054,31 +9372,18 @@
         "실습 UI와 설명 슬라이드가 섞이지 않는다.",
         "다음 슬라이드 브릿지가 자연스럽다."
       ],
-      "layoutTemplate": "checklist",
-      "teachingMove": "demonstrate",
-      "audienceAction": "rehearse-checklist",
-      "visualMode": "checklist-board",
-      "mainTemplate": "decision-gate",
+      "layoutTemplate": "glossary-bridge",
+      "teachingMove": "connect",
+      "audienceAction": "connect-metaphor",
+      "visualMode": "term-bridge",
+      "mainTemplate": "term-bridge",
       "rewrittenScreen": {
         "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
         "message": "품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.",
-        "bridge": "먼저 작업 기록부터 보겠습니다.",
-        "criteria": [
-          {
-            "key": "기준 1",
-            "text": "작업 기록"
-          },
-          {
-            "key": "기준 2",
-            "text": "기준 대조"
-          },
-          {
-            "key": "판정",
-            "text": "남은 위험"
-          }
-        ],
-        "passLabel": "PASS",
-        "holdLabel": "HOLD"
+        "metaphorTerm": "품질검문소",
+        "realTerm": "Quality Gate",
+        "bridgeLine": "품질검문소는 Quality Gate 기준입니다.",
+        "supportingLine": "작업 기록, 기준 대조, 남은 위험을 보고 제출 가능 여부를 판단합니다."
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
@@ -9142,17 +9447,8 @@
           "다음 연결: 먼저 작업 기록부터 보겠습니다."
         ],
         "visualRequirements": {
-          "action": "keep-existing-crop-review-required",
-          "visualAssetId": "act6-quality-gate-evidence-over-claim",
-          "sourcePath": "assets/visuals/act6-quality-gate-evidence-over-claim.png",
-          "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 품질검문소는 완료 보고 대신 증거를 봅니다.\n장면: 품질검문소는 완료 보고 대신 증거를 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 작업 기록 / 기준 대조 / 남은 위험",
-          "reviewChecks": [
-            "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
-            "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
-            "흰 배경, 검은 선, #2563eb 포인트 외 장식을 넣지 않는다.",
-            "카드 프레임 안에서 캐릭터와 핵심 사물이 잘리지 않는다."
-          ]
+          "action": "use-css-term-bridge",
+          "note": "용어 연결 슬라이드는 기존 crop 이미지를 강제하지 않고 화면 텍스트와 term bridge 컴포넌트로 전달한다."
         },
         "rationale": "PASS/HOLD 또는 선택 기준을 확인해야 하는 장면이다.",
         "changes": [
@@ -9200,11 +9496,13 @@
           "appliedAt": "2026-05-31",
           "rule": "template-slot-copy-polish"
         }
-      }
+      },
+      "layoutVariant": "statement",
+      "visualIntent": "품질검문소와 Quality Gate 용어를 연결하는 텍스트 중심 term bridge 화면"
     },
     {
       "id": "act6-work-log-evidence",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "검증하려면 김아이가 작업 기록을 남겨야 합니다.",
@@ -9229,7 +9527,8 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Quality Gate"
+        "Quality Gate",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -9397,7 +9696,7 @@
     },
     {
       "id": "act6-goal-rubric-check",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "검증은 처음 목표와 제출 기준에 맞는지 대조합니다.",
@@ -9423,7 +9722,8 @@
       ],
       "glossaryTerms": [
         "Evaluation",
-        "Quality Gate"
+        "Quality Gate",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -9592,17 +9892,17 @@
     },
     {
       "id": "act6-risk-handoff-note",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
       "message": "통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.",
       "bullets": [
-        "못 한 확인",
-        "남은 위험",
-        "다음 조치"
+        "완료 검문소(Hook)",
+        "Stop Hook",
+        "제출 직전 자동 확인"
       ],
-      "visualIntent": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다. 장면을 설명하는 hand-drawn minimal teaching asset",
+      "visualIntent": "완료 검문소(Hook)와 Stop Hook 구체 장치를 병기해 연결하는 첫 용어 브릿지",
       "visualType": "generated-image",
       "visualAssetId": "act6-risk-handoff-note",
       "presenterCues": [
@@ -9616,7 +9916,8 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Quality Gate"
+        "Stop Hook",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -9624,13 +9925,13 @@
         "실습 UI와 설명 슬라이드가 섞이지 않는다.",
         "다음 슬라이드 브릿지가 자연스럽다."
       ],
-      "layoutTemplate": "assertion-evidence",
-      "teachingMove": "explain",
-      "audienceAction": "inspect-visual",
-      "visualMode": "story-illustration",
-      "mainTemplate": "assertion-scene",
+      "layoutTemplate": "glossary-bridge",
+      "teachingMove": "connect",
+      "audienceAction": "connect-metaphor",
+      "visualMode": "term-bridge",
+      "mainTemplate": "term-bridge",
       "rewrittenScreen": {
-        "headline": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
+        "headline": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
         "message": "통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.",
         "bridge": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
         "claim": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
@@ -9639,7 +9940,16 @@
           "남은 위험",
           "다음 조치"
         ],
-        "contrastLabel": "추측 대신 증거"
+        "contrastLabel": "추측 대신 증거",
+        "metaphorTerm": "완료 검문소",
+        "realTerm": "Stop Hook",
+        "bridgeLine": "완료 검문소(Hook)를 자동으로 켜는 구체 장치가 Stop Hook입니다.",
+        "supportingLine": "통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.",
+        "visualIntent": "완료 검문소(Hook)와 Stop Hook 구체 장치를 병기해 연결하는 첫 용어 브릿지",
+        "glossaryTerms": [
+          "Stop Hook",
+          "Hook"
+        ]
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
@@ -9657,9 +9967,9 @@
             "Quality Gate"
           ]
         },
-        "selectedTemplate": "assertion-scene",
+        "selectedTemplate": "term-bridge",
         "screenStructure": {
-          "headline": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
+          "headline": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
           "message": "통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.",
           "bridge": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
           "claim": "남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.",
@@ -9668,7 +9978,15 @@
             "남은 위험",
             "다음 조치"
           ],
-          "contrastLabel": "추측 대신 증거"
+          "contrastLabel": "추측 대신 증거",
+          "metaphorTerm": "완료 검문소",
+          "realTerm": "Stop Hook",
+          "bridgeLine": "완료 검문소(Hook)를 자동으로 켜는 구체 장치가 Stop Hook입니다.",
+          "supportingLine": "통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.",
+          "glossaryTerms": [
+            "Stop Hook",
+            "Hook"
+          ]
         },
         "componentData": {
           "sheetTitle": "요청서",
@@ -9731,38 +10049,42 @@
           "version": 1,
           "appliedAt": "2026-05-31",
           "rule": "template-slot-copy-polish"
-        }
-      }
+        },
+        "layoutTemplate": "glossary-bridge",
+        "mainTemplate": "term-bridge"
+      },
+      "templateSelectionReason": "first glossary use links 완료 검문소 metaphor to Stop Hook"
     },
     {
       "id": "act6-stop-hook-quality-gate",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
-      "title": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
+      "title": "Stop Hook은 완료 검문소(Hook)를 켜는 구체적인 장치입니다.",
       "message": "Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.",
       "bullets": [
-        "완료 직전",
+        "완료 검문소(Hook)",
         "자동 실행",
-        "Stop Hook"
+        "증거 확인"
       ],
       "visualIntent": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
       "visualAssetId": "act6-stop-hook-quality-gate",
       "presenterCues": [
-        "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
-        "Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.",
-        "통과와 보류를 가르는 기준이 Evaluation입니다."
+        "완료 검문소(Hook)를 다시 회수한다.",
+        "Stop Hook을 구체 장치로 설명한다.",
+        "Evaluation 기준으로 넘긴다."
       ],
       "bridge": "통과와 보류를 가르는 기준이 Evaluation입니다.",
-      "speakerNote": "Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.",
+      "speakerNote": "Act 0과 Act 6 첫 장에서 이미 본 완료 검문소(Hook)를 다시 회수합니다. Hook은 코드 문법보다 먼저 자동으로 켜지는 검문소로 이해하고, Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 켜는 구체적인 장치라고 정리합니다.",
       "evidenceClaimIds": [
         "claim-001",
         "claim-009"
       ],
       "glossaryTerms": [
         "Hook",
-        "Quality Gate"
+        "Stop Hook",
+        "Evaluation"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -9776,25 +10098,25 @@
       "visualMode": "story-illustration",
       "mainTemplate": "kimai-structure",
       "rewrittenScreen": {
-        "headline": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
+        "headline": "Stop Hook은 완료 검문소를 켜는 구체적인 장치입니다.",
         "message": "Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.",
         "bridge": "통과와 보류를 가르는 기준이 Evaluation입니다.",
         "imageAnchors": [
-          "완료 직전",
+          "완료 검문소(Hook)",
           "자동 실행",
-          "Stop Hook"
+          "증거 확인"
         ],
         "callout": "완료 직전"
       },
       "templateRewrite": {
         "sourceContractVersion": 1,
         "originalSource": {
-          "title": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
+          "title": "Stop Hook은 완료 검문소를 켜는 구체적인 장치입니다.",
           "message": "Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.",
           "bullets": [
-            "완료 직전",
+            "완료 검문소(Hook)",
             "자동 실행",
-            "Stop Hook"
+            "증거 확인"
           ],
           "bridge": "통과와 보류를 가르는 기준이 Evaluation입니다.",
           "visualIntent": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
@@ -9805,13 +10127,13 @@
         },
         "selectedTemplate": "kimai-structure",
         "screenStructure": {
-          "headline": "완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.",
+          "headline": "Stop Hook은 완료 검문소를 켜는 구체적인 장치입니다.",
           "message": "Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.",
           "bridge": "통과와 보류를 가르는 기준이 Evaluation입니다.",
           "imageAnchors": [
-            "완료 직전",
+            "완료 검문소(Hook)",
             "자동 실행",
-            "Stop Hook"
+            "증거 확인"
           ],
           "callout": "완료 직전"
         },
@@ -9881,7 +10203,7 @@
     },
     {
       "id": "act6-evaluation-pass-hold",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "통과와 보류를 가르는 기준이 Evaluation입니다.",
@@ -9889,7 +10211,7 @@
       "bullets": [
         "판정 기준",
         "Evaluation",
-        "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다."
+        "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다."
       ],
       "visualIntent": "통과와 보류를 가르는 기준이 Evaluation입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
@@ -9907,7 +10229,8 @@
       "glossaryTerms": [
         "Evaluation",
         "LLM judge",
-        "Quality Gate"
+        "Quality Gate",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -9926,7 +10249,7 @@
         "bridge": "검문소에는 지금 상태를 적는 상태표가 필요합니다.",
         "metaphorTerm": "판정 기준",
         "realTerm": "Evaluation",
-        "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
+        "bridgeLine": "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.",
         "supportingLine": "Evaluation은 단순 점수표가 아니라 무엇을 통과로 볼지 정하는 기준과 판정 과정입니다."
       },
       "templateRewrite": {
@@ -9954,13 +10277,13 @@
           "bridge": "검문소에는 지금 상태를 적는 상태표가 필요합니다.",
           "metaphorTerm": "판정 기준",
           "realTerm": "Evaluation",
-          "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.",
+          "bridgeLine": "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.",
           "supportingLine": "Evaluation은 단순 점수표가 아니라 무엇을 통과로 볼지 정하는 기준과 판정 과정입니다."
         },
         "componentData": {
           "metaphorTerm": "판정 기준",
           "realTerm": "Evaluation",
-          "bridgeLine": "판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다."
+          "bridgeLine": "판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다."
         },
         "presenterCues": [
           "한 문장 결론: 통과와 보류를 가르는 기준이 Evaluation입니다.",
@@ -10017,7 +10340,7 @@
     },
     {
       "id": "act6-state-status-file",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "검문소에는 지금 상태를 적는 상태표가 필요합니다.",
@@ -10041,7 +10364,8 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "State"
+        "State",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -10149,7 +10473,7 @@
     },
     {
       "id": "act6-loop-control-recheck",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.",
@@ -10173,7 +10497,9 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "State"
+        "State",
+        "Stop Hook",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -10331,7 +10657,7 @@
     },
     {
       "id": "act6-practice-handoff",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "실습에서는 제출 전 Stop Hook 검문소를 설계합니다.",
@@ -10357,7 +10683,8 @@
       ],
       "glossaryTerms": [
         "Hook",
-        "State"
+        "State",
+        "Stop Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -10477,7 +10804,7 @@
     },
     {
       "id": "act6-unlock-structure",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.",
@@ -10502,7 +10829,8 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Hook"
+        "Hook",
+        "Stop Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -10672,18 +11000,18 @@
     },
     {
       "id": "act6-final-harness-map",
-      "section": "Act 6 · 검증과 하네스 구조",
+      "section": "Act 6 · 완료 검문소(Hook)",
       "sectionObjective": "팀장에게 제출하기 전 필수검증을 품질검문소로 이해하고, Stop Hook, Evaluation, State, Loop가 그 검문소를 자동화하는 방식을 이해한다.",
       "estimatedMinutes": 1,
       "title": "하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.",
       "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
       "bullets": [
-        "정보 선별",
-        "업무 지시",
-        "회사 내규",
-        "업무 매뉴얼",
-        "역할과 권한",
-        "완료 검문소"
+        "책상 위 자료(Context)",
+        "업무 지시(Prompt)",
+        "회사 내규(CLAUDE.md)",
+        "업무 매뉴얼(Skill)",
+        "역할 카드(Agent)",
+        "완료 검문소(Hook)"
       ],
       "visualIntent": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset",
       "visualType": "generated-image",
@@ -10699,7 +11027,13 @@
         "claim-001"
       ],
       "glossaryTerms": [
-        "Harness Engineering"
+        "Harness Engineering",
+        "Context",
+        "Prompt",
+        "CLAUDE.md",
+        "Skill",
+        "Agent",
+        "Hook"
       ],
       "qualityChecks": [
         "회사 업무 비유가 먼저 보인다.",
@@ -10717,11 +11051,11 @@
         "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
         "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
         "mapNodes": [
-          "정보 선별",
+          "책상 정리",
           "업무 지시",
           "회사 내규",
           "업무 매뉴얼",
-          "역할과 권한",
+          "역할 카드",
           "완료 검문소"
         ]
       },
@@ -10731,11 +11065,11 @@
           "title": "하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.",
           "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 전체 업무 환경입니다.",
           "bullets": [
-            "정보 선별",
+            "책상 정리",
             "업무 지시",
             "회사 내규",
             "업무 매뉴얼",
-            "역할과 권한",
+            "역할 카드",
             "완료 검문소"
           ],
           "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
@@ -10750,21 +11084,21 @@
           "message": "하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.",
           "bridge": "그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.",
           "mapNodes": [
-            "정보 선별",
+            "책상 정리",
             "업무 지시",
             "회사 내규",
             "업무 매뉴얼",
-            "역할과 권한",
+            "역할 카드",
             "완료 검문소"
           ]
         },
         "componentData": {
           "mapNodes": [
-            "정보 선별",
+            "책상 정리",
             "업무 지시",
             "회사 내규",
             "업무 매뉴얼",
-            "역할과 권한",
+            "역할 카드",
             "완료 검문소"
           ]
         },
@@ -10777,7 +11111,7 @@
           "visualAssetId": "act6-final-harness-map",
           "sourcePath": "assets/visuals/act6-final-harness-map.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.\n장면: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 정보 선별 / 업무 지시 / 회사 내규",
+          "generationPrompt": "김아이 워크숍 슬라이드용 손그림 일러스트: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.\n장면: 하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset\n동일 캐릭터: AI 신입사원 김아이, 둥근 친근한 얼굴, 헤드셋 또는 작은 안테나, 파란 넥타이 또는 명찰, 명찰 텍스트 \"김아이\".\n스타일: 흰 배경, 검은 선화, 포인트 색 #2563eb 하나, 손으로 그린 듯한 단순한 강의 일러스트.\n금지: 사진풍, 3D, 그라데이션, glow, blur, glass, 복잡한 배경, 작은 한국어 문장, 잘린 캐릭터, 과한 색상.\n화면 앵커: 책상 정리 / 업무 지시 / 회사 내규",
           "reviewChecks": [
             "김아이 캐릭터가 기존 명찰/헤드셋/파란 포인트와 일치한다.",
             "이미지 안의 한국어는 큰 라벨만 허용하고 긴 문장은 slide text로 뺀다.",
@@ -10805,19 +11139,19 @@
             "from": "bullets",
             "to": "mapNodes",
             "original": [
-              "정보 선별",
+              "책상 정리",
               "업무 지시",
               "회사 내규",
               "업무 매뉴얼",
-              "역할과 권한",
+              "역할 카드",
               "완료 검문소"
             ],
             "changed": [
-              "정보 선별",
+              "책상 정리",
               "업무 지시",
               "회사 내규",
               "업무 매뉴얼",
-              "역할과 권한",
+              "역할 카드",
               "완료 검문소"
             ],
             "reason": "recap-map 구조에서 필요한 슬롯으로 재배치한다."
@@ -10935,7 +11269,7 @@
           "visualAssetId": "wrap-personal-harness-funnel",
           "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
           "characterConsistencyRef": "kimai-character-contract-v1",
-          "generationPrompt": "Use assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as strict Kimai character reference. Create a hand-drawn minimal Korean lecture illustration for the final wrap-up slide. Preserve Kimai exactly: friendly human-like AI new employee, round face, white unfilled hair outlined in black with one top curl and three simple bang shapes, over-ear headset with blue AI label, thin antenna, white collared shirt, blue necktie, readable 김아이 name badge. Composition: six top cards labeled 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소 flow into a central funnel with 자주 반복, 실패 위험, 검증 증거, then output to three bottom cards 반복 업무, 위험 업무, 검증 가능 and callout 3개부터. White background, black linework, #2563eb accent, large Korean labels only. No robot helmet, black filled hair, metal body, different mascot, circled numbers, panel numbers, UI, code, score, slide frame, crop marks, or clipped text/character.",
+          "generationPrompt": "Use assets/visuals/act0-kimai-capable-kimai-new-employee-single.png as strict Kimai character reference. Create a hand-drawn minimal Korean lecture illustration for the final wrap-up slide. Preserve Kimai exactly: friendly human-like AI new employee, round face, white unfilled hair outlined in black with one top curl and three simple bang shapes, over-ear headset with blue AI label, thin antenna, white collared shirt, blue necktie, readable 김아이 name badge. Composition: six top cards labeled 책상 정리, 업무 지시, 회사 내규, 업무 매뉴얼, 역할 카드, 완료 검문소 flow into a central funnel with 자주 반복, 실패 위험, 검증 증거, then output to three bottom cards 반복 업무, 위험 업무, 검증 가능 and callout 3개부터. White background, black linework, #2563eb accent, large Korean labels only. No robot helmet, black filled hair, metal body, different mascot, circled numbers, panel numbers, UI, code, score, slide frame, crop marks, or clipped text/character.",
           "reviewChecks": [
             "김아이가 act0-kimai-capable 기준 이미지의 흰 머리, 세 갈래 앞머리, AI 헤드셋, 안테나, 파란 넥타이, 김아이 명찰을 유지한다.",
             "6가지 장치에서 3가지 필터로 좁혀지는 흐름이 한눈에 보인다.",

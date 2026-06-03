@@ -1,8 +1,11 @@
 (() => {
   const glossary = window.DECK_GLOSSARY || [];
-  const glossaryTerms = glossary
+  const glossaryMatches = glossary
     .filter((item) => item.term && item.definition)
-    .sort((a, b) => b.term.length - a.term.length);
+    .flatMap((item) => [item.term, ...(Array.isArray(item.aliases) ? item.aliases : [])]
+      .filter(Boolean)
+      .map((label) => ({ label, item })))
+    .sort((a, b) => b.label.length - a.label.length);
 
   function escapeRegExp(value) {
     return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -33,17 +36,17 @@
   }
 
   function applyGlossary(root) {
-    if (!root || !glossaryTerms.length) return;
+    if (!root || !glossaryMatches.length) return;
     const ignoredSelector = "script, style, pre, code, a, button, input, textarea, select, [data-glossary]";
-    const pattern = new RegExp(`(?<![A-Za-z0-9])(${glossaryTerms.map((item) => escapeRegExp(item.term)).join("|")})(?![A-Za-z0-9])`, "gi");
-    const definitions = new Map(glossaryTerms.map((item) => {
+    const pattern = new RegExp(`(?<![A-Za-z0-9])(${glossaryMatches.map((match) => escapeRegExp(match.label)).join("|")})(?![A-Za-z0-9])`, "gi");
+    const definitions = new Map(glossaryMatches.map(({ label, item }) => {
       const parts = [
         item.koreanLabel ? `${item.koreanLabel}` : "",
         item.definition ? `정의: ${item.definition}` : "",
         item.analogy ? `비유: ${item.analogy}` : "",
         item.practiceMeaning ? `실습: ${item.practiceMeaning}` : "",
       ].filter(Boolean);
-      return [item.term.toLowerCase(), parts.join("\n")];
+      return [label.toLowerCase(), parts.join("\n")];
     }));
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const textNodes = [];

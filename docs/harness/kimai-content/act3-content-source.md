@@ -33,22 +33,22 @@ subfolder CLAUDE.md = 부서 규칙
 
 ## 2. Slide List
 
-### 3-1. Prompt는 팀장이 지금 내린 업무 지시입니다.
+### 3-1. 회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.
 
 Screen anchors:
 
 ```text
-Prompt = 업무 지시
-Context = 작업 자료
-CLAUDE.md = 회사 내규
+업무 지시(Prompt) = 지금 지시
+책상 정리(Context) = 지금 자료
+회사 내규(CLAUDE.md) = 매번 지킬 기준
 ```
 
 Presenter flow:
 
 ```text
 Act 3의 기준표를 먼저 세운다.
-Prompt는 팀장이 지금 내린 업무 지시다.
-Context는 책상 위 작업 자료이고, CLAUDE.md는 김아이가 항상 따라야 하는 회사 내규다.
+Act 0 목차에서 본 회사 내규(CLAUDE.md)를 다시 회수한다.
+Prompt는 팀장이 지금 내린 업무 지시이고, Context는 책상 위 작업 자료이며, CLAUDE.md는 김아이가 항상 따라야 하는 회사 내규라고 자리를 나눈다.
 ```
 
 Bridge:
@@ -72,7 +72,7 @@ Presenter flow:
 ```text
 회사 내규는 이번 보고서 자료가 아니다.
 출퇴근 시간, 업무 보고 체계, 징계 기준처럼 어떤 업무를 하든 기본으로 지켜야 하는 기준이다.
-뒤에서 이 회사 내규 문서가 CLAUDE.md라고 연결한다.
+이미 본 회사 내규(CLAUDE.md)가 왜 자료나 지시와 다른 자리인지 설명한다.
 ```
 
 Bridge:

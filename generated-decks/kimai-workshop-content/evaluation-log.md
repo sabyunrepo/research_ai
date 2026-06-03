@@ -7,7 +7,7 @@ node deck-harness/scripts/build-deck-from-spec.js generated-decks/kimai-workshop
 0
 
 ## Summarized Output
-Built 73 slides from slide-spec.json.
+Built 74 slides from slide-spec.json.
 
 ## Artifact Path
 generated-decks/kimai-workshop-content/assets/slides.js

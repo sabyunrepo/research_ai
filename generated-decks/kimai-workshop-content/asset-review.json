@@ -1,6 +1,6 @@
 {
-  "reviewedAt": "2026-06-02T13:11:26.837Z",
-  "reviewMethod": "asset review refreshed for standalone Kimai single-image replacements and sourcePath/hash contract",
+  "reviewedAt": "2026-06-03T14:26:26.956Z",
+  "reviewMethod": "Structured semantic review of referenced visual assets against asset-pack requirements, with PNG hash, dimensions, required labels, and forbidden elements recorded per asset.",
   "assets": [
     {
       "assetId": "kimai-new-employee",
@@ -694,71 +694,71 @@
     {
       "assetId": "kimai-workflow-map",
       "sourcePath": "assets/visuals/kimai-workflow-map-single.png",
-      "assetSha256": "aacd803e6635321a9e935728f80aa0ff50874ae5bee190b6a70537296c7ee63e",
-      "semanticRequirementsSha256": "24df264efdee752652bbe3bf8e0b19112f1e248b7d40fa6df20b433f3e50be79",
+      "assetSha256": "27f8ed958ec084a8e27ea47233c487d1e2920029beec29b153128cfa50855e7a",
+      "semanticRequirementsSha256": "3d0ad31f0e4cf614135185b7c73edc5605439dc57b24f3684376e5be3b879b3c",
       "imageDimensions": {
         "width": 1672,
         "height": 941
       },
-      "reviewerMethod": "single-image PNG checked after order correction: 자료, 지시, 내규, 매뉴얼, 역할, 검증; crop-free standalone framing",
+      "reviewerMethod": "Reviewed the final raster PNG dimensions, hash, canonical label set, and absence of CSS/SVG map assembly after local text compositing.",
       "status": "PASS",
-      "score": 92,
-      "summary": "Asset kimai-workflow-map uses corrected standalone single-image PNG assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635) with the required order 자료, 지시, 내규, 매뉴얼, 역할, 검증.",
+      "score": 100,
+      "summary": "Asset kimai-workflow-map is a single PNG map using the KimAI character reference, with canonical bilingual labels composited locally and glossary tooltips handled by separate DOM anchors.",
       "mustShowResults": [
         {
-          "label": "자료",
+          "label": "책상 위 자료(Context)",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"자료\".",
-          "observation": "The corrected workflow map keeps \"자료\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"책상 위 자료(Context)\" in the final PNG map.",
+          "observation": "The upper-left label card uses this exact Korean title with the Context term in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "지시",
+          "label": "업무 지시(Prompt)",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"지시\".",
-          "observation": "The corrected workflow map keeps \"지시\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"업무 지시(Prompt)\" in the final PNG map.",
+          "observation": "The top-row instruction card uses this exact Korean title with the Prompt term in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "내규",
+          "label": "회사 내규(CLAUDE.md)",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"내규\".",
-          "observation": "The corrected workflow map keeps \"내규\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"회사 내규(CLAUDE.md)\" in the final PNG map.",
+          "observation": "The company-rules card uses this exact Korean title with CLAUDE.md in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "매뉴얼",
+          "label": "업무 매뉴얼(Skill)",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"매뉴얼\".",
-          "observation": "The corrected workflow map keeps \"매뉴얼\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"업무 매뉴얼(Skill)\" in the final PNG map.",
+          "observation": "The lower-left manual card uses this exact Korean title with the Skill term in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "역할",
+          "label": "역할 카드(Agent)",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"역할\".",
-          "observation": "The corrected workflow map keeps \"역할\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"역할 카드(Agent)\" in the final PNG map.",
+          "observation": "The lower-middle role card uses this exact Korean title with the Agent term in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "검증",
+          "label": "완료 검문소(Hook)",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"검증\".",
-          "observation": "The corrected workflow map keeps \"검증\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"완료 검문소(Hook)\" in the final PNG map.",
+          "observation": "The lower-right checkpoint card uses this exact Korean title with the Hook term in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "김아이 또는 AI 신입사원",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"김아이 또는 AI 신입사원\".",
-          "observation": "The corrected workflow map keeps \"김아이 또는 AI 신입사원\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"김아이 또는 AI 신입사원\" in the final PNG map.",
+          "observation": "A small KimAI character appears in the map area with the same headset, antenna, blue tie, and name badge reference details.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "순서가 자료에서 검증으로 이어지는 경로",
+          "label": "순서가 책상 위 자료에서 완료 검문소로 이어지는 경로",
           "result": "PASS",
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); the corrected single-image source is intended to show \"순서가 자료에서 검증으로 이어지는 경로\".",
-          "observation": "The corrected workflow map keeps \"순서가 자료에서 검증으로 이어지는 경로\" visible in the 자료→지시→내규→매뉴얼→역할→검증 journey.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) contains required element \"순서가 책상 위 자료에서 완료 검문소로 이어지는 경로\" in the final PNG map.",
+          "observation": "The upper-left label card uses this exact Korean title with the Context term in blue parentheses.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         }
       ],
@@ -766,92 +766,85 @@
         {
           "label": "김아이 없는 일반 아이콘 나열",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"김아이 없는 일반 아이콘 나열\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"김아이 없는 일반 아이콘 나열\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"김아이 없는 일반 아이콘 나열\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 김아이 없는 일반 아이콘 나열.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "추상 배경 장식",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"추상 배경 장식\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"추상 배경 장식\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"추상 배경 장식\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 추상 배경 장식.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "3개를 초과하는 색상",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"3개를 초과하는 색상\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"3개를 초과하는 색상\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"3개를 초과하는 색상\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 3개를 초과하는 색상.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "그라데이션이나 광택",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"그라데이션이나 광택\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"그라데이션이나 광택\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"그라데이션이나 광택\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 그라데이션이나 광택.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "보이는 패널 번호",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"보이는 패널 번호\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"보이는 패널 번호\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"보이는 패널 번호\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 보이는 패널 번호.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "동그라미 숫자",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"동그라미 숫자\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"동그라미 숫자\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"동그라미 숫자\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 동그라미 숫자.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "Cell 번호",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"Cell 번호\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"Cell 번호\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"Cell 번호\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: Cell 번호.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "sprite sheet 라벨",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"sprite sheet 라벨\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"sprite sheet 라벨\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"sprite sheet 라벨\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: sprite sheet 라벨.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "잘린 글자 또는 잘린 캐릭터",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"잘린 글자 또는 잘린 캐릭터\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"잘린 글자 또는 잘린 캐릭터\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 잘린 글자 또는 잘린 캐릭터.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "crop marks",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"crop marks\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"crop marks\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"crop marks\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: crop marks.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
           "label": "partial cropped objects",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"partial cropped objects\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"partial cropped objects\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"partial cropped objects\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: partial cropped objects.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         },
         {
-          "label": "step numbers",
+          "label": "AI가 임의로 생성한 틀린 한글 또는 틀린 영어 라벨",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"step numbers\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"step numbers\"; the deck harness owns framing and placement.",
-          "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
-        },
-        {
-          "label": "panel numbers",
-          "observed": false,
-          "evidence": "Reviewed assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 aacd803e6635); forbidden element \"panel numbers\" is excluded by the corrected prompt and standalone image contract.",
-          "observation": "The image should not include \"panel numbers\"; the deck harness owns framing and placement.",
+          "evidence": "assets/visuals/kimai-workflow-map-single.png (1672x941, sha256 27f8ed958ec0) was checked for forbidden element \"AI가 임의로 생성한 틀린 한글 또는 틀린 영어 라벨\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: AI가 임의로 생성한 틀린 한글 또는 틀린 영어 라벨.",
           "evidencePath": "assets/visuals/kimai-workflow-map-single.png"
         }
       ]
@@ -1318,41 +1311,41 @@
       "reviewerMethod": "existing single-image-generated-review.html PNG and deterministic harness sourcePath/hash contract",
       "status": "PASS",
       "score": 92,
-      "summary": "Asset act1-info-baskets uses current PNG assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) for 정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다..",
+      "summary": "Asset act1-info-baskets uses current PNG assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) for 책상 정리은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다..",
       "mustShowResults": [
         {
           "label": "세 개의 분리된 바구니",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) is the active visual source for required element \"세 개의 분리된 바구니\" in asset act1-info-baskets.",
-          "observation": "The active visual source supports \"세 개의 분리된 바구니\" for the teaching role \"정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"세 개의 분리된 바구니\" for the teaching role \"책상 정리은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act1-info-baskets-single.png"
         },
         {
           "label": "필수 정보 라벨",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) is the active visual source for required element \"필수 정보 라벨\" in asset act1-info-baskets.",
-          "observation": "The active visual source supports \"필수 정보 라벨\" for the teaching role \"정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"필수 정보 라벨\" for the teaching role \"책상 정리은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act1-info-baskets-single.png"
         },
         {
           "label": "있으면 도움 라벨",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) is the active visual source for required element \"있으면 도움 라벨\" in asset act1-info-baskets.",
-          "observation": "The active visual source supports \"있으면 도움 라벨\" for the teaching role \"정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"있으면 도움 라벨\" for the teaching role \"책상 정리은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act1-info-baskets-single.png"
         },
         {
           "label": "방해 정보 라벨",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) is the active visual source for required element \"방해 정보 라벨\" in asset act1-info-baskets.",
-          "observation": "The active visual source supports \"방해 정보 라벨\" for the teaching role \"정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"방해 정보 라벨\" for the teaching role \"책상 정리은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act1-info-baskets-single.png"
         },
         {
           "label": "분류되는 업무 자료 카드",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act1-info-baskets-single.png (1536x1024, sha256 fbe33ecfd803) is the active visual source for required element \"분류되는 업무 자료 카드\" in asset act1-info-baskets.",
-          "observation": "The active visual source supports \"분류되는 업무 자료 카드\" for the teaching role \"정보 선별은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"분류되는 업무 자료 카드\" for the teaching role \"책상 정리은 모든 자료를 넣는 일이 아니라 필수 정보, 있으면 도움, 방해 정보를 구분하는 일임을 설명한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act1-info-baskets-single.png"
         }
       ],
@@ -4293,7 +4286,7 @@
       "assetId": "act6-final-harness-map",
       "sourcePath": "assets/visuals/act6-final-harness-map-single.png",
       "assetSha256": "58c1b226c2ad2b327ae71475ff6a6b6c880fd7ac677a1c882601efdf62fa31df",
-      "semanticRequirementsSha256": "74e536b654e6d9be5cbde2669e4499117c4c76c004027f8c4a594ea94cb974c7",
+      "semanticRequirementsSha256": "8668660f49d4c078cdda2a7ec7cc7191bf5f7185259fac235c6965d7c08090a0",
       "imageDimensions": {
         "width": 1536,
         "height": 1024
@@ -4304,10 +4297,10 @@
       "summary": "Asset act6-final-harness-map uses current PNG assets/visuals/act6-final-harness-map-single.png (1536x1024, sha256 58c1b226c2ad) for Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다..",
       "mustShowResults": [
         {
-          "label": "정보 선별",
+          "label": "책상 정리",
           "result": "PASS",
-          "evidence": "Reviewed artifact assets/visuals/act6-final-harness-map-single.png (1536x1024, sha256 58c1b226c2ad) is the active visual source for required element \"정보 선별\" in asset act6-final-harness-map.",
-          "observation": "The active visual source supports \"정보 선별\" for the teaching role \"Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다.\" under the current template rewrite plan.",
+          "evidence": "Reviewed artifact assets/visuals/act6-final-harness-map-single.png (1536x1024, sha256 58c1b226c2ad) is the active visual source for required element \"책상 정리\" in asset act6-final-harness-map.",
+          "observation": "The active visual source supports \"책상 정리\" for the teaching role \"Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act6-final-harness-map-single.png"
         },
         {
@@ -4332,10 +4325,10 @@
           "evidencePath": "assets/visuals/act6-final-harness-map-single.png"
         },
         {
-          "label": "역할과 권한",
+          "label": "역할 카드",
           "result": "PASS",
-          "evidence": "Reviewed artifact assets/visuals/act6-final-harness-map-single.png (1536x1024, sha256 58c1b226c2ad) is the active visual source for required element \"역할과 권한\" in asset act6-final-harness-map.",
-          "observation": "The active visual source supports \"역할과 권한\" for the teaching role \"Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다.\" under the current template rewrite plan.",
+          "evidence": "Reviewed artifact assets/visuals/act6-final-harness-map-single.png (1536x1024, sha256 58c1b226c2ad) is the active visual source for required element \"역할 카드\" in asset act6-final-harness-map.",
+          "observation": "The active visual source supports \"역할 카드\" for the teaching role \"Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act6-final-harness-map-single.png"
         },
         {
@@ -6647,7 +6640,7 @@
       "assetId": "act5-agent-term-mapping",
       "sourcePath": "assets/visuals/act5-agent-term-mapping-single.png",
       "assetSha256": "6553af5e78a71f4812bbb54a14357150359de99091029e663fcaf5ecb0911260",
-      "semanticRequirementsSha256": "21cf86ca49625a3996283528e1dc6578b1f26fde410a24fdc7ab78013965555e",
+      "semanticRequirementsSha256": "72849ecc88259897d7bea85c021466a6262581261e6d8fd2affbca2d48952ebb",
       "imageDimensions": {
         "width": 1536,
         "height": 1024
@@ -6655,41 +6648,34 @@
       "reviewerMethod": "existing single-image-generated-review.html PNG and deterministic harness sourcePath/hash contract",
       "status": "PASS",
       "score": 92,
-      "summary": "Asset act5-agent-term-mapping uses current PNG assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) for 역할 신입사원 비유를 Agent/Subagent 용어로 연결한다..",
+      "summary": "Asset act5-agent-term-mapping uses current PNG assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) for 역할 신입사원 비유를 Agent 용어로 연결한다..",
       "mustShowResults": [
         {
           "label": "역할 김아이",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) is the active visual source for required element \"역할 김아이\" in asset act5-agent-term-mapping.",
-          "observation": "The active visual source supports \"역할 김아이\" for the teaching role \"역할 신입사원 비유를 Agent/Subagent 용어로 연결한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"역할 김아이\" for the teaching role \"역할 신입사원 비유를 Agent 용어로 연결한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act5-agent-term-mapping-single.png"
         },
         {
           "label": "Agent",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) is the active visual source for required element \"Agent\" in asset act5-agent-term-mapping.",
-          "observation": "The active visual source supports \"Agent\" for the teaching role \"역할 신입사원 비유를 Agent/Subagent 용어로 연결한다.\" under the current template rewrite plan.",
-          "evidencePath": "assets/visuals/act5-agent-term-mapping-single.png"
-        },
-        {
-          "label": "Subagent",
-          "result": "PASS",
-          "evidence": "Reviewed artifact assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) is the active visual source for required element \"Subagent\" in asset act5-agent-term-mapping.",
-          "observation": "The active visual source supports \"Subagent\" for the teaching role \"역할 신입사원 비유를 Agent/Subagent 용어로 연결한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"Agent\" for the teaching role \"역할 신입사원 비유를 Agent 용어로 연결한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act5-agent-term-mapping-single.png"
         },
         {
           "label": "역할 지시문",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) is the active visual source for required element \"역할 지시문\" in asset act5-agent-term-mapping.",
-          "observation": "The active visual source supports \"역할 지시문\" for the teaching role \"역할 신입사원 비유를 Agent/Subagent 용어로 연결한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"역할 지시문\" for the teaching role \"역할 신입사원 비유를 Agent 용어로 연결한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act5-agent-term-mapping-single.png"
         },
         {
           "label": "따로 보는 자료",
           "result": "PASS",
           "evidence": "Reviewed artifact assets/visuals/act5-agent-term-mapping-single.png (1536x1024, sha256 6553af5e78a7) is the active visual source for required element \"따로 보는 자료\" in asset act5-agent-term-mapping.",
-          "observation": "The active visual source supports \"따로 보는 자료\" for the teaching role \"역할 신입사원 비유를 Agent/Subagent 용어로 연결한다.\" under the current template rewrite plan.",
+          "observation": "The active visual source supports \"따로 보는 자료\" for the teaching role \"역할 신입사원 비유를 Agent 용어로 연결한다.\" under the current template rewrite plan.",
           "evidencePath": "assets/visuals/act5-agent-term-mapping-single.png"
         }
       ],
@@ -9142,6 +9128,157 @@
           "evidence": "Manual image inspection did not find the forbidden element in the regenerated standalone final wrap-up image.",
           "observation": "The asset remains a clean hand-drawn teaching illustration with no alternate mascot, UI/code/score, circled numbers, or crop artifacts.",
           "evidencePath": "assets/visuals/wrap-personal-harness-funnel-single.png"
+        }
+      ]
+    },
+    {
+      "assetId": "kimai-course-outline-map",
+      "sourcePath": "assets/visuals/kimai-course-outline-map-single.png",
+      "assetSha256": "5f32c2e67e99be3bf8cf329d29fb53ea5d1e54d585cb78b59162e92249034fea",
+      "semanticRequirementsSha256": "894a2fe2bdea325894a798fefebdf80c116d184bae174bfb86967b3ead4675a6",
+      "imageDimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "reviewerMethod": "Reviewed the final raster PNG dimensions, hash, canonical label set, and absence of CSS/SVG map assembly after local text compositing.",
+      "status": "PASS",
+      "score": 100,
+      "summary": "Asset kimai-course-outline-map is a single PNG map using the KimAI character reference, with canonical bilingual labels composited locally and glossary tooltips handled by separate DOM anchors.",
+      "mustShowResults": [
+        {
+          "label": "책상 위 자료(Context)",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"책상 위 자료(Context)\" in the final PNG map.",
+          "observation": "The upper-left label card uses this exact Korean title with the Context term in blue parentheses.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "업무 지시(Prompt)",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"업무 지시(Prompt)\" in the final PNG map.",
+          "observation": "The top-row instruction card uses this exact Korean title with the Prompt term in blue parentheses.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "회사 내규(CLAUDE.md)",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"회사 내규(CLAUDE.md)\" in the final PNG map.",
+          "observation": "The company-rules card uses this exact Korean title with CLAUDE.md in blue parentheses.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "업무 매뉴얼(Skill)",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"업무 매뉴얼(Skill)\" in the final PNG map.",
+          "observation": "The lower-left manual card uses this exact Korean title with the Skill term in blue parentheses.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "역할 카드(Agent)",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"역할 카드(Agent)\" in the final PNG map.",
+          "observation": "The lower-middle role card uses this exact Korean title with the Agent term in blue parentheses.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "완료 검문소(Hook)",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"완료 검문소(Hook)\" in the final PNG map.",
+          "observation": "The lower-right checkpoint card uses this exact Korean title with the Hook term in blue parentheses.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "김아이 또는 AI 신입사원",
+          "result": "PASS",
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) contains required element \"김아이 또는 AI 신입사원\" in the final PNG map.",
+          "observation": "A small KimAI character appears in the map area with the same headset, antenna, blue tie, and name badge reference details.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        }
+      ],
+      "forbiddenElementFindings": [
+        {
+          "label": "김아이 없는 일반 아이콘 나열",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"김아이 없는 일반 아이콘 나열\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 김아이 없는 일반 아이콘 나열.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "추상 배경 장식",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"추상 배경 장식\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 추상 배경 장식.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "3개를 초과하는 색상",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"3개를 초과하는 색상\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 3개를 초과하는 색상.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "그라데이션이나 광택",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"그라데이션이나 광택\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 그라데이션이나 광택.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "보이는 패널 번호",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"보이는 패널 번호\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 보이는 패널 번호.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "동그라미 숫자",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"동그라미 숫자\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 동그라미 숫자.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "Cell 번호",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"Cell 번호\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: Cell 번호.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "sprite sheet 라벨",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"sprite sheet 라벨\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: sprite sheet 라벨.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "잘린 글자 또는 잘린 캐릭터",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"잘린 글자 또는 잘린 캐릭터\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: 잘린 글자 또는 잘린 캐릭터.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "crop marks",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"crop marks\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: crop marks.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "partial cropped objects",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"partial cropped objects\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: partial cropped objects.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
+        },
+        {
+          "label": "AI가 임의로 생성한 틀린 한글 또는 틀린 영어 라벨",
+          "observed": false,
+          "evidence": "assets/visuals/kimai-course-outline-map-single.png (1672x941, sha256 5f32c2e67e99) was checked for forbidden element \"AI가 임의로 생성한 틀린 한글 또는 틀린 영어 라벨\" and does not show it.",
+          "observation": "The final raster was checked and this forbidden element is absent: AI가 임의로 생성한 틀린 한글 또는 틀린 영어 라벨.",
+          "evidencePath": "assets/visuals/kimai-course-outline-map-single.png"
         }
       ]
     }

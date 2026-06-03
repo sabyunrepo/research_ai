@@ -1,4 +1,4 @@
-# Act 6 Content Source: 검증과 하네스 구조
+# Act 6 Content Source: 완료 검문소(Hook)
 
 Generated: 2026-05-29
 Workspace: `/Users/byeonsanghun/goinfre/research_ai-kimai-content`
@@ -28,7 +28,7 @@ act6-stop-hook-checkpoint
 - Evaluation을 단순 점수표로만 설명하기
 - 실습 UI의 점수판, 검증 로그, 컴포넌트를 설명 슬라이드에 과하게 넣기
 - 100점 달성만으로 마무리하기
-- Agent/Subagent 역할 설계를 다시 자세히 설명하기
+- Agent 역할 설계를 다시 자세히 설명하기
 
 이전 Act에서 회수하는 것:
 
@@ -64,19 +64,19 @@ Act 6은 마지막 Act다.
 흐름:
 
 ```text
-Act 1~5 회수 -> 제출 전 필수검증 -> 완료 선언은 증거가 아님 -> 품질검문소는 증거를 봄 -> 작업 기록 -> 목표와 기준 대조 -> 남은 위험 보고 -> Stop Hook -> Evaluation/Quality Gate -> State -> Loop Control -> 실습과 unlock artifact -> 전체 하네스 지도
+Act 1~5 회수 -> 완료 검문소(Hook) 시작 -> 제출 전 필수검증 -> 완료 선언은 증거가 아님 -> 품질검문소는 증거를 봄 -> 작업 기록 -> 목표와 기준 대조 -> 남은 위험 보고 -> Stop Hook 구조 정리 -> Evaluation/Quality Gate -> State -> Loop Control -> 실습과 unlock artifact -> 전체 하네스 지도
 ```
 
 ## 4. Slide List
 
-### 6-1. 팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.
+### 6-1. 완료 검문소(Hook)는 제출 직전 자동 확인입니다.
 
 - Type: transition
-- Headline: `팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.`
-- Anchors: `제출 전 확인`, `빠진 항목 확인`, `통과 또는 보류`
+- Headline: `완료 검문소(Hook)는 제출 직전 자동 확인입니다.`
+- Anchors: `제출 직전`, `자동 확인`, `통과 또는 보류`
 - Harness concept: `Quality Gate(품질검문소)` - 완료로 인정하기 전에 통과해야 하는 필수 검증 단계
 - Visual Intent: 김아이 팀의 결과물이 팀장에게 가기 전 제출 전 확인대에 놓인 손그림
-- Speaker Flow: 김아이, 최아이, 박아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않는다고 말한다. 제출 전에는 빠진 항목과 기준 충족 여부를 확인하는 필수검증 과정이 필요하다.
+- Speaker Flow: Act 0 목차에서 본 완료 검문소(Hook)를 다시 회수한다. 김아이, 최아이, 박아이 팀이 결과물을 만들었어도 팀장에게 바로 제출하지 않고, 제출 직전에 자동 확인으로 빠진 항목과 기준 충족 여부를 본다고 말한다.
 - Bridge: `검증이 없으면 “끝냈습니다”라는 말만 남습니다.`
 - visualAssetId: `act6-required-pre-submit-check`
 
@@ -135,14 +135,14 @@ Act 1~5 회수 -> 제출 전 필수검증 -> 완료 선언은 증거가 아님 -
 - Bridge: `완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.`
 - visualAssetId: `act6-risk-handoff-note`
 
-### 6-7. 완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.
+### 6-7. Stop Hook은 완료 검문소를 켜는 구체적인 장치입니다.
 
-- Type: term mapping
-- Headline: `완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.`
+- Type: consolidation
+- Headline: `Stop Hook은 완료 검문소를 켜는 구체적인 장치입니다.`
 - Anchors: `완료 직전`, `자동 실행`, `Stop Hook`
 - Harness concept: `Hook(자동 실행 장치)`, `Stop Hook(완료 직전 검문소)` - AI가 멈추거나 완료하려는 순간 켜지는 검문소
 - Visual Intent: 김아이 팀이 완료하려는 순간 Stop Hook 검문소가 자동으로 켜지는 장면
-- Speaker Flow: Hook은 코드 문법보다 먼저 자동으로 켜지는 검문소로 이해한다. Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 켜는 장치다.
+- Speaker Flow: Act 0과 Act 6 첫 장에서 이미 본 완료 검문소(Hook)를 다시 회수한다. Hook은 코드 문법보다 먼저 자동으로 켜지는 검문소로 이해하고, Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 켜는 구체적인 장치라고 정리한다.
 - Bridge: `통과와 보류를 가르는 기준이 Evaluation입니다.`
 - visualAssetId: `act6-stop-hook-quality-gate`
 
@@ -205,8 +205,8 @@ Act 1~5 회수 -> 제출 전 필수검증 -> 완료 선언은 증거가 아님 -
 
 - Type: final system
 - Headline: `하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.`
-- Anchors: `정보 선별`, `업무 지시`, `회사 내규`, `업무 매뉴얼`, `역할과 권한`, `완료 검문소`
-- Harness concept: `End-to-End Harness(전체 업무 하네스)` - Prompt, Context, CLAUDE.md, Skill, Agent/Subagent, Tool Permission, Hook/Evaluation을 연결한 업무 환경
+- Anchors: `책상 정리`, `업무 지시`, `회사 내규`, `업무 매뉴얼`, `역할 카드(Agent)`, `완료 검문소`
+- Harness concept: `End-to-End Harness(전체 업무 하네스)` - Prompt, Context, CLAUDE.md, Skill, Agent, Tool Permission, Hook을 연결한 업무 환경
 - Visual Intent: Act 1~6 장치가 하나의 김아이 팀 업무 환경으로 연결된 최종 지도
 - Speaker Flow: 오늘 배운 장치를 하나로 묶는다. 하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 흔들려도 다시 기준으로 돌아오게 만드는 업무 환경이다.
 - Bridge: `이제 내 업무에 가져갈 장치부터 고르면 됩니다.`
@@ -294,8 +294,8 @@ Act 1~5 회수 -> 제출 전 필수검증 -> 완료 선언은 증거가 아님 -
 ### act6-final-harness-map
 
 - teachingRole: Act 1~6 장치가 김아이 팀 업무 환경으로 연결됨을 정리한다.
-- semanticRequirements: 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소가 하나의 지도에 연결되어야 한다.
-- generationPrompt: `Hand-drawn minimal Korean lecture illustration. Final Kimai team harness map connects 정보 선별, 업무 지시, 회사 내규, 업무 매뉴얼, 역할과 권한, 완료 검문소. White background, one blue accent.`
+- semanticRequirements: 책상 정리, 업무 지시, 회사 내규, 업무 매뉴얼, 역할 카드(Agent), 완료 검문소가 하나의 지도에 연결되어야 한다.
+- generationPrompt: `Hand-drawn minimal Korean lecture illustration. Final Kimai team harness map connects 책상 정리, 업무 지시, 회사 내규, 업무 매뉴얼, 역할 카드(Agent), 완료 검문소. White background, one blue accent.`
 - forbiddenElements: 추상 아이콘만 나열, 복잡한 기술 다이어그램, 그라데이션
 
 ## 6. Verification Checklist

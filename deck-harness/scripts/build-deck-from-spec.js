@@ -66,7 +66,7 @@ function resolveAssetPath(deckDir, sourcePath) {
 
 function writeText(filePath, text) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, text);
+  fs.writeFileSync(filePath, String(text).replace(/[ \t]+$/gm, ""));
 }
 
 function json(data) {
@@ -120,6 +120,8 @@ function screenModel(slide) {
       message: rewritten.message || slide.message,
       bullets: bulletsFromRewrittenScreen(slide.mainTemplate || mainTemplateForSlide(slide), rewritten),
       bridge: rewritten.bridge || slide.bridge || "",
+      forceVisibleBullets: Boolean(rewritten.forceVisibleBullets),
+      termAnchors: Array.isArray(rewritten.termAnchors) ? rewritten.termAnchors : [],
       rewritten,
     };
   }
@@ -133,6 +135,7 @@ function screenModel(slide) {
     message,
     bullets: anchors.length ? anchors : slide.bullets || [],
     bridge,
+    termAnchors: [],
   };
 }
 
@@ -558,6 +561,8 @@ function shouldCopyVisualForVariant(variant) {
 function shouldCopyVisualForSlide(slide, variant, mainTemplate) {
   if (!slide.visualAssetId) return false;
   if (mainTemplate === "practice-handoff") return false;
+  if (slide.templateRewrite?.visualRequirements?.action === "use-css-workflow-strip") return false;
+  if (slide.templateRewrite?.visualRequirements?.action === "use-text-outline") return false;
   if (!shouldCopyVisualForVariant(variant)) return false;
   if (!galleryTemplateComponents[mainTemplate]) return true;
   return mainTemplate === "kimai-structure" || templatePrefersImageAsset(mainTemplate);
@@ -614,12 +619,20 @@ function bulletListHtml(screen, variant) {
   return `<ul class="bullets">${screen.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>`;
 }
 
-function shouldShowGenericBullets(mainTemplate) {
-  return !galleryTemplateComponents[mainTemplate];
+function termAnchorListHtml(screen) {
+  const anchors = Array.isArray(screen.termAnchors) ? screen.termAnchors.filter(Boolean) : [];
+  if (!anchors.length) return "";
+  return `<div class="glossary-anchor-list" aria-label="용어사전 앵커">
+    ${anchors.map((anchor) => `<span class="glossary-anchor">${escapeHtml(anchor)}</span>`).join("")}
+  </div>`;
+}
+
+function shouldShowGenericBullets(mainTemplate, screen = {}) {
+  return Boolean(screen.forceVisibleBullets) || !galleryTemplateComponents[mainTemplate];
 }
 
 function sourceAnchorParityHtml(screen, mainTemplate) {
-  if (shouldShowGenericBullets(mainTemplate) || !Array.isArray(screen.bullets) || !screen.bullets.length) {
+  if (shouldShowGenericBullets(mainTemplate, screen) || !Array.isArray(screen.bullets) || !screen.bullets.length) {
     return "";
   }
   return `<div class="source-anchor-parity" hidden>${screen.bullets.map((bullet) => `<span>${escapeHtml(bullet)}</span>`).join("")}</div>`;
@@ -719,6 +732,7 @@ function conceptCenterLabel(slide, screen) {
 function galleryVisualComponentHtml(slide, screen, mainTemplate) {
   const config = galleryTemplateComponents[mainTemplate];
   if (!config) return "";
+  if (slide.templateRewrite?.visualRequirements?.action === "use-text-outline") return "";
   if (
     templatePrefersImageAsset(mainTemplate) &&
     slide.renderedVisualAsset &&
@@ -771,7 +785,7 @@ function galleryVisualComponentHtml(slide, screen, mainTemplate) {
   if (visual === "kimai-structure") {
     const src = slide.renderedVisualAsset || "../assets/visuals/act0-kimai-capable-kimai-new-employee.png";
     return `<div class="lc-visual lc-kimai-structure-visual" ${componentAttrs}>
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="${escapeHtml(src)}" alt="${escapeHtml(slide.visualIntent || screen.headline)}">
         </figure>
       </div>`;
@@ -864,7 +878,8 @@ function templateContentHtml(slide, screen, options) {
   const eyebrow = `<div class="eyebrow">${escapeHtml(slide.section || "")}</div>`;
   const headline = `<h2>${escapeHtml(screen.headline)}</h2>`;
   const message = `<p class="message">${escapeHtml(screen.message)}</p>`;
-  const visibleBullets = shouldShowGenericBullets(mainTemplate) ? bullets : "";
+  const termAnchors = termAnchorListHtml(screen);
+  const visibleBullets = shouldShowGenericBullets(mainTemplate, screen) ? bullets : "";
   const sourceAnchors = sourceAnchorParityHtml(screen, mainTemplate);
   const sourceSpec = sourceSpecParityHtml(slide);
   if (mainTemplate === "practice-handoff" && !media) {
@@ -872,6 +887,7 @@ function templateContentHtml(slide, screen, options) {
       ${eyebrow}
       ${headline}
       ${message}
+      ${termAnchors}
       ${sourceAnchors}
       ${sourceSpec}
       ${galleryVisualComponentHtml(slide, screen, mainTemplate)}
@@ -883,6 +899,7 @@ function templateContentHtml(slide, screen, options) {
       ${eyebrow}
       ${headline}
       ${message}
+      ${termAnchors}
       ${sourceAnchors}
       ${sourceSpec}
       ${visibleBullets}
@@ -897,7 +914,7 @@ function bridgeFooterHtml(bridge) {
 }
 
 function slideAttributionFooterHtml() {
-  return `<div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>`;
+  return `<div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>`;
 }
 
 function slideHtml(slide) {

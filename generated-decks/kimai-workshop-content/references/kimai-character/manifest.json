@@ -1,0 +1,29 @@
+{
+  "name": "kimai-character-reference",
+  "createdAt": "2026-06-03",
+  "purpose": "Stable project-local KimAI character reference for future generated deck images.",
+  "styleSummary": "Flat hand-drawn black line art on white background with one blue accent (#2563eb), cute Korean office AI assistant, headset antenna, blue tie, name badge.",
+  "files": [
+    {
+      "path": "kimai-turnaround-reference.png",
+      "sha256": "eb263c9a40bc2891c841298d9f1a9594a4f925067407dc86d0ad6ab299e82e13",
+      "sourceGeneratedImage": "/Users/sabyun/.codex/generated_images/019e8bdb-9475-7711-8cd8-dbfa7eb5e372/ig_0d3563852899b7c1016a202c334e948191934b6d48bc985746.png",
+      "use": "Front, three-quarter, side, and back character proportions."
+    },
+    {
+      "path": "kimai-expression-accessory-reference.png",
+      "sha256": "151795e272215549b2ef255e52b32619eea58d283a563c5b6c199d8e2111ee0a",
+      "sourceGeneratedImage": "/Users/sabyun/.codex/generated_images/019e8bdb-9475-7711-8cd8-dbfa7eb5e372/ig_0d3563852899b7c1016a202ccbee4881919e44056289d1b143.png",
+      "use": "Expressions, face shape, headset, antenna, tie, badge, laptop, checklist, document props."
+    },
+    {
+      "path": "kimai-pose-reference.png",
+      "sha256": "6719bebf59dc179aa0513be5efbf72962df7309d18e98fd6a756ee0f24537be6",
+      "sourceGeneratedImage": "/Users/sabyun/.codex/generated_images/019e8bdb-9475-7711-8cd8-dbfa7eb5e372/ig_0d3563852899b7c1016a202d1ad2fc8191bd7dec4f3405fd64.png",
+      "use": "Slide-ready desk, document, checklist, standing, and presenting poses."
+    }
+  ],
+  "textPolicy": "Use these images for character and style consistency only. Do not trust generated in-image text as source of truth. Exact Korean and English slide text should be rendered separately or composited locally.",
+  "promptTemplate": "prompt-template.md",
+  "designGuide": "design.md"
+}

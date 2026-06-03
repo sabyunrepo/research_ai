@@ -25,7 +25,7 @@ act4-skill-authoring
 - Skill을 좋은 프롬프트 예시나 답변 템플릿으로 외우게 만들기
 - CLAUDE.md 적용 범위와 적용 강도를 다시 자세히 설명하기
 - 실습 UI, 점수판, 입력 폼, 검증 로그를 설명 슬라이드 안에 넣기
-- Agent/Subagent 역할 분리와 Tool Permission을 자세히 설명하기
+- Agent 역할 분리와 Tool Permission을 자세히 설명하기
 - Hook, Evaluation, Quality Gate를 자세히 설명하기
 
 이전 Act에서 회수하는 것:
@@ -58,18 +58,18 @@ Skill은 답변 템플릿이 아니라, 김아이가 반복 업무를 같은 순
 흐름:
 
 ```text
-Act 3 내규 회수 -> 기준과 절차 구분 -> 반복 설명 문제 -> 매뉴얼 시작 조건 -> 매뉴얼 질문/확인 순서 -> 매뉴얼 결과물 -> Skill 용어 연결 -> 질문 먼저 하는 좋은 Skill -> 실습 이유 -> Act 5 브릿지
+Act 3 내규 회수 -> 업무 매뉴얼(Skill) 시작 -> 기준과 절차 구분 -> 반복 설명 문제 -> 매뉴얼 시작 조건 -> 매뉴얼 질문/확인 순서 -> 매뉴얼 결과물 -> Skill 구조 정리 -> 질문 먼저 하는 좋은 Skill -> 실습 이유 -> Act 5 브릿지
 ```
 
 ## 4. Slide List
 
-### 4-1. 반복되는 작업에는 반복되는 지시가 따라옵니다.
+### 4-1. 업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.
 
 - Type: transition
-- Headline: `반복되는 작업에는 반복되는 지시가 따라옵니다.`
-- Anchors: `매주 쓰는 회의 요약`, `매번 하는 자료 정리`, `자주 반복되는 리뷰 요청`
+- Headline: `업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.`
+- Anchors: `반복 업무`, `실행 순서`, `업무 매뉴얼(Skill)`
 - Visual Intent: 김아이가 같은 종류의 업무 요청을 여러 번 받는 장면을 손그림으로 보여 준다.
-- Speaker Flow: 반복 작업은 자연스럽게 반복 지시를 만든다고 말한다. 매주 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 같은 업무가 계속 돌아온다는 현실 비유로 시작한다.
+- Speaker Flow: Act 0 목차에서 본 업무 매뉴얼(Skill)을 다시 회수한다. 반복 작업은 자연스럽게 반복 지시를 만들고, 그 실행 순서를 매번 다시 말하지 않기 위해 업무 매뉴얼(Skill)로 고정한다고 말한다.
 - Bridge: `반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.`
 - visualAssetId: `act4-repeated-work-instructions`
 
@@ -153,13 +153,13 @@ Act 3 내규 회수 -> 기준과 절차 구분 -> 반복 설명 문제 -> 매뉴
 - Bridge: `AI가 읽는 반복 업무 매뉴얼이 Skill입니다.`
 - visualAssetId: `act4-manual-supporting-materials`
 
-### 4-10. AI가 읽는 반복 업무 매뉴얼이 Skill입니다.
+### 4-10. 업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.
 
-- Type: term mapping
-- Headline: `AI가 읽는 반복 업무 매뉴얼이 Skill입니다.`
+- Type: consolidation
+- Headline: `업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.`
 - Anchors: `호출 조건`, `짧은 절차`, `참고자료`, `출력 형식`
-- Visual Intent: 업무 매뉴얼 비유가 Skill / Reusable Procedure 용어로 연결되는 손그림.
-- Speaker Flow: 지금까지 말한 작업별 업무 매뉴얼이 하네스 용어로 Skill이라고 연결한다. Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차다.
+- Visual Intent: 업무 매뉴얼(Skill)의 호출 조건, 짧은 절차, 참고자료, 출력 형식이 분리된 손그림.
+- Speaker Flow: Act 0과 Act 4 첫 장에서 이미 본 업무 매뉴얼(Skill)을 다시 회수한다. Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차라고 정리한다.
 - Bridge: `실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.`
 - visualAssetId: `act4-skill-term-mapping`
 

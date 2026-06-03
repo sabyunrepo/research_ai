@@ -18,7 +18,7 @@ act5-local-team-run
 - 회사에서 담당자, 검토자, 승인자를 나누는 방식의 비유
 - 김아이, 최아이, 박아이에게 서로 다른 역할을 맡기는 구조
 - 각 신입사원이 자기 자리의 매뉴얼(Skill)만 보는 이유
-- 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념
+- 보안 도구 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념
 - MCP를 협력사에 요청을 보내는 공식 창구로 설명하는 흐름
 - 에이전트 팀 구현실습으로 넘어가는 브릿지
 
@@ -28,7 +28,7 @@ act5-local-team-run
 - MCP 서버 구현 세부, 설정 파일, 서버 코드를 설명하기
 - 영어 역할명만 먼저 던지기
 - 웹 채점형 실습 UI처럼 점수판, 입력 폼, 제출 버튼을 설명 슬라이드에 넣기
-- Hook/Evaluation 검문소를 자세히 설명하기
+- Hook 검문소를 자세히 설명하기
 
 이전 Act에서 회수하는 것:
 
@@ -59,18 +59,18 @@ Act 4에서 작업별 업무 매뉴얼을 만들었습니다.
 흐름:
 
 ```text
-Act 4 매뉴얼 회수 -> 김아이 혼자 하는 문제 -> 회사 결재 비유 -> 김아이/최아이/박아이 합류 -> 역할별 일 -> Agent/Subagent 용어 연결 -> 매뉴얼(Skill) 배정 -> 보안 권한/접근 구역 -> MCP 협력사 창구 -> 에이전트 팀 구현실습 -> Act 6 브릿지
+Act 4 업무 매뉴얼(Skill) 회수 -> 역할 카드(Agent) 시작 -> 김아이 혼자 하는 문제 -> 회사 결재 비유 -> 김아이/최아이/박아이 합류 -> 역할별 일 -> Agent 구조 정리 -> 매뉴얼(Skill) 배정 -> 보안 권한/접근 구역 -> MCP 협력사 창구 -> 에이전트 팀 구현실습 -> Act 6 브릿지
 ```
 
 ## 4. Slide List
 
-### 5-1. 김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.
+### 5-1. 역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.
 
 - Type: transition
-- Headline: `김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.`
-- Anchors: `자료 찾기`, `결과물 만들기`, `제출 전 확인`
+- Headline: `역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.`
+- Anchors: `조사 역할`, `작성 역할`, `검토 역할`
 - Visual Intent: 김아이가 자료 찾기, 결과물 만들기, 제출 전 확인을 한 책상에서 동시에 처리하며 헷갈리는 손그림
-- Speaker Flow: Act 4의 매뉴얼을 회수한다. 매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞인다고 설명한다.
+- Speaker Flow: Act 0 목차에서 본 역할 카드(Agent)를 다시 회수한다. 업무 매뉴얼(Skill)이 있어도 한 명에게 조사, 작성, 검토를 모두 맡기면 판단이 섞이므로 책임을 나눈 김아이 팀이 필요하다고 설명한다.
 - Bridge: `회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.`
 - visualAssetId: `act5-kimai-does-everything`
 
@@ -121,16 +121,16 @@ Act 4 매뉴얼 회수 -> 김아이 혼자 하는 문제 -> 회사 결재 비유
 - Anchors: `기준표 대조`, `빠진 항목 찾기`, `보류 또는 통과 표시`
 - Visual Intent: 박아이가 기준표와 결과물을 대조하고 보류/통과 도장을 찍는 손그림
 - Speaker Flow: 박아이는 검토 역할을 맡는다. 작성자가 스스로 괜찮다고 말하는 것을 그대로 믿지 않고, 제출 기준표에 맞는지 확인한다.
-- Bridge: `이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.`
+- Bridge: `이런 역할 김아이를 Agent라고 부릅니다.`
 - visualAssetId: `act5-park-review-role`
 
-### 5-7. 이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.
+### 5-7. 역할 카드(Agent)는 지시문과 자료도 따로 가집니다.
 
-- Type: term mapping
-- Headline: `이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.`
+- Type: consolidation
+- Headline: `역할 카드(Agent)는 지시문과 자료도 따로 가집니다.`
 - Anchors: `역할 지시문`, `따로 보는 자료`, `따로 맡은 책임`
-- Visual Intent: 김아이, 최아이, 박아이 역할 카드가 Agent/Subagent 용어로 연결되는 손그림
-- Speaker Flow: 이제 실제 용어를 연결한다. 역할을 나눠 맡은 김아이, 최아이, 박아이 같은 작업 단위를 Agent 또는 Subagent라고 부른다. 각 역할은 지시문, 보는 자료, 맡은 책임이 다를 수 있다.
+- Visual Intent: 김아이, 최아이, 박아이 역할 카드가 Agent 구조와 각자 다른 지시문, 자료, 책임으로 연결되는 손그림
+- Speaker Flow: Act 0과 Act 5 첫 장에서 이미 본 역할 카드(Agent)를 다시 회수한다. 각 역할은 지시문, 보는 자료, 맡은 책임이 다를 수 있다고 구조를 정리한다.
 - Bridge: `각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.`
 - visualAssetId: `act5-agent-term-mapping`
 
@@ -141,16 +141,16 @@ Act 4 매뉴얼 회수 -> 김아이 혼자 하는 문제 -> 회사 결재 비유
 - Anchors: `조사 매뉴얼(Skill)`, `작성 매뉴얼(Skill)`, `검토 매뉴얼(Skill)`
 - Visual Intent: 김아이, 최아이, 박아이에게 각자 다른 매뉴얼(Skill)이 배정된 손그림
 - Speaker Flow: Act 4의 Skill을 회수한다. 모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다르다고 설명한다.
-- Bridge: `보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.`
+- Bridge: `보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.`
 - visualAssetId: `act5-new-hire-skill-assignment`
 
-### 5-9. 보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.
+### 5-9. 보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.
 
 - Type: system
-- Headline: `보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.`
+- Headline: `보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.`
 - Anchors: `자료 열람 권한`, `문서 작성 권한`, `실행/검증 권한`, `접근 가능한 구역`
 - Visual Intent: 각 신입사원에게 다른 출입증과 접근 구역이 부여된 손그림
-- Speaker Flow: 도구 권한을 회사 보안 권한으로 설명한다. 모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 권한과 접근 구역만 준다.
+- Speaker Flow: 도구 권한을 회사 보안 권한으로 설명한다. 모든 신입사원에게 모든 열쇠를 주지 않고, 맡은 일에 맞는 도구 권한과 접근 구역만 준다.
 - Bridge: `MCP는 협력사에 요청을 보내는 공식 창구입니다.`
 - visualAssetId: `act5-security-permissions`
 
@@ -180,7 +180,7 @@ Act 4 매뉴얼 회수 -> 김아이 혼자 하는 문제 -> 회사 결재 비유
 - Headline: `팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.`
 - Anchors: `역할별 결과`, `완료 보고`, `제출 전 증거`, `다음 Act: 검문소`
 - Visual Intent: 김아이 팀이 결과물을 모았지만 제출 전 검문소의 증거칸이 아직 비어 있는 손그림
-- Speaker Flow: 역할과 권한 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요하다고 설명한다.
+- Speaker Flow: 역할 카드(Agent) 분리는 판단 섞임을 줄이지만, 팀이 끝냈다고 말해도 제출 전 확인은 별도로 필요하다고 설명한다.
 - Bridge: `다음 Act에서는 완료 전 검문소를 세웁니다.`
 - visualAssetId: `act5-team-to-act6-checkpoint`
 
@@ -230,9 +230,9 @@ Act 4 매뉴얼 회수 -> 김아이 혼자 하는 문제 -> 회사 결재 비유
 
 ### act5-agent-term-mapping
 
-- teachingRole: 역할 김아이 비유를 Agent/Subagent 용어로 연결한다.
-- semanticRequirements: 김아이, 최아이, 박아이 역할 카드가 Agent/Subagent 용어로 이어져야 한다. 역할 지시문, 따로 보는 자료, 따로 맡은 책임이 보여야 한다.
-- generationPrompt: `Hand-drawn minimal Korean lecture illustration. Role cards 김아이, 최아이, 박아이 connect to terms Agent and Subagent. Labels: 역할 지시문, 따로 보는 자료, 따로 맡은 책임. White background, one blue accent.`
+- teachingRole: 역할 김아이 비유를 Agent 용어로 연결한다.
+- semanticRequirements: 김아이, 최아이, 박아이 역할 카드가 Agent 용어로 이어져야 한다. 역할 지시문, 따로 보는 자료, 따로 맡은 책임이 보여야 한다.
+- generationPrompt: `Hand-drawn minimal Korean lecture illustration. Role cards 김아이, 최아이, 박아이 connect to terms Agent and Agent. Labels: 역할 지시문, 따로 보는 자료, 따로 맡은 책임. White background, one blue accent.`
 - forbiddenElements: 하네스라는 단어를 큰 제목으로 사용, 복잡한 기술 다이어그램, 작은 글씨
 
 ### act5-new-hire-skill-assignment
@@ -244,7 +244,7 @@ Act 4 매뉴얼 회수 -> 김아이 혼자 하는 문제 -> 회사 결재 비유
 
 ### act5-security-permissions
 
-- teachingRole: 보안 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다.
+- teachingRole: 보안 도구 권한과 접근 구역을 맡은 일에 맞게 주는 Tool Permission 개념을 설명한다.
 - semanticRequirements: 자료 열람 권한, 문서 작성 권한, 실행/검증 권한, 접근 가능한 구역이 역할별로 다르게 보여야 한다.
 - generationPrompt: `Hand-drawn minimal Korean lecture illustration. New hires receive different security badges and access zones: 자료 열람 권한, 문서 작성 권한, 실행/검증 권한, 접근 가능한 구역. White background, one blue accent.`
 - forbiddenElements: 모든 권한이 모두에게 열림, 서버 구현, 복잡한 UI

@@ -878,6 +878,33 @@ h2 {
   cursor: help;
 }
 
+.glossary-anchor-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 430px);
+  margin: 18px 0 0;
+}
+
+.glossary-anchor {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+  box-shadow: 3px 3px 0 rgba(37, 99, 235, 0.12);
+}
+
+.glossary-anchor .glossary-term {
+  border-bottom-width: 1px;
+}
+
 .glossary-popover {
   position: fixed;
   z-index: 200;
@@ -1160,12 +1187,12 @@ h2 {
 
 .slide-template--kimai-structure .visual-figure {
   width: min(100%, 610px);
-  padding: 12px;
-  border: 3px solid var(--line);
-  border-radius: 20px 12px 22px 14px;
-  background: #fff;
-  box-shadow: 9px 10px 0 #e8efff;
-  transform: rotate(-.7deg);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
 .slide-template--kimai-structure .visual-figure img {
@@ -2377,18 +2404,18 @@ h2 {
 .lc-kimai-image-frame {
   width: min(100%, 560px);
   margin: 0;
-  padding: 12px;
-  border: var(--lc-bold-stroke) solid var(--line);
-  border-radius: 21px 12px 23px 14px;
-  background: #fff;
-  box-shadow: var(--lc-paper-shadow);
-  transform: rotate(-.8deg);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
 .lc-kimai-image-frame img {
   display: block;
   width: 100%;
-  max-height: 330px;
+  max-height: 460px;
   object-fit: contain;
 }
 
@@ -3427,14 +3454,37 @@ h2 {
   </style>
 </head>
 <body>
-<section class="print-page" aria-label="Slide 1: 신입사원 김아이의 첫 출근날입니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act0-kimai-intro" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 1: 오늘의 강의 목차는 쉬운 이름과 실제 용어를 함께 기억합니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act0-course-outline-term-map" data-layout-template="glossary-bridge" data-main-template="kimai-structure" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="artifact-map" data-evidence-ids="claim-010" data-glossary-terms="Context Prompt CLAUDE.md Skill Agent Hook">
+    <section class="copy">
+      <div class="eyebrow">Act 0 · 오늘의 약속</div>
+      <h2>오늘의 장치는 쉬운 이름과 실제 용어를 함께 기억합니다.</h2>
+      <p class="message">쉬운 이름과 실제 용어를 한 쌍으로 먼저 보고, 각 Act에서 다시 반복합니다.</p>
+      <div class="glossary-anchor-list" aria-label="용어사전 앵커">
+    <span class="glossary-anchor">책상 위 자료(Context)</span><span class="glossary-anchor">업무 지시(Prompt)</span><span class="glossary-anchor">회사 내규(CLAUDE.md)</span><span class="glossary-anchor">업무 매뉴얼(Skill)</span><span class="glossary-anchor">역할 카드(Agent)</span><span class="glossary-anchor">완료 검문소(Hook)</span>
+  </div>
+
+      <div class="source-spec-parity" hidden><span>오늘의 강의 목차는 쉬운 이름과 실제 용어를 함께 기억합니다.</span><span>쉬운 이름 옆에 실제 용어를 계속 같이 보면서 각 Act를 진행합니다.</span><span>책상 위 자료(Context)</span><span>업무 지시(Prompt)</span><span>회사 내규(CLAUDE.md)</span><span>업무 매뉴얼(Skill)</span><span>역할 카드(Agent)</span><span>완료 검문소(Hook)</span><span>이제 오늘의 주인공 김아이를 만나보겠습니다.</span></div>
+
+      <div class="source-bridge-parity" hidden>이제 오늘의 주인공 김아이를 만나보겠습니다.</div>
+    </section>
+    <section class="slide-media" aria-label="김아이 캐릭터 옆에 여섯 강의 목차를 쉬운 이름과 실제 용어 병기로 보여 주는 이미지형 목차">
+      <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
+          <img src="assets/visuals/act0-course-outline-term-map-kimai-course-outline-map-single.png" alt="김아이 캐릭터 옆에 여섯 강의 목차를 쉬운 이름과 실제 용어 병기로 보여 주는 이미지형 목차">
+        </figure>
+      </div>
+    </section>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
+  </main></section>
+<section class="print-page" aria-label="Slide 2: 신입사원 김아이의 첫 출근날입니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act0-kimai-intro" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>신입사원 김아이의 첫 출근날입니다.</h2>
       <p class="message">청중을 팀장님으로 초대하고, 김아이를 새로 입사한 AI 신입사원으로 소개합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>안녕하세요, 팀장님!</span></div>
       <div class="source-spec-parity" hidden><span>신입사원 김아이의 첫 출근날입니다.</span><span>청중을 팀장님으로 초대하고, 김아이를 새로 입사한 AI 신입사원으로 소개합니다.</span><span>안녕하세요, 팀장님!</span><span>먼저 김아이가 어떤 신입사원인지 보겠습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>먼저 김아이가 어떤 신입사원인지 보겠습니다.</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
@@ -3448,73 +3498,77 @@ h2 {
         <span class="lc-workbench-card eval">증거<small>eval</small></span>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 2: 김아이는 뛰어난 신입사원입니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act0-kimai-capable" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 3: 김아이는 뛰어난 신입사원입니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act0-kimai-capable" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>김아이는 뛰어난 신입사원입니다.</h2>
       <p class="message">김아이는 아는 것이 많고, 일 처리가 빠르고, 말도 잘하는 뛰어난 신입사원입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>아는 것이 많고</span><span>일 처리가 빠르고</span><span>말도 잘합니다</span></div>
       <div class="source-spec-parity" hidden><span>김아이는 뛰어난 신입사원입니다.</span><span>김아이는 아는 것이 많고, 일 처리가 빠르고, 말도 잘하는 뛰어난 신입사원입니다.</span><span>아는 것이 많고</span><span>일 처리가 빠르고</span><span>말도 잘합니다</span><span>하지만 뛰어나다고 모든 걸 아는 것은 아닙니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>하지만 뛰어나다고 모든 걸 아는 것은 아닙니다.</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act0-kimai-capable-kimai-new-employee-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 3: 똑똑하다고 모든 걸 아는 것은 아닙니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act0-company-context" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 4: 똑똑하다고 모든 걸 아는 것은 아닙니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act0-company-context" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>똑똑하다고 모든 걸 아는 것은 아닙니다.</h2>
       <p class="message">김아이는 회사, 부서, 상품, 이번 요청을 먼저 알려 줘야 정확히 일합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>뭐 하는 회사?</span><span>뭐 하는 부서?</span><span>주력 상품은?</span></div>
       <div class="source-spec-parity" hidden><span>똑똑하다고 모든 걸 아는 것은 아닙니다.</span><span>김아이는 회사, 부서, 상품, 이번 요청을 먼저 알려 줘야 정확히 일합니다.</span><span>뭐 하는 회사?</span><span>뭐 하는 부서?</span><span>주력 상품은?</span><span>팀장님이 김아이에게 업무를 지시한다고 해 봅시다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>팀장님이 김아이에게 업무를 지시한다고 해 봅시다.</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act0-company-context-kimai-company-context-blanks-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 4: 팀장님의 첫 업무 지시가 도착했습니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act0-real-work-analogy" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 5: 팀장님의 첫 업무 지시가 도착했습니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act0-real-work-analogy" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>팀장님의 첫 업무 지시가 도착했습니다.</h2>
       <p class="message">제품, 사용 상황, 보고서 형식이 비면 김아이는 빈칸을 추측으로 채웁니다.</p>
+
       <div class="source-anchor-parity" hidden><span>어떤 제품인지?</span><span>어디에 쓸지?</span><span>보고서 형식은?</span></div>
       <div class="source-spec-parity" hidden><span>팀장님의 첫 업무 지시가 도착했습니다.</span><span>제품, 사용 상황, 보고서 형식이 비면 김아이는 빈칸을 추측으로 채웁니다.</span><span>어떤 제품인지?</span><span>어디에 쓸지?</span><span>보고서 형식은?</span><span>이 지시가 하네스 엔지니어링입니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>이 지시가 하네스 엔지니어링입니다.</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act0-real-work-analogy-kimai-report-request-gap-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 5: 하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act0-harness-concept" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Harness Engineering">
+<section class="print-page" aria-label="Slide 6: 하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act0-harness-concept" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Harness Engineering">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다.</h2>
       <p class="message">좋은 신입의 능력을 끌어내려면 잘 정돈된 책상, 명확한 지시, 최신 업무자료, 보고서 샘플이 필요합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>김아이의 업무 환경 설계</span><span>Harness Engineering</span><span>김아이의 업무 환경 설계와 실제 용어 Harness Engineering를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다.</span><span>좋은 신입의 능력을 끌어내려면 잘 정돈된 책상, 명확한 지시, 최신 업무자료, 보고서 샘플이 필요합니다.</span><span>김아이의 업무 환경 설계</span><span>Harness Engineering</span><span>김아이의 업무 환경 설계와 실제 용어 Harness Engineering를 함께 보여 줍니다.</span><span>좀더 나은 결과물이 될수는 있지만 최초 원했던 결과물과 다를수 잇습니다</span></div>
-      
+
       <div class="source-bridge-parity" hidden>좀더 나은 결과물이 될수는 있지만 최초 원했던 결과물과 다를수 잇습니다</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
@@ -3522,16 +3576,17 @@ h2 {
         <img src="assets/visuals/act0-harness-concept-kimai-harness-desk-kit-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 6: 신입은 한 번에 완벽하게 일을 끝내지 못합니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act0-first-draft-limits" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 7: 신입은 한 번에 완벽하게 일을 끝내지 못합니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act0-first-draft-limits" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>신입은 한 번에 완벽하게 일을 끝내지 못합니다.</h2>
       <p class="message">좋은 신입도 첫 초안에서는 빠진 내용, 잘못 이해한 기준, 어색한 결과를 만들 수 있습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>빠진 내용</span><span>잘못 이해한 기준</span><span>어색한 결과</span></div>
       <div class="source-spec-parity" hidden><span>신입은 한 번에 완벽하게 일을 끝내지 못합니다.</span><span>좋은 신입도 첫 초안에서는 빠진 내용, 잘못 이해한 기준, 어색한 결과를 만들 수 있습니다.</span><span>빠진 내용</span><span>잘못 이해한 기준</span><span>어색한 결과</span><span>그래서 체크리스트와 선임의 피드백이 필요합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>그래서 체크리스트와 선임의 피드백이 필요합니다.</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
@@ -3539,16 +3594,17 @@ h2 {
         <img src="assets/visuals/act0-first-draft-limits-kimai-first-draft-feedback-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 7: 체크리스트와 피드백이 보고서의 퀄리티를 높입니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act0-feedback-loop" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 8: 체크리스트와 피드백이 보고서의 퀄리티를 높입니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act0-feedback-loop" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>체크리스트와 피드백이 보고서의 퀄리티를 높입니다.</h2>
       <p class="message">체크리스트로 문제를 찾고, 피드백으로 고친 뒤, 다시 제출하면서 품질을 높입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>문제 찾기</span><span>수정 정하기</span><span>다시 제출</span></div>
       <div class="source-spec-parity" hidden><span>체크리스트와 피드백이 보고서의 퀄리티를 높입니다.</span><span>체크리스트로 문제를 찾고, 피드백으로 고친 뒤, 다시 제출하면서 품질을 높입니다.</span><span>문제 찾기</span><span>수정 정하기</span><span>다시 제출</span><span>오늘은 이 방식들을 바탕으로, 김아이를 최고의 사원으로 만드는 방법을 배워 봅시다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>오늘은 이 방식들을 바탕으로, 김아이를 최고의 사원으로 만드는 방법을 배워 봅시다.</div>
     </section>
     <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
@@ -3556,36 +3612,38 @@ h2 {
         <img src="assets/visuals/act0-feedback-loop-kimai-feedback-loop-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 8: 오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act0-journey-map" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 9: 오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act0-journey-map" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Context Prompt CLAUDE.md Skill Agent Hook">
     <section class="copy">
       <div class="eyebrow">Act 0 · 오늘의 약속</div>
       <h2>오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.</h2>
       <p class="message">오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.</p>
+      <div class="glossary-anchor-list" aria-label="용어사전 앵커">
+    <span class="glossary-anchor">책상 위 자료(Context)</span><span class="glossary-anchor">업무 지시(Prompt)</span><span class="glossary-anchor">회사 내규(CLAUDE.md)</span><span class="glossary-anchor">업무 매뉴얼(Skill)</span><span class="glossary-anchor">역할 카드(Agent)</span><span class="glossary-anchor">완료 검문소(Hook)</span>
+  </div>
       <div class="source-anchor-parity" hidden><span>자료</span><span>지시</span><span>내규</span><span>매뉴얼</span><span>역할</span><span>검증</span></div>
-      <div class="source-spec-parity" hidden><span>오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.</span><span>오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.</span><span>자료</span><span>지시</span><span>내규</span><span>매뉴얼</span><span>역할</span><span>검증</span><span>없음</span></div>
-      
-      <div class="source-bridge-parity" hidden>없음</div>
+      <div class="source-spec-parity" hidden><span>오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다.</span><span>오늘은 여섯 장치를 차례로 붙여 김아이가 흔들리지 않고 일하게 만듭니다.</span><span>책상 위 자료(Context)</span><span>업무 지시(Prompt)</span><span>회사 내규(CLAUDE.md)</span><span>업무 매뉴얼(Skill)</span><span>역할 카드(Agent)</span><span>완료 검문소(Hook)</span><span>이제 첫 단계인 책상 정리(Context), 즉 김아이 책상 위 자료로 들어갑니다.</span></div>
+
+      <div class="source-bridge-parity" hidden>이제 첫 단계인 책상 정리(Context), 즉 책상 정리로 들어갑니다.</div>
     </section>
-    <section class="slide-media" aria-label="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
+    <section class="slide-media" aria-label="김아이 우수사원 프로젝트의 여섯 장치를 책상 위 자료(Context)부터 완료 검문소(Hook)까지 병기형 카드 흐름으로 보여 주는 지도">
       <figure class="visual-figure visual-generated-image">
-        <img src="assets/visuals/act0-journey-map-kimai-workflow-map-single.png" alt="상사의 애매한 지시 앞에서 김아이가 빈칸을 바라보는 손그림 장면">
+        <img src="assets/visuals/act0-journey-map-kimai-workflow-map-single.png" alt="김아이 우수사원 프로젝트의 여섯 장치를 책상 위 자료(Context)부터 완료 검문소(Hook)까지 병기형 카드 흐름으로 보여 주는 지도">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 9: 우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act1-desk-cleanup-open" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-002" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 10: 책상 정리(Context)는 김아이 책상 위 자료부터 시작합니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act1-desk-cleanup-open" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-002" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
-      <h2>우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.</h2>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
+      <h2>책상 정리(Context)은 김아이 책상 정리부터 시작합니다.</h2>
       <p class="message">프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.</p>
-      <div class="source-anchor-parity" hidden><span>책상 정리</span><span>보고서 자료</span><span>추측 줄이기</span></div>
-      <div class="source-spec-parity" hidden><span>우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.</span><span>프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.</span><span>책상 정리</span><span>보고서 자료</span><span>추측 줄이기</span><span>지시를 받기전에 김아이는 책상을 정리해서 다음 지시를 받고 일할 준비가 되어있어야 합니다.
-왜냐?</span></div>
-      
-      <div class="source-bridge-parity" hidden>지시를 받기전에 김아이는 책상을 정리해서 다음 지시를 받고 일할 준비가 되어있어야 합니다.
-왜냐?</div>
+
+      <div class="source-anchor-parity" hidden><span>책상 정리(Context)</span><span>김아이 책상 정리</span><span>추측 줄이기</span></div>
+      <div class="source-spec-parity" hidden><span>책상 정리(Context)는 김아이 책상 위 자료부터 시작합니다.</span><span>프롬프트를 쓰기 전에 김아이가 무엇을 보고 일할지 정합니다.</span><span>책상 정리(Context)</span><span>책상 위 자료</span><span>추측 줄이기</span><span>김아이는 책상 위에 올라온 자료를 보고 일합니다.</span></div>
+
+      <div class="source-bridge-parity" hidden>김아이는 책상 위에 올라온 자료를 보고 일합니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
       <div class="lc-visual lc-workbench-visual" data-template-component="opening-hero" data-visual-component="workbench" data-source-component="workbench-visual" data-motion-cue="reveal-anchor" aria-hidden="true">
@@ -3598,35 +3656,37 @@ h2 {
         <span class="lc-workbench-card eval">증거<small>eval</small></span>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 10: 김아이는 책상 위에 올라온 자료를 보고 일합니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act1-desk-principle" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-002" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 11: 김아이는 책상 위에 올라온 자료를 보고 일합니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act1-desk-principle" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-002" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>김아이는 책상 위에 올라온 자료를 보고 일합니다.</h2>
       <p class="message">김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>보고 있는 자료</span><span>같이 놓인 기준</span><span>없는 정보</span></div>
-      <div class="source-spec-parity" hidden><span>김아이는 책상 위에 올라온 자료를 보고 일합니다.</span><span>김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.</span><span>보고 있는 자료</span><span>같이 놓인 기준</span><span>없는 정보</span><span>제대로 일을 할까요?</span></div>
-      
-      <div class="source-bridge-parity" hidden>제대로 일을 할까요?</div>
+      <div class="source-spec-parity" hidden><span>김아이는 책상 위에 올라온 자료를 보고 일합니다.</span><span>김아이가 보는 자료와 기준은 결과에 반영되고, 없는 정보는 김아이가 직접 상상합니다.</span><span>보고 있는 자료</span><span>같이 놓인 기준</span><span>없는 정보</span><span>이제 책상 위 자료(Context)가 김아이의 판단을 어떻게 바꾸는지 보겠습니다.</span></div>
+
+      <div class="source-bridge-parity" hidden>이제 책상 위 자료(Context)가 김아이의 판단을 어떻게 바꾸는지 보겠습니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act1-desk-principle-act1-desk-principle-single.png" alt="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 11: 책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act1-missing-materials" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-002" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 12: 책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act1-missing-materials" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-002" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.</h2>
       <p class="message">제품 리뷰자료 보고서에서 필요한 제품, 사용 상황, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.</p>
+
       <div class="source-anchor-parity" hidden><span>어떤 제품?</span><span>어디에 쓸지?</span><span>무엇과 비교?</span></div>
       <div class="source-spec-parity" hidden><span>책상에 필요한 자료가 없으면 김아이는 상상하기 시작합니다.</span><span>제품 리뷰자료 보고서에서 필요한 제품, 사용 상황, 비교 기준이 없으면 김아이가 그 빈칸을 상상으로 채웁니다.</span><span>어떤 제품?</span><span>어디에 쓸지?</span><span>무엇과 비교?</span><span>필요한 자료가 없어도 문제지만, 필요 없는 자료가 많아도 문제입니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>필요한 자료가 없어도 문제지만, 필요 없는 자료가 많아도 문제입니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
@@ -3634,16 +3694,17 @@ h2 {
         <img src="assets/visuals/act1-missing-materials-act1-missing-materials-single.png" alt="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 12: 책상이 어지러워도 김아이의 판단은 흔들립니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act1-messy-desk" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-002 claim-004" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 13: 책상이 어지러워도 김아이의 판단은 흔들립니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act1-messy-desk" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-002 claim-004" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>책상이 어지러워도 김아이의 판단은 흔들립니다.</h2>
       <p class="message">자료가 너무 많거나, 관련 없거나, 오래되면 김아이의 판단 기준이 흐려집니다.</p>
+
       <div class="source-anchor-parity" hidden><span>너무 많은 자료</span><span>관련 없는 자료</span><span>오래된 자료</span></div>
       <div class="source-spec-parity" hidden><span>책상이 어지러워도 김아이의 판단은 흔들립니다.</span><span>자료가 너무 많거나, 관련 없거나, 오래되면 김아이의 판단 기준이 흐려집니다.</span><span>너무 많은 자료</span><span>관련 없는 자료</span><span>오래된 자료</span><span>그래서 책상 위 자료는 세 바구니로 나눕니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>그래서 책상 위 자료는 세 바구니로 나눕니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
@@ -3651,16 +3712,17 @@ h2 {
         <img src="assets/visuals/act1-messy-desk-act1-messy-desk-single.png" alt="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 13: 책상 위 자료는 세 바구니로 나눕니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act1-info-baskets" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-002" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 14: 책상 위 자료는 세 바구니로 나눕니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act1-info-baskets" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-002" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>책상 위 자료는 세 바구니로 나눕니다.</h2>
       <p class="message">꼭 필요한 자료, 있으면 도움이 되는 자료, 지금은 치워야 할 자료로 나누어 판단을 단순하게 만듭니다.</p>
+
       <div class="source-anchor-parity" hidden><span>꼭 필요</span><span>있으면 도움</span><span>지금은 치움</span></div>
       <div class="source-spec-parity" hidden><span>책상 위 자료는 세 바구니로 나눕니다.</span><span>꼭 필요한 자료, 있으면 도움이 되는 자료, 지금은 치워야 할 자료로 나누어 판단을 단순하게 만듭니다.</span><span>꼭 필요</span><span>있으면 도움</span><span>지금은 치움</span><span>오늘 보고서에 필요한 자료만 책상 위에 올립니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>오늘 보고서에 필요한 자료만 책상 위에 올립니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
@@ -3668,16 +3730,17 @@ h2 {
         <img src="assets/visuals/act1-info-baskets-act1-info-baskets-single.png" alt="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 14: 오늘 보고서에 필요한 자료만 책상 위에 올립니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act1-report-desk-materials" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-002" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 15: 오늘 보고서에 필요한 자료만 책상 위에 올립니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act1-report-desk-materials" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-002" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>오늘 보고서에 필요한 자료만 책상 위에 올립니다.</h2>
       <p class="message">목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.</p>
+
       <div class="source-anchor-parity" hidden><span>목표: 제품 비교 분석</span><span>자료: 제품 상세 자료</span><span>지시: 사용 상황 및 비교 기준 반영</span><span>출력: 보고서 형식</span></div>
       <div class="source-spec-parity" hidden><span>오늘 보고서에 필요한 자료만 책상 위에 올립니다.</span><span>목표, 자료, 지시, 출력 네 가지를 구분해 제품 비교 분석에 필요한 것만 김아이 책상 위에 올립니다.</span><span>목표: 제품 비교 분석</span><span>자료: 제품 상세 자료</span><span>지시: 사용 상황 및 비교 기준 반영</span><span>출력: 보고서 형식</span><span>김아이의 책상이 바로 컨텍스트입니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>김아이의 책상이 바로 컨텍스트입니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
@@ -3688,16 +3751,17 @@ h2 {
         </div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 15: 김아이의 책상이 바로 컨텍스트입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act1-context-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-002 claim-004" data-glossary-terms="Context">
+<section class="print-page" aria-label="Slide 16: 책상 정리(Context)는 책상 위 판단 재료를 정리하는 일입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act1-context-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-002 claim-004" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
-      <h2>김아이의 책상이 바로 컨텍스트입니다.</h2>
-      <p class="message">AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.</p>
-      <div class="source-anchor-parity" hidden><span>책상 위 자료</span><span>Context</span><span>책상 위 자료와 실제 용어 Context를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>김아이의 책상이 바로 컨텍스트입니다.</span><span>AI가 이번 작업에서 참고하는 대화와 자료 공간을 Context라고 부릅니다.</span><span>책상 위 자료</span><span>Context</span><span>책상 위 자료와 실제 용어 Context를 함께 보여 줍니다.</span><span>컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.</span></div>
-      
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
+      <h2>책상 정리(Context)은 책상 위 판단 재료를 정리하는 일입니다.</h2>
+      <p class="message">컨텍스트 정리는 김아이가 이번 작업에서 볼 자료와 치울 자료를 나누는 기준입니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>책상 위 판단 재료</span><span>Context</span><span>이미 본 책상 정리(Context)을 정리 기준으로 다시 묶습니다.</span></div>
+      <div class="source-spec-parity" hidden><span>책상 정리(Context)는 책상 위 판단 재료를 정리하는 일입니다.</span><span>Context는 김아이가 이번 작업에서 볼 책상 위 자료이고, 책상 정리는 올릴 자료와 치울 자료를 나누는 기준입니다.</span><span>책상 위 판단 재료</span><span>Context</span><span>책상 정리(Context)를 정리 기준으로 다시 묶습니다.</span><span>컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.</span></div>
+
       <div class="source-bridge-parity" hidden>컨텍스트 정리는 책상에 올릴 것과 치울 것을 정하는 일입니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
@@ -3705,16 +3769,17 @@ h2 {
         <img src="assets/visuals/act1-context-mapping-act1-context-mapping-single.png" alt="Act 0의 보고서 빈칸 장면을 작게 회수하는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 16: 새 작업은 새 책상에서 시작합니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act1-context-curation-close" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-002 claim-004" data-glossary-terms="Context">
+<section class="print-page" aria-label="Slide 17: 새 작업은 새 책상에서 시작합니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act1-context-curation-close" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-002 claim-004" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>새 작업은 새 책상에서 시작합니다.</h2>
       <p class="message">이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>대화 초기화</span><span>필요 자료 읽기</span><span>웹 검색으로 보충</span><span>새 기준으로 시작</span></div>
       <div class="source-spec-parity" hidden><span>새 작업은 새 책상에서 시작합니다.</span><span>이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.</span><span>대화 초기화</span><span>필요 자료 읽기</span><span>웹 검색으로 보충</span><span>새 기준으로 시작</span><span>첫 실습은 김아이 책상을 직접 정리하는 일입니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>첫 실습은 김아이 책상을 직접 정리하는 일입니다.</div>
     </section>
     <section class="slide-media" aria-label="이전 자료를 치우고 새 작업 자료를 올리는 책상 정리 절차를 보여 주는 손그림">
@@ -3723,13 +3788,14 @@ h2 {
           <i class="lc-flow-line"></i>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 17: 첫 실습은 김아이 책상을 직접 정리하는 일입니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act1-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-002" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 18: 첫 실습은 김아이 책상을 직접 정리하는 일입니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act1-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-002" data-glossary-terms="Context">
     <section class="copy">
-      <div class="eyebrow">Act 1 · 책상 정리</div>
+      <div class="eyebrow">Act 1 · 책상 정리(Context)</div>
       <h2>첫 실습은 김아이 책상을 직접 정리하는 일입니다.</h2>
       <p class="message">수강생은 보고서 목표를 읽고, 자료를 세 바구니로 나누고, 김아이가 무엇을 추측할지 확인합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>보고서 목표 읽기</span><span>자료 바구니 나누기</span><span>빈칸 리포트 보기</span></div>
       <div class="source-spec-parity" hidden><span>첫 실습은 김아이 책상을 직접 정리하는 일입니다.</span><span>수강생은 보고서 목표를 읽고, 자료를 세 바구니로 나누고, 김아이가 무엇을 추측할지 확인합니다.</span><span>보고서 목표 읽기</span><span>자료 바구니 나누기</span><span>빈칸 리포트 보기</span><span>첫 문제는 제품 리뷰자료 보고서입니다.</span></div>
       <div class="lc-visual lc-practice-handoff-composite" data-template-component="practice-handoff" data-visual-component="handoff" data-source-component="practice-handoff-composite" data-motion-cue="handoff-list" aria-hidden="true">
@@ -3740,16 +3806,17 @@ h2 {
       </div>
       <div class="source-bridge-parity" hidden>첫 문제는 제품 리뷰자료 보고서입니다.</div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 18: 책상을 정리했으면 이제 일을 맡길 차례입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-work-handoff" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
+<section class="print-page" aria-label="Slide 19: 업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-work-handoff" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
-      <h2>책상을 정리했으면 이제 일을 맡길 차례입니다.</h2>
-      <p class="message">일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.</p>
-      <div class="source-anchor-parity" hidden><span>업무 지시</span><span>Prompt</span><span>업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>책상을 정리했으면 이제 일을 맡길 차례입니다.</span><span>일할 준비가 되었으면 김아이에게 일을 시켜야 합니다.</span><span>업무 지시</span><span>Prompt</span><span>업무 지시와 실제 용어 Prompt를 함께 보여 줍니다.</span><span>모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.</span></div>
-      
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
+      <h2>업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다.</h2>
+      <p class="message">정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>업무 지시</span><span>Prompt</span><span>업무 지시는 Prompt 구조입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>업무 지시(Prompt)는 김아이가 바로 일하게 만드는 작업지시서입니다.</span><span>정리된 자료를 바탕으로 목표, 조건, 완료 기준을 묶어 김아이에게 일을 맡깁니다.</span><span>업무 지시(Prompt)</span><span>정리된 자료</span><span>자료를 일로 바꾸는 작업지시서입니다.</span><span>모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.</span></div>
+
       <div class="source-bridge-parity" hidden>모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.</div>
     </section>
     <section class="slide-media" aria-label="정리된 책상 앞에서 팀장이 김아이에게 다음 일을 맡기려는 손그림">
@@ -3757,16 +3824,17 @@ h2 {
         <img src="assets/visuals/act2-work-handoff-act2-work-handoff-single.png" alt="정리된 책상 앞에서 팀장이 김아이에게 다음 일을 맡기려는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 19: 모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act2-vague-outcome-risk" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
+<section class="print-page" aria-label="Slide 20: 모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act2-vague-outcome-risk" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.</h2>
       <p class="message">대충 던진 지시는 보고서 방향을 김아이의 추측에 맡기게 됩니다.</p>
+
       <div class="source-anchor-parity" hidden><span>보고서?</span><span>요약표?</span><span>리뷰 모음?</span></div>
       <div class="source-spec-parity" hidden><span>모호한 지시는 김아이가 어떤 결과를 낼지 모르게 만듭니다.</span><span>대충 던진 지시는 보고서 방향을 김아이의 추측에 맡기게 됩니다.</span><span>보고서?</span><span>요약표?</span><span>리뷰 모음?</span><span>말하지 않은 부분은 김아이 혼자 상상합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>말하지 않은 부분은 김아이 혼자 상상합니다.</div>
     </section>
     <section class="slide-media" aria-label="짧은 지시 하나에서 서로 다른 세 가지 결과물이 갈라지는 손그림">
@@ -3774,35 +3842,37 @@ h2 {
         <img src="assets/visuals/act2-vague-outcome-risk-act2-vague-outcome-risk-single.png" alt="짧은 지시 하나에서 서로 다른 세 가지 결과물이 갈라지는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 20: 말하지 않은 부분은 김아이 혼자 상상합니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act2-unspoken-imagination" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
+<section class="print-page" aria-label="Slide 21: 말하지 않은 부분은 김아이 혼자 상상합니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act2-unspoken-imagination" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>말하지 않은 부분은 김아이 혼자 상상합니다.</h2>
       <p class="message">목적, 자료, 완료 기준이 빠지면 김아이는 자기 방식으로 빈칸을 채웁니다.</p>
+
       <div class="source-anchor-parity" hidden><span>목적 추측</span><span>자료 추측</span><span>완료 추측</span></div>
       <div class="source-spec-parity" hidden><span>말하지 않은 부분은 김아이 혼자 상상합니다.</span><span>목적, 자료, 완료 기준이 빠지면 김아이는 자기 방식으로 빈칸을 채웁니다.</span><span>목적 추측</span><span>자료 추측</span><span>완료 추측</span><span>들어가는 정보가 좋아야 나오는 결과도 좋아집니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>들어가는 정보가 좋아야 나오는 결과도 좋아집니다.</div>
     </section>
     <section class="slide-media" aria-label="빈칸이 있는 업무 지시 옆에서 김아이가 자기 생각으로 칸을 채우는 손그림">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act2-unspoken-imagination-act2-unspoken-imagination-single.png" alt="빈칸이 있는 업무 지시 옆에서 김아이가 자기 생각으로 칸을 채우는 손그림">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 21: 좋은 지시는 김아이와 질문하며 구체화합니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act2-input-output-principle" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt Engineering">
+<section class="print-page" aria-label="Slide 22: 좋은 지시는 김아이와 질문하며 구체화합니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act2-input-output-principle" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt Engineering Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>좋은 지시는 김아이와 질문하며 구체화합니다.</h2>
       <p class="message">한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.</p>
+
       <div class="source-anchor-parity" hidden><span>김아이와 질문하며 지시 구체화</span><span>Prompt Engineering</span><span>김아이와 질문하며 지시 구체화와 실제 용어 Prompt Engineering를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>좋은 지시는 김아이와 질문하며 구체화합니다.</span><span>한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.</span><span>김아이와 질문하며 지시 구체화</span><span>Prompt Engineering</span><span>김아이와 질문하며 지시 구체화와 실제 용어 Prompt Engineering를 함께 보여 줍니다.</span><span>이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.</div>
     </section>
     <section class="slide-media" aria-label="김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 손그림">
@@ -3810,16 +3880,17 @@ h2 {
         <img src="assets/visuals/act2-input-output-principle-act2-input-output-principle-kimai-question-plan.png" alt="김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 22: 작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act2-handoff-document" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Task Specification">
+<section class="print-page" aria-label="Slide 23: 작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act2-handoff-document" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Task Specification Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.</h2>
       <p class="message">spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.</p>
+
       <div class="source-anchor-parity" hidden><span>작업지시서</span><span>Spec</span><span>Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다.</span></div>
       <div class="source-spec-parity" hidden><span>작업지시서는 김아이가 혼자 일할 수 있게 만드는 spec입니다.</span><span>spec에는 목표, 자료, 조건, 출력, 완료 기준이 들어갑니다.</span><span>작업지시서</span><span>Spec</span><span>Task Specification은 이번 작업의 목표와 조건을 정리한 명세입니다.</span><span>이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>이제 spec에 어떤 내용이 들어가야 하는지 나눠 보겠습니다.</div>
     </section>
     <section class="slide-media" aria-label="팀장이 김아이에게 목표와 조건이 정리된 작업지시서 spec 한 장을 건네는 손그림">
@@ -3827,16 +3898,17 @@ h2 {
         <img src="assets/visuals/act2-handoff-document-act2-handoff-document-single.png" alt="팀장이 김아이에게 목표와 조건이 정리된 작업지시서 spec 한 장을 건네는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 23: spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act2-materials-conditions" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-003" data-glossary-terms="Context Prompt">
+<section class="print-page" aria-label="Slide 24: spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act2-materials-conditions" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-003" data-glossary-terms="Context Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</h2>
       <p class="message">참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>참고 자료</span><span>비교 기준</span><span>제외 조건</span></div>
       <div class="source-spec-parity" hidden><span>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</span><span>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</span><span>참고 자료</span><span>비교 기준</span><span>제외 조건</span><span>spec에는 출력 형식과 완료 기준도 들어갑니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>spec에는 출력 형식과 완료 기준도 들어갑니다.</div>
     </section>
     <section class="slide-media" aria-label="인수인계서 가운데에 참고 자료 묶음과 작업 조건 묶음이 분리되어 있는 손그림">
@@ -3844,16 +3916,17 @@ h2 {
         <img src="assets/visuals/act2-materials-conditions-act2-materials-conditions-single.png" alt="인수인계서 가운데에 참고 자료 묶음과 작업 조건 묶음이 분리되어 있는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 24: spec에는 출력 형식과 완료 기준도 들어갑니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-output-done-criteria" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Evaluation">
+<section class="print-page" aria-label="Slide 25: spec에는 출력 형식과 완료 기준도 들어갑니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-output-done-criteria" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Evaluation Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>spec에는 출력 형식과 완료 기준도 들어갑니다.</h2>
       <p class="message">형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.</p>
-      <div class="source-anchor-parity" hidden><span>판정 기준</span><span>Evaluation</span><span>판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>spec에는 출력 형식과 완료 기준도 들어갑니다.</span><span>형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.</span><span>판정 기준</span><span>Evaluation</span><span>판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.</span><span>이 작업지시가 AI에게 주는 프롬프트입니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>판정 기준</span><span>Evaluation</span><span>판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.</span></div>
+      <div class="source-spec-parity" hidden><span>spec에는 출력 형식과 완료 기준도 들어갑니다.</span><span>형식, 마감, 확인 기준이 있어야 김아이가 끝을 혼자 정하지 않습니다.</span><span>판정 기준</span><span>Evaluation</span><span>판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.</span><span>이 작업지시가 AI에게 주는 프롬프트입니다.</span></div>
+
       <div class="source-bridge-parity" hidden>이 작업지시가 AI에게 주는 프롬프트입니다.</div>
     </section>
     <section class="slide-media" aria-label="인수인계서 마지막 부분에 형식, 마감, 확인 기준 체크가 있는 손그림">
@@ -3861,16 +3934,17 @@ h2 {
         <img src="assets/visuals/act2-output-done-criteria-act2-output-done-criteria-single.png" alt="인수인계서 마지막 부분에 형식, 마감, 확인 기준 체크가 있는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 25: 여러분이 만든 작업지시서가 프롬프트가 됩니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act2-prompt-term-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt Task Specification">
+<section class="print-page" aria-label="Slide 26: 업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-prompt-term-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
-      <h2>여러분이 만든 작업지시서가 프롬프트가 됩니다.</h2>
-      <p class="message">프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.</p>
-      <div class="source-anchor-parity" hidden><span>작업지시서</span><span>Prompt</span><span>작업지시서와 Prompt를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>여러분이 만든 작업지시서가 프롬프트가 됩니다.</span><span>프롬프트는 멋진 문장이 아니라, 김아이가 바로 일할 수 있게 정리된 작업지시입니다.</span><span>작업지시서</span><span>전달</span><span>Prompt</span><span>작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.</span><span>그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.</span></div>
-      
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
+      <h2>업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다.</h2>
+      <p class="message">프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>작업지시서</span><span>Prompt</span><span>빠진 항목 없는 업무 지시가 Prompt 구조입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>업무 지시(Prompt)는 조건이 빠지지 않아야 흔들리지 않습니다.</span><span>프롬프트는 김아이가 바로 일할 수 있도록 목표, 자료, 조건, 출력, 완료 기준을 고정한 작업 명세입니다.</span><span>업무 지시(Prompt)</span><span>목표, 자료, 조건</span><span>출력과 완료 기준을 고정합니다.</span><span>그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.</span></div>
+
       <div class="source-bridge-parity" hidden>그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.</div>
     </section>
     <section class="slide-media" aria-label="목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림">
@@ -3878,35 +3952,37 @@ h2 {
         <img src="assets/visuals/act2-prompt-term-mapping-act2-prompt-term-mapping-work-instruction-to-prompt.png" alt="목표, 자료, 조건, 출력, 완료 기준이 적힌 작업지시서가 김아이에게 전달되며 Prompt가 되는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 26: 낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act2-prompt-reframing" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="Prompt Engineering">
+<section class="print-page" aria-label="Slide 27: 낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act2-prompt-reframing" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="Prompt Engineering Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.</h2>
       <p class="message">“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>겉멋 역할</span><span>모호한 수식어</span><span>명확한 지시</span></div>
       <div class="source-spec-parity" hidden><span>낡은 프롬프트 꿀팁은 역할 흉내에 가깝습니다.</span><span>“50년 경력처럼 해줘”보다 무엇을 검토할지 정확히 말해야 합니다.</span><span>겉멋 역할</span><span>모호한 수식어</span><span>명확한 지시</span><span>그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>그렇다고 페르소나가 완전히 쓸모없는 것은 아닙니다.</div>
     </section>
     <section class="slide-media" aria-label="50년 경력처럼, 전문가 빙의 같은 낡은 역할 흉내 카드와 명확한 지시 체크리스트를 대비하는 손그림">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act2-prompt-reframing-act2-prompt-reframing-persona-myth.png" alt="50년 경력처럼, 전문가 빙의 같은 낡은 역할 흉내 카드와 명확한 지시 체크리스트를 대비하는 손그림">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 27: 페르소나는 말투가 아니라 우선순위 필터입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-persona-priority-filter" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Role Card Prompt Engineering">
+<section class="print-page" aria-label="Slide 28: 페르소나는 말투가 아니라 우선순위 필터입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act2-persona-priority-filter" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Role Card Prompt Engineering Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>페르소나는 말투가 아니라 우선순위 필터입니다.</h2>
       <p class="message">좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>우선순위 필터</span><span>Role Card</span><span>우선순위 필터와 실제 용어 Role Card를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>페르소나는 말투가 아니라 우선순위 필터입니다.</span><span>좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.</span><span>우선순위 필터</span><span>Role Card</span><span>우선순위 필터와 실제 용어 Role Card를 함께 보여 줍니다.</span><span>이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.</div>
     </section>
     <section class="slide-media" aria-label="보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림">
@@ -3914,13 +3990,14 @@ h2 {
         <img src="assets/visuals/act2-persona-priority-filter-act2-persona-priority-filter.png" alt="보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 28: 첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act2-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-003" data-glossary-terms="Feedback Loop">
+<section class="print-page" aria-label="Slide 29: 첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act2-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-003" data-glossary-terms="Feedback Loop Prompt">
     <section class="copy">
-      <div class="eyebrow">Act 2 · 좋은 업무 지시</div>
+      <div class="eyebrow">Act 2 · 업무 지시(Prompt)</div>
       <h2>첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.</h2>
       <p class="message">실습 화면에서 제품 리뷰자료 보고서 지시를 고치고 피드백을 확인합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>대충 지시 보기</span><span>업무 지시 고치기</span><span>피드백 보고 다시 쓰기</span></div>
       <div class="source-spec-parity" hidden><span>첫 실습은 김아이에게 업무 지시를 다시 해 보는 일입니다.</span><span>실습 화면에서 제품 리뷰자료 보고서 지시를 고치고 피드백을 확인합니다.</span><span>대충 지시 보기</span><span>업무 지시 고치기</span><span>피드백 보고 다시 쓰기</span><span>첫 지시는 완벽하지 않아도 됩니다. 피드백을 보고 다시 지시하면 됩니다.</span></div>
       <div class="lc-visual lc-practice-handoff-composite" data-template-component="practice-handoff" data-visual-component="handoff" data-source-component="practice-handoff-composite" data-motion-cue="handoff-list" aria-hidden="true">
@@ -3931,16 +4008,17 @@ h2 {
       </div>
       <div class="source-bridge-parity" hidden>첫 지시는 완벽하지 않아도 됩니다. 피드백을 보고 다시 지시하면 됩니다.</div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 29: Prompt, Context, CLAUDE.md는 서로 다른 자리입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act3-act1-context-recover" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt Context CLAUDE.md">
+<section class="print-page" aria-label="Slide 30: 회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-act1-context-recover" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="Prompt Context CLAUDE.md Memory / CLAUDE.md">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
-      <h2>Prompt, Context, CLAUDE.md는 서로 다른 자리입니다.</h2>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
+      <h2>회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.</h2>
       <p class="message">Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.</p>
-      <div class="source-anchor-parity" hidden><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>Prompt, Context, CLAUDE.md는 서로 다른 자리입니다.</span><span>Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.</span><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.</span><span>회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규는 CLAUDE.md 기준입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>회사 내규(CLAUDE.md)는 김아이가 매번 지킬 기준입니다.</span><span>Prompt는 지금 지시, Context는 지금 자료, CLAUDE.md는 매번 지킬 내규입니다.</span><span>회사 내규(CLAUDE.md)</span><span>업무 지시(Prompt)</span><span>책상 위 자료(Context)</span><span>회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.</span></div>
+
       <div class="source-bridge-parity" hidden>회사 내규는 김아이의 작업 방식을 매번 같은 기준으로 맞춥니다.</div>
     </section>
     <section class="slide-media" aria-label="김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림">
@@ -3948,16 +4026,17 @@ h2 {
         <img src="assets/visuals/act3-act1-context-recover-act3-act1-context-recover-single.png" alt="김아이 앞에 업무 지시, 책상 위 작업 자료, 공용공간 회사 내규가 세 영역으로 분리된 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 30: 회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-rules-are-different" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md">
+<section class="print-page" aria-label="Slide 31: 회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-rules-are-different" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.</h2>
       <p class="message">회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>회사 내규는 김아이가 매번 지켜야 할 공통 기준입니다.</span><span>회사 내규는 특정 보고서 한 건이 아니라, 어떤 일을 하든 기본으로 지켜야 하는 기준입니다.</span><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.</span><span>반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>반복해서 확인된 협업 기준은 회사 내규로 올릴 수 있습니다.</div>
     </section>
     <section class="slide-media" aria-label="공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림">
@@ -3965,16 +4044,17 @@ h2 {
         <img src="assets/visuals/act3-rules-are-different-act3-rules-are-different-single.png" alt="공용공간 게시판에 출퇴근 시간, 업무 보고 체계, 징계 기준이 붙어 있고 김아이가 확인하는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 31: 반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act3-too-many-rules" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md Persistent Instructions">
+<section class="print-page" aria-label="Slide 32: 반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act3-too-many-rules" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md Persistent Instructions">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다.</h2>
       <p class="message">타부서 협업에서 반복해서 확인된 요청 양식, 보고 라인, 책임 소재는 다음에도 지킬 내규로 올릴 수 있다.</p>
+
       <div class="source-anchor-parity" hidden><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>반복해서 확인된 협업 기준은 내규로 올릴 수 있습니다.</span><span>타부서 협업에서 반복해서 확인된 요청 양식, 보고 라인, 책임 소재는 다음에도 지킬 내규로 올릴 수 있다.</span><span>회사 내규</span><span>CLAUDE.md</span><span>회사 내규와 실제 용어 CLAUDE.md를 함께 보여 줍니다.</span><span>CLAUDE.md에도 적용 범위가 있습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>CLAUDE.md에도 적용 범위가 있습니다.</div>
     </section>
     <section class="slide-media" aria-label="타부서 협업 과정에서 요청 양식, 보고 라인, 책임 소재가 정리되어 회사 내규로 올라가는 손그림">
@@ -3982,54 +4062,57 @@ h2 {
         <img src="assets/visuals/act3-too-many-rules-act3-too-many-rules-single.png" alt="타부서 협업 과정에서 요청 양식, 보고 라인, 책임 소재가 정리되어 회사 내규로 올라가는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 32: CLAUDE.md는 적용 범위가 다른 지침입니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act3-temporary-info-danger" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md">
+<section class="print-page" aria-label="Slide 33: CLAUDE.md는 적용 범위가 다른 지침입니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act3-temporary-info-danger" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>CLAUDE.md는 적용 범위가 다른 지침입니다.</h2>
       <p class="message">회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.</p>
+
       <div class="source-anchor-parity" hidden><span>회장님 지침</span><span>본사 공통 지침</span><span>부서 사규</span><span>팀장님 현장 지침</span></div>
       <div class="source-spec-parity" hidden><span>CLAUDE.md는 적용 범위가 다른 지침입니다.</span><span>회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침처럼 적용 범위가 다릅니다.</span><span>회장님 지침</span><span>본사 공통 지침</span><span>부서 사규</span><span>팀장님 현장 지침</span><span>가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>가까운 지침일수록 지금 작업에 더 강하게 적용됩니다.</div>
     </section>
     <section class="slide-media" aria-label="회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침이 계층으로 내려오고 김아이가 현장 지침 가까이에 서 있는 손그림">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act3-temporary-info-danger-act3-scope-company-guidelines.png" alt="회장님 지침, 본사 공통 지침, 부서 사규, 팀장님 현장 지침이 계층으로 내려오고 김아이가 현장 지침 가까이에 서 있는 손그림">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 33: 가장 가까운 팀장님 지침이 더 강하게 적용됩니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act3-good-rule-board-shape" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md">
+<section class="print-page" aria-label="Slide 34: 가장 가까운 팀장님 지침이 더 강하게 적용됩니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act3-good-rule-board-shape" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>가장 가까운 팀장님 지침이 더 강하게 적용됩니다.</h2>
       <p class="message">넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.</p>
+
       <div class="source-anchor-parity" hidden><span>가까운 지침 우선</span><span>구체적인 지시</span><span>덮어쓰기</span></div>
       <div class="source-spec-parity" hidden><span>가장 가까운 팀장님 지침이 더 강하게 적용됩니다.</span><span>넓은 지침이 먼저 깔리고, 지금 작업 위치에 가까운 지침이 더 구체적으로 덧씌워집니다.</span><span>가까운 지침 우선</span><span>구체적인 지시</span><span>덮어쓰기</span><span>내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.</div>
     </section>
     <section class="slide-media" aria-label="멀리 있는 회장님 지침보다 김아이 눈앞의 팀장님 현장 지침이 크게 강조되어 가까운 지침 우선을 보여 주는 손그림">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act3-good-rule-board-shape-act3-nearest-team-lead-priority.png" alt="멀리 있는 회장님 지침보다 김아이 눈앞의 팀장님 현장 지침이 크게 강조되어 가까운 지침 우선을 보여 주는 손그림">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 34: 내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-context-vs-claude-md" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003 claim-005" data-glossary-terms="CLAUDE.md Rule Overload">
+<section class="print-page" aria-label="Slide 35: 내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-context-vs-claude-md" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003 claim-005" data-glossary-terms="CLAUDE.md Rule Overload">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.</h2>
       <p class="message">내규가 너무 많으면 읽어야 할 것이 늘고, 이전 설정과 현재 설정이 충돌하며, 제약 때문에 실행이 느려진다.</p>
+
       <div class="source-anchor-parity" hidden><span>너무 많은 내규</span><span>Rule Overload</span><span>너무 많은 내규와 실제 용어 Rule Overload를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>내규가 너무 많으면 김아이는 일을 시작하기 어려워집니다.</span><span>내규가 너무 많으면 읽어야 할 것이 늘고, 이전 설정과 현재 설정이 충돌하며, 제약 때문에 실행이 느려진다.</span><span>너무 많은 내규</span><span>Rule Overload</span><span>너무 많은 내규와 실제 용어 Rule Overload를 함께 보여 줍니다.</span><span>이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.</div>
     </section>
     <section class="slide-media" aria-label="너무 많은 회사 내규 앞에서 김아이가 읽지 못하고, 설정 충돌과 실행 지연을 겪는 손그림">
@@ -4037,13 +4120,14 @@ h2 {
         <img src="assets/visuals/act3-context-vs-claude-md-act3-context-vs-claude-md-single.png" alt="너무 많은 회사 내규 앞에서 김아이가 읽지 못하고, 설정 충돌과 실행 지연을 겪는 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 35: 이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act3-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-003" data-glossary-terms="Prompt Context CLAUDE.md">
+<section class="print-page" aria-label="Slide 36: 이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act3-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-003" data-glossary-terms="Prompt Context CLAUDE.md">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.</h2>
       <p class="message">실습 화면에서 적용 범위를 고르고, CLAUDE.md 초안을 쓴 뒤 과한 내규를 줄입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>적용 범위 선택</span><span>내규 초안 작성</span><span>과한 내규 줄이기</span></div>
       <div class="source-spec-parity" hidden><span>이제 실습에서는 김아이의 CLAUDE.md를 직접 설정합니다.</span><span>실습 화면에서 적용 범위를 고르고, CLAUDE.md 초안을 쓴 뒤 과한 내규를 줄입니다.</span><span>적용 범위 선택</span><span>내규 초안 작성</span><span>과한 내규 줄이기</span><span>마지막으로 내규와 업무 매뉴얼도 구분해야 합니다.</span></div>
       <div class="lc-visual lc-practice-handoff-composite" data-template-component="practice-handoff" data-visual-component="handoff" data-source-component="practice-handoff-composite" data-motion-cue="handoff-list" aria-hidden="true">
@@ -4054,16 +4138,17 @@ h2 {
       </div>
       <div class="source-bridge-parity" hidden>마지막으로 내규와 업무 매뉴얼도 구분해야 합니다.</div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 36: 내규가 선이라면, 매뉴얼은 길입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-to-act4-manual" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md Skill">
+<section class="print-page" aria-label="Slide 37: 내규가 선이라면, 매뉴얼은 길입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act3-to-act4-manual" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-003" data-glossary-terms="CLAUDE.md Skill">
     <section class="copy">
-      <div class="eyebrow">Act 3 · CLAUDE.md 회사 내규</div>
+      <div class="eyebrow">Act 3 · 회사 내규(CLAUDE.md)</div>
       <h2>내규가 선이라면, 매뉴얼은 길입니다.</h2>
       <p class="message">CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.</p>
-      <div class="source-anchor-parity" hidden><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>내규가 선이라면, 매뉴얼은 길입니다.</span><span>CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.</span><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.</span><span>다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.</span></div>
+      <div class="source-spec-parity" hidden><span>내규가 선이라면, 매뉴얼은 길입니다.</span><span>CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.</span><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.</span><span>다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.</span></div>
+
       <div class="source-bridge-parity" hidden>다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.</div>
     </section>
     <section class="slide-media" aria-label="내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림">
@@ -4071,16 +4156,17 @@ h2 {
         <img src="assets/visuals/act3-to-act4-manual-act3-to-act4-manual-boundary-path.png" alt="내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 37: 반복되는 작업에는 반복되는 지시가 따라옵니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act4-repeated-work-instructions" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 38: 업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act4-repeated-work-instructions" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
-      <h2>반복되는 작업에는 반복되는 지시가 따라옵니다.</h2>
-      <p class="message">매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.</p>
-      <div class="source-anchor-parity" hidden><span>매주 쓰는 회의 요약</span><span>매번 하는 자료 정리</span><span>자주 반복되는 리뷰 요청</span></div>
-      <div class="source-spec-parity" hidden><span>반복되는 작업에는 반복되는 지시가 따라옵니다.</span><span>매주 쓰는 회의 요약, 매번 하는 자료 정리, 자주 반복되는 리뷰 요청처럼 반복 작업에는 반복 지시가 따라옵니다.</span><span>매주 쓰는 회의 요약</span><span>매번 하는 자료 정리</span><span>자주 반복되는 리뷰 요청</span><span>반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.</span></div>
-      
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
+      <h2>업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.</h2>
+      <p class="message">반복되는 작업은 매번 다시 말하지 않도록 실행 순서를 업무 매뉴얼(Skill)로 고정합니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>반복 업무</span><span>실행 순서</span><span>업무 매뉴얼(Skill)</span></div>
+      <div class="source-spec-parity" hidden><span>업무 매뉴얼(Skill)은 반복 업무의 실행 순서입니다.</span><span>반복되는 작업은 매번 다시 말하지 않도록 실행 순서를 업무 매뉴얼(Skill)로 고정합니다.</span><span>반복 업무</span><span>실행 순서</span><span>업무 매뉴얼(Skill)</span><span>반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.</span></div>
+
       <div class="source-bridge-parity" hidden>반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.</div>
     </section>
     <section class="slide-media" aria-label="반복되는 작업에는 반복되는 지시가 따라옵니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4094,16 +4180,17 @@ h2 {
         <span class="lc-workbench-card eval">증거<small>eval</small></span>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 38: 반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다."><main class="slide slide--statement slide-template--workflow-strip" data-slide-id="act4-human-bound-instructions" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 39: 반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다."><main class="slide slide--statement slide-template--workflow-strip" data-slide-id="act4-human-bound-instructions" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.</h2>
       <p class="message">반복 지시가 사람의 기억에 묶이면 매번 설명이 달라지고 같은 순서를 재사용하기 어렵습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>매번 설명</span><span>표현 흔들림</span><span>순서 유실</span></div>
       <div class="source-spec-parity" hidden><span>반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다.</span><span>반복 지시가 사람의 기억에 묶이면 매번 설명이 달라지고 같은 순서를 재사용하기 어렵습니다.</span><span>매번 설명</span><span>표현 흔들림</span><span>순서 유실</span><span>매번 다른 지시는 김아이의 시작점을 흔듭니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>매번 다른 지시는 김아이의 시작점을 흔듭니다.</div>
     </section>
     <section class="slide-media" aria-label="반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4111,35 +4198,37 @@ h2 {
         <img src="assets/visuals/act4-human-bound-instructions-act4-human-bound-instructions-single.png" alt="반복 지시를 매번 다시 말하면 일이 사람에게 묶입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 39: 매번 다른 지시는 김아이의 시작점을 흔듭니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act4-different-instruction-starts" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 40: 매번 다른 지시는 김아이의 시작점을 흔듭니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act4-different-instruction-starts" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>매번 다른 지시는 김아이의 시작점을 흔듭니다.</h2>
       <p class="message">같은 반복 업무라도 지시가 매번 다르면 김아이는 매번 다른 출발선에서 시작합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>먼저 질문</span><span>바로 작성</span><span>확인 없이 종료</span></div>
       <div class="source-spec-parity" hidden><span>매번 다른 지시는 김아이의 시작점을 흔듭니다.</span><span>같은 반복 업무라도 지시가 매번 다르면 김아이는 매번 다른 출발선에서 시작합니다.</span><span>먼저 질문</span><span>바로 작성</span><span>확인 없이 종료</span><span>작업별 업무 매뉴얼을 만들어 사용해 봅시다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>작업별 업무 매뉴얼을 만들어 사용해 봅시다.</div>
     </section>
     <section class="slide-media" aria-label="매번 다른 지시는 김아이의 시작점을 흔듭니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act4-different-instruction-starts-act4-different-instruction-starts-single.png" alt="매번 다른 지시는 김아이의 시작점을 흔듭니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 40: 작업별 업무 매뉴얼을 만들어 사용해 봅시다."><main class="slide slide--visual-left slide-template--workflow-strip" data-slide-id="act4-task-manual-outside" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 41: 작업별 업무 매뉴얼을 만들어 사용해 봅시다."><main class="slide slide--visual-left slide-template--workflow-strip" data-slide-id="act4-task-manual-outside" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>작업별 업무 매뉴얼을 만들어 사용해 봅시다.</h2>
       <p class="message">업무 매뉴얼은 반복 순서를 머릿속이 아니라 문서에 고정하는 장치입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>즉흥 판단 금지</span><span>기억 의존 금지</span><span>문서로 고정</span></div>
       <div class="source-spec-parity" hidden><span>작업별 업무 매뉴얼을 만들어 사용해 봅시다.</span><span>업무 매뉴얼은 반복 순서를 머릿속이 아니라 문서에 고정하는 장치입니다.</span><span>즉흥 판단 금지</span><span>기억 의존 금지</span><span>문서로 고정</span><span>먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.</div>
     </section>
     <section class="slide-media" aria-label="작업별 업무 매뉴얼을 만들어 사용해 봅시다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4147,16 +4236,17 @@ h2 {
         <img src="assets/visuals/act4-task-manual-outside-act4-task-manual-outside-single.png" alt="작업별 업무 매뉴얼을 만들어 사용해 봅시다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 41: 먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act4-manual-candidate-check" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 42: 먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act4-manual-candidate-check" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.</h2>
       <p class="message">자주 반복되고, 같은 기준이 필요하고, 실수 비용이 큰 일만 매뉴얼 후보입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>자주 반복되는 일</span><span>같은 기준이 필요한 일</span><span>실수 비용이 큰 일</span></div>
       <div class="source-spec-parity" hidden><span>먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다.</span><span>자주 반복되고, 같은 기준이 필요하고, 실수 비용이 큰 일만 매뉴얼 후보입니다.</span><span>자주 반복되는 일</span><span>같은 기준이 필요한 일</span><span>실수 비용이 큰 일</span><span>매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.</div>
     </section>
     <section class="slide-media" aria-label="먼저 이 일을 매뉴얼로 만들 가치가 있는지 따집니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4172,16 +4262,17 @@ h2 {
           <div class="lc-gate-verdict"><b>HOLD</b><b>PASS</b></div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 42: 매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act4-not-everything-manual" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 43: 매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act4-not-everything-manual" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.</h2>
       <p class="message">한 번만 할 일이나 기준이 흔들리는 일은 매뉴얼보다 지금 업무 지시로 처리합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>한 번만 할 일</span><span>기준이 아직 흔들리는 일</span><span>상황이 매번 다른 일</span></div>
       <div class="source-spec-parity" hidden><span>매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다.</span><span>한 번만 할 일이나 기준이 흔들리는 일은 매뉴얼보다 지금 업무 지시로 처리합니다.</span><span>한 번만 할 일</span><span>기준이 아직 흔들리는 일</span><span>상황이 매번 다른 일</span><span>매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.</div>
     </section>
     <section class="slide-media" aria-label="매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4189,16 +4280,17 @@ h2 {
         <img src="assets/visuals/act4-not-everything-manual-act4-not-everything-manual-single.png" alt="매뉴얼 후보가 아니면 지금 업무 지시로 충분합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 43: 매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다."><main class="slide slide--visual-left slide-template--workflow-strip" data-slide-id="act4-manual-start-conditions" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001 claim-006" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 44: 매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다."><main class="slide slide--visual-left slide-template--workflow-strip" data-slide-id="act4-manual-start-conditions" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001 claim-006" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.</h2>
       <p class="message">매뉴얼은 언제 켜고, 무엇을 확인하고, 언제 멈출지부터 정해야 합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>켜는 요청</span><span>필수 재료</span><span>멈출 조건</span></div>
       <div class="source-spec-parity" hidden><span>매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다.</span><span>매뉴얼은 언제 켜고, 무엇을 확인하고, 언제 멈출지부터 정해야 합니다.</span><span>켜는 요청</span><span>필수 재료</span><span>멈출 조건</span><span>매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.</div>
     </section>
     <section class="slide-media" aria-label="매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4206,16 +4298,17 @@ h2 {
         <img src="assets/visuals/act4-manual-start-conditions-act4-manual-start-conditions-single.png" alt="매뉴얼은 어떤 요청에서 켜고 멈출지 먼저 정합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 44: 매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다."><main class="slide slide--visual-left slide-template--workflow-strip" data-slide-id="act4-short-procedure" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 45: 매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다."><main class="slide slide--visual-left slide-template--workflow-strip" data-slide-id="act4-short-procedure" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.</h2>
       <p class="message">본문은 실행 조건, 작업 단계, 점검 기준, 결과물 형식, 기록만 짧게 둡니다.</p>
+
       <div class="source-anchor-parity" hidden><span>확인 조건</span><span>작업 단계</span><span>점검 기준</span><span>결과 형식</span><span>남길 기록</span></div>
       <div class="source-spec-parity" hidden><span>매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다.</span><span>본문은 실행 조건, 작업 단계, 점검 기준, 결과물 형식, 기록만 짧게 둡니다.</span><span>확인 조건</span><span>작업 단계</span><span>점검 기준</span><span>결과 형식</span><span>남길 기록</span><span>긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.</div>
     </section>
     <section class="slide-media" aria-label="매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4223,16 +4316,17 @@ h2 {
         <img src="assets/visuals/act4-short-procedure-act4-short-procedure-single.png" alt="매뉴얼 본문에는 실행 순서와 결과물 형식을 짧게 씁니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 45: 긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act4-manual-supporting-materials" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 46: 긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act4-manual-supporting-materials" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.</h2>
       <p class="message">예시, 체크리스트, 판단 기준표, 실행 재료는 본문 밖에 두고 필요할 때 꺼냅니다.</p>
+
       <div class="source-anchor-parity" hidden><span>예시: 따라 볼 샘플</span><span>점검: 확인할 목록</span><span>판단: 기준표</span><span>재료: 실행 자료</span></div>
       <div class="source-spec-parity" hidden><span>긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다.</span><span>예시, 체크리스트, 판단 기준표, 실행 재료는 본문 밖에 두고 필요할 때 꺼냅니다.</span><span>예시: 따라 볼 샘플</span><span>점검: 확인할 목록</span><span>판단: 기준표</span><span>재료: 실행 자료</span><span>AI가 읽는 반복 업무 매뉴얼이 Skill입니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>AI가 읽는 반복 업무 매뉴얼이 Skill입니다.</div>
     </section>
     <section class="slide-media" aria-label="긴 예시와 판단 기준은 매뉴얼 본문 밖에 둡니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4243,16 +4337,17 @@ h2 {
         </div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 46: AI가 읽는 반복 업무 매뉴얼이 Skill입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act4-skill-term-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-006" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 47: 업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act4-skill-term-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-006" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
-      <h2>AI가 읽는 반복 업무 매뉴얼이 Skill입니다.</h2>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
+      <h2>업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.</h2>
       <p class="message">Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.</p>
-      <div class="source-anchor-parity" hidden><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>AI가 읽는 반복 업무 매뉴얼이 Skill입니다.</span><span>Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.</span><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.</span><span>실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼은 Skill 구조입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>업무 매뉴얼(Skill)은 호출 조건과 절차가 분리되어야 합니다.</span><span>Skill은 답변 템플릿이 아니라 호출 조건, 짧은 절차, 참고자료, 출력 형식이 있는 재사용 절차입니다.</span><span>업무 매뉴얼(Skill)</span><span>호출 조건</span><span>절차, 참고자료, 출력 형식으로 나눕니다.</span><span>실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.</span></div>
+
       <div class="source-bridge-parity" hidden>실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.</div>
     </section>
     <section class="slide-media" aria-label="AI가 읽는 반복 업무 매뉴얼이 Skill입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4260,13 +4355,14 @@ h2 {
         <img src="assets/visuals/act4-skill-term-mapping-act4-skill-term-mapping-single.png" alt="AI가 읽는 반복 업무 매뉴얼이 Skill입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 47: 실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act4-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 48: 실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act4-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-001" data-glossary-terms="Skill">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.</h2>
       <p class="message">실습 화면에서 시작 조건, 절차, 참고 예시, 남길 결과를 가진 Skill을 만듭니다.</p>
+
       <div class="source-anchor-parity" hidden><span>Skill이 켜지는 조건</span><span>실행 전 확인할 질문</span><span>접근안 비교 순서</span><span>마지막 결정 기록</span></div>
       <div class="source-spec-parity" hidden><span>실습에서는 미니 브레인스토밍 Skill로 구조를 연습합니다.</span><span>실습 화면에서 시작 조건, 절차, 참고 예시, 남길 결과를 가진 Skill을 만듭니다.</span><span>Skill이 켜지는 조건</span><span>실행 전 확인할 질문</span><span>접근안 비교 순서</span><span>마지막 결정 기록</span><span>매뉴얼이 있어도 역할 판단은 분리해야 합니다.</span></div>
       <div class="lc-visual lc-practice-handoff-composite" data-template-component="practice-handoff" data-visual-component="handoff" data-source-component="practice-handoff-composite" data-motion-cue="handoff-list" aria-hidden="true">
@@ -4277,16 +4373,17 @@ h2 {
       </div>
       <div class="source-bridge-parity" hidden>매뉴얼이 있어도 역할 판단은 분리해야 합니다.</div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 48: 매뉴얼이 있어도 역할 판단은 분리해야 합니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act4-to-act5-roles" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Skill Agent / Subagent">
+<section class="print-page" aria-label="Slide 49: 매뉴얼이 있어도 역할 판단은 분리해야 합니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act4-to-act5-roles" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Skill Agent">
     <section class="copy">
-      <div class="eyebrow">Act 4 · 반복 업무 매뉴얼</div>
+      <div class="eyebrow">Act 4 · 업무 매뉴얼(Skill)</div>
       <h2>매뉴얼이 있어도 역할 판단은 분리해야 합니다.</h2>
       <p class="message">Skill이 절차를 안정시켜도 조사, 작성, 검토 판단은 역할별로 나누어야 합니다.</p>
-      <div class="source-anchor-parity" hidden><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>매뉴얼이 있어도 역할 판단은 분리해야 합니다.</span><span>Skill이 절차를 안정시켜도 조사, 작성, 검토 판단은 역할별로 나누어야 합니다.</span><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.</span><span>다음 Act에서는 역할과 도구 권한을 나눕니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.</span></div>
+      <div class="source-spec-parity" hidden><span>매뉴얼이 있어도 역할 판단은 분리해야 합니다.</span><span>Skill이 절차를 안정시켜도 조사, 작성, 검토 판단은 역할별로 나누어야 합니다.</span><span>업무 매뉴얼</span><span>Skill</span><span>업무 매뉴얼과 실제 용어 Skill을 함께 보여 줍니다.</span><span>다음 Act에서는 역할과 도구 권한을 나눕니다.</span></div>
+
       <div class="source-bridge-parity" hidden>다음 Act에서는 역할과 도구 권한을 나눕니다.</div>
     </section>
     <section class="slide-media" aria-label="매뉴얼이 있어도 역할 판단은 분리해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4294,16 +4391,17 @@ h2 {
         <img src="assets/visuals/act4-to-act5-roles-act4-to-act5-roles-single.png" alt="매뉴얼이 있어도 역할 판단은 분리해야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 49: 김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act5-kimai-does-everything" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill">
+<section class="print-page" aria-label="Slide 50: 역할 카드(Agent)는 책임을 나눈 김아이 팀입니다."><main class="slide slide--focus slide-template--opening-hero" data-slide-id="act5-kimai-does-everything" data-layout-template="act-opener" data-main-template="opening-hero" data-teaching-move="activate" data-audience-action="orient" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
-      <h2>김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.</h2>
-      <p class="message">매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.</p>
-      <div class="source-anchor-parity" hidden><span>자료 찾기</span><span>결과물 만들기</span><span>제출 전 확인</span></div>
-      <div class="source-spec-parity" hidden><span>김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다.</span><span>매뉴얼이 있어도 김아이 한 명에게 자료 찾기, 결과물 만들기, 제출 전 확인을 모두 맡기면 판단이 섞입니다.</span><span>자료 찾기</span><span>결과물 만들기</span><span>제출 전 확인</span><span>회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</span></div>
-      
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
+      <h2>역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.</h2>
+      <p class="message">업무 매뉴얼(Skill)이 있어도 조사, 작성, 검토를 한 명에게 모두 맡기면 판단이 섞입니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>조사 역할</span><span>작성 역할</span><span>검토 역할</span></div>
+      <div class="source-spec-parity" hidden><span>역할 카드(Agent)는 책임을 나눈 김아이 팀입니다.</span><span>업무 매뉴얼(Skill)이 있어도 조사, 작성, 검토를 한 명에게 모두 맡기면 판단이 섞입니다.</span><span>조사 역할</span><span>작성 역할</span><span>검토 역할</span><span>회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</span></div>
+
       <div class="source-bridge-parity" hidden>회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</div>
     </section>
     <section class="slide-media" aria-label="김아이에게 매뉴얼을 줘도 모든 일을 혼자 맡기면 헷갈립니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4317,93 +4415,98 @@ h2 {
         <span class="lc-workbench-card eval">증거<small>eval</small></span>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 50: 회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act5-company-approval-roles" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 51: 회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act5-company-approval-roles" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</h2>
       <p class="message">회사에서는 일을 맡은 담당자, 검토자, 승인자가 나뉘고 AI 업무도 같은 방식으로 책임을 나눌 수 있습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>담당자</span><span>검토자</span><span>승인자</span></div>
       <div class="source-spec-parity" hidden><span>회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다.</span><span>회사에서는 일을 맡은 담당자, 검토자, 승인자가 나뉘고 AI 업무도 같은 방식으로 책임을 나눌 수 있습니다.</span><span>담당자</span><span>검토자</span><span>승인자</span><span>해야 할 일이 많아지면 다른 신입사원을 데려옵니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>해야 할 일이 많아지면 다른 신입사원을 데려옵니다.</div>
     </section>
     <section class="slide-media" aria-label="회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act5-company-approval-roles-act5-company-approval-roles-single.png" alt="회사에서는 한 사람이 모든 결재를 혼자 하지 않습니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 51: 해야 할 일이 많아지면 다른 신입사원을 데려옵니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act5-new-hires-team" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001 claim-007" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 52: 해야 할 일이 많아지면 다른 신입사원을 데려옵니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act5-new-hires-team" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001 claim-007" data-glossary-terms="Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>해야 할 일이 많아지면 다른 신입사원을 데려옵니다.</h2>
       <p class="message">핵심은 사람 수가 아니라 조사, 작성, 검토의 책임 자리를 나누는 것입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>김아이</span><span>최아이</span><span>박아이</span></div>
       <div class="source-spec-parity" hidden><span>해야 할 일이 많아지면 다른 신입사원을 데려옵니다.</span><span>핵심은 사람 수가 아니라 조사, 작성, 검토의 책임 자리를 나누는 것입니다.</span><span>김아이</span><span>최아이</span><span>박아이</span><span>김아이는 근거를 찾고 모르는 것을 표시합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>김아이는 근거를 찾고 모르는 것을 표시합니다.</div>
     </section>
     <section class="slide-media" aria-label="해야 할 일이 많아지면 다른 신입사원을 데려옵니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act5-new-hires-team-act5-new-hires-team-single.png" alt="해야 할 일이 많아지면 다른 신입사원을 데려옵니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 52: 김아이는 근거를 찾고 모르는 것을 표시합니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act5-kimai-research-role" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Agent / Subagent">
+<section class="print-page" aria-label="Slide 53: 김아이는 근거를 찾고 모르는 것을 표시합니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act5-kimai-research-role" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>김아이는 근거를 찾고 모르는 것을 표시합니다.</h2>
       <p class="message">김아이는 조사 역할을 맡아 자료를 찾고, 출처를 남기고, 모르는 것은 모른다고 표시합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>자료 찾기</span><span>출처 남기기</span><span>모르는 것 표시</span></div>
       <div class="source-spec-parity" hidden><span>김아이는 근거를 찾고 모르는 것을 표시합니다.</span><span>김아이는 조사 역할을 맡아 자료를 찾고, 출처를 남기고, 모르는 것은 모른다고 표시합니다.</span><span>자료 찾기</span><span>출처 남기기</span><span>모르는 것 표시</span><span>최아이는 정해진 지시와 자료로 결과물을 만듭니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>최아이는 정해진 지시와 자료로 결과물을 만듭니다.</div>
     </section>
     <section class="slide-media" aria-label="김아이는 근거를 찾고 모르는 것을 표시합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act5-kimai-research-role-act5-kimai-research-role-single.png" alt="김아이는 근거를 찾고 모르는 것을 표시합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 53: 최아이는 정해진 지시와 자료로 결과물을 만듭니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act5-choi-writing-role" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Agent / Subagent">
+<section class="print-page" aria-label="Slide 54: 최아이는 정해진 지시와 자료로 결과물을 만듭니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act5-choi-writing-role" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>최아이는 정해진 지시와 자료로 결과물을 만듭니다.</h2>
       <p class="message">최아이는 작성 역할을 맡아 정해진 지시와 자료 안에서 보고서 초안을 만듭니다.</p>
+
       <div class="source-anchor-parity" hidden><span>지시서 보기</span><span>정해진 자료 사용</span><span>보고서 초안 작성</span></div>
       <div class="source-spec-parity" hidden><span>최아이는 정해진 지시와 자료로 결과물을 만듭니다.</span><span>최아이는 작성 역할을 맡아 정해진 지시와 자료 안에서 보고서 초안을 만듭니다.</span><span>지시서 보기</span><span>정해진 자료 사용</span><span>보고서 초안 작성</span><span>박아이는 제출 기준에 맞는지 확인합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>박아이는 제출 기준에 맞는지 확인합니다.</div>
     </section>
     <section class="slide-media" aria-label="최아이는 정해진 지시와 자료로 결과물을 만듭니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act5-choi-writing-role-act5-choi-writing-role-single.png" alt="최아이는 정해진 지시와 자료로 결과물을 만듭니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 54: 박아이는 제출 기준에 맞는지 확인합니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act5-park-review-role" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Agent / Subagent">
+<section class="print-page" aria-label="Slide 55: 박아이는 제출 기준에 맞는지 확인합니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act5-park-review-role" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>박아이는 제출 기준에 맞는지 확인합니다.</h2>
       <p class="message">박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>기준표 대조</span><span>빠진 항목 찾기</span><span>보류 또는 통과 표시</span></div>
-      <div class="source-spec-parity" hidden><span>박아이는 제출 기준에 맞는지 확인합니다.</span><span>박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.</span><span>기준표 대조</span><span>빠진 항목 찾기</span><span>보류 또는 통과 표시</span><span>이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.</span></div>
-      
-      <div class="source-bridge-parity" hidden>이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.</div>
+      <div class="source-spec-parity" hidden><span>박아이는 제출 기준에 맞는지 확인합니다.</span><span>박아이는 검토 역할을 맡아 결과물이 제출 기준표에 맞는지 확인하고 보류 또는 통과를 표시합니다.</span><span>기준표 대조</span><span>빠진 항목 찾기</span><span>보류 또는 통과 표시</span><span>이런 역할 김아이를 Agent라고 부릅니다.</span></div>
+
+      <div class="source-bridge-parity" hidden>이런 역할 김아이를 Agent라고 부릅니다.</div>
     </section>
     <section class="slide-media" aria-label="박아이는 제출 기준에 맞는지 확인합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-decision-gate-visual" data-template-component="decision-gate" data-visual-component="gate" data-source-component="practice-gate-visual" data-motion-cue="gate-check" aria-hidden="true">
@@ -4418,69 +4521,73 @@ h2 {
           <div class="lc-gate-verdict"><b>HOLD</b><b>PASS</b></div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 55: 이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-agent-term-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-007" data-glossary-terms="Agent / Subagent">
+<section class="print-page" aria-label="Slide 56: 역할 카드(Agent)는 지시문과 자료도 따로 가집니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-agent-term-mapping" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-007" data-glossary-terms="Agent Skill">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
-      <h2>이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.</h2>
-      <p class="message">역할을 나눠 맡은 작업 단위를 Agent 또는 Subagent라고 부릅니다.</p>
-      <div class="source-anchor-parity" hidden><span>역할 카드</span><span>Agent / Subagent</span><span>역할 카드와 실제 용어 Agent / Subagent를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다.</span><span>역할을 나눠 맡은 작업 단위를 Agent 또는 Subagent라고 부릅니다.</span><span>역할 카드</span><span>Agent / Subagent</span><span>역할 카드와 실제 용어 Agent / Subagent를 함께 보여 줍니다.</span><span>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</span></div>
-      
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
+      <h2>역할 카드(Agent)는 지시문과 자료도 따로 가집니다.</h2>
+      <p class="message">역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>역할 카드</span><span>Agent</span><span>역할 카드는 Agent 구조입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>역할 카드(Agent)는 지시문과 자료도 따로 가집니다.</span><span>역할을 나눠 맡은 작업 단위는 각자 다른 지시문, 보는 자료, 맡은 책임을 가질 수 있습니다.</span><span>역할 카드(Agent)</span><span>Agent</span><span>지시문, 자료, 책임을 역할별로 나눕니다.</span><span>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</span></div>
+
       <div class="source-bridge-parity" hidden>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</div>
     </section>
-    <section class="slide-media" aria-label="이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
+    <section class="slide-media" aria-label="이런 역할 김아이를 Agent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <figure class="visual-figure visual-generated-image">
-        <img src="assets/visuals/act5-agent-term-mapping-act5-agent-term-mapping-single.png" alt="이런 역할 김아이를 Agent 또는 Subagent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
+        <img src="assets/visuals/act5-agent-term-mapping-act5-agent-term-mapping-single.png" alt="이런 역할 김아이를 Agent라고 부릅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 56: 각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act5-new-hire-skill-assignment" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill Agent / Subagent">
+<section class="print-page" aria-label="Slide 57: 각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다."><main class="slide slide--standard slide-template--kimai-structure" data-slide-id="act5-new-hire-skill-assignment" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Skill Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</h2>
       <p class="message">모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.</p>
+
       <div class="source-anchor-parity" hidden><span>조사 매뉴얼(Skill)</span><span>작성 매뉴얼(Skill)</span><span>검토 매뉴얼(Skill)</span></div>
-      <div class="source-spec-parity" hidden><span>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</span><span>모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.</span><span>조사 매뉴얼(Skill)</span><span>작성 매뉴얼(Skill)</span><span>검토 매뉴얼(Skill)</span><span>보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.</span></div>
-      
-      <div class="source-bridge-parity" hidden>보안 권한과 접근 구역도 맡은 일에 맞게 줍니다.</div>
+      <div class="source-spec-parity" hidden><span>각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다.</span><span>모든 신입사원이 같은 매뉴얼을 보는 것이 아니라, 맡은 자리마다 필요한 매뉴얼(Skill)이 다릅니다.</span><span>조사 매뉴얼(Skill)</span><span>작성 매뉴얼(Skill)</span><span>검토 매뉴얼(Skill)</span><span>보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.</span></div>
+
+      <div class="source-bridge-parity" hidden>보안 도구 권한과 접근 구역도 맡은 일에 맞게 줍니다.</div>
     </section>
     <section class="slide-media" aria-label="각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act5-new-hire-skill-assignment-act5-new-hire-skill-assignment-single.png" alt="각 신입사원은 자기 자리의 매뉴얼(Skill)만 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 57: 권한과 접근 구역은 맡은 일만큼만 줍니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act5-security-permissions" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-008" data-glossary-terms="">
+<section class="print-page" aria-label="Slide 58: 도구 권한과 접근 구역은 맡은 일만큼만 줍니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-security-permissions" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-008" data-glossary-terms="Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
-      <h2>권한과 접근 구역은 맡은 일만큼만 줍니다.</h2>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
+      <h2>도구 권한과 접근 구역은 맡은 일만큼만 줍니다.</h2>
       <p class="message">김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.</p>
+
       <div class="source-anchor-parity" hidden><span>권한 카드</span><span>권한 범위</span><span>권한 카드와 실제 용어 권한 범위를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>권한과 접근 구역은 맡은 일만큼만 줍니다.</span><span>김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.</span><span>읽기 권한</span><span>쓰기 권한</span><span>실행 권한</span><span>외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.</span></div>
-      
+      <div class="source-spec-parity" hidden><span>도구 권한과 접근 구역은 맡은 일만큼만 줍니다.</span><span>김아이에게 모든 마스터키를 주지 않고 읽기, 쓰기, 실행처럼 필요한 권한만 줍니다.</span><span>읽기 권한</span><span>쓰기 권한</span><span>실행 권한</span><span>외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.</span></div>
+
       <div class="source-bridge-parity" hidden>외부 시스템에 연결할 때는 MCP라는 공식 전화 창구를 씁니다.</div>
     </section>
-    <section class="slide-media" aria-label="권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.">
+    <section class="slide-media" aria-label="도구 권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.">
       <figure class="visual-figure visual-generated-image">
-        <img src="assets/visuals/act5-security-permissions-act5-security-permissions-role-permissions.png" alt="권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.">
+        <img src="assets/visuals/act5-security-permissions-act5-security-permissions-role-permissions.png" alt="도구 권한과 접근 구역은 맡은 일만큼만 주는 최소 권한 원칙을 김아이의 권한 카드와 보안 구역으로 설명한다.">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 58: MCP는 외부 창구에 연결하는 공식 전화입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-mcp-partner-window" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-008" data-glossary-terms="MCP">
+<section class="print-page" aria-label="Slide 59: MCP는 외부 창구에 연결하는 공식 전화입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-mcp-partner-window" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-008" data-glossary-terms="MCP Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>MCP는 외부 창구에 연결하는 공식 전화입니다.</h2>
       <p class="message">외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>공식 전화 창구</span><span>MCP</span><span>공식 전화 창구와 실제 용어 MCP를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>MCP는 외부 창구에 연결하는 공식 전화입니다.</span><span>외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.</span><span>공식 전화 창구</span><span>MCP</span><span>공식 전화 창구와 실제 용어 MCP를 함께 보여 줍니다.</span><span>실습에서는 에이전트 팀을 구현해 봅니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>실습에서는 에이전트 팀을 구현해 봅니다.</div>
     </section>
     <section class="slide-media" aria-label="MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.">
@@ -4488,13 +4595,14 @@ h2 {
         <img src="assets/visuals/act5-mcp-partner-window-act5-mcp-official-phone-window.png" alt="MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 59: 실습에서는 에이전트 팀을 구현해 봅니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act5-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-001" data-glossary-terms="Agent / Subagent Skill MCP">
+<section class="print-page" aria-label="Slide 60: 실습에서는 에이전트 팀을 구현해 봅니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act5-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-001" data-glossary-terms="Agent Skill MCP">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>실습에서는 에이전트 팀을 구현해 봅니다.</h2>
       <p class="message">로컬 실행형 실습에서 역할 지시문, 매뉴얼(Skill), 권한, 실행 기록을 연결해 에이전트 팀을 구현해 봅니다.</p>
+
       <div class="source-anchor-parity" hidden><span>김아이 역할</span><span>최아이 역할</span><span>박아이 역할</span><span>실행 기록</span></div>
       <div class="source-spec-parity" hidden><span>실습에서는 에이전트 팀을 구현해 봅니다.</span><span>로컬 실행형 실습에서 역할 지시문, 매뉴얼(Skill), 권한, 실행 기록을 연결해 에이전트 팀을 구현해 봅니다.</span><span>김아이 역할</span><span>최아이 역할</span><span>박아이 역할</span><span>실행 기록</span><span>팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</span></div>
       <div class="lc-visual lc-practice-handoff-composite" data-template-component="practice-handoff" data-visual-component="handoff" data-source-component="practice-handoff-composite" data-motion-cue="handoff-list" aria-hidden="true">
@@ -4505,16 +4613,17 @@ h2 {
       </div>
       <div class="source-bridge-parity" hidden>팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 60: 팀이 작업을 끝냈어도 제출 전 확인은 필요합니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-team-to-act6-checkpoint" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Hook Evaluation">
+<section class="print-page" aria-label="Slide 61: 팀이 작업을 끝냈어도 제출 전 확인은 필요합니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act5-team-to-act6-checkpoint" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Hook Evaluation Agent">
     <section class="copy">
-      <div class="eyebrow">Act 5 · 역할 분리와 도구 권한</div>
+      <div class="eyebrow">Act 5 · 역할 카드(Agent)</div>
       <h2>팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</h2>
-      <p class="message">역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.</p>
-      <div class="source-anchor-parity" hidden><span>검문소 스위치</span><span>Hook</span><span>검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</span><span>역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.</span><span>검문소 스위치</span><span>Hook</span><span>검문소 스위치와 실제 용어 Hook를 함께 보여 줍니다.</span><span>이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.</span></div>
-      
+      <p class="message">역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>검문소 스위치</span><span>Hook</span><span>검문소 스위치와 실제 용어 Hook을 함께 보여 줍니다.</span></div>
+      <div class="source-spec-parity" hidden><span>팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.</span><span>역할 카드을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.</span><span>검문소 스위치</span><span>Hook</span><span>검문소 스위치와 실제 용어 Hook을 함께 보여 줍니다.</span><span>이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.</span></div>
+
       <div class="source-bridge-parity" hidden>이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.</div>
     </section>
     <section class="slide-media" aria-label="팀이 작업을 끝냈어도 제출 전 확인은 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4522,16 +4631,17 @@ h2 {
         <img src="assets/visuals/act5-team-to-act6-checkpoint-act5-team-to-act6-checkpoint-single.png" alt="팀이 작업을 끝냈어도 제출 전 확인은 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 61: 팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act6-required-pre-submit-check" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-009" data-glossary-terms="Quality Gate">
+<section class="print-page" aria-label="Slide 62: 완료 검문소(Hook)는 제출 직전 자동 확인입니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act6-required-pre-submit-check" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001 claim-009" data-glossary-terms="Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
-      <h2>팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.</h2>
-      <p class="message">결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.</p>
-      <div class="source-anchor-parity" hidden><span>품질검문소</span><span>Quality Gate</span><span>품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다.</span><span>결과물이 팀장님 책상에 올라가기 전에는 반드시 한 번 멈춰 서야 합니다.</span><span>품질검문소</span><span>Quality Gate</span><span>품질검문소와 실제 용어 Quality Gate를 함께 보여 줍니다.</span><span>그 검문소는 완료 보고 대신 증거를 봅니다.</span></div>
-      
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
+      <h2>완료 검문소(Hook)는 제출 직전 자동 확인입니다.</h2>
+      <p class="message">결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다.</p>
+
+      <div class="source-anchor-parity" hidden><span>완료 검문소</span><span>Hook</span><span>완료 검문소는 Hook 구조입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>완료 검문소(Hook)는 제출 직전 자동 확인입니다.</span><span>결과물이 팀장님 책상에 올라가기 전에는 완료 검문소가 증거와 기준을 먼저 봅니다.</span><span>완료 검문소(Hook)</span><span>증거와 기준</span><span>제출 직전에 자동으로 확인합니다.</span><span>그 검문소는 완료 보고 대신 증거를 봅니다.</span></div>
+
       <div class="source-bridge-parity" hidden>그 검문소는 완료 보고 대신 증거를 봅니다.</div>
     </section>
     <section class="slide-media" aria-label="팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4539,41 +4649,37 @@ h2 {
         <img src="assets/visuals/act6-required-pre-submit-check-act6-required-pre-submit-check-single.png" alt="팀장에게 결과물을 제출하기 전에는 필수검증을 거칩니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 62: 품질검문소는 완료 보고 대신 증거를 봅니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act6-quality-gate-evidence-over-claim" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Quality Gate">
+<section class="print-page" aria-label="Slide 63: 품질검문소는 완료 보고 대신 증거를 봅니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act6-quality-gate-evidence-over-claim" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Quality Gate Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>품질검문소는 완료 보고 대신 증거를 봅니다.</h2>
       <p class="message">품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.</p>
-      <div class="source-anchor-parity" hidden><span>작업 기록</span><span>기준 대조</span><span>남은 위험</span></div>
+
+      <div class="source-anchor-parity" hidden><span>품질검문소</span><span>Quality Gate</span><span>품질검문소는 Quality Gate 기준입니다.</span></div>
       <div class="source-spec-parity" hidden><span>품질검문소는 완료 보고 대신 증거를 봅니다.</span><span>품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.</span><span>작업 기록</span><span>기준 대조</span><span>남은 위험</span><span>먼저 작업 기록부터 보겠습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>먼저 작업 기록부터 보겠습니다.</div>
     </section>
-    <section class="slide-media" aria-label="품질검문소는 완료 보고 대신 증거를 봅니다. 장면을 설명하는 hand-drawn minimal teaching asset">
-      <div class="lc-visual lc-decision-gate-visual" data-template-component="decision-gate" data-visual-component="gate" data-source-component="practice-gate-visual" data-motion-cue="gate-check" aria-hidden="true">
-          <div class="lc-gate-board">
-            <strong>확인?</strong>
-            <span class="gate-line"></span>
-            <em>증거 확인 후 판정</em>
-          </div>
-          <span class="lc-gate-card goal">작업 기록<br><small>맞음</small></span>
-          <span class="lc-gate-card evidence">오해한 기준<br><small>있음</small></span>
-          <span class="lc-gate-card retry">남은 위험<br><small>필요</small></span>
-          <div class="lc-gate-verdict"><b>HOLD</b><b>PASS</b></div>
+    <section class="slide-media" aria-label="품질검문소와 Quality Gate 용어를 연결하는 텍스트 중심 term bridge 화면">
+      <div class="lc-visual lc-handoff-bridge-visual" data-template-component="term-bridge" data-visual-component="bridge" data-source-component="handoff-bridge-visual" data-motion-cue="term-bridge" aria-hidden="true">
+          <section><strong>업무 말</strong><span>품질검문소</span><em>익숙한 말</em></section>
+          <div class="lc-bridge-file"><span>Quality</span><span>Gate</span></div>
+          <section><strong>AI 말</strong><span>Quality</span><span>Gate</span><em>실제 용어</em></section>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 63: 검증하려면 김아이가 작업 기록을 남겨야 합니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act6-work-log-evidence" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Quality Gate">
+<section class="print-page" aria-label="Slide 64: 검증하려면 김아이가 작업 기록을 남겨야 합니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act6-work-log-evidence" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Quality Gate Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>검증하려면 김아이가 작업 기록을 남겨야 합니다.</h2>
       <p class="message">작업 기록이 있어야 검문소가 실제 작업 여부를 확인할 수 있고, 김아이도 체크리스트처럼 더 명확하게 일합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>작업: 무엇을 했는지</span><span>순서: 어떤 과정인지</span><span>증거: 무엇이 남았는지</span><span>결과: 어디서 볼지</span></div>
       <div class="source-spec-parity" hidden><span>검증하려면 김아이가 작업 기록을 남겨야 합니다.</span><span>작업 기록이 있어야 검문소가 실제 작업 여부를 확인할 수 있고, 김아이도 체크리스트처럼 더 명확하게 일합니다.</span><span>작업: 무엇을 했는지</span><span>순서: 어떤 과정인지</span><span>증거: 무엇이 남았는지</span><span>결과: 어디서 볼지</span><span>검증은 처음 목표와 제출 기준에 맞는지 대조합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>검증은 처음 목표와 제출 기준에 맞는지 대조합니다.</div>
     </section>
     <section class="slide-media" aria-label="검증하려면 김아이가 작업 기록을 남겨야 합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4584,16 +4690,17 @@ h2 {
         </div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 64: 검증은 처음 목표와 제출 기준에 맞는지 대조합니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act6-goal-rubric-check" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Evaluation Quality Gate">
+<section class="print-page" aria-label="Slide 65: 검증은 처음 목표와 제출 기준에 맞는지 대조합니다."><main class="slide slide--checklist slide-template--brief-window" data-slide-id="act6-goal-rubric-check" data-layout-template="checklist" data-main-template="brief-window" data-teaching-move="explain" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="Evaluation Quality Gate Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>검증은 처음 목표와 제출 기준에 맞는지 대조합니다.</h2>
       <p class="message">만들었다는 사실과 목표에 맞는다는 사실은 다르므로 처음 목표와 제출 기준에 맞는지 다시 대조합니다.</p>
+
       <div class="source-anchor-parity" hidden><span>목표: 처음 요청</span><span>기준: 제출 조건</span><span>누락: 빠진 항목</span><span>판정: 통과/보류</span></div>
       <div class="source-spec-parity" hidden><span>검증은 처음 목표와 제출 기준에 맞는지 대조합니다.</span><span>만들었다는 사실과 목표에 맞는다는 사실은 다르므로 처음 목표와 제출 기준에 맞는지 다시 대조합니다.</span><span>목표: 처음 요청</span><span>기준: 제출 조건</span><span>누락: 빠진 항목</span><span>판정: 통과/보류</span><span>남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</div>
     </section>
     <section class="slide-media" aria-label="검증은 처음 목표와 제출 기준에 맞는지 대조합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4604,52 +4711,55 @@ h2 {
         </div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 65: 남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="act6-risk-handoff-note" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001" data-glossary-terms="Quality Gate">
+<section class="print-page" aria-label="Slide 66: 남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다."><main class="slide slide--quote slide-template--term-bridge" data-slide-id="act6-risk-handoff-note" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Stop Hook Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
-      <h2>남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</h2>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
+      <h2>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</h2>
       <p class="message">통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.</p>
-      <div class="source-anchor-parity" hidden><span>못 한 확인</span><span>남은 위험</span><span>다음 조치</span></div>
-      <div class="source-spec-parity" hidden><span>남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</span><span>통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.</span><span>못 한 확인</span><span>남은 위험</span><span>다음 조치</span><span>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>완료 검문소</span><span>Stop Hook</span><span>완료 검문소(Hook)를 자동으로 켜는 구체 장치가 Stop Hook입니다.</span></div>
+      <div class="source-spec-parity" hidden><span>남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다.</span><span>통과가 아니면 못 한 확인, 남은 위험, 다음 조치를 남겨야 다음 사람이 이어받을 수 있습니다.</span><span>완료 검문소(Hook)</span><span>Stop Hook</span><span>제출 직전 자동 확인</span><span>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</span></div>
+
       <div class="source-bridge-parity" hidden>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</div>
     </section>
-    <section class="slide-media" aria-label="남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다. 장면을 설명하는 hand-drawn minimal teaching asset">
+    <section class="slide-media" aria-label="완료 검문소(Hook)와 Stop Hook 구체 장치를 병기해 연결하는 첫 용어 브릿지">
       <figure class="visual-figure visual-generated-image">
-        <img src="assets/visuals/act6-risk-handoff-note-act6-risk-handoff-note-single.png" alt="남은 위험을 숨기지 않아야 다음 조치를 정할 수 있습니다. 장면을 설명하는 hand-drawn minimal teaching asset">
+        <img src="assets/visuals/act6-risk-handoff-note-act6-risk-handoff-note-single.png" alt="완료 검문소(Hook)와 Stop Hook 구체 장치를 병기해 연결하는 첫 용어 브릿지">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 66: 완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다."><main class="slide slide--quote slide-template--kimai-structure" data-slide-id="act6-stop-hook-quality-gate" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001 claim-009" data-glossary-terms="Hook Quality Gate">
+<section class="print-page" aria-label="Slide 67: Stop Hook은 완료 검문소(Hook)를 켜는 구체적인 장치입니다."><main class="slide slide--visual-left slide-template--kimai-structure" data-slide-id="act6-stop-hook-quality-gate" data-layout-template="story-scene" data-main-template="kimai-structure" data-teaching-move="explain" data-audience-action="inspect-visual" data-visual-mode="story-illustration" data-evidence-ids="claim-001 claim-009" data-glossary-terms="Hook Stop Hook Evaluation">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
-      <h2>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</h2>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
+      <h2>Stop Hook은 완료 검문소를 켜는 구체적인 장치입니다.</h2>
       <p class="message">Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.</p>
-      <div class="source-anchor-parity" hidden><span>완료 직전</span><span>자동 실행</span><span>Stop Hook</span></div>
-      <div class="source-spec-parity" hidden><span>완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다.</span><span>Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.</span><span>완료 직전</span><span>자동 실행</span><span>Stop Hook</span><span>통과와 보류를 가르는 기준이 Evaluation입니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>완료 검문소(Hook)</span><span>자동 실행</span><span>증거 확인</span></div>
+      <div class="source-spec-parity" hidden><span>Stop Hook은 완료 검문소(Hook)를 켜는 구체적인 장치입니다.</span><span>Stop Hook은 김아이가 멈추거나 완료하려는 순간 품질검문소를 자동으로 켜는 장치입니다.</span><span>완료 검문소(Hook)</span><span>자동 실행</span><span>증거 확인</span><span>통과와 보류를 가르는 기준이 Evaluation입니다.</span></div>
+
       <div class="source-bridge-parity" hidden>통과와 보류를 가르는 기준이 Evaluation입니다.</div>
     </section>
     <section class="slide-media" aria-label="완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       <div class="lc-visual lc-kimai-structure-visual" data-template-component="kimai-structure" data-visual-component="kimai-structure" data-source-component="kimai-image-structure" data-motion-cue="image-frame">
-        <figure class="lc-kimai-image-frame">
+        <figure class="visual-figure visual-generated-image visual-kimai-inline">
           <img src="assets/visuals/act6-stop-hook-quality-gate-act6-stop-hook-quality-gate-single.png" alt="완료 직전에 품질검문소를 켜는 장치가 Stop Hook입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
         </figure>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 67: 통과와 보류를 가르는 기준이 Evaluation입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act6-evaluation-pass-hold" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Evaluation LLM judge Quality Gate">
+<section class="print-page" aria-label="Slide 68: 통과와 보류를 가르는 기준이 Evaluation입니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act6-evaluation-pass-hold" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="Evaluation LLM judge Quality Gate Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>통과와 보류를 가르는 기준이 Evaluation입니다.</h2>
       <p class="message">Evaluation은 단순 점수표가 아니라 무엇을 통과로 볼지 정하는 기준과 판정 과정입니다.</p>
-      <div class="source-anchor-parity" hidden><span>판정 기준</span><span>Evaluation</span><span>판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.</span></div>
-      <div class="source-spec-parity" hidden><span>통과와 보류를 가르는 기준이 Evaluation입니다.</span><span>Evaluation은 단순 점수표가 아니라 무엇을 통과로 볼지 정하는 기준과 판정 과정입니다.</span><span>판정 기준</span><span>Evaluation</span><span>판정 기준와 실제 용어 Evaluation를 함께 보여 줍니다.</span><span>검문소에는 지금 상태를 적는 상태표가 필요합니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>판정 기준</span><span>Evaluation</span><span>판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.</span></div>
+      <div class="source-spec-parity" hidden><span>통과와 보류를 가르는 기준이 Evaluation입니다.</span><span>Evaluation은 단순 점수표가 아니라 무엇을 통과로 볼지 정하는 기준과 판정 과정입니다.</span><span>판정 기준</span><span>Evaluation</span><span>판정 기준과 실제 용어 Evaluation을 함께 보여 줍니다.</span><span>검문소에는 지금 상태를 적는 상태표가 필요합니다.</span></div>
+
       <div class="source-bridge-parity" hidden>검문소에는 지금 상태를 적는 상태표가 필요합니다.</div>
     </section>
     <section class="slide-media" aria-label="통과와 보류를 가르는 기준이 Evaluation입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4657,16 +4767,17 @@ h2 {
         <img src="assets/visuals/act6-evaluation-pass-hold-act6-evaluation-pass-hold-single.png" alt="통과와 보류를 가르는 기준이 Evaluation입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 68: 검문소에는 지금 상태를 적는 상태표가 필요합니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act6-state-status-file" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="State">
+<section class="print-page" aria-label="Slide 69: 검문소에는 지금 상태를 적는 상태표가 필요합니다."><main class="slide slide--statement slide-template--term-bridge" data-slide-id="act6-state-status-file" data-layout-template="glossary-bridge" data-main-template="term-bridge" data-teaching-move="connect" data-audience-action="connect-metaphor" data-visual-mode="term-bridge" data-evidence-ids="claim-001" data-glossary-terms="State Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>검문소에는 지금 상태를 적는 상태표가 필요합니다.</h2>
       <p class="message">상태표가 있어야 처리 중, 완료, 실패, 재시도 횟수를 구분할 수 있습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>상태표</span><span>State</span><span>상태표와 실제 용어 State를 함께 보여 줍니다.</span></div>
       <div class="source-spec-parity" hidden><span>검문소에는 지금 상태를 적는 상태표가 필요합니다.</span><span>상태표가 있어야 처리 중, 완료, 실패, 재시도 횟수를 구분할 수 있습니다.</span><span>상태표</span><span>State</span><span>상태표와 실제 용어 State를 함께 보여 줍니다.</span><span>재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.</div>
     </section>
     <section class="slide-media" aria-label="검문소에는 지금 상태를 적는 상태표가 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4674,16 +4785,17 @@ h2 {
         <img src="assets/visuals/act6-state-status-file-act6-state-status-file-single.png" alt="검문소에는 지금 상태를 적는 상태표가 필요합니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 69: 재검토 규칙이 없으면 일이 끝없이 되돌아갑니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act6-loop-control-recheck" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="State">
+<section class="print-page" aria-label="Slide 70: 재검토 규칙이 없으면 일이 끝없이 되돌아갑니다."><main class="slide slide--checklist slide-template--decision-gate" data-slide-id="act6-loop-control-recheck" data-layout-template="checklist" data-main-template="decision-gate" data-teaching-move="demonstrate" data-audience-action="rehearse-checklist" data-visual-mode="checklist-board" data-evidence-ids="claim-001" data-glossary-terms="State Stop Hook Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.</h2>
       <p class="message">재검토에는 다시 볼 조건, 최대 시도, 멈출 조건이 함께 있어야 무한 반복을 막을 수 있습니다.</p>
+
       <div class="source-anchor-parity" hidden><span>다시 볼 조건</span><span>최대 시도</span><span>멈출 조건</span></div>
       <div class="source-spec-parity" hidden><span>재검토 규칙이 없으면 일이 끝없이 되돌아갑니다.</span><span>재검토에는 다시 볼 조건, 최대 시도, 멈출 조건이 함께 있어야 무한 반복을 막을 수 있습니다.</span><span>다시 볼 조건</span><span>최대 시도</span><span>멈출 조건</span><span>실습에서는 제출 전 Stop Hook 검문소를 설계합니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>실습에서는 제출 전 Stop Hook 검문소를 설계합니다.</div>
     </section>
     <section class="slide-media" aria-label="재검토 규칙이 없으면 일이 끝없이 되돌아갑니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4699,13 +4811,14 @@ h2 {
           <div class="lc-gate-verdict"><b>HOLD</b><b>PASS</b></div>
       </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 70: 실습에서는 제출 전 Stop Hook 검문소를 설계합니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act6-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-001" data-glossary-terms="Hook State">
+<section class="print-page" aria-label="Slide 71: 실습에서는 제출 전 Stop Hook 검문소를 설계합니다."><main class="slide slide--handoff slide-template--practice-handoff slide--no-visual" data-slide-id="act6-practice-handoff" data-layout-template="practice-handoff" data-main-template="practice-handoff" data-teaching-move="practice-bridge" data-audience-action="transfer-to-practice" data-visual-mode="practice-transition" data-evidence-ids="claim-001" data-glossary-terms="Hook State Stop Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>실습에서는 제출 전 Stop Hook 검문소를 설계합니다.</h2>
       <p class="message">실습은 점수판을 보는 것이 아니라 완료 직전 검문소가 언제 켜지고, 무엇을 보고, 언제 멈출지 설계하는 일입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>언제 켤지</span><span>어떤 증거를 볼지</span><span>언제 멈출지</span></div>
       <div class="source-spec-parity" hidden><span>실습에서는 제출 전 Stop Hook 검문소를 설계합니다.</span><span>실습은 점수판을 보는 것이 아니라 완료 직전 검문소가 언제 켜지고, 무엇을 보고, 언제 멈출지 설계하는 일입니다.</span><span>언제 켤지</span><span>어떤 증거를 볼지</span><span>언제 멈출지</span><span>검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.</span></div>
       <div class="lc-visual lc-practice-handoff-composite" data-template-component="practice-handoff" data-visual-component="handoff" data-source-component="practice-handoff-composite" data-motion-cue="handoff-list" aria-hidden="true">
@@ -4716,16 +4829,17 @@ h2 {
       </div>
       <div class="source-bridge-parity" hidden>검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.</div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 71: 검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act6-unlock-structure" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Hook">
+<section class="print-page" aria-label="Slide 72: 검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다."><main class="slide slide--quote slide-template--workflow-strip" data-slide-id="act6-unlock-structure" data-layout-template="concept-map" data-main-template="workflow-strip" data-teaching-move="demonstrate" data-audience-action="compare" data-visual-mode="process-diagram" data-evidence-ids="claim-001" data-glossary-terms="Hook Stop Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.</h2>
       <p class="message">Act 6은 실제 Stop Hook을 만들 프롬프트와 예제 구조를 여는 단계입니다.</p>
+
       <div class="source-anchor-parity" hidden><span>프롬프트</span><span>설정 예제</span><span>상태 파일</span><span>검문소 코드</span></div>
       <div class="source-spec-parity" hidden><span>검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다.</span><span>Act 6은 실제 Stop Hook을 만들 프롬프트와 예제 구조를 여는 단계입니다.</span><span>프롬프트</span><span>설정 예제</span><span>상태 파일</span><span>검문소 코드</span><span>하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다.</div>
     </section>
     <section class="slide-media" aria-label="검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4733,16 +4847,17 @@ h2 {
         <img src="assets/visuals/act6-unlock-structure-act6-unlock-structure-single.png" alt="검문소 설계가 통과되면 생성 프롬프트와 예제 구조가 열립니다. 장면을 설명하는 hand-drawn minimal teaching asset">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 72: 하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다."><main class="slide slide--quote slide-template--recap-map" data-slide-id="act6-final-harness-map" data-layout-template="wrap-up" data-main-template="recap-map" data-teaching-move="synthesize" data-audience-action="reflect" data-visual-mode="artifact-map" data-evidence-ids="claim-001" data-glossary-terms="Harness Engineering">
+<section class="print-page" aria-label="Slide 73: 하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다."><main class="slide slide--quote slide-template--recap-map" data-slide-id="act6-final-harness-map" data-layout-template="wrap-up" data-main-template="recap-map" data-teaching-move="synthesize" data-audience-action="reflect" data-visual-mode="artifact-map" data-evidence-ids="claim-001" data-glossary-terms="Harness Engineering Context Prompt CLAUDE.md Skill Agent Hook">
     <section class="copy">
-      <div class="eyebrow">Act 6 · 검증과 하네스 구조</div>
+      <div class="eyebrow">Act 6 · 완료 검문소(Hook)</div>
       <h2>하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.</h2>
       <p class="message">하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.</p>
-      <div class="source-anchor-parity" hidden><span>정보 선별</span><span>업무 지시</span><span>회사 내규</span><span>업무 매뉴얼</span><span>역할과 권한</span><span>완료 검문소</span></div>
-      <div class="source-spec-parity" hidden><span>하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.</span><span>하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.</span><span>정보 선별</span><span>업무 지시</span><span>회사 내규</span><span>업무 매뉴얼</span><span>역할과 권한</span><span>완료 검문소</span><span>그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.</span></div>
-      
+
+      <div class="source-anchor-parity" hidden><span>책상 정리</span><span>업무 지시</span><span>회사 내규</span><span>업무 매뉴얼</span><span>역할 카드</span><span>완료 검문소</span></div>
+      <div class="source-spec-parity" hidden><span>하네스는 김아이 팀이 작업에 집중하게 만드는 환경 조성입니다.</span><span>하네스는 좋은 프롬프트 하나가 아니라 김아이 팀이 작업을 완벽하게 진행할수 있도록 환경을 조성해 주는것입니다.</span><span>책상 위 자료(Context)</span><span>업무 지시(Prompt)</span><span>회사 내규(CLAUDE.md)</span><span>업무 매뉴얼(Skill)</span><span>역할 카드(Agent)</span><span>완료 검문소(Hook)</span><span>그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.</span></div>
+
       <div class="source-bridge-parity" hidden>그런데 팀장님들, 내일 출근해서 이 6가지 장치를 전부 다 적용해야 할까요? 아닙니다.</div>
     </section>
     <section class="slide-media" aria-label="하네스는 김아이 팀이 흔들려도 돌아오게 만드는 업무 환경입니다. 장면을 설명하는 hand-drawn minimal teaching asset">
@@ -4750,26 +4865,27 @@ h2 {
       <div class="lc-loop-ring lc-loop-ring--six">
         <i class="lc-loop-path"></i>
         <i class="lc-loop-runner"></i>
-        <span class="write"><b>정보 선별</b><small>Context</small></span>
+        <span class="write"><b>업무 환경</b><small>Context</small></span>
         <span class="run"><b>업무 지시</b><small>Prompt</small></span>
         <span class="check"><b>회사 내규</b><small>CLAUDE.md</small></span>
         <span class="keep"><b>업무 매뉴얼</b><small>Skill</small></span>
-        <span class="role"><b>역할과 권한</b><small>Agent</small></span>
+        <span class="role"><b>역할 카드</b><small>Agent</small></span>
         <span class="gate"><b>완료 검문소</b><small>Stop Hook</small></span>
         <strong>하네스</strong>
       </div>
     </div>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
-<section class="print-page" aria-label="Slide 73: 내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="wrap-personal-harness" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="synthesize" data-audience-action="reflect" data-visual-mode="story-illustration" data-evidence-ids="claim-010" data-glossary-terms="Harness Engineering">
+<section class="print-page" aria-label="Slide 74: 내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다."><main class="slide slide--standard slide-template--assertion-scene" data-slide-id="wrap-personal-harness" data-layout-template="assertion-evidence" data-main-template="assertion-scene" data-teaching-move="synthesize" data-audience-action="reflect" data-visual-mode="story-illustration" data-evidence-ids="claim-010" data-glossary-terms="Harness Engineering">
     <section class="copy">
       <div class="eyebrow">Wrap-up · 내 업무에 가져가기</div>
       <h2>내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.</h2>
       <p class="message">처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.</p>
+
       <div class="source-anchor-parity" hidden><span>자주 반복되는가</span><span>실패하면 위험한가</span><span>검증할 증거가 있는가</span></div>
       <div class="source-spec-parity" hidden><span>내 업무에는 모든 장치가 아니라 가장 자주 흔들리는 세 곳부터 붙입니다.</span><span>처음부터 6개를 다 하려고 하면 지칩니다. 반복, 위험, 검증 기준으로 내일 바로 적용할 3가지만 고르세요.</span><span>자주 반복되는가</span><span>실패하면 위험한가</span><span>검증할 증거가 있는가</span><span>오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.</span></div>
-      
+
       <div class="source-bridge-parity" hidden>오늘 만든 것은 일회성 프롬프트 문장이 아니라, 내일도 모레도 다시 쓸 수 있는 단단한 업무 방식입니다. 수고하셨습니다.</div>
     </section>
     <section class="slide-media" aria-label="Act 1~6의 6가지 하네스 장치가 반복, 위험, 검증 세 필터를 지나 내 업무의 핵심 안전장치 3가지로 좁혀지는 김아이 깔때기 손그림">
@@ -4777,7 +4893,7 @@ h2 {
         <img src="assets/visuals/wrap-personal-harness-wrap-personal-harness-funnel-single.png" alt="Act 1~6의 6가지 하네스 장치가 반복, 위험, 검증 세 필터를 지나 내 업무의 핵심 안전장치 3가지로 좁혀지는 김아이 깔때기 손그림">
       </figure>
     </section>
-    <div class="slide-attribution" aria-label="slide attribution">me.surfersclub.org 강사 변상훈</div>
+    <div class="slide-attribution" aria-label="slide attribution">Copyright me.surfersclub.org</div>
   </main></section>
 </body>
 </html>

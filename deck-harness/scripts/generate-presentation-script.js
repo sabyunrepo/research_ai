@@ -108,14 +108,14 @@ const sectionFrames = {
   },
   act5: {
     opening: "매뉴얼이 있어도 김아이 한 명에게 모든 일을 맡기면 다시 복잡해집니다.",
-    analogy: "회사에서 조사, 작성, 검토, 승인 역할을 나누듯이 AI 작업도 역할을 나누면 판단이 선명해집니다.",
-    term: "이렇게 역할을 나눈 김아이들을 Agent 또는 Subagent라고 부릅니다.",
+    analogy: "회사에서 조사, 작성, 검토, 승인 역할을 나누듯이 AI 작업도 역할 카드를 나누면 판단이 선명해집니다.",
+    term: "이렇게 책임을 나눠 맡는 역할 카드를 Agent라고 부릅니다.",
     question: "내 업무에서 조사자, 작성자, 검토자를 한 사람에게 몰아주고 있지는 않나요?",
   },
   act6: {
     opening: "마지막 단계는 김아이 팀이 끝났다고 말했을 때 무엇을 보고 믿을지 정하는 것입니다.",
     analogy: "완료 보고만 듣는 것이 아니라 작업 기록, 기준표, 남은 위험을 보고 통과와 보류를 가르는 검문소를 둡니다.",
-    term: "이 검문소가 Evaluation, Quality Gate, Stop Hook, State 같은 용어로 나뉘어 구현됩니다.",
+    term: "이 완료 직전 자동 검문소를 켜는 대표 장치를 Hook으로 보겠습니다.",
     question: "내 업무에서 완료라고 말하려면 어떤 증거가 반드시 있어야 하나요?",
   },
   wrap: {
@@ -159,7 +159,7 @@ function visualLine(slide, anchors) {
     return `여기서는 ${anchorPhrase(anchors)}를 실습 순서로 잡고, 참가자가 자기 업무에 바로 대입하게 안내하면 됩니다.`;
   }
   if (sectionKey(slide.section) === "act5") {
-    return `여기서는 ${anchorPhrase(anchors)}를 보면서 역할과 권한이 어떻게 나뉘는지 먼저 잡겠습니다.`;
+    return `여기서는 ${anchorPhrase(anchors)}를 보면서 역할 카드가 어떻게 나뉘는지 먼저 잡겠습니다.`;
   }
   if (sectionKey(slide.section) === "act6") {
     return `여기서는 ${anchorPhrase(anchors)}를 보면서 완료 주장보다 어떤 증거를 볼지에 초점을 맞추겠습니다.`;
@@ -168,9 +168,18 @@ function visualLine(slide, anchors) {
 }
 
 function termLine(slide, frame) {
-  const terms = unique(slide.glossaryTerms || []).slice(0, 3);
+  const terms = displayTerms(slide).slice(0, 3);
   if (!terms.length) return frame.term;
   return `${frame.term} 오늘 슬라이드의 실제 용어는 ${terms.join(", ")}입니다. 이름을 외우기보다, 어떤 업무 장치를 가리키는지 먼저 잡으면 됩니다.`;
+}
+
+function displayTerms(slide) {
+  const terms = unique(slide.glossaryTerms || []);
+  const isEvaluationSlide = /Evaluation/.test(`${slide.title || ""} ${slide.rewrittenScreen?.realTerm || ""}`);
+  if (!isEvaluationSlide && terms.includes("Hook")) {
+    return terms.filter((term) => term !== "Evaluation");
+  }
+  return terms;
 }
 
 function interactionPrompt(slide, anchors) {
@@ -220,7 +229,7 @@ function shortCue(value, max = 22) {
 
 function buildKeywordFlow(slide, anchors) {
   const frame = frameFor(slide);
-  const terms = unique(slide.glossaryTerms || []);
+  const terms = displayTerms(slide);
   const transition = stripSentenceEnd(transitionFor(slide));
   const anchorCue = anchors.length ? anchors.slice(0, 3).join(" / ") : shortCue(slide.title, 24);
   const flow = [
@@ -241,7 +250,7 @@ function buildKeywordFlow(slide, anchors) {
     },
     {
       label: terms.length ? "실제용어" : "핵심",
-      cue: terms.length ? terms.join(" / ") : shortCue(slide.message || slide.speakerNote, 28),
+      cue: terms.length ? shortCue(terms.join(" / "), 38) : shortCue(slide.message || slide.speakerNote, 28),
       say: terms.length ? "비유를 잡은 뒤 실제 용어 이름을 붙입니다." : "김아이가 추측하지 않게 만드는 기준으로 정리합니다.",
     },
     {

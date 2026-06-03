@@ -28,6 +28,7 @@
         "assets/presenter-review.js",
         "assets/template-gallery.js",
         "assets/template-component-registry.json",
+        "assets/visuals/act0-course-outline-term-map-kimai-course-outline-map-single.png",
         "assets/visuals/act0-kimai-capable-kimai-new-employee-single.png",
         "assets/visuals/act0-company-context-kimai-company-context-blanks-single.png",
         "assets/visuals/act0-real-work-analogy-kimai-report-request-gap-single.png",
@@ -81,6 +82,7 @@
         "assets/visuals/act6-state-status-file-act6-state-status-file-single.png",
         "assets/visuals/act6-unlock-structure-act6-unlock-structure-single.png",
         "assets/visuals/wrap-personal-harness-wrap-personal-harness-funnel-single.png",
+        "slides/act0-course-outline-term-map.html",
         "slides/act0-kimai-intro.html",
         "slides/act0-kimai-capable.html",
         "slides/act0-company-context.html",
@@ -155,8 +157,8 @@
         "slides/act6-final-harness-map.html",
         "slides/wrap-personal-harness.html"
       ],
-      "inputHash": "sha256:a3e0ac5add825d02d205e0df05ac6d05b5c2e824f9e21dd1d1831043f997f305",
-      "outputHash": "sha256:77014e76f8f9c4624ee6b6f09faa63ef8d348ad675fb46348bcfdc1438c51b51",
+      "inputHash": "sha256:46cb842ef2a16fa8eebc4f33c9c20e69ebf4676bbdb21723bfafc525129fdf98",
+      "outputHash": "sha256:15e15e29a32b4d4f826341a8f84c5d2e1c580def3d06097475c042f91fd1c2ba",
       "status": "PASS",
       "evidencePath": "HANDOFF.md#verification"
     }

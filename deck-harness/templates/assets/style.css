@@ -871,6 +871,33 @@ h2 {
   cursor: help;
 }
 
+.glossary-anchor-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 430px);
+  margin: 18px 0 0;
+}
+
+.glossary-anchor {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+  box-shadow: 3px 3px 0 rgba(37, 99, 235, 0.12);
+}
+
+.glossary-anchor .glossary-term {
+  border-bottom-width: 1px;
+}
+
 .glossary-popover {
   position: fixed;
   z-index: 200;
@@ -1153,12 +1180,12 @@ h2 {
 
 .slide-template--kimai-structure .visual-figure {
   width: min(100%, 610px);
-  padding: 12px;
-  border: 3px solid var(--line);
-  border-radius: 20px 12px 22px 14px;
-  background: #fff;
-  box-shadow: 9px 10px 0 #e8efff;
-  transform: rotate(-.7deg);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
 .slide-template--kimai-structure .visual-figure img {
@@ -2370,18 +2397,18 @@ h2 {
 .lc-kimai-image-frame {
   width: min(100%, 560px);
   margin: 0;
-  padding: 12px;
-  border: var(--lc-bold-stroke) solid var(--line);
-  border-radius: 21px 12px 23px 14px;
-  background: #fff;
-  box-shadow: var(--lc-paper-shadow);
-  transform: rotate(-.8deg);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
 .lc-kimai-image-frame img {
   display: block;
   width: 100%;
-  max-height: 330px;
+  max-height: 460px;
   object-fit: contain;
 }
 

@@ -1,4 +1,4 @@
-# Act 1 Content Source: 정보 선별
+# Act 1 Content Source: 책상 정리
 
 Generated: 2026-05-28
 Workspace: `/Users/byeonsanghun/goinfre/research_ai-kimai-content`
@@ -6,7 +6,7 @@ Purpose: 하네스 엔지니어링 워크플로우가 나중에 `section-plan.js
 
 ## 1. Act 1 결정
 
-Act 1의 강의 부분은 첫 실습을 시작하기 전에 수강생이 "정보 선별"의 의미를 이해하게 만드는 구간이다.
+Act 1의 강의 부분은 첫 실습을 시작하기 전에 수강생이 "책상 정리"의 의미를 이해하게 만드는 구간이다.
 
 Act 1의 실습 자체는 이 문서의 슬라이드 안에 넣지 않는다. 실습은 별도 activity contract인 `act1-info-selection`에서 처리한다.
 
@@ -93,7 +93,7 @@ distractor: 현재 목표를 흐리거나 오래된 가정을 섞는 정보
 검증 로그
 ```
 
-점수는 보조 장치다. 수강생 평가가 아니라 정보 선별 습관을 진단하기 위한 것이다.
+점수는 보조 장치다. 수강생 평가가 아니라 책상 정리 습관을 진단하기 위한 것이다.
 
 ## 4. Question 1 Source
 
@@ -148,7 +148,7 @@ Feedback principle:
 리듬:
 
 ```text
-Act 0 회수 -> 책상 원리 -> 빈 책상 문제 -> 어지러운 책상 문제 -> 세 바구니 분류 -> 오늘 보고서 자료 -> Context 연결 -> Context Curation 의미 -> 실습 진입
+Act 0 목차 회수 -> 책상 정리(Context) 책상 정리 -> 책상 원리 -> 빈 책상 문제 -> 어지러운 책상 문제 -> 세 바구니 분류 -> 오늘 보고서 자료 -> Context 정리 심화 -> Context Curation 의미 -> 실습 진입
 ```
 
 주의:
@@ -161,7 +161,7 @@ Act 1의 Round, Feedback, Final Review는 실습 화면에서 진행한다.
 
 ## 6. Slide List
 
-### 1-1. 우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다
+### 1-1. 책상 정리(Context)은 김아이 책상 정리부터 시작합니다
 
 Type: Takahashi transition
 Estimated time: 20초
@@ -170,7 +170,7 @@ Function: Act 0 회수
 Screen headline:
 
 ```text
-우수사원 프로젝트의 첫 단계는 김아이 책상 정리입니다.
+책상 정리(Context)는 김아이 책상 위 자료부터 시작합니다.
 ```
 
 Screen subline:
@@ -183,7 +183,7 @@ Presenter flow:
 
 ```text
 Act 0의 우수사원 프로젝트를 회수한다.
-첫 실습은 문장을 잘 쓰는 일이 아니라, 김아이 책상에 올릴 자료를 고르는 일이라고 말한다.
+첫 실습은 문장을 잘 쓰는 일이 아니라, 김아이 책상에 올릴 자료를 고르는 책상 정리(Context)이라고 말한다.
 ```
 
 Visual:
@@ -374,7 +374,7 @@ Screen anchors:
 Presenter flow:
 
 ```text
-정보 선별은 많이 주는 일이 아니라 지금 업무에 맞게 고르는 일이라고 설명한다.
+책상 정리은 많이 주는 일이 아니라 지금 업무에 맞게 고르는 일이라고 설명한다.
 꼭 필요한 자료는 없으면 김아이가 추측하는 자료다.
 있으면 도움이 되는 자료는 참고가 되지만, 지금은 치워야 하는 자료도 있다고 말한다.
 ```
@@ -445,16 +445,16 @@ visualAssetId = "act1-report-desk-materials"
 practiceId = null
 ```
 
-### 1-7. 김아이의 책상이 바로 컨텍스트입니다
+### 1-7. 책상 정리(Context)은 책상 위 판단 재료를 정리하는 일입니다
 
-Type: term mapping
+Type: consolidation
 Estimated time: 70초
-Function: 실제 용어 연결
+Function: Context 정리 심화
 
 Screen headline:
 
 ```text
-김아이의 책상이 바로 컨텍스트입니다.
+책상 정리(Context)는 책상 위 판단 재료를 정리하는 일입니다.
 ```
 
 Screen anchors:
@@ -469,9 +469,9 @@ Context Curation
 Presenter flow:
 
 ```text
-먼저 책상 비유를 다시 말하고, 책상 위 자료가 결과에 영향을 준다는 작동 원리를 설명한다.
-그 다음 실제 용어 Context를 붙인다.
-Context Curation은 책상에 올릴 것과 치울 것을 고르는 일이라고 연결한다.
+Act 0과 Act 1 첫 장에서 이미 본 책상 정리(Context)을 다시 회수한다.
+책상 위 자료가 결과에 영향을 준다는 작동 원리를 정리한다.
+Context Curation은 책상에 올릴 것과 치울 것을 고르는 반복 가능한 정리 기준이라고 연결한다.
 ```
 
 Visual:
@@ -589,7 +589,7 @@ handoffOnly = true
 
 ## 7. Asset Requirements
 
-Act 1의 이미지는 장식이 아니라 발표자가 설명할 수 있는 정보 선별 개념을 담아야 한다.
+Act 1의 이미지는 장식이 아니라 발표자가 설명할 수 있는 책상 정리 개념을 담아야 한다.
 
 Required visual assets:
 
@@ -627,7 +627,7 @@ Required checks before deck build:
 1. Act 1 설명 슬라이드가 실습 UI를 포함하지 않는가?
 2. Act 0의 보고서 장면을 회수하되 같은 설명을 반복하지 않는가?
 3. 각 슬라이드가 하나의 메시지만 갖는가?
-4. 정보 선별이 좋은 지시문보다 먼저라는 점이 보이는가?
+4. 책상 정리이 좋은 지시문보다 먼저라는 점이 보이는가?
 5. 이미지는 장식이 아니라 발표자가 가리키며 설명할 수 있는가?
 6. 마지막 슬라이드가 별도 Act 1 실습으로 자연스럽게 넘어가는가?
 ```

@@ -56,17 +56,70 @@ Act 0은 `one idea per slide`를 강하게 적용한다.
 
 권장 시간: 10-12분
 
-권장 슬라이드 수: 7장
+권장 슬라이드 수: 9장
 
 리듬:
 
 ```text
-김아이 첫 출근 -> 우수한 신입 인정 -> 모르는 회사 맥락 -> 팀장님의 첫 업무 지시 -> 하네스 엔지니어링 개념 -> 초안의 한계 -> 체크리스트와 피드백 -> 우수사원 프로젝트 지도
+강의 목차와 용어 병기 -> 김아이 첫 출근 -> 우수한 신입 인정 -> 모르는 회사 맥락 -> 팀장님의 첫 업무 지시 -> 하네스 엔지니어링 개념 -> 초안의 한계 -> 체크리스트와 피드백 -> 우수사원 프로젝트 지도
 ```
 
 ## 5. Slide List
 
-### 0-1. 신입사원 김아이의 첫 출근날입니다
+### 0-1. 오늘의 장치는 쉬운 이름과 실제 용어를 함께 기억합니다
+
+Type: outline and terminology map
+Estimated time: 90초
+Function: 강의 목차와 용어 선공개
+
+Screen headline:
+
+```text
+오늘의 장치는 쉬운 이름과 실제 용어를 함께 기억합니다.
+```
+
+Screen map:
+
+```text
+1. 책상 정리(Context)
+2. 업무 지시(Prompt)
+3. 회사 내규(CLAUDE.md)
+4. 업무 매뉴얼(Skill)
+5. 역할 카드(Agent)
+6. 완료 검문소(Hook)
+```
+
+Presenter flow:
+
+```text
+전문 용어를 뒤에서 갑자기 공개하지 않는다.
+수강생이 각 Act에 들어갈 때마다 쉬운 이름과 실제 용어를 같이 보게 한다.
+특히 업무 매뉴얼(Skill)은 매뉴얼과 Skill이 같은 개념임을 반복해서 병기한다.
+깊은 구조 설명은 각 Act 후반에서 다시 정리한다고 말한다.
+```
+
+Visual:
+
+```text
+기존 김아이 여정 지도 시각을 재사용한다.
+새 이미지가 필요하면 기존 김아이 캐릭터 계약을 유지한다.
+김아이 명찰, 친근한 AI 신입사원, 흰 배경, 검은 선화, 파란 포인트를 유지하고 캐릭터가 잘리지 않게 한다.
+```
+
+Bridge:
+
+```text
+이제 오늘의 주인공 김아이를 만나보겠습니다.
+```
+
+Harness note:
+
+```text
+visualAssetId = "kimai-workflow-map"
+practiceId = null
+```
+
+### 0-2. 신입사원 김아이의 첫 출근날입니다
 
 Type: Takahashi transition
 Estimated time: 10초
@@ -112,7 +165,7 @@ visualAssetId = "kimai-new-employee"
 practiceId = null
 ```
 
-### 0-2. 김아이는 뛰어난 신입사원입니다
+### 0-3. 김아이는 뛰어난 신입사원입니다
 
 Type: Takahashi transition
 Estimated time: 20초
@@ -158,7 +211,7 @@ Harness note:
 practiceId = null
 ```
 
-### 0-3. 똑똑하다고 모든 걸 아는 것은 아닙니다
+### 0-4. 똑똑하다고 모든 걸 아는 것은 아닙니다
 
 Type: core message
 Estimated time: 40초
@@ -205,7 +258,7 @@ visualAssetId = "kimai-company-context-blanks"
 practiceId = null
 ```
 
-### 0-4. 팀장님의 첫 업무 지시가 도착했습니다
+### 0-5. 팀장님의 첫 업무 지시가 도착했습니다
 
 Type: story slide
 Estimated time: 60초
@@ -257,7 +310,7 @@ Harness note:
 practiceId = null
 ```
 
-### 0-5. 하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다
+### 0-6. 하네스 엔지니어링은 김아이의 업무 능력을 끌어내는 일입니다
 
 Type: concept slide
 Estimated time: 60초
@@ -305,7 +358,7 @@ glossaryTerms = ["Harness Engineering"]
 practiceId = null
 ```
 
-### 0-6. 신입은 한 번에 완벽하게 일을 끝내지 못합니다
+### 0-7. 신입은 한 번에 완벽하게 일을 끝내지 못합니다
 
 Type: problem slide
 Estimated time: 45초
@@ -350,7 +403,7 @@ Harness note:
 practiceId = null
 ```
 
-### 0-7. 체크리스트와 피드백이 보고서의 퀄리티를 높입니다
+### 0-8. 체크리스트와 피드백이 보고서의 퀄리티를 높입니다
 
 Type: loop slide
 Estimated time: 55초
@@ -395,7 +448,7 @@ Harness note:
 practiceId = null
 ```
 
-### 0-8. 오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다
+### 0-9. 오늘은 김아이가 우수사원이 되도록 팀장님이 이끌어 주는 시간입니다
 
 Type: map slide
 Estimated time: 90초
@@ -423,7 +476,7 @@ Presenter flow:
 ```text
 여섯 단계를 모두 깊게 설명하지 않는다.
 우수사원 프로젝트의 단계로 소개한다. 먼저 책상을 정리하고, 그다음 업무 지시를 하고, 데스크 자료를 고르고, 반복 절차를 매뉴얼로 남기고, 역할과 도구를 나누고, 마지막에 체크리스트로 확인한다고 말한다.
-전문 용어는 지금 화면에 노출하지 않고, 발표자 노트와 glossary tooltip 계약에만 남긴다.
+다음 장에서 각 단계의 쉬운 이름과 실제 하네스 용어를 함께 보여 준다고 예고한다.
 ```
 
 Visual:
@@ -444,6 +497,8 @@ Harness note:
 ```text
 practiceId = null
 ```
+
+
 ## 6. Act 0 Interaction Boundary
 
 Act 0의 interaction은 학습 활동이 아니라 발표 보조 장치다.
@@ -632,7 +687,7 @@ Must show:
 
 ## 8. Glossary Seeds
 
-Act 0에서는 용어를 깊게 가르치지 않는다. 툴팁과 보조 라벨의 씨앗만 둔다.
+Act 0에서는 용어를 깊게 가르치지 않지만, 쉬운 이름과 실제 용어를 목차에서 함께 노출한다. 툴팁과 보조 라벨은 이후 반복 노출을 돕는 씨앗으로 둔다.
 
 | Term | 쉬운 이름 | Act 0 설명 |
 |---|---|---|
@@ -669,5 +724,5 @@ Required checks before deck build:
 4. interaction이 glossary tooltip을 넘지 않는가?
 5. 전문 용어가 본문보다 크게 보이지 않는가?
 6. 발표자가 슬라이드만 보고 다음 말과 다음 장을 알 수 있는가?
-7. Act 1 정보 선별 실습으로 자연스럽게 넘어가는가?
+7. Act 1 책상 정리 실습으로 자연스럽게 넘어가는가?
 ```
