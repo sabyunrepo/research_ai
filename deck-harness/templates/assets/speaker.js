@@ -35,6 +35,47 @@
     speakerSyncStatus.dataset.state = state;
   }
 
+  function fitCurrentSlidePreview() {
+    const previewDocument = currentFrame.contentDocument;
+    if (!previewDocument) return;
+
+    let style = previewDocument.querySelector("#speakerPreviewFitStyle");
+    if (!style) {
+      style = previewDocument.createElement("style");
+      style.id = "speakerPreviewFitStyle";
+      previewDocument.head.append(style);
+    }
+
+    const frameWidth = Math.max(1, currentFrame.clientWidth);
+    const frameHeight = Math.max(1, currentFrame.clientHeight);
+    const scale = Math.min(frameWidth / 1280, frameHeight / 720);
+    const offsetX = Math.max(0, (frameWidth - 1280 * scale) / 2);
+    const offsetY = Math.max(0, (frameHeight - 720 * scale) / 2);
+
+    style.textContent = `
+      html {
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+      }
+      body {
+        width: 1280px !important;
+        height: 720px !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+        transform: translate(${offsetX}px, ${offsetY}px) scale(${scale});
+        transform-origin: top left !important;
+      }
+      .slide {
+        width: 1280px !important;
+        height: 720px !important;
+        min-height: 0 !important;
+      }
+    `;
+  }
+
   function normalizeText(value) {
     return String(value || "")
       .replace(/\u00a0/g, " ")
@@ -267,6 +308,8 @@
 
   previousButton.addEventListener("click", () => setSpeakerSlide(currentIndex - 1));
   nextButton.addEventListener("click", () => setSpeakerSlide(currentIndex + 1));
+  currentFrame.addEventListener("load", fitCurrentSlidePreview);
+  window.addEventListener("resize", fitCurrentSlidePreview);
   timerToggle.addEventListener("click", toggleTimer);
   timerReset.addEventListener("click", resetTimer);
   window.addEventListener("keydown", (event) => {
