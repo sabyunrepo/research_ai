@@ -6,9 +6,103 @@
   <title>Generated Deck Audience</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .audience-identity-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      background: rgba(247, 245, 240, .96);
+      color: #171717;
+      padding: 24px;
+    }
+    .audience-identity-panel[hidden] { display: none; }
+    .audience-identity-card {
+      width: min(420px, 100%);
+      border: 1px solid #171717;
+      border-radius: 8px;
+      background: #fffdf7;
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+      box-shadow: 0 18px 60px rgba(23, 23, 23, .16);
+    }
+    .audience-identity-card h1 { margin: 0; font-size: 26px; letter-spacing: 0; }
+    .audience-identity-card p { margin: 0; line-height: 1.55; font-weight: 700; color: #59524a; }
+    .audience-identity-card label { display: grid; gap: 8px; font-weight: 900; }
+    .audience-identity-card input {
+      border: 1px solid #171717;
+      border-radius: 6px;
+      padding: 12px;
+      font: inherit;
+      background: #fff;
+    }
+    .audience-identity-card button,
+    .audience-practice-panel button {
+      border: 1px solid #171717;
+      border-radius: 6px;
+      background: #f4c542;
+      padding: 11px 14px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .audience-learner-badge {
+      font-weight: 900;
+      color: #171717;
+      background: #fff;
+      border: 1px solid #171717;
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+    .audience-practice-panel {
+      position: fixed;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 18;
+      display: grid;
+      grid-template-rows: auto minmax(280px, 42vh);
+      border: 1px solid #171717;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fffdf7;
+      box-shadow: 0 14px 48px rgba(23, 23, 23, .18);
+    }
+    .audience-practice-panel[hidden] { display: none; }
+    .audience-practice-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid #171717;
+    }
+    .audience-practice-header strong { font-size: 15px; }
+    .audience-practice-header span { color: #59524a; font-weight: 900; }
+    .audience-practice-iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+  </style>
   <script defer src="assets/audience.js"></script>
 </head>
 <body class="audience-page">
+  <section id="audienceIdentityPanel" class="audience-identity-panel" aria-label="청중 입장">
+    <form id="audienceIdentityForm" class="audience-identity-card">
+      <h1>청중 입장</h1>
+      <p>실습 진행상황을 구분할 닉네임을 입력하세요. 같은 닉네임도 개별 세션으로 분리됩니다.</p>
+      <label for="audienceNickname">
+        닉네임
+        <input id="audienceNickname" name="nickname" autocomplete="name" maxlength="40" required>
+      </label>
+      <button type="submit">입장</button>
+      <p id="audienceIdentityStatus" role="status"></p>
+    </form>
+  </section>
   <main class="audience-shell">
     <section class="audience-stage" aria-label="Audience slide">
       <div class="audience-frame-canvas">
@@ -22,6 +116,7 @@
       <div class="speaker-panel-header">
         <span id="audienceStatus">공개됨</span>
         <strong id="audienceProgress">-- / --</strong>
+        <span id="audienceLearnerBadge" class="audience-learner-badge" hidden></span>
         <button type="button" id="audienceFollowToggle" aria-pressed="true">따라가기</button>
         <button type="button" id="audiencePanelToggle" aria-expanded="true" aria-label="공개 목록 숨기기">숨김</button>
       </div>
@@ -29,5 +124,15 @@
     </aside>
     <button type="button" id="audiencePanelRestore" class="audience-panel-restore" hidden>공개 목록</button>
   </main>
+  <section id="audiencePracticePanel" class="audience-practice-panel" hidden aria-label="현재 실습">
+    <div class="audience-practice-header">
+      <div>
+        <strong id="audiencePracticeTitle">실습</strong>
+        <span id="audiencePracticeMeta"></span>
+      </div>
+      <button type="button" id="audiencePracticeClose">닫기</button>
+    </div>
+    <iframe id="audiencePracticeFrame" class="audience-practice-iframe" title="현재 실습"></iframe>
+  </section>
 </body>
 </html>

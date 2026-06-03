@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "deckId": "kimai-workshop-content",
+  "mode": "insert-after-handoff",
+  "practices": [
+    {
+      "afterSlideId": "act1-practice-handoff",
+      "practiceId": "act1-info-selection",
+      "label": "실습 1",
+      "title": "김아이 책상 정리"
+    },
+    {
+      "afterSlideId": "act2-practice-handoff",
+      "practiceId": "act2-prompt-brief",
+      "label": "실습 2",
+      "title": "업무 지시 다시 쓰기"
+    },
+    {
+      "afterSlideId": "act3-practice-handoff",
+      "practiceId": "act3-context-workbench",
+      "label": "실습 3",
+      "title": "CLAUDE.md 설정"
+    },
+    {
+      "afterSlideId": "act4-practice-handoff",
+      "practiceId": "act4-mini-brainstorming-skill",
+      "label": "실습 4",
+      "title": "미니 브레인스토밍 스킬"
+    },
+    {
+      "afterSlideId": "act5-practice-handoff",
+      "practiceId": "act5-agent-team-runbook",
+      "label": "실습 5",
+      "title": "에이전트 팀 런북"
+    },
+    {
+      "afterSlideId": "act6-practice-handoff",
+      "practiceId": "act6-stop-hook-gate",
+      "label": "실습 6",
+      "title": "Stop Hook 게이트"
+    }
+  ]
+}

@@ -17,8 +17,15 @@
   const timerReset = document.querySelector("#timerReset");
   const totalTimerDisplay = document.querySelector("#speakerTotalTimer");
   const slideTimerDisplay = document.querySelector("#speakerSlideTimer");
+  const practiceStatusToggle = document.querySelector("#practiceStatusToggle");
+  const practiceStatusModal = document.querySelector("#practiceStatusModal");
+  const practiceStatusClose = document.querySelector("#practiceStatusClose");
+  const practiceStatusMeta = document.querySelector("#practiceStatusMeta");
+  const practiceStatusBody = document.querySelector("#practiceStatusBody");
   let currentIndex = 0;
   let latestRevision = 0;
+  let practiceStatusOpen = false;
+  let practiceStatusInterval = null;
   let totalTimerStartedAt = 0;
   let totalTimerElapsedMs = 0;
   let slideTimerStartedAt = 0;
@@ -306,12 +313,106 @@
     updateTimer();
   }
 
+  function formatTime(value) {
+    if (!value) return "-";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "-";
+    return date.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  }
+
+  function renderPracticeStatus(payload) {
+    const learners = payload.learners || [];
+    practiceStatusMeta.textContent = `${learners.length}명 · ${payload.logPath || ""} · ${formatTime(payload.generatedAt)}`;
+    practiceStatusBody.replaceChildren();
+    if (!learners.length) {
+      const empty = document.createElement("p");
+      empty.textContent = "아직 입장한 청중이 없습니다.";
+      practiceStatusBody.append(empty);
+      return;
+    }
+    learners.forEach((learner) => {
+      const row = document.createElement("article");
+      row.className = "practice-status-row";
+      const progress = learner.progress || {};
+      const latestAttempt = learner.latestAttempt || {};
+      const name = document.createElement("div");
+      const location = document.createElement("div");
+      const score = document.createElement("div");
+      const time = document.createElement("div");
+      const log = document.createElement("ol");
+      log.className = "practice-attempt-log";
+      const nameStrong = document.createElement("strong");
+      const nameSmall = document.createElement("small");
+      const locationStrong = document.createElement("strong");
+      const locationSmall = document.createElement("small");
+      const scoreStrong = document.createElement("strong");
+      const scoreSmall = document.createElement("small");
+      const timeStrong = document.createElement("strong");
+      const timeSmall = document.createElement("small");
+      nameStrong.textContent = `${learner.displayName || learner.nickname} ${learner.disambiguator || ""}`.trim();
+      nameSmall.textContent = learner.learnerSessionId;
+      locationStrong.textContent = progress.practiceId || learner.currentPracticeId || "슬라이드";
+      locationSmall.textContent = `${progress.stage || "-"} · slide ${Number.isInteger(progress.slideIndex) ? progress.slideIndex + 1 : "-"}`;
+      scoreStrong.textContent = learner.score === null || learner.score === undefined ? "-" : String(learner.score);
+      scoreSmall.textContent = `${learner.passed ? "통과" : "진행 중"} · ${learner.attemptCount || 0}회`;
+      timeStrong.textContent = formatTime(progress.updatedAt || latestAttempt.recordedAt);
+      timeSmall.textContent = "최근 활동";
+      name.append(nameStrong, nameSmall);
+      location.append(locationStrong, locationSmall);
+      score.append(scoreStrong, scoreSmall);
+      time.append(timeStrong, timeSmall);
+      (learner.attempts || []).forEach((attempt) => {
+        const item = document.createElement("li");
+        item.textContent = `${formatTime(attempt.recordedAt)} · ${attempt.practiceId} · score ${attempt.score ?? "-"} · ${attempt.passed ? "pass" : "open"}`;
+        log.append(item);
+      });
+      row.append(name, location, score, time);
+      if (log.children.length) row.append(log);
+      practiceStatusBody.append(row);
+    });
+  }
+
+  async function refreshPracticeStatus() {
+    if (!practiceStatusOpen) return;
+    try {
+      const response = await fetch("/api/presenter/practice-status", { cache: "no-store" });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || payload.ok === false) throw new Error(payload.error || `HTTP ${response.status}`);
+      renderPracticeStatus(payload);
+    } catch (error) {
+      practiceStatusMeta.textContent = `불러오기 실패: ${error.message}`;
+    }
+  }
+
+  function openPracticeStatus() {
+    practiceStatusOpen = true;
+    practiceStatusModal.hidden = false;
+    refreshPracticeStatus();
+    if (!practiceStatusInterval) {
+      practiceStatusInterval = setInterval(refreshPracticeStatus, 2000);
+    }
+  }
+
+  function closePracticeStatus() {
+    practiceStatusOpen = false;
+    practiceStatusModal.hidden = true;
+    if (practiceStatusInterval) {
+      clearInterval(practiceStatusInterval);
+      practiceStatusInterval = null;
+    }
+  }
+
   previousButton.addEventListener("click", () => setSpeakerSlide(currentIndex - 1));
   nextButton.addEventListener("click", () => setSpeakerSlide(currentIndex + 1));
   currentFrame.addEventListener("load", fitCurrentSlidePreview);
   window.addEventListener("resize", fitCurrentSlidePreview);
   timerToggle.addEventListener("click", toggleTimer);
   timerReset.addEventListener("click", resetTimer);
+  practiceStatusToggle.addEventListener("click", openPracticeStatus);
+  practiceStatusClose.addEventListener("click", closePracticeStatus);
+  practiceStatusModal.addEventListener("click", (event) => {
+    if (event.target === practiceStatusModal) closePracticeStatus();
+  });
   window.addEventListener("keydown", (event) => {
     if (event.target?.closest?.("input, textarea, select, [contenteditable='true']")) return;
     if (["ArrowRight", "PageDown", " "].includes(event.key)) {

@@ -144,6 +144,11 @@ function stableSessionId() {
   return next;
 }
 
+function rememberSessionId(sessionId) {
+  if (!sessionId) return;
+  window.localStorage.setItem("practiceHarnessSessionId", sessionId);
+}
+
 async function fetchJson(url, options) {
   const response = await fetch(url, options);
   const body = await response.json().catch(() => ({}));
@@ -1084,6 +1089,15 @@ function App() {
   const isSubmitting = submitState.status === "submitting";
 
   useEffect(() => {
+    fetchJson("/api/learner/session", { cache: "no-store" }).then((body) => {
+      const learnerSessionId = body.learner?.learnerSessionId;
+      if (!learnerSessionId) return;
+      setSessionId(learnerSessionId);
+      rememberSessionId(learnerSessionId);
+    }).catch(() => {});
+  }, []);
+
+  useEffect(() => {
     fetchJson("/api/practices").then((body) => {
       setPractices(body.practices);
       const next = practiceFromLocation(body.practices);
@@ -1182,7 +1196,7 @@ function App() {
         <label htmlFor="session-id">수강생 세션</label>
         <input id="session-id" value={sessionId} onChange={(event) => {
           setSessionId(event.target.value);
-          window.localStorage.setItem("practiceHarnessSessionId", event.target.value);
+          rememberSessionId(event.target.value);
         }} />
       </details>
       <main id="presentation-layout" className="layout learner-layout">

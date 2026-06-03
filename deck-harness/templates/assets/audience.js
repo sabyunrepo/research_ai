@@ -11,10 +11,22 @@
   const audiencePanelRestore = document.querySelector("#audiencePanelRestore");
   const audienceListPanel = document.querySelector(".audience-list-panel");
   const audienceSlideList = document.querySelector("#audienceSlideList");
+  const identityPanel = document.querySelector("#audienceIdentityPanel");
+  const identityForm = document.querySelector("#audienceIdentityForm");
+  const identityStatus = document.querySelector("#audienceIdentityStatus");
+  const nicknameInput = document.querySelector("#audienceNickname");
+  const learnerBadge = document.querySelector("#audienceLearnerBadge");
+  const practicePanel = document.querySelector("#audiencePracticePanel");
+  const practiceTitle = document.querySelector("#audiencePracticeTitle");
+  const practiceMeta = document.querySelector("#audiencePracticeMeta");
+  const practiceFrame = document.querySelector("#audiencePracticeFrame");
+  const practiceClose = document.querySelector("#audiencePracticeClose");
   let availableSlides = [];
   let currentIndex = 0;
   let followMode = true;
   let latestRevision = 0;
+  let learner = null;
+  let activePracticeId = "";
   const frameSize = { width: 1280, height: 720 };
 
   function setAudienceStatus(message) {
@@ -72,6 +84,75 @@
     });
   }
 
+  async function postProgress(slide, stage, practiceId = "") {
+    if (!learner) return;
+    await fetch("/api/learner/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        learnerSessionId: learner.learnerSessionId,
+        slideIndex: slide?.index,
+        slideId: slide?.id || "",
+        practiceId,
+        stage,
+      }),
+    }).catch(() => {});
+  }
+
+  function renderLearner(nextLearner) {
+    learner = nextLearner;
+    learnerBadge.hidden = !learner;
+    learnerBadge.textContent = learner ? `${learner.displayName || learner.nickname} ${learner.disambiguator || ""}`.trim() : "";
+    identityPanel.hidden = Boolean(learner);
+  }
+
+  async function ensureLearnerSession() {
+    const response = await fetch("/api/learner/session", { cache: "no-store" });
+    const payload = await response.json().catch(() => ({}));
+    if (response.ok && payload.ok && payload.learner) {
+      renderLearner(payload.learner);
+    }
+  }
+
+  async function joinAudience(event) {
+    event.preventDefault();
+    const nickname = nicknameInput.value.trim();
+    if (!nickname) return;
+    identityStatus.textContent = "입장 중입니다.";
+    const response = await fetch("/api/learner/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nickname }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || !payload.ok) {
+      identityStatus.textContent = payload.error || "입장하지 못했습니다.";
+      return;
+    }
+    renderLearner(payload.learner);
+    identityStatus.textContent = "";
+    if (availableSlides[currentIndex]) postProgress(availableSlides[currentIndex], "slide");
+  }
+
+  function renderPractice(slide) {
+    const practice = slide?.practiceAfter || null;
+    if (!practice) {
+      activePracticeId = "";
+      practicePanel.hidden = true;
+      practiceFrame.removeAttribute("src");
+      postProgress(slide, "slide");
+      return;
+    }
+    practicePanel.hidden = false;
+    practiceTitle.textContent = practice.title || practice.practiceId;
+    practiceMeta.textContent = practice.label || "";
+    if (activePracticeId !== practice.practiceId) {
+      activePracticeId = practice.practiceId;
+      practiceFrame.src = `/practices/${encodeURIComponent(practice.practiceId)}`;
+    }
+    postProgress(slide, "practice-visible", practice.practiceId);
+  }
+
   function setAudienceSlide(index) {
     if (!availableSlides.length) return;
     currentIndex = Math.min(Math.max(index, 0), getMaxIndex());
@@ -84,6 +165,7 @@
     audienceSlideList.querySelectorAll(".audience-slide-list-item").forEach((button) => {
       button.setAttribute("aria-current", String(Number(button.dataset.index) === currentIndex));
     });
+    renderPractice(slide);
   }
 
   async function refreshAudienceSlides(options = {}) {
@@ -127,6 +209,11 @@
   });
   audiencePanelToggle.addEventListener("click", () => setListPanelHidden(true));
   audiencePanelRestore.addEventListener("click", () => setListPanelHidden(false));
+  practiceClose.addEventListener("click", () => {
+    practicePanel.hidden = true;
+    if (availableSlides[currentIndex]) postProgress(availableSlides[currentIndex], "practice-hidden", activePracticeId);
+  });
+  identityForm.addEventListener("submit", joinAudience);
   window.addEventListener("keydown", (event) => {
     if (event.target?.closest?.("input, textarea, select, [contenteditable='true']")) return;
     if (["ArrowLeft", "PageUp", "Backspace"].includes(event.key)) {
@@ -143,7 +230,8 @@
 
   setFollowMode(true);
   resizeAudienceFrame();
-  refreshAudienceSlides({ forceFollow: true })
+  ensureLearnerSession()
+    .then(() => refreshAudienceSlides({ forceFollow: true }))
     .then(connectAudienceEvents)
     .catch((error) => setAudienceStatus(`청강자 화면을 불러오지 못했습니다: ${error.message}`));
 })();

@@ -12893,6 +12893,10 @@
         window.localStorage.setItem("practiceHarnessSessionId", next);
         return next;
       }
+      function rememberSessionId(sessionId) {
+        if (!sessionId) return;
+        window.localStorage.setItem("practiceHarnessSessionId", sessionId);
+      }
       async function fetchJson(url, options) {
         const response = await fetch(url, options);
         const body = await response.json().catch(() => ({}));
@@ -13649,6 +13653,15 @@
         const pendingClientAttemptIds = useRef({});
         const isSubmitting = submitState.status === "submitting";
         useEffect(() => {
+          fetchJson("/api/learner/session", { cache: "no-store" }).then((body) => {
+            const learnerSessionId = body.learner?.learnerSessionId;
+            if (!learnerSessionId) return;
+            setSessionId(learnerSessionId);
+            rememberSessionId(learnerSessionId);
+          }).catch(() => {
+          });
+        }, []);
+        useEffect(() => {
           fetchJson("/api/practices").then((body) => {
             setPractices(body.practices);
             const next = practiceFromLocation(body.practices);
@@ -13740,7 +13753,7 @@
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", { htmlFor: "session-id", children: "\uC218\uAC15\uC0DD \uC138\uC158" }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", { id: "session-id", value: sessionId, onChange: (event) => {
               setSessionId(event.target.value);
-              window.localStorage.setItem("practiceHarnessSessionId", event.target.value);
+              rememberSessionId(event.target.value);
             } })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", { id: "presentation-layout", className: "layout learner-layout", children: [

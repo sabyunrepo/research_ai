@@ -33,6 +33,26 @@
 - 사용자-facing 실습, lecture-cuts, generated deck, context pack처럼 프로젝트 전용 게이트가 있는 작업은 해당 게이트도 함께 실행한다. 예: `npm run qa:practice`, `node scripts/run-lecture-cuts-hook.js pre-handoff`, `node scripts/validate-context-research-pack.js <pack-path>`.
 - 검증 산출물과 promotion 기록은 프로젝트 루트 하위 `.codex/verification/`과 `.codex/skills/verification-orchestrator/`에만 남긴다. 전역/사용자 레벨 skill, agent, memory, config 디렉터리는 수정하지 않는다.
 
+## Unified Deck Practice Dashboard
+
+- 통합 수업 런타임의 기준 엔트리는 `scripts/serve-lecture-cuts-review.js`다. 김아이 풀덱, generated deck, 청중 화면, 발표자 콘솔, React 실습, 실습 현황은 이 서버에서 함께 관리한다.
+- 로컬 운영 콘솔은 `GET /`이다. 이 화면은 덱 선택, 현재 슬라이드 상태, 청중/발표자 링크, 실습 참여자/시도 요약을 보여주는 로컬 전용 대시보드다.
+- 청중 공개 표면은 `/audience.html`, `/api/audience/*`, `/api/learner/*`, `/api/practices*`, `/practices/*`, `/act/*`, practice static asset만 허용한다. Cloudflare Tunnel 외부 주소는 이 청중/실습 표면만 노출해야 한다.
+- 발표자/관리 표면인 `/`, `/speaker.html`, `/presenter-review.html`, `/deck.html`, `/api/presenter/*`, `/api/presentation/*`, `/api/decks*`는 로컬 전용으로 둔다. Cloudflare 헤더가 붙은 공개 요청에서 접근 가능하게 만들지 않는다.
+- React 실습 UI의 learner-facing source는 `practice-harness/react-src/App.jsx`이고, 배포 번들은 `practice-harness/public/practice-app.js`다. 실습 UI 변경 뒤에는 `npm run build:practice-ui` 또는 `npm test`로 번들을 갱신한다.
+- 실습 연결은 슬라이드 번호가 아니라 deck-local `practice-map.json`의 `afterSlideId -> practiceId` 계약으로 한다. 김아이 덱은 `generated-decks/kimai-workshop-content/practice-map.json`과 `scripts/validate-kimai-practice-map.js`가 기준이다.
+- learner 식별은 nickname 표시명과 서버 발급 session cookie/token을 함께 사용한다. 같은 닉네임은 허용하지만 서로 다른 session으로 분리해야 하며, 같은 브라우저 재입장은 기존 session/progress를 복구해야 한다.
+- 실습 진행/시도 로그는 프로젝트 로컬 `.codex/runtime/practice-dashboard/<deckId>.jsonl`에 기록한다. 라이브 수업 기능에서 in-memory-only 진행 상태를 최종 구현으로 두지 않는다.
+- 앞으로 생성되는 deck-harness 덱의 청중/발표자 화면은 `deck-harness/templates/audience.html`, `deck-harness/templates/assets/audience.js`, `deck-harness/templates/speaker.html`, `deck-harness/templates/assets/speaker.js`에서 대시보드/실습 계약을 계승한다. generated output만 고쳐서 새 덱에 반영되지 않는 변경을 만들지 않는다.
+- 통합 대시보드 관련 검증은 최소 `node --check scripts/serve-lecture-cuts-review.js`, `node scripts/validate-kimai-practice-map.js`(김아이 덱 작업 시), `npm run qa:practice`, Cloudflare 헤더를 붙인 public allowlist/blocklist smoke를 포함한다.
+
+## Deprecated Runtime Defaults
+
+- `scripts/serve-practice-harness.js`는 독립 실습 UI 테스트용이다. 실제 김아이 수업 운영의 메인 서버나 통합 콘솔로 취급하지 않는다.
+- 덱마다 별도 static HTML 대시보드를 새로 만들지 않는다. 공통 운영 화면은 `scripts/serve-lecture-cuts-review.js`의 `/` 콘솔과 deck-harness templates를 통해 관리한다.
+- 실습 handoff를 슬라이드 index나 현재 위치 계산에 직접 묶지 않는다. 순서가 바뀌어도 유지되는 `slide.id` 기반 mapping만 사용한다.
+- 발표자 현황 API나 raw deck/script/admin API를 Cloudflare 공개 표면에 추가하지 않는다.
+
 ## Domain-Specific Instruction Files
 
 - `lecture-cuts/` 작업은 `lecture-cuts/AGENTS.md`의 slide contract, presentation surface, verification 규칙을 따른다.

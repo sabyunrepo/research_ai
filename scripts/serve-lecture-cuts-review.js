@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const { spawnSync } = require("node:child_process");
+const crypto = require("node:crypto");
 const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
@@ -15,6 +16,7 @@ const {
 
 const root = path.resolve(__dirname, "..");
 const deckRegistryPath = path.join(root, "presentation-decks.json");
+const practicePublicDir = path.join(root, "practice-harness", "public");
 const portIndex = process.argv.indexOf("--port");
 const port = Number(portIndex >= 0 ? process.argv[portIndex + 1] : process.env.PORT || 8766);
 const host = process.env.HOST || "127.0.0.1";
@@ -29,13 +31,21 @@ const presentationState = {
   revision: 0,
   updatedAt: new Date().toISOString(),
 };
+const definitionStore = createPracticeDefinitionStore();
+const practiceRuntimeStore = createPracticeRuntimeStore();
+const baseAttemptStore = createMemoryAttemptStore({
+  maxAttempts: Number(process.env.PRACTICE_MAX_ATTEMPTS || 10000),
+});
+const attemptStore = createObservedAttemptStore(baseAttemptStore, (attempt) => {
+  practiceRuntimeStore.recordAttempt(attempt);
+  broadcastPracticeStatus();
+});
 const practiceApp = createPracticeApp({
-  definitionStore: createPracticeDefinitionStore(),
-  attemptStore: createMemoryAttemptStore({
-    maxAttempts: Number(process.env.PRACTICE_MAX_ATTEMPTS || 10000),
-  }),
+  definitionStore,
+  attemptStore,
   judgeProvider: "none",
 });
+const practiceStatusClients = new Set();
 
 const contentTypes = new Map([
   [".html", "text/html; charset=utf-8"],
@@ -172,6 +182,9 @@ function validateDeckRoot() {
   if (missing.length) {
     throw new Error(`Presentation deck ${deckSelection.id} is missing runtime files: ${missing.join(", ")}`);
   }
+  if (deckSelection.id === "kimai-workshop-content" || fs.existsSync(path.join(deckRoot, "practice-map.json"))) {
+    loadPracticeMap({ required: deckSelection.id === "kimai-workshop-content" });
+  }
 }
 
 validateDeckRoot();
@@ -220,6 +233,229 @@ function readRequestJson(request) {
   });
 }
 
+function getRuntimeLogPath() {
+  return path.join(root, ".codex", "runtime", "practice-dashboard", `${deckSelection.id}.jsonl`);
+}
+
+function createObservedAttemptStore(store, onAttemptCreated) {
+  return {
+    createAttempt(attempt) {
+      const stored = store.createAttempt(attempt);
+      onAttemptCreated(stored);
+      return stored;
+    },
+    getAttempt(attemptId) {
+      return store.getAttempt(attemptId);
+    },
+    listAttempts(filters = {}) {
+      return store.listAttempts(filters);
+    },
+  };
+}
+
+function createPracticeRuntimeStore() {
+  let loadedDeckId = "";
+  let loadedLogPath = "";
+  let learnerOrder = 0;
+  const learners = new Map();
+  const progress = new Map();
+  const attempts = [];
+
+  function reset(deckId, logPath) {
+    loadedDeckId = deckId;
+    loadedLogPath = logPath;
+    learnerOrder = 0;
+    learners.clear();
+    progress.clear();
+    attempts.length = 0;
+  }
+
+  function ensureLoaded() {
+    const deckId = deckSelection.id;
+    const logPath = getRuntimeLogPath();
+    if (loadedDeckId === deckId && loadedLogPath === logPath) return;
+    reset(deckId, logPath);
+    if (!fs.existsSync(logPath)) return;
+    const rows = fs.readFileSync(logPath, "utf8").split(/\r?\n/).filter(Boolean);
+    for (const row of rows) {
+      try {
+        applyEvent(JSON.parse(row), { replay: true });
+      } catch {
+        // Ignore malformed historical rows so a single bad line does not block class runtime.
+      }
+    }
+  }
+
+  function appendEvent(event) {
+    const logPath = getRuntimeLogPath();
+    fs.mkdirSync(path.dirname(logPath), { recursive: true });
+    fs.appendFileSync(logPath, `${JSON.stringify(event)}\n`);
+    applyEvent(event, { replay: false });
+  }
+
+  function applyEvent(event) {
+    if (!event || event.deckId !== deckSelection.id) return;
+    if (event.type === "learner.session") {
+      const learner = normalizeLearner(event.learner);
+      if (!learner) return;
+      learners.set(learner.learnerSessionId, learner);
+      learnerOrder = Math.max(learnerOrder, learner.joinOrder || 0);
+      return;
+    }
+    if (event.type === "learner.progress") {
+      if (!event.learnerSessionId) return;
+      progress.set(event.learnerSessionId, {
+        learnerSessionId: event.learnerSessionId,
+        slideIndex: Number.isInteger(event.slideIndex) ? event.slideIndex : null,
+        slideId: event.slideId || "",
+        practiceId: event.practiceId || "",
+        stage: event.stage || "slide",
+        updatedAt: event.at || new Date().toISOString(),
+      });
+      return;
+    }
+    if (event.type === "practice.attempt") {
+      if (!event.attempt || !event.attempt.learnerSessionId) return;
+      attempts.push({
+        ...event.attempt,
+        recordedAt: event.at || event.attempt.createdAt || new Date().toISOString(),
+      });
+    }
+  }
+
+  function normalizeLearner(learner) {
+    if (!learner || !learner.learnerSessionId) return null;
+    return {
+      learnerSessionId: String(learner.learnerSessionId),
+      nickname: String(learner.nickname || "익명").trim() || "익명",
+      displayName: String(learner.displayName || learner.nickname || "익명"),
+      disambiguator: String(learner.disambiguator || ""),
+      joinOrder: Number(learner.joinOrder || 0),
+      joinedAt: learner.joinedAt || new Date().toISOString(),
+      lastSeenAt: learner.lastSeenAt || new Date().toISOString(),
+    };
+  }
+
+  function touchSession(session) {
+    const next = {
+      ...session,
+      lastSeenAt: new Date().toISOString(),
+    };
+    appendEvent({
+      type: "learner.session",
+      deckId: deckSelection.id,
+      at: next.lastSeenAt,
+      learner: next,
+    });
+    return next;
+  }
+
+  function getSession(learnerSessionId) {
+    ensureLoaded();
+    return learners.get(learnerSessionId) || null;
+  }
+
+  function createOrResumeSession({ nickname, existingSessionId = "" }) {
+    ensureLoaded();
+    const existing = existingSessionId ? learners.get(existingSessionId) : null;
+    if (existing) {
+      const updated = nickname
+        ? { ...existing, nickname: String(nickname).trim() || existing.nickname, displayName: String(nickname).trim() || existing.displayName }
+        : existing;
+      return touchSession(updated);
+    }
+    const cleanNickname = String(nickname || "").trim() || "익명";
+    learnerOrder += 1;
+    const learner = {
+      learnerSessionId: `learner-${crypto.randomUUID()}`,
+      nickname: cleanNickname,
+      displayName: cleanNickname,
+      disambiguator: `#${learnerOrder}`,
+      joinOrder: learnerOrder,
+      joinedAt: new Date().toISOString(),
+      lastSeenAt: new Date().toISOString(),
+    };
+    appendEvent({
+      type: "learner.session",
+      deckId: deckSelection.id,
+      at: learner.joinedAt,
+      learner,
+    });
+    return learner;
+  }
+
+  function recordProgress(event) {
+    ensureLoaded();
+    appendEvent({
+      type: "learner.progress",
+      deckId: deckSelection.id,
+      at: new Date().toISOString(),
+      learnerSessionId: event.learnerSessionId,
+      slideIndex: Number.isInteger(event.slideIndex) ? event.slideIndex : null,
+      slideId: event.slideId || "",
+      practiceId: event.practiceId || "",
+      stage: event.stage || "slide",
+    });
+  }
+
+  function recordAttempt(attempt) {
+    ensureLoaded();
+    appendEvent({
+      type: "practice.attempt",
+      deckId: deckSelection.id,
+      at: new Date().toISOString(),
+      attempt: {
+        attemptId: attempt.attemptId,
+        practiceId: attempt.practiceId,
+        learnerSessionId: attempt.learnerSessionId,
+        status: attempt.status,
+        score: attempt.score ?? null,
+        passed: Boolean(attempt.unlocked),
+        feedback: attempt.feedback || "",
+        createdAt: attempt.createdAt,
+        completedAt: attempt.completedAt,
+      },
+    });
+  }
+
+  function summary() {
+    ensureLoaded();
+    const latestAttemptsByLearner = new Map();
+    for (const attempt of attempts) {
+      latestAttemptsByLearner.set(attempt.learnerSessionId, attempt);
+    }
+    return {
+      deckId: deckSelection.id,
+      logPath: path.relative(root, getRuntimeLogPath()),
+      generatedAt: new Date().toISOString(),
+      learners: Array.from(learners.values()).map((learner) => {
+        const learnerProgress = progress.get(learner.learnerSessionId) || null;
+        const learnerAttempts = attempts.filter((attempt) => attempt.learnerSessionId === learner.learnerSessionId);
+        const latestAttempt = latestAttemptsByLearner.get(learner.learnerSessionId) || null;
+        const score = latestAttempt?.score ?? null;
+        return {
+          ...learner,
+          progress: learnerProgress,
+          score,
+          passed: Boolean(latestAttempt?.passed),
+          currentPracticeId: learnerProgress?.practiceId || latestAttempt?.practiceId || "",
+          latestAttempt,
+          attemptCount: learnerAttempts.length,
+          attempts: learnerAttempts.slice(-10).reverse(),
+        };
+      }),
+    };
+  }
+
+  return {
+    createOrResumeSession,
+    getSession,
+    recordProgress,
+    recordAttempt,
+    summary,
+  };
+}
+
 function loadSlides() {
   const slidesPath = getSlidesPath();
   const code = fs.readFileSync(slidesPath, "utf8");
@@ -233,6 +469,85 @@ function loadSlides() {
     throw new Error("assets/slides.js에서 슬라이드 배열을 찾지 못했습니다.");
   }
   return context.window.LECTURE_SLIDES;
+}
+
+function readJsonFile(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function getPracticeMapPath() {
+  return path.join(getDeckRoot(), "practice-map.json");
+}
+
+function loadPracticeMap({ required = false } = {}) {
+  const mapPath = getPracticeMapPath();
+  if (!fs.existsSync(mapPath)) {
+    if (required) {
+      throw new Error(`${deckSelection.id} practice-map.json이 필요합니다.`);
+    }
+    return null;
+  }
+  const map = readJsonFile(mapPath);
+  validatePracticeMap(map);
+  return map;
+}
+
+function validatePracticeMap(map) {
+  if (!map || typeof map !== "object") {
+    throw new Error("practice-map.json 형식이 올바르지 않습니다.");
+  }
+  if (map.deckId && map.deckId !== deckSelection.id) {
+    throw new Error(`practice-map deckId가 현재 덱과 다릅니다: ${map.deckId} !== ${deckSelection.id}`);
+  }
+  const practices = Array.isArray(map.practices) ? map.practices : [];
+  if (!practices.length) {
+    throw new Error("practice-map.json에 practices 배열이 비어 있습니다.");
+  }
+
+  const slideSpecPath = path.join(getDeckRoot(), "slide-spec.json");
+  const scriptPath = path.join(getDeckRoot(), "presentation-script.json");
+  const specSlideIds = fs.existsSync(slideSpecPath)
+    ? new Set((readJsonFile(slideSpecPath).slides || []).map((slide) => slide.id).filter(Boolean))
+    : new Set(loadSlides().map((slide) => slide.id).filter(Boolean));
+  const scriptSlideIds = fs.existsSync(scriptPath)
+    ? new Set((readJsonFile(scriptPath).slides || []).map((slide) => slide.id).filter(Boolean))
+    : new Set();
+  const seenSlideIds = new Set();
+
+  for (const entry of practices) {
+    const afterSlideId = String(entry.afterSlideId || "").trim();
+    const practiceId = String(entry.practiceId || "").trim();
+    if (!afterSlideId || !practiceId) {
+      throw new Error("practice-map 각 항목에는 afterSlideId와 practiceId가 필요합니다.");
+    }
+    if (seenSlideIds.has(afterSlideId)) {
+      throw new Error(`practice-map에 중복 afterSlideId가 있습니다: ${afterSlideId}`);
+    }
+    seenSlideIds.add(afterSlideId);
+    if (!specSlideIds.has(afterSlideId)) {
+      throw new Error(`practice-map afterSlideId가 slide-spec에 없습니다: ${afterSlideId}`);
+    }
+    if (scriptSlideIds.size && !scriptSlideIds.has(afterSlideId)) {
+      throw new Error(`practice-map afterSlideId가 presentation-script에 없습니다: ${afterSlideId}`);
+    }
+    definitionStore.getPractice(practiceId);
+  }
+  if (deckSelection.id === "kimai-workshop-content" && practices.length !== 6) {
+    throw new Error(`kimai-workshop-content는 실습 handoff 6개가 필요합니다. 현재: ${practices.length}`);
+  }
+}
+
+function getPracticeMapBySlideId() {
+  const practiceMap = loadPracticeMap({ required: deckSelection.id === "kimai-workshop-content" });
+  const entries = practiceMap?.practices || [];
+  return new Map(entries.map((entry) => [
+    entry.afterSlideId,
+    {
+      practiceId: entry.practiceId,
+      label: entry.label || entry.practiceId,
+      title: entry.title || entry.practiceId,
+    },
+  ]));
 }
 
 function writeSlides(slides) {
@@ -277,17 +592,23 @@ function sanitizeAudienceSlide(slideHtml) {
 
 function getAudienceSlides() {
   const slides = loadSlides();
+  const practiceBySlideId = getPracticeMapBySlideId();
   const maxIndex = Math.min(presentationState.index, slides.length - 1);
-  return slides.slice(0, maxIndex + 1).map((slide, index) => ({
-    index,
-    file: getSlideFile(slide),
-    title: slide.title || slide.reviewTitle || getSlideFile(slide),
-    sectionId: slide.sectionId || "",
-    sectionTitle: slide.sectionTitle || "",
-    sectionStart: Boolean(slide.sectionStart),
-    sectionIndex: slide.sectionIndex || 1,
-    sectionTotal: slide.sectionTotal || 1,
-  }));
+  return slides.slice(0, maxIndex + 1).map((slide, index) => {
+    const practiceAfter = slide.id ? practiceBySlideId.get(slide.id) || null : null;
+    return {
+      index,
+      id: slide.id || "",
+      file: getSlideFile(slide),
+      title: slide.title || slide.reviewTitle || getSlideFile(slide),
+      sectionId: slide.sectionId || "",
+      sectionTitle: slide.sectionTitle || "",
+      sectionStart: Boolean(slide.sectionStart),
+      sectionIndex: slide.sectionIndex || 1,
+      sectionTotal: slide.sectionTotal || 1,
+      practiceAfter,
+    };
+  });
 }
 
 function sendDeckHarnessAudienceSlide(response, slide, index, slides) {
@@ -952,9 +1273,104 @@ function handleAudienceEvents(request, response) {
   });
 }
 
+function parseCookies(request) {
+  const source = request.headers.cookie || "";
+  return source.split(";").reduce((cookies, item) => {
+    const index = item.indexOf("=");
+    if (index < 0) return cookies;
+    const key = item.slice(0, index).trim();
+    const value = item.slice(index + 1).trim();
+    if (key) cookies[key] = decodeURIComponent(value);
+    return cookies;
+  }, {});
+}
+
+function getLearnerCookieName() {
+  return `practice_session_${deckSelection.id.replace(/[^\w]/g, "_")}`;
+}
+
+function writeLearnerCookie(response, learnerSessionId) {
+  response.setHeader(
+    "Set-Cookie",
+    `${getLearnerCookieName()}=${encodeURIComponent(learnerSessionId)}; Path=/; Max-Age=2592000; SameSite=Lax`,
+  );
+}
+
+function getCookieLearnerSessionId(request) {
+  return parseCookies(request)[getLearnerCookieName()] || "";
+}
+
+async function handleLearnerSession(request, response) {
+  try {
+    if (request.method === "GET") {
+      const session = practiceRuntimeStore.getSession(getCookieLearnerSessionId(request));
+      sendJson(response, 200, { ok: Boolean(session), learner: session });
+      return;
+    }
+    const payload = await readRequestJson(request);
+    const session = practiceRuntimeStore.createOrResumeSession({
+      nickname: payload.nickname,
+      existingSessionId: getCookieLearnerSessionId(request),
+    });
+    writeLearnerCookie(response, session.learnerSessionId);
+    sendJson(response, 200, { ok: true, learner: session });
+  } catch (error) {
+    sendJson(response, 400, { ok: false, error: error.message });
+  }
+}
+
+async function handleLearnerProgress(request, response) {
+  try {
+    const payload = await readRequestJson(request);
+    const learnerSessionId = getCookieLearnerSessionId(request) || String(payload.learnerSessionId || "");
+    if (!learnerSessionId) {
+      sendJson(response, 401, { ok: false, error: "learner session is required" });
+      return;
+    }
+    practiceRuntimeStore.recordProgress({
+      learnerSessionId,
+      slideIndex: Number.isInteger(payload.slideIndex) ? payload.slideIndex : null,
+      slideId: String(payload.slideId || ""),
+      practiceId: String(payload.practiceId || ""),
+      stage: String(payload.stage || "slide"),
+    });
+    broadcastPracticeStatus();
+    sendJson(response, 200, { ok: true });
+  } catch (error) {
+    sendJson(response, 400, { ok: false, error: error.message });
+  }
+}
+
+function handlePracticeStatus(response) {
+  sendJson(response, 200, { ok: true, ...practiceRuntimeStore.summary() });
+}
+
+function handlePracticeStatusEvents(request, response) {
+  response.writeHead(200, {
+    "Content-Type": "text/event-stream; charset=utf-8",
+    "Cache-Control": "no-store, no-transform",
+    Connection: "keep-alive",
+    "X-Accel-Buffering": "no",
+  });
+  response.write("\n");
+  practiceStatusClients.add(response);
+  sendPresentationEvent(response, "status", practiceRuntimeStore.summary());
+  request.on("close", () => {
+    practiceStatusClients.delete(response);
+  });
+}
+
+function broadcastPracticeStatus() {
+  const payload = practiceRuntimeStore.summary();
+  for (const client of practiceStatusClients) {
+    sendPresentationEvent(client, "status", payload);
+  }
+}
+
 function isAudienceStaticPath(pathname) {
   if (pathname === "/" || pathname === "/audience.html") return true;
   if (pathname === "/assets/style.css" || pathname === "/assets/audience.js" || pathname === "/assets/glossary.js") return true;
+  if (isPracticeStaticPath(pathname)) return true;
   return /^\/assets\/(?:handdrawn|generated)\/[\w.-]+\.(?:png|jpg|jpeg|svg|webp)$/i.test(pathname);
 }
 
@@ -973,6 +1389,16 @@ function getRequestPathname(request) {
 
 function isPracticeApiPath(pathname) {
   return pathname === "/api/practices" || pathname.startsWith("/api/practices/");
+}
+
+function isPracticeStaticPath(pathname) {
+  return pathname === "/practice.html"
+    || pathname === "/practice"
+    || pathname === "/practice/"
+    || pathname === "/practice-app.js"
+    || pathname === "/styles.css"
+    || pathname.startsWith("/practices/")
+    || /^\/act\/\d+$/.test(pathname);
 }
 
 function publicDeck(deck) {
@@ -1039,13 +1465,20 @@ function sendDeckSelector(response) {
   <style>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     body { margin: 0; background: #f7f5f0; color: #171717; }
-    main { width: min(960px, calc(100vw - 40px)); margin: 48px auto; }
+    main { width: min(1180px, calc(100vw - 40px)); margin: 36px auto 56px; }
     header { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 24px; }
     h1 { margin: 0; font-size: 34px; letter-spacing: 0; }
+    h2 { margin: 28px 0 12px; font-size: 22px; letter-spacing: 0; }
     p { line-height: 1.6; }
     .actions { display: flex; flex-wrap: wrap; gap: 8px; }
     a, button { border: 1px solid #171717; background: #fffdf7; color: #171717; border-radius: 6px; padding: 10px 14px; font: inherit; text-decoration: none; cursor: pointer; }
     button[disabled] { color: #8a8176; border-color: #c9c1b8; cursor: not-allowed; }
+    .dashboard-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .console-card { border: 1px solid #171717; border-radius: 8px; background: #fffdf7; padding: 16px; display: grid; gap: 10px; min-height: 138px; }
+    .console-card small { color: #59524a; font-weight: 900; }
+    .console-card strong { font-size: 26px; line-height: 1.1; word-break: break-word; }
+    .console-card p { margin: 0; color: #3d332a; font-size: 14px; }
+    .console-card .actions { margin-top: auto; }
     .deck-list { display: grid; gap: 12px; }
     .deck-card { border: 1px solid #171717; border-radius: 8px; background: #fffdf7; padding: 18px; display: grid; gap: 12px; }
     .deck-card[data-selected="true"] { box-shadow: inset 0 0 0 3px #f4c542; }
@@ -1055,13 +1488,15 @@ function sendDeckSelector(response) {
     .status { white-space: nowrap; border: 1px solid #171717; border-radius: 999px; padding: 4px 10px; background: #f4c542; font-size: 13px; }
     .status[data-ready="false"] { background: #eee8dc; color: #6f665f; border-color: #c9c1b8; }
     #status { min-height: 24px; color: #3d332a; }
+    @media (max-width: 960px) { .dashboard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } header { align-items: start; flex-direction: column; } }
+    @media (max-width: 620px) { .dashboard-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <main>
     <header>
       <div>
-        <h1>발표자료 선택</h1>
+        <h1>운영 콘솔</h1>
         <p id="status">등록된 발표자료를 불러오는 중입니다.</p>
       </div>
       <nav class="actions" aria-label="현재 발표 화면">
@@ -1071,16 +1506,65 @@ function sendDeckSelector(response) {
         <a href="/presenter-review.html">검토/수정</a>
       </nav>
     </header>
+    <section class="dashboard-grid" aria-label="운영 현황">
+      <article class="console-card">
+        <small>현재 덱</small>
+        <strong id="consoleDeckLabel">--</strong>
+        <p id="consoleDeckMeta">선택된 발표자료를 불러오는 중입니다.</p>
+      </article>
+      <article class="console-card">
+        <small>라이브 슬라이드</small>
+        <strong id="consoleSlideLabel">-- / --</strong>
+        <p id="consoleSlideMeta">발표 상태를 확인하는 중입니다.</p>
+      </article>
+      <article class="console-card">
+        <small>실습 현황</small>
+        <strong id="consoleLearnerCount">0명</strong>
+        <p id="consolePracticeMeta">시도 로그를 확인하는 중입니다.</p>
+        <div class="actions">
+          <a href="/speaker.html">실습현황 보기</a>
+        </div>
+      </article>
+      <article class="console-card">
+        <small>외부 공개</small>
+        <strong>Audience only</strong>
+        <p>Cloudflare Tunnel은 이 서버의 청중/실습 표면만 공개합니다.</p>
+        <div class="actions">
+          <a href="/audience.html" target="_blank" rel="noreferrer">청중 화면 열기</a>
+        </div>
+      </article>
+    </section>
+    <h2>등록된 발표자료</h2>
     <section id="deckList" class="deck-list" aria-label="등록된 발표자료"></section>
   </main>
   <script>
     const deckList = document.querySelector("#deckList");
     const status = document.querySelector("#status");
+    const consoleDeckLabel = document.querySelector("#consoleDeckLabel");
+    const consoleDeckMeta = document.querySelector("#consoleDeckMeta");
+    const consoleSlideLabel = document.querySelector("#consoleSlideLabel");
+    const consoleSlideMeta = document.querySelector("#consoleSlideMeta");
+    const consoleLearnerCount = document.querySelector("#consoleLearnerCount");
+    const consolePracticeMeta = document.querySelector("#consolePracticeMeta");
 
     async function fetchDecks() {
       const response = await fetch("/api/decks", { cache: "no-store" });
       const payload = await response.json();
       if (!response.ok || !payload.ok) throw new Error(payload.error || "덱 목록을 불러오지 못했습니다.");
+      return payload;
+    }
+
+    async function fetchPresentationState() {
+      const response = await fetch("/api/presentation/state", { cache: "no-store" });
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) throw new Error(payload.error || "발표 상태를 불러오지 못했습니다.");
+      return payload;
+    }
+
+    async function fetchPracticeStatus() {
+      const response = await fetch("/api/presenter/practice-status", { cache: "no-store" });
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) throw new Error(payload.error || "실습 현황을 불러오지 못했습니다.");
       return payload;
     }
 
@@ -1126,15 +1610,38 @@ function sendDeckSelector(response) {
       return card;
     }
 
+    function updateConsole({ deckPayload, presentationPayload, practicePayload }) {
+      const currentDeck = deckPayload.decks.find((deck) => deck.id === deckPayload.currentDeck);
+      consoleDeckLabel.textContent = currentDeck?.title || deckPayload.currentDeck || "--";
+      consoleDeckMeta.textContent = currentDeck ? currentDeck.id + " · " + currentDeck.root : "선택된 발표자료가 없습니다.";
+      consoleSlideLabel.textContent = String((presentationPayload.index || 0) + 1).padStart(2, "0");
+      consoleSlideMeta.textContent = "revision " + (presentationPayload.revision || 0) + " · " + (presentationPayload.updatedAt || "");
+      const learners = practicePayload.learners || [];
+      const attempts = learners.reduce((sum, learner) => sum + (learner.attemptCount || 0), 0);
+      const active = learners.filter((learner) => learner.progress?.practiceId || learner.latestAttempt).length;
+      consoleLearnerCount.textContent = learners.length + "명";
+      consolePracticeMeta.textContent = "활성 " + active + "명 · 시도 " + attempts + "회 · " + (practicePayload.logPath || "");
+    }
+
     async function render() {
-      const payload = await fetchDecks();
+      const [payload, presentationPayload, practicePayload] = await Promise.all([
+        fetchDecks(),
+        fetchPresentationState(),
+        fetchPracticeStatus(),
+      ]);
       deckList.replaceChildren(...payload.decks.map(makeCard));
+      updateConsole({ deckPayload: payload, presentationPayload, practicePayload });
       status.textContent = "현재 선택된 발표자료: " + payload.currentDeck;
     }
 
     render().catch((error) => {
       status.textContent = error.message;
     });
+    setInterval(() => {
+      Promise.all([fetchDecks(), fetchPresentationState(), fetchPracticeStatus()])
+        .then(([deckPayload, presentationPayload, practicePayload]) => updateConsole({ deckPayload, presentationPayload, practicePayload }))
+        .catch(() => {});
+    }, 2500);
   </script>
 </body>
 </html>`);
@@ -1190,7 +1697,7 @@ function sendDeckHarnessSpeaker(response) {
         <h1>발표자 콘솔</h1>
       </div>
       <nav class="actions" aria-label="발표자 콘솔 이동">
-        <a href="/">덱 선택</a>
+        <a href="/">메인</a>
         <a href="/deck.html" target="_blank" rel="noreferrer">발표 화면</a>
         <a href="/audience.html" target="_blank" rel="noreferrer">청강자 화면</a>
         <a href="/presenter-review.html">검토/수정</a>
@@ -1341,7 +1848,7 @@ function sendDeckHarnessAudience(response) {
   <main class="audience">
     <header>
       <strong id="status">청강자 화면</strong>
-      <a href="/">덱 선택</a>
+        <a href="/">메인</a>
     </header>
     <iframe id="frame" title="현재 공개 슬라이드"></iframe>
   </main>
@@ -1377,6 +1884,35 @@ function sendDeckHarnessAudience(response) {
 function sendText(response, statusCode, message) {
   response.writeHead(statusCode, { "Content-Type": "text/plain; charset=utf-8" });
   response.end(`${message}\n`);
+}
+
+function servePracticeStatic(request, response) {
+  const pathname = getRequestPathname(request);
+  if (!pathname || !isPracticeStaticPath(pathname)) {
+    sendText(response, 404, "Not found");
+    return;
+  }
+  const file = pathname === "/practice-app.js"
+    ? "practice-app.js"
+    : pathname === "/styles.css"
+      ? "styles.css"
+      : "index.html";
+  const requestedPath = path.join(practicePublicDir, file);
+  fs.readFile(requestedPath, (error, data) => {
+    if (error) {
+      sendText(
+        response,
+        error.code === "ENOENT" ? 404 : 500,
+        error.code === "ENOENT" ? "Not found" : error.message,
+      );
+      return;
+    }
+    response.writeHead(200, {
+      "Content-Type": contentTypes.get(path.extname(requestedPath).toLowerCase()) || "application/octet-stream",
+      "Cache-Control": "no-store",
+    });
+    response.end(data);
+  });
 }
 
 function serveStatic(request, response, publicAudienceOnly = isPublicAudienceRequest(request)) {
@@ -1439,6 +1975,18 @@ const server = http.createServer((request, response) => {
     practiceApp(request, response);
     return;
   }
+  if ((request.method === "GET" || request.method === "HEAD") && isPracticeStaticPath(pathname)) {
+    servePracticeStatic(request, response);
+    return;
+  }
+  if ((request.method === "GET" || request.method === "POST") && pathname === "/api/learner/session") {
+    handleLearnerSession(request, response);
+    return;
+  }
+  if (request.method === "POST" && pathname === "/api/learner/progress") {
+    handleLearnerProgress(request, response);
+    return;
+  }
   if (!publicAudienceOnly && request.method === "GET" && pathname === "/") {
     sendDeckSelector(response);
     return;
@@ -1470,6 +2018,14 @@ const server = http.createServer((request, response) => {
       return;
     }
     sendText(response, 405, "Method not allowed");
+    return;
+  }
+  if (request.method === "GET" && pathname === "/api/presenter/practice-status") {
+    handlePracticeStatus(response);
+    return;
+  }
+  if (request.method === "GET" && pathname === "/api/presenter/practice-events") {
+    handlePracticeStatusEvents(request, response);
     return;
   }
   if (request.method === "GET" && pathname === "/api/presentation/state") {
