@@ -37,6 +37,7 @@ const { chromium } = require("playwright");
 
 (async () => {
   const [url, outputPath] = process.argv.slice(1);
+  const renderWaitMs = Number(process.env.PDF_RENDER_WAIT_MS || 3000);
   let browser;
   try {
     browser = await chromium.launch({ channel: "chrome", headless: true });
@@ -47,6 +48,7 @@ const { chromium } = require("playwright");
   await page.goto(url, { waitUntil: "networkidle" });
   await page.emulateMedia({ media: "screen" });
   await page.evaluate(() => document.fonts ? document.fonts.ready : undefined);
+  await page.waitForTimeout(renderWaitMs);
   await page.pdf({
     path: outputPath,
     width: "16in",
@@ -79,6 +81,7 @@ const { chromium } = require("playwright");
     env: {
       ...process.env,
       PDF_EXPORT_CODE: exporterCode,
+      PDF_RENDER_WAIT_MS: process.env.PDF_RENDER_WAIT_MS || "3000",
     },
     stdio: ["ignore", "pipe", "pipe"],
   });
