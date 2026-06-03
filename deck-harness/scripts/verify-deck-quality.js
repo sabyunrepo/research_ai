@@ -580,6 +580,12 @@ function checkVisualDirectoryInventory(deckDir, assetPack) {
       if (output.startsWith("assets/visuals/") && output.endsWith(".png")) allowed.add(output);
     });
   });
+  const cropReview = readOptionalJson(deckDir, "asset-crop-review.json");
+  (cropReview?.checked || []).forEach((item) => {
+    [item.cropPath, item.sourcePath].filter(Boolean).forEach((output) => {
+      if (output.startsWith("assets/visuals/") && output.endsWith(".png")) allowed.add(output);
+    });
+  });
   const spec = readJson(deckDir, "slide-spec.json");
   spec.slides.forEach((slide) => {
     if (!slide.visualAssetId) return;

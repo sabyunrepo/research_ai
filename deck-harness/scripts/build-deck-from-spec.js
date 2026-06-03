@@ -625,6 +625,17 @@ function sourceAnchorParityHtml(screen, mainTemplate) {
   return `<div class="source-anchor-parity" hidden>${screen.bullets.map((bullet) => `<span>${escapeHtml(bullet)}</span>`).join("")}</div>`;
 }
 
+function sourceSpecParityHtml(slide) {
+  const values = [
+    slide.title,
+    slide.message,
+    ...(slide.bullets || []),
+    slide.bridge,
+  ].filter(Boolean);
+  if (!values.length) return "";
+  return `<div class="source-spec-parity" hidden>${values.map((value) => `<span>${escapeHtml(value)}</span>`).join("")}</div>`;
+}
+
 const galleryTemplateComponents = readTemplateComponentRegistry();
 
 function shortVisualLabel(value, fallback = "") {
@@ -855,12 +866,14 @@ function templateContentHtml(slide, screen, options) {
   const message = `<p class="message">${escapeHtml(screen.message)}</p>`;
   const visibleBullets = shouldShowGenericBullets(mainTemplate) ? bullets : "";
   const sourceAnchors = sourceAnchorParityHtml(screen, mainTemplate);
+  const sourceSpec = sourceSpecParityHtml(slide);
   if (mainTemplate === "practice-handoff" && !media) {
     return `<section class="copy">
       ${eyebrow}
       ${headline}
       ${message}
       ${sourceAnchors}
+      ${sourceSpec}
       ${galleryVisualComponentHtml(slide, screen, mainTemplate)}
       ${bridge}
     </section>`;
@@ -871,6 +884,7 @@ function templateContentHtml(slide, screen, options) {
       ${headline}
       ${message}
       ${sourceAnchors}
+      ${sourceSpec}
       ${visibleBullets}
       ${bridge}
     </section>
@@ -878,7 +892,8 @@ function templateContentHtml(slide, screen, options) {
 }
 
 function bridgeFooterHtml(bridge) {
-  return "";
+  if (!bridge) return "";
+  return `<div class="source-bridge-parity" hidden>${escapeHtml(bridge)}</div>`;
 }
 
 function slideHtml(slide) {

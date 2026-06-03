@@ -3044,7 +3044,7 @@ window.DECK_SLIDES = [
     "title": "새 작업은 새 책상에서 시작합니다.",
     "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
     "bullets": [
-      "/clear 또는 새 대화",
+      "대화 초기화",
       "필요 자료 읽기",
       "웹 검색으로 보충",
       "새 기준으로 시작"
@@ -3067,7 +3067,7 @@ window.DECK_SLIDES = [
       "steps": [
         {
           "step": "01",
-          "label": "/clear 또는 새 대화"
+          "label": "대화 초기화"
         },
         {
           "step": "02",
@@ -3089,7 +3089,7 @@ window.DECK_SLIDES = [
         "title": "새 작업은 새 책상에서 시작합니다.",
         "message": "이전 대화가 남아 있으면 김아이가 새 업무를 예전 맥락으로 해석할 수 있습니다.",
         "bullets": [
-          "/clear 또는 새 대화",
+          "대화 초기화",
           "필요 자료 읽기",
           "웹 검색으로 보충",
           "새 기준으로 시작"
@@ -3108,7 +3108,7 @@ window.DECK_SLIDES = [
         "steps": [
           {
             "step": "01",
-            "label": "/clear 또는 새 대화"
+            "label": "대화 초기화"
           },
           {
             "step": "02",
@@ -4040,44 +4040,29 @@ window.DECK_SLIDES = [
     "title": "좋은 지시는 김아이와 질문하며 구체화합니다.",
     "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
     "bullets": [
-      "필요 자료 파악",
-      "빠진 조건 질문",
-      "팀장 답변 반영",
-      "작업 플랜 정리"
+      "김아이와 질문하며 지시 구체화",
+      "Prompt Engineering",
+      "김아이와 질문하며 지시 구체화와 실제 용어 Prompt Engineering를 함께 보여 줍니다."
     ],
     "visualIntent": "김아이가 팀장에게 필요한 자료와 조건을 질문하고 답변을 작업 플랜으로 정리하는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
     "visualPrompt": "Hand-drawn minimal Korean lecture illustration on white background for Act 2. Show Kimai, an AI new employee, asking a team lead clarifying questions, then organizing answers into a work plan. Include only large simple Korean labels if needed: 자료, 조건, 답변, 플랜. Use black linework and one blue accent #2563eb only. No gradients, no glow, no glossy effects, no decorative abstract background, no tiny text.",
     "visualAssetId": "act2-input-output-principle",
-    "layoutTemplate": "concept-map",
-    "teachingMove": "demonstrate",
-    "audienceAction": "compare",
-    "visualMode": "process-diagram",
-    "mainTemplate": "workflow-strip",
-    "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
+    "layoutTemplate": "glossary-bridge",
+    "teachingMove": "connect",
+    "audienceAction": "connect-metaphor",
+    "visualMode": "term-bridge",
+    "mainTemplate": "term-bridge",
+    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "좋은 지시는 김아이와 질문하며 구체화합니다.",
       "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
       "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
-      "steps": [
-        {
-          "step": "01",
-          "label": "필요 자료 파악"
-        },
-        {
-          "step": "02",
-          "label": "빠진 조건 질문"
-        },
-        {
-          "step": "03",
-          "label": "팀장 답변 반영"
-        },
-        {
-          "step": "04",
-          "label": "작업 플랜 정리"
-        }
-      ]
+      "metaphorTerm": "김아이와 질문하며 지시 구체화",
+      "realTerm": "Prompt Engineering",
+      "bridgeLine": "김아이와 질문하며 지시 구체화와 실제 용어 Prompt Engineering를 함께 보여 줍니다.",
+      "supportingLine": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
@@ -4096,29 +4081,15 @@ window.DECK_SLIDES = [
           "Prompt Engineering"
         ]
       },
-      "selectedTemplate": "workflow-strip",
+      "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "좋은 지시는 김아이와 질문하며 구체화합니다.",
         "message": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다.",
         "bridge": "이렇게 정리한 내용을 작업지시서, 즉 spec으로 남깁니다.",
-        "steps": [
-          {
-            "step": "01",
-            "label": "필요 자료 파악"
-          },
-          {
-            "step": "02",
-            "label": "빠진 조건 질문"
-          },
-          {
-            "step": "03",
-            "label": "팀장 답변 반영"
-          },
-          {
-            "step": "04",
-            "label": "작업 플랜 정리"
-          }
-        ]
+        "metaphorTerm": "김아이와 질문하며 지시 구체화",
+        "realTerm": "Prompt Engineering",
+        "bridgeLine": "김아이와 질문하며 지시 구체화와 실제 용어 Prompt Engineering를 함께 보여 줍니다.",
+        "supportingLine": "한 번에 완벽한 지시를 만들기보다, 필요한 자료와 빠진 조건을 김아이와 함께 좁혀 갑니다."
       },
       "componentData": {
         "steps": [
@@ -4200,10 +4171,10 @@ window.DECK_SLIDES = [
         "rule": "prompt-collaboration-workflow-rewrite"
       }
     },
-    "layoutVariant": "visual-left",
+    "layoutVariant": "statement",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "flow",
+      "templateComponent": "bridge",
       "sourceAction": "use-generated-slide-asset",
       "visualAssetId": "act2-input-output-principle",
       "renderedVisualAsset": "../assets/visuals/act2-input-output-principle-act2-input-output-principle-kimai-question-plan.png",
@@ -4458,8 +4429,8 @@ window.DECK_SLIDES = [
     "section": "Act 2 · 좋은 업무 지시",
     "sectionObjective": "프롬프트를 김아이가 혼자 일할 수 있게 만드는 업무 지시와 인수인계서로 이해시키고, 별도 Act 2 실습으로 넘긴다.",
     "estimatedMinutes": 1,
-    "title": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
-    "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+    "title": "spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+    "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
     "bullets": [
       "참고 자료",
       "비교 기준",
@@ -4477,8 +4448,8 @@ window.DECK_SLIDES = [
     "mainTemplate": "workflow-strip",
     "templateSelectionReason": "source layoutTemplate=concept-map; source teachingMove=demonstrate; source audienceAction=compare; source visualMode=process-diagram",
     "rewrittenScreen": {
-      "headline": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
-      "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+      "headline": "spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+      "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
       "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
       "steps": [
         {
@@ -4514,8 +4485,8 @@ window.DECK_SLIDES = [
       },
       "selectedTemplate": "workflow-strip",
       "screenStructure": {
-        "headline": "<title>spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.</title>",
-        "message": "<body>참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.</body>",
+        "headline": "spec에는 참고 자료와 지켜야 할 조건을 따로 적습니다.",
+        "message": "참고 자료와 지켜야 할 조건을 따로 말해야 판단 기준이 흐려지지 않습니다.",
         "bridge": "spec에는 출력 형식과 완료 기준도 들어갑니다.",
         "steps": [
           {
@@ -4613,7 +4584,7 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "visual-left",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "image-asset",
       "templateComponent": "flow",
@@ -4897,7 +4868,7 @@ window.DECK_SLIDES = [
       "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
       "metaphorTerm": "작업지시서",
       "realTerm": "Prompt",
-      "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.",
+      "bridgeLine": "작업지시서와 Prompt를 함께 보여 줍니다.",
       "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
     },
     "templateRewrite": {
@@ -4924,7 +4895,7 @@ window.DECK_SLIDES = [
         "bridge": "그래서 프롬프트는 문장력이 아니라 빠진 항목 없는 구조가 중요합니다.",
         "metaphorTerm": "작업지시서",
         "realTerm": "Prompt",
-        "bridgeLine": "작업지시서가 Prompt로 전달되는 흐름을 보여 줍니다.",
+        "bridgeLine": "작업지시서와 Prompt를 함께 보여 줍니다.",
         "supportingLine": "프롬프트는 김아이가 바로 일할 수 있게 정리된 작업지시입니다."
       },
       "componentData": {
@@ -5258,31 +5229,29 @@ window.DECK_SLIDES = [
     "title": "페르소나는 말투가 아니라 우선순위 필터입니다.",
     "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
     "bullets": [
-      "보안 우선",
-      "속도 우선",
-      "확장성 우선"
+      "우선순위 필터",
+      "Role Card",
+      "우선순위 필터와 실제 용어 Role Card를 함께 보여 줍니다."
     ],
     "visualIntent": "보안, 속도, 확장성 카드가 우선순위 필터를 지나 김아이의 작업 기준으로 정리되는 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
     "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration\nPrimary request: Create a hand-drawn minimal Korean lecture illustration for slide 27 explaining that persona is a priority filter, not role possession.\nComposition: Center shows a funnel labeled \"우선순위 필터\". Three cards flow into it: \"보안 우선\", \"속도 우선\", \"확장성 우선\". Output goes to Kimai holding a checklist labeled \"작업 기준\". Add a small crossed-out mask labeled \"빙의 X\".\nCharacter invariants: Preserve the existing Kimai character exactly: friendly round face, white outlined hair with three bangs, AI headset, small antenna, white shirt, blue tie, name badge \"김아이\". Do not use black filled hair, robot helmet, metal body, or a different mascot.\nStyle: white background, clean black linework, one blue accent (#2563eb), large readable Korean labels only, no gradient, no glow, no 3D, no decorative background.",
     "visualAssetId": "act2-persona-priority-filter",
-    "layoutTemplate": "story-scene",
-    "teachingMove": "explain",
-    "audienceAction": "inspect-visual",
-    "visualMode": "story-illustration",
-    "mainTemplate": "kimai-structure",
-    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
+    "layoutTemplate": "glossary-bridge",
+    "teachingMove": "connect",
+    "audienceAction": "connect-metaphor",
+    "visualMode": "term-bridge",
+    "mainTemplate": "term-bridge",
+    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "페르소나는 말투가 아니라 우선순위 필터입니다.",
       "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
       "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
-      "keySentence": "페르소나는 말투가 아니라 우선순위 필터입니다.",
-      "imageAnchors": [
-        "보안 우선",
-        "속도 우선",
-        "확장성 우선"
-      ]
+      "metaphorTerm": "우선순위 필터",
+      "realTerm": "Role Card",
+      "bridgeLine": "우선순위 필터와 실제 용어 Role Card를 함께 보여 줍니다.",
+      "supportingLine": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
@@ -5301,17 +5270,15 @@ window.DECK_SLIDES = [
           "Prompt Engineering"
         ]
       },
-      "selectedTemplate": "kimai-structure",
+      "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "페르소나는 말투가 아니라 우선순위 필터입니다.",
         "message": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다.",
         "bridge": "이제 이 기준으로 첫 실습에서 업무 지시를 다시 고쳐 보겠습니다.",
-        "keySentence": "페르소나는 말투가 아니라 우선순위 필터입니다.",
-        "imageAnchors": [
-          "보안 우선",
-          "속도 우선",
-          "확장성 우선"
-        ]
+        "metaphorTerm": "우선순위 필터",
+        "realTerm": "Role Card",
+        "bridgeLine": "우선순위 필터와 실제 용어 Role Card를 함께 보여 줍니다.",
+        "supportingLine": "좋은 페르소나는 빙의가 아니라, 어떤 기준을 먼저 볼지 정하는 장치입니다."
       },
       "componentData": {
         "imageAnchors": [
@@ -5355,10 +5322,10 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "standard",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "kimai-structure",
+      "templateComponent": "bridge",
       "sourceAction": "use-generated-single-image",
       "visualAssetId": "act2-persona-priority-filter",
       "renderedVisualAsset": "../assets/visuals/act2-persona-priority-filter-act2-persona-priority-filter.png",
@@ -6960,30 +6927,29 @@ window.DECK_SLIDES = [
     "title": "내규가 선이라면, 매뉴얼은 길입니다.",
     "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
     "bullets": [
-      "지켜야 할 기준",
-      "따라 할 순서",
-      "단계별 실행"
+      "업무 매뉴얼",
+      "Skill",
+      "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다."
     ],
     "visualIntent": "내규는 넘지 말아야 할 선이고 매뉴얼은 시장 조사, 장단점 분석, 보고서 작성으로 이어지는 길임을 보여 주는 김아이 손그림",
     "visualType": "generated-image",
     "visualAsset": "",
     "visualPrompt": "Use case: productivity-visual\nAsset type: Korean lecture deck illustration for slide 36, landscape 16:9 composition\nPrimary request: Explain the transition from CLAUDE.md rules to Manual/Skill workflow: rules are a boundary line, manuals are a path.\nComposition: Left side boundary labeled 내규 = 선 with cards 금지 조건 and 제외 기준. Right side path labeled 매뉴얼 = 길 with steps 1 시장 조사, 2 장단점 분석, 3 보고서 작성. Kimai steps toward the path. Add label 순서대로 실행.\nCharacter invariants: friendly round Kimai, white outlined hair, AI headset, small antenna, white shirt, blue tie, name badge 김아이. No black filled hair, no robot helmet.\nStyle: white background, black linework, one blue accent #2563eb, large readable Korean labels.",
     "visualAssetId": "act3-to-act4-manual",
-    "layoutTemplate": "story-scene",
+    "layoutTemplate": "glossary-bridge",
     "teachingMove": "connect",
-    "audienceAction": "inspect-visual",
-    "visualMode": "story-illustration",
-    "mainTemplate": "kimai-structure",
-    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=connect; source audienceAction=inspect-visual; source visualMode=story-illustration",
+    "audienceAction": "connect-metaphor",
+    "visualMode": "term-bridge",
+    "mainTemplate": "term-bridge",
+    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "내규가 선이라면, 매뉴얼은 길입니다.",
       "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
       "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-      "imageAnchors": [
-        "지켜야 할 기준",
-        "따라 할 순서",
-        "단계별 실행"
-      ]
+      "metaphorTerm": "업무 매뉴얼",
+      "realTerm": "Skill",
+      "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+      "supportingLine": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
@@ -7002,16 +6968,15 @@ window.DECK_SLIDES = [
           "Skill"
         ]
       },
-      "selectedTemplate": "kimai-structure",
+      "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "내규가 선이라면, 매뉴얼은 길입니다.",
         "message": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다.",
         "bridge": "다음 Act에서는 반복 실행 순서를 업무 매뉴얼로 따로 만듭니다.",
-        "imageAnchors": [
-          "지켜야 할 기준",
-          "따라 할 순서",
-          "단계별 실행"
-        ]
+        "metaphorTerm": "업무 매뉴얼",
+        "realTerm": "Skill",
+        "bridgeLine": "업무 매뉴얼와 실제 용어 Skill를 함께 보여 줍니다.",
+        "supportingLine": "CLAUDE.md는 넘지 말아야 할 기준이고, 매뉴얼은 김아이가 따라가야 할 작업 순서입니다."
       },
       "componentData": {
         "imageAnchors": [
@@ -7056,10 +7021,10 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "standard",
+    "layoutVariant": "quote",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "kimai-structure",
+      "templateComponent": "bridge",
       "sourceAction": "use-generated-single-image",
       "visualAssetId": "act3-to-act4-manual",
       "renderedVisualAsset": "../assets/visuals/act3-to-act4-manual-act3-to-act4-manual-boundary-path.png",
@@ -11574,31 +11539,29 @@ window.DECK_SLIDES = [
     "title": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
     "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
     "bullets": [
-      "자료 요청",
-      "도구 요청",
-      "요청 기록"
+      "공식 전화 창구",
+      "MCP",
+      "공식 전화 창구와 실제 용어 MCP를 함께 보여 줍니다."
     ],
     "visualIntent": "MCP를 회사 밖 외부 시스템에 연결하는 공식 전화 창구와 요청 기록으로 설명한다.",
     "visualType": "generated-image",
     "visualAsset": "",
     "visualPrompt": "Hand-drawn minimal Korean lecture illustration. AI new employee Kimai uses an official company telephone/switchboard labeled MCP to contact an external system through an official window. Request slips 자료 요청 and 도구 요청 pass through the phone line, and 요청 기록 is logged.",
     "visualAssetId": "act5-mcp-partner-window",
-    "layoutTemplate": "story-scene",
-    "teachingMove": "explain",
-    "audienceAction": "inspect-visual",
-    "visualMode": "story-illustration",
-    "mainTemplate": "kimai-structure",
-    "templateSelectionReason": "source layoutTemplate=story-scene; source teachingMove=explain; source audienceAction=inspect-visual; source visualMode=story-illustration",
+    "layoutTemplate": "glossary-bridge",
+    "teachingMove": "connect",
+    "audienceAction": "connect-metaphor",
+    "visualMode": "term-bridge",
+    "mainTemplate": "term-bridge",
+    "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
       "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
       "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
-      "imageAnchors": [
-        "자료 요청",
-        "도구 요청",
-        "요청 기록"
-      ],
-      "callout": "공식 전화 창구"
+      "metaphorTerm": "공식 전화 창구",
+      "realTerm": "MCP",
+      "bridgeLine": "공식 전화 창구와 실제 용어 MCP를 함께 보여 줍니다.",
+      "supportingLine": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다."
     },
     "templateRewrite": {
       "sourceContractVersion": 1,
@@ -11616,17 +11579,15 @@ window.DECK_SLIDES = [
           "MCP"
         ]
       },
-      "selectedTemplate": "kimai-structure",
+      "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "MCP는 외부 창구에 연결하는 공식 전화입니다.",
         "message": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다.",
         "bridge": "실습에서는 에이전트 팀을 구현해 봅니다.",
-        "imageAnchors": [
-          "자료 요청",
-          "도구 요청",
-          "요청 기록"
-        ],
-        "callout": "공식 전화 창구"
+        "metaphorTerm": "공식 전화 창구",
+        "realTerm": "MCP",
+        "bridgeLine": "공식 전화 창구와 실제 용어 MCP를 함께 보여 줍니다.",
+        "supportingLine": "외부 자료나 도구가 필요할 때 허가된 전화 창구로 요청하고 기록을 남기는 통로가 MCP입니다."
       },
       "componentData": {
         "imageAnchors": [
@@ -11693,10 +11654,10 @@ window.DECK_SLIDES = [
         "rule": "template-slot-copy-polish"
       }
     },
-    "layoutVariant": "quote",
+    "layoutVariant": "statement",
     "visualRenderContract": {
       "renderKind": "image-asset",
-      "templateComponent": "kimai-structure",
+      "templateComponent": "bridge",
       "sourceAction": "single-image-regenerated",
       "visualAssetId": "act5-mcp-partner-window",
       "renderedVisualAsset": "../assets/visuals/act5-mcp-partner-window-act5-mcp-official-phone-window.png",
@@ -11993,7 +11954,7 @@ window.DECK_SLIDES = [
     "templateSelectionReason": "source layoutTemplate=glossary-bridge; source teachingMove=connect; source audienceAction=connect-metaphor; source visualMode=term-bridge",
     "rewrittenScreen": {
       "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-      "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+      "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
       "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
       "metaphorTerm": "검문소 스위치",
       "realTerm": "Hook",
@@ -12021,7 +11982,7 @@ window.DECK_SLIDES = [
       "selectedTemplate": "term-bridge",
       "screenStructure": {
         "headline": "팀이 작업을 끝냈어도 제출 전 확인은 필요합니다.",
-        "message": "역할 분리와 권한 정리만으로는 충분하지 않으며, 제출 직전 검문소가 필요하다는 전환만 짧게 짚습니다.",
+        "message": "역할과 권한을 나눴어도 끝났다는 말만으로 바로 제출할 수는 없습니다.",
         "bridge": "이제 제출 직전에 자동으로 멈춰 세우는 검문소를 보겠습니다.",
         "metaphorTerm": "검문소 스위치",
         "realTerm": "Hook",
@@ -12372,7 +12333,7 @@ window.DECK_SLIDES = [
     "templateSelectionReason": "source layoutTemplate=checklist; source teachingMove=demonstrate; source audienceAction=rehearse-checklist; source visualMode=checklist-board",
     "rewrittenScreen": {
       "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-      "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+      "message": "품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.",
       "bridge": "먼저 작업 기록부터 보겠습니다.",
       "criteria": [
         {
@@ -12410,7 +12371,7 @@ window.DECK_SLIDES = [
       "selectedTemplate": "decision-gate",
       "screenStructure": {
         "headline": "품질검문소는 완료 보고 대신 증거를 봅니다.",
-        "message": "세 가지 증거의 전체 지도를 짧게 제시하고, 상세 설명은 63~65번에서 나눠 다룹니다.",
+        "message": "품질검문소는 완료 보고가 아니라 세 가지 증거를 봅니다.",
         "bridge": "먼저 작업 기록부터 보겠습니다.",
         "criteria": [
           {
@@ -17637,10 +17598,10 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act2-input-output-principle",
     "sourcePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png",
     "assetSha256": "8e74c95c502c883451386fff561871ac3e8747cf92f0d999bc6b9f888bdb0520",
-    "semanticRequirementsSha256": "251fde5b1c0b721a7257dc046ba321ef0468e969872790ad23555b3784bf7820",
+    "semanticRequirementsSha256": "0ee9c26f3d157629743be59ea66dc6fe6aa97ba61451c7ca4eaef7553a1199ee",
     "imageDimensions": {
-      "width": 1686,
-      "height": 950
+      "width": 1672,
+      "height": 941
     },
     "reviewerMethod": "generated image reviewed against updated slide 21 task-instruction collaboration requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
     "status": "PASS",
@@ -17690,7 +17651,7 @@ window.DECK_ASSET_REVIEWS = [
         "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
       }
     ],
-    "mustNotShowResults": [
+    "forbiddenElementFindings": [
       {
         "label": "실습 입력폼",
         "observed": false,
@@ -18178,7 +18139,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act2-prompt-term-mapping",
     "sourcePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png",
     "assetSha256": "6991b95328ce73c6d56037215db74a089f6362c2d1a25ddd32a9467edb85534f",
-    "semanticRequirementsSha256": "88054ad9ff606b01dc520a18d9896b9ac93768d287723dd935e33d52857f0396",
+    "semanticRequirementsSha256": "3059d9b2e7ac83f281d96b5750979be4085c41a8f11d4217e34a30079b204d41",
     "imageDimensions": {
       "width": 1693,
       "height": 929
@@ -18357,7 +18318,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act2-prompt-reframing",
     "sourcePath": "assets/visuals/act2-prompt-reframing-persona-myth.png",
     "assetSha256": "255498d5f0f19c8a3bd94185c72a00b028433644767a1ac3a5d3a3488c6f8d24",
-    "semanticRequirementsSha256": "4e48921c0189c00f054d988ea5160f8c9ef18a703a7f181f65477c340e508f66",
+    "semanticRequirementsSha256": "c1fb1923f8c7a64e35e000b2bc31b9089703126325be4cba8ddccea7f51862b9",
     "imageDimensions": {
       "width": 1672,
       "height": 941
@@ -18979,7 +18940,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act3-temporary-info-danger",
     "sourcePath": "assets/visuals/act3-scope-company-guidelines.png",
     "assetSha256": "0ab90e776f89e848372eaf7379740fa2561d0706b2e8d4c4f06eab150f01b1f2",
-    "semanticRequirementsSha256": "a4c079479c52b3654075c551197054b365f70168bab4c1c5c6c696a83a5bb9b0",
+    "semanticRequirementsSha256": "b841c657d293171f8ce4c39aa89cb0fa446b66ca4506593383e73aa4b4146e1f",
     "imageDimensions": {
       "width": 1672,
       "height": 941
@@ -19158,7 +19119,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act3-good-rule-board-shape",
     "sourcePath": "assets/visuals/act3-nearest-team-lead-priority.png",
     "assetSha256": "eb33e43c122e901f5434162ad489abed7809f3b209825e70eaf269955064ad37",
-    "semanticRequirementsSha256": "cd88809d05950e1ab2b9669341427a02d98bbf859f4c41b0f2e3dff9964c552a",
+    "semanticRequirementsSha256": "2d7cf70aa2264974c793a32046e51cde28246501e820a9b7d642788778acefa7",
     "imageDimensions": {
       "width": 1536,
       "height": 1024
@@ -19527,7 +19488,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act3-to-act4-manual",
     "sourcePath": "assets/visuals/act3-to-act4-manual-boundary-path.png",
     "assetSha256": "43829db67afc607fec9d4873d4924764eab9ecd7083ca9dd52e67cfefc2ea65e",
-    "semanticRequirementsSha256": "aae967842d940e4e4f5b208b22653d61d278ebf0db256f333698a5df1a81cb62",
+    "semanticRequirementsSha256": "44297480de5bf76ae84dead3d46108fdfa428466e8943918639a2400ad0d1ae9",
     "imageDimensions": {
       "width": 1672,
       "height": 941
@@ -22299,7 +22260,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act5-security-permissions",
     "sourcePath": "assets/visuals/act5-security-permissions-role-permissions.png",
     "assetSha256": "98087c1479ad81382617745c4cb40ba6883f90c471b0ef2a3d7ec25481cee0ca",
-    "semanticRequirementsSha256": "8aa7eb221c8e7104f39c5acf7e27fc9c88c8226325efae9395ee44db2bd3fd00",
+    "semanticRequirementsSha256": "f699f6e83dde57954c69acae42c840cc424676c860018fdc1295188d319dec7c",
     "imageDimensions": {
       "width": 1672,
       "height": 941
@@ -22349,93 +22310,93 @@ window.DECK_ASSET_REVIEWS = [
       {
         "label": "실습 입력폼",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"실습 입력폼\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"실습 입력폼\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"실습 입력폼\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "점수판 중심",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"점수판 중심\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"점수판 중심\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"점수판 중심\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "코드 화면",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"코드 화면\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"코드 화면\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"코드 화면\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "복잡한 UI",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"복잡한 UI\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"복잡한 UI\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"복잡한 UI\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "그라데이션",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"그라데이션\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"그라데이션\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"그라데이션\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "작은 글씨",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"작은 글씨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"작은 글씨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"작은 글씨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"보이는 패널 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"동그라미 숫자\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"Cell 번호\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"sprite sheet 라벨\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"잘린 글자 또는 잘린 캐릭터\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "crop marks",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"crop marks\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       },
       {
         "label": "partial cropped objects",
         "observed": false,
-        "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+        "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
         "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"partial cropped objects\" should not be present in the bitmap.",
-        "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+        "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
       }
     ]
   },
@@ -22443,7 +22404,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act5-mcp-partner-window",
     "sourcePath": "assets/visuals/act5-mcp-official-phone-window.png",
     "assetSha256": "d8ca6e1cab04e615d0b3873c90d6f67c5369c5f090299492a69408b13164915f",
-    "semanticRequirementsSha256": "a56b323669a9f7958f0694d418e2f4473517242e2bed52bcd38b953bf7457649",
+    "semanticRequirementsSha256": "769a74ffcf618b86d0dc2fcbf353e827ee45dea09438cf1831222fc77a508490",
     "imageDimensions": {
       "width": 1672,
       "height": 941
@@ -22500,79 +22461,79 @@ window.DECK_ASSET_REVIEWS = [
       {
         "label": "실습 입력폼",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"실습 입력폼\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"실습 입력폼\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"실습 입력폼\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "점수판 중심",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"점수판 중심\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"점수판 중심\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"점수판 중심\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "코드 화면",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"코드 화면\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"코드 화면\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"코드 화면\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "복잡한 UI",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"복잡한 UI\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"복잡한 UI\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"복잡한 UI\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "그라데이션",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"그라데이션\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"그라데이션\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"그라데이션\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "작은 글씨",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"작은 글씨\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"작은 글씨\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"작은 글씨\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "보이는 패널 번호",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"보이는 패널 번호\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"보이는 패널 번호\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"보이는 패널 번호\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "동그라미 숫자",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"동그라미 숫자\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"동그라미 숫자\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"동그라미 숫자\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "Cell 번호",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"Cell 번호\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"Cell 번호\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"Cell 번호\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "sprite sheet 라벨",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"sprite sheet 라벨\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"sprite sheet 라벨\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"sprite sheet 라벨\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       },
       {
         "label": "잘린 글자 또는 잘린 캐릭터",
         "observed": false,
-        "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the pilot contract.",
+        "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the pilot contract.",
         "observation": "The pilot source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-        "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+        "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
       }
     ]
   },
@@ -24225,7 +24186,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "act2-persona-priority-filter",
     "sourcePath": "assets/visuals/act2-persona-priority-filter.png",
     "assetSha256": "a660e776956dfbed25397f2db313afceb1440cad02b5e39c69e68b391d40358c",
-    "semanticRequirementsSha256": "821f6e9af4f4105f5bcb17ea8eef6f673c06444a7566633e5f9415be7094a238",
+    "semanticRequirementsSha256": "b24b939d2bc1ccd20b66ffeee62d70251cb86a9cebe15b602aae80753a8c242e",
     "imageDimensions": {
       "width": 1644,
       "height": 957
@@ -24383,7 +24344,7 @@ window.DECK_ASSET_REVIEWS = [
     "assetId": "wrap-personal-harness-funnel",
     "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
     "assetSha256": "5a1e8729602ea27f79c2dd2dc3b223ac50d038f9584ad6fa9701c7378252f889",
-    "semanticRequirementsSha256": "manual-2026-06-02-act0-kimai-reference-final-wrap-up",
+    "semanticRequirementsSha256": "547dd3f06ff2fdbb26e50b024389f4626e2804e98c7cd63d6fccbba16dac5194",
     "imageDimensions": {
       "width": 1672,
       "height": 941

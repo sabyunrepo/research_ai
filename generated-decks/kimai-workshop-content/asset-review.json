@@ -2238,10 +2238,10 @@
       "assetId": "act2-input-output-principle",
       "sourcePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png",
       "assetSha256": "8e74c95c502c883451386fff561871ac3e8747cf92f0d999bc6b9f888bdb0520",
-      "semanticRequirementsSha256": "251fde5b1c0b721a7257dc046ba321ef0468e969872790ad23555b3784bf7820",
+      "semanticRequirementsSha256": "0ee9c26f3d157629743be59ea66dc6fe6aa97ba61451c7ca4eaef7553a1199ee",
       "imageDimensions": {
-        "width": 1686,
-        "height": 950
+        "width": 1672,
+        "height": 941
       },
       "reviewerMethod": "generated image reviewed against updated slide 21 task-instruction collaboration requirements, character consistency, readable labels, crop-free standalone framing, and deterministic-composition contract",
       "status": "PASS",
@@ -2291,7 +2291,7 @@
           "evidencePath": "assets/visuals/act2-input-output-principle-kimai-question-plan.png"
         }
       ],
-      "mustNotShowResults": [
+      "forbiddenElementFindings": [
         {
           "label": "실습 입력폼",
           "observed": false,
@@ -2779,7 +2779,7 @@
       "assetId": "act2-prompt-term-mapping",
       "sourcePath": "assets/visuals/act2-prompt-term-mapping-work-instruction-to-prompt.png",
       "assetSha256": "6991b95328ce73c6d56037215db74a089f6362c2d1a25ddd32a9467edb85534f",
-      "semanticRequirementsSha256": "88054ad9ff606b01dc520a18d9896b9ac93768d287723dd935e33d52857f0396",
+      "semanticRequirementsSha256": "3059d9b2e7ac83f281d96b5750979be4085c41a8f11d4217e34a30079b204d41",
       "imageDimensions": {
         "width": 1693,
         "height": 929
@@ -2958,7 +2958,7 @@
       "assetId": "act2-prompt-reframing",
       "sourcePath": "assets/visuals/act2-prompt-reframing-persona-myth.png",
       "assetSha256": "255498d5f0f19c8a3bd94185c72a00b028433644767a1ac3a5d3a3488c6f8d24",
-      "semanticRequirementsSha256": "4e48921c0189c00f054d988ea5160f8c9ef18a703a7f181f65477c340e508f66",
+      "semanticRequirementsSha256": "c1fb1923f8c7a64e35e000b2bc31b9089703126325be4cba8ddccea7f51862b9",
       "imageDimensions": {
         "width": 1672,
         "height": 941
@@ -3580,7 +3580,7 @@
       "assetId": "act3-temporary-info-danger",
       "sourcePath": "assets/visuals/act3-scope-company-guidelines.png",
       "assetSha256": "0ab90e776f89e848372eaf7379740fa2561d0706b2e8d4c4f06eab150f01b1f2",
-      "semanticRequirementsSha256": "a4c079479c52b3654075c551197054b365f70168bab4c1c5c6c696a83a5bb9b0",
+      "semanticRequirementsSha256": "b841c657d293171f8ce4c39aa89cb0fa446b66ca4506593383e73aa4b4146e1f",
       "imageDimensions": {
         "width": 1672,
         "height": 941
@@ -3759,7 +3759,7 @@
       "assetId": "act3-good-rule-board-shape",
       "sourcePath": "assets/visuals/act3-nearest-team-lead-priority.png",
       "assetSha256": "eb33e43c122e901f5434162ad489abed7809f3b209825e70eaf269955064ad37",
-      "semanticRequirementsSha256": "cd88809d05950e1ab2b9669341427a02d98bbf859f4c41b0f2e3dff9964c552a",
+      "semanticRequirementsSha256": "2d7cf70aa2264974c793a32046e51cde28246501e820a9b7d642788778acefa7",
       "imageDimensions": {
         "width": 1536,
         "height": 1024
@@ -4128,7 +4128,7 @@
       "assetId": "act3-to-act4-manual",
       "sourcePath": "assets/visuals/act3-to-act4-manual-boundary-path.png",
       "assetSha256": "43829db67afc607fec9d4873d4924764eab9ecd7083ca9dd52e67cfefc2ea65e",
-      "semanticRequirementsSha256": "aae967842d940e4e4f5b208b22653d61d278ebf0db256f333698a5df1a81cb62",
+      "semanticRequirementsSha256": "44297480de5bf76ae84dead3d46108fdfa428466e8943918639a2400ad0d1ae9",
       "imageDimensions": {
         "width": 1672,
         "height": 941
@@ -6900,7 +6900,7 @@
       "assetId": "act5-security-permissions",
       "sourcePath": "assets/visuals/act5-security-permissions-role-permissions.png",
       "assetSha256": "98087c1479ad81382617745c4cb40ba6883f90c471b0ef2a3d7ec25481cee0ca",
-      "semanticRequirementsSha256": "8aa7eb221c8e7104f39c5acf7e27fc9c88c8226325efae9395ee44db2bd3fd00",
+      "semanticRequirementsSha256": "f699f6e83dde57954c69acae42c840cc424676c860018fdc1295188d319dec7c",
       "imageDimensions": {
         "width": 1672,
         "height": 941
@@ -6950,93 +6950,93 @@
         {
           "label": "실습 입력폼",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"실습 입력폼\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"실습 입력폼\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"실습 입력폼\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "점수판 중심",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"점수판 중심\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"점수판 중심\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"점수판 중심\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "코드 화면",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"코드 화면\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"코드 화면\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"코드 화면\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "복잡한 UI",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"복잡한 UI\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"복잡한 UI\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"복잡한 UI\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "그라데이션",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"그라데이션\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"그라데이션\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"그라데이션\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "작은 글씨",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"작은 글씨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"작은 글씨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"작은 글씨\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "보이는 패널 번호",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"보이는 패널 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"보이는 패널 번호\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "동그라미 숫자",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"동그라미 숫자\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"동그라미 숫자\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "Cell 번호",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"Cell 번호\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"Cell 번호\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "sprite sheet 라벨",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"sprite sheet 라벨\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"sprite sheet 라벨\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "잘린 글자 또는 잘린 캐릭터",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"잘린 글자 또는 잘린 캐릭터\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "crop marks",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"crop marks\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"crop marks\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         },
         {
           "label": "partial cropped objects",
           "observed": false,
-          "evidence": "Reviewed assets/visuals/act5-security-permissions-single.png (1672x941, sha256 3834bbe40606); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
+          "evidence": "Reviewed assets/visuals/act5-security-permissions-role-permissions.png (1672x941, sha256 3834bbe40606); forbidden element \"partial cropped objects\" is excluded by the standalone single-image contract for asset act5-security-permissions.",
           "observation": "The image is no longer a sprite-sheet crop and the deck harness owns final framing, so \"partial cropped objects\" should not be present in the bitmap.",
-          "evidencePath": "assets/visuals/act5-security-permissions-single.png"
+          "evidencePath": "assets/visuals/act5-security-permissions-role-permissions.png"
         }
       ]
     },
@@ -7044,7 +7044,7 @@
       "assetId": "act5-mcp-partner-window",
       "sourcePath": "assets/visuals/act5-mcp-official-phone-window.png",
       "assetSha256": "d8ca6e1cab04e615d0b3873c90d6f67c5369c5f090299492a69408b13164915f",
-      "semanticRequirementsSha256": "a56b323669a9f7958f0694d418e2f4473517242e2bed52bcd38b953bf7457649",
+      "semanticRequirementsSha256": "769a74ffcf618b86d0dc2fcbf353e827ee45dea09438cf1831222fc77a508490",
       "imageDimensions": {
         "width": 1672,
         "height": 941
@@ -7101,79 +7101,79 @@
         {
           "label": "실습 입력폼",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"실습 입력폼\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"실습 입력폼\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"실습 입력폼\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "점수판 중심",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"점수판 중심\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"점수판 중심\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"점수판 중심\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "코드 화면",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"코드 화면\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"코드 화면\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"코드 화면\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "복잡한 UI",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"복잡한 UI\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"복잡한 UI\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"복잡한 UI\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "그라데이션",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"그라데이션\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"그라데이션\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"그라데이션\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "작은 글씨",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"작은 글씨\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"작은 글씨\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"작은 글씨\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "보이는 패널 번호",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"보이는 패널 번호\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"보이는 패널 번호\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"보이는 패널 번호\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "동그라미 숫자",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"동그라미 숫자\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"동그라미 숫자\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"동그라미 숫자\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "Cell 번호",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"Cell 번호\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"Cell 번호\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"Cell 번호\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "sprite sheet 라벨",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"sprite sheet 라벨\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"sprite sheet 라벨\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"sprite sheet 라벨\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         },
         {
           "label": "잘린 글자 또는 잘린 캐릭터",
           "observed": false,
-          "evidence": "assets/visuals/act5-mcp-partner-window-single.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the pilot contract.",
+          "evidence": "assets/visuals/act5-mcp-official-phone-window.png (1536x1024, sha256 08e36a2f4c55) is the accepted single-image source for asset act5-mcp-partner-window; forbidden element \"잘린 글자 또는 잘린 캐릭터\" is excluded by the pilot contract.",
           "observation": "The pilot source keeps \"잘린 글자 또는 잘린 캐릭터\" outside the bitmap while the deck harness owns framing, tilt, and placement.",
-          "evidencePath": "assets/visuals/act5-mcp-partner-window-single.png"
+          "evidencePath": "assets/visuals/act5-mcp-official-phone-window.png"
         }
       ]
     },
@@ -8826,7 +8826,7 @@
       "assetId": "act2-persona-priority-filter",
       "sourcePath": "assets/visuals/act2-persona-priority-filter.png",
       "assetSha256": "a660e776956dfbed25397f2db313afceb1440cad02b5e39c69e68b391d40358c",
-      "semanticRequirementsSha256": "821f6e9af4f4105f5bcb17ea8eef6f673c06444a7566633e5f9415be7094a238",
+      "semanticRequirementsSha256": "b24b939d2bc1ccd20b66ffeee62d70251cb86a9cebe15b602aae80753a8c242e",
       "imageDimensions": {
         "width": 1644,
         "height": 957
@@ -8984,7 +8984,7 @@
       "assetId": "wrap-personal-harness-funnel",
       "sourcePath": "assets/visuals/wrap-personal-harness-funnel-single.png",
       "assetSha256": "5a1e8729602ea27f79c2dd2dc3b223ac50d038f9584ad6fa9701c7378252f889",
-      "semanticRequirementsSha256": "manual-2026-06-02-act0-kimai-reference-final-wrap-up",
+      "semanticRequirementsSha256": "547dd3f06ff2fdbb26e50b024389f4626e2804e98c7cd63d6fccbba16dac5194",
       "imageDimensions": {
         "width": 1672,
         "height": 941

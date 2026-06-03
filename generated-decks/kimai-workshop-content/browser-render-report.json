@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-06-01T23:28:21.481Z",
-  "method": "npx playwright screenshot against local server http://127.0.0.1:4177/deck.html",
+  "generatedAt": "2026-06-03T00:31:48.793Z",
+  "method": "npx playwright screenshot against local server http://127.0.0.1:8777/deck.html",
   "coverage": "representative",
-  "deckOutputHash": "sha256:bd36de951107be0ac9eb54c8cb32a0dccf461b22bbcc89e7b8820b9967dc9738",
+  "deckOutputHash": "sha256:3fbdb46ba980e4d5c0feaca6501056d84bde05421606a782d5d245e523d170f6",
   "summary": "Representative desktop, projector, and mobile screenshots were captured without unresolved visual blockers recorded in this report.",
   "captures": [
     {
@@ -13,7 +13,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide1.png",
-      "screenshotSha256": "eb90e93e47b17d6ee61e8c236ccd5cc44cc014029856a5c7b8ec9ddee9703365",
+      "screenshotSha256": "1c38d29709f64307c4c36faca9e105f14cb0689e3b064b170d7d9253ab9f0cbd",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -27,7 +27,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1024x768-slide1.png",
-      "screenshotSha256": "152f6d003e3574519ff52fbda828bc35b8085bb90438c1073b79dc122f0154a7",
+      "screenshotSha256": "402e23b34765ab7e4dd0c20162916e0ba2e321cdd79d6ab99ecdb5a34cab7c1d",
       "imageDimensions": {
         "width": 1024,
         "height": 768
@@ -41,7 +41,7 @@
         "height": 844
       },
       "screenshotPath": "review-screenshots/deck-390x844-slide1.png",
-      "screenshotSha256": "77a47a63f6e53b2138cebe39b2e009876366e9086c7705cdf15abfcca32d1198",
+      "screenshotSha256": "261270d211c3273fdb7ebb19b9a893d23cc36d3593badcd0ca5ff62bb245bb39",
       "imageDimensions": {
         "width": 390,
         "height": 844
@@ -55,7 +55,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide8.png",
-      "screenshotSha256": "dfab10b00d104a5c5fddbc998095caca7e79285db57e3db5a20a13d3a48ed339",
+      "screenshotSha256": "1c38d29709f64307c4c36faca9e105f14cb0689e3b064b170d7d9253ab9f0cbd",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -69,7 +69,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide18.png",
-      "screenshotSha256": "4379d4987809aa9155762809ba12784df347cfea0b78314139602c76cb909e5e",
+      "screenshotSha256": "1c38d29709f64307c4c36faca9e105f14cb0689e3b064b170d7d9253ab9f0cbd",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -83,7 +83,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide32.png",
-      "screenshotSha256": "c6d60a71b578d9f09032fc46388200648442b320fee622b223ee0e07495edb6c",
+      "screenshotSha256": "1c38d29709f64307c4c36faca9e105f14cb0689e3b064b170d7d9253ab9f0cbd",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -97,7 +97,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide47.png",
-      "screenshotSha256": "2fe92b73d2aa0fa7e2ef5eec7cb5285dd8cfc83958cf5b348a9f811de287bfd3",
+      "screenshotSha256": "393d88007d2196a5f808892c8753903b3e6d1fa3c6cf6e06dfdc4d4a5295b775",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -111,7 +111,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide61.png",
-      "screenshotSha256": "50ca2cd31418157765f998d67dcf9e7afc27ffe144cee084cbb5e2d72aa874e1",
+      "screenshotSha256": "c9abb1e0c87462015f5a92baf0ba9c8b38feb2530aea0ae7cce294f61aa05eb5",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -119,13 +119,13 @@
       "observation": "Act 5 representative slide captured with nonblank visual media."
     },
     {
-      "slideNumber": 76,
+      "slideNumber": 73,
       "viewport": {
         "width": 1366,
         "height": 768
       },
-      "screenshotPath": "review-screenshots/deck-1366x768-slide76.png",
-      "screenshotSha256": "f7c970ed3d4358a7fd3dc65b8211e052e758d5bc38ef49081ed0c9c2cb5f5834",
+      "screenshotPath": "review-screenshots/deck-1366x768-slide73.png",
+      "screenshotSha256": "1c38d29709f64307c4c36faca9e105f14cb0689e3b064b170d7d9253ab9f0cbd",
       "imageDimensions": {
         "width": 1366,
         "height": 768

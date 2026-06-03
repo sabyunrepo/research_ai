@@ -87,6 +87,7 @@ function main() {
   const specPath = path.join(deckDir, "slide-spec.json");
   const slideCount = fs.existsSync(specPath) ? (readJson(specPath).slides || []).length : 0;
 
+  const finalSlideNumber = slideCount || 1;
   const representativePlan = [
     { slideNumber: 1, viewport: { width: 1366, height: 768 }, observation: "Desktop first slide captured with visible title, Kimai image, and navigation outside core content." },
     { slideNumber: 1, viewport: { width: 1024, height: 768 }, observation: "Projector viewport first slide captured with visible title, image, and controls." },
@@ -96,7 +97,7 @@ function main() {
     { slideNumber: 32, viewport: { width: 1366, height: 768 }, observation: "Act 3 representative slide captured with nonblank visual media." },
     { slideNumber: 47, viewport: { width: 1366, height: 768 }, observation: "Act 4 representative procedure slide captured after crop-region repair." },
     { slideNumber: 61, viewport: { width: 1366, height: 768 }, observation: "Act 5 representative slide captured with nonblank visual media." },
-    { slideNumber: 76, viewport: { width: 1366, height: 768 }, observation: "Final slide captured with nonblank visual media and closing map." },
+    { slideNumber: finalSlideNumber, viewport: { width: 1366, height: 768 }, observation: "Final slide captured with nonblank visual media and closing map." },
   ];
   const capturePlan = allSlides && slideCount
     ? [

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-01T23:28:34.290Z",
+  "generatedAt": "2026-06-03T00:31:58.167Z",
   "deck": "generated-decks/kimai-workshop-content",
-  "assetPackHash": "sha256:cd608abcf5bad3a5ae661bc93db568aa0ec6fd98d3838894908a5e5d6c5784e4",
+  "assetPackHash": "sha256:55a956a573391594aa23698ac36f15113304d3e7b81fba7af550377212997ccb",
   "checked": [
     {
       "assetId": "kimai-manual-checkpoint",
@@ -343,127 +343,6 @@
             "inkRatio": 0.07899,
             "maxInkRatio": 0.5,
             "lineCoverage": 0.1564,
-            "maxEdgeLineCoverage": 0.5,
-            "status": "PASS",
-            "interpretation": "edge has enough whitespace for declared safe crop"
-          }
-        ],
-        "subjectCheck": {
-          "expectedSubjectBounds": {
-            "x": 1,
-            "y": 1,
-            "width": 98,
-            "height": 98,
-            "unit": "percent"
-          },
-          "outsideSubjectInkRatio": 0,
-          "maxAdjacentPanelInkRatio": 0.4,
-          "status": "PASS",
-          "observation": "ink is concentrated inside the expected subject bounds"
-        },
-        "status": "PASS",
-        "warnings": []
-      },
-      "status": "PASS"
-    },
-    {
-      "assetId": "act2-prompt-reframing",
-      "sourceAssetId": "act2-visual-sheet",
-      "sheetCellIndex": 10,
-      "cropPolicy": "declared-cell",
-      "sourcePath": "assets/visuals/act2-visual-sheet.png",
-      "cropPath": "assets/visuals/act2-prompt-reframing.png",
-      "sourceDimensions": {
-        "width": 1536,
-        "height": 1024
-      },
-      "cropDimensions": {
-        "width": 444,
-        "height": 211
-      },
-      "cropSafety": {
-        "safeMarginPercent": 0.8,
-        "edgeBandPercent": 6,
-        "maxEdgeInkRatio": 0.5,
-        "maxAdjacentPanelInkRatio": 0.4,
-        "reviewerRequired": true,
-        "forbiddenEdgeArtifacts": [
-          "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
-        ]
-      },
-      "expectedSubjectBounds": {
-        "x": 1,
-        "y": 1,
-        "width": 98,
-        "height": 98,
-        "unit": "percent"
-      },
-      "expectedCrop": {
-        "x": 2.2,
-        "y": 77.2,
-        "width": 28.933,
-        "height": 20.6,
-        "unit": "percent"
-      },
-      "actualCrop": {
-        "x": 2.2,
-        "y": 77.2,
-        "width": 28.933,
-        "height": 20.6,
-        "unit": "percent"
-      },
-      "sourceSha256": "72ad7bc74ceb06c760b5c41e91f86a68e7c318483175f30eb1e229843a986a2e",
-      "cropSha256": "f8893e36af1420dfd22763e2d86d39b0a11a83da352681a81e38c9c7cddadb2d",
-      "cropQa": {
-        "reviewerRequired": true,
-        "forbiddenEdgeArtifacts": [
-          "visible panel number or circled number",
-          "adjacent panel text or sheet label",
-          "clipped Korean label",
-          "clipped Kimai or coworker character",
-          "crop boundary mark or hard sheet edge"
-        ],
-        "edgeChecks": [
-          {
-            "edge": "top",
-            "bandPercent": 6,
-            "inkRatio": 0.08004,
-            "maxInkRatio": 0.5,
-            "lineCoverage": 0.33559,
-            "maxEdgeLineCoverage": 0.5,
-            "status": "PASS",
-            "interpretation": "edge has enough whitespace for declared safe crop"
-          },
-          {
-            "edge": "right",
-            "bandPercent": 6,
-            "inkRatio": 0.10988,
-            "maxInkRatio": 0.5,
-            "lineCoverage": 0.21327,
-            "maxEdgeLineCoverage": 0.5,
-            "status": "PASS",
-            "interpretation": "edge has enough whitespace for declared safe crop"
-          },
-          {
-            "edge": "bottom",
-            "bandPercent": 6,
-            "inkRatio": 0,
-            "maxInkRatio": 0.5,
-            "lineCoverage": 0,
-            "maxEdgeLineCoverage": 0.5,
-            "status": "PASS",
-            "interpretation": "edge has enough whitespace for declared safe crop"
-          },
-          {
-            "edge": "left",
-            "bandPercent": 6,
-            "inkRatio": 0.19695,
-            "maxInkRatio": 0.5,
-            "lineCoverage": 0.35545,
             "maxEdgeLineCoverage": 0.5,
             "status": "PASS",
             "interpretation": "edge has enough whitespace for declared safe crop"
