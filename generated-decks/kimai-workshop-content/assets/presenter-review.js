@@ -80,7 +80,6 @@
     return `<div class="review-script-editor">
       ${editableField(slide, entry, "script", "발표 스크립트")}
       ${editableField(slide, entry, "interactionPrompt", "청중 질문/행동")}
-      ${editableField(slide, entry, "transition", "다음 장 연결")}
     </div>`;
   }
 

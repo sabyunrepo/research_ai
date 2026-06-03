@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-06-03T00:42:14.939Z",
+  "generatedAt": "2026-06-03T00:52:18.364Z",
   "method": "npx playwright screenshot against local server http://127.0.0.1:8777/deck.html",
   "coverage": "representative",
-  "deckOutputHash": "sha256:bbfc15347096425e8b38b28cff4a2afec8a958ddb64bc23abdc4739dda225311",
+  "deckOutputHash": "sha256:83ba9fe67d874f7be70f8b1a8360929c98996d4217b5faf53b1b7e1d28fcabbc",
   "summary": "Representative desktop, projector, and mobile screenshots were captured without unresolved visual blockers recorded in this report.",
   "captures": [
     {
@@ -13,7 +13,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide1.png",
-      "screenshotSha256": "181a4268a85b8a071374219d65a7b6935605e8e44c1661d04fa4d046c7b539ef",
+      "screenshotSha256": "f2333e2905c9cc9091fa48b1c1bdce85ca7009786aef4e6d2a4734fbc136bf6a",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -27,7 +27,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1024x768-slide1.png",
-      "screenshotSha256": "144c08263b8cdc4f09b59e88545ab9dced6c95cd16c8622ac4cbb29b8baacab1",
+      "screenshotSha256": "2dd489276f4407a75a8c948b808a62955506e8ecb31acc65653cf255e486f3af",
       "imageDimensions": {
         "width": 1024,
         "height": 768
@@ -41,7 +41,7 @@
         "height": 844
       },
       "screenshotPath": "review-screenshots/deck-390x844-slide1.png",
-      "screenshotSha256": "6e9d9a1313dc640da75efaad3f8d57b92ab227434038de6bae98c82da8ffd089",
+      "screenshotSha256": "f629bf2274d19b5a6c83a001cc3668dbffb4d7e47c058eb1d0ff4cd648bfbbc0",
       "imageDimensions": {
         "width": 390,
         "height": 844
@@ -55,7 +55,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide8.png",
-      "screenshotSha256": "181a4268a85b8a071374219d65a7b6935605e8e44c1661d04fa4d046c7b539ef",
+      "screenshotSha256": "cf86ae5eb949148714f5a8b8404b83ebce97499f1439010f7e0c904d13f18a97",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -69,7 +69,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide18.png",
-      "screenshotSha256": "181a4268a85b8a071374219d65a7b6935605e8e44c1661d04fa4d046c7b539ef",
+      "screenshotSha256": "f84e45940e59bffa0c4ffcf649b858d4d2e71e583c6856449e925198232500d6",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -83,7 +83,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide32.png",
-      "screenshotSha256": "181a4268a85b8a071374219d65a7b6935605e8e44c1661d04fa4d046c7b539ef",
+      "screenshotSha256": "f84e45940e59bffa0c4ffcf649b858d4d2e71e583c6856449e925198232500d6",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -97,7 +97,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide47.png",
-      "screenshotSha256": "4f5f006e4370e5bd752ca7f2b490a0e8b601f0f1aca70df9cfaf737cb84667bb",
+      "screenshotSha256": "f84e45940e59bffa0c4ffcf649b858d4d2e71e583c6856449e925198232500d6",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -111,7 +111,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide61.png",
-      "screenshotSha256": "181a4268a85b8a071374219d65a7b6935605e8e44c1661d04fa4d046c7b539ef",
+      "screenshotSha256": "1fe90129c028b34c348418cb4081ce34695d5be79a75323bcce28960413de175",
       "imageDimensions": {
         "width": 1366,
         "height": 768
@@ -125,7 +125,7 @@
         "height": 768
       },
       "screenshotPath": "review-screenshots/deck-1366x768-slide73.png",
-      "screenshotSha256": "a08257893de509217b336977b226408aa2f3ec2f58c781470ee149362151d571",
+      "screenshotSha256": "cece4d03262989caf9072d26be5efb95be38eac90732d0023c96cbd7deb51607",
       "imageDimensions": {
         "width": 1366,
         "height": 768
