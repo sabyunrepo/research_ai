@@ -867,6 +867,43 @@ async function handlePresentationState(request, response) {
   }
 }
 
+function handleDeckPdfExport(response) {
+  if (deckSelection.contract !== "deck-harness") {
+    sendJson(response, 400, {
+      ok: false,
+      error: "PDF export is only available for deck-harness decks.",
+    });
+    return;
+  }
+
+  const deckRoot = getDeckRoot();
+  const pdfFile = `${path.basename(deckRoot)}-slides.pdf`;
+  const pdfPath = path.join(deckRoot, pdfFile);
+  const exporter = path.join(root, "deck-harness", "scripts", "export-deck-pdf.js");
+  const result = spawnSync(process.execPath, [exporter, deckRoot, pdfPath], {
+    cwd: root,
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 16,
+  });
+
+  if (result.status !== 0) {
+    sendJson(response, 500, {
+      ok: false,
+      error: "PDF export failed.",
+      stdout: result.stdout || "",
+      stderr: result.stderr || "",
+    });
+    return;
+  }
+
+  sendJson(response, 200, {
+    ok: true,
+    pdfUrl: `/${pdfFile}`,
+    pdfPath,
+    output: `${result.stdout || ""}${result.stderr || ""}`.trim(),
+  });
+}
+
 function handlePresentationEvents(request, response) {
   response.writeHead(200, {
     "Content-Type": "text/event-stream; charset=utf-8",
@@ -1445,6 +1482,10 @@ const server = http.createServer((request, response) => {
   }
   if (request.method === "POST" && pathname === "/api/presentation/state") {
     handlePresentationState(request, response);
+    return;
+  }
+  if (request.method === "POST" && pathname === "/api/deck/export-pdf") {
+    handleDeckPdfExport(response);
     return;
   }
   if (request.method === "POST" && pathname === "/api/presenter-review/save") {

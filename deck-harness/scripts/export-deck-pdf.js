@@ -31,6 +31,10 @@ function extractMain(html, file) {
     .replaceAll('href="../assets/', 'href="assets/');
 }
 
+function prepareInlineCssForPrint(css) {
+  return css.replace(/url\((["']?)visuals\//g, "url($1assets/visuals/");
+}
+
 function createPdfWithPlaywright({ printHtmlPath, outputPath }) {
   const exporterCode = `
 const { chromium } = require("playwright");
@@ -98,7 +102,7 @@ function main() {
   const specPath = path.join(deckDir, "slide-spec.json");
   const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
   const deckCssPath = path.join(deckDir, "assets", "style.css");
-  const deckCss = fs.readFileSync(deckCssPath, "utf8");
+  const deckCss = prepareInlineCssForPrint(fs.readFileSync(deckCssPath, "utf8"));
   const slides = spec.slides || [];
   if (!slides.length) throw new Error("slide-spec.json has no slides");
 

@@ -229,6 +229,34 @@
     }
   }
 
+  async function exportPdf() {
+    if (window.location.protocol === "file:") {
+      window.print();
+      return;
+    }
+    const originalLabel = printButton?.textContent || "Print / PDF";
+    if (printButton) {
+      printButton.disabled = true;
+      printButton.textContent = "Exporting...";
+    }
+    setSyncStatus("PDF 생성 중", "online");
+    try {
+      const response = await fetch("/api/deck/export-pdf", { method: "POST" });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || payload.ok === false) throw new Error(payload.error || `HTTP ${response.status}`);
+      setSyncStatus("PDF 생성 완료", "online");
+      const opened = window.open(payload.pdfUrl, "_blank", "noreferrer");
+      if (!opened) window.location.href = payload.pdfUrl;
+    } catch (error) {
+      setSyncStatus(`PDF 생성 실패: ${error.message}`, "error");
+    } finally {
+      if (printButton) {
+        printButton.disabled = false;
+        printButton.textContent = originalLabel;
+      }
+    }
+  }
+
   function connectEvents() {
     if (window.location.protocol === "file:" || !window.EventSource) return;
     const events = new EventSource("/api/presentation/events");
@@ -247,7 +275,7 @@
 
   document.querySelector("[data-prev]")?.addEventListener("click", () => go(-1));
   document.querySelector("[data-next]")?.addEventListener("click", () => go(1));
-  printButton?.addEventListener("click", () => window.print());
+  printButton?.addEventListener("click", exportPdf);
   presentButton?.addEventListener("click", togglePresentationMode);
   document.addEventListener("fullscreenchange", () => setPresentationMode(Boolean(document.fullscreenElement)));
   window.addEventListener("hashchange", () => render({ source: "hash" }));
